@@ -757,7 +757,7 @@ struct BurnDriver BurnDrvAquarium = {
 	"aquarium", NULL, NULL, "1996",
 	"Aquarium (Japan)\0", NULL, "Excellent System", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, aquariumRomInfo, aquariumRomName, AquariumInputInfo, AquariumDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 256, 4, 3

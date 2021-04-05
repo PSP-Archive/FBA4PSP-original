@@ -555,7 +555,7 @@ int VidSScaleImage(RECT* pRect, int nGameWidth, int nGameHeight, bool bVertScanl
 static struct { TCHAR pMsgText[32]; COLORREF nColour; int nPriority; unsigned int nTimer; } VidSShortMsg = { _T(""), 0, 0, 0,};
 static HFONT ShortMsgFont = NULL;
 
-static unsigned char nStatusSymbols[4] = {0x3B, 0xC2, 0x3D, 0x34}; //"pause", "record", "kaillera" and "play" in font Webdings, respectivelly
+static unsigned char nStatusSymbols[4] = {0x3B, 0xC2, 0x3D, 0x34};
 static HFONT StatusFont = NULL;
 
 #define CHAT_SIZE 11
@@ -579,14 +579,10 @@ static int nCursorState = 0;
 static int nEditSize;
 static int nEditShadowOffset;
 
-static struct { TCHAR pMsgText[64]; COLORREF nColour; int nPriority; unsigned int nTimer; } VidSTinyMsg = {_T(""), 0, 0, 0};
-static HFONT TinyMsgFont = NULL;
-
 static IDirectDrawSurface7* pShortMsgSurf = NULL;
 static IDirectDrawSurface7* pStatusSurf = NULL;
 static IDirectDrawSurface7* pChatSurf = NULL;
 static IDirectDrawSurface7* pEditSurf = NULL;
-static IDirectDrawSurface7* pTinyMsgSurf = NULL;
 
 static unsigned int nKeyColour = 0x000001;
 
@@ -606,9 +602,6 @@ static int nStatusFlags;
 bool bEditActive = false;
 bool bEditTextChanged = false;
 TCHAR EditText[MAX_CHAT_SIZE + 1] = _T("");
-
-TCHAR OSDMsg[MAX_PATH] = _T("");
-unsigned int nOSDTimer = 0;
 
 static BOOL MyTextOut(HDC hdc, int nXStart, int nYStart, LPCTSTR lpString, int cbString, int nShadowOffset, int nColour)
 {
@@ -652,18 +645,6 @@ static BOOL MyExtTextOut(HDC hdc, int X, int Y, UINT fuOptions, CONST RECT* lprc
 	SetTextColor(hdc, nColour);
 
 	return ExtTextOut(hdc, X, Y, fuOptions, lprc, lpString, cbCount, lpDx);
-}
-
-static void VidSExitTinyMsg()
-{
-	VidSTinyMsg.nTimer = 0;
-
-	if (TinyMsgFont) {
-		DeleteObject(TinyMsgFont);
-		TinyMsgFont = NULL;
-	}
-
-	RELEASE(pTinyMsgSurf);
 }
 
 static void VidSExitShortMsg()
@@ -729,47 +710,12 @@ static void VidSExitEdit()
 
 void VidSExitOSD()
 {
-	VidSExitTinyMsg();
 	if (kNetGame) {
 		VidSExitEdit();
 	}
 	VidSExitChat();
 	VidSExitShortMsg();
 	VidSExitStatus();
-}
-
-static int VidSInitTinyMsg(int nFlags)
-{
-	DDSURFACEDESC2 ddsd;
-
-	VidSExitTinyMsg();
-
-	TinyMsgFont = CreateFont(12, 0, 0, 0, FW_SEMIBOLD, 0, 0, 0, 0, 0, 0, ANTIALIASED_QUALITY, FF_SWISS, _T("MS Sans Serif"));
-	VidSTinyMsg.nTimer = 0;
-
-	// create surface to display the text
-	memset(&ddsd, 0, sizeof(ddsd));
-	ddsd.dwSize = sizeof(ddsd);
-	ddsd.dwFlags = DDSD_CAPS | DDSD_WIDTH | DDSD_HEIGHT | DDSD_CKSRCBLT;
-
-	ddsd.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_VIDEOMEMORY;
-
-	ddsd.dwWidth = 300;
-	ddsd.dwHeight = 20;
-
-	ddsd.ddckCKSrcBlt.dwColorSpaceLowValue = nKeyColour;
-	ddsd.ddckCKSrcBlt.dwColorSpaceHighValue = nKeyColour;
-
-	if (FAILED(pDD->CreateSurface(&ddsd, &pTinyMsgSurf, NULL))) {
-#ifdef PRINT_DEBUG_INFO
-		printf("  * Error: Couldn't create OSD texture.\n");
-#endif
-		return 1;
-	}
-
-	VidSClearSurface(pTinyMsgSurf, nKeyColour, NULL);
-
-	return 0;
 }
 
 static int VidSInitShortMsg(int nFlags)
@@ -851,8 +797,7 @@ static int VidSInitChat(int /*nFlags*/)
 	if (bChatInitialised) {
 		VidSExitChat();
 	} else {
-//		for (int i = 0; i < CHAT_SIZE + (CHAT_SIZE >> 1); i++) {
-		for (int i = 0; i < CHAT_SIZE; i++) {
+		for (int i = 0; i < CHAT_SIZE + (CHAT_SIZE >> 1); i++) {
 			VidSChatMessage[i].pIDText = NULL;
 			VidSChatMessage[i].pMainText = NULL;
 		}
@@ -976,9 +921,6 @@ int VidSInitOSD(int nFlags)
 			return 1;
 		}
 	}
-	if (VidSInitTinyMsg(nFlags)) {
-		return 1;
-	}
 
 	return 0;
 }
@@ -996,17 +938,6 @@ int VidSRestoreOSD()
 		}
 	}
 
-	if (pTinyMsgSurf) {
-		if (FAILED(pTinyMsgSurf->IsLost())) {
-		if (FAILED(pTinyMsgSurf->Restore())) {
-				return 1;
-			}
-			VidSClearSurface(pTinyMsgSurf, nKeyColour, NULL);
-
-			VidSTinyMsg.nTimer = 0;
-		}
-	}
-
 	if (pStatusSurf) {
 		if (FAILED(pStatusSurf->IsLost())) {
 			if (FAILED(pStatusSurf->Restore())) {
@@ -1017,7 +948,7 @@ int VidSRestoreOSD()
 			nPrevStatus = -1;
 		}
 	}
-
+	
 	if (pChatSurf) {
 		if (FAILED(pChatSurf->IsLost())) {
 			if (FAILED(pChatSurf->Restore())) {
@@ -1039,37 +970,6 @@ int VidSRestoreOSD()
 	}
 
 	return 0;
-}
-
-static void VidSDisplayTinyMsg(IDirectDrawSurface7* pSurf, RECT* pRect)
-{
-	if (VidSTinyMsg.nTimer) {
-		RECT src = { 0, 0, 300, 20 };
-		RECT dest = { pRect->right - 320, pRect->bottom - 24, pRect->right - 8, pRect->bottom - 4 };
-
-		// Switch off message display when the message has been displayed long enough
-		if (nFramesEmulated > VidSTinyMsg.nTimer) {
-			VidSTinyMsg.nTimer = 0;
-		}
-
-		if (dest.left < pRect->left) {
-			src.left = pRect->left - dest.left;
-			dest.left = pRect->left;
-		}
-
-		if (nZoom & 2) {
-			dest.top <<= 1;
-			dest.bottom <<= 1;
-		}
-
-		if (nZoom & 1) {
-			dest.left <<= 1;
-			dest.right <<= 1;
-		}
-
-		// Blit the message to the surface using a colourkey
-		pSurf->Blt(&dest, pTinyMsgSurf, &src, DDBLT_ASYNC | DDBLT_KEYSRC, NULL);
-	}
 }
 
 static void VidSDisplayShortMsg(IDirectDrawSurface7* pSurf, RECT* pRect)
@@ -1094,7 +994,7 @@ static void VidSDisplayShortMsg(IDirectDrawSurface7* pSurf, RECT* pRect)
 			dest.bottom += 10;
 		}
 
-		dest.left = dest.right - 192;
+        dest.left = dest.right - 192;
 		if (dest.left < pRect->left) {
 			src.left = pRect->left - dest.left;
 			dest.left = pRect->left;
@@ -1464,73 +1364,12 @@ void VidSDisplayOSD(IDirectDrawSurface7* pSurf, RECT* pRect, int nFlags)
 	nZoom = nFlags & 3;
 
 	VidSDisplayStatus(pSurf, pRect);
-	VidSDisplayTinyMsg(pSurf, pRect);
 	VidSDisplayShortMsg(pSurf, pRect);
 	VidSDisplayChat(pSurf, pRect);
-	if (kNetGame) {
+	if (kNetGame) {		
 		VidSDisplayEdit(pSurf, pRect);
 	}
 }
-
-int VidSNewTinyMsg(const TCHAR* pText, int nRGB, int nDuration, int nPriority)	// int nRGB = 0, int nDuration = 0, int nPriority = 5
-{
-	// If a message with a higher priority is being displayed, exit.
-	if (VidSTinyMsg.nTimer && VidSTinyMsg.nPriority > nPriority) {
-		return 1;
-	}
-
-	int nSize = _tcslen(pText);
-	if (nSize > 63) {
-		nSize = 63;
-	}
-	_tcsncpy(VidSTinyMsg.pMsgText, pText, nSize);
-	VidSTinyMsg.pMsgText[nSize] = 0;
-
-	if (nRGB) {
-		// Convert RGB value to COLORREF
-		VidSTinyMsg.nColour = RGB((nRGB >> 16), ((nRGB >> 8) & 0xFF), (nRGB & 0xFF));
-	} else {
-		// Default message colour (yellow)
-		VidSTinyMsg.nColour = RGB(0xFF, 0xFF, 0x7F);
-	}
-	if (nDuration) {
-		VidSTinyMsg.nTimer = nFramesEmulated + nDuration;
-	} else {
-		VidSTinyMsg.nTimer = nFramesEmulated + 120;
-	}
-	VidSTinyMsg.nPriority = nPriority;
-
-	{
-		if (pTinyMsgSurf == NULL) {
-			return 1;
-		}
-
-		// Print the message
-		HDC hDC;
-		HFONT hFont;
-
-		// Clear the surface first
-		VidSClearSurface(pTinyMsgSurf, nKeyColour, NULL);
-
-		pTinyMsgSurf->GetDC(&hDC);
-		SetBkMode(hDC, TRANSPARENT);
-		hFont = (HFONT)SelectObject(hDC, TinyMsgFont);
-		SetTextAlign(hDC, TA_BOTTOM | TA_RIGHT);
-
-		// Print a black shadow
-		SetTextColor(hDC, 0);
-		TextOut(hDC, 300, 20, VidSTinyMsg.pMsgText, _tcslen(VidSTinyMsg.pMsgText));
-		// Print the text on top
-		SetTextColor(hDC, VidSTinyMsg.nColour);
-		TextOut(hDC, 300 - 1, 20 - 1, VidSTinyMsg.pMsgText, _tcslen(VidSTinyMsg.pMsgText));
-
-		// Clean up
-		SelectObject(hDC, hFont);
-		pTinyMsgSurf->ReleaseDC(hDC);
-	}
-
-	return 0;
- }
 
 int VidSNewShortMsg(const TCHAR* pText, int nRGB, int nDuration, int nPriority)	// int nRGB = 0, int nDuration = 0, int nPriority = 5
 {
@@ -1539,17 +1378,12 @@ int VidSNewShortMsg(const TCHAR* pText, int nRGB, int nDuration, int nPriority)	
 		return 1;
 	}
 
-	int nSize = _tcslen(pText);
+	int nSize =  _tcslen(pText);
 	if (nSize > 31) {
 		nSize = 31;
 	}
 	_tcsncpy(VidSShortMsg.pMsgText, pText, nSize);
 	VidSShortMsg.pMsgText[nSize] = 0;
-
-	// copy osd message
-	memset(OSDMsg, '\0', MAX_PATH);
-	_tcsncpy(OSDMsg, pText, nSize);
-
 	if (nRGB) {
 		// Convert RGB value to COLORREF
 		VidSShortMsg.nColour = RGB((nRGB >> 16), ((nRGB >> 8) & 0xFF), (nRGB & 0xFF));
@@ -1562,7 +1396,6 @@ int VidSNewShortMsg(const TCHAR* pText, int nRGB, int nDuration, int nPriority)	
 	} else {
 		VidSShortMsg.nTimer = nFramesEmulated + 120;
 	}
-	nOSDTimer = VidSShortMsg.nTimer;
 	VidSShortMsg.nPriority = nPriority;
 
 	{
@@ -1595,16 +1428,6 @@ int VidSNewShortMsg(const TCHAR* pText, int nRGB, int nDuration, int nPriority)	
 void VidSKillShortMsg()
 {
 	VidSShortMsg.nTimer = 0;
-}
-
-void VidSKillTinyMsg()
-{
-	VidSTinyMsg.nTimer = 0;
-}
-
-void VidSKillOSDMsg()
-{
-	nOSDTimer = 0;
 }
 
 int VidSAddChatMsg(const TCHAR* pID, int nIDRGB, const TCHAR* pMain, int nMainRGB)
@@ -1659,3 +1482,4 @@ int VidSAddChatMsg(const TCHAR* pID, int nIDRGB, const TCHAR* pMain, int nMainRG
 
 	return 0;
 }
+

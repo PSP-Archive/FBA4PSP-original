@@ -2,6 +2,7 @@
 
 #include "cave.h"
 
+
 struct CaveTile { short x; short y; unsigned int tile; };
 
 static CaveTile* CaveTileQueueMemory[4] = { NULL, };
@@ -9,7 +10,8 @@ static CaveTile* CaveTileQueue[4][4];
 
 unsigned int CaveTileReg[4][3];
 
-unsigned char* CaveTileROM[4] = { NULL, };
+unsigned long CaveTileROMOffset[4] = { 0, };
+
 unsigned char* CaveTileRAM[4] = { NULL, };
 
 static char* CaveTileAttrib[4] = { NULL, };
@@ -127,7 +129,7 @@ static void Cave8x8Layer_Normal(int nLayer, unsigned int nPriority)
 
 		pTile = pBurnDraw + (nTileYPos * nBurnPitch) + (nTileXPos * nBurnBpp);
 
-		pTileData = (unsigned int*)(CaveTileROM[nLayer] + (nTileNumber << 6));
+		pTileData = (unsigned int*)getBlock(CaveTileROMOffset[nLayer] + (nTileNumber << 6),64);
 
 		if (nTileYPos < 0 || nTileYPos > nClipY8 || nTileXPos < 0 || nTileXPos > nClipX8) {
 			RenderTile[1]();
@@ -213,7 +215,7 @@ static void Cave8x8Layer_RowScroll(int nLayer, unsigned int nPriority)
 
 			pTile = pBurnDraw + (nTileYPos * nBurnPitch);
 
-			pTileData = (unsigned int*)(CaveTileROM[nLayer] + (nTileNumber << 6));
+			pTileData = (unsigned int*)getBlock(CaveTileROMOffset[nLayer] + (nTileNumber << 6),64);
 
 			if (nTileYPos < 0 || nTileYPos > nClipY8 || nTileXPos < 0 || nTileXPos > nClipX8) {
 				RenderTile[3]();
@@ -291,7 +293,7 @@ static void CaveQueue16x16Layer_Normal(int nLayer)
 static void Cave16x16Layer_Normal(int nLayer, unsigned int nPriority)
 {
 	unsigned int nTileNumber, nAttrib;
-	unsigned int* pTileStart;
+	unsigned int tileStartOffset;
 
 	unsigned int* pPalette = CavePalette + nPaletteOffset[nLayer];
 	int nPaletteShift = 24 - nPaletteSize[nLayer];
@@ -313,12 +315,12 @@ static void Cave16x16Layer_Normal(int nLayer, unsigned int nPriority)
 
 		pTile = pBurnDraw + (nTileYPos * nBurnPitch) + (nTileXPos * nBurnBpp);
 
-		pTileStart = (unsigned int*)(CaveTileROM[nLayer] + (nTileNumber << 6));
+		tileStartOffset = CaveTileROMOffset[nLayer] + (nTileNumber << 6);
 
 		if (nTileXPos < 0 || nTileXPos > nClipX16 || nTileYPos < 0 || nTileYPos > nClipY16) {
 
 			if ((nAttrib & 0x000000FF) == 0) {
-				pTileData = pTileStart;
+				pTileData = (unsigned int*)getBlock(tileStartOffset,64);
 				if (nTileXPos > -8 && nTileXPos < nCaveXSize && nTileYPos > -8 && nTileYPos < nCaveYSize) {
 					if (nTileXPos >= 0 && nTileXPos <= nClipX8 && nTileYPos >= 0 && nTileYPos <= nClipY8) {
 						RenderTile[0]();
@@ -332,7 +334,7 @@ static void Cave16x16Layer_Normal(int nLayer, unsigned int nPriority)
 			pTile += 8 * nBurnBpp;
 			if ((nAttrib & 0x0000FF00) == 0) {
 				if (nTileXPos > -8 && nTileXPos < nCaveXSize && nTileYPos > -8 && nTileYPos < nCaveYSize) {
-					pTileData = pTileStart + 16;
+					pTileData =  (unsigned int*)getBlock(tileStartOffset + 64,64);
 					if (nTileXPos >= 0 && nTileXPos <= nClipX8 && nTileYPos >= 0 && nTileYPos <= nClipY8) {
 						RenderTile[0]();
 					} else{
@@ -346,7 +348,7 @@ static void Cave16x16Layer_Normal(int nLayer, unsigned int nPriority)
 			pTile = pBurnDraw + (nTileYPos * nBurnPitch) + (nTileXPos * nBurnBpp);
 			if ((nAttrib & 0x00FF0000) == 0) {
 				if (nTileXPos > -8 && nTileXPos < nCaveXSize && nTileYPos > -8 && nTileYPos < nCaveYSize) {
-					pTileData = pTileStart + 32;
+					pTileData =  (unsigned int*)getBlock(tileStartOffset + 128,64);
 					if (nTileXPos >= 0 && nTileXPos <= nClipX8 && nTileYPos >= 0 && nTileYPos <= nClipY8) {
 						RenderTile[0]();
 					} else {
@@ -359,7 +361,7 @@ static void Cave16x16Layer_Normal(int nLayer, unsigned int nPriority)
 			pTile += 8 * nBurnBpp;
 			if ((nAttrib & 0xFF000000) == 0) {
 				if (nTileXPos > -8 && nTileXPos < nCaveXSize && nTileYPos > -8 && nTileYPos < nCaveYSize) {
-					pTileData = pTileStart + 48;
+					pTileData = (unsigned int*)getBlock(tileStartOffset+192,64);
 					if (nTileXPos >= 0 && nTileXPos <= nClipX8 && nTileYPos >= 0 && nTileYPos <= nClipY8) {
 						RenderTile[0]();
 					} else {
@@ -370,26 +372,26 @@ static void Cave16x16Layer_Normal(int nLayer, unsigned int nPriority)
 
 		} else {
 			if ((nAttrib & 0x000000FF) == 0) {
-				pTileData = pTileStart;
+				pTileData =  (unsigned int*)getBlock(tileStartOffset,64);
 				RenderTile[0]();
 			}
 			nTileXPos += 8;
 			pTile += 8 * nBurnBpp;
 			if ((nAttrib & 0x0000FF00) == 0) {
-				pTileData = pTileStart + 16;
+				pTileData = (unsigned int*)getBlock(tileStartOffset + 64,64);;
 				RenderTile[0]();
 			}
 			nTileXPos -= 8;
 			nTileYPos += 8;
 			pTile = pBurnDraw + (nTileYPos * nBurnPitch) + (nTileXPos * nBurnBpp);
 			if ((nAttrib & 0x00FF0000) == 0) {
-				pTileData = pTileStart + 32;
+				pTileData =  (unsigned int*)getBlock(tileStartOffset + 128,64);
 				RenderTile[0]();
 			}
 			nTileXPos += 8;
 			pTile += 8 * nBurnBpp;
 			if ((nAttrib & 0xFF000000) == 0) {
-				pTileData = pTileStart + 48;
+				pTileData =  (unsigned int*)getBlock(tileStartOffset + 192,64);
 				RenderTile[0]();
 			}
 		}
@@ -406,7 +408,7 @@ static void Cave16x16Layer_RowScroll(int nLayer, unsigned int nPriority)
 	int bx, by, cy;
 	int nTileColumn, nTileRow;
 	unsigned int nTileNumber, nAttrib;
-	unsigned int* pTileStart;
+	unsigned int tileStartOffset;
 
     unsigned char* pTileRAM = CaveTileRAM[nLayer];
 	unsigned int* pPalette = CavePalette + nPaletteOffset[nLayer];
@@ -468,11 +470,11 @@ static void Cave16x16Layer_RowScroll(int nLayer, unsigned int nPriority)
 
 			pTile = pBurnDraw + (nTileYPos * nBurnPitch);
 
-			pTileStart = (unsigned int*)(CaveTileROM[nLayer] + (nTileNumber << 6));
+			tileStartOffset = CaveTileROMOffset[nLayer] + (nTileNumber << 6);
 
 			if (nTileYPos < 0 || nTileYPos > nClipY16) {
 				if ((nAttrib & 0x000000FF) == 0) {
-					pTileData = pTileStart;
+					pTileData = (unsigned int*)getBlock(tileStartOffset,64);
 					if (nTileYPos > -8 && nTileYPos < nCaveYSize) {
 						if (nTileYPos >= 0 && nTileYPos <= nClipY8) {
 							RenderTile[2]();
@@ -484,7 +486,7 @@ static void Cave16x16Layer_RowScroll(int nLayer, unsigned int nPriority)
 				nTileXPos += 8;
 				if ((nAttrib & 0x0000FF00) == 0) {
 					if (nTileYPos > -8 && nTileYPos < nCaveYSize) {
-						pTileData = pTileStart + 16;
+						pTileData = (unsigned int*)getBlock(tileStartOffset+64,64);
 						if (nTileYPos >= 0 && nTileYPos <= nClipY8) {
 							RenderTile[2]();
 						} else {
@@ -500,7 +502,7 @@ static void Cave16x16Layer_RowScroll(int nLayer, unsigned int nPriority)
 				pTile = pBurnDraw + (nTileYPos * nBurnPitch);
 				if ((nAttrib & 0x00FF0000) == 0) {
 					if (nTileYPos > -8 && nTileYPos < nCaveYSize) {
-						pTileData = pTileStart + 32;
+						pTileData = (unsigned int*)getBlock(tileStartOffset+128,64);
 						if (nTileYPos >= 0 && nTileYPos <= nClipY8) {
 							RenderTile[2]();
 						} else {
@@ -511,7 +513,7 @@ static void Cave16x16Layer_RowScroll(int nLayer, unsigned int nPriority)
 				nTileXPos += 8;
 				if ((nAttrib & 0xFF000000) == 0) {
 					if (nTileYPos > -8 && nTileYPos < nCaveYSize) {
-						pTileData = pTileStart + 48;
+						pTileData = (unsigned int*)getBlock(tileStartOffset+192,64);
 						if (nTileYPos >= 0 && nTileYPos <= nClipY8) {
 							RenderTile[2]();
 						} else {
@@ -521,12 +523,12 @@ static void Cave16x16Layer_RowScroll(int nLayer, unsigned int nPriority)
 				}
 			} else {
 				if ((nAttrib & 0x000000FF) == 0) {
-					pTileData = pTileStart;
+					pTileData = (unsigned int*)getBlock(tileStartOffset,64);
 					RenderTile[2]();
 				}
 				nTileXPos += 8;
 				if ((nAttrib & 0x0000FF00) == 0) {
-					pTileData = pTileStart + 16;
+					pTileData = (unsigned int*)getBlock(tileStartOffset+64,64);
 					RenderTile[2]();
 				}
 				nTileXPos -= 8;
@@ -536,12 +538,12 @@ static void Cave16x16Layer_RowScroll(int nLayer, unsigned int nPriority)
 
 				pTile = pBurnDraw + (nTileYPos * nBurnPitch);
 				if ((nAttrib & 0x00FF0000) == 0) {
-					pTileData = pTileStart + 32;
+					pTileData = (unsigned int*)getBlock(tileStartOffset+128,64);
 					RenderTile[2]();
 				}
 				nTileXPos += 8;
 				if ((nAttrib & 0xFF000000) == 0) {
-					pTileData = pTileStart + 48;
+					pTileData = (unsigned int*)getBlock(tileStartOffset+192,64);
 					RenderTile[2]();
 				}
 			}
@@ -568,7 +570,7 @@ static void Cave16x16Layer_RowSelect(int nLayer, unsigned int nPriority)
 	int bx, by, mx;
 	int nTileColumn, nTileRow;
 	unsigned int nTileNumber;
-	unsigned int* pTileStart;
+	unsigned int tileStartOffset;
 
     unsigned char* pTileRAM = CaveTileRAM[nLayer];
 	unsigned int* pPalette = CavePalette + nPaletteOffset[nLayer];
@@ -644,10 +646,10 @@ static void Cave16x16Layer_RowSelect(int nLayer, unsigned int nPriority)
 
 				pTile = pBurnDraw + (nTileYPos * nBurnPitch) + (nTileXPos * nBurnBpp);
 
-				pTileStart = (unsigned int*)(CaveTileROM[nLayer] + (nTileNumber << 8));
-				pTileStart += ry;
+				tileStartOffset = CaveTileROMOffset[nLayer] + (nTileNumber << 8);
+				tileStartOffset += ry<<2;
 
-				pTileData = pTileStart;
+				pTileData = (unsigned int*)getBlock(tileStartOffset,64);
 				if (nTileXPos >= 0 && nTileXPos <= nClipX8) {
 					RenderTile[4]();
 				} else {
@@ -655,7 +657,7 @@ static void Cave16x16Layer_RowSelect(int nLayer, unsigned int nPriority)
 				}
 				nTileXPos += 8;
 				pTile += (nBurnBpp << 3);
-				pTileData = pTileStart + 16;
+				pTileData =  (unsigned int*)getBlock(tileStartOffset+64,64);
 				if (nTileXPos >= 0 && nTileXPos <= nClipX16) {
 					RenderTile[4]();
 				} else {
@@ -688,10 +690,10 @@ static void Cave16x16Layer_RowSelect(int nLayer, unsigned int nPriority)
 					continue;
 				}
 
-				pTileStart = (unsigned int*)(CaveTileROM[nLayer] + (nTileNumber << 8));
-				pTileStart += ry;
+				tileStartOffset = CaveTileROMOffset[nLayer] + (nTileNumber << 8);
+				tileStartOffset += ry<<2;
 
-				pTileData = pTileStart;
+				pTileData = (unsigned int*)getBlock(tileStartOffset,64);
 
 				if (nTileXPos >= 0 && nTileXPos <= nClipX8) {
 					RenderTile[4]();
@@ -701,7 +703,7 @@ static void Cave16x16Layer_RowSelect(int nLayer, unsigned int nPriority)
 				nTileXPos += 8;
 				pTile += (nBurnBpp << 3);
 
-				pTileData = pTileStart + 16;
+				pTileData = (unsigned int*)getBlock(tileStartOffset+64,64);
 				if (nTileXPos >= 0 && nTileXPos <= nClipX8) {
 					RenderTile[4]();
 				} else {
@@ -903,12 +905,12 @@ int CaveTileInit()
 
 	return 0;
 }
-
+#define nTileSize 64
 int CaveTileInitLayer(int nLayer, int nROMSize, int nBitdepth, int nOffset)
 {
-	int nTileSize = (8 << 3);
+	
 	int nNumTiles = nROMSize / nTileSize;
-
+	unsigned char* tileRom;
 	for (nTileMask[nLayer] = 1; nTileMask[nLayer] < nNumTiles; nTileMask[nLayer] <<= 1) { }
 	nTileMask[nLayer]--;
 
@@ -917,11 +919,13 @@ int CaveTileInitLayer(int nLayer, int nROMSize, int nBitdepth, int nOffset)
 	if (CaveTileAttrib[nLayer] == NULL) {
 		return 1;
 	}
+	memset(CaveTileAttrib[nLayer], 0, nTileMask[nLayer] + 1);
 
 	for (int i = 0; i < nNumTiles; i++) {
 		bool bTransparent = true;
 		for (int j = i * nTileSize; j < (i + 1) * nTileSize; j++) {
-			if (CaveTileROM[nLayer][j]) {
+			tileRom=getBlockSmallData(CaveTileROMOffset[nLayer]+j);
+			if (tileRom!=0&&(*tileRom)!=0) {
 				bTransparent = false;
 				break;
 			}
@@ -942,17 +946,21 @@ int CaveTileInitLayer(int nLayer, int nROMSize, int nBitdepth, int nOffset)
 	if (CaveTileQueueMemory[nLayer] == NULL) {
 		return 1;
 	}
+	memset(CaveTileQueueMemory[nLayer], 0, 4 * 1536 * sizeof(CaveTile));
 
 	free(pRowScroll[nLayer]);
 	pRowScroll[nLayer] = (int*)malloc(nCaveYSize * sizeof(int));
 	if (pRowScroll[nLayer] == NULL) {
 		return 1;
 	}
+	memset(pRowScroll[nLayer], 0, nCaveYSize * sizeof(int));
+
 	free(pRowSelect[nLayer]);
 	pRowSelect[nLayer] = (int*)malloc(nCaveYSize * sizeof(int));
 	if (pRowSelect[nLayer] == NULL) {
 		return 1;
 	}
+	memset(pRowSelect[nLayer], 0, nCaveYSize * sizeof(int));
 
 	nPaletteSize[nLayer] = nBitdepth;
 	nPaletteOffset[nLayer] = nOffset;

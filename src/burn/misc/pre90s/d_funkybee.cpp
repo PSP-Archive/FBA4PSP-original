@@ -663,7 +663,7 @@ struct BurnDriver BurnDrvfunkybee = {
 	"funkybee", NULL, NULL, "1982",
 	"Funky Bee\0", NULL, "Orca", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, funkybeeRomInfo, funkybeeRomName, DrvInputInfo, funkybeeDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	224, 232, 3, 4
@@ -691,7 +691,7 @@ struct BurnDriver BurnDrvfunkbeeb = {
 	"funkbeeb", "funkybee", NULL, "1982",
 	"Funky Bee (bootleg, harder)\0", NULL, "bootleg", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, funkbeebRomInfo, funkbeebRomName, DrvInputInfo, funkbeebDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	224, 232, 3, 4
@@ -725,7 +725,7 @@ struct BurnDriver BurnDrvskylancr = {
 	"skylancr", NULL, NULL, "1983",
 	"Sky Lancer\0", NULL, "Orca", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, skylancrRomInfo, skylancrRomName, DrvInputInfo, skylancrDIPInfo,
 	skylancrInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	224, 232, 3, 4
@@ -752,7 +752,7 @@ struct BurnDriver BurnDrvskylance = {
 	"skylance", "skylancr", NULL, "1983",
 	"Sky Lancer (Esco Trading Co license)\0", NULL, "Orca (Esco Trading Co license)", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, skylanceRomInfo, skylanceRomName, DrvInputInfo, skylanceDIPInfo,
 	skylancrInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	224, 232, 3, 4

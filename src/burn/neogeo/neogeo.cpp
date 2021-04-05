@@ -70,6 +70,7 @@ int NeoLoadSprites(int nOffset, int nNum, unsigned char* pDest, unsigned int nSp
 		if (pBuf == NULL) {
 			return 1;
 		}
+		memset(pBuf, 0, nRomSize);
 
 		for (int i = 0; i < (nNum + ROM32MB >> 1); i++) {
 			if ((nSpriteSize / nNum) == 0x2000000) {		// svcpcb
@@ -144,7 +145,12 @@ void NeoDecodeSprites(unsigned char* pDest, int nSize)
 			if (BurnDrvGetHardwareCode() & (HARDWARE_SNK_ENCRYPTED_A | HARDWARE_SNK_ENCRYPTED_B)) {
 				nStep *= 4;
 			}
+#ifdef BUILD_PSP
+			extern void ui_update_progress2(float size, const char * txt);
+			ui_update_progress2(1.0 / nStep, i ? NULL : "Preprocessing graphics..." );
+#else
 			BurnUpdateProgress(1.0 / nStep, i ? NULL : _T("Preprocessing graphics..."), 0);
+#endif
 		}
 
 		// Pre-process the sprite graphics
@@ -219,6 +225,14 @@ void NeoClearScreen()
 {
 	unsigned int nColour = NeoPalette[0x0FFF];
 
+#ifdef BUILD_PSP
+
+	extern void clear_gui_texture(int color, int w, int h);
+	//clear_gui_texture(nColour, 320, 224);
+	clear_gui_texture( ((nColour & 0x001f ) << 3) | ((nColour & 0x07e0 ) << 5) | ((nColour & 0xf800 ) << 8) , 320, 224);
+	
+#else
+
 	if (nColour) {
 		switch (nBurnBpp) {
 			case 4: {
@@ -269,5 +283,6 @@ void NeoClearScreen()
 	} else {
 		memset(pBurnDraw, 0, nNeoScreenWidth * 224 * nBurnBpp);
 	}
+#endif
 }
 

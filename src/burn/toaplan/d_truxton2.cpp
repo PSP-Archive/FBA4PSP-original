@@ -55,7 +55,7 @@ static struct BurnDIPInfo truxton2DIPList[] = {
 	// Defaults
 	{0x14,	0xFF, 0xFE,	0x00, NULL},
 	{0x15,	0xFF, 0xFF,	0x00, NULL},
-	{0x16,	0xFF, 0x0F,	0x02, NULL},
+	{0x16,	0xFF, 0x0F,	0x00, NULL},
 
 	// DIP 1
 	{0,		0xFE, 0,	2,	  NULL},
@@ -616,7 +616,7 @@ struct BurnDriver BurnDrvTruxton2 = {
 	"truxton2", NULL, NULL, "1992",
 	"Truxton II\0Tatsujin Oh\0", NULL, "Toaplan", "Toaplan GP9001 based",
 	L"Truxton II\0\u9054\u4EBA\u738B\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_ONLY, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_ONLY,
 	NULL, truxton2RomInfo, truxton2RomName, truxton2InputInfo, truxton2DIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	240, 320, 3, 4

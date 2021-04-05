@@ -162,12 +162,22 @@ void System16ATileMapsInit(int bOpaque)
 {
 	if (bOpaque) {
 		pSys16BgTileMapOpaque = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
+		if(pSys16BgTileMapOpaque==NULL) return;
+		memset(pSys16BgTileMapOpaque, 0, 1024 * 512 * sizeof(unsigned short));
 	}
 	
 	pSys16BgTileMapPri0 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 	pSys16BgTileMapPri1 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 	pSys16FgTileMapPri0 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 	pSys16FgTileMapPri1 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
+	if(pSys16BgTileMapPri0==NULL) return;
+	memset(pSys16BgTileMapPri0, 0, 1024 * 512 * sizeof(unsigned short));
+	if(pSys16BgTileMapPri1==NULL) return;
+	memset(pSys16BgTileMapPri1, 0, 1024 * 512 * sizeof(unsigned short));
+	if(pSys16FgTileMapPri0==NULL) return;
+	memset(pSys16FgTileMapPri0, 0, 1024 * 512 * sizeof(unsigned short));
+	if(pSys16FgTileMapPri1==NULL) return;
+	memset(pSys16FgTileMapPri1, 0, 1024 * 512 * sizeof(unsigned short));
 }
 
 void System16BTileMapsInit(int bOpaque)
@@ -175,17 +185,37 @@ void System16BTileMapsInit(int bOpaque)
 	if (bOpaque) {
 		pSys16BgTileMapOpaque = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 		pSys16BgAltTileMapOpaque = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
+		if(pSys16BgTileMapOpaque==NULL) return;
+		memset(pSys16BgTileMapOpaque, 0, 1024 * 512 * sizeof(unsigned short));
+		if(pSys16BgAltTileMapOpaque==NULL) return;
+		memset(pSys16BgAltTileMapOpaque, 0, 1024 * 512 * sizeof(unsigned short));
 	}
 	
 	pSys16BgTileMapPri0 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 	pSys16BgTileMapPri1 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 	pSys16FgTileMapPri0 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 	pSys16FgTileMapPri1 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
+	if(pSys16BgTileMapPri0==NULL) return;
+	memset(pSys16BgTileMapPri0, 0, 1024 * 512 * sizeof(unsigned short));
+	if(pSys16BgTileMapPri1==NULL) return;
+	memset(pSys16BgTileMapPri1, 0, 1024 * 512 * sizeof(unsigned short));
+	if(pSys16FgTileMapPri0==NULL) return;
+	memset(pSys16FgTileMapPri0, 0, 1024 * 512 * sizeof(unsigned short));
+	if(pSys16FgTileMapPri1==NULL) return;
+	memset(pSys16FgTileMapPri1, 0, 1024 * 512 * sizeof(unsigned short));
 	
 	pSys16BgAltTileMapPri0 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 	pSys16BgAltTileMapPri1 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 	pSys16FgAltTileMapPri0 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
 	pSys16FgAltTileMapPri1 = (unsigned short*)malloc(1024 * 512 * sizeof(unsigned short));
+	if(pSys16FgTileMapPri1==NULL) return;
+	memset(pSys16FgTileMapPri1, 0, 1024 * 512 * sizeof(unsigned short));
+	if(pSys16BgAltTileMapPri1==NULL) return;
+	memset(pSys16BgAltTileMapPri1, 0, 1024 * 512 * sizeof(unsigned short));
+	if(pSys16FgAltTileMapPri0==NULL) return;
+	memset(pSys16FgAltTileMapPri0, 0, 1024 * 512 * sizeof(unsigned short));
+	if(pSys16FgAltTileMapPri1==NULL) return;
+	memset(pSys16FgAltTileMapPri1, 0, 1024 * 512 * sizeof(unsigned short));
 }
 
 void System16TileMapsExit()
@@ -3021,7 +3051,7 @@ void System16BootlegRender()
 		BurnTransferClear();
 		return;
 	}
-
+	
 	System16CalcPalette();
 	BootlegRenderTileLayer(1, 0, 0);
 	BootlegRenderTileLayer(1, 1, 0);

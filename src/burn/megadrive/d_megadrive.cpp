@@ -72,7 +72,7 @@ struct BurnDriverD BurnDrvMDg_abat = {
 	"g_abat", NULL, NULL, "1995",
 	"Adventures of Batman and Robin, The (U) [!]\0", "Sound Problems", "Clockwork Tortoise Inc.", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_SCRFIGHT, 0,
 	NULL, g_abatRomInfo, g_abatRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -90,7 +90,7 @@ struct BurnDriverD BurnDrvMDg_abate = {
 	"g_abate", "g_abat", NULL, "1995",
 	"Adventures of Batman and Robin, The (E) [!]\0", "Gfx Problems", "Clockwork Tortoise Inc.", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_SCRFIGHT, 0,
 	NULL, g_abateRomInfo, g_abateRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -108,7 +108,7 @@ struct BurnDriverD BurnDrvMDg_acro = {
 	"g_acro", NULL, NULL, "1993",
 	"Aero the Acro-Bat (U) [c][!]\0", NULL, "Sunsoft / Iguana", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_acroRomInfo, g_acroRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -126,7 +126,7 @@ struct BurnDriverD BurnDrvMDg_acr2 = {
 	"g_acr2", NULL, NULL, "1994",
 	"Aero the Acro-Bat 2 (U) [!]\0", NULL, "Sunsoft / Iguana", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_acr2RomInfo, g_acr2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -144,7 +144,7 @@ struct BurnDriverD BurnDrvMDg_acro2e = {
 	"g_acro2e", "g_acr2", NULL, "1994",
 	"Aero the Acro-Bat 2 (E) [!]\0", NULL, "Sunsoft / Iguana", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_acro2eRomInfo, g_acro2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -162,7 +162,7 @@ struct BurnDriver BurnDrvMDg_aero = {
 	"g_aero", NULL, NULL, "199?",
 	"Aerobiz (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aeroRomInfo, g_aeroRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -180,7 +180,7 @@ struct BurnDriver BurnDrvMDg_airm = {
 	"g_airm", "g_aero", NULL, "199?",
 	"Air Management - Oozora ni Kakeru (J) [c][!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_airmRomInfo, g_airmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -198,7 +198,7 @@ struct BurnDriver BurnDrvMDg_abz2 = {
 	"g_abz2", NULL, NULL, "1994",
 	"Aerobiz Supersonic (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_abz2RomInfo, g_abz2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -216,7 +216,7 @@ struct BurnDriver BurnDrvMDg_airm2 = {
 	"g_airm2", "g_abz2", NULL, "1994",
 	"Air Management II - Kouku Ou wo Mezase (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_airm2RomInfo, g_airm2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -234,7 +234,7 @@ struct BurnDriverD BurnDrvMDg_alad = {
 	"g_alad", NULL, NULL, "1993",
 	"Disney's Aladdin (U) [!]\0", NULL, "Disney / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aladRomInfo, g_aladRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -252,7 +252,7 @@ struct BurnDriverD BurnDrvMDg_alade = {
 	"g_alade", "g_alad", NULL, "1993",
 	"Disney's Aladdin (E) [!]\0", NULL, "Disney / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aladeRomInfo, g_aladeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -270,7 +270,7 @@ struct BurnDriverD BurnDrvMDg_aladj = {
 	"g_aladj", "g_alad", NULL, "1993",
 	"Disney's Aladdin (J) [!]\0", NULL, "Disney / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aladjRomInfo, g_aladjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -288,7 +288,7 @@ struct BurnDriverD BurnDrvMDg_aladb = {
 	"g_aladb", "g_alad", NULL, "1993",
 	"Disney's Aladdin (Beta) [!]\0", NULL, "Disney / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aladbRomInfo, g_aladbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -306,7 +306,7 @@ struct BurnDriverD BurnDrvMDg_alex = {
 	"g_alex", NULL, NULL, "1989",
 	"Alex Kidd in the Enchanted Castle (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_alexRomInfo, g_alexRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -324,7 +324,7 @@ struct BurnDriverD BurnDrvMDg_alxkeb = {
 	"g_alxkeb", "g_alex", NULL, "1989",
 	"Alex Kidd in the Enchanted Castle (E) (MD Bundle) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_alxkebRomInfo, g_alxkebRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -342,7 +342,7 @@ struct BurnDriverD BurnDrvMDg_alexke = {
 	"g_alexke", "g_alex", NULL, "1989",
 	"Alex Kidd in the Enchanted Castle (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_alexkeRomInfo, g_alexkeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -360,7 +360,7 @@ struct BurnDriverD BurnDrvMDg_alexkj = {
 	"g_alexkj", "g_alex", NULL, "1989",
 	"Alex Kidd in the Enchanted Castle (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_alexkjRomInfo, g_alexkjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -378,7 +378,7 @@ struct BurnDriverD BurnDrvMDg_alexkk = {
 	"g_alexkk", "g_alex", NULL, "1989",
 	"Alex Kidd - Cheongongmaseong (K) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_alexkkRomInfo, g_alexkkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -396,7 +396,7 @@ struct BurnDriverD BurnDrvMDg_abea = {
 	"g_abea", NULL, NULL, "1988",
 	"Altered Beast (UE) (REV02) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_abeaRomInfo, g_abeaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -414,7 +414,7 @@ struct BurnDriverD BurnDrvMDg_juuo00 = {
 	"g_juuo00", "g_abea", NULL, "1988",
 	"Juu-Ou-Ki (J) (REV00) [c][!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_juuo00RomInfo, g_juuo00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -432,7 +432,7 @@ struct BurnDriverD BurnDrvMDg_juuo01 = {
 	"g_juuo01", "g_abea", NULL, "1988",
 	"Juu-Ou-Ki (J) (REV01) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_juuo01RomInfo, g_juuo01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -450,7 +450,7 @@ struct BurnDriver BurnDrvMDg_arun = {
 	"g_arun", NULL, NULL, "1992",
 	"Atomic Runner (U) [!]\0", NULL, "Data East", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_arunRomInfo, g_arunRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -468,7 +468,7 @@ struct BurnDriver BurnDrvMDg_arunre = {
 	"g_arunre", "g_arun", NULL, "1992",
 	"Atomic Runner (E) [!]\0", NULL, "Data East", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_arunreRomInfo, g_arunreRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -486,7 +486,7 @@ struct BurnDriver BurnDrvMDg_chelno = {
 	"g_chelno", "g_arun", NULL, "1992",
 	"Chelnov (J) [!]\0", NULL, "Data East", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chelnoRomInfo, g_chelnoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -504,7 +504,7 @@ struct BurnDriver BurnDrvMDg_aof = {
 	"g_aof", NULL, NULL, "1994",
 	"Art of Fighting (U) [!]\0", NULL, "SNK / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aofRomInfo, g_aofRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -522,7 +522,7 @@ struct BurnDriver BurnDrvMDg_aofe = {
 	"g_aofe", "g_aof", NULL, "1994",
 	"Art of Fighting (E) [!]\0", NULL, "SNK / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aofeRomInfo, g_aofeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -540,7 +540,7 @@ struct BurnDriver BurnDrvMDg_ryuuko = {
 	"g_ryuuko", "g_aof", NULL, "1994",
 	"Ryuuko no Ken (J) [!]\0", NULL, "SNK / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ryuukoRomInfo, g_ryuukoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -558,7 +558,7 @@ struct BurnDriver BurnDrvMDg_boas = {
 	"g_boas", NULL, NULL, "1995",
 	"Beyond Oasis (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_boasRomInfo, g_boasRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -576,7 +576,7 @@ struct BurnDriver BurnDrvMDg_sthorj = {
 	"g_sthorj", "g_boas", NULL, "1995",
 	"Story of Thor, The - A Successor of The Light (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sthorjRomInfo, g_sthorjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -594,7 +594,7 @@ struct BurnDriver BurnDrvMDg_sthor = {
 	"g_sthor", "g_boas", NULL, "1995",
 	"Story of Thor, The - A Successor of The Light (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sthorRomInfo, g_sthorRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -612,7 +612,7 @@ struct BurnDriver BurnDrvMDg_sthorf = {
 	"g_sthorf", "g_boas", NULL, "1995",
 	"Story of Thor, The - A Successor of The Light (F)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sthorfRomInfo, g_sthorfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -630,7 +630,7 @@ struct BurnDriver BurnDrvMDg_sthorg = {
 	"g_sthorg", "g_boas", NULL, "1995",
 	"Story of Thor, The - A Successor of The Light (G)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sthorgRomInfo, g_sthorgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -648,7 +648,7 @@ struct BurnDriver BurnDrvMDg_sthork = {
 	"g_sthork", "g_boas", NULL, "1995",
 	"Story of Thor, The - A Successor of The Light (K)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sthorkRomInfo, g_sthorkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -666,7 +666,7 @@ struct BurnDriver BurnDrvMDg_sthors = {
 	"g_sthors", "g_boas", NULL, "1995",
 	"Story of Thor, The - A Successor of The Light (S)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sthorsRomInfo, g_sthorsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -684,7 +684,7 @@ struct BurnDriver BurnDrvMDg_sthorb = {
 	"g_sthorb", "g_boas", NULL, "1995",
 	"Story of Thor, The - A Successor of The Light (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sthorbRomInfo, g_sthorbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -702,7 +702,7 @@ struct BurnDriver BurnDrvMDg_bloc = {
 	"g_bloc", NULL, NULL, "1994",
 	"Block Out (W) (REV01) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_blocRomInfo, g_blocRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -720,7 +720,7 @@ struct BurnDriverD BurnDrvMDg_bsht = {
 	"g_bsht", NULL, NULL, "1994",
 	"Blood Shot (E) (M4) [!]\0", NULL, "Domark / Acclaim", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bshtRomInfo, g_bshtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -738,7 +738,7 @@ struct BurnDriverD BurnDrvMDg_bob = {
 	"g_bob", NULL, NULL, "1994",
 	"B.O.B (UE) (REV01) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bobRomInfo, g_bobRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -756,7 +756,7 @@ struct BurnDriverD BurnDrvMDg_sfbob = {
 	"g_sfbob", "g_bob", NULL, "1994",
 	"Space Funky B.O.B. (J) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sfbobRomInfo, g_sfbobRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -774,7 +774,7 @@ struct BurnDriverD BurnDrvMDg_bobb = {
 	"g_bobb", "g_bob", NULL, "1994",
 	"B.O.B (Beta)\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bobbRomInfo, g_bobbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -792,7 +792,7 @@ struct BurnDriverD BurnDrvMDg_drac = {
 	"g_drac", NULL, NULL, "1994",
 	"Bram Stoker's Dracula (U) [!]\0", NULL, "Psygnosis / Sony", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dracRomInfo, g_dracRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -810,7 +810,7 @@ struct BurnDriverD BurnDrvMDg_drace = {
 	"g_drace", "g_drac", NULL, "1994",
 	"Bram Stoker's Dracula (E) [!]\0", NULL, "Psygnosis / Sony", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_draceRomInfo, g_draceRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -828,7 +828,7 @@ struct BurnDriverD BurnDrvMDg_capp = {
 	"g_capp", NULL, NULL, "1900",
 	"Captain Planet and the Planeteers (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cappRomInfo, g_cappRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -846,7 +846,7 @@ struct BurnDriverD BurnDrvMDg_cappb = {
 	"g_cappb", "g_capp", NULL, "1900",
 	"Captain Planet and the Planeteers (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cappbRomInfo, g_cappbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -864,7 +864,7 @@ struct BurnDriverD BurnDrvMDg_cill = {
 	"g_cill", NULL, NULL, "1990",
 	"Castle of Illusion Starring Mickey Mouse (UE) [!]\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cillRomInfo, g_cillRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -882,7 +882,7 @@ struct BurnDriverD BurnDrvMDg_mickey = {
 	"g_mickey", "g_cill", NULL, "1990",
 	"I Love Mickey Mouse - Fushigi no Oshiro Dai Bouken (J) [!]\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mickeyRomInfo, g_mickeyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -900,7 +900,7 @@ struct BurnDriverD BurnDrvMDg_casv = {
 	"g_casv", NULL, NULL, "1994",
 	"Castlevania - Bloodlines (U) [!]\0", NULL, "Konami", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_casvRomInfo, g_casvRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -918,7 +918,7 @@ struct BurnDriverD BurnDrvMDg_cvane = {
 	"g_cvane", "g_casv", NULL, "1994",
 	"Castlevania - The New Generation (E) [!]\0", NULL, "Konami", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cvaneRomInfo, g_cvaneRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -936,7 +936,7 @@ struct BurnDriverD BurnDrvMDg_cvtngb = {
 	"g_cvtngb", "g_casv", NULL, "1994",
 	"Castlevania - The New Generation (Beta)\0", NULL, "Konami", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cvtngbRomInfo, g_cvtngbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -954,7 +954,7 @@ struct BurnDriverD BurnDrvMDg_vamkil = {
 	"g_vamkil", "g_casv", NULL, "1994",
 	"Vampire Killer (J) [!]\0", NULL, "Konami", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vamkilRomInfo, g_vamkilRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -972,7 +972,7 @@ struct BurnDriverD BurnDrvMDg_col = {
 	"g_col", NULL, NULL, "1994",
 	"Columns (W) (REV01) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_colRomInfo, g_colRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -990,7 +990,7 @@ struct BurnDriverD BurnDrvMDg_col00 = {
 	"g_col00", "g_col", NULL, "1994",
 	"Columns (W) (REV00) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_col00RomInfo, g_col00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1008,7 +1008,7 @@ struct BurnDriverD BurnDrvMDg_col3 = {
 	"g_col3", NULL, NULL, "1994",
 	"Columns III - Revenge of Columns (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_col3RomInfo, g_col3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1026,7 +1026,7 @@ struct BurnDriverD BurnDrvMDg_col3j = {
 	"g_col3j", "g_col3", NULL, "1994",
 	"Columns III - Taiketsu! Columns World (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_col3jRomInfo, g_col3jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1044,7 +1044,7 @@ struct BurnDriverD BurnDrvMDg_comx = {
 	"g_comx", NULL, NULL, "1995",
 	"Comix Zone (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_comxRomInfo, g_comxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1062,7 +1062,7 @@ struct BurnDriverD BurnDrvMDg_comixe = {
 	"g_comixe", "g_comx", NULL, "1995",
 	"Comix Zone (E) (M4) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_comixeRomInfo, g_comixeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1080,7 +1080,7 @@ struct BurnDriverD BurnDrvMDg_comixj = {
 	"g_comixj", "g_comx", NULL, "1995",
 	"Comix Zone (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_comixjRomInfo, g_comixjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1098,7 +1098,7 @@ struct BurnDriverD BurnDrvMDg_comixb = {
 	"g_comixb", "g_comx", NULL, "1995",
 	"Comix Zone (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_comixbRomInfo, g_comixbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1116,7 +1116,7 @@ struct BurnDriverD BurnDrvMDg_cont = {
 	"g_cont", NULL, NULL, "1994",
 	"Contra - Hard Corps (U) [!]\0", NULL, "Konami", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_contRomInfo, g_contRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1134,7 +1134,7 @@ struct BurnDriverD BurnDrvMDg_contrj = {
 	"g_contrj", "g_cont", NULL, "1994",
 	"Contra - The Hard Corps (J) [!]\0", NULL, "Konami", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_contrjRomInfo, g_contrjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1152,7 +1152,7 @@ struct BurnDriverD BurnDrvMDg_probot = {
 	"g_probot", "g_cont", NULL, "1994",
 	"Probotector (E) [!]\0", NULL, "Konami", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_probotRomInfo, g_probotRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1170,7 +1170,7 @@ struct BurnDriverD BurnDrvMDg_cfir = {
 	"g_cfir", NULL, NULL, "1991",
 	"CrossFire (U) [c][!]\0", NULL, "Kyugo", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cfirRomInfo, g_cfirRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1188,7 +1188,7 @@ struct BurnDriverD BurnDrvMDg_sair = {
 	"g_sair", "g_cfir", NULL, "1991",
 	"Super Airwolf (J) [!]\0", NULL, "Kyugo", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sairRomInfo, g_sairRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1206,7 +1206,7 @@ struct BurnDriverD BurnDrvMDg_crue = {
 	"g_crue", NULL, NULL, "1992",
 	"Crue Ball (UE) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_crueRomInfo, g_crueRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1224,7 +1224,7 @@ struct BurnDriverD BurnDrvMDg_cruej = {
 	"g_cruej", "g_crue", NULL, "1992",
 	"Crue Ball (J) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cruejRomInfo, g_cruejRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1242,7 +1242,7 @@ struct BurnDriverD BurnDrvMDg_twisf = {
 	"g_twisf", "g_crue", NULL, "1992",
 	"Twisted Flipper (Beta)\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_twisfRomInfo, g_twisfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1260,7 +1260,7 @@ struct BurnDriverD BurnDrvMDg_cc = {
 	"g_cc", NULL, NULL, "1994",
 	"Crusader of Centy (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ccRomInfo, g_ccRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1278,7 +1278,7 @@ struct BurnDriverD BurnDrvMDg_sole = {
 	"g_sole", "g_cc", NULL, "1994",
 	"Soleil (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soleRomInfo, g_soleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1296,7 +1296,7 @@ struct BurnDriverD BurnDrvMDg_soleif = {
 	"g_soleif", "g_cc", NULL, "1994",
 	"Soleil (F) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soleifRomInfo, g_soleifRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1314,7 +1314,7 @@ struct BurnDriverD BurnDrvMDg_soleig = {
 	"g_soleig", "g_cc", NULL, "1994",
 	"Soleil (G) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soleigRomInfo, g_soleigRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1332,7 +1332,7 @@ struct BurnDriverD BurnDrvMDg_soleis = {
 	"g_soleis", "g_cc", NULL, "1994",
 	"Soleil (S)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soleisRomInfo, g_soleisRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1350,7 +1350,7 @@ struct BurnDriverD BurnDrvMDg_soleib = {
 	"g_soleib", "g_cc", NULL, "1994",
 	"Soleil (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soleibRomInfo, g_soleibRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1368,7 +1368,7 @@ struct BurnDriverD BurnDrvMDg_ragna = {
 	"g_ragna", "g_cc", NULL, "1994",
 	"Ragnacenty (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ragnaRomInfo, g_ragnaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1386,7 +1386,7 @@ struct BurnDriverD BurnDrvMDg_shinch = {
 	"g_shinch", "g_cc", NULL, "1994",
 	"Shin Changsegi - Ragnacenty (K) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shinchRomInfo, g_shinchRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1404,7 +1404,7 @@ struct BurnDriverD BurnDrvMDg_ccop = {
 	"g_ccop", NULL, NULL, "1994",
 	"Cyber-Cop (U) [c][!]\0", NULL, "Core / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ccopRomInfo, g_ccopRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1422,7 +1422,7 @@ struct BurnDriverD BurnDrvMDg_corp = {
 	"g_corp", "g_ccop", NULL, "1994",
 	"Corporation (E) [c][!]\0", NULL, "Core / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_corpRomInfo, g_corpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1440,7 +1440,7 @@ struct BurnDriverD BurnDrvMDg_cybo = {
 	"g_cybo", NULL, NULL, "1993",
 	"Cyborg Justice (W) [!]\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cyboRomInfo, g_cyboRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1458,7 +1458,7 @@ struct BurnDriverD BurnDrvMDg_cyjusb = {
 	"g_cyjusb", "g_cybo", NULL, "1993",
 	"Cyborg Justice (Beta)\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cyjusbRomInfo, g_cyjusbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1476,7 +1476,7 @@ struct BurnDriverD BurnDrvMDg_robwrb = {
 	"g_robwrb", "g_cybo", NULL, "1993",
 	"Robot Wreckage (Beta)\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_robwrbRomInfo, g_robwrbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1494,7 +1494,7 @@ struct BurnDriverD BurnDrvMDg_dino = {
 	"g_dino", NULL, NULL, "1994",
 	"Dino Dini's Soccer (E)\0", NULL, "Dino Dini / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dinoRomInfo, g_dinoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1512,7 +1512,7 @@ struct BurnDriverD BurnDrvMDg_dfry = {
 	"g_dfry", NULL, NULL, "1992",
 	"Dragon's Fury (UE) [!]\0", NULL, "Technosoft / Tengen", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dfryRomInfo, g_dfryRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1530,7 +1530,7 @@ struct BurnDriverD BurnDrvMDg_dcmd = {
 	"g_dcmd", "g_dfry", NULL, "1992",
 	"Devil Crash MD (J) [!]\0", NULL, "Technosoft", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dcmdRomInfo, g_dcmdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1548,7 +1548,7 @@ struct BurnDriverD BurnDrvMDg_devi = {
 	"g_devi", NULL, NULL, "1992",
 	"Devilish - The Next Possession (U) [c][!]\0", NULL, "Sage's Creation", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_deviRomInfo, g_deviRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1566,7 +1566,7 @@ struct BurnDriverD BurnDrvMDg_bdomen = {
 	"g_bdomen", "g_devi", NULL, "1992",
 	"Bad Omen (J) [c][!]\0", NULL, "Hot B", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bdomenRomInfo, g_bdomenRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1584,7 +1584,7 @@ struct BurnDriverD BurnDrvMDg_dslay = {
 	"g_dslay", NULL, NULL, "1994",
 	"Dragon Slayer - The Legend of Heroes (J) [!]\0", NULL, "Sega / Falcom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dslayRomInfo, g_dslayRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1602,7 +1602,7 @@ struct BurnDriverD BurnDrvMDg_dslay2 = {
 	"g_dslay2", NULL, NULL, "1994",
 	"Dragon Slayer II - The Legend of Heroes (J) [!]\0", NULL, "Sega / Falcom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dslay2RomInfo, g_dslay2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1620,7 +1620,7 @@ struct BurnDriverD BurnDrvMDg_ecco = {
 	"g_ecco", NULL, NULL, "199?",
 	"ECCO The Dolphin (UE) [!]\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_eccoRomInfo, g_eccoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1638,7 +1638,7 @@ struct BurnDriverD BurnDrvMDg_eccodj = {
 	"g_eccodj", "g_ecco", NULL, "199?",
 	"ECCO The Dolphin (J) [!]\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_eccodjRomInfo, g_eccodjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1656,7 +1656,7 @@ struct BurnDriverD BurnDrvMDg_eco2 = {
 	"g_eco2", NULL, NULL, "1994",
 	"ECCO - The Tides of Time (U) [!]\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_eco2RomInfo, g_eco2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1674,7 +1674,7 @@ struct BurnDriverD BurnDrvMDg_ecco2e = {
 	"g_ecco2e", "g_eco2", NULL, "1994",
 	"ECCO - The Tides of Time (E) [!]\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ecco2eRomInfo, g_ecco2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1692,7 +1692,7 @@ struct BurnDriverD BurnDrvMDg_ecco2j = {
 	"g_ecco2j", "g_eco2", NULL, "1994",
 	"ECCO - The Tides of Time (J) [!]\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ecco2jRomInfo, g_ecco2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1710,7 +1710,7 @@ struct BurnDriverD BurnDrvMDg_ecco2b = {
 	"g_ecco2b", "g_eco2", NULL, "1994",
 	"ECCO - The Tides of Time (Beta)\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ecco2bRomInfo, g_ecco2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1728,7 +1728,7 @@ struct BurnDriverD BurnDrvMDg_ecjr = {
 	"g_ecjr", NULL, NULL, "1995",
 	"ECCO Jr. (U) (REV00) [!]\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ecjrRomInfo, g_ecjrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1746,7 +1746,7 @@ struct BurnDriverD BurnDrvMDg_ecjr01 = {
 	"g_ecjr01", "g_ecjr", NULL, "1995",
 	"ECCO Jr. (U) (REV01) [!]\0", NULL, "Sega / Novotrade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ecjr01RomInfo, g_ecjr01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1764,7 +1764,7 @@ struct BurnDriverD BurnDrvMDg_exmu = {
 	"g_exmu", NULL, NULL, "1992",
 	"Ex-Mutants (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_exmuRomInfo, g_exmuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1782,7 +1782,7 @@ struct BurnDriverD BurnDrvMDg_f22i = {
 	"g_f22i", NULL, NULL, "1991",
 	"F-22 Interceptor (U) (Jun 1992) [c][!]\0", NULL, "Electronic Arts / Edward Lemer", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f22iRomInfo, g_f22iRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1800,7 +1800,7 @@ struct BurnDriverD BurnDrvMDg_f22u = {
 	"g_f22u", "g_f22i", NULL, "1991",
 	"F-22 Interceptor (U) (Sep 1991) [c][!]\0", NULL, "Electronic Arts / Edward Lemer", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f22uRomInfo, g_f22uRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1818,7 +1818,7 @@ struct BurnDriverD BurnDrvMDg_f22ua = {
 	"g_f22ua", "g_f22i", NULL, "1991",
 	"F-22 Interceptor (U) (Sep 1991) [a1][c][!]\0", NULL, "Electronic Arts / Edward Lemer", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f22uaRomInfo, g_f22uaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1836,7 +1836,7 @@ struct BurnDriverD BurnDrvMDg_f22j = {
 	"g_f22j", "g_f22i", NULL, "1991",
 	"F-22 Interceptor - Advanced Tactical Fighter (J) [!]\0", NULL, "Electronic Arts / Edward Lemer", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f22jRomInfo, g_f22jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1854,7 +1854,7 @@ struct BurnDriverD BurnDrvMDg_f22b = {
 	"g_f22b", "g_f22i", NULL, "1991",
 	"F-22 Interceptor (Beta) [c][!]\0", NULL, "Electronic Arts / Edward Lemer", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f22bRomInfo, g_f22bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1872,7 +1872,7 @@ struct BurnDriverD BurnDrvMDg_faf = {
 	"g_faf", NULL, NULL, "1993",
 	"Fatal Fury (U) [!]\0", NULL, "SNK / Takara", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fafRomInfo, g_fafRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1890,7 +1890,7 @@ struct BurnDriverD BurnDrvMDg_fatfue = {
 	"g_fatfue", "g_faf", NULL, "1993",
 	"Fatal Fury (E)\0", NULL, "SNK / Takara", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fatfueRomInfo, g_fatfueRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1908,7 +1908,7 @@ struct BurnDriverD BurnDrvMDg_garou = {
 	"g_garou", "g_faf", NULL, "1993",
 	"Garou Densetsu - Shukumei no Tatakai (J) [!]\0", NULL, "SNK / Takara", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_garouRomInfo, g_garouRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1926,7 +1926,7 @@ struct BurnDriverD BurnDrvMDg_faf2 = {
 	"g_faf2", NULL, NULL, "1994",
 	"Fatal Fury 2 (U) [c][!]\0", NULL, "SNK / Takara", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_faf2RomInfo, g_faf2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1944,7 +1944,7 @@ struct BurnDriverD BurnDrvMDg_garou2 = {
 	"g_garou2", "g_faf2", NULL, "1994",
 	"Garou Densetsu 2 - Arata-naru Tatakai (J) [c][!]\0", NULL, "SNK / Takara", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_garou2RomInfo, g_garou2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1962,7 +1962,7 @@ struct BurnDriverD BurnDrvMDg_fatr = {
 	"g_fatr", NULL, NULL, "1991",
 	"Fatal Rewind (UE) [!]\0", NULL, "Psygnosis", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fatrRomInfo, g_fatrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1980,7 +1980,7 @@ struct BurnDriverD BurnDrvMDg_kgs = {
 	"g_kgs", "g_fatr", NULL, "1991",
 	"Killing Game Show, The (J)\0", NULL, "Psygnosis", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kgsRomInfo, g_kgsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -1998,7 +1998,7 @@ struct BurnDriverD BurnDrvMDg_kgsr = {
 	"g_kgsr", "g_fatr", NULL, "1993",
 	"Killing Game Show, The - 1993 Remix\0", NULL, "Psygnosis", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kgsrRomInfo, g_kgsrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2016,7 +2016,7 @@ struct BurnDriver BurnDrvMDg_fbak = {
 	"g_fbak", NULL, NULL, "1993",
 	"Flashback - The Quest for Identity (U) [!]\0", NULL, "Delphine / US Gold", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fbakRomInfo, g_fbakRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2034,7 +2034,7 @@ struct BurnDriver BurnDrvMDg_fbckua = {
 	"g_fbckua", "g_fbak", NULL, "1993",
 	"Flashback - The Quest for Identity (U) [a1][!]\0", NULL, "Delphine / US Gold", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fbckuaRomInfo, g_fbckuaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2052,7 +2052,7 @@ struct BurnDriver BurnDrvMDg_fbckj = {
 	"g_fbckj", "g_fbak", NULL, "1993",
 	"Flashback - The Quest for Identity (J) [!]\0", NULL, "Delphine / US Gold", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fbckjRomInfo, g_fbckjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2070,7 +2070,7 @@ struct BurnDriver BurnDrvMDg_fbcke = {
 	"g_fbcke", "g_fbak", NULL, "1993",
 	"Flashback - The Quest for Identity (E) [!]\0", NULL, "Delphine / US Gold", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fbckeRomInfo, g_fbckeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2088,7 +2088,7 @@ struct BurnDriverD BurnDrvMDg_gau4 = {
 	"g_gau4", NULL, NULL, "1994",
 	"Gauntlet 4 (UE) (Aug 1993) [!]\0", NULL, "Tengen / Atari", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gau4RomInfo, g_gau4RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2106,7 +2106,7 @@ struct BurnDriverD BurnDrvMDg_gaun4a = {
 	"g_gaun4a", "g_gau4", NULL, "1994",
 	"Gauntlet 4 (UE) (Sep 1993)\0", NULL, "Tengen / Atari", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gaun4aRomInfo, g_gaun4aRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2124,7 +2124,7 @@ struct BurnDriverD BurnDrvMDg_gaunt = {
 	"g_gaunt", "g_gau4", NULL, "1994",
 	"Gauntlet (J) [!]\0", NULL, "Tengen / Atari", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gauntRomInfo, g_gauntRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2142,7 +2142,7 @@ struct BurnDriverD BurnDrvMDg_garg = {
 	"g_garg", NULL, NULL, "1995",
 	"Gargoyles (U) [!]\0", NULL, "Buena Vista Interactive", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gargRomInfo, g_gargRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2160,7 +2160,7 @@ struct BurnDriverD BurnDrvMDg_gng = {
 	"g_gng", NULL, NULL, "1989",
 	"Ghouls 'N Ghosts (UE) (REV02) [!]\0", NULL, "Capcom / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gngRomInfo, g_gngRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2178,7 +2178,7 @@ struct BurnDriverD BurnDrvMDg_gng01 = {
 	"g_gng01", "g_gng", NULL, "1989",
 	"Ghouls 'N Ghosts (UE) (REV01) [!]\0", NULL, "Capcom / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gng01RomInfo, g_gng01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2196,7 +2196,7 @@ struct BurnDriverD BurnDrvMDg_daim = {
 	"g_daim", "g_gng", NULL, "1989",
 	"Dai Makaimura (J) [!]\0", NULL, "Capcom / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_daimRomInfo, g_daimRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2214,7 +2214,7 @@ struct BurnDriverD BurnDrvMDg_gcm = {
 	"g_gcm", NULL, NULL, "1994",
 	"Great Circus Mystery, The - Starring Mickey & Minnie (U) [!]\0", NULL, "Disney / Capcom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gcmRomInfo, g_gcmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2232,7 +2232,7 @@ struct BurnDriverD BurnDrvMDg_minnie = {
 	"g_minnie", "g_gcm", NULL, "1994",
 	"Mickey Mouse - Minnie's Magical Adventure 2 (J) [!]\0", NULL, "Disney / Capcom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_minnieRomInfo, g_minnieRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2250,7 +2250,7 @@ struct BurnDriverD BurnDrvMDg_gsh = {
 	"g_gsh", NULL, NULL, "1993",
 	"Gunstar Heroes (U) [!]\0", NULL, "Sega / Treasure", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gshRomInfo, g_gshRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2268,7 +2268,7 @@ struct BurnDriverD BurnDrvMDg_gshe = {
 	"g_gshe", "g_gsh", NULL, "1993",
 	"Gunstar Heroes (E) [!]\0", NULL, "Sega / Treasure", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gsheRomInfo, g_gsheRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2286,7 +2286,7 @@ struct BurnDriverD BurnDrvMDg_gshj = {
 	"g_gshj", "g_gsh", NULL, "1993",
 	"Gunstar Heroes (J) [!]]\0", NULL, "Sega / Treasure", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gshjRomInfo, g_gshjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2304,7 +2304,7 @@ struct BurnDriverD BurnDrvMDg_gshsam = {
 	"g_gshsam", "g_gsh", NULL, "1993",
 	"Gunstar Heroes (Sample) (J) [!]\0", NULL, "Sega / Treasure", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gshsamRomInfo, g_gshsamRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2322,7 +2322,7 @@ struct BurnDriverD BurnDrvMDg_hard = {
 	"g_hard", NULL, NULL, "1990",
 	"Hard Drivin' (W) [!]\0", NULL, "Tengen / Atari", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hardRomInfo, g_hardRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2340,7 +2340,7 @@ struct BurnDriverD BurnDrvMDg_hsh = {
 	"g_hsh", NULL, NULL, "1993",
 	"High Seas Havoc (U) [!]\0", NULL, "Data East", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hshRomInfo, g_hshRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2358,7 +2358,7 @@ struct BurnDriverD BurnDrvMDg_captha = {
 	"g_captha", "g_hsh", NULL, "1994",
 	"Capt'n Havoc (E) [!]\0", NULL, "Data East / Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_capthaRomInfo, g_capthaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2376,7 +2376,7 @@ struct BurnDriverD BurnDrvMDg_iss = {
 	"g_iss", NULL, NULL, "1996",
 	"International Superstar Soccer Deluxe (E) [!]\0", NULL, "Konami / Factor 5", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_issRomInfo, g_issRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2394,7 +2394,7 @@ struct BurnDriverD BurnDrvMDg_ron98b = {
 	"g_ron98b", "g_iss", NULL, "1998",
 	"Ronaldinho 98 (B) [c][!]\0", NULL, "bootleg", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ron98bRomInfo, g_ron98bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2412,7 +2412,7 @@ struct BurnDriver BurnDrvMDg_bond = {
 	"g_bond", NULL, NULL, "1993",
 	"James Bond 007 - The Duel (UE) [!]\0", NULL, "Domark", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bondRomInfo, g_bondRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2430,7 +2430,7 @@ struct BurnDriver BurnDrvMDg_jbondw = {
 	"g_jbondw", "g_bond", NULL, "1993",
 	"James Bond 007 - The Duel (W)\0", NULL, "Domark", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jbondwRomInfo, g_jbondwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2448,7 +2448,7 @@ struct BurnDriver BurnDrvMDg_007 = {
 	"g_007", "g_bond", NULL, "1993",
 	"007 Shitou (J) [!]\0", NULL, "Domark", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_007RomInfo, g_007RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2466,7 +2466,7 @@ struct BurnDriverD BurnDrvMDg_jp = {
 	"g_jp", NULL, NULL, "1991",
 	"James Pond - Underwater Agent (UE) [!]\0", NULL, "Electronic Arts / Millenium", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jpRomInfo, g_jpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2484,7 +2484,7 @@ struct BurnDriver BurnDrvMDg_jp2 = {
 	"g_jp2", NULL, NULL, "1991",
 	"James Pond II - Codename RoboCod (UE) [!]\0", NULL, "Electronic Arts / Millenium", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jp2RomInfo, g_jp2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveNoByteswapInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2502,7 +2502,7 @@ struct BurnDriver BurnDrvMDg_jp2j = {
 	"g_jp2j", "g_jp2", NULL, "1991",
 	"James Pond II - Codename RoboCod (J) [!]\0", NULL, "Electronic Arts / Millenium", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jp2jRomInfo, g_jp2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2520,7 +2520,7 @@ struct BurnDriver BurnDrvMDg_aqua = {
 	"g_aqua", NULL, NULL, "1992",
 	"Aquatic Games - Starring James Pond, The (UE) [!]\0", NULL, "Electronic Arts / Vectordean / Millenium", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aquaRomInfo, g_aquaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2538,7 +2538,7 @@ struct BurnDriver BurnDrvMDg_jp3 = {
 	"g_jp3", NULL, NULL, "1993",
 	"James Pond 3\0", NULL, "Electronic Arts / Vectordean / Millenium", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jp3RomInfo, g_jp3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2556,7 +2556,7 @@ struct BurnDriverD BurnDrvMDg_jdre = {
 	"g_jdre", NULL, NULL, "1995",
 	"Judge Dredd - The Movie (W) [!]\0", NULL, "Acclaim / Probe", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jdreRomInfo, g_jdreRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2574,7 +2574,7 @@ struct BurnDriverD BurnDrvMDg_jdrdb = {
 	"g_jdrdb", "g_jdre", NULL, "1995",
 	"Judge Dredd - The Movie (Beta)\0", NULL, "Acclaim / Probe", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jdrdbRomInfo, g_jdrdbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2592,7 +2592,7 @@ struct BurnDriverD BurnDrvMDg_jdrdba = {
 	"g_jdrdba", "g_jdre", NULL, "1995",
 	"Judge Dredd - The Movie (Beta) [a1]\0", NULL, "Acclaim / Probe", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jdrdbaRomInfo, g_jdrdbaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2610,7 +2610,7 @@ struct BurnDriverD BurnDrvMDg_kidc = {
 	"g_kidc", NULL, NULL, "1994",
 	"Kid Chameleon (UE) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kidcRomInfo, g_kidcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2628,7 +2628,7 @@ struct BurnDriverD BurnDrvMDg_ckid = {
 	"g_ckid", "g_kidc", NULL, "1994",
 	"Chameleon Kid (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ckidRomInfo, g_ckidRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2646,7 +2646,7 @@ struct BurnDriverD BurnDrvMDg_land = {
 	"g_land", NULL, NULL, "1994",
 	"Landstalker - The Treasures of King Nole (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_landRomInfo, g_landRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2664,7 +2664,7 @@ struct BurnDriverD BurnDrvMDg_landse = {
 	"g_landse", "g_land", NULL, "1994",
 	"Landstalker - The Treasures of King Nole (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_landseRomInfo, g_landseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2682,7 +2682,7 @@ struct BurnDriverD BurnDrvMDg_landsg = {
 	"g_landsg", "g_land", NULL, "1994",
 	"Landstalker - The Treasures of King Nole (G) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_landsgRomInfo, g_landsgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2700,7 +2700,7 @@ struct BurnDriverD BurnDrvMDg_landsf = {
 	"g_landsf", "g_land", NULL, "1994",
 	"Landstalker - The Treasures of King Nole (F)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_landsfRomInfo, g_landsfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2718,7 +2718,7 @@ struct BurnDriverD BurnDrvMDg_landsj = {
 	"g_landsj", "g_land", NULL, "1994",
 	"Landstalker - Koutei no Zaihou (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_landsjRomInfo, g_landsjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2736,7 +2736,7 @@ struct BurnDriverD BurnDrvMDg_landsb = {
 	"g_landsb", "g_land", NULL, "1994",
 	"Landstalker - The Treasures of King Nole (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_landsbRomInfo, g_landsbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2754,7 +2754,7 @@ struct BurnDriverD BurnDrvMDg_or20 = {
 	"g_or20", NULL, NULL, "1993",
 	"OutRun 2019 (U) [!]\0", NULL, "Sims", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_or20RomInfo, g_or20RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2772,7 +2772,7 @@ struct BurnDriverD BurnDrvMDg_2019e = {
 	"g_2019e", "g_or20", NULL, "1993",
 	"OutRun 2019 (E) [!]\0", NULL, "Sims", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_2019eRomInfo, g_2019eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2790,7 +2790,7 @@ struct BurnDriverD BurnDrvMDg_2019j = {
 	"g_2019j", "g_or20", NULL, "1993",
 	"OutRun 2019 (J) [!]\0", NULL, "Sims", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_2019jRomInfo, g_2019jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2808,7 +2808,7 @@ struct BurnDriverD BurnDrvMDg_2019b = {
 	"g_2019b", "g_or20", NULL, "1993",
 	"OutRun 2019 (Beta)\0", NULL, "Sims", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_2019bRomInfo, g_2019bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2826,7 +2826,7 @@ struct BurnDriverD BurnDrvMDg_junkb = {
 	"g_junkb", "g_or20", NULL, "1992",
 	"Junkers High (Beta)\0", NULL, "Sims", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_junkbRomInfo, g_junkbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2844,7 +2844,7 @@ struct BurnDriverD BurnDrvMDg_orur = {
 	"g_orur", NULL, NULL, "199?",
 	"OutRunners (U) [!]\0", NULL, "Sega / Data East", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_orurRomInfo, g_orurRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2862,7 +2862,7 @@ struct BurnDriverD BurnDrvMDg_orunrj = {
 	"g_orunrj", "g_orur", NULL, "199?",
 	"OutRunners (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_orunrjRomInfo, g_orunrjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2880,7 +2880,7 @@ struct BurnDriverD BurnDrvMDg_lem = {
 	"g_lem", NULL, NULL, "1992",
 	"Lemmings (JU) (REV01) [!]\0", NULL, "Psygnosis / Sunsoft", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lemRomInfo, g_lemRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2898,7 +2898,7 @@ struct BurnDriverD BurnDrvMDg_lem00 = {
 	"g_lem00", "g_lem", NULL, "1992",
 	"Lemmings (JU) (REV00) [!]\0", NULL, "Psygnosis / Sunsoft", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lem00RomInfo, g_lem00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2916,7 +2916,7 @@ struct BurnDriverD BurnDrvMDg_leme = {
 	"g_leme", "g_lem", NULL, "1992",
 	"Lemmings (E) [!]\0", NULL, "Psygnosis / Sunsoft", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lemeRomInfo, g_lemeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2934,7 +2934,7 @@ struct BurnDriverD BurnDrvMDg_mazi = {
 	"g_mazi", NULL, NULL, "1993",
 	"Mazin Saga (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_maziRomInfo, g_maziRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2952,7 +2952,7 @@ struct BurnDriverD BurnDrvMDg_mazie = {
 	"g_mazie", "g_mazi", NULL, "1993",
 	"Mazin Wars (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mazieRomInfo, g_mazieRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2970,7 +2970,7 @@ struct BurnDriverD BurnDrvMDg_mazij = {
 	"g_mazij", "g_mazi", NULL, "1993",
 	"Mazin Saga (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mazijRomInfo, g_mazijRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -2988,7 +2988,7 @@ struct BurnDriverD BurnDrvMDg_mazib = {
 	"g_mazib", "g_mazi", NULL, "1993",
 	"Mazin Saga (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mazibRomInfo, g_mazibRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3006,7 +3006,7 @@ struct BurnDriverD BurnDrvMDg_mtla = {
 	"g_mtla", NULL, NULL, "1993",
 	"McDonald's Treasure Land Adventure (U) [!]\0", NULL, "Sega / Treasure / McDonalds", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mtlaRomInfo, g_mtlaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3024,7 +3024,7 @@ struct BurnDriverD BurnDrvMDg_mcdtj = {
 	"g_mcdtj", "g_mtla", NULL, "1993",
 	"McDonald's Treasure Land Adventure (J) [!]\0", NULL, "Sega / Treasure / McDonalds", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mcdtjRomInfo, g_mcdtjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3042,7 +3042,7 @@ struct BurnDriverD BurnDrvMDg_mcdtle = {
 	"g_mcdtle", "g_mtla", NULL, "1993",
 	"McDonald's Treasure Land Adventure (E)\0", NULL, "Sega / Treasure / McDonalds", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mcdtleRomInfo, g_mcdtleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3060,7 +3060,7 @@ struct BurnDriverD BurnDrvMDg_mcdtlb = {
 	"g_mcdtlb", "g_mtla", NULL, "1993",
 	"McDonald's Treasure Land Adventure (Beta)\0", NULL, "Sega / Treasure / McDonalds", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mcdtlbRomInfo, g_mcdtlbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3078,7 +3078,7 @@ struct BurnDriverD BurnDrvMDg_mtur = {
 	"g_mtur", NULL, NULL, "1994",
 	"Mega Turrican (U) [!]\0", NULL, "Data East / Factor 5", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mturRomInfo, g_mturRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3096,7 +3096,7 @@ struct BurnDriverD BurnDrvMDg_mturre = {
 	"g_mturre", "g_mtur", NULL, "1994",
 	"Mega Turrican (E) [!]\0", NULL, "Data East / Factor 5", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mturreRomInfo, g_mturreRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3114,7 +3114,7 @@ struct BurnDriverD BurnDrvMDg_mick = {
 	"g_mick", NULL, NULL, "1994",
 	"Mick & Mack as the Global Gladiators (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mickRomInfo, g_mickRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3132,7 +3132,7 @@ struct BurnDriverD BurnDrvMDg_micmaj = {
 	"g_micmaj", "g_mick", NULL, "1994",
 	"Mick & Mack as the Global Gladiators (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_micmajRomInfo, g_micmajRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3150,7 +3150,7 @@ struct BurnDriverD BurnDrvMDg_micmab = {
 	"g_micmab", "g_mick", NULL, "1994",
 	"Mick & Mack as the Global Gladiators (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_micmabRomInfo, g_micmabRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3168,7 +3168,7 @@ struct BurnDriverD BurnDrvMDg_mman = {
 	"g_mman", NULL, NULL, "1994",
 	"Mickey Mania - Timeless Adventures of Mickey Mouse (U) [!]\0", NULL, "Disney / Sony", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmanRomInfo, g_mmanRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3186,7 +3186,7 @@ struct BurnDriverD BurnDrvMDg_mmanie = {
 	"g_mmanie", "g_mman", NULL, "1994",
 	"Mickey Mania - Timeless Adventures of Mickey Mouse (E) [!]\0", NULL, "Disney / Sony", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmanieRomInfo, g_mmanieRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3204,7 +3204,7 @@ struct BurnDriverD BurnDrvMDg_mmanij = {
 	"g_mmanij", "g_mman", NULL, "1994",
 	"Mickey Mania - Timeless Adventures of Mickey Mouse (J) [!]\0", NULL, "Disney / Sony", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmanijRomInfo, g_mmanijRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3222,7 +3222,7 @@ struct BurnDriverD BurnDrvMDg_mmanib = {
 	"g_mmanib", "g_mman", NULL, "1994",
 	"Mickey Mania - Timeless Adventures of Mickey Mouse (Beta)\0", NULL, "Disney / Sony", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmanibRomInfo, g_mmanibRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3240,7 +3240,7 @@ struct BurnDriver BurnDrvMDg_mic = {
 	"g_mic", NULL, NULL, "1993",
 	"Micro Machines (UE) [c][!]\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_micRomInfo, g_micRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3258,7 +3258,7 @@ struct BurnDriver BurnDrvMDg_mica = {
 	"g_mica", "g_mic", NULL, "1993",
 	"Micro Machines (UE) [a1][c][!]\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_micaRomInfo, g_micaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3276,7 +3276,7 @@ struct BurnDriver BurnDrvMDg_micmc = {
 	"g_micmc", "g_mic", NULL, "1993",
 	"Micro Machines (C)\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_micmcRomInfo, g_micmcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3294,7 +3294,7 @@ struct BurnDriverD BurnDrvMDg_mic2 = {
 	"g_mic2", NULL, NULL, "1994",
 	"Micro Machines 2 - Turbo Tournament (E) [c][!]\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mic2RomInfo, g_mic2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3312,7 +3312,7 @@ struct BurnDriverD BurnDrvMDg_micm2e = {
 	"g_micm2e", "g_mic2", NULL, "1994",
 	"Micro Machines 2 - Turbo Tournament (E) (J-Cart) [c][!]\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_micm2eRomInfo, g_micm2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3330,7 +3330,7 @@ struct BurnDriverD BurnDrvMDg_mic9 = {
 	"g_mic9", NULL, NULL, "1995",
 	"Micro Machines - Turbo Tournament '96 (V1.1) (E) (J-Cart) [c][!]\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mic9RomInfo, g_mic9RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3348,7 +3348,7 @@ struct BurnDriverD BurnDrvMDg_micm96 = {
 	"g_micm96", "g_mic9", NULL, "1995",
 	"Micro Machines - Turbo Tournament '96 (V1.1) (E)\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_micm96RomInfo, g_micm96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3366,7 +3366,7 @@ struct BurnDriverD BurnDrvMDg_micm = {
 	"g_micm", NULL, NULL, "1996",
 	"Micro Machines Military - It's a Blast! (E) (J-Cart) [c][!]\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_micmRomInfo, g_micmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3384,7 +3384,7 @@ struct BurnDriverD BurnDrvMDg_mimmx = {
 	"g_mimmx", "g_micm", NULL, "1996",
 	"Micro Machines Military - It's a Blast! (E) [x]\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mimmxRomInfo, g_mimmxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3402,7 +3402,7 @@ struct BurnDriver BurnDrvMDg_ootw = {
 	"g_ootw", NULL, NULL, "1992",
 	"Out of this World (U) [!]\0", NULL, "Delphine / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ootwRomInfo, g_ootwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3420,7 +3420,7 @@ struct BurnDriver BurnDrvMDg_awld = {
 	"g_awld", "g_ootw", NULL, "1992",
 	"Another World (E) [!]\0", NULL, "Delphine / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_awldRomInfo, g_awldRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3438,7 +3438,7 @@ struct BurnDriver BurnDrvMDg_ootwb = {
 	"g_ootwb", "g_ootw", NULL, "1992",
 	"Out of this World (Beta)\0", NULL, "Delphine / Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ootwbRomInfo, g_ootwbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3456,7 +3456,7 @@ struct BurnDriverD BurnDrvMDg_page = {
 	"g_page", NULL, NULL, "1994",
 	"Pagemaster, The (U) [!]\0", NULL, "Probe", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pageRomInfo, g_pageRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3474,7 +3474,7 @@ struct BurnDriverD BurnDrvMDg_pageme = {
 	"g_pageme", "g_page", NULL, "1994",
 	"Pagemaster, The (E) [!]\0", NULL, "Probe", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pagemeRomInfo, g_pagemeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3492,7 +3492,7 @@ struct BurnDriverD BurnDrvMDg_pagemb = {
 	"g_pagemb", "g_page", NULL, "1994",
 	"Pagemaster, The (Beta)\0", NULL, "Probe", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pagembRomInfo, g_pagembRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3510,7 +3510,7 @@ struct BurnDriverD BurnDrvMDg_pst2 = {
 	"g_pst2", NULL, NULL, "1989",
 	"Phantasy Star II (UE) (REV02) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pst2RomInfo, g_pst2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3528,7 +3528,7 @@ struct BurnDriverD BurnDrvMDg_pst201 = {
 	"g_pst201", "g_pst2", NULL, "1989",
 	"Phantasy Star II (UE) (REV01)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pst201RomInfo, g_pst201RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3546,7 +3546,7 @@ struct BurnDriverD BurnDrvMDg_pstr2j = {
 	"g_pstr2j", "g_pst2", NULL, "1989",
 	"Phantasy Star II (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pstr2jRomInfo, g_pstr2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3564,7 +3564,7 @@ struct BurnDriverD BurnDrvMDg_phst2b = {
 	"g_phst2b", "g_pst2", NULL, "1989",
 	"Phantasy Star II (B) (REV01) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_phst2bRomInfo, g_phst2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3582,7 +3582,7 @@ struct BurnDriverD BurnDrvMDg_pst3 = {
 	"g_pst3", NULL, NULL, "1991",
 	"Phantasy Star III - Generations of Doom (UE) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pst3RomInfo, g_pst3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3600,7 +3600,7 @@ struct BurnDriverD BurnDrvMDg_pstr3j = {
 	"g_pstr3j", "g_pst3", NULL, "1991",
 	"Phantasy Star III - Toki no Keishousha (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pstr3jRomInfo, g_pstr3jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3618,7 +3618,7 @@ struct BurnDriverD BurnDrvMDg_phst3b = {
 	"g_phst3b", "g_pst3", NULL, "1991",
 	"Phantasy Star III - Generations of Doom (B) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_phst3bRomInfo, g_phst3bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3636,7 +3636,7 @@ struct BurnDriverD BurnDrvMDg_pst4 = {
 	"g_pst4", NULL, NULL, "1994",
 	"Phantasy Star - The End of the Millenium (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pst4RomInfo, g_pst4RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3654,7 +3654,7 @@ struct BurnDriverD BurnDrvMDg_pstr4j = {
 	"g_pstr4j", "g_pst4", NULL, "1994",
 	"Phantasy Star - The End of the Millenium (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pstr4jRomInfo, g_pstr4jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3672,7 +3672,7 @@ struct BurnDriverD BurnDrvMDg_prin = {
 	"g_prin", NULL, NULL, "1993",
 	"Prince of Persia (U) [!]\0", NULL, "Domark", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_prinRomInfo, g_prinRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3690,7 +3690,7 @@ struct BurnDriverD BurnDrvMDg_perse = {
 	"g_perse", "g_prin", NULL, "1993",
 	"Prince of Persia (E)\0", NULL, "Domark", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_perseRomInfo, g_perseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3708,7 +3708,7 @@ struct BurnDriverD BurnDrvMDg_persb1 = {
 	"g_persb1", "g_prin", NULL, "1993",
 	"Prince of Persia (Beta 1)\0", NULL, "Domark", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_persb1RomInfo, g_persb1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3726,7 +3726,7 @@ struct BurnDriverD BurnDrvMDg_persb2 = {
 	"g_persb2", "g_prin", NULL, "1993",
 	"Prince of Persia (Beta 2)\0", NULL, "Domark", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_persb2RomInfo, g_persb2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3744,7 +3744,7 @@ struct BurnDriverD BurnDrvMDg_quac = {
 	"g_quac", NULL, NULL, "1991",
 	"Quack Shot Starring Donald Duck (W) (REV01) [!]\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_quacRomInfo, g_quacRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3762,7 +3762,7 @@ struct BurnDriverD BurnDrvMDg_quac00 = {
 	"g_quac00", "g_quac", NULL, "1994",
 	"Quack Shot Starring Donald Duck (W) (REV00) [!]\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_quac00RomInfo, g_quac00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3780,7 +3780,7 @@ struct BurnDriverD BurnDrvMDg_quac01 = {
 	"g_quac01", "g_quac", NULL, "1994",
 	"Quack Shot Starring Donald Duck (W) (REV01) [a1][c][!]\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_quac01RomInfo, g_quac01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3798,7 +3798,7 @@ struct BurnDriverD BurnDrvMDg_race = {
 	"g_race", NULL, NULL, "1993",
 	"Race Drivin' (U) [!]\0", NULL, "Tengen / Atari", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_raceRomInfo, g_raceRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3816,7 +3816,7 @@ struct BurnDriverD BurnDrvMDg_revs = {
 	"g_revs", NULL, NULL, "1990",
 	"Revenge of Shinobi, The (W) (REV03) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_revsRomInfo, g_revsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3834,7 +3834,7 @@ struct BurnDriverD BurnDrvMDg_rshi00 = {
 	"g_rshi00", "g_revs", NULL, "1990",
 	"Revenge of Shinobi, The (W) (REV00) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rshi00RomInfo, g_rshi00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3852,7 +3852,7 @@ struct BurnDriverD BurnDrvMDg_rshi01 = {
 	"g_rshi01", "g_revs", NULL, "1990",
 	"Revenge of Shinobi, The (W) (REV01) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rshi01RomInfo, g_rshi01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3870,7 +3870,7 @@ struct BurnDriverD BurnDrvMDg_rshi02 = {
 	"g_rshi02", "g_revs", NULL, "1990",
 	"Revenge of Shinobi, The (W) (REV02) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rshi02RomInfo, g_rshi02RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3888,7 +3888,7 @@ struct BurnDriverD BurnDrvMDg_sams = {
 	"g_sams", NULL, NULL, "1994",
 	"Samurai Shodown (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_samsRomInfo, g_samsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3906,7 +3906,7 @@ struct BurnDriverD BurnDrvMDg_samshe = {
 	"g_samshe", "g_sams", NULL, "1994",
 	"Samurai Shodown (E) [c][!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_samsheRomInfo, g_samsheRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3924,7 +3924,7 @@ struct BurnDriverD BurnDrvMDg_samspi = {
 	"g_samspi", "g_sams", NULL, "1994",
 	"Samurai Spirits (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_samspiRomInfo, g_samspiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3942,7 +3942,7 @@ struct BurnDriverD BurnDrvMDg_sitd = {
 	"g_sitd", NULL, NULL, "1991",
 	"Shining in the Darkness (UE) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sitdRomInfo, g_sitdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3960,7 +3960,7 @@ struct BurnDriverD BurnDrvMDg_shdrkj = {
 	"g_shdrkj", "g_sitd", NULL, "1991",
 	"Shining and the Darkness (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shdrkjRomInfo, g_shdrkjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3978,7 +3978,7 @@ struct BurnDriverD BurnDrvMDg_shdrkb = {
 	"g_shdrkb", "g_sitd", NULL, "1991",
 	"Shining in the Darkness (B) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shdrkbRomInfo, g_shdrkbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -3996,7 +3996,7 @@ struct BurnDriverD BurnDrvMDg_shf1 = {
 	"g_shf1", NULL, NULL, "1993",
 	"Shining Force (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shf1RomInfo, g_shf1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4014,7 +4014,7 @@ struct BurnDriverD BurnDrvMDg_shfrcj = {
 	"g_shfrcj", "g_shf1", NULL, "1993",
 	"Shining Force - The Legacy of Great Intention (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shfrcjRomInfo, g_shfrcjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4032,7 +4032,7 @@ struct BurnDriverD BurnDrvMDg_sfrcbt = {
 	"g_sfrcbt", "g_shf1", NULL, "1993",
 	"Shining Force (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sfrcbtRomInfo, g_sfrcbtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4050,7 +4050,7 @@ struct BurnDriverD BurnDrvMDg_shf2 = {
 	"g_shf2", NULL, NULL, "1994",
 	"Shining Force II (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shf2RomInfo, g_shf2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4068,7 +4068,7 @@ struct BurnDriverD BurnDrvMDg_shfr2e = {
 	"g_shfr2e", "g_shf2", NULL, "1994",
 	"Shining Force II (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shfr2eRomInfo, g_shfr2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4086,7 +4086,7 @@ struct BurnDriverD BurnDrvMDg_shfr2j = {
 	"g_shfr2j", "g_shf2", NULL, "1994",
 	"Shining Force II - Inishie no Fuuin (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shfr2jRomInfo, g_shfr2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4104,7 +4104,7 @@ struct BurnDriverD BurnDrvMDg_shi3 = {
 	"g_shi3", NULL, NULL, "1993",
 	"Shinobi III - Return of the Ninja Master (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shi3RomInfo, g_shi3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4122,7 +4122,7 @@ struct BurnDriverD BurnDrvMDg_shin3e = {
 	"g_shin3e", "g_shi3", NULL, "1993",
 	"Shinobi III - Return of the Ninja Master (E) [c][!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shin3eRomInfo, g_shin3eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4140,7 +4140,7 @@ struct BurnDriverD BurnDrvMDg_sshin2 = {
 	"g_sshin2", "g_shi3", NULL, "1993",
 	"Super Shinobi II, The (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sshin2RomInfo, g_sshin2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4158,7 +4158,7 @@ struct BurnDriverD BurnDrvMDg_sshi2b = {
 	"g_sshi2b", "g_shi3", NULL, "1993",
 	"Super Shinobi II, The (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sshi2bRomInfo, g_sshi2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4176,7 +4176,7 @@ struct BurnDriverD BurnDrvMDg_skid = {
 	"g_skid", NULL, NULL, "1995",
 	"Super Skidmarks (E) (J-Cart) [!]\0", NULL, "Codemasters / Acid", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_skidRomInfo, g_skidRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4194,7 +4194,7 @@ struct BurnDriverD BurnDrvMDg_skida = {
 	"g_skida", "g_skid", NULL, "1995",
 	"Super Skidmarks (E) [a1]\0", NULL, "Codemasters / Acid", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_skidaRomInfo, g_skidaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4212,7 +4212,7 @@ struct BurnDriverD BurnDrvMDg_ranx = {
 	"g_ranx", NULL, NULL, "1993",
 	"Ranger-X (U) [!]\0", NULL, "Sega / Gau", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ranxRomInfo, g_ranxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4230,7 +4230,7 @@ struct BurnDriverD BurnDrvMDg_ranxe = {
 	"g_ranxe", "g_ranx", NULL, "1993",
 	"Ranger-X (E) [!]\0", NULL, "Sega / Gau", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ranxeRomInfo, g_ranxeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4248,7 +4248,7 @@ struct BurnDriverD BurnDrvMDg_exranz = {
 	"g_exranz", "g_ranx", NULL, "1993",
 	"Ex-Ranza (J) [!]\0", NULL, "Sega / Gau", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_exranzRomInfo, g_exranzRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4266,7 +4266,7 @@ struct BurnDriverD BurnDrvMDg_exrnzb = {
 	"g_exrnzb", "g_ranx", NULL, "1993",
 	"Ex-Ranza (Beta)\0", NULL, "Sega / Gau", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_exrnzbRomInfo, g_exrnzbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4284,7 +4284,7 @@ struct BurnDriverD BurnDrvMDg_rrsh = {
 	"g_rrsh", NULL, NULL, "1991",
 	"Road Rash (UE) [c][!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rrshRomInfo, g_rrshRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4302,7 +4302,7 @@ struct BurnDriverD BurnDrvMDg_rrs2 = {
 	"g_rrs2", NULL, NULL, "1992",
 	"Road Rash II (UE) (REV00) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rrs2RomInfo, g_rrs2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4320,7 +4320,7 @@ struct BurnDriverD BurnDrvMDg_rrsh22 = {
 	"g_rrsh22", "g_rrs2", NULL, "1992",
 	"Road Rash II (UE) (REV02) [c][!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rrsh22RomInfo, g_rrsh22RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4338,7 +4338,7 @@ struct BurnDriverD BurnDrvMDg_rrsh2j = {
 	"g_rrsh2j", "g_rrs2", NULL, "1992",
 	"Road Rash II (J) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rrsh2jRomInfo, g_rrsh2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4356,7 +4356,7 @@ struct BurnDriverD BurnDrvMDg_rrs3 = {
 	"g_rrs3", NULL, NULL, "1995",
 	"Road Rash 3 (UE) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rrs3RomInfo, g_rrs3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4374,7 +4374,7 @@ struct BurnDriverD BurnDrvMDg_robt = {
 	"g_robt", NULL, NULL, "1993",
 	"Robocop Versus The Terminator (U) [!]\0", NULL, "Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_robtRomInfo, g_robtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4392,7 +4392,7 @@ struct BurnDriverD BurnDrvMDg_robte = {
 	"g_robte", "g_robt", NULL, "1993",
 	"Robocop Versus The Terminator (E)\0", NULL, "Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_robteRomInfo, g_robteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4410,7 +4410,7 @@ struct BurnDriverD BurnDrvMDg_robtb1 = {
 	"g_robtb1", "g_robt", NULL, "1993",
 	"Robocop Versus The Terminator (Beta 1)\0", NULL, "Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_robtb1RomInfo, g_robtb1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4428,7 +4428,7 @@ struct BurnDriverD BurnDrvMDg_robtb2 = {
 	"g_robtb2", "g_robt", NULL, "1993",
 	"Robocop Versus The Terminator (Beta 2)\0", NULL, "Virgin", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_robtb2RomInfo, g_robtb2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4446,7 +4446,7 @@ struct BurnDriverD BurnDrvMDg_robo3 = {
 	"g_robo3", NULL, NULL, "1993",
 	"Robocop 3 (UE) [!]\0", NULL, "Acclaim", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_robo3RomInfo, g_robo3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4464,7 +4464,7 @@ struct BurnDriverD BurnDrvMDg_rolo = {
 	"g_rolo", NULL, NULL, "1992",
 	"Rolo to the Rescue (UE) [!]\0", NULL, "Electronic Arts / Vectordean", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_roloRomInfo, g_roloRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4482,7 +4482,7 @@ struct BurnDriverD BurnDrvMDg_zouzou = {
 	"g_zouzou", "g_rolo", NULL, "1992",
 	"Zou! Zou! Zou! Rescue Daisenryaku (J) [!]\0", NULL, "Electronic Arts / Vectordean", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zouzouRomInfo, g_zouzouRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4500,7 +4500,7 @@ struct BurnDriver BurnDrvMDg_seni = {
 	"g_seni", NULL, NULL, "1994",
 	"Sensible Soccer - International Edition (E) (M4) [!]\0", NULL, "Sensible Software", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_seniRomInfo, g_seniRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4518,7 +4518,7 @@ struct BurnDriver BurnDrvMDg_sen = {
 	"g_sen", "g_seni", NULL, "1993",
 	"Sensible Soccer (E) (M4) [!]\0", NULL, "Sensible Software", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_senRomInfo, g_senRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4536,7 +4536,7 @@ struct BurnDriverD BurnDrvMDg_sensib = {
 	"g_sensib", "g_seni", NULL, "1993",
 	"Sensible Soccer (Beta)\0", NULL, "Sensible Software", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sensibRomInfo, g_sensibRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4554,7 +4554,7 @@ struct BurnDriverD BurnDrvMDg_smgp = {
 	"g_smgp", NULL, NULL, "1990",
 	"Super Monaco Grand Prix (W) (M2) (REV02) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_smgpRomInfo, g_smgpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4572,7 +4572,7 @@ struct BurnDriverD BurnDrvMDg_smgp00 = {
 	"g_smgp00", "g_smgp", NULL, "1990",
 	"Super Monaco Grand Prix (W) (M2) (REV00) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_smgp00RomInfo, g_smgp00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4590,7 +4590,7 @@ struct BurnDriverD BurnDrvMDg_smgp01 = {
 	"g_smgp01", "g_smgp", NULL, "1990",
 	"Super Monaco Grand Prix (W) (M2) (REV01) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_smgp01RomInfo, g_smgp01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4608,7 +4608,7 @@ struct BurnDriverD BurnDrvMDg_smgp03 = {
 	"g_smgp03", "g_smgp", NULL, "1990",
 	"Super Monaco Grand Prix (U) (M2) (REV03) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_smgp03RomInfo, g_smgp03RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4626,7 +4626,7 @@ struct BurnDriver BurnDrvMDg_soni = {
 	"g_soni", NULL, NULL, "1991",
 	"Sonic The Hedgehog (W) (REV01) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soniRomInfo, g_soniRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4644,7 +4644,7 @@ struct BurnDriver BurnDrvMDg_soni00 = {
 	"g_soni00", "g_soni", NULL, "1991",
 	"Sonic The Hedgehog (W) (REV00) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soni00RomInfo, g_soni00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4662,7 +4662,7 @@ struct BurnDriver BurnDrvMDg_son2 = {
 	"g_son2", NULL, NULL, "1992",
 	"Sonic The Hedgehog 2 (W) (REV01) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_son2RomInfo, g_son2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4680,7 +4680,7 @@ struct BurnDriver BurnDrvMDg_son2a = {
 	"g_son2a", "g_son2", NULL, "1992",
 	"Sonic The Hedgehog 2 (W) (REVSC02)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_son2aRomInfo, g_son2aRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4698,7 +4698,7 @@ struct BurnDriver BurnDrvMDg_son200 = {
 	"g_son200", "g_son2", NULL, "1992",
 	"Sonic The Hedgehog 2 (W) (REV00) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_son200RomInfo, g_son200RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4716,7 +4716,7 @@ struct BurnDriverD BurnDrvMDg_soni2p = {
 	"g_soni2p", "g_son2", NULL, "1992",
 	"Sonic The Hedgehog 2 (Prototype) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soni2pRomInfo, g_soni2pRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4734,7 +4734,7 @@ struct BurnDriver BurnDrvMDg_son3 = {
 	"g_son3", NULL, NULL, "1994",
 	"Sonic The Hedgehog 3 (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_son3RomInfo, g_son3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4752,7 +4752,7 @@ struct BurnDriver BurnDrvMDg_son3e = {
 	"g_son3e", "g_son3", NULL, "1994",
 	"Sonic The Hedgehog 3 (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_son3eRomInfo, g_son3eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4770,7 +4770,7 @@ struct BurnDriver BurnDrvMDg_son3j = {
 	"g_son3j", "g_son3", NULL, "1994",
 	"Sonic The Hedgehog 3 (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_son3jRomInfo, g_son3jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4788,7 +4788,7 @@ struct BurnDriver BurnDrvMDg_s3d = {
 	"g_s3d", NULL, NULL, "1996",
 	"Sonic 3D Blast (UE) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_s3dRomInfo, g_s3dRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4806,7 +4806,7 @@ struct BurnDriver BurnDrvMDg_snkn = {
 	"g_snkn", NULL, NULL, "1994",
 	"Sonic and Knuckles (W) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_snknRomInfo, g_snknRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4824,7 +4824,7 @@ struct BurnDriver BurnDrvMDg_sks1 = {
 	"g_sks1", "g_snkn", NULL, "1994",
 	"Sonic and Knuckles & Sonic 1 (W) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sks1RomInfo, g_sks1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4842,7 +4842,7 @@ struct BurnDriver BurnDrvMDg_sks2 = {
 	"g_sks2", "g_snkn", NULL, "1994",
 	"Sonic and Knuckles & Sonic 2 (W) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sks2RomInfo, g_sks2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4860,7 +4860,7 @@ struct BurnDriver BurnDrvMDg_sks3 = {
 	"g_sks3", "g_snkn", NULL, "1994",
 	"Sonic and Knuckles & Sonic 3 (W) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sks3RomInfo, g_sks3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4878,7 +4878,7 @@ struct BurnDriverD BurnDrvMDg_sons = {
 	"g_sons", NULL, NULL, "1993",
 	"Sonic Spinball (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sonsRomInfo, g_sonsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4896,7 +4896,7 @@ struct BurnDriverD BurnDrvMDg_sspa = {
 	"g_sspa", "g_sons", NULL, "1993",
 	"Sonic Spinball (U) (alt music) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sspaRomInfo, g_sspaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4914,7 +4914,7 @@ struct BurnDriverD BurnDrvMDg_sonse = {
 	"g_sonse", "g_sons", NULL, "1993",
 	"Sonic Spinball (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sonseRomInfo, g_sonseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4932,7 +4932,7 @@ struct BurnDriverD BurnDrvMDg_sonsj = {
 	"g_sonsj", "g_sons", NULL, "1993",
 	"Sonic Spinball (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sonsjRomInfo, g_sonsjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4950,7 +4950,7 @@ struct BurnDriverD BurnDrvMDg_sonsb = {
 	"g_sonsb", "g_sons", NULL, "1993",
 	"Sonic Spinball (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sonsbRomInfo, g_sonsbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4968,7 +4968,7 @@ struct BurnDriverD BurnDrvMDg_sock = {
 	"g_sock", NULL, NULL, "1993",
 	"Socket (U) [!]\0", NULL, "Vic Tokai", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sockRomInfo, g_sockRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -4986,7 +4986,7 @@ struct BurnDriverD BurnDrvMDg_tdom1 = {
 	"g_tdom1", "g_sock", NULL, "1993",
 	"Time Dominator 1st (J) [!]\0", NULL, "Vic Tokai", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tdom1RomInfo, g_tdom1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5004,7 +5004,7 @@ struct BurnDriverD BurnDrvMDg_s_as = {
 	"g_s_as", NULL, NULL, "1995",
 	"Spider-Man - The Animated Series (W) [!]\0", NULL, "Acclaim", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_s_asRomInfo, g_s_asRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5022,7 +5022,7 @@ struct BurnDriverD BurnDrvMDg_s_asb1 = {
 	"g_s_asb1", "g_s_as", NULL, "1995",
 	"Spider-Man - The Animated Series (Beta 1)\0", NULL, "Acclaim", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_s_asb1RomInfo, g_s_asb1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5040,7 +5040,7 @@ struct BurnDriverD BurnDrvMDg_s_asb2 = {
 	"g_s_asb2", "g_s_as", NULL, "1995",
 	"Spider-Man - The Animated Series (Beta 2)\0", NULL, "Acclaim", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_s_asb2RomInfo, g_s_asb2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5058,7 +5058,7 @@ struct BurnDriverD BurnDrvMDg_spo2 = {
 	"g_spo2", NULL, NULL, "199?",
 	"Spot Goes to Hollywood (U) (REV01) [!]\0", NULL, "Virgin / Acclaim / Eurocom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_spo2RomInfo, g_spo2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5076,7 +5076,7 @@ struct BurnDriverD BurnDrvMDg_spot2e = {
 	"g_spot2e", "g_spo2", NULL, "199?",
 	"Spot Goes to Hollywood (E) [!]\0", NULL, "Virgin / Acclaim / Eurocom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_spot2eRomInfo, g_spot2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5094,7 +5094,7 @@ struct BurnDriverD BurnDrvMDg_semp = {
 	"g_semp", NULL, NULL, "1994",
 	"Steel Empire, The (UE) [!]\0", NULL, "Hot B / Acclaim", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sempRomInfo, g_sempRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5112,7 +5112,7 @@ struct BurnDriverD BurnDrvMDg_kout = {
 	"g_kout", "g_semp", NULL, "1994",
 	"Koutetsu Teikoku (J) [!]\0", NULL, "Hot B", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_koutRomInfo, g_koutRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5130,7 +5130,7 @@ struct BurnDriverD BurnDrvMDg_sempb = {
 	"g_sempb", "g_semp", NULL, "1994",
 	"Steel Empire, The (Beta)\0", NULL, "Hot B / Acclaim", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sempbRomInfo, g_sempbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5148,7 +5148,7 @@ struct BurnDriver BurnDrvMDg_sor = {
 	"g_sor", NULL, NULL, "1991",
 	"Streets of Rage (W) (REV01) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sorRomInfo, g_sorRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5166,7 +5166,7 @@ struct BurnDriver BurnDrvMDg_sor00 = {
 	"g_sor00", "g_sor", NULL, "1991",
 	"Streets of Rage (W) (REV00) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sor00RomInfo, g_sor00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5184,7 +5184,7 @@ struct BurnDriver BurnDrvMDg_sor2 = {
 	"g_sor2", NULL, NULL, "1992",
 	"Streets of Rage 2 (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sor2RomInfo, g_sor2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5202,7 +5202,7 @@ struct BurnDriver BurnDrvMDg_sor2je = {
 	"g_sor2je", "g_sor2", NULL, "1992",
 	"Streets of Rage 2 (JE) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sor2jeRomInfo, g_sor2jeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5220,7 +5220,7 @@ struct BurnDriver BurnDrvMDg_bk2b = {
 	"g_bk2b", "g_sor2", NULL, "1992",
 	"Bare Knuckle II (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bk2bRomInfo, g_bk2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5238,7 +5238,7 @@ struct BurnDriver BurnDrvMDg_sor3 = {
 	"g_sor3", NULL, NULL, "1994",
 	"Streets of Rage 3 (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sor3RomInfo, g_sor3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5256,7 +5256,7 @@ struct BurnDriver BurnDrvMDg_sor3e = {
 	"g_sor3e", "g_sor3", NULL, "1994",
 	"Streets of Rage 3 (E) (Apr 1994) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sor3eRomInfo, g_sor3eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5274,7 +5274,7 @@ struct BurnDriver BurnDrvMDg_sor3ea = {
 	"g_sor3ea", "g_sor3", NULL, "1994",
 	"Streets of Rage 3 (E) (May 1994) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sor3eaRomInfo, g_sor3eaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5292,7 +5292,7 @@ struct BurnDriver BurnDrvMDg_bar3 = {
 	"g_bar3", "g_sor3", NULL, "1994",
 	"Bare Knuckle III (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bar3RomInfo, g_bar3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5310,7 +5310,7 @@ struct BurnDriver BurnDrvMDg_bk3b = {
 	"g_bk3b", "g_sor3", NULL, "1994",
 	"Bare Knuckle III (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bk3bRomInfo, g_bk3bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5328,7 +5328,7 @@ struct BurnDriverD BurnDrvMDg_str2 = {
 	"g_str2", NULL, NULL, "1994",
 	"Journey From Darkness - Strider Returns (U) [c][!]\0", NULL, "Tiertex / Capcom / US Gold", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_str2RomInfo, g_str2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5346,7 +5346,7 @@ struct BurnDriverD BurnDrvMDg_strid2 = {
 	"g_strid2", "g_str2", NULL, "1994",
 	"Strider II (E) [c][!]\0", NULL, "Tiertex / Capcom / US Gold", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_strid2RomInfo, g_strid2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5364,7 +5364,7 @@ struct BurnDriverD BurnDrvMDg_subt = {
 	"g_subt", NULL, NULL, "1993",
 	"Sub-Terrania (U) [!]\0", NULL, "Zyrinx", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_subtRomInfo, g_subtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5382,7 +5382,7 @@ struct BurnDriverD BurnDrvMDg_subte = {
 	"g_subte", "g_subt", NULL, "1993",
 	"Sub-Terrania (E) [!]\0", NULL, "Zyrinx", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_subteRomInfo, g_subteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5400,7 +5400,7 @@ struct BurnDriverD BurnDrvMDg_subtj = {
 	"g_subtj", "g_subt", NULL, "1993",
 	"Sub-Terrania (J) [!]\0", NULL, "Zyrinx", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_subtjRomInfo, g_subtjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5418,7 +5418,7 @@ struct BurnDriverD BurnDrvMDg_subtb1 = {
 	"g_subtb1", "g_subt", NULL, "1993",
 	"Sub-Terrania (Beta 1)\0", NULL, "Zyrinx", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_subtb1RomInfo, g_subtb1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5436,7 +5436,7 @@ struct BurnDriverD BurnDrvMDg_subtb2 = {
 	"g_subtb2", "g_subt", NULL, "1993",
 	"Sub-Terrania (Beta 2)\0", NULL, "Zyrinx", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_subtb2RomInfo, g_subtb2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5454,7 +5454,7 @@ struct BurnDriverD BurnDrvMDg_ssf2 = {
 	"g_ssf2", NULL, NULL, "1994",
 	"Super Street Fighter II - The New Challengers (U) [c][!]\0", NULL, "Capcom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ssf2RomInfo, g_ssf2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5472,7 +5472,7 @@ struct BurnDriverD BurnDrvMDg_ssf2e = {
 	"g_ssf2e", "g_ssf2", NULL, "1994",
 	"Super Street Fighter II - The New Challengers (E) [c][!]\0", NULL, "Capcom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ssf2eRomInfo, g_ssf2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5490,7 +5490,7 @@ struct BurnDriverD BurnDrvMDg_ssf2j = {
 	"g_ssf2j", "g_ssf2", NULL, "1994",
 	"Super Street Fighter II - The New Challengers (J) [c][!]\0", NULL, "Capcom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ssf2jRomInfo, g_ssf2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5508,7 +5508,7 @@ struct BurnDriverD BurnDrvMDg_lighfr = {
 	"g_lighfr", NULL, NULL, "1992",
 	"Lightening Force - Quest for the Darkstar (U) [c][!]\0", NULL, "Tecnosoft", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lighfrRomInfo, g_lighfrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5526,7 +5526,7 @@ struct BurnDriverD BurnDrvMDg_tf4 = {
 	"g_tf4", "g_lighfr", NULL, "1992",
 	"Thunder Force IV (J) [!]\0", NULL, "Tecnosoft", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tf4RomInfo, g_tf4RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5544,7 +5544,7 @@ struct BurnDriverD BurnDrvMDg_tf4e = {
 	"g_tf4e", "g_lighfr", NULL, "1992",
 	"Thunder Force IV (E) [c][!]\0", NULL, "Tecnosoft", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tf4eRomInfo, g_tf4eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5562,7 +5562,7 @@ struct BurnDriver BurnDrvMDg_tje00 = {
 	"g_tje00", NULL, NULL, "1991",
 	"Toejam & Earl (U) (REV00) [!]\0", NULL, "Sega / JVP", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tje00RomInfo, g_tje00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5580,7 +5580,7 @@ struct BurnDriver BurnDrvMDg_tje = {
 	"g_tje", "g_tje00", NULL, "1991",
 	"Toejam & Earl (J) (REV02) [!]\0", NULL, "Sega / JVP", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tjeRomInfo, g_tjeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5598,7 +5598,7 @@ struct BurnDriverD BurnDrvMDg_tje2 = {
 	"g_tje2", NULL, NULL, "1993",
 	"Toejam & Earl in Panic on Funkotron (U) [!]\0", NULL, "Sega / JVP", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tje2RomInfo, g_tje2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5616,7 +5616,7 @@ struct BurnDriverD BurnDrvMDg_tje2e = {
 	"g_tje2e", "g_tje2", NULL, "1993",
 	"Toejam & Earl in Panic on Funkotron (E) [!]\0", NULL, "Sega / JVP", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tje2eRomInfo, g_tje2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5634,7 +5634,7 @@ struct BurnDriverD BurnDrvMDg_tje2g = {
 	"g_tje2g", "g_tje2", NULL, "1993",
 	"Toejam & Earl in Panic on Funkotron (G) [!]\0", NULL, "Sega / JVP", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tje2gRomInfo, g_tje2gRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5652,7 +5652,7 @@ struct BurnDriverD BurnDrvMDg_tje2j = {
 	"g_tje2j", "g_tje2", NULL, "1993",
 	"Toejam & Earl in Panic on Funkotron (J) [!]\0", NULL, "Sega / JVP", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tje2jRomInfo, g_tje2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5670,7 +5670,7 @@ struct BurnDriverD BurnDrvMDg_tyra = {
 	"g_tyra", NULL, NULL, "1994",
 	"Tyrants - Fight Through Time (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tyraRomInfo, g_tyraRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5688,7 +5688,7 @@ struct BurnDriverD BurnDrvMDg_mlo = {
 	"g_mlo", "g_tyra", NULL, "1994",
 	"Mega Lo Mania (E) (REV00) [c][!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mloRomInfo, g_mloRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5706,7 +5706,7 @@ struct BurnDriverD BurnDrvMDg_mlom01 = {
 	"g_mlom01", "g_tyra", NULL, "1994",
 	"Mega Lo Mania (E) (REV01)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mlom01RomInfo, g_mlom01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5724,7 +5724,7 @@ struct BurnDriverD BurnDrvMDg_mloj = {
 	"g_mloj", "g_tyra", NULL, "1994",
 	"Mega Lo Mania (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mlojRomInfo, g_mlojRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5742,7 +5742,7 @@ struct BurnDriverD BurnDrvMDg_vect = {
 	"g_vect", NULL, NULL, "1995",
 	"Vectorman (UE) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vectRomInfo, g_vectRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5760,7 +5760,7 @@ struct BurnDriverD BurnDrvMDg_vectp = {
 	"g_vectp", "g_vect", NULL, "1995",
 	"Vectorman (UE) (Prototype) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vectpRomInfo, g_vectpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5778,7 +5778,7 @@ struct BurnDriverD BurnDrvMDg_vectb = {
 	"g_vectb", "g_vect", NULL, "1995",
 	"Vectorman (Beta)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vectbRomInfo, g_vectbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5796,7 +5796,7 @@ struct BurnDriverD BurnDrvMDg_vec2 = {
 	"g_vec2", NULL, NULL, "1996",
 	"Vectorman 2 (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vec2RomInfo, g_vec2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5814,7 +5814,7 @@ struct BurnDriverD BurnDrvMDg_vect2p = {
 	"g_vect2p", "g_vec2", NULL, "1996",
 	"Vectorman 2 (U) (Prototype) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vect2pRomInfo, g_vect2pRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5832,7 +5832,7 @@ struct BurnDriverD BurnDrvMDg_wani = {
 	"g_wani", NULL, NULL, "1992",
 	"Wani Wani World (J) [c][!]\0", NULL, "Kaneko", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_waniRomInfo, g_waniRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5850,7 +5850,7 @@ struct BurnDriverD BurnDrvMDg_wloc = {
 	"g_wloc", NULL, NULL, "1994",
 	"Warlock (UE) [!]\0", NULL, "Trimark / Acclaim", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wlocRomInfo, g_wlocRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5868,7 +5868,7 @@ struct BurnDriverD BurnDrvMDg_warlob = {
 	"g_warlob", "g_wloc", NULL, "1994",
 	"Warlock (Beta)\0", NULL, "Trimark / Acclaim", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_warlobRomInfo, g_warlobRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5886,7 +5886,7 @@ struct BurnDriverD BurnDrvMDg_wrom = {
 	"g_wrom", NULL, NULL, "1991",
 	"Warrior of Rome (U) [!]\0", NULL, "Micronet", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wromRomInfo, g_wromRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5904,7 +5904,7 @@ struct BurnDriverD BurnDrvMDg_caeno = {
 	"g_caeno", "g_wrom", NULL, "1991",
 	"Caesar no Yabo (J)\0", NULL, "Micronet", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_caenoRomInfo, g_caenoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5922,7 +5922,7 @@ struct BurnDriverD BurnDrvMDg_wrom2 = {
 	"g_wrom2", NULL, NULL, "1992",
 	"Warrior of Rome II (U) [c][!]\0", NULL, "Micronet", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wrom2RomInfo, g_wrom2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5940,7 +5940,7 @@ struct BurnDriverD BurnDrvMDg_caeno2 = {
 	"g_caeno2", "g_wrom2", NULL, "1992",
 	"Caesar no Yabo II (J)\0", NULL, "Micronet", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_caeno2RomInfo, g_caeno2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5958,7 +5958,7 @@ struct BurnDriverD BurnDrvMDg_winwor = {
 	"g_winwor", NULL, NULL, "1991",
 	"Wings of Wor (U) [!]\0", NULL, "NCS / Dreamworks", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_winworRomInfo, g_winworRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5976,7 +5976,7 @@ struct BurnDriverD BurnDrvMDg_gynoge = {
 	"g_gynoge", "g_winwor", NULL, "1991",
 	"Gynoug (E) [!]\0", NULL, "NCS", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gynogeRomInfo, g_gynogeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -5994,7 +5994,7 @@ struct BurnDriverD BurnDrvMDg_gyno = {
 	"g_gyno", "g_winwor", NULL, "1991",
 	"Gynoug (J) [!]\0", NULL, "NCS", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gynoRomInfo, g_gynoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6012,7 +6012,7 @@ struct BurnDriverD BurnDrvMDg_wcs = {
 	"g_wcs", NULL, NULL, "1994",
 	"World Championship Soccer (JU) (REV03) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wcsRomInfo, g_wcsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6030,7 +6030,7 @@ struct BurnDriverD BurnDrvMDg_wcs02 = {
 	"g_wcs02", "g_wcs", NULL, "1994",
 	"World Championship Soccer (JU) (REV02)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wcs02RomInfo, g_wcs02RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6048,7 +6048,7 @@ struct BurnDriverD BurnDrvMDg_wcs00 = {
 	"g_wcs00", "g_wcs", NULL, "1994",
 	"World Championship Soccer (JU) (REV00) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wcs00RomInfo, g_wcs00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6066,7 +6066,7 @@ struct BurnDriverD BurnDrvMDg_wc90 = {
 	"g_wc90", "g_wcs", NULL, "1994",
 	"World Cup Italia 90 (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wc90RomInfo, g_wc90RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6084,7 +6084,7 @@ struct BurnDriverD BurnDrvMDg_wild = {
 	"g_wild", NULL, NULL, "1994",
 	"Wild Snake (U) (Prototype) [!]\0", NULL, "Bullet-Proof Software", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wildRomInfo, g_wildRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6102,7 +6102,7 @@ struct BurnDriverD BurnDrvMDg_will = {
 	"g_will", NULL, NULL, "1992",
 	"World of Illusion Starring Mickey Mouse & Donald Duck (U) [!]\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_willRomInfo, g_willRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6120,7 +6120,7 @@ struct BurnDriverD BurnDrvMDg_wille = {
 	"g_wille", "g_will", NULL, "1992",
 	"World of Illusion Starring Mickey Mouse & Donald Duck (E) [!]\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_willeRomInfo, g_willeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6138,7 +6138,7 @@ struct BurnDriverD BurnDrvMDg_willb = {
 	"g_willb", "g_will", NULL, "1992",
 	"World of Illusion Starring Mickey Mouse & Donald Duck (Beta)\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_willbRomInfo, g_willbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6156,7 +6156,7 @@ struct BurnDriverD BurnDrvMDg_micdo = {
 	"g_micdo", "g_will", NULL, "1992",
 	"I Love Mickey & Donald - Fushigi na Magic Box (J)\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_micdoRomInfo, g_micdoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6174,7 +6174,7 @@ struct BurnDriverD BurnDrvMDg_xper = {
 	"g_xper", NULL, NULL, "1996",
 	"X-perts (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_xperRomInfo, g_xperRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6192,7 +6192,7 @@ struct BurnDriverD BurnDrvMDg_virr = {
 	"g_virr", NULL, NULL, "199?",
 	"Virtua Racing (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_virrRomInfo, g_virrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6210,7 +6210,7 @@ struct BurnDriverD BurnDrvMDg_virraj = {
 	"g_virraj", "g_virr", NULL, "199?",
 	"Virtua Racing (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_virrajRomInfo, g_virrajRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6228,7 +6228,7 @@ struct BurnDriverD BurnDrvMDg_virrae = {
 	"g_virrae", "g_virr", NULL, "199?",
 	"Virtua Racing (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_virraeRomInfo, g_virraeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6246,7 +6246,7 @@ struct BurnDriverD BurnDrvMDg_virrea = {
 	"g_virrea", "g_virr", NULL, "199?",
 	"Virtua Racing (E) [a1]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_virreaRomInfo, g_virreaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6264,7 +6264,7 @@ struct BurnDriverD BurnDrvMDg_discol = {
 	"g_discol", NULL, NULL, "1991",
 	"Disney Collection - Castle of Illusion & Quack Shot (E) [!]\0", NULL, "Disney / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_discolRomInfo, g_discolRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6282,7 +6282,7 @@ struct BurnDriverD BurnDrvMDg_clascl = {
 	"g_clascl", NULL, NULL, "199?",
 	"Classic Collection (UE) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_clasclRomInfo, g_clasclRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6300,7 +6300,7 @@ struct BurnDriverD BurnDrvMDg_gen6pk = {
 	"g_gen6pk", NULL, NULL, "199?",
 	"Genesis 6-Pak (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gen6pkRomInfo, g_gen6pkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6318,7 +6318,7 @@ struct BurnDriverD BurnDrvMDg_mg1e = {
 	"g_mg1e", NULL, NULL, "199?",
 	"Mega Games I (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mg1eRomInfo, g_mg1eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6336,7 +6336,7 @@ struct BurnDriverD BurnDrvMDg_mg2e = {
 	"g_mg2e", NULL, NULL, "199?",
 	"Mega Games 2 (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mg2eRomInfo, g_mg2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6354,7 +6354,7 @@ struct BurnDriverD BurnDrvMDg_mg3e = {
 	"g_mg3e", NULL, NULL, "199?",
 	"Mega Games 3 (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mg3eRomInfo, g_mg3eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6372,7 +6372,7 @@ struct BurnDriverD BurnDrvMDg_mg6v1e = {
 	"g_mg6v1e", NULL, NULL, "199?",
 	"Mega Games 6 (Vol 1) (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mg6v1eRomInfo, g_mg6v1eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6390,7 +6390,7 @@ struct BurnDriverD BurnDrvMDg_mg6v2e = {
 	"g_mg6v2e", NULL, NULL, "199?",
 	"Mega Games 6 (Vol 2) (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mg6v2eRomInfo, g_mg6v2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6408,7 +6408,7 @@ struct BurnDriverD BurnDrvMDg_mg6v3e = {
 	"g_mg6v3e", NULL, NULL, "199?",
 	"Mega Games 6 (Vol 3) (E) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mg6v3eRomInfo, g_mg6v3eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6426,7 +6426,7 @@ struct BurnDriverD BurnDrvMDg_mg10i1 = {
 	"g_mg10i1", NULL, NULL, "199?",
 	"Mega Games 10 in 1 (EB) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mg10i1RomInfo, g_mg10i1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6444,7 +6444,7 @@ struct BurnDriverD BurnDrvMDg_segsp1 = {
 	"g_segsp1", NULL, NULL, "199?",
 	"Sega Sports 1 (Wimbledon, Ult.Soccer, Super Monaco) (E) [!].\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_segsp1RomInfo, g_segsp1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6462,7 +6462,7 @@ struct BurnDriverD BurnDrvMDg_stop5b = {
 	"g_stop5b", NULL, NULL, "199?",
 	"Sega Top 5 (B) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_stop5bRomInfo, g_stop5bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6480,7 +6480,7 @@ struct BurnDriverD BurnDrvMDg_sonclu = {
 	"g_sonclu", NULL, NULL, "199?",
 	"Sonic Classics (Compilation) (UE) (REV01) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soncluRomInfo, g_soncluRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6498,7 +6498,7 @@ struct BurnDriverD BurnDrvMDg_soncle = {
 	"g_soncle", "g_sonclu", NULL, "199?",
 	"Sonic Classics (Compilation) (E) (REV00) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soncleRomInfo, g_soncleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6516,7 +6516,7 @@ struct BurnDriverD BurnDrvMDg_sptgb = {
 	"g_sptgb", NULL, NULL, "199?",
 	"Sport Games (B) [c][!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sptgbRomInfo, g_sptgbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6534,7 +6534,7 @@ struct BurnDriverD BurnDrvMDg_menace = {
 	"g_menace", NULL, NULL, "199?",
 	"Menacer 6-in-1 Game Pack (UE) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_menaceRomInfo, g_menaceRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6552,7 +6552,7 @@ struct BurnDriverD BurnDrvMDradicav1 = {
 	"radicav1", NULL, NULL, "2004",
 	"Radica: Volume 1 (Sonic the Hedgehog, Altered Beast, Golden Axe, Dr. Robotnik's Mean Bean Machine, Kid Chameleon, Flicky) (US)\0", NULL, "Radica Games / Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, radicav1RomInfo, radicav1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6570,7 +6570,7 @@ struct BurnDriverD BurnDrvMDradicasf = {
 	"radicasf", NULL, NULL, "2004",
 	"Radica: Street Fighter Pack (Street Fighter 2' Special Champion Edition, Ghouls and Ghosts) (EURO)\0", NULL, "Radica Games / Capcom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, radicasfRomInfo, radicasfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6588,7 +6588,7 @@ struct BurnDriverD BurnDrvMDg_gameno = {
 	"g_gameno", NULL, NULL, "1994",
 	"Game no Kanzume Otokuyou (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gamenoRomInfo, g_gamenoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6606,7 +6606,7 @@ struct BurnDriverD BurnDrvMDg_ddpl = {
 	"g_ddpl", NULL, NULL, "1994",
 	"Doki Doki Penguin Land MD (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ddplRomInfo, g_ddplRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6624,7 +6624,7 @@ struct BurnDriverD BurnDrvMDg_16ton = {
 	"g_16ton", NULL, NULL, "1991",
 	"16 Ton (SN) (J) [!]\0", "Sound Problems", "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_16tonRomInfo, g_16tonRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6642,7 +6642,7 @@ struct BurnDriverD BurnDrvMDg_hymar = {
 	"g_hymar", NULL, NULL, "1994",
 	"Hyper Marbles (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hymarRomInfo, g_hymarRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6660,7 +6660,7 @@ struct BurnDriverD BurnDrvMDg_labyd = {
 	"g_labyd", NULL, NULL, "1994",
 	"Labyrinth of Death (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_labydRomInfo, g_labydRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6678,7 +6678,7 @@ struct BurnDriverD BurnDrvMDg_padfi = {
 	"g_padfi", NULL, NULL, "1994",
 	"Paddle Fighter (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_padfiRomInfo, g_padfiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6696,7 +6696,7 @@ struct BurnDriverD BurnDrvMDg_p2anne = {
 	"g_p2anne", NULL, NULL, "1994",
 	"Phantasy Star II - Anne's Adventure (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_p2anneRomInfo, g_p2anneRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6714,7 +6714,7 @@ struct BurnDriverD BurnDrvMDg_p2huey = {
 	"g_p2huey", NULL, NULL, "1994",
 	"Phantasy Star II - Huey's Adventure (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_p2hueyRomInfo, g_p2hueyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6732,7 +6732,7 @@ struct BurnDriverD BurnDrvMDg_p2kind = {
 	"g_p2kind", NULL, NULL, "1994",
 	"Phantasy Star II - Kinds's Adventure (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_p2kindRomInfo, g_p2kindRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6750,7 +6750,7 @@ struct BurnDriverD BurnDrvMDg_p2shil = {
 	"g_p2shil", NULL, NULL, "1994",
 	"Phantasy Star II - Shilka's Adventure (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_p2shilRomInfo, g_p2shilRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6768,7 +6768,7 @@ struct BurnDriverD BurnDrvMDg_putter = {
 	"g_putter", NULL, NULL, "1994",
 	"Putter Golf (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_putterRomInfo, g_putterRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6786,7 +6786,7 @@ struct BurnDriverD BurnDrvMDg_pymag = {
 	"g_pymag", NULL, NULL, "1994",
 	"Pyramid Magic (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pymagRomInfo, g_pymagRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6804,7 +6804,7 @@ struct BurnDriverD BurnDrvMDg_pymag2 = {
 	"g_pymag2", NULL, NULL, "1994",
 	"Pyramid Magic II (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pymag2RomInfo, g_pymag2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6822,7 +6822,7 @@ struct BurnDriverD BurnDrvMDg_pymag3 = {
 	"g_pymag3", NULL, NULL, "1994",
 	"Pyramid Magic III (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pymag3RomInfo, g_pymag3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6840,7 +6840,7 @@ struct BurnDriverD BurnDrvMDg_pymags = {
 	"g_pymags", NULL, NULL, "1994",
 	"Pyramid Magic Special (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pymagsRomInfo, g_pymagsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6858,7 +6858,7 @@ struct BurnDriverD BurnDrvMDg_serase = {
 	"g_serase", NULL, NULL, "1994",
 	"Sonic Eraser (SN) (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_seraseRomInfo, g_seraseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6876,7 +6876,7 @@ struct BurnDriverD BurnDrvMDg_megamd = {
 	"g_megamd", NULL, NULL, "1900",
 	"MegaMind (SN) (J)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_megamdRomInfo, g_megamdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6894,7 +6894,7 @@ struct BurnDriver BurnDrvMDg_aworg = {
 	"g_aworg", NULL, NULL, "1900",
 	"Aworg (SN) (J)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aworgRomInfo, g_aworgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6912,7 +6912,7 @@ struct BurnDriverD BurnDrvMDg_teddy = {
 	"g_teddy", NULL, NULL, "1900",
 	"Teddy Boy Blues (SN) (J)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_teddyRomInfo, g_teddyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6930,7 +6930,7 @@ struct BurnDriverD BurnDrvMDg_robobt = {
 	"g_robobt", NULL, NULL, "1900",
 	"Robot Battler (SN) (J)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_robobtRomInfo, g_robobtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6948,7 +6948,7 @@ struct BurnDriverD BurnDrvMDg_medalc = {
 	"g_medalc", NULL, NULL, "1900",
 	"Medal City (SN) (J)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_medalcRomInfo, g_medalcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6966,7 +6966,7 @@ struct BurnDriverD BurnDrvMDg_riddle = {
 	"g_riddle", NULL, NULL, "1900",
 	"Riddle Wired (SN) (J)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_riddleRomInfo, g_riddleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -6984,7 +6984,7 @@ struct BurnDriverD BurnDrvMDg_kisssh = {
 	"g_kisssh", NULL, NULL, "1900",
 	"Kiss Shot (SN) (J)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kissshRomInfo, g_kissshRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7002,7 +7002,7 @@ struct BurnDriverD BurnDrvMDg_2020 = {
 	"g_2020", NULL, NULL, "1900",
 	"Super Baseball 2020 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_2020RomInfo, g_2020RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7020,7 +7020,7 @@ struct BurnDriverD BurnDrvMDg_2020j = {
 	"g_2020j", "g_2020", NULL, "1900",
 	"Super Baseball 2020 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_2020jRomInfo, g_2020jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7038,7 +7038,7 @@ struct BurnDriverD BurnDrvMDg_aate = {
 	"g_aate", NULL, NULL, "1900",
 	"Andre Agassi Tennis (U) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aateRomInfo, g_aateRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7056,7 +7056,7 @@ struct BurnDriverD BurnDrvMDg_aatee = {
 	"g_aatee", "g_aate", NULL, "1900",
 	"Andre Agassi Tennis (E) (REV01) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aateeRomInfo, g_aateeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7074,7 +7074,7 @@ struct BurnDriverD BurnDrvMDg_aateb = {
 	"g_aateb", "g_aate", NULL, "1900",
 	"Andre Agassi Tennis (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aatebRomInfo, g_aatebRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7092,7 +7092,7 @@ struct BurnDriver BurnDrvMDg_afam = {
 	"g_afam", NULL, NULL, "1900",
 	"Addams Family, The (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_afamRomInfo, g_afamRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7110,7 +7110,7 @@ struct BurnDriver BurnDrvMDg_adamb = {
 	"g_adamb", "g_afam", NULL, "1993",
 	"Addams Family, The (Beta)\0", NULL, "Acclaim Entertainment, Inc.", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_PLATFORM, 0,
 	NULL, g_adambRomInfo, g_adambRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7128,7 +7128,7 @@ struct BurnDriver BurnDrvMDg_mmax = {
 	"g_mmax", NULL, NULL, "1994",
 	"Adventures of Mighty Max, The (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_PLATFORM, 0,
 	NULL, g_mmaxRomInfo, g_mmaxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7146,7 +7146,7 @@ struct BurnDriver BurnDrvMDg_mmaxe = {
 	"g_mmaxe", "g_mmax", NULL, "1994",
 	"Adventures of Mighty Max, The (E)\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmaxeRomInfo, g_mmaxeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7164,7 +7164,7 @@ struct BurnDriver BurnDrvMDg_abus = {
 	"g_abus", NULL, NULL, "1900",
 	"Air Buster (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_abusRomInfo, g_abusRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7182,7 +7182,7 @@ struct BurnDriver BurnDrvMDg_aerobl = {
 	"g_aerobl", "g_abus", NULL, "1900",
 	"Aero Blasters (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aeroblRomInfo, g_aeroblRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7200,7 +7200,7 @@ struct BurnDriverD BurnDrvMDg_abu2 = {
 	"g_abu2", NULL, NULL, "1900",
 	"After Burner II (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_abu2RomInfo, g_abu2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7218,7 +7218,7 @@ struct BurnDriverD BurnDrvMDg_abrn2j = {
 	"g_abrn2j", "g_abu2", NULL, "1900",
 	"After Burner II (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_abrn2jRomInfo, g_abrn2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7236,7 +7236,7 @@ struct BurnDriver BurnDrvMDg_ali3 = {
 	"g_ali3", NULL, NULL, "1900",
 	"Alien 3 (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ali3RomInfo, g_ali3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7254,7 +7254,7 @@ struct BurnDriver BurnDrvMDg_ali300 = {
 	"g_ali300", "g_ali3", NULL, "1900",
 	"Alien 3 (UE) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ali300RomInfo, g_ali300RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7272,7 +7272,7 @@ struct BurnDriver BurnDrvMDg_arcu = {
 	"g_arcu", NULL, NULL, "1900",
 	"Arcus Odyssey (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_arcuRomInfo, g_arcuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7290,7 +7290,7 @@ struct BurnDriver BurnDrvMDg_arcusj = {
 	"g_arcusj", "g_arcu", NULL, "1900",
 	"Arcus Odyssey (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_arcusjRomInfo, g_arcusjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7308,7 +7308,7 @@ struct BurnDriver BurnDrvMDg_asol = {
 	"g_asol", NULL, NULL, "1900",
 	"Alien Soldier (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_asolRomInfo, g_asolRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7326,7 +7326,7 @@ struct BurnDriverD BurnDrvMDg_asolde = {
 	"g_asolde", "g_asol", NULL, "1900",
 	"Alien Soldier (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_asoldeRomInfo, g_asoldeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7344,7 +7344,7 @@ struct BurnDriverD BurnDrvMDg_alis = {
 	"g_alis", NULL, NULL, "1900",
 	"Alisia Dragoon (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_alisRomInfo, g_alisRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7362,7 +7362,7 @@ struct BurnDriverD BurnDrvMDg_alisie = {
 	"g_alisie", "g_alis", NULL, "1900",
 	"Alisia Dragoon (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_alisieRomInfo, g_alisieRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7380,7 +7380,7 @@ struct BurnDriverD BurnDrvMDg_alisij = {
 	"g_alisij", "g_alis", NULL, "1900",
 	"Alisia Dragoon (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_alisijRomInfo, g_alisijRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7398,7 +7398,7 @@ struct BurnDriverD BurnDrvMDg_anim = {
 	"g_anim", NULL, NULL, "1900",
 	"Animaniacs (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_animRomInfo, g_animRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7416,7 +7416,7 @@ struct BurnDriverD BurnDrvMDg_anime = {
 	"g_anime", "g_anim", NULL, "1900",
 	"Animaniacs (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_animeRomInfo, g_animeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7434,7 +7434,7 @@ struct BurnDriverD BurnDrvMDg_asgr = {
 	"g_asgr", NULL, NULL, "1900",
 	"Asterix and the Great Rescue (E) (M5) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_asgrRomInfo, g_asgrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7452,7 +7452,7 @@ struct BurnDriverD BurnDrvMDg_astgru = {
 	"g_astgru", "g_asgr", NULL, "1900",
 	"Asterix and the Great Rescue (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_astgruRomInfo, g_astgruRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7470,7 +7470,7 @@ struct BurnDriverD BurnDrvMDg_aspg = {
 	"g_aspg", NULL, NULL, "1900",
 	"Asterix and the Power of The Gods (E) (M4) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aspgRomInfo, g_aspgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7488,7 +7488,7 @@ struct BurnDriverD BurnDrvMDg_astpgx = {
 	"g_astpgx", "g_aspg", NULL, "1900",
 	"Asterix and the Power of The Gods (E) (M5) [x] (Beta?)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_astpgxRomInfo, g_astpgxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7506,7 +7506,7 @@ struct BurnDriver BurnDrvMDg_akid = {
 	"g_akid", NULL, NULL, "1900",
 	"Atomic Robo-Kid (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_akidRomInfo, g_akidRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7524,7 +7524,7 @@ struct BurnDriver BurnDrvMDg_robokj = {
 	"g_robokj", "g_akid", NULL, "1900",
 	"Atomic Robo-Kid (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_robokjRomInfo, g_robokjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7542,7 +7542,7 @@ struct BurnDriverD BurnDrvMDg_awep = {
 	"g_awep", NULL, NULL, "1900",
 	"Awesome Possum Kicks Dr. Machino's Butt! (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_awepRomInfo, g_awepRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7560,7 +7560,7 @@ struct BurnDriverD BurnDrvMDg_awsep = {
 	"g_awsep", "g_awep", NULL, "1900",
 	"Awesome Possum Kicks Dr. Machino's Butt! (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_awsepRomInfo, g_awsepRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7578,7 +7578,7 @@ struct BurnDriver BurnDrvMDg_beav = {
 	"g_beav", NULL, NULL, "1900",
 	"Beavis and Butt-head (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_beavRomInfo, g_beavRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7596,7 +7596,7 @@ struct BurnDriver BurnDrvMDg_beave = {
 	"g_beave", "g_beav", NULL, "1900",
 	"Beavis and Butt-head (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_beaveRomInfo, g_beaveRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7614,7 +7614,7 @@ struct BurnDriverD BurnDrvMDg_beavib = {
 	"g_beavib", "g_beav", NULL, "1900",
 	"Beavis and Butt-head (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_beavibRomInfo, g_beavibRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7632,7 +7632,7 @@ struct BurnDriver BurnDrvMDg_botb = {
 	"g_botb", NULL, NULL, "1900",
 	"Best of the Best - Championship Karate (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_botbRomInfo, g_botbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7650,7 +7650,7 @@ struct BurnDriver BurnDrvMDg_botbb = {
 	"g_botbb", "g_botb", NULL, "1900",
 	"Best of the Best - Championship Karate (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_botbbRomInfo, g_botbbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7668,7 +7668,7 @@ struct BurnDriver BurnDrvMDg_kbox = {
 	"g_kbox", "g_botb", NULL, "1900",
 	"Kick Boxing, The (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kboxRomInfo, g_kboxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7686,7 +7686,7 @@ struct BurnDriverD BurnDrvMDg_buba = {
 	"g_buba", NULL, NULL, "1900",
 	"Bubba N Stix (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bubaRomInfo, g_bubaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7704,7 +7704,7 @@ struct BurnDriverD BurnDrvMDg_bubbae = {
 	"g_bubbae", "g_buba", NULL, "1900",
 	"Bubba N Stix (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bubbaeRomInfo, g_bubbaeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7722,7 +7722,7 @@ struct BurnDriverD BurnDrvMDg_bubbab = {
 	"g_bubbab", "g_buba", NULL, "1900",
 	"Bubba N Stix (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bubbabRomInfo, g_bubbabRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7740,7 +7740,7 @@ struct BurnDriver BurnDrvMDg_budo = {
 	"g_budo", NULL, NULL, "1900",
 	"Budokan - The Martial Spirit (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_budoRomInfo, g_budoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7758,7 +7758,7 @@ struct BurnDriver BurnDrvMDg_budoe = {
 	"g_budoe", "g_budo", NULL, "1900",
 	"Budokan - The Martial Spirit (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_budoeRomInfo, g_budoeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7776,7 +7776,7 @@ struct BurnDriver BurnDrvMDg_bhb = {
 	"g_bhb", NULL, NULL, "1900",
 	"Bio-Hazard Battle (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bhbRomInfo, g_bhbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7794,7 +7794,7 @@ struct BurnDriver BurnDrvMDg_biohzb = {
 	"g_biohzb", "g_bhb", NULL, "1900",
 	"Bio-Hazard Battle (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_biohzbRomInfo, g_biohzbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7812,7 +7812,7 @@ struct BurnDriver BurnDrvMDg_crying = {
 	"g_crying", "g_bhb", NULL, "1900",
 	"Crying - Asia Seimei Sensou (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cryingRomInfo, g_cryingRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7830,7 +7830,7 @@ struct BurnDriverD BurnDrvMDg_body = {
 	"g_body", NULL, NULL, "1900",
 	"Body Count (E) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bodyRomInfo, g_bodyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7848,7 +7848,7 @@ struct BurnDriverD BurnDrvMDg_bcounb = {
 	"g_bcounb", "g_body", NULL, "1900",
 	"Body Count (Beta) (M5)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bcounbRomInfo, g_bcounbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7866,7 +7866,7 @@ struct BurnDriverD BurnDrvMDg_bnza = {
 	"g_bnza", NULL, NULL, "1900",
 	"Bonanza Bros. (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bnzaRomInfo, g_bnzaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7884,7 +7884,7 @@ struct BurnDriverD BurnDrvMDg_bnza00 = {
 	"g_bnza00", "g_bnza", NULL, "1900",
 	"Bonanza Bros. (JE) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bnza00RomInfo, g_bnza00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7902,7 +7902,7 @@ struct BurnDriverD BurnDrvMDg_bnza01 = {
 	"g_bnza01", "g_bnza", NULL, "1900",
 	"Bonanza Bros. (JE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bnza01RomInfo, g_bnza01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7920,7 +7920,7 @@ struct BurnDriver BurnDrvMDg_boog = {
 	"g_boog", NULL, NULL, "1900",
 	"Boogerman (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_boogRomInfo, g_boogRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7938,7 +7938,7 @@ struct BurnDriverD BurnDrvMDg_booge = {
 	"g_booge", "g_boog", NULL, "1900",
 	"Boogerman (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_boogeRomInfo, g_boogeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7956,7 +7956,7 @@ struct BurnDriverD BurnDrvMDg_boxl = {
 	"g_boxl", NULL, NULL, "1900",
 	"Boxing Legends of the Ring (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_boxlRomInfo, g_boxlRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7974,7 +7974,7 @@ struct BurnDriverD BurnDrvMDg_chav2 = {
 	"g_chav2", "g_boxl", NULL, "1900",
 	"Chavez II (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chav2RomInfo, g_chav2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -7992,7 +7992,7 @@ struct BurnDriverD BurnDrvMDg_brpw = {
 	"g_brpw", NULL, NULL, "1900",
 	"Brutal - Paws of Fury (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_brpwRomInfo, g_brpwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8010,7 +8010,7 @@ struct BurnDriverD BurnDrvMDg_brutle = {
 	"g_brutle", "g_brpw", NULL, "1900",
 	"Brutal - Paws of Fury (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_brutleRomInfo, g_brutleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8028,7 +8028,7 @@ struct BurnDriverD BurnDrvMDg_burf = {
 	"g_burf", NULL, NULL, "1900",
 	"Burning Force (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_burfRomInfo, g_burfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8046,7 +8046,7 @@ struct BurnDriverD BurnDrvMDg_burnfj = {
 	"g_burnfj", "g_burf", NULL, "1900",
 	"Burning Force (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_burnfjRomInfo, g_burnfjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8064,7 +8064,7 @@ struct BurnDriverD BurnDrvMDg_burnfe = {
 	"g_burnfe", "g_burf", NULL, "1900",
 	"Burning Force (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_burnfeRomInfo, g_burnfeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8082,7 +8082,7 @@ struct BurnDriverD BurnDrvMDg_clif = {
 	"g_clif", NULL, NULL, "1900",
 	"Cliffhanger (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_clifRomInfo, g_clifRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8100,7 +8100,7 @@ struct BurnDriverD BurnDrvMDg_clifhe = {
 	"g_clifhe", "g_clif", NULL, "1900",
 	"Cliffhanger (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_clifheRomInfo, g_clifheRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8118,7 +8118,7 @@ struct BurnDriverD BurnDrvMDg_clifhb = {
 	"g_clifhb", "g_clif", NULL, "1900",
 	"Cliffhanger (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_clifhbRomInfo, g_clifhbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8136,7 +8136,7 @@ struct BurnDriverD BurnDrvMDg_dahna = {
 	"g_dahna", NULL, NULL, "1991",
 	"Dahna - Megami Tanjou (J) [!]\0", NULL, "IGS", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dahnaRomInfo, g_dahnaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8154,7 +8154,7 @@ struct BurnDriverD BurnDrvMDg_hercu = {
 	"g_hercu", "g_dahna", NULL, "1900",
 	"Hercules (Unl) [!]\0", NULL, "Unknown (Unlicensed)", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hercuRomInfo, g_hercuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8172,7 +8172,7 @@ struct BurnDriverD BurnDrvMDg_bean = {
 	"g_bean", NULL, NULL, "1900",
 	"Dr. Robotnik's Mean Bean Machine (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_beanRomInfo, g_beanRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8190,7 +8190,7 @@ struct BurnDriverD BurnDrvMDg_beane = {
 	"g_beane", "g_bean", NULL, "1900",
 	"Dr. Robotnik's Mean Bean Machine (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_beaneRomInfo, g_beaneRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8208,7 +8208,7 @@ struct BurnDriverD BurnDrvMDg_beanb = {
 	"g_beanb", "g_bean", NULL, "1900",
 	"Dr. Robotnik's Mean Bean Machine (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_beanbRomInfo, g_beanbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8226,7 +8226,7 @@ struct BurnDriverD BurnDrvMDg_dash = {
 	"g_dash", NULL, NULL, "1900",
 	"Dashin' Desperadoes (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dashRomInfo, g_dashRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8244,7 +8244,7 @@ struct BurnDriverD BurnDrvMDg_dashb = {
 	"g_dashb", "g_dash", NULL, "1900",
 	"Dashin' Desperadoes (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dashbRomInfo, g_dashbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8262,7 +8262,7 @@ struct BurnDriverD BurnDrvMDg_blee = {
 	"g_blee", NULL, NULL, "1900",
 	"Dragon - The Bruce Lee Story (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bleeRomInfo, g_bleeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8280,7 +8280,7 @@ struct BurnDriverD BurnDrvMDg_drgble = {
 	"g_drgble", "g_blee", NULL, "1900",
 	"Dragon - The Bruce Lee Story (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_drgbleRomInfo, g_drgbleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8298,7 +8298,7 @@ struct BurnDriverD BurnDrvMDg_dduk = {
 	"g_dduk", NULL, NULL, "1900",
 	"Dynamite Duke (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ddukRomInfo, g_ddukRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8316,7 +8316,7 @@ struct BurnDriverD BurnDrvMDg_ddukea = {
 	"g_ddukea", "g_dduk", NULL, "1900",
 	"Dynamite Duke (W) [a1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ddukeaRomInfo, g_ddukeaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8334,7 +8334,7 @@ struct BurnDriverD BurnDrvMDg_dhed = {
 	"g_dhed", NULL, NULL, "1900",
 	"Dynamite Headdy (UE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dhedRomInfo, g_dhedRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8352,7 +8352,7 @@ struct BurnDriverD BurnDrvMDg_dheadj = {
 	"g_dheadj", "g_dhed", NULL, "1900",
 	"Dynamite Headdy (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dheadjRomInfo, g_dheadjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8370,7 +8370,7 @@ struct BurnDriverD BurnDrvMDg_dheadb = {
 	"g_dheadb", "g_dhed", NULL, "1900",
 	"Dynamite Headdy (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dheadbRomInfo, g_dheadbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8388,7 +8388,7 @@ struct BurnDriverD BurnDrvMDg_ejim = {
 	"g_ejim", NULL, NULL, "1900",
 	"Earthworm Jim (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ejimRomInfo, g_ejimRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8406,7 +8406,7 @@ struct BurnDriverD BurnDrvMDg_ejime = {
 	"g_ejime", "g_ejim", NULL, "1900",
 	"Earthworm Jim (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ejimeRomInfo, g_ejimeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8424,7 +8424,7 @@ struct BurnDriverD BurnDrvMDg_jim2 = {
 	"g_jim2", NULL, NULL, "1900",
 	"Earthworm Jim 2 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jim2RomInfo, g_jim2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8442,7 +8442,7 @@ struct BurnDriverD BurnDrvMDg_ejim2e = {
 	"g_ejim2e", "g_jim2", NULL, "1900",
 	"Earthworm Jim 2 (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ejim2eRomInfo, g_ejim2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8460,7 +8460,7 @@ struct BurnDriverD BurnDrvMDg_etch = {
 	"g_etch", NULL, NULL, "1900",
 	"Eternal Champions (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_etchRomInfo, g_etchRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8478,7 +8478,7 @@ struct BurnDriverD BurnDrvMDg_echmpe = {
 	"g_echmpe", "g_etch", NULL, "1900",
 	"Eternal Champions (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_echmpeRomInfo, g_echmpeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8496,7 +8496,7 @@ struct BurnDriverD BurnDrvMDg_echmpj = {
 	"g_echmpj", "g_etch", NULL, "1900",
 	"Eternal Champions (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_echmpjRomInfo, g_echmpjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8514,7 +8514,7 @@ struct BurnDriverD BurnDrvMDg_etchmb = {
 	"g_etchmb", "g_etch", NULL, "1900",
 	"Eternal Champions (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_etchmbRomInfo, g_etchmbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8532,7 +8532,7 @@ struct BurnDriverD BurnDrvMDg_exil = {
 	"g_exil", NULL, NULL, "1900",
 	"Exile (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_exilRomInfo, g_exilRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8550,7 +8550,7 @@ struct BurnDriverD BurnDrvMDg_xzr = {
 	"g_xzr", "g_exil", NULL, "1900",
 	"XZR (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_xzrRomInfo, g_xzrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8568,7 +8568,7 @@ struct BurnDriverD BurnDrvMDg_exos = {
 	"g_exos", NULL, NULL, "1900",
 	"Exo-Squad (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_exosRomInfo, g_exosRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8586,7 +8586,7 @@ struct BurnDriverD BurnDrvMDg_exosb = {
 	"g_exosb", "g_exos", NULL, "1900",
 	"Exo-Squad (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_exosbRomInfo, g_exosbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8604,7 +8604,7 @@ struct BurnDriverD BurnDrvMDg_fand = {
 	"g_fand", NULL, NULL, "1900",
 	"Fantastic Dizzy (UE) (M5) [c][!]\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fandRomInfo, g_fandRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8622,7 +8622,7 @@ struct BurnDriverD BurnDrvMDg_fanda = {
 	"g_fanda", "g_fand", NULL, "1900",
 	"Fantastic Dizzy (UE) (M5) [a1]\0", NULL, "Codemasters", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fandaRomInfo, g_fandaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8640,7 +8640,7 @@ struct BurnDriver BurnDrvMDg_fi95 = {
 	"g_fi95", NULL, NULL, "1900",
 	"FIFA Soccer 95 (UE) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fi95RomInfo, g_fi95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8658,7 +8658,7 @@ struct BurnDriver BurnDrvMDg_fut98 = {
 	"g_fut98", "g_fi95", NULL, "1900",
 	"Futbol Argentino 98 - Pasion de Multitudes (Unl)\0", NULL, "Unknown (Unlicensed)", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fut98RomInfo, g_fut98RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8676,7 +8676,7 @@ struct BurnDriver BurnDrvMDg_fi96 = {
 	"g_fi96", NULL, NULL, "1900",
 	"FIFA Soccer 96 (UE) (M6) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fi96RomInfo, g_fi96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8694,7 +8694,7 @@ struct BurnDriver BurnDrvMDg_fi99r = {
 	"g_fi99r", "g_fi96", NULL, "1900",
 	"FIFA Soccer 99 (R) [!]\0", NULL, "Unknown (Unlicensed)", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fi99rRomInfo, g_fi99rRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8712,7 +8712,7 @@ struct BurnDriverD BurnDrvMDg_fi97 = {
 	"g_fi97", NULL, NULL, "1996",
 	"FIFA Soccer 97 Gold Edition (UE) (M6) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fi97RomInfo, g_fi97RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8730,7 +8730,7 @@ struct BurnDriverD BurnDrvMDg_f2000g = {
 	"g_f2000g", "g_fi97", NULL, "2000",
 	"FIFA Soccer 2000 Gold Edition (Unl) (M6) [!]\0", NULL, "Unknown (Unlicensed)", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f2000gRomInfo, g_f2000gRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8748,7 +8748,7 @@ struct BurnDriverD BurnDrvMDg_fshk = {
 	"g_fshk", NULL, NULL, "1900",
 	"Fire Shark (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fshkRomInfo, g_fshkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8766,7 +8766,7 @@ struct BurnDriverD BurnDrvMDg_fshrke = {
 	"g_fshrke", "g_fshk", NULL, "1900",
 	"Fire Shark (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fshrkeRomInfo, g_fshrkeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8784,7 +8784,7 @@ struct BurnDriverD BurnDrvMDg_fshrku = {
 	"g_fshrku", "g_fshk", NULL, "1900",
 	"Fire Shark (U) [a1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fshrkuRomInfo, g_fshrkuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8802,7 +8802,7 @@ struct BurnDriverD BurnDrvMDg_samex3 = {
 	"g_samex3", "g_fshk", NULL, "1900",
 	"Same! Same! Same! (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_samex3RomInfo, g_samex3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8820,7 +8820,7 @@ struct BurnDriverD BurnDrvMDg_gf2 = {
 	"g_gf2", NULL, NULL, "1900",
 	"Galaxy Force II (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gf2RomInfo, g_gf2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8838,7 +8838,7 @@ struct BurnDriverD BurnDrvMDg_glf200 = {
 	"g_glf200", "g_gf2", NULL, "1900",
 	"Galaxy Force II (W) (REV00)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_glf200RomInfo, g_glf200RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8856,7 +8856,7 @@ struct BurnDriverD BurnDrvMDg_genc = {
 	"g_genc", NULL, NULL, "1900",
 	"General Chaos (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gencRomInfo, g_gencRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8874,7 +8874,7 @@ struct BurnDriverD BurnDrvMDg_konsen = {
 	"g_konsen", "g_genc", NULL, "1900",
 	"Dai Konsen (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_konsenRomInfo, g_konsenRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8892,7 +8892,7 @@ struct BurnDriverD BurnDrvMDg_gbus = {
 	"g_gbus", NULL, NULL, "1900",
 	"Ghostbusters (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gbusRomInfo, g_gbusRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8910,7 +8910,7 @@ struct BurnDriverD BurnDrvMDg_gbus00 = {
 	"g_gbus00", "g_gbus", NULL, "1900",
 	"Ghostbusters (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gbus00RomInfo, g_gbus00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8928,7 +8928,7 @@ struct BurnDriverD BurnDrvMDg_gods = {
 	"g_gods", NULL, NULL, "1900",
 	"Gods (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_godsRomInfo, g_godsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8946,7 +8946,7 @@ struct BurnDriverD BurnDrvMDg_godse = {
 	"g_godse", "g_gods", NULL, "1900",
 	"Gods (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_godseRomInfo, g_godseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8964,7 +8964,7 @@ struct BurnDriverD BurnDrvMDg_godsj = {
 	"g_godsj", "g_gods", NULL, "1900",
 	"Gods (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_godsjRomInfo, g_godsjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -8982,7 +8982,7 @@ struct BurnDriverD BurnDrvMDg_godsb = {
 	"g_godsb", "g_gods", NULL, "1900",
 	"Gods (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_godsbRomInfo, g_godsbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9000,7 +9000,7 @@ struct BurnDriver BurnDrvMDg_gax = {
 	"g_gax", NULL, NULL, "1900",
 	"Golden Axe (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gaxRomInfo, g_gaxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9018,7 +9018,7 @@ struct BurnDriver BurnDrvMDg_gax00 = {
 	"g_gax00", "g_gax", NULL, "1900",
 	"Golden Axe (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gax00RomInfo, g_gax00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9036,7 +9036,7 @@ struct BurnDriverD BurnDrvMDg_gax2 = {
 	"g_gax2", NULL, NULL, "1900",
 	"Golden Axe II (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gax2RomInfo, g_gax2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9054,7 +9054,7 @@ struct BurnDriverD BurnDrvMDg_gax2b = {
 	"g_gax2b", "g_gax2", NULL, "1900",
 	"Golden Axe II (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gax2bRomInfo, g_gax2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9072,7 +9072,7 @@ struct BurnDriverD BurnDrvMDg_gax3 = {
 	"g_gax3", NULL, NULL, "1900",
 	"Golden Axe III (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gax3RomInfo, g_gax3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9090,7 +9090,7 @@ struct BurnDriverD BurnDrvMDg_gran = {
 	"g_gran", NULL, NULL, "1900",
 	"Granada (JU) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_granRomInfo, g_granRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9108,7 +9108,7 @@ struct BurnDriverD BurnDrvMDg_gran00 = {
 	"g_gran00", "g_gran", NULL, "1900",
 	"Granada (JU) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gran00RomInfo, g_gran00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9126,7 +9126,7 @@ struct BurnDriverD BurnDrvMDg_grin = {
 	"g_grin", NULL, NULL, "1900",
 	"GRIND Stormer (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_grinRomInfo, g_grinRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9144,7 +9144,7 @@ struct BurnDriverD BurnDrvMDg_v5 = {
 	"g_v5", "g_grin", NULL, "1900",
 	"V-Five (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_v5RomInfo, g_v5RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9162,7 +9162,7 @@ struct BurnDriverD BurnDrvMDg_hoso = {
 	"g_hoso", NULL, NULL, "1900",
 	"Head-On Soccer (U) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hosoRomInfo, g_hosoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9180,7 +9180,7 @@ struct BurnDriverD BurnDrvMDg_fever = {
 	"g_fever", "g_hoso", NULL, "1900",
 	"Fever Pitch Soccer (E) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_feverRomInfo, g_feverRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9198,7 +9198,7 @@ struct BurnDriverD BurnDrvMDg_herz = {
 	"g_herz", NULL, NULL, "1900",
 	"Herzog Zwei (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_herzRomInfo, g_herzRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9216,7 +9216,7 @@ struct BurnDriverD BurnDrvMDg_herzoj = {
 	"g_herzoj", "g_herz", NULL, "1900",
 	"Herzog Zwei (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_herzojRomInfo, g_herzojRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9234,7 +9234,7 @@ struct BurnDriverD BurnDrvMDg_jpar = {
 	"g_jpar", NULL, NULL, "1900",
 	"Jurassic Park (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jparRomInfo, g_jparRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9252,7 +9252,7 @@ struct BurnDriverD BurnDrvMDg_jparke = {
 	"g_jparke", "g_jpar", NULL, "1900",
 	"Jurassic Park (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jparkeRomInfo, g_jparkeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9270,7 +9270,7 @@ struct BurnDriverD BurnDrvMDg_jparkj = {
 	"g_jparkj", "g_jpar", NULL, "1900",
 	"Jurassic Park (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jparkjRomInfo, g_jparkjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9288,7 +9288,7 @@ struct BurnDriverD BurnDrvMDg_jparkb = {
 	"g_jparkb", "g_jpar", NULL, "1900",
 	"Jurassic Park (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jparkbRomInfo, g_jparkbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9306,7 +9306,7 @@ struct BurnDriverD BurnDrvMDg_jltf = {
 	"g_jltf", NULL, NULL, "1900",
 	"Justice League Task Force (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jltfRomInfo, g_jltfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9324,7 +9324,7 @@ struct BurnDriverD BurnDrvMDg_kawa = {
 	"g_kawa", NULL, NULL, "1900",
 	"Kawasaki Superbike Challenge (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kawaRomInfo, g_kawaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9342,7 +9342,7 @@ struct BurnDriverD BurnDrvMDg_kawab = {
 	"g_kawab", "g_kawa", NULL, "1900",
 	"Kawasaki Superbike Challenge (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kawabRomInfo, g_kawabRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9360,7 +9360,7 @@ struct BurnDriverD BurnDrvMDg_ksfh = {
 	"g_ksfh", NULL, NULL, "1900",
 	"Krusty's Super Funhouse (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ksfhRomInfo, g_ksfhRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9378,7 +9378,7 @@ struct BurnDriverD BurnDrvMDg_ksfh00 = {
 	"g_ksfh00", "g_ksfh", NULL, "1900",
 	"Krusty's Super Funhouse (UE) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ksfh00RomInfo, g_ksfh00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9396,7 +9396,7 @@ struct BurnDriverD BurnDrvMDg_lbat = {
 	"g_lbat", NULL, NULL, "1900",
 	"Last Battle (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lbatRomInfo, g_lbatRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9414,7 +9414,7 @@ struct BurnDriverD BurnDrvMDg_hokuto = {
 	"g_hokuto", "g_lbat", NULL, "1900",
 	"Hokuto no Ken (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hokutoRomInfo, g_hokutoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9432,7 +9432,7 @@ struct BurnDriverD BurnDrvMDg_len = {
 	"g_len", NULL, NULL, "1900",
 	"Lethal Enforcers (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lenRomInfo, g_lenRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9450,7 +9450,7 @@ struct BurnDriverD BurnDrvMDg_lenfe = {
 	"g_lenfe", "g_len", NULL, "1900",
 	"Lethal Enforcers (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lenfeRomInfo, g_lenfeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9468,7 +9468,7 @@ struct BurnDriverD BurnDrvMDg_lenfj = {
 	"g_lenfj", "g_len", NULL, "1900",
 	"Lethal Enforcers (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lenfjRomInfo, g_lenfjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9486,7 +9486,7 @@ struct BurnDriverD BurnDrvMDg_len2 = {
 	"g_len2", NULL, NULL, "1900",
 	"Lethal Enforcers II - Gun Fighters (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_len2RomInfo, g_len2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9504,7 +9504,7 @@ struct BurnDriverD BurnDrvMDg_lth2j = {
 	"g_lth2j", "g_len2", NULL, "1900",
 	"Lethal Enforcers II - Gun Fighters (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lth2jRomInfo, g_lth2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9522,7 +9522,7 @@ struct BurnDriverD BurnDrvMDg_ligh = {
 	"g_ligh", NULL, NULL, "1900",
 	"Light Crusader (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lighRomInfo, g_lighRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9540,7 +9540,7 @@ struct BurnDriverD BurnDrvMDg_licrue = {
 	"g_licrue", "g_ligh", NULL, "1900",
 	"Light Crusader (E) (M4) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_licrueRomInfo, g_licrueRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9558,7 +9558,7 @@ struct BurnDriverD BurnDrvMDg_licruj = {
 	"g_licruj", "g_ligh", NULL, "1900",
 	"Light Crusader (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_licrujRomInfo, g_licrujRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9576,7 +9576,7 @@ struct BurnDriverD BurnDrvMDg_licruk = {
 	"g_licruk", "g_ligh", NULL, "1900",
 	"Light Crusader (K) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_licrukRomInfo, g_licrukRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9594,7 +9594,7 @@ struct BurnDriverD BurnDrvMDg_lost = {
 	"g_lost", NULL, NULL, "1900",
 	"Lost Vikings, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lostRomInfo, g_lostRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9612,7 +9612,7 @@ struct BurnDriverD BurnDrvMDg_lostve = {
 	"g_lostve", "g_lost", NULL, "1900",
 	"Lost Vikings, The (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lostveRomInfo, g_lostveRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9630,7 +9630,7 @@ struct BurnDriverD BurnDrvMDg_lostvb = {
 	"g_lostvb", "g_lost", NULL, "1900",
 	"Lost Vikings, The (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lostvbRomInfo, g_lostvbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9648,7 +9648,7 @@ struct BurnDriverD BurnDrvMDg_mmf = {
 	"g_mmf", NULL, NULL, "1900",
 	"Marko's Magic Football (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmfRomInfo, g_mmfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9666,7 +9666,7 @@ struct BurnDriverD BurnDrvMDg_mmftbe = {
 	"g_mmftbe", "g_mmf", NULL, "1900",
 	"Marko's Magic Football (E) (M4) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmftbeRomInfo, g_mmftbeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9684,7 +9684,7 @@ struct BurnDriverD BurnDrvMDg_mmfb = {
 	"g_mmfb", "g_mmf", NULL, "1900",
 	"Marko's Magic Football (Beta) (M4)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmfbRomInfo, g_mmfbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9702,7 +9702,7 @@ struct BurnDriverD BurnDrvMDg_mk = {
 	"g_mk", NULL, NULL, "1900",
 	"Mortal Kombat (UE) (REV01) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mkRomInfo, g_mkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9720,7 +9720,7 @@ struct BurnDriverD BurnDrvMDg_mk00 = {
 	"g_mk00", "g_mk", NULL, "1900",
 	"Mortal Kombat (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mk00RomInfo, g_mk00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9738,7 +9738,7 @@ struct BurnDriverD BurnDrvMDg_mk2 = {
 	"g_mk2", NULL, NULL, "1900",
 	"Mortal Kombat II (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mk2RomInfo, g_mk2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9756,7 +9756,7 @@ struct BurnDriverD BurnDrvMDg_mk3 = {
 	"g_mk3", NULL, NULL, "1900",
 	"Mortal Kombat 3 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mk3RomInfo, g_mk3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9774,7 +9774,7 @@ struct BurnDriverD BurnDrvMDg_mk3e = {
 	"g_mk3e", "g_mk3", NULL, "1900",
 	"Mortal Kombat 3 (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mk3eRomInfo, g_mk3eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9792,7 +9792,7 @@ struct BurnDriverD BurnDrvMDg_umk3 = {
 	"g_umk3", NULL, NULL, "1900",
 	"Ultimate Mortal Kombat 3 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_umk3RomInfo, g_umk3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9810,7 +9810,7 @@ struct BurnDriverD BurnDrvMDg_umk3e = {
 	"g_umk3e", "g_umk3", NULL, "1900",
 	"Ultimate Mortal Kombat 3 (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_umk3eRomInfo, g_umk3eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9828,7 +9828,7 @@ struct BurnDriverD BurnDrvMDg_marv = {
 	"g_marv", NULL, NULL, "1900",
 	"Marvel Land (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_marvRomInfo, g_marvRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9846,7 +9846,7 @@ struct BurnDriverD BurnDrvMDg_marvj = {
 	"g_marvj", "g_marv", NULL, "1900",
 	"Marvel Land (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_marvjRomInfo, g_marvjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9864,7 +9864,7 @@ struct BurnDriverD BurnDrvMDg_talmit = {
 	"g_talmit", "g_marv", NULL, "1900",
 	"Talmit's Adventure (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_talmitRomInfo, g_talmitRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9882,7 +9882,7 @@ struct BurnDriver BurnDrvMDg_mjmw = {
 	"g_mjmw", NULL, NULL, "1900",
 	"Michael Jackson's Moonwalker (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mjmwRomInfo, g_mjmwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9900,7 +9900,7 @@ struct BurnDriver BurnDrvMDg_mwlk00 = {
 	"g_mwlk00", "g_mjmw", NULL, "1900",
 	"Michael Jackson's Moonwalker (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mwlk00RomInfo, g_mwlk00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9918,7 +9918,7 @@ struct BurnDriverD BurnDrvMDg_mono = {
 	"g_mono", NULL, NULL, "1900",
 	"Monopoly (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_monoRomInfo, g_monoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9936,7 +9936,7 @@ struct BurnDriverD BurnDrvMDg_monob = {
 	"g_monob", "g_mono", NULL, "1900",
 	"Monopoly (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_monobRomInfo, g_monobRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9954,7 +9954,7 @@ struct BurnDriverD BurnDrvMDg_mush = {
 	"g_mush", NULL, NULL, "1900",
 	"M.U.S.H.A (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mushRomInfo, g_mushRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9972,7 +9972,7 @@ struct BurnDriverD BurnDrvMDg_mushaj = {
 	"g_mushaj", "g_mush", NULL, "1900",
 	"Musha Aleste - Full Metal Fighter Ellinor (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mushajRomInfo, g_mushajRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -9990,7 +9990,7 @@ struct BurnDriverD BurnDrvMDg_mysf = {
 	"g_mysf", NULL, NULL, "1900",
 	"Mystical Fighter (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mysfRomInfo, g_mysfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10008,7 +10008,7 @@ struct BurnDriverD BurnDrvMDg_maoure = {
 	"g_maoure", "g_mysf", NULL, "1900",
 	"Maou Renjishi (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_maoureRomInfo, g_maoureRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10026,7 +10026,7 @@ struct BurnDriverD BurnDrvMDg_nh94 = {
 	"g_nh94", NULL, NULL, "1900",
 	"NHL 94 (UE) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nh94RomInfo, g_nh94RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveNoByteswapInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10044,7 +10044,7 @@ struct BurnDriverD BurnDrvMDg_ogol = {
 	"g_ogol", NULL, NULL, "1900",
 	"Olympic Gold - Barcelona 92 (U) (M8) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ogolRomInfo, g_ogolRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10062,7 +10062,7 @@ struct BurnDriverD BurnDrvMDg_olgole = {
 	"g_olgole", "g_ogol", NULL, "1900",
 	"Olympic Gold - Barcelona 92 (E) (M8) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_olgoleRomInfo, g_olgoleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10080,7 +10080,7 @@ struct BurnDriverD BurnDrvMDg_olgolj = {
 	"g_olgolj", "g_ogol", NULL, "1900",
 	"Olympic Gold - Barcelona 92 (J) (M8) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_olgoljRomInfo, g_olgoljRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10098,7 +10098,7 @@ struct BurnDriverD BurnDrvMDg_olgolu = {
 	"g_olgolu", "g_ogol", NULL, "1900",
 	"Olympic Gold - Barcelona 92 (U) (M8) [a1][c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_olgoluRomInfo, g_olgoluRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10116,7 +10116,7 @@ struct BurnDriverD BurnDrvMDg_otti = {
 	"g_otti", NULL, NULL, "1900",
 	"Ottifants, The (E) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ottiRomInfo, g_ottiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10134,7 +10134,7 @@ struct BurnDriverD BurnDrvMDg_ottifb = {
 	"g_ottifb", "g_otti", NULL, "1900",
 	"Ottifants, The (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ottifbRomInfo, g_ottifbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10152,7 +10152,7 @@ struct BurnDriverD BurnDrvMDg_pga = {
 	"g_pga", NULL, NULL, "1900",
 	"PGA Tour Golf (UE) (REV02) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pgaRomInfo, g_pgaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10170,7 +10170,7 @@ struct BurnDriverD BurnDrvMDg_pgat01 = {
 	"g_pgat01", "g_pga", NULL, "1900",
 	"PGA Tour Golf (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pgat01RomInfo, g_pgat01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10188,7 +10188,7 @@ struct BurnDriverD BurnDrvMDg_pga2 = {
 	"g_pga2", NULL, NULL, "1900",
 	"PGA Tour Golf II (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pga2RomInfo, g_pga2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10206,7 +10206,7 @@ struct BurnDriverD BurnDrvMDg_pga2j = {
 	"g_pga2j", "g_pga2", NULL, "1900",
 	"PGA Tour Golf II (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pga2jRomInfo, g_pga2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10224,7 +10224,7 @@ struct BurnDriverD BurnDrvMDg_pga200 = {
 	"g_pga200", "g_pga2", NULL, "1900",
 	"PGA Tour Golf II (UE) (REV00) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pga200RomInfo, g_pga200RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10242,7 +10242,7 @@ struct BurnDriverD BurnDrvMDg_pga3 = {
 	"g_pga3", NULL, NULL, "1900",
 	"PGA Tour Golf III (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pga3RomInfo, g_pga3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10260,7 +10260,7 @@ struct BurnDriverD BurnDrvMDg_pg96 = {
 	"g_pg96", NULL, NULL, "1900",
 	"PGA Tour 96 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pg96RomInfo, g_pg96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10278,7 +10278,7 @@ struct BurnDriverD BurnDrvMDg_phel = {
 	"g_phel", NULL, NULL, "1900",
 	"Phelios (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_phelRomInfo, g_phelRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10296,7 +10296,7 @@ struct BurnDriverD BurnDrvMDg_phelie = {
 	"g_phelie", "g_phel", NULL, "1900",
 	"Phelios (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_phelieRomInfo, g_phelieRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10314,7 +10314,7 @@ struct BurnDriverD BurnDrvMDg_phelij = {
 	"g_phelij", "g_phel", NULL, "1900",
 	"Phelios (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_phelijRomInfo, g_phelijRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10332,7 +10332,7 @@ struct BurnDriverD BurnDrvMDg_pirg = {
 	"g_pirg", NULL, NULL, "1900",
 	"Pirates! Gold (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pirgRomInfo, g_pirgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10350,7 +10350,7 @@ struct BurnDriverD BurnDrvMDg_pgoldb = {
 	"g_pgoldb", "g_pirg", NULL, "1900",
 	"Pirates! Gold (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pgoldbRomInfo, g_pgoldbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10368,7 +10368,7 @@ struct BurnDriverD BurnDrvMDg_popu = {
 	"g_popu", NULL, NULL, "1900",
 	"Populous (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_popuRomInfo, g_popuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10386,7 +10386,7 @@ struct BurnDriverD BurnDrvMDg_popue = {
 	"g_popue", "g_popu", NULL, "1900",
 	"Populous (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_popueRomInfo, g_popueRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10404,7 +10404,7 @@ struct BurnDriverD BurnDrvMDg_popuj = {
 	"g_popuj", "g_popu", NULL, "1900",
 	"Populous (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_popujRomInfo, g_popujRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10422,7 +10422,7 @@ struct BurnDriverD BurnDrvMDg_pmon = {
 	"g_pmon", NULL, NULL, "1900",
 	"Power Monger (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pmonRomInfo, g_pmonRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10440,7 +10440,7 @@ struct BurnDriverD BurnDrvMDg_pmonj = {
 	"g_pmonj", "g_pmon", NULL, "1900",
 	"Power Monger (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pmonjRomInfo, g_pmonjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10458,7 +10458,7 @@ struct BurnDriverD BurnDrvMDg_ppin = {
 	"g_ppin", NULL, NULL, "1900",
 	"Psycho Pinball (E) (Oct 1994) (M5) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ppinRomInfo, g_ppinRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10476,7 +10476,7 @@ struct BurnDriverD BurnDrvMDg_ppina = {
 	"g_ppina", "g_ppin", NULL, "1900",
 	"Psycho Pinball (E) (Sep 1994) (M5) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ppinaRomInfo, g_ppinaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10494,7 +10494,7 @@ struct BurnDriverD BurnDrvMDg_pugg = {
 	"g_pugg", NULL, NULL, "1900",
 	"Puggsy (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_puggRomInfo, g_puggRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10512,7 +10512,7 @@ struct BurnDriverD BurnDrvMDg_puggse = {
 	"g_puggse", "g_pugg", NULL, "1900",
 	"Puggsy (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_puggseRomInfo, g_puggseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10530,7 +10530,7 @@ struct BurnDriverD BurnDrvMDg_puggsb = {
 	"g_puggsb", "g_pugg", NULL, "1900",
 	"Puggsy (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_puggsbRomInfo, g_puggsbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10548,7 +10548,7 @@ struct BurnDriverD BurnDrvMDg_puni = {
 	"g_puni", NULL, NULL, "1900",
 	"Punisher, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_puniRomInfo, g_puniRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10566,7 +10566,7 @@ struct BurnDriverD BurnDrvMDg_punise = {
 	"g_punise", "g_puni", NULL, "1900",
 	"Punisher, The (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_puniseRomInfo, g_puniseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10584,7 +10584,7 @@ struct BurnDriverD BurnDrvMDg_puy2 = {
 	"g_puy2", NULL, NULL, "1900",
 	"Puyo Puyo Tsu (J) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_puy2RomInfo, g_puy2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10602,7 +10602,7 @@ struct BurnDriverD BurnDrvMDg_puy200 = {
 	"g_puy200", "g_puy2", NULL, "1900",
 	"Puyo Puyo Tsu (J) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_puy200RomInfo, g_puy200RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10620,7 +10620,7 @@ struct BurnDriverD BurnDrvMDg_rist = {
 	"g_rist", NULL, NULL, "1900",
 	"Ristar (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ristRomInfo, g_ristRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10638,7 +10638,7 @@ struct BurnDriverD BurnDrvMDg_rist00 = {
 	"g_rist00", "g_rist", NULL, "1900",
 	"Ristar (UE) (REV00)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rist00RomInfo, g_rist00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10656,7 +10656,7 @@ struct BurnDriverD BurnDrvMDg_ristj = {
 	"g_ristj", "g_rist", NULL, "1900",
 	"Ristar - The Shooting Star (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ristjRomInfo, g_ristjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10674,7 +10674,7 @@ struct BurnDriverD BurnDrvMDg_r3k2 = {
 	"g_r3k2", NULL, NULL, "1900",
 	"Romance of the Three Kingdoms II (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_r3k2RomInfo, g_r3k2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10692,7 +10692,7 @@ struct BurnDriverD BurnDrvMDg_sango2 = {
 	"g_sango2", "g_r3k2", NULL, "1900",
 	"Sangokushi II (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sango2RomInfo, g_sango2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10710,7 +10710,7 @@ struct BurnDriverD BurnDrvMDg_r3k3 = {
 	"g_r3k3", NULL, NULL, "1900",
 	"Romance of the Three Kingdoms III (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_r3k3RomInfo, g_r3k3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10728,7 +10728,7 @@ struct BurnDriverD BurnDrvMDg_sango3 = {
 	"g_sango3", "g_r3k3", NULL, "1900",
 	"Sangokushi III (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sango3RomInfo, g_sango3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10746,7 +10746,7 @@ struct BurnDriverD BurnDrvMDg_sagia = {
 	"g_sagia", NULL, NULL, "1900",
 	"Sagaia (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sagiaRomInfo, g_sagiaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10764,7 +10764,7 @@ struct BurnDriverD BurnDrvMDg_dar2 = {
 	"g_dar2", "g_sagia", NULL, "1900",
 	"Darius II (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dar2RomInfo, g_dar2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10782,7 +10782,7 @@ struct BurnDriverD BurnDrvMDg_dari2a = {
 	"g_dari2a", "g_sagia", NULL, "1900",
 	"Darius II (J) [a1]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dari2aRomInfo, g_dari2aRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10800,7 +10800,7 @@ struct BurnDriverD BurnDrvMDg_sswo = {
 	"g_sswo", NULL, NULL, "1900",
 	"Saint Sword (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sswoRomInfo, g_sswoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10818,7 +10818,7 @@ struct BurnDriverD BurnDrvMDg_sswoj = {
 	"g_sswoj", "g_sswo", NULL, "1900",
 	"Saint Sword (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sswojRomInfo, g_sswojRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10836,7 +10836,7 @@ struct BurnDriverD BurnDrvMDg_snsm = {
 	"g_snsm", NULL, NULL, "1900",
 	"Saturday Night Slam Masters (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_snsmRomInfo, g_snsmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10854,7 +10854,7 @@ struct BurnDriverD BurnDrvMDg_snsme = {
 	"g_snsme", "g_snsm", NULL, "1900",
 	"Saturday Night Slam Masters (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_snsmeRomInfo, g_snsmeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10872,7 +10872,7 @@ struct BurnDriverD BurnDrvMDg_shaq = {
 	"g_shaq", NULL, NULL, "1900",
 	"Shaq Fu (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shaqRomInfo, g_shaqRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10890,7 +10890,7 @@ struct BurnDriverD BurnDrvMDg_sbls = {
 	"g_sbls", NULL, NULL, "1900",
 	"Shadow Blasters (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sblsRomInfo, g_sblsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10908,7 +10908,7 @@ struct BurnDriverD BurnDrvMDg_shiten = {
 	"g_shiten", "g_sbls", NULL, "1900",
 	"Shiten Myooh (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shitenRomInfo, g_shitenRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10926,7 +10926,7 @@ struct BurnDriverD BurnDrvMDg_soldf = {
 	"g_soldf", NULL, NULL, "1900",
 	"Soldiers of Fortune (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soldfRomInfo, g_soldfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10944,7 +10944,7 @@ struct BurnDriverD BurnDrvMDg_chao = {
 	"g_chao", "g_soldf", NULL, "1900",
 	"Chaos Engine, The (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chaoRomInfo, g_chaoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10962,7 +10962,7 @@ struct BurnDriverD BurnDrvMDg_cengb = {
 	"g_cengb", "g_soldf", NULL, "1900",
 	"Chaos Engine, The (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cengbRomInfo, g_cengbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10980,7 +10980,7 @@ struct BurnDriver BurnDrvMDg_spl2 = {
 	"g_spl2", NULL, NULL, "1900",
 	"Splatterhouse 2 (U) [c][!]\0", NULL, "Namco", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_spl2RomInfo, g_spl2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -10998,7 +10998,7 @@ struct BurnDriver BurnDrvMDg_shou2e = {
 	"g_shou2e", "g_spl2", NULL, "1900",
 	"Splatterhouse 2 (E) [c][!]\0", NULL, "Namco", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shou2eRomInfo, g_shou2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11016,7 +11016,7 @@ struct BurnDriver BurnDrvMDg_spl3 = {
 	"g_spl3", NULL, NULL, "1900",
 	"Splatterhouse 3 (U) [c][!]\0", NULL, "Namco", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_spl3RomInfo, g_spl3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11034,7 +11034,7 @@ struct BurnDriver BurnDrvMDg_shou3j = {
 	"g_shou3j", "g_spl3", NULL, "1900",
 	"Splatterhouse Part 3 (J) [c][!]\0", NULL, "Namco", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shou3jRomInfo, g_shou3jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11052,7 +11052,7 @@ struct BurnDriver BurnDrvMDg_sho3ja = {
 	"g_sho3ja", "g_spl3", NULL, "1900",
 	"Splatterhouse Part 3 (J) [a1]\0", NULL, "Namco", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sho3jaRomInfo, g_sho3jaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11070,7 +11070,7 @@ struct BurnDriverD BurnDrvMDg_sf2c = {
 	"g_sf2c", NULL, NULL, "1900",
 	"Street Fighter II' - Special Champion Edition (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sf2cRomInfo, g_sf2cRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11088,7 +11088,7 @@ struct BurnDriverD BurnDrvMDg_sf2e = {
 	"g_sf2e", "g_sf2c", NULL, "1900",
 	"Street Fighter II' - Special Champion Edition (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sf2eRomInfo, g_sf2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11106,7 +11106,7 @@ struct BurnDriverD BurnDrvMDg_sf2j = {
 	"g_sf2j", "g_sf2c", NULL, "1900",
 	"Street Fighter II' Plus - Champion Edition (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sf2jRomInfo, g_sf2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11124,7 +11124,7 @@ struct BurnDriverD BurnDrvMDg_sf2b = {
 	"g_sf2b", "g_sf2c", NULL, "1900",
 	"Street Fighter II' Turbo (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sf2bRomInfo, g_sf2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11142,7 +11142,7 @@ struct BurnDriverD BurnDrvMDg_stri = {
 	"g_stri", NULL, NULL, "1900",
 	"Strider (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_striRomInfo, g_striRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11160,7 +11160,7 @@ struct BurnDriverD BurnDrvMDg_stridj = {
 	"g_stridj", "g_stri", NULL, "1900",
 	"Strider Hiryuu (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_stridjRomInfo, g_stridjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11178,7 +11178,7 @@ struct BurnDriverD BurnDrvMDg_supm = {
 	"g_supm", NULL, NULL, "1900",
 	"Superman (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_supmRomInfo, g_supmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11196,7 +11196,7 @@ struct BurnDriverD BurnDrvMDg_supmne = {
 	"g_supmne", "g_supm", NULL, "1900",
 	"Superman (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_supmneRomInfo, g_supmneRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11214,7 +11214,7 @@ struct BurnDriverD BurnDrvMDg_supmnb = {
 	"g_supmnb", "g_supm", NULL, "1900",
 	"Superman (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_supmnbRomInfo, g_supmnbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11232,7 +11232,7 @@ struct BurnDriverD BurnDrvMDg_shyd = {
 	"g_shyd", NULL, NULL, "1900",
 	"Super Hydlide (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shydRomInfo, g_shydRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11250,7 +11250,7 @@ struct BurnDriverD BurnDrvMDg_shyde = {
 	"g_shyde", "g_shyd", NULL, "1900",
 	"Super Hydlide (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shydeRomInfo, g_shydeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11268,7 +11268,7 @@ struct BurnDriverD BurnDrvMDg_shydj = {
 	"g_shydj", "g_shyd", NULL, "1900",
 	"Super Hydlide (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shydjRomInfo, g_shydjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11286,7 +11286,7 @@ struct BurnDriverD BurnDrvMDg_sydval = {
 	"g_sydval", NULL, NULL, "1900",
 	"Syd of Valis (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sydvalRomInfo, g_sydvalRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11304,7 +11304,7 @@ struct BurnDriverD BurnDrvMDg_valsdj = {
 	"g_valsdj", "g_sydval", NULL, "1900",
 	"Valis SD (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_valsdjRomInfo, g_valsdjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11322,7 +11322,7 @@ struct BurnDriverD BurnDrvMDg_sylv = {
 	"g_sylv", NULL, NULL, "1900",
 	"Sylvester & Tweety in Cagey Capers (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sylvRomInfo, g_sylvRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11340,7 +11340,7 @@ struct BurnDriverD BurnDrvMDg_sylvb = {
 	"g_sylvb", "g_sylv", NULL, "1900",
 	"Sylvester & Tweety in Cagey Capers (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sylvbRomInfo, g_sylvbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11358,7 +11358,7 @@ struct BurnDriverD BurnDrvMDg_targ = {
 	"g_targ", NULL, NULL, "1900",
 	"Target Earth (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_targRomInfo, g_targRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11376,7 +11376,7 @@ struct BurnDriverD BurnDrvMDg_asl = {
 	"g_asl", "g_targ", NULL, "1900",
 	"Assault Suits Leynos (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aslRomInfo, g_aslRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11394,7 +11394,7 @@ struct BurnDriverD BurnDrvMDg_turt = {
 	"g_turt", NULL, NULL, "1900",
 	"Teenage Mutant Ninja Turtles - The Hyperstone Heist (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_turtRomInfo, g_turtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11412,7 +11412,7 @@ struct BurnDriverD BurnDrvMDg_tmntj = {
 	"g_tmntj", "g_turt", NULL, "1900",
 	"Teenage Mutant Ninja Turtles - Return of the Shredder (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tmntjRomInfo, g_tmntjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11430,7 +11430,7 @@ struct BurnDriverD BurnDrvMDg_tmhte = {
 	"g_tmhte", "g_turt", NULL, "1900",
 	"Teenage Mutant Hero Turtles - The Hyperstone Heist (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tmhteRomInfo, g_tmhteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11448,7 +11448,7 @@ struct BurnDriverD BurnDrvMDg_tutf = {
 	"g_tutf", NULL, NULL, "1900",
 	"Teenage Mutant Ninja Turtles - Tournament Fighters (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tutfRomInfo, g_tutfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11466,7 +11466,7 @@ struct BurnDriverD BurnDrvMDg_tmnttj = {
 	"g_tmnttj", "g_tutf", NULL, "1900",
 	"Teenage Mutant Ninja Turtles - Tournament Fighters (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tmnttjRomInfo, g_tmnttjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11484,7 +11484,7 @@ struct BurnDriverD BurnDrvMDg_tmhtte = {
 	"g_tmhtte", "g_tutf", NULL, "1900",
 	"Teenage Mutant Hero Turtles - Tournament Fighters (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tmhtteRomInfo, g_tmhtteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11502,7 +11502,7 @@ struct BurnDriverD BurnDrvMDg_tta = {
 	"g_tta", NULL, NULL, "1900",
 	"Tiny Toon Adventures - Buster's Hidden Treasure (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ttaRomInfo, g_ttaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11520,7 +11520,7 @@ struct BurnDriverD BurnDrvMDg_ttabe = {
 	"g_ttabe", "g_tta", NULL, "1900",
 	"Tiny Toon Adventures - Buster's Hidden Treasure (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ttabeRomInfo, g_ttabeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11538,7 +11538,7 @@ struct BurnDriverD BurnDrvMDg_ttaa = {
 	"g_ttaa", NULL, NULL, "1900",
 	"Tiny Toon Adventures - Acme All-Stars (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ttaaRomInfo, g_ttaaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11556,7 +11556,7 @@ struct BurnDriverD BurnDrvMDg_ttadae = {
 	"g_ttadae", "g_ttaa", NULL, "1900",
 	"Tiny Toon Adventures - Acme All-Stars (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ttadaeRomInfo, g_ttadaeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11574,7 +11574,7 @@ struct BurnDriverD BurnDrvMDg_toki = {
 	"g_toki", NULL, NULL, "1900",
 	"Toki - Going Ape Spit (UE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tokiRomInfo, g_tokiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11592,7 +11592,7 @@ struct BurnDriverD BurnDrvMDg_juju = {
 	"g_juju", "g_toki", NULL, "1900",
 	"JuJu Densetsu (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jujuRomInfo, g_jujuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11610,7 +11610,7 @@ struct BurnDriverD BurnDrvMDg_toy = {
 	"g_toy", NULL, NULL, "1900",
 	"Toy Story (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_toyRomInfo, g_toyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11628,7 +11628,7 @@ struct BurnDriverD BurnDrvMDg_toyste = {
 	"g_toyste", "g_toy", NULL, "1900",
 	"Toy Story (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_toysteRomInfo, g_toysteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11646,7 +11646,7 @@ struct BurnDriverD BurnDrvMDg_traysi = {
 	"g_traysi", NULL, NULL, "1900",
 	"Traysia (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_traysiRomInfo, g_traysiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11664,7 +11664,7 @@ struct BurnDriverD BurnDrvMDg_minato = {
 	"g_minato", "g_traysi", NULL, "1900",
 	"Minato no Toreijia (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_minatoRomInfo, g_minatoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11682,7 +11682,7 @@ struct BurnDriverD BurnDrvMDg_2cd = {
 	"g_2cd", NULL, NULL, "1900",
 	"Two Crude Dudes (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_2cdRomInfo, g_2cdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11700,7 +11700,7 @@ struct BurnDriverD BurnDrvMDg_crudee = {
 	"g_crudee", "g_2cd", NULL, "1900",
 	"Two Crude Dudes (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_crudeeRomInfo, g_crudeeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11718,7 +11718,7 @@ struct BurnDriverD BurnDrvMDg_crudeb = {
 	"g_crudeb", "g_2cd", NULL, "1900",
 	"Crude Buster (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_crudebRomInfo, g_crudebRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11736,7 +11736,7 @@ struct BurnDriverD BurnDrvMDg_uqix = {
 	"g_uqix", NULL, NULL, "1900",
 	"Ultimate Qix (U) [!]\0", NULL, "Taito", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_uqixRomInfo, g_uqixRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11754,7 +11754,7 @@ struct BurnDriverD BurnDrvMDg_volf = {
 	"g_volf", "g_uqix", NULL, "1900",
 	"Volfied (J) [!]\0", NULL, "Taito", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_volfRomInfo, g_volfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11772,7 +11772,7 @@ struct BurnDriverD BurnDrvMDg_vf2 = {
 	"g_vf2", NULL, NULL, "1900",
 	"Virtua Fighter 2 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vf2RomInfo, g_vf2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11790,7 +11790,7 @@ struct BurnDriverD BurnDrvMDg_vrtr = {
 	"g_vrtr", NULL, NULL, "1900",
 	"VR Troopers (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vrtrRomInfo, g_vrtrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11808,7 +11808,7 @@ struct BurnDriverD BurnDrvMDg_weap = {
 	"g_weap", NULL, NULL, "1900",
 	"Weaponlord (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_weapRomInfo, g_weapRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11826,7 +11826,7 @@ struct BurnDriverD BurnDrvMDg_wwcse = {
 	"g_wwcse", NULL, NULL, "1900",
 	"Where in the World is Carmen Sandiego (E) (M5)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wwcseRomInfo, g_wwcseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11844,7 +11844,7 @@ struct BurnDriverD BurnDrvMDg_wwics = {
 	"g_wwics", "g_wwcse", NULL, "1900",
 	"Where in the World is Carmen Sandiego (B) (M2) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wwicsRomInfo, g_wwicsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11862,7 +11862,7 @@ struct BurnDriverD BurnDrvMDg_wtics = {
 	"g_wtics", NULL, NULL, "1900",
 	"Where in Time is Carmen Sandiego (B) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wticsRomInfo, g_wticsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11880,7 +11880,7 @@ struct BurnDriverD BurnDrvMDg_wticsa = {
 	"g_wticsa", "g_wtics", NULL, "1900",
 	"Where in Time is Carmen Sandiego (UE) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wticsaRomInfo, g_wticsaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11898,7 +11898,7 @@ struct BurnDriverD BurnDrvMDg_wars = {
 	"g_wars", NULL, NULL, "1900",
 	"Warsong (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_warsRomInfo, g_warsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11916,7 +11916,7 @@ struct BurnDriverD BurnDrvMDg_langr = {
 	"g_langr", "g_wars", NULL, "1900",
 	"Langrisser (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_langrRomInfo, g_langrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11934,7 +11934,7 @@ struct BurnDriverD BurnDrvMDg_lngr2a = {
 	"g_lngr2a", NULL, NULL, "1900",
 	"Langrisser II (J) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lngr2aRomInfo, g_lngr2aRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11952,7 +11952,7 @@ struct BurnDriverD BurnDrvMDg_lngr2c = {
 	"g_lngr2c", "g_lngr2a", NULL, "1900",
 	"Langrisser II (J) (REV02) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lngr2cRomInfo, g_lngr2cRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11970,7 +11970,7 @@ struct BurnDriverD BurnDrvMDg_lng201 = {
 	"g_lng201", "g_lngr2a", NULL, "1900",
 	"Langrisser II (J) (REV01)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lng201RomInfo, g_lng201RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -11988,7 +11988,7 @@ struct BurnDriverD BurnDrvMDg_wimb = {
 	"g_wimb", NULL, NULL, "1900",
 	"Wimbledon Championship Tennis (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wimbRomInfo, g_wimbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12006,7 +12006,7 @@ struct BurnDriverD BurnDrvMDg_wimbp = {
 	"g_wimbp", "g_wimb", NULL, "1900",
 	"Wimbledon Championship Tennis (U) (Prototype) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wimbpRomInfo, g_wimbpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12024,7 +12024,7 @@ struct BurnDriverD BurnDrvMDg_wimbe = {
 	"g_wimbe", "g_wimb", NULL, "1900",
 	"Wimbledon Championship Tennis (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wimbeRomInfo, g_wimbeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12042,7 +12042,7 @@ struct BurnDriverD BurnDrvMDg_wwar = {
 	"g_wwar", NULL, NULL, "1900",
 	"Wrestle War (JE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wwarRomInfo, g_wwarRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12060,7 +12060,7 @@ struct BurnDriverD BurnDrvMDg_wwarb = {
 	"g_wwarb", "g_wwar", NULL, "1900",
 	"Wrestle War (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wwarbRomInfo, g_wwarbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12078,7 +12078,7 @@ struct BurnDriverD BurnDrvMDg_wmar = {
 	"g_wmar", NULL, NULL, "1900",
 	"WWF Wrestlemania Arcade (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wmarRomInfo, g_wmarRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12096,7 +12096,7 @@ struct BurnDriverD BurnDrvMDg_wfwaal = {
 	"g_wfwaal", "g_wmar", NULL, "1900",
 	"WWF Wrestlemania Arcade (Alpha) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wfwaalRomInfo, g_wfwaalRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12114,7 +12114,7 @@ struct BurnDriverD BurnDrvMDg_xmen = {
 	"g_xmen", NULL, NULL, "1900",
 	"X-Men (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_xmenRomInfo, g_xmenRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12132,7 +12132,7 @@ struct BurnDriverD BurnDrvMDg_xmene = {
 	"g_xmene", "g_xmen", NULL, "1900",
 	"X-Men (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_xmeneRomInfo, g_xmeneRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12150,7 +12150,7 @@ struct BurnDriverD BurnDrvMDg_xme2 = {
 	"g_xme2", NULL, NULL, "1900",
 	"X-Men 2 - Clone Wars (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_xme2RomInfo, g_xme2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12168,7 +12168,7 @@ struct BurnDriverD BurnDrvMDg_yuyu = {
 	"g_yuyu", NULL, NULL, "1900",
 	"Yuu Yuu Hakusho - Makyou Toitsusen (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_yuyuRomInfo, g_yuyuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12186,7 +12186,7 @@ struct BurnDriverD BurnDrvMDg_yuyub = {
 	"g_yuyub", "g_yuyu", NULL, "1900",
 	"Yuu Yuu Hakusho - Sunset Fighters (B) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_yuyubRomInfo, g_yuyubRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12204,7 +12204,7 @@ struct BurnDriverD BurnDrvMDg_ys3 = {
 	"g_ys3", NULL, NULL, "1900",
 	"Ys III - Wanderers from Ys (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ys3RomInfo, g_ys3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12222,7 +12222,7 @@ struct BurnDriverD BurnDrvMDg_ys3j = {
 	"g_ys3j", "g_ys3", NULL, "1900",
 	"Ys III - Wanderers from Ys (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ys3jRomInfo, g_ys3jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12240,7 +12240,7 @@ struct BurnDriverD BurnDrvMDg_zany = {
 	"g_zany", NULL, NULL, "1900",
 	"Zany Golf (UE) (REV00) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zanyRomInfo, g_zanyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12258,7 +12258,7 @@ struct BurnDriverD BurnDrvMDg_zany01 = {
 	"g_zany01", "g_zany", NULL, "1900",
 	"Zany Golf (UE) (REV01))\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zany01RomInfo, g_zany01RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12276,7 +12276,7 @@ struct BurnDriverD BurnDrvMDg_zwin = {
 	"g_zwin", NULL, NULL, "1900",
 	"Zero Wing (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zwinRomInfo, g_zwinRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12294,7 +12294,7 @@ struct BurnDriverD BurnDrvMDg_zwingj = {
 	"g_zwingj", "g_zwin", NULL, "1900",
 	"Zero Wing (J)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zwingjRomInfo, g_zwingjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12312,7 +12312,7 @@ struct BurnDriverD BurnDrvMDg_zomb = {
 	"g_zomb", NULL, NULL, "1900",
 	"Zombies Ate My Neighbors (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zombRomInfo, g_zombRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12330,7 +12330,7 @@ struct BurnDriverD BurnDrvMDg_zombe = {
 	"g_zombe", "g_zomb", NULL, "1900",
 	"Zombies (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zombeRomInfo, g_zombeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12348,7 +12348,7 @@ struct BurnDriverD BurnDrvMDg_zool = {
 	"g_zool", NULL, NULL, "1900",
 	"Zool (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zoolRomInfo, g_zoolRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12366,7 +12366,7 @@ struct BurnDriverD BurnDrvMDg_zoole = {
 	"g_zoole", "g_zool", NULL, "1900",
 	"Zool (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zooleRomInfo, g_zooleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12384,7 +12384,7 @@ struct BurnDriverD BurnDrvMDg_uw = {
 	"g_uw", NULL, NULL, "199?",
 	"Uncharted Waters (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_uwRomInfo, g_uwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12402,7 +12402,7 @@ struct BurnDriverD BurnDrvMDg_daikou = {
 	"g_daikou", "g_uw", NULL, "1900",
 	"Daikoukai Jidai (J) [c][!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_daikouRomInfo, g_daikouRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12420,7 +12420,7 @@ struct BurnDriverD BurnDrvMDg_uwnh = {
 	"g_uwnh", NULL, NULL, "1900",
 	"Uncharted Waters - New Horizons (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_uwnhRomInfo, g_uwnhRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12438,7 +12438,7 @@ struct BurnDriverD BurnDrvMDg_daik2 = {
 	"g_daik2", "g_uwnh", NULL, "1900",
 	"Daikoukai Jidai II (J)\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_daik2RomInfo, g_daik2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12456,7 +12456,7 @@ struct BurnDriverD BurnDrvMDg_gemfi = {
 	"g_gemfi", NULL, NULL, "1900",
 	"GemFire (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gemfiRomInfo, g_gemfiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12474,7 +12474,7 @@ struct BurnDriverD BurnDrvMDg_roybld = {
 	"g_roybld", "g_gemfi", NULL, "1900",
 	"Royal Blood (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_roybldRomInfo, g_roybldRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12492,7 +12492,7 @@ struct BurnDriverD BurnDrvMDg_nobu = {
 	"g_nobu", NULL, NULL, "1900",
 	"Nobunaga's Ambition (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nobuRomInfo, g_nobuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12510,7 +12510,7 @@ struct BurnDriverD BurnDrvMDg_nobzen = {
 	"g_nobzen", "g_nobu", NULL, "1900",
 	"Nobunaga no Yabou - Zenkokuban (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nobzenRomInfo, g_nobzenRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12528,7 +12528,7 @@ struct BurnDriverD BurnDrvMDg_pto = {
 	"g_pto", NULL, NULL, "1900",
 	"P.T.O. Pacific Theater of Operations (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ptoRomInfo, g_ptoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12546,7 +12546,7 @@ struct BurnDriverD BurnDrvMDg_teitok = {
 	"g_teitok", "g_pto", NULL, "1900",
 	"Teitoku no Ketsudan (J) [c][!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_teitokRomInfo, g_teitokRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12564,7 +12564,7 @@ struct BurnDriverD BurnDrvMDg_opeu = {
 	"g_opeu", NULL, NULL, "1900",
 	"Operation Europe - Path to Victory 1939-1945 (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_opeuRomInfo, g_opeuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12582,7 +12582,7 @@ struct BurnDriverD BurnDrvMDg_europa = {
 	"g_europa", "g_opeu", NULL, "1900",
 	"Europa Sensen (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_europaRomInfo, g_europaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12600,7 +12600,7 @@ struct BurnDriverD BurnDrvMDg_librty = {
 	"g_librty", NULL, NULL, "1993",
 	"Liberty or Death (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_librtyRomInfo, g_librtyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12618,7 +12618,7 @@ struct BurnDriverD BurnDrvMDg_geng = {
 	"g_geng", NULL, NULL, "1900",
 	"Genghis Khan II - Clan of the Gray Wolf (U) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gengRomInfo, g_gengRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12636,7 +12636,7 @@ struct BurnDriverD BurnDrvMDg_nobbus = {
 	"g_nobbus", NULL, NULL, "1900",
 	"Nobunaga no Yabou - Bushou Fuuunsoku (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nobbusRomInfo, g_nobbusRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12654,7 +12654,7 @@ struct BurnDriverD BurnDrvMDg_noblor = {
 	"g_noblor", NULL, NULL, "1900",
 	"Nobunaga no Yabou Haouden - Lord of Darkness (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_noblorRomInfo, g_noblorRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12672,7 +12672,7 @@ struct BurnDriverD BurnDrvMDg_taikou = {
 	"g_taikou", NULL, NULL, "1900",
 	"Taikou Risshiden (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_taikouRomInfo, g_taikouRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12690,7 +12690,7 @@ struct BurnDriverD BurnDrvMDg_aoki = {
 	"g_aoki", NULL, NULL, "1900",
 	"Aoki Ookami to Shiroki Meshika - Genchou Hishi (J) [!]\0", NULL, "Koei", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aokiRomInfo, g_aokiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12708,7 +12708,7 @@ struct BurnDriverD BurnDrvMDg_gley = {
 	"g_gley", NULL, NULL, "1900",
 	"Gley Lancer (J)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gleyRomInfo, g_gleyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12726,7 +12726,7 @@ struct BurnDriverD BurnDrvMDg_srr = {
 	"g_srr", NULL, NULL, "1900",
 	"Snake Rattle 'n' Roll (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_srrRomInfo, g_srrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12744,7 +12744,7 @@ struct BurnDriver BurnDrvMDg_tazm = {
 	"g_tazm", NULL, NULL, "1900",
 	"Taz-Mania (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tazmRomInfo, g_tazmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12762,7 +12762,7 @@ struct BurnDriverD BurnDrvMDg_coss = {
 	"g_coss", NULL, NULL, "1900",
 	"Cosmic Spacehead (E) (M4) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cossRomInfo, g_cossRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12780,7 +12780,7 @@ struct BurnDriverD BurnDrvMDg_paca = {
 	"g_paca", NULL, NULL, "1900",
 	"Pac-Attack (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pacaRomInfo, g_pacaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12798,7 +12798,7 @@ struct BurnDriverD BurnDrvMDg_jbok = {
 	"g_jbok", NULL, NULL, "1900",
 	"Jungle Book, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jbokRomInfo, g_jbokRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12816,7 +12816,7 @@ struct BurnDriverD BurnDrvMDg_jbooke = {
 	"g_jbooke", "g_jbok", NULL, "1900",
 	"Jungle Book, The (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jbookeRomInfo, g_jbookeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12834,7 +12834,7 @@ struct BurnDriverD BurnDrvMDg_fant = {
 	"g_fant", NULL, NULL, "1900",
 	"Fantasia (JU) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fantRomInfo, g_fantRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12852,7 +12852,7 @@ struct BurnDriverD BurnDrvMDg_fante = {
 	"g_fante", "g_fant", NULL, "1900",
 	"Fantasia (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fanteRomInfo, g_fanteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12870,7 +12870,7 @@ struct BurnDriverD BurnDrvMDg_fant00 = {
 	"g_fant00", "g_fant", NULL, "1900",
 	"Fantasia (U) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fant00RomInfo, g_fant00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12888,7 +12888,7 @@ struct BurnDriverD BurnDrvMDg_dcap = {
 	"g_dcap", NULL, NULL, "1900",
 	"Decap Attack (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dcapRomInfo, g_dcapRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12906,7 +12906,7 @@ struct BurnDriverD BurnDrvMDg_jpa2 = {
 	"g_jpa2", NULL, NULL, "1998",
 	"Jurassic Park 2 - The Lost World (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jpa2RomInfo, g_jpa2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12924,7 +12924,7 @@ struct BurnDriverD BurnDrvMDg_jimp = {
 	"g_jimp", NULL, NULL, "1900",
 	"Jim Power - The Arcade Game (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jimpRomInfo, g_jimpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12942,7 +12942,7 @@ struct BurnDriverD BurnDrvMDg_wbug = {
 	"g_wbug", NULL, NULL, "1900",
 	"Charles' Window Bug Example\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wbugRomInfo, g_wbugRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12960,7 +12960,7 @@ struct BurnDriverD BurnDrvMDg_raid = {
 	"g_raid", NULL, NULL, "1900",
 	"Raiden Trad (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_raidRomInfo, g_raidRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12978,7 +12978,7 @@ struct BurnDriverD BurnDrvMDg_f98 = {
 	"g_f98", NULL, NULL, "1900",
 	"FIFA Soccer 98 - Road to the World Cup (E) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f98RomInfo, g_f98RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -12996,7 +12996,7 @@ struct BurnDriverD BurnDrvMDg_maui = {
 	"g_maui", NULL, NULL, "1900",
 	"Donald in Maui Mallard (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mauiRomInfo, g_mauiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13014,7 +13014,7 @@ struct BurnDriverD BurnDrvMDg_sgp2 = {
 	"g_sgp2", NULL, NULL, "1900",
 	"Ayrton Senna's Super Monaco GP II (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sgp2RomInfo, g_sgp2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13032,7 +13032,7 @@ struct BurnDriverD BurnDrvMDg_smgp2a = {
 	"g_smgp2a", "g_sgp2", NULL, "1900",
 	"Ayrton Senna's Super Monaco GP II (JE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_smgp2aRomInfo, g_smgp2aRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13050,7 +13050,7 @@ struct BurnDriverD BurnDrvMDg_batf = {
 	"g_batf", NULL, NULL, "1900",
 	"Batman Forever (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_batfRomInfo, g_batfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13068,7 +13068,7 @@ struct BurnDriverD BurnDrvMDg_gtwi = {
 	"g_gtwi", NULL, NULL, "1900",
 	"Gadget Twins, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gtwiRomInfo, g_gtwiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13086,7 +13086,7 @@ struct BurnDriverD BurnDrvMDg_lgal = {
 	"g_lgal", NULL, NULL, "1900",
 	"Legend of Galahad, The (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lgalRomInfo, g_lgalRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13104,7 +13104,7 @@ struct BurnDriverD BurnDrvMDg_lion = {
 	"g_lion", NULL, NULL, "1900",
 	"Lion King, The (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lionRomInfo, g_lionRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13122,7 +13122,7 @@ struct BurnDriverD BurnDrvMDg_pano = {
 	"g_pano", NULL, NULL, "1900",
 	"Panorama Cotton (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_panoRomInfo, g_panoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13140,7 +13140,7 @@ struct BurnDriverD BurnDrvMDg_puls = {
 	"g_puls", NULL, NULL, "1900",
 	"Pulseman (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pulsRomInfo, g_pulsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13158,7 +13158,7 @@ struct BurnDriverD BurnDrvMDg_redz = {
 	"g_redz", NULL, NULL, "1900",
 	"Red Zone (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_redzRomInfo, g_redzRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13176,7 +13176,7 @@ struct BurnDriverD BurnDrvMDg_skit = {
 	"g_skit", NULL, NULL, "1900",
 	"Skitchin' (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_skitRomInfo, g_skitRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13194,7 +13194,7 @@ struct BurnDriverD BurnDrvMDg_sfze = {
 	"g_sfze", NULL, NULL, "1900",
 	"Super Fantasy Zone (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sfzeRomInfo, g_sfzeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13212,7 +13212,7 @@ struct BurnDriverD BurnDrvMDg_sfz = {
 	"g_sfz", "g_sfze", NULL, "1900",
 	"Super Fantasy Zone (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sfzRomInfo, g_sfzRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13230,7 +13230,7 @@ struct BurnDriverD BurnDrvMDg_sho = {
 	"g_sho", NULL, NULL, "1900",
 	"Super Hang-On (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shoRomInfo, g_shoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13248,7 +13248,7 @@ struct BurnDriverD BurnDrvMDg_sho00 = {
 	"g_sho00", "g_sho", NULL, "1900",
 	"Super Hang-On (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sho00RomInfo, g_sho00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13266,7 +13266,7 @@ struct BurnDriverD BurnDrvMDg_stb = {
 	"g_stb", NULL, NULL, "1900",
 	"Super Thunder Blade (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_stbRomInfo, g_stbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13284,7 +13284,7 @@ struct BurnDriverD BurnDrvMDg_stb00 = {
 	"g_stb00", "g_stb", NULL, "1900",
 	"Super Thunder Blade (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_stb00RomInfo, g_stb00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13302,7 +13302,7 @@ struct BurnDriverD BurnDrvMDg_pino = {
 	"g_pino", NULL, NULL, "1900",
 	"Pinocchio (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pinoRomInfo, g_pinoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13320,7 +13320,7 @@ struct BurnDriverD BurnDrvMDg_pinnoe = {
 	"g_pinnoe", "g_pino", NULL, "1900",
 	"Pinocchio (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pinnoeRomInfo, g_pinnoeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13338,7 +13338,7 @@ struct BurnDriverD BurnDrvMDg_puyo = {
 	"g_puyo", NULL, NULL, "1900",
 	"Puyo Puyo (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_puyoRomInfo, g_puyoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13356,7 +13356,7 @@ struct BurnDriverD BurnDrvMDg_seaq = {
 	"g_seaq", NULL, NULL, "1900",
 	"SeaQuest DSV (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_seaqRomInfo, g_seaqRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13374,7 +13374,7 @@ struct BurnDriverD BurnDrvMDg_seaqe = {
 	"g_seaqe", "g_seaq", NULL, "1900",
 	"SeaQuest DSV (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_seaqeRomInfo, g_seaqeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13392,7 +13392,7 @@ struct BurnDriverD BurnDrvMDg_tale = {
 	"g_tale", NULL, NULL, "1900",
 	"Tale Spin (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_taleRomInfo, g_taleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13410,7 +13410,7 @@ struct BurnDriverD BurnDrvMDg_balz = {
 	"g_balz", NULL, NULL, "1900",
 	"Ballz (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_balzRomInfo, g_balzRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13428,7 +13428,7 @@ struct BurnDriverD BurnDrvMDg_bonk = {
 	"g_bonk", NULL, NULL, "1900",
 	"Bonkers (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bonkRomInfo, g_bonkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13446,7 +13446,7 @@ struct BurnDriverD BurnDrvMDg_mars = {
 	"g_mars", NULL, NULL, "1900",
 	"Marsupilami (U) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_marsRomInfo, g_marsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13464,7 +13464,7 @@ struct BurnDriverD BurnDrvMDg_marsue = {
 	"g_marsue", "g_mars", NULL, "1900",
 	"Marsupilami (E) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_marsueRomInfo, g_marsueRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13482,7 +13482,7 @@ struct BurnDriverD BurnDrvMDg_fdma = {
 	"g_fdma", NULL, NULL, "1900",
 	"Flavio's DMA Test (PD)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fdmaRomInfo, g_fdmaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13500,7 +13500,7 @@ struct BurnDriver BurnDrvMDg_3nin = {
 	"g_3nin", NULL, NULL, "1994",
 	"3 Ninjas Kick Back (U) [!]\0", NULL, "Sony Electronic", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_SCRFIGHT, 0,
 	NULL, g_3ninRomInfo, g_3ninRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13518,7 +13518,7 @@ struct BurnDriverD BurnDrvMDg_haun = {
 	"g_haun", NULL, NULL, "1900",
 	"Haunting Starring Polterguy (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_haunRomInfo, g_haunRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13536,7 +13536,7 @@ struct BurnDriverD BurnDrvMDg_mfli = {
 	"g_mfli", NULL, NULL, "1900",
 	"Misadventures of Flink, The (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mfliRomInfo, g_mfliRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13554,7 +13554,7 @@ struct BurnDriverD BurnDrvMDg_rwoo = {
 	"g_rwoo", NULL, NULL, "1900",
 	"Risky Woods (UE) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rwooRomInfo, g_rwooRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13572,7 +13572,7 @@ struct BurnDriverD BurnDrvMDg_draxos = {
 	"g_draxos", "g_rwoo", NULL, "1900",
 	"Draxos (J) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_draxosRomInfo, g_draxosRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13590,7 +13590,7 @@ struct BurnDriverD BurnDrvMDg_lot = {
 	"g_lot", NULL, NULL, "1900",
 	"Lotus Turbo Challenge (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lotRomInfo, g_lotRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13608,7 +13608,7 @@ struct BurnDriverD BurnDrvMDg_lot2 = {
 	"g_lot2", NULL, NULL, "1900",
 	"Lotus II RECS (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lot2RomInfo, g_lot2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13626,7 +13626,7 @@ struct BurnDriverD BurnDrvMDg_lotu2b = {
 	"g_lotu2b", "g_lot2", NULL, "1900",
 	"Lotus II RECS (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lotu2bRomInfo, g_lotu2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13644,7 +13644,7 @@ struct BurnDriverD BurnDrvMDg_stra = {
 	"g_stra", NULL, NULL, "1900",
 	"Street Racer (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_straRomInfo, g_straRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13662,7 +13662,7 @@ struct BurnDriverD BurnDrvMDg_tinh = {
 	"g_tinh", NULL, NULL, "1900",
 	"Tinhead (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tinhRomInfo, g_tinhRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13680,7 +13680,7 @@ struct BurnDriverD BurnDrvMDg_tg2 = {
 	"g_tg2", NULL, NULL, "1900",
 	"Top Gear 2 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tg2RomInfo, g_tg2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13698,7 +13698,7 @@ struct BurnDriverD BurnDrvMDg_gdog = {
 	"g_gdog", NULL, NULL, "1900",
 	"Greendog - The Beached Surfer Dude (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gdogRomInfo, g_gdogRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13716,7 +13716,7 @@ struct BurnDriverD BurnDrvMDg_gaia = {
 	"g_gaia", NULL, NULL, "1900",
 	"Gaiares (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gaiaRomInfo, g_gaiaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13734,7 +13734,7 @@ struct BurnDriverD BurnDrvMDg_elem = {
 	"g_elem", NULL, NULL, "1900",
 	"Elemental Master (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_elemRomInfo, g_elemRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13752,7 +13752,7 @@ struct BurnDriverD BurnDrvMDg_elemj = {
 	"g_elemj", "g_elem", NULL, "1900",
 	"Elemental Master (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_elemjRomInfo, g_elemjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13770,7 +13770,7 @@ struct BurnDriverD BurnDrvMDg_mano = {
 	"g_mano", NULL, NULL, "1900",
 	"Man Overboard! - S.S. Lucifer (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_manoRomInfo, g_manoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13788,7 +13788,7 @@ struct BurnDriverD BurnDrvMDg_daze = {
 	"g_daze", NULL, NULL, "1900",
 	"Daze Before Christmas, The (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dazeRomInfo, g_dazeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13806,7 +13806,7 @@ struct BurnDriverD BurnDrvMDg_dazeb = {
 	"g_dazeb", "g_daze", NULL, "1900",
 	"Daze Before Christmas, The (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dazebRomInfo, g_dazebRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13824,7 +13824,7 @@ struct BurnDriverD BurnDrvMDg_jwws = {
 	"g_jwws", NULL, NULL, "1900",
 	"Jimmy White's Whirlwind Snooker (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jwwsRomInfo, g_jwwsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13842,7 +13842,7 @@ struct BurnDriver BurnDrvMDg_busq = {
 	"g_busq", NULL, NULL, "1900",
 	"Bubble and Squeak (U) [!].zip\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_busqRomInfo, g_busqRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13860,7 +13860,7 @@ struct BurnDriverD BurnDrvMDg_olan = {
 	"g_olan", NULL, NULL, "1900",
 	"Outlander (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_olanRomInfo, g_olanRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13878,7 +13878,7 @@ struct BurnDriverD BurnDrvMDg_outlnb = {
 	"g_outlnb", "g_olan", NULL, "1900",
 	"Outlander (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_outlnbRomInfo, g_outlnbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13896,7 +13896,7 @@ struct BurnDriverD BurnDrvMDg_pidw = {
 	"g_pidw", NULL, NULL, "1900",
 	"Pirates of Dark Water, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pidwRomInfo, g_pidwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13914,7 +13914,7 @@ struct BurnDriverD BurnDrvMDg_pirdwu = {
 	"g_pirdwu", "g_pidw", NULL, "1900",
 	"Pirates of Dark Water, The (UE)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pirdwuRomInfo, g_pirdwuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13932,7 +13932,7 @@ struct BurnDriverD BurnDrvMDg_bbrb = {
 	"g_bbrb", NULL, NULL, "1900",
 	"Beauty and the Beast - Roar of the Beast (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bbrbRomInfo, g_bbrbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13950,7 +13950,7 @@ struct BurnDriverD BurnDrvMDg_bbbq = {
 	"g_bbbq", NULL, NULL, "1900",
 	"Beauty and the Beast - Belle's Quest (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bbbqRomInfo, g_bbbqRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13968,7 +13968,7 @@ struct BurnDriverD BurnDrvMDg_tanr = {
 	"g_tanr", NULL, NULL, "1900",
 	"Tanto R (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tanrRomInfo, g_tanrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -13986,7 +13986,7 @@ struct BurnDriverD BurnDrvMDg_rop = {
 	"g_rop", NULL, NULL, "1900",
 	"Rings of Power (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ropRomInfo, g_ropRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14004,7 +14004,7 @@ struct BurnDriverD BurnDrvMDg_ps96 = {
 	"g_ps96", NULL, NULL, "1900",
 	"Pete Sampras Tennis 96 (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ps96RomInfo, g_ps96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14022,7 +14022,7 @@ struct BurnDriverD BurnDrvMDg_toug = {
 	"g_toug", NULL, NULL, "1900",
 	"Toughman Contest (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tougRomInfo, g_tougRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14040,7 +14040,7 @@ struct BurnDriverD BurnDrvMDg_spir = {
 	"g_spir", NULL, NULL, "1900",
 	"Spirou (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_spirRomInfo, g_spirRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14058,7 +14058,7 @@ struct BurnDriverD BurnDrvMDg_strk = {
 	"g_strk", NULL, NULL, "1900",
 	"Striker (E) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_strkRomInfo, g_strkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14076,7 +14076,7 @@ struct BurnDriverD BurnDrvMDg_strikb = {
 	"g_strikb", "g_strk", NULL, "1900",
 	"Striker (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_strikbRomInfo, g_strikbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14094,7 +14094,7 @@ struct BurnDriverD BurnDrvMDg_chee = {
 	"g_chee", NULL, NULL, "1900",
 	"Cheese Cat-Astrophe Starring Speedy Gonzales (E) (M4) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cheeRomInfo, g_cheeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14112,7 +14112,7 @@ struct BurnDriverD BurnDrvMDg_td2 = {
 	"g_td2", NULL, NULL, "1900",
 	"Test Drive II - The Duel (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_td2RomInfo, g_td2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14130,7 +14130,7 @@ struct BurnDriverD BurnDrvMDg_tout = {
 	"g_tout", NULL, NULL, "1900",
 	"Turbo Outrun (JE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_toutRomInfo, g_toutRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14148,7 +14148,7 @@ struct BurnDriverD BurnDrvMDg_garf = {
 	"g_garf", NULL, NULL, "1900",
 	"Garfield - Caught in the Act (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_garfRomInfo, g_garfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14166,7 +14166,7 @@ struct BurnDriverD BurnDrvMDg_drev = {
 	"g_drev", NULL, NULL, "1900",
 	"Dragon's Revenge (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_drevRomInfo, g_drevRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14184,7 +14184,7 @@ struct BurnDriver BurnDrvMDg_afav = {
 	"g_afav", NULL, NULL, "1994",
 	"Addams Family Values (E) (M3) [!]\0", NULL, "Ocean Software Ltd.", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_afavRomInfo, g_afavRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14202,7 +14202,7 @@ struct BurnDriver BurnDrvMDg_arie = {
 	"g_arie", NULL, NULL, "1900",
 	"Ariel - The Little Mermaid (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_arieRomInfo, g_arieRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14220,7 +14220,7 @@ struct BurnDriverD BurnDrvMDg_arro = {
 	"g_arro", NULL, NULL, "1900",
 	"Arrow Flash (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_arroRomInfo, g_arroRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14238,7 +14238,7 @@ struct BurnDriverD BurnDrvMDg_arrowj = {
 	"g_arrowj", "g_arro", NULL, "1900",
 	"Arrow Flash (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_arrowjRomInfo, g_arrowjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14256,7 +14256,7 @@ struct BurnDriverD BurnDrvMDg_blma = {
 	"g_blma", NULL, NULL, "1900",
 	"Blaster Master 2 (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_blmaRomInfo, g_blmaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14274,7 +14274,7 @@ struct BurnDriverD BurnDrvMDg_blam2b = {
 	"g_blam2b", "g_blma", NULL, "1900",
 	"Blaster Master 2 (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_blam2bRomInfo, g_blam2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14292,7 +14292,7 @@ struct BurnDriver BurnDrvMDg_bubs = {
 	"g_bubs", NULL, NULL, "1900",
 	"Bubsy in Claws Encounters of the Furred Kind (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bubsRomInfo, g_bubsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14310,7 +14310,7 @@ struct BurnDriver BurnDrvMDg_bub2 = {
 	"g_bub2", NULL, NULL, "1900",
 	"Bubsy II (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bub2RomInfo, g_bub2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14328,7 +14328,7 @@ struct BurnDriver BurnDrvMDg_bbny = {
 	"g_bbny", NULL, NULL, "1900",
 	"Bugs Bunny in Double Trouble (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bbnyRomInfo, g_bbnyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14346,7 +14346,7 @@ struct BurnDriverD BurnDrvMDg_cano = {
 	"g_cano", NULL, NULL, "1900",
 	"Cannon Fodder (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_canoRomInfo, g_canoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14364,7 +14364,7 @@ struct BurnDriverD BurnDrvMDg_cpoo = {
 	"g_cpoo", NULL, NULL, "1900",
 	"Championship Pool (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cpooRomInfo, g_cpooRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14382,7 +14382,7 @@ struct BurnDriverD BurnDrvMDg_chq2 = {
 	"g_chq2", NULL, NULL, "1900",
 	"Chase HQ II (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chq2RomInfo, g_chq2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14400,7 +14400,7 @@ struct BurnDriverD BurnDrvMDg_suphq = {
 	"g_suphq", "g_chq2", NULL, "1900",
 	"Super HQ (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_suphqRomInfo, g_suphqRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14418,7 +14418,7 @@ struct BurnDriverD BurnDrvMDg_cool = {
 	"g_cool", NULL, NULL, "1900",
 	"Cool Spot (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_coolRomInfo, g_coolRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14436,7 +14436,7 @@ struct BurnDriverD BurnDrvMDg_coole = {
 	"g_coole", "g_cool", NULL, "1900",
 	"Cool Spot (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cooleRomInfo, g_cooleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14454,7 +14454,7 @@ struct BurnDriverD BurnDrvMDg_spotb = {
 	"g_spotb", "g_cool", NULL, "1900",
 	"Cool Spot (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_spotbRomInfo, g_spotbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14472,7 +14472,7 @@ struct BurnDriverD BurnDrvMDg_dicv = {
 	"g_dicv", NULL, NULL, "1900",
 	"Dick Vitale's Awesome Baby! College Hoops (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dicvRomInfo, g_dicvRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14490,7 +14490,7 @@ struct BurnDriverD BurnDrvMDg_taz2 = {
 	"g_taz2", NULL, NULL, "1900",
 	"Escape From Mars Starring Taz (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_taz2RomInfo, g_taz2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14508,7 +14508,7 @@ struct BurnDriverD BurnDrvMDg_taz2e = {
 	"g_taz2e", "g_taz2", NULL, "1900",
 	"Escape From Mars Starring Taz (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_taz2eRomInfo, g_taz2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14526,7 +14526,7 @@ struct BurnDriverD BurnDrvMDg_huni = {
 	"g_huni", NULL, NULL, "1900",
 	"Heavy Unit (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_huniRomInfo, g_huniRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14544,7 +14544,7 @@ struct BurnDriverD BurnDrvMDg_hook = {
 	"g_hook", NULL, NULL, "1900",
 	"Hook (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hookRomInfo, g_hookRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14562,7 +14562,7 @@ struct BurnDriverD BurnDrvMDg_huma = {
 	"g_huma", NULL, NULL, "1900",
 	"Humans, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_humaRomInfo, g_humaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14580,7 +14580,7 @@ struct BurnDriverD BurnDrvMDg_jpra = {
 	"g_jpra", NULL, NULL, "1900",
 	"Jurassic Park - Rampage Edition (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jpraRomInfo, g_jpraRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14598,7 +14598,7 @@ struct BurnDriverD BurnDrvMDg_mhat = {
 	"g_mhat", NULL, NULL, "1900",
 	"Magical Hat no Buttobi Turbo! Daibouken (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mhatRomInfo, g_mhatRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14616,7 +14616,7 @@ struct BurnDriverD BurnDrvMDg_nutz = {
 	"g_nutz", NULL, NULL, "1900",
 	"Mr. Nutz (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nutzRomInfo, g_nutzRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14634,7 +14634,7 @@ struct BurnDriverD BurnDrvMDg_ooze = {
 	"g_ooze", NULL, NULL, "1900",
 	"Ooze, The (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_oozeRomInfo, g_oozeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14652,7 +14652,7 @@ struct BurnDriverD BurnDrvMDg_oozee = {
 	"g_oozee", "g_ooze", NULL, "1900",
 	"Ooze, The (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_oozeeRomInfo, g_oozeeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14670,7 +14670,7 @@ struct BurnDriverD BurnDrvMDg_2040 = {
 	"g_2040", NULL, NULL, "1900",
 	"Phantom 2040 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_2040RomInfo, g_2040RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14688,7 +14688,7 @@ struct BurnDriverD BurnDrvMDg_2040e = {
 	"g_2040e", "g_2040", NULL, "1900",
 	"Phantom 2040 (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_2040eRomInfo, g_2040eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14706,7 +14706,7 @@ struct BurnDriverD BurnDrvMDg_krew = {
 	"g_krew", NULL, NULL, "1900",
 	"Skeleton Krew (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_krewRomInfo, g_krewRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14724,7 +14724,7 @@ struct BurnDriverD BurnDrvMDg_skrewe = {
 	"g_skrewe", "g_krew", NULL, "1900",
 	"Skeleton Krew (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_skreweRomInfo, g_skreweRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14742,7 +14742,7 @@ struct BurnDriverD BurnDrvMDg_skik = {
 	"g_skik", NULL, NULL, "1900",
 	"Super Kick Off (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_skikRomInfo, g_skikRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14760,7 +14760,7 @@ struct BurnDriverD BurnDrvMDg_term = {
 	"g_term", NULL, NULL, "1900",
 	"Terminator, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_termRomInfo, g_termRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14778,7 +14778,7 @@ struct BurnDriverD BurnDrvMDg_terme = {
 	"g_terme", "g_term", NULL, "1900",
 	"Terminator, The (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_termeRomInfo, g_termeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14796,7 +14796,7 @@ struct BurnDriverD BurnDrvMDg_wolv = {
 	"g_wolv", NULL, NULL, "1900",
 	"Wolverine Adamantium Rage (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wolvRomInfo, g_wolvRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14814,7 +14814,7 @@ struct BurnDriverD BurnDrvMDg_real = {
 	"g_real", NULL, NULL, "1995",
 	"AAAHH!!! Real Monsters (UE) [!]\0", "Sound Problems", "Viacom International Inc.", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_realRomInfo, g_realRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14832,7 +14832,7 @@ struct BurnDriverD BurnDrvMDg_suj2 = {
 	"g_suj2", NULL, NULL, "1900",
 	"Barkley Shut Up and Jam! 2 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_suj2RomInfo, g_suj2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14850,7 +14850,7 @@ struct BurnDriverD BurnDrvMDg_batr = {
 	"g_batr", NULL, NULL, "1900",
 	"Batman Returns (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_batrRomInfo, g_batrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14868,7 +14868,7 @@ struct BurnDriverD BurnDrvMDg_btoa = {
 	"g_btoa", NULL, NULL, "1900",
 	"Battletoads (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_btoaRomInfo, g_btoaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14886,7 +14886,7 @@ struct BurnDriverD BurnDrvMDg_che2 = {
 	"g_che2", NULL, NULL, "1900",
 	"Chester Cheetah 2 - Wild Wild Quest (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_che2RomInfo, g_che2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14904,7 +14904,7 @@ struct BurnDriverD BurnDrvMDg_che = {
 	"g_che", NULL, NULL, "1900",
 	"Chester Cheetah (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cheRomInfo, g_cheRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14922,7 +14922,7 @@ struct BurnDriverD BurnDrvMDg_clay = {
 	"g_clay", NULL, NULL, "1900",
 	"Clay Fighter (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_clayRomInfo, g_clayRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14940,7 +14940,7 @@ struct BurnDriverD BurnDrvMDg_daff = {
 	"g_daff", NULL, NULL, "1900",
 	"Daffy Duck in Hollywood (E) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_daffRomInfo, g_daffRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14958,7 +14958,7 @@ struct BurnDriverD BurnDrvMDg_daffyb = {
 	"g_daffyb", "g_daff", NULL, "1900",
 	"Daffy Duck in Hollywood (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_daffybRomInfo, g_daffybRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14976,7 +14976,7 @@ struct BurnDriverD BurnDrvMDg_davi = {
 	"g_davi", NULL, NULL, "1900",
 	"Davis Cup World Tour Tennis (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_daviRomInfo, g_daviRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -14994,7 +14994,7 @@ struct BurnDriverD BurnDrvMDg_desd = {
 	"g_desd", NULL, NULL, "1900",
 	"Desert Demolition (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_desdRomInfo, g_desdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15012,7 +15012,7 @@ struct BurnDriver BurnDrvMDg_dstr = {
 	"g_dstr", NULL, NULL, "1900",
 	"Desert Strike - Return to the Gulf (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dstrRomInfo, g_dstrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15030,7 +15030,7 @@ struct BurnDriverD BurnDrvMDg_dtro = {
 	"g_dtro", NULL, NULL, "1900",
 	"Doom Troopers - The Mutant Chronicles (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dtroRomInfo, g_dtroRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15048,7 +15048,7 @@ struct BurnDriverD BurnDrvMDg_e_sw = {
 	"g_e_sw", NULL, NULL, "1900",
 	"ESPN SpeedWorld (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_e_swRomInfo, g_e_swRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15066,7 +15066,7 @@ struct BurnDriverD BurnDrvMDg_f1ce = {
 	"g_f1ce", NULL, NULL, "1900",
 	"F1 World Championship Edition (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f1ceRomInfo, g_f1ceRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15084,7 +15084,7 @@ struct BurnDriverD BurnDrvMDg_f1wceb = {
 	"g_f1wceb", "g_f1ce", NULL, "1900",
 	"F1 World Championship Edition (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f1wcebRomInfo, g_f1wcebRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15102,7 +15102,7 @@ struct BurnDriverD BurnDrvMDg_flic = {
 	"g_flic", NULL, NULL, "1900",
 	"Flicky (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_flicRomInfo, g_flicRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15120,7 +15120,7 @@ struct BurnDriverD BurnDrvMDg_hurr = {
 	"g_hurr", NULL, NULL, "1900",
 	"Hurricanes (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hurrRomInfo, g_hurrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15138,7 +15138,7 @@ struct BurnDriverD BurnDrvMDg_izzy = {
 	"g_izzy", NULL, NULL, "1900",
 	"Izzy's Quest for the Olympic Rings (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_izzyRomInfo, g_izzyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15156,7 +15156,7 @@ struct BurnDriverD BurnDrvMDg_jstr = {
 	"g_jstr", NULL, NULL, "1900",
 	"Jungle Strike (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jstrRomInfo, g_jstrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15174,7 +15174,7 @@ struct BurnDriverD BurnDrvMDg_jstrj = {
 	"g_jstrj", "g_jstr", NULL, "1900",
 	"Jungle Strike (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jstrjRomInfo, g_jstrjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15192,7 +15192,7 @@ struct BurnDriverD BurnDrvMDg_jstrkb = {
 	"g_jstrkb", "g_jstr", NULL, "1900",
 	"Jungle Strike (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jstrkbRomInfo, g_jstrkbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15210,7 +15210,7 @@ struct BurnDriverD BurnDrvMDg_lawn = {
 	"g_lawn", NULL, NULL, "1900",
 	"Lawnmower Man, The (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lawnRomInfo, g_lawnRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15228,7 +15228,7 @@ struct BurnDriverD BurnDrvMDg_lem2 = {
 	"g_lem2", NULL, NULL, "1900",
 	"Lemmings 2 - The Tribes (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lem2RomInfo, g_lem2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15246,7 +15246,7 @@ struct BurnDriverD BurnDrvMDg_lem2e = {
 	"g_lem2e", "g_lem2", NULL, "1900",
 	"Lemmings 2 - The Tribes (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lem2eRomInfo, g_lem2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15264,7 +15264,7 @@ struct BurnDriverD BurnDrvMDg_megp = {
 	"g_megp", NULL, NULL, "1900",
 	"Megapanel (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_megpRomInfo, g_megpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15282,7 +15282,7 @@ struct BurnDriverD BurnDrvMDg_mmpr = {
 	"g_mmpr", NULL, NULL, "1900",
 	"Mighty Morphin Power Rangers (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmprRomInfo, g_mmprRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15300,7 +15300,7 @@ struct BurnDriverD BurnDrvMDg_mmpre = {
 	"g_mmpre", "g_mmpr", NULL, "1900",
 	"Mighty Morphin Power Rangers (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmpreRomInfo, g_mmpreRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15318,7 +15318,7 @@ struct BurnDriverD BurnDrvMDg_mmpm = {
 	"g_mmpm", NULL, NULL, "1900",
 	"Mighty Morphin Power Rangers - The Movie (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmpmRomInfo, g_mmpmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15336,7 +15336,7 @@ struct BurnDriverD BurnDrvMDg_mmprme = {
 	"g_mmprme", "g_mmpm", NULL, "1900",
 	"Mighty Morphin Power Rangers - The Movie (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmprmeRomInfo, g_mmprmeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15354,7 +15354,7 @@ struct BurnDriverD BurnDrvMDg_nh98 = {
 	"g_nh98", NULL, NULL, "1900",
 	"NHL 98 (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nh98RomInfo, g_nh98RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15372,7 +15372,7 @@ struct BurnDriverD BurnDrvMDg_s_sa = {
 	"g_s_sa", NULL, NULL, "1900",
 	"Spider-Man and Venom - Separation Anxiety (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_s_saRomInfo, g_s_saRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15390,7 +15390,7 @@ struct BurnDriverD BurnDrvMDg_tick = {
 	"g_tick", NULL, NULL, "1900",
 	"Tick, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tickRomInfo, g_tickRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15408,7 +15408,7 @@ struct BurnDriverD BurnDrvMDg_uded = {
 	"g_uded", NULL, NULL, "1900",
 	"Undead Line (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_udedRomInfo, g_udedRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15426,7 +15426,7 @@ struct BurnDriverD BurnDrvMDg_ustr = {
 	"g_ustr", NULL, NULL, "1900",
 	"Urban Strike (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ustrRomInfo, g_ustrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15444,7 +15444,7 @@ struct BurnDriverD BurnDrvMDg_muth = {
 	"g_muth", NULL, NULL, "1900",
 	"Mutant League Hockey (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_muthRomInfo, g_muthRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15462,7 +15462,7 @@ struct BurnDriver BurnDrvMDg_btdd = {
 	"g_btdd", NULL, NULL, "1900",
 	"Battletoads and Double Dragon (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_btddRomInfo, g_btddRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15480,7 +15480,7 @@ struct BurnDriverD BurnDrvMDg_chak = {
 	"g_chak", NULL, NULL, "1900",
 	"Chakan - The Forever Man (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chakRomInfo, g_chakRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15498,7 +15498,7 @@ struct BurnDriverD BurnDrvMDg_cutt = {
 	"g_cutt", NULL, NULL, "1900",
 	"Cutthroat Island (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cuttRomInfo, g_cuttRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15516,7 +15516,7 @@ struct BurnDriverD BurnDrvMDg_dang = {
 	"g_dang", NULL, NULL, "1900",
 	"Dangerous Seed (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dangRomInfo, g_dangRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15534,7 +15534,7 @@ struct BurnDriverD BurnDrvMDg_blav = {
 	"g_blav", NULL, NULL, "1900",
 	"Blades of Vengeance (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_blavRomInfo, g_blavRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15552,7 +15552,7 @@ struct BurnDriverD BurnDrvMDg_duel = {
 	"g_duel", NULL, NULL, "1900",
 	"Death Duel (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_duelRomInfo, g_duelRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15570,7 +15570,7 @@ struct BurnDriverD BurnDrvMDg_demo = {
 	"g_demo", NULL, NULL, "1900",
 	"Demolition Man (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_demoRomInfo, g_demoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15588,7 +15588,7 @@ struct BurnDriverD BurnDrvMDg_dick = {
 	"g_dick", NULL, NULL, "1900",
 	"Dick Tracy (W) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dickRomInfo, g_dickRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15606,7 +15606,7 @@ struct BurnDriverD BurnDrvMDg_dora = {
 	"g_dora", NULL, NULL, "1900",
 	"Doraemon - Yume Dorobouto 7 Nin No Gozansu (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_doraRomInfo, g_doraRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15624,7 +15624,7 @@ struct BurnDriverD BurnDrvMDg_dn3d = {
 	"g_dn3d", NULL, NULL, "1900",
 	"Duke Nukem 3D (B) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dn3dRomInfo, g_dn3dRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15642,7 +15642,7 @@ struct BurnDriverD BurnDrvMDg_elvi = {
 	"g_elvi", NULL, NULL, "1900",
 	"El Viento (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_elviRomInfo, g_elviRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15660,7 +15660,7 @@ struct BurnDriverD BurnDrvMDg_elvinj = {
 	"g_elvinj", "g_elvi", NULL, "1900",
 	"El Viento (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_elvinjRomInfo, g_elvinjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15678,7 +15678,7 @@ struct BurnDriverD BurnDrvMDg_fzon = {
 	"g_fzon", NULL, NULL, "1900",
 	"Final Zone (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fzonRomInfo, g_fzonRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15696,7 +15696,7 @@ struct BurnDriverD BurnDrvMDg_glos = {
 	"g_glos", NULL, NULL, "1900",
 	"Generations Lost (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_glosRomInfo, g_glosRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15714,7 +15714,7 @@ struct BurnDriverD BurnDrvMDg_home = {
 	"g_home", NULL, NULL, "1900",
 	"Home Alone (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_homeRomInfo, g_homeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15732,7 +15732,7 @@ struct BurnDriverD BurnDrvMDg_homeab = {
 	"g_homeab", "g_home", NULL, "1900",
 	"Home Alone (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_homeabRomInfo, g_homeabRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15750,7 +15750,7 @@ struct BurnDriverD BurnDrvMDg_hom2 = {
 	"g_hom2", NULL, NULL, "1900",
 	"Home Alone 2 - Lost in New York (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hom2RomInfo, g_hom2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15768,7 +15768,7 @@ struct BurnDriverD BurnDrvMDg_immo = {
 	"g_immo", NULL, NULL, "1900",
 	"Immortal, The (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_immoRomInfo, g_immoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15786,7 +15786,7 @@ struct BurnDriverD BurnDrvMDg_immorj = {
 	"g_immorj", "g_immo", NULL, "1900",
 	"Immortal, The (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_immorjRomInfo, g_immorjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15804,7 +15804,7 @@ struct BurnDriverD BurnDrvMDg_hulk = {
 	"g_hulk", NULL, NULL, "1900",
 	"Incredible Hulk, The (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hulkRomInfo, g_hulkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15822,7 +15822,7 @@ struct BurnDriverD BurnDrvMDg_junc = {
 	"g_junc", NULL, NULL, "1900",
 	"Junction (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_juncRomInfo, g_juncRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15840,7 +15840,7 @@ struct BurnDriverD BurnDrvMDg_icd = {
 	"g_icd", NULL, NULL, "1900",
 	"Incredible Crash Dummies, The (UE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_icdRomInfo, g_icdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15858,7 +15858,7 @@ struct BurnDriverD BurnDrvMDg_icdb = {
 	"g_icdb", "g_icd", NULL, "1900",
 	"Incredible Crash Dummies, The (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_icdbRomInfo, g_icdbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15876,7 +15876,7 @@ struct BurnDriverD BurnDrvMDg_fran = {
 	"g_fran", NULL, NULL, "1900",
 	"Mary Shelley's Frankenstein (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_franRomInfo, g_franRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15894,7 +15894,7 @@ struct BurnDriverD BurnDrvMDg_onsl = {
 	"g_onsl", NULL, NULL, "1900",
 	"Onslaught (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_onslRomInfo, g_onslRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15912,7 +15912,7 @@ struct BurnDriverD BurnDrvMDg_peng = {
 	"g_peng", NULL, NULL, "1900",
 	"Pengo (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pengRomInfo, g_pengRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15930,7 +15930,7 @@ struct BurnDriverD BurnDrvMDg_rain = {
 	"g_rain", NULL, NULL, "1900",
 	"Rainbow Islands - The Story of Bubble Bobble 2 (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rainRomInfo, g_rainRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15948,7 +15948,7 @@ struct BurnDriverD BurnDrvMDg_btnm = {
 	"g_btnm", NULL, NULL, "1900",
 	"Simpsons, The - Bart's Nightmare (UE) (REV02) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_btnmRomInfo, g_btnmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15966,7 +15966,7 @@ struct BurnDriverD BurnDrvMDg_smf = {
 	"g_smf", NULL, NULL, "1900",
 	"Smurfs, The (E) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_smfRomInfo, g_smfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -15984,7 +15984,7 @@ struct BurnDriverD BurnDrvMDg_smf2 = {
 	"g_smf2", NULL, NULL, "1900",
 	"Smurfs 2, The (E) (M4) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_smf2RomInfo, g_smf2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16002,7 +16002,7 @@ struct BurnDriverD BurnDrvMDg_s_mc = {
 	"g_s_mc", NULL, NULL, "1900",
 	"Spider-Man and Venom - Maximum Carnage (W) [!]\0", "Sound Problems", "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_s_mcRomInfo, g_s_mcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16020,7 +16020,7 @@ struct BurnDriverD BurnDrvMDg_sgat = {
 	"g_sgat", NULL, NULL, "1900",
 	"Stargate (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sgatRomInfo, g_sgatRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16038,7 +16038,7 @@ struct BurnDriverD BurnDrvMDg_sgatb = {
 	"g_sgatb", "g_sgat", NULL, "1900",
 	"Stargate (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sgatbRomInfo, g_sgatbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16056,7 +16056,7 @@ struct BurnDriverD BurnDrvMDg_tfh = {
 	"g_tfh", NULL, NULL, "1900",
 	"Task Force Harrier EX (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tfhRomInfo, g_tfhRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16074,7 +16074,7 @@ struct BurnDriverD BurnDrvMDg_tfhxj = {
 	"g_tfhxj", "g_tfh", NULL, "1900",
 	"Task Force Harrier EX (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tfhxjRomInfo, g_tfhxjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16092,7 +16092,7 @@ struct BurnDriverD BurnDrvMDg_tf3 = {
 	"g_tf3", NULL, NULL, "1900",
 	"Thunder Force III (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tf3RomInfo, g_tf3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16110,7 +16110,7 @@ struct BurnDriverD BurnDrvMDg_tter = {
 	"g_tter", NULL, NULL, "1900",
 	"Trampoline Terror! (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tterRomInfo, g_tterRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16128,7 +16128,7 @@ struct BurnDriverD BurnDrvMDg_unis = {
 	"g_unis", NULL, NULL, "1900",
 	"Universal Soldier (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_unisRomInfo, g_unisRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16146,7 +16146,7 @@ struct BurnDriverD BurnDrvMDg_wayn = {
 	"g_wayn", NULL, NULL, "1900",
 	"Wayne's World (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_waynRomInfo, g_waynRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16164,7 +16164,7 @@ struct BurnDriverD BurnDrvMDg_yogi = {
 	"g_yogi", NULL, NULL, "1900",
 	"Yogi Bear's Cartoon Capers (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_yogiRomInfo, g_yogiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16182,7 +16182,7 @@ struct BurnDriverD BurnDrvMDg_soff = {
 	"g_soff", NULL, NULL, "1900",
 	"Super Off Road (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soffRomInfo, g_soffRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16200,7 +16200,7 @@ struct BurnDriverD BurnDrvMDg_ddr = {
 	"g_ddr", NULL, NULL, "1900",
 	"Double Dragon (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ddrRomInfo, g_ddrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16218,7 +16218,7 @@ struct BurnDriverD BurnDrvMDg_ddr2 = {
 	"g_ddr2", NULL, NULL, "1900",
 	"Double Dragon 2 - The Revenge (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ddr2RomInfo, g_ddr2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16236,7 +16236,7 @@ struct BurnDriverD BurnDrvMDg_ddr3 = {
 	"g_ddr3", NULL, NULL, "1900",
 	"Double Dragon 3 - The Rosetta Stone (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ddr3RomInfo, g_ddr3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16254,7 +16254,7 @@ struct BurnDriverD BurnDrvMDg_ddrv = {
 	"g_ddrv", NULL, NULL, "1900",
 	"Double Dragon V - The Shadow Falls (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ddrvRomInfo, g_ddrvRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16272,7 +16272,7 @@ struct BurnDriverD BurnDrvMDg_fido = {
 	"g_fido", NULL, NULL, "1900",
 	"Fido Dido (Prototype)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fidoRomInfo, g_fidoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16290,7 +16290,7 @@ struct BurnDriverD BurnDrvMDg_tnnb = {
 	"g_tnnb", NULL, NULL, "1900",
 	"TNN Bass Tournament of Champions (U) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tnnbRomInfo, g_tnnbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16308,7 +16308,7 @@ struct BurnDriverD BurnDrvMDg_tnno = {
 	"g_tnno", NULL, NULL, "1900",
 	"TNN Outdoors Bass Tournament '96 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tnnoRomInfo, g_tnnoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16326,7 +16326,7 @@ struct BurnDriverD BurnDrvMDg_sscc = {
 	"g_sscc", NULL, NULL, "1900",
 	"Sesame Street Counting Cafe (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ssccRomInfo, g_ssccRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16344,7 +16344,7 @@ struct BurnDriverD BurnDrvMDg_batj = {
 	"g_batj", NULL, NULL, "1900",
 	"Batman - Revenge of the Joker (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_batjRomInfo, g_batjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16362,7 +16362,7 @@ struct BurnDriver BurnDrvMDg_bsqu = {
 	"g_bsqu", NULL, NULL, "1900",
 	"Battle Squadron (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bsquRomInfo, g_bsquRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16380,7 +16380,7 @@ struct BurnDriverD BurnDrvMDg_earn = {
 	"g_earn", NULL, NULL, "1900",
 	"Earnest Evans (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_earnRomInfo, g_earnRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16398,7 +16398,7 @@ struct BurnDriverD BurnDrvMDg_f117 = {
 	"g_f117", NULL, NULL, "1900",
 	"F-117 Night Storm (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f117RomInfo, g_f117RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16416,7 +16416,7 @@ struct BurnDriverD BurnDrvMDg_f117j = {
 	"g_f117j", "g_f117", NULL, "1900",
 	"F-117 Stealth - Operation Night Storm (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f117jRomInfo, g_f117jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16434,7 +16434,7 @@ struct BurnDriverD BurnDrvMDg_frog = {
 	"g_frog", NULL, NULL, "1900",
 	"Frogger (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_frogRomInfo, g_frogRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16452,7 +16452,7 @@ struct BurnDriverD BurnDrvMDg_gloc = {
 	"g_gloc", NULL, NULL, "1900",
 	"G-LOC Air Battle (W) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_glocRomInfo, g_glocRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16470,7 +16470,7 @@ struct BurnDriverD BurnDrvMDg_glocb = {
 	"g_glocb", "g_gloc", NULL, "1900",
 	"G-LOC Air Battle (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_glocbRomInfo, g_glocbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16488,7 +16488,7 @@ struct BurnDriverD BurnDrvMDg_gshi = {
 	"g_gshi", NULL, NULL, "1900",
 	"Gunship (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gshiRomInfo, g_gshiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16506,7 +16506,7 @@ struct BurnDriverD BurnDrvMDg_last = {
 	"g_last", NULL, NULL, "1900",
 	"Last Action Hero (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lastRomInfo, g_lastRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16524,7 +16524,7 @@ struct BurnDriverD BurnDrvMDg_mpac = {
 	"g_mpac", NULL, NULL, "1900",
 	"Ms. Pac-Man (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mpacRomInfo, g_mpacRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16542,7 +16542,7 @@ struct BurnDriverD BurnDrvMDg_ncir = {
 	"g_ncir", NULL, NULL, "1900",
 	"Nightmare Circus (B) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ncirRomInfo, g_ncirRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16560,7 +16560,7 @@ struct BurnDriverD BurnDrvMDg_ncircb = {
 	"g_ncircb", "g_ncir", NULL, "1900",
 	"Nightmare Circus (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ncircbRomInfo, g_ncircbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16578,7 +16578,7 @@ struct BurnDriverD BurnDrvMDg_pacm = {
 	"g_pacm", NULL, NULL, "1900",
 	"Pac-Mania (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pacmRomInfo, g_pacmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16596,7 +16596,7 @@ struct BurnDriverD BurnDrvMDg_pdri = {
 	"g_pdri", NULL, NULL, "1900",
 	"Power Drive (E) (M5) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pdriRomInfo, g_pdriRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16614,7 +16614,7 @@ struct BurnDriverD BurnDrvMDg_sbe2 = {
 	"g_sbe2", NULL, NULL, "1900",
 	"Shadow of the Beast 2 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sbe2RomInfo, g_sbe2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16632,7 +16632,7 @@ struct BurnDriverD BurnDrvMDg_si91 = {
 	"g_si91", NULL, NULL, "1900",
 	"Space Invaders 91 (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_si91RomInfo, g_si91RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16650,7 +16650,7 @@ struct BurnDriverD BurnDrvMDg_si90 = {
 	"g_si90", "g_si91", NULL, "1900",
 	"Space Invaders 90 (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_si90RomInfo, g_si90RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16668,7 +16668,7 @@ struct BurnDriverD BurnDrvMDg_s_ar = {
 	"g_s_ar", NULL, NULL, "1900",
 	"Spider-Man and X-Men - Arcade's Revenge (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_s_arRomInfo, g_s_arRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16686,7 +16686,7 @@ struct BurnDriverD BurnDrvMDg_sstv = {
 	"g_sstv", NULL, NULL, "1900",
 	"Super Smash TV (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sstvRomInfo, g_sstvRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16704,7 +16704,7 @@ struct BurnDriverD BurnDrvMDg_sold = {
 	"g_sold", NULL, NULL, "1900",
 	"Sol-Deace (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soldRomInfo, g_soldRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16722,7 +16722,7 @@ struct BurnDriverD BurnDrvMDg_ter2 = {
 	"g_ter2", NULL, NULL, "1900",
 	"Terminator 2 - Judgment Day (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ter2RomInfo, g_ter2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16740,7 +16740,7 @@ struct BurnDriverD BurnDrvMDg_tf2 = {
 	"g_tf2", NULL, NULL, "1900",
 	"Thunder Force II (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tf2RomInfo, g_tf2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16758,7 +16758,7 @@ struct BurnDriverD BurnDrvMDg_tf2md = {
 	"g_tf2md", "g_tf2", NULL, "1900",
 	"Thunder Force II MD (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tf2mdRomInfo, g_tf2mdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16776,7 +16776,7 @@ struct BurnDriverD BurnDrvMDg_toys = {
 	"g_toys", NULL, NULL, "1900",
 	"Toys (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_toysRomInfo, g_toysRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16794,7 +16794,7 @@ struct BurnDriverD BurnDrvMDg_true = {
 	"g_true", NULL, NULL, "1900",
 	"True Lies (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_trueRomInfo, g_trueRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16812,7 +16812,7 @@ struct BurnDriverD BurnDrvMDg_view = {
 	"g_view", NULL, NULL, "1900",
 	"Viewpoint (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_viewRomInfo, g_viewRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16830,7 +16830,7 @@ struct BurnDriverD BurnDrvMDg_viewpb = {
 	"g_viewpb", "g_view", NULL, "1900",
 	"Viewpoint (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_viewpbRomInfo, g_viewpbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16848,7 +16848,7 @@ struct BurnDriverD BurnDrvMDg_worm = {
 	"g_worm", NULL, NULL, "1900",
 	"Worms (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wormRomInfo, g_wormRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16866,7 +16866,7 @@ struct BurnDriverD BurnDrvMDg_wormp = {
 	"g_wormp", "g_worm", NULL, "1900",
 	"Worms (E) (Prototype) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wormpRomInfo, g_wormpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16884,7 +16884,7 @@ struct BurnDriverD BurnDrvMDg_xen2 = {
 	"g_xen2", NULL, NULL, "1900",
 	"Xenon 2 - Megablast (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_xen2RomInfo, g_xen2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16902,7 +16902,7 @@ struct BurnDriverD BurnDrvMDg_zoop = {
 	"g_zoop", NULL, NULL, "1900",
 	"Zoop (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zoopRomInfo, g_zoopRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16920,7 +16920,7 @@ struct BurnDriverD BurnDrvMDg_zoope = {
 	"g_zoope", "g_zoop", NULL, "1900",
 	"Zoop (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zoopeRomInfo, g_zoopeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16938,7 +16938,7 @@ struct BurnDriver BurnDrvMDg_arta = {
 	"g_arta", NULL, NULL, "1900",
 	"Art Alive! (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_artaRomInfo, g_artaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16956,7 +16956,7 @@ struct BurnDriverD BurnDrvMDg_arca = {
 	"g_arca", NULL, NULL, "1900",
 	"Arcade Classics (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_arcaRomInfo, g_arcaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16974,7 +16974,7 @@ struct BurnDriver BurnDrvMDg_aahh = {
 	"g_aahh", NULL, NULL, "1993",
 	"Aah! Harimanada (J) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_VSFIGHT, 0,
 	NULL, g_aahhRomInfo, g_aahhRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -16992,7 +16992,7 @@ struct BurnDriver BurnDrvMDg_awsp = {
 	"g_awsp", NULL, NULL, "1900",
 	"AWS Pro Moves Soccer (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_awspRomInfo, g_awspRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17010,7 +17010,7 @@ struct BurnDriverD BurnDrvMDg_suj = {
 	"g_suj", NULL, NULL, "1900",
 	"Barkley Shut Up and Jam! (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sujRomInfo, g_sujRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17028,7 +17028,7 @@ struct BurnDriverD BurnDrvMDg_sail = {
 	"g_sail", NULL, NULL, "1900",
 	"Bishoujo Senshi Sailor Moon (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sailRomInfo, g_sailRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17046,7 +17046,7 @@ struct BurnDriverD BurnDrvMDg_bl96 = {
 	"g_bl96", NULL, NULL, "1900",
 	"Brian Lara Cricket 96 (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bl96RomInfo, g_bl96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17064,7 +17064,7 @@ struct BurnDriverD BurnDrvMDg_blc96x = {
 	"g_blc96x", "g_bl96", NULL, "1900",
 	"Brian Lara Cricket 96 (E) [a1][x]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_blc96xRomInfo, g_blc96xRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17082,7 +17082,7 @@ struct BurnDriverD BurnDrvMDg_buck = {
 	"g_buck", NULL, NULL, "1900",
 	"Buck Rogers - Countdown to Doomsday (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_buckRomInfo, g_buckRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17100,7 +17100,7 @@ struct BurnDriverD BurnDrvMDg_curs = {
 	"g_curs", NULL, NULL, "1900",
 	"Curse (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cursRomInfo, g_cursRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17118,7 +17118,7 @@ struct BurnDriverD BurnDrvMDg_hb95 = {
 	"g_hb95", NULL, NULL, "1900",
 	"HardBall '95 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hb95RomInfo, g_hb95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17136,7 +17136,7 @@ struct BurnDriverD BurnDrvMDg_ws98 = {
 	"g_ws98", NULL, NULL, "1900",
 	"World Series Baseball '98 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ws98RomInfo, g_ws98RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17154,7 +17154,7 @@ struct BurnDriverD BurnDrvMDg_dark = {
 	"g_dark", NULL, NULL, "1900",
 	"Dark Castle (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_darkRomInfo, g_darkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17172,7 +17172,7 @@ struct BurnDriver BurnDrvMDg_4081 = {
 	"g_4081", NULL, NULL, "1900",
 	"Darwin 4081 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_4081RomInfo, g_4081RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17190,7 +17190,7 @@ struct BurnDriverD BurnDrvMDg_drs = {
 	"g_drs", NULL, NULL, "1900",
 	"Death and Return of Superman, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_drsRomInfo, g_drsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17208,7 +17208,7 @@ struct BurnDriverD BurnDrvMDg_hire = {
 	"g_hire", NULL, NULL, "1900",
 	"Dinosaurs for Hire (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hireRomInfo, g_hireRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17226,7 +17226,7 @@ struct BurnDriverD BurnDrvMDg_dblc = {
 	"g_dblc", NULL, NULL, "1900",
 	"Double Clutch (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dblcRomInfo, g_dblcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17244,7 +17244,7 @@ struct BurnDriverD BurnDrvMDg_elim = {
 	"g_elim", NULL, NULL, "1900",
 	"Eliminate Down (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_elimRomInfo, g_elimRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17262,7 +17262,7 @@ struct BurnDriverD BurnDrvMDg_must = {
 	"g_must", NULL, NULL, "1900",
 	"Fire Mustang (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mustRomInfo, g_mustRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17280,7 +17280,7 @@ struct BurnDriverD BurnDrvMDg_goof = {
 	"g_goof", NULL, NULL, "1900",
 	"Goofy's Hysterical History Tour (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_goofRomInfo, g_goofRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17298,7 +17298,7 @@ struct BurnDriverD BurnDrvMDg_dodg = {
 	"g_dodg", NULL, NULL, "1900",
 	"Honoo no Toukyuuji Dodge Danpei (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dodgRomInfo, g_dodgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17316,7 +17316,7 @@ struct BurnDriverD BurnDrvMDg_jcte = {
 	"g_jcte", NULL, NULL, "1900",
 	"Jennifer Capriati Tennis (U) [!]\0", NULL, "Sega / System Sacom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jcteRomInfo, g_jcteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17334,7 +17334,7 @@ struct BurnDriverD BurnDrvMDg_gste = {
 	"g_gste", "g_jcte", NULL, "1900",
 	"Grand Slam Tennis (E) [!]\0", NULL, "Sega / System Sacom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gsteRomInfo, g_gsteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17352,7 +17352,7 @@ struct BurnDriverD BurnDrvMDg_gstenj = {
 	"g_gstenj", "g_jcte", NULL, "1900",
 	"Grand Slam Tennis (J) [!]\0", NULL, "Sega / System Sacom", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gstenjRomInfo, g_gstenjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17370,7 +17370,7 @@ struct BurnDriverD BurnDrvMDg_taru = {
 	"g_taru", NULL, NULL, "1900",
 	"Magical Taruruuto-Kun (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_taruRomInfo, g_taruRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17388,7 +17388,7 @@ struct BurnDriverD BurnDrvMDg_osom = {
 	"g_osom", NULL, NULL, "1900",
 	"Osomatsu-kun - Hachamecha Gekijou (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_osomRomInfo, g_osomRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17406,7 +17406,7 @@ struct BurnDriverD BurnDrvMDg_scob = {
 	"g_scob", NULL, NULL, "1900",
 	"Scooby Doo Mystery (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_scobRomInfo, g_scobRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17424,7 +17424,7 @@ struct BurnDriverD BurnDrvMDg_srun = {
 	"g_srun", NULL, NULL, "1900",
 	"Shadowrun (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_srunRomInfo, g_srunRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17442,7 +17442,7 @@ struct BurnDriverD BurnDrvMDg_shrunj = {
 	"g_shrunj", "g_srun", NULL, "1900",
 	"Shadowrun (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shrunjRomInfo, g_shrunjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17460,7 +17460,7 @@ struct BurnDriverD BurnDrvMDg_snow = {
 	"g_snow", NULL, NULL, "1900",
 	"Snow Bros. - Nick & Tom (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_snowRomInfo, g_snowRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17478,7 +17478,7 @@ struct BurnDriverD BurnDrvMDg_s_kp = {
 	"g_s_kp", NULL, NULL, "1900",
 	"Spider-Man vs The Kingpin (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_s_kpRomInfo, g_s_kpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17496,7 +17496,7 @@ struct BurnDriverD BurnDrvMDg_sbat = {
 	"g_sbat", NULL, NULL, "1900",
 	"Super Battleship (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sbatRomInfo, g_sbatRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17514,7 +17514,7 @@ struct BurnDriverD BurnDrvMDg_tprk = {
 	"g_tprk", NULL, NULL, "1900",
 	"Theme Park (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tprkRomInfo, g_tprkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17532,7 +17532,7 @@ struct BurnDriverD BurnDrvMDg_tint = {
 	"g_tint", NULL, NULL, "1900",
 	"Tintin Au Tibet (E) (M6) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tintRomInfo, g_tintRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17550,7 +17550,7 @@ struct BurnDriverD BurnDrvMDg_gomo = {
 	"g_gomo", NULL, NULL, "1900",
 	"Uchu Senkan Gomora (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gomoRomInfo, g_gomoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17568,7 +17568,7 @@ struct BurnDriverD BurnDrvMDg_usoc = {
 	"g_usoc", NULL, NULL, "1900",
 	"Ultimate Soccer (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_usocRomInfo, g_usocRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17586,7 +17586,7 @@ struct BurnDriverD BurnDrvMDg_wfrr = {
 	"g_wfrr", NULL, NULL, "1900",
 	"WWF Royal Rumble (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wfrrRomInfo, g_wfrrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17604,7 +17604,7 @@ struct BurnDriverD BurnDrvMDg_wfra = {
 	"g_wfra", NULL, NULL, "1900",
 	"WWF RAW (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wfraRomInfo, g_wfraRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17622,7 +17622,7 @@ struct BurnDriverD BurnDrvMDg_wolf = {
 	"g_wolf", NULL, NULL, "1900",
 	"Wolf Child (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wolfRomInfo, g_wolfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17640,7 +17640,7 @@ struct BurnDriverD BurnDrvMDg_zoom = {
 	"g_zoom", NULL, NULL, "1900",
 	"Zoom! (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zoomRomInfo, g_zoomRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17658,7 +17658,7 @@ struct BurnDriverD BurnDrvMDg_resq = {
 	"g_resq", NULL, NULL, "1900",
 	"Resq (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_resqRomInfo, g_resqRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17676,7 +17676,7 @@ struct BurnDriverD BurnDrvMDg_jely = {
 	"g_jely", NULL, NULL, "1900",
 	"Jelly Boy (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jelyRomInfo, g_jelyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17694,7 +17694,7 @@ struct BurnDriverD BurnDrvMDg_itch = {
 	"g_itch", NULL, NULL, "1900",
 	"Itchy and Scratchy Game, The (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_itchRomInfo, g_itchRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17712,7 +17712,7 @@ struct BurnDriver BurnDrvMDg_2sam = {
 	"g_2sam", NULL, NULL, "1900",
 	"Second Samurai, The (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_2samRomInfo, g_2samRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17730,7 +17730,7 @@ struct BurnDriverD BurnDrvMDg_fcr = {
 	"g_fcr", NULL, NULL, "1900",
 	"Fun Car Rally (Unl)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fcrRomInfo, g_fcrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17748,7 +17748,7 @@ struct BurnDriverD BurnDrvMDg_pre2 = {
 	"g_pre2", NULL, NULL, "1900",
 	"Predator 2 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pre2RomInfo, g_pre2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17766,7 +17766,7 @@ struct BurnDriverD BurnDrvMDg_pm97 = {
 	"g_pm97", NULL, NULL, "1900",
 	"Premier Manager 97 (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pm97RomInfo, g_pm97RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17784,7 +17784,7 @@ struct BurnDriverD BurnDrvMDg_pman = {
 	"g_pman", NULL, NULL, "1900",
 	"Premier Manager (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pmanRomInfo, g_pmanRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17802,7 +17802,7 @@ struct BurnDriverD BurnDrvMDg_prim = {
 	"g_prim", NULL, NULL, "1900",
 	"Primal Rage (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_primRomInfo, g_primRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17820,7 +17820,7 @@ struct BurnDriverD BurnDrvMDg_pwbl = {
 	"g_pwbl", NULL, NULL, "1900",
 	"Powerball (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pwblRomInfo, g_pwblRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17838,7 +17838,7 @@ struct BurnDriverD BurnDrvMDg_wresbl = {
 	"g_wresbl", "g_pwbl", NULL, "1900",
 	"Wrestleball (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wresblRomInfo, g_wresblRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17856,7 +17856,7 @@ struct BurnDriverD BurnDrvMDg_ram3 = {
 	"g_ram3", NULL, NULL, "1900",
 	"Rambo III (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ram3RomInfo, g_ram3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17874,7 +17874,7 @@ struct BurnDriverD BurnDrvMDg_ram300 = {
 	"g_ram300", "g_ram3", NULL, "1900",
 	"Rambo III (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ram300RomInfo, g_ram300RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17892,7 +17892,7 @@ struct BurnDriverD BurnDrvMDg_revx = {
 	"g_revx", NULL, NULL, "1900",
 	"Revolution X (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_revxRomInfo, g_revxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17910,7 +17910,7 @@ struct BurnDriverD BurnDrvMDg_sdan = {
 	"g_sdan", NULL, NULL, "1900",
 	"Shadow Dancer - The Secret of Shinobi (W) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sdanRomInfo, g_sdanRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17928,7 +17928,7 @@ struct BurnDriverD BurnDrvMDg_sbt = {
 	"g_sbt", NULL, NULL, "1900",
 	"Super Battle Tank - War in the Gulf (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sbtRomInfo, g_sbtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17946,7 +17946,7 @@ struct BurnDriverD BurnDrvMDg_faer = {
 	"g_faer", NULL, NULL, "1900",
 	"Faery Tale Adventure, The (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_faerRomInfo, g_faerRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17964,7 +17964,7 @@ struct BurnDriverD BurnDrvMDg_gain = {
 	"g_gain", NULL, NULL, "1900",
 	"Gain Ground (UE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gainRomInfo, g_gainRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -17982,7 +17982,7 @@ struct BurnDriverD BurnDrvMDg_ggrouj = {
 	"g_ggrouj", "g_gain", NULL, "1900",
 	"Gain Ground (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ggroujRomInfo, g_ggroujRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18000,7 +18000,7 @@ struct BurnDriverD BurnDrvMDg_0tol = {
 	"g_0tol", NULL, NULL, "1900",
 	"Zero Tolerance (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_0tolRomInfo, g_0tolRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18018,7 +18018,7 @@ struct BurnDriverD BurnDrvMDg_whip = {
 	"g_whip", NULL, NULL, "1900",
 	"Whip Rush 2222 AD (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_whipRomInfo, g_whipRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18036,7 +18036,7 @@ struct BurnDriverD BurnDrvMDg_whipj = {
 	"g_whipj", "g_whip", NULL, "1900",
 	"Whip Rush 2222 AD (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_whipjRomInfo, g_whipjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18054,7 +18054,7 @@ struct BurnDriverD BurnDrvMDg_vbar = {
 	"g_vbar", NULL, NULL, "1900",
 	"Virtual Bart (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vbarRomInfo, g_vbarRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18072,7 +18072,7 @@ struct BurnDriverD BurnDrvMDg_twih = {
 	"g_twih", NULL, NULL, "1900",
 	"Twin Hawk (JE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_twihRomInfo, g_twihRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18090,7 +18090,7 @@ struct BurnDriverD BurnDrvMDg_twic = {
 	"g_twic", NULL, NULL, "1900",
 	"Twin Cobra (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_twicRomInfo, g_twicRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18108,7 +18108,7 @@ struct BurnDriverD BurnDrvMDg_kyuuky = {
 	"g_kyuuky", "g_twic", NULL, "1900",
 	"Kyuukyou Tiger (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kyuukyRomInfo, g_kyuukyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18126,7 +18126,7 @@ struct BurnDriverD BurnDrvMDg_turr = {
 	"g_turr", NULL, NULL, "1900",
 	"Turrican (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_turrRomInfo, g_turrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18144,7 +18144,7 @@ struct BurnDriverD BurnDrvMDg_trux = {
 	"g_trux", NULL, NULL, "1900",
 	"Truxton (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_truxRomInfo, g_truxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18162,7 +18162,7 @@ struct BurnDriverD BurnDrvMDg_tp96 = {
 	"g_tp96", NULL, NULL, "1900",
 	"Triple Play '96 (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tp96RomInfo, g_tp96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18180,7 +18180,7 @@ struct BurnDriverD BurnDrvMDg_tpgo = {
 	"g_tpgo", NULL, NULL, "1900",
 	"Triple Play Gold (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tpgoRomInfo, g_tpgoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18198,7 +18198,7 @@ struct BurnDriverD BurnDrvMDg_tpgola = {
 	"g_tpgola", "g_tpgo", NULL, "1900",
 	"Triple Play Gold (U) [a1]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tpgolaRomInfo, g_tpgolaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18216,7 +18216,7 @@ struct BurnDriverD BurnDrvMDg_tkil = {
 	"g_tkil", NULL, NULL, "1900",
 	"Time Killers (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tkilRomInfo, g_tkilRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18234,7 +18234,7 @@ struct BurnDriverD BurnDrvMDg_tkille = {
 	"g_tkille", "g_tkil", NULL, "1900",
 	"Time Killers (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tkilleRomInfo, g_tkilleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18252,7 +18252,7 @@ struct BurnDriverD BurnDrvMDg_tetr = {
 	"g_tetr", NULL, NULL, "1900",
 	"Tetris (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tetrRomInfo, g_tetrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18270,7 +18270,7 @@ struct BurnDriverD BurnDrvMDg_synd = {
 	"g_synd", NULL, NULL, "1900",
 	"Syndicate (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_syndRomInfo, g_syndRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18288,7 +18288,7 @@ struct BurnDriverD BurnDrvMDg_pins = {
 	"g_pins", NULL, NULL, "1900",
 	"Power Instinct (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pinsRomInfo, g_pinsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18306,7 +18306,7 @@ struct BurnDriverD BurnDrvMDg_pac2 = {
 	"g_pac2", NULL, NULL, "1900",
 	"Pac-Man 2 - The New Adventures (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pac2RomInfo, g_pac2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18324,7 +18324,7 @@ struct BurnDriverD BurnDrvMDg_nbd = {
 	"g_nbd", NULL, NULL, "1900",
 	"Ninja Burai Densetsu (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nbdRomInfo, g_nbdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18342,7 +18342,7 @@ struct BurnDriverD BurnDrvMDg_ko3 = {
 	"g_ko3", NULL, NULL, "1900",
 	"Kick Off 3 - European Challenge (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ko3RomInfo, g_ko3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18360,7 +18360,7 @@ struct BurnDriverD BurnDrvMDg_kgk = {
 	"g_kgk", NULL, NULL, "1900",
 	"Ka-Ge-Ki - Fists of Steel (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kgkRomInfo, g_kgkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18378,7 +18378,7 @@ struct BurnDriverD BurnDrvMDg_kageki = {
 	"g_kageki", "g_kgk", NULL, "1900",
 	"Ka-Ge-Ki (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kagekiRomInfo, g_kagekiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18396,7 +18396,7 @@ struct BurnDriverD BurnDrvMDg_wbdt = {
 	"g_wbdt", NULL, NULL, "1900",
 	"We're Back! - A Dinosaur's Tale (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wbdtRomInfo, g_wbdtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18414,7 +18414,7 @@ struct BurnDriverD BurnDrvMDg_comc = {
 	"g_comc", NULL, NULL, "1900",
 	"Combat Cars (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_comcRomInfo, g_comcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18432,7 +18432,7 @@ struct BurnDriverD BurnDrvMDg_688a = {
 	"g_688a", NULL, NULL, "1991",
 	"688 Attack Sub (UE) [!]\0", "Sound Problems", "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_688aRomInfo, g_688aRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18450,7 +18450,7 @@ struct BurnDriver BurnDrvMDg_adiv = {
 	"g_adiv", NULL, NULL, "1900",
 	"Air Diver (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_adivRomInfo, g_adivRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18468,7 +18468,7 @@ struct BurnDriverD BurnDrvMDg_adivej = {
 	"g_adivej", "g_adiv", NULL, "1900",
 	"Air Diver (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_adivejRomInfo, g_adivejRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18486,7 +18486,7 @@ struct BurnDriverD BurnDrvMDg_asto = {
 	"g_asto", NULL, NULL, "1900",
 	"Alien Storm (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_astoRomInfo, g_astoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18504,7 +18504,7 @@ struct BurnDriverD BurnDrvMDg_agla = {
 	"g_agla", NULL, NULL, "1900",
 	"American Gladiators (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aglaRomInfo, g_aglaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18522,7 +18522,7 @@ struct BurnDriver BurnDrvMDg_arch = {
 	"g_arch", NULL, NULL, "1900",
 	"Arch Rivals (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_archRomInfo, g_archRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18540,7 +18540,7 @@ struct BurnDriverD BurnDrvMDg_aptg = {
 	"g_aptg", NULL, NULL, "1900",
 	"Arnold Palmer Tournament Golf (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_aptgRomInfo, g_aptgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18558,7 +18558,7 @@ struct BurnDriver BurnDrvMDg_atpt = {
 	"g_atpt", NULL, NULL, "1900",
 	"ATP Tour Championship Tennis (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_atptRomInfo, g_atptRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18576,7 +18576,7 @@ struct BurnDriverD BurnDrvMDg_atpte = {
 	"g_atpte", "g_atpt", NULL, "1900",
 	"ATP Tour Championship Tennis (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_atpteRomInfo, g_atpteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18594,7 +18594,7 @@ struct BurnDriver BurnDrvMDg_arug = {
 	"g_arug", NULL, NULL, "1900",
 	"Australian Rugby League (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_arugRomInfo, g_arugRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18612,7 +18612,7 @@ struct BurnDriver BurnDrvMDg_bjak = {
 	"g_bjak", NULL, NULL, "1900",
 	"Ball Jacks (JE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bjakRomInfo, g_bjakRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18630,7 +18630,7 @@ struct BurnDriver BurnDrvMDg_barb = {
 	"g_barb", NULL, NULL, "1900",
 	"Barbie Super Model (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_barbRomInfo, g_barbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18648,7 +18648,7 @@ struct BurnDriver BurnDrvMDg_bass = {
 	"g_bass", NULL, NULL, "1900",
 	"Bass Masters Classics (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bassRomInfo, g_bassRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18666,7 +18666,7 @@ struct BurnDriver BurnDrvMDg_basp = {
 	"g_basp", NULL, NULL, "1900",
 	"Bass Masters Classic Pro Edition (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_baspRomInfo, g_baspRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18684,7 +18684,7 @@ struct BurnDriverD BurnDrvMDg_barn = {
 	"g_barn", NULL, NULL, "1900",
 	"Barney's Hide & Seek Game (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_barnRomInfo, g_barnRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18702,7 +18702,7 @@ struct BurnDriver BurnDrvMDg_btl2 = {
 	"g_btl2", NULL, NULL, "1900",
 	"Battle Mania - Dai Gin Jou (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_btl2RomInfo, g_btl2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18720,7 +18720,7 @@ struct BurnDriver BurnDrvMDg_tsht = {
 	"g_tsht", NULL, NULL, "1900",
 	"Trouble Shooter (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tshtRomInfo, g_tshtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18738,7 +18738,7 @@ struct BurnDriver BurnDrvMDg_btlm = {
 	"g_btlm", "g_tsht", NULL, "1900",
 	"Battle Mania (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_btlmRomInfo, g_btlmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18756,7 +18756,7 @@ struct BurnDriver BurnDrvMDg_btms = {
 	"g_btms", NULL, NULL, "1900",
 	"Battlemaster (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_btmsRomInfo, g_btmsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18774,7 +18774,7 @@ struct BurnDriverD BurnDrvMDg_btec = {
 	"g_btec", NULL, NULL, "1900",
 	"Battletech (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_btecRomInfo, g_btecRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18792,7 +18792,7 @@ struct BurnDriver BurnDrvMDg_bear = {
 	"g_bear", NULL, NULL, "1900",
 	"Berenstain Bears', The - Camping Adventure (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bearRomInfo, g_bearRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18810,7 +18810,7 @@ struct BurnDriver BurnDrvMDg_bw95 = {
 	"g_bw95", NULL, NULL, "1900",
 	"Bill Walsh College Football '95 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bw95RomInfo, g_bw95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18828,7 +18828,7 @@ struct BurnDriver BurnDrvMDg_bwcf = {
 	"g_bwcf", NULL, NULL, "1900",
 	"Bill Walsh College Football (UE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bwcfRomInfo, g_bwcfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18846,7 +18846,7 @@ struct BurnDriver BurnDrvMDg_bimi = {
 	"g_bimi", NULL, NULL, "1900",
 	"Bimini Run (U) (REV02) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bimiRomInfo, g_bimiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18864,7 +18864,7 @@ struct BurnDriverD BurnDrvMDg_cbwl = {
 	"g_cbwl", NULL, NULL, "1900",
 	"Championship Bowling (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cbwlRomInfo, g_cbwlRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18882,7 +18882,7 @@ struct BurnDriverD BurnDrvMDg_bwbw = {
 	"g_bwbw", "g_cbwl", NULL, "1900",
 	"Boogie Woogie Bowling (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bwbwRomInfo, g_bwbwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18900,7 +18900,7 @@ struct BurnDriverD BurnDrvMDg_bh95 = {
 	"g_bh95", NULL, NULL, "1900",
 	"Brett Hull Hockey '95 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bh95RomInfo, g_bh95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18918,7 +18918,7 @@ struct BurnDriverD BurnDrvMDg_lvsc = {
 	"g_lvsc", NULL, NULL, "1990",
 	"Lakers vs Celtics and the NBA Playoffs (UE) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lvscRomInfo, g_lvscRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18936,7 +18936,7 @@ struct BurnDriver BurnDrvMDg_bvsb = {
 	"g_bvsb", NULL, NULL, "1993",
 	"Bulls vs Blazers and the NBA Playoffs (UE) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bvsbRomInfo, g_bvsbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18954,7 +18954,7 @@ struct BurnDriverD BurnDrvMDg_npbb = {
 	"g_npbb", NULL, NULL, "1993",
 	"NBA Playoff - Bulls vs Blazers (J) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_npbbRomInfo, g_npbbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18972,7 +18972,7 @@ struct BurnDriver BurnDrvMDg_bvsl = {
 	"g_bvsl", NULL, NULL, "1991",
 	"Bulls vs Lakers and the NBA Playoffs (UE) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bvslRomInfo, g_bvslRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -18990,7 +18990,7 @@ struct BurnDriverD BurnDrvMDg_npbl = {
 	"g_npbl", NULL, NULL, "1993",
 	"NBA Pro Basketball - Bulls vs Lakers (J) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_npblRomInfo, g_npblRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19008,7 +19008,7 @@ struct BurnDriverD BurnDrvMDg_cada = {
 	"g_cada", NULL, NULL, "1900",
 	"Cadash (JU) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cadaRomInfo, g_cadaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19026,7 +19026,7 @@ struct BurnDriverD BurnDrvMDg_caes = {
 	"g_caes", NULL, NULL, "1900",
 	"Caesars Palace (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_caesRomInfo, g_caesRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19044,7 +19044,7 @@ struct BurnDriverD BurnDrvMDg_crjb = {
 	"g_crjb", NULL, NULL, "1900",
 	"Cal Ripken Jr. Baseball (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_crjbRomInfo, g_crjbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19062,7 +19062,7 @@ struct BurnDriverD BurnDrvMDg_c50 = {
 	"g_c50", NULL, NULL, "1900",
 	"Caliber Fifty (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_c50RomInfo, g_c50RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19080,7 +19080,7 @@ struct BurnDriver BurnDrvMDg_cgam = {
 	"g_cgam", NULL, NULL, "1900",
 	"California Games (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cgamRomInfo, g_cgamRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19098,7 +19098,7 @@ struct BurnDriverD BurnDrvMDg_capa = {
 	"g_capa", NULL, NULL, "1900",
 	"Captain America and the Avengers (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_capaRomInfo, g_capaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19116,7 +19116,7 @@ struct BurnDriverD BurnDrvMDg_capamb = {
 	"g_capamb", "g_capa", NULL, "1900",
 	"Captain America and the Avengers (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_capambRomInfo, g_capambRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19134,7 +19134,7 @@ struct BurnDriverD BurnDrvMDg_capame = {
 	"g_capame", "g_capa", NULL, "1900",
 	"Captain America and the Avengers (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_capameRomInfo, g_capameRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19152,7 +19152,7 @@ struct BurnDriverD BurnDrvMDg_chik = {
 	"g_chik", NULL, NULL, "1900",
 	"Chiki Chiki Boys (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chikRomInfo, g_chikRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19170,7 +19170,7 @@ struct BurnDriverD BurnDrvMDg_chikij = {
 	"g_chikij", "g_chik", NULL, "1900",
 	"Chiki Chiki Boys (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chikijRomInfo, g_chikijRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19188,7 +19188,7 @@ struct BurnDriverD BurnDrvMDg_clue = {
 	"g_clue", NULL, NULL, "1900",
 	"Clue (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_clueRomInfo, g_clueRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19206,7 +19206,7 @@ struct BurnDriverD BurnDrvMDg_cuty = {
 	"g_cuty", NULL, NULL, "1900",
 	"Cuty Suzuki no Ringside Angel (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cutyRomInfo, g_cutyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19224,7 +19224,7 @@ struct BurnDriverD BurnDrvMDg_ddwe = {
 	"g_ddwe", NULL, NULL, "1900",
 	"D&D - Warriors of the Eternal Sun (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ddweRomInfo, g_ddweRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19242,7 +19242,7 @@ struct BurnDriverD BurnDrvMDg_dlnd = {
 	"g_dlnd", NULL, NULL, "1900",
 	"Dino Land (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dlndRomInfo, g_dlndRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19260,7 +19260,7 @@ struct BurnDriverD BurnDrvMDg_dinolj = {
 	"g_dinolj", "g_dlnd", NULL, "1900",
 	"Dino Land (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dinoljRomInfo, g_dinoljRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19278,7 +19278,7 @@ struct BurnDriverD BurnDrvMDg_e_bt = {
 	"g_e_bt", NULL, NULL, "1900",
 	"ESPN Baseball Tonight (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_e_btRomInfo, g_e_btRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19296,7 +19296,7 @@ struct BurnDriverD BurnDrvMDg_e_hn = {
 	"g_e_hn", NULL, NULL, "1900",
 	"ESPN National Hockey Night (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_e_hnRomInfo, g_e_hnRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19314,7 +19314,7 @@ struct BurnDriverD BurnDrvMDg_e_nhb = {
 	"g_e_nhb", "g_e_hn", NULL, "1900",
 	"ESPN National Hockey Night (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_e_nhbRomInfo, g_e_nhbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19332,7 +19332,7 @@ struct BurnDriverD BurnDrvMDg_e_sn = {
 	"g_e_sn", NULL, NULL, "1900",
 	"ESPN Sunday Night NFL (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_e_snRomInfo, g_e_snRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19350,7 +19350,7 @@ struct BurnDriverD BurnDrvMDg_ehrd = {
 	"g_ehrd", NULL, NULL, "1900",
 	"Evander Holyfield's Real Deal Boxing (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ehrdRomInfo, g_ehrdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19368,7 +19368,7 @@ struct BurnDriverD BurnDrvMDg_feud = {
 	"g_feud", NULL, NULL, "1900",
 	"Family Feud (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_feudRomInfo, g_feudRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19386,7 +19386,7 @@ struct BurnDriverD BurnDrvMDg_fatl = {
 	"g_fatl", NULL, NULL, "1900",
 	"Fatal Labyrinth (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fatlRomInfo, g_fatlRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19404,7 +19404,7 @@ struct BurnDriver BurnDrvMDg_fifa = {
 	"g_fifa", NULL, NULL, "1993",
 	"FIFA International Soccer (UE) (M4) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fifaRomInfo, g_fifaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19422,7 +19422,7 @@ struct BurnDriverD BurnDrvMDg_grwl = {
 	"g_grwl", NULL, NULL, "1900",
 	"Growl (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_grwlRomInfo, g_grwlRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19440,7 +19440,7 @@ struct BurnDriverD BurnDrvMDg_runark = {
 	"g_runark", "g_grwl", NULL, "1900",
 	"Runark (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_runarkRomInfo, g_runarkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19458,7 +19458,7 @@ struct BurnDriverD BurnDrvMDg_hnov = {
 	"g_hnov", NULL, NULL, "1900",
 	"Heavy Nova (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hnovRomInfo, g_hnovRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19476,7 +19476,7 @@ struct BurnDriverD BurnDrvMDg_hice = {
 	"g_hice", NULL, NULL, "1900",
 	"Hit The Ice (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hiceRomInfo, g_hiceRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19494,7 +19494,7 @@ struct BurnDriverD BurnDrvMDg_jnpg = {
 	"g_jnpg", NULL, NULL, "1900",
 	"Jack Nicklaus' Power Challenge Golf (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jnpgRomInfo, g_jnpgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19512,7 +19512,7 @@ struct BurnDriverD BurnDrvMDg_ktm = {
 	"g_ktm", NULL, NULL, "1900",
 	"King of the Monsters (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ktmRomInfo, g_ktmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19530,7 +19530,7 @@ struct BurnDriverD BurnDrvMDg_kotme = {
 	"g_kotme", "g_ktm", NULL, "1900",
 	"King of the Monsters (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kotmeRomInfo, g_kotmeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19548,7 +19548,7 @@ struct BurnDriverD BurnDrvMDg_klax = {
 	"g_klax", NULL, NULL, "1900",
 	"Klax (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_klaxRomInfo, g_klaxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19566,7 +19566,7 @@ struct BurnDriverD BurnDrvMDg_klaxj = {
 	"g_klaxj", "g_klax", NULL, "1900",
 	"Klax (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_klaxjRomInfo, g_klaxjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19584,7 +19584,7 @@ struct BurnDriverD BurnDrvMDg_ktm2 = {
 	"g_ktm2", NULL, NULL, "1900",
 	"King of the Monsters 2 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ktm2RomInfo, g_ktm2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19602,7 +19602,7 @@ struct BurnDriverD BurnDrvMDg_mamr = {
 	"g_mamr", NULL, NULL, "1900",
 	"Mario Andretti Racing (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mamrRomInfo, g_mamrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19620,7 +19620,7 @@ struct BurnDriverD BurnDrvMDg_mamo = {
 	"g_mamo", NULL, NULL, "1900",
 	"Master of Monsters (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mamoRomInfo, g_mamoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19638,7 +19638,7 @@ struct BurnDriverD BurnDrvMDg_momonj = {
 	"g_momonj", "g_mamo", NULL, "1900",
 	"Master of Monsters (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_momonjRomInfo, g_momonjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19656,7 +19656,7 @@ struct BurnDriverD BurnDrvMDg_mb8p = {
 	"g_mb8p", NULL, NULL, "1900",
 	"Mega Bomberman - 8 Player Demo (Unl)\0", NULL, "Factor 5", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mb8pRomInfo, g_mb8pRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19674,7 +19674,7 @@ struct BurnDriverD BurnDrvMDg_tnzs = {
 	"g_tnzs", NULL, NULL, "1900",
 	"New Zealand Story, The (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tnzsRomInfo, g_tnzsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19692,7 +19692,7 @@ struct BurnDriverD BurnDrvMDg_noes = {
 	"g_noes", NULL, NULL, "1900",
 	"No Escape (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_noesRomInfo, g_noesRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19710,7 +19710,7 @@ struct BurnDriverD BurnDrvMDg_norm = {
 	"g_norm", NULL, NULL, "1900",
 	"Normy's Beach Babe-O-Rama (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_normRomInfo, g_normRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19728,7 +19728,7 @@ struct BurnDriverD BurnDrvMDg_papb = {
 	"g_papb", NULL, NULL, "1900",
 	"Paperboy (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_papbRomInfo, g_papbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19746,7 +19746,7 @@ struct BurnDriverD BurnDrvMDg_pboyj = {
 	"g_pboyj", "g_papb", NULL, "1900",
 	"Paperboy (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pboyjRomInfo, g_pboyjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19764,7 +19764,7 @@ struct BurnDriverD BurnDrvMDg_pap2 = {
 	"g_pap2", NULL, NULL, "1900",
 	"Paperboy II (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pap2RomInfo, g_pap2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19782,7 +19782,7 @@ struct BurnDriverD BurnDrvMDg_pop2 = {
 	"g_pop2", NULL, NULL, "1900",
 	"Populous II - Two Tribes (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pop2RomInfo, g_pop2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19800,7 +19800,7 @@ struct BurnDriverD BurnDrvMDg_quad = {
 	"g_quad", NULL, NULL, "1900",
 	"Quad Challenge (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_quadRomInfo, g_quadRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19818,7 +19818,7 @@ struct BurnDriverD BurnDrvMDg_mtrx = {
 	"g_mtrx", "g_quad", NULL, "1900",
 	"MegaTraX (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mtrxRomInfo, g_mtrxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19836,7 +19836,7 @@ struct BurnDriverD BurnDrvMDg_risk = {
 	"g_risk", NULL, NULL, "1900",
 	"Risk (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_riskRomInfo, g_riskRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19854,7 +19854,7 @@ struct BurnDriverD BurnDrvMDg_rise = {
 	"g_rise", NULL, NULL, "1900",
 	"Rise of the Robots (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_riseRomInfo, g_riseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19872,7 +19872,7 @@ struct BurnDriverD BurnDrvMDg_shov = {
 	"g_shov", NULL, NULL, "1900",
 	"Shove It! - The Warehouse Game (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shovRomInfo, g_shovRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19890,7 +19890,7 @@ struct BurnDriverD BurnDrvMDg_sokoba = {
 	"g_sokoba", "g_shov", NULL, "1900",
 	"Sokoban (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sokobaRomInfo, g_sokobaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19908,7 +19908,7 @@ struct BurnDriverD BurnDrvMDg_std9 = {
 	"g_std9", NULL, NULL, "1900",
 	"Star Trek - Deep Space 9 - Crossroads of Time (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_std9RomInfo, g_std9RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19926,7 +19926,7 @@ struct BurnDriverD BurnDrvMDg_stds9e = {
 	"g_stds9e", "g_std9", NULL, "1900",
 	"Star Trek - Deep Space 9 - Crossroads of Time (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_stds9eRomInfo, g_stds9eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19944,7 +19944,7 @@ struct BurnDriverD BurnDrvMDg_stng = {
 	"g_stng", NULL, NULL, "1900",
 	"Star Trek - The Next Generation (U) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_stngRomInfo, g_stngRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19962,7 +19962,7 @@ struct BurnDriverD BurnDrvMDg_stng00 = {
 	"g_stng00", "g_stng", NULL, "1900",
 	"Star Trek - The Next Generation (U) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_stng00RomInfo, g_stng00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19980,7 +19980,7 @@ struct BurnDriverD BurnDrvMDg_t2ar = {
 	"g_t2ar", NULL, NULL, "1900",
 	"T2 - The Arcade Game (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_t2arRomInfo, g_t2arRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -19998,7 +19998,7 @@ struct BurnDriverD BurnDrvMDg_t2arcb = {
 	"g_t2arcb", "g_t2ar", NULL, "1900",
 	"T2 - The Arcade Game (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_t2arcbRomInfo, g_t2arcbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20016,7 +20016,7 @@ struct BurnDriverD BurnDrvMDg_vali = {
 	"g_vali", NULL, NULL, "1900",
 	"Valis (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_valiRomInfo, g_valiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20034,7 +20034,7 @@ struct BurnDriverD BurnDrvMDg_valj = {
 	"g_valj", "g_vali", NULL, "1900",
 	"Valis (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_valjRomInfo, g_valjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20052,7 +20052,7 @@ struct BurnDriverD BurnDrvMDg_val3 = {
 	"g_val3", NULL, NULL, "1900",
 	"Valis III (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_val3RomInfo, g_val3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20070,7 +20070,7 @@ struct BurnDriverD BurnDrvMDg_val3j = {
 	"g_val3j", "g_val3", NULL, "1900",
 	"Valis III (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_val3jRomInfo, g_val3jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20088,7 +20088,7 @@ struct BurnDriverD BurnDrvMDg_vpin = {
 	"g_vpin", NULL, NULL, "1900",
 	"Virtual Pinball (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vpinRomInfo, g_vpinRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20106,7 +20106,7 @@ struct BurnDriverD BurnDrvMDg_nl98 = {
 	"g_nl98", NULL, NULL, "1900",
 	"NBA Live 98 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nl98RomInfo, g_nl98RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20124,7 +20124,7 @@ struct BurnDriverD BurnDrvMDg_nl97 = {
 	"g_nl97", NULL, NULL, "1900",
 	"NBA Live 97 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nl97RomInfo, g_nl97RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20142,7 +20142,7 @@ struct BurnDriverD BurnDrvMDg_nl96 = {
 	"g_nl96", NULL, NULL, "1900",
 	"NBA Live 96 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nl96RomInfo, g_nl96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20160,7 +20160,7 @@ struct BurnDriverD BurnDrvMDg_nl95 = {
 	"g_nl95", NULL, NULL, "1900",
 	"NBA Live 95 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nl95RomInfo, g_nl95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20178,7 +20178,7 @@ struct BurnDriverD BurnDrvMDg_nasc = {
 	"g_nasc", NULL, NULL, "1900",
 	"NBA All-Star Challenge (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nascRomInfo, g_nascRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20196,7 +20196,7 @@ struct BurnDriverD BurnDrvMDg_nact = {
 	"g_nact", NULL, NULL, "1994",
 	"NBA Action (U) [!]\0", NULL, "Sega Sports", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nactRomInfo, g_nactRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20214,7 +20214,7 @@ struct BurnDriverD BurnDrvMDg_na95 = {
 	"g_na95", NULL, NULL, "1900",
 	"NBA Action '95 (UE) [!]\0", NULL, "Sega Sports", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_na95RomInfo, g_na95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20232,7 +20232,7 @@ struct BurnDriverD BurnDrvMDg_nbs9 = {
 	"g_nbs9", NULL, NULL, "1900",
 	"NBA Showdown 94 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nbs9RomInfo, g_nbs9RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20250,7 +20250,7 @@ struct BurnDriverD BurnDrvMDg_nba94b = {
 	"g_nba94b", "g_nbs9", NULL, "1900",
 	"NBA Showdown 94 (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nba94bRomInfo, g_nba94bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20268,7 +20268,7 @@ struct BurnDriverD BurnDrvMDg_nba9 = {
 	"g_nba9", "g_nbs9", NULL, "1900",
 	"NBA Pro Basketball '94 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nba9RomInfo, g_nba9RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20286,7 +20286,7 @@ struct BurnDriverD BurnDrvMDg_nccf = {
 	"g_nccf", NULL, NULL, "1900",
 	"NCAA College Football (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nccfRomInfo, g_nccfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20304,7 +20304,7 @@ struct BurnDriverD BurnDrvMDg_ncff = {
 	"g_ncff", NULL, NULL, "1900",
 	"NCAA Final Four College Basketball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ncffRomInfo, g_ncffRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20322,7 +20322,7 @@ struct BurnDriverD BurnDrvMDg_nfl8 = {
 	"g_nfl8", NULL, NULL, "1997",
 	"NFL 98 (U) [!]\0", NULL, "Sega Sports", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nfl8RomInfo, g_nfl8RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20340,7 +20340,7 @@ struct BurnDriverD BurnDrvMDg_nfl5 = {
 	"g_nfl5", NULL, NULL, "1994",
 	"NFL '95 (U) [!]\0", NULL, "Sega Sports", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nfl5RomInfo, g_nfl5RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20358,7 +20358,7 @@ struct BurnDriverD BurnDrvMDg_nfl4 = {
 	"g_nfl4", NULL, NULL, "1900",
 	"NFL Football '94 Starring Joe Montana (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nfl4RomInfo, g_nfl4RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20376,7 +20376,7 @@ struct BurnDriverD BurnDrvMDg_nfl94j = {
 	"g_nfl94j", "g_nfl4", NULL, "1900",
 	"NFL Football '94 Starring Joe Montana (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nfl94jRomInfo, g_nfl94jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20394,7 +20394,7 @@ struct BurnDriverD BurnDrvMDg_nfpt = {
 	"g_nfpt", NULL, NULL, "1995",
 	"NFL Prime Time (U) [!]\0", NULL, "Sega Sports", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nfptRomInfo, g_nfptRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20412,7 +20412,7 @@ struct BurnDriverD BurnDrvMDg_nqc6 = {
 	"g_nqc6", NULL, NULL, "1900",
 	"NFL Quarterback Club 96 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nqc6RomInfo, g_nqc6RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20430,7 +20430,7 @@ struct BurnDriverD BurnDrvMDg_nqc = {
 	"g_nqc", NULL, NULL, "1900",
 	"NFL Quarterback Club (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nqcRomInfo, g_nqcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20448,7 +20448,7 @@ struct BurnDriverD BurnDrvMDg_nh95 = {
 	"g_nh95", NULL, NULL, "1900",
 	"NHL 95 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nh95RomInfo, g_nh95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20466,7 +20466,7 @@ struct BurnDriverD BurnDrvMDg_nh9e = {
 	"g_nh9e", "g_nh95", NULL, "1900",
 	"NHL 95 Elitserien (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nh9eRomInfo, g_nh9eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20484,7 +20484,7 @@ struct BurnDriverD BurnDrvMDg_nh96 = {
 	"g_nh96", NULL, NULL, "1900",
 	"NHL 96 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nh96RomInfo, g_nh96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20502,7 +20502,7 @@ struct BurnDriverD BurnDrvMDg_nhl96e = {
 	"g_nhl96e", "g_nh96", NULL, "1900",
 	"NHL 96 Elitserien (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nhl96eRomInfo, g_nhl96eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20520,7 +20520,7 @@ struct BurnDriverD BurnDrvMDg_nh97 = {
 	"g_nh97", NULL, NULL, "1900",
 	"NHL 97 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nh97RomInfo, g_nh97RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20538,7 +20538,7 @@ struct BurnDriverD BurnDrvMDg_nash = {
 	"g_nash", NULL, NULL, "1900",
 	"NHL All-Star Hockey '95 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nashRomInfo, g_nashRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20556,7 +20556,7 @@ struct BurnDriverD BurnDrvMDg_nhlp = {
 	"g_nhlp", NULL, NULL, "1900",
 	"NHLPA Hockey '93 (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nhlpRomInfo, g_nhlpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20574,7 +20574,7 @@ struct BurnDriverD BurnDrvMDg_nhlp00 = {
 	"g_nhlp00", "g_nhlp", NULL, "1900",
 	"NHLPA Hockey '93 (UE) (REV00)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nhlp00RomInfo, g_nhlp00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20592,7 +20592,7 @@ struct BurnDriverD BurnDrvMDg_olsg = {
 	"g_olsg", NULL, NULL, "1900",
 	"Olympic Summer Games Atlanta 96 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_olsgRomInfo, g_olsgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20610,7 +20610,7 @@ struct BurnDriverD BurnDrvMDg_patb = {
 	"g_patb", NULL, NULL, "1990",
 	"Pat Riley Basketball (U) [!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_patbRomInfo, g_patbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20628,7 +20628,7 @@ struct BurnDriverD BurnDrvMDg_srba = {
 	"g_srba", "g_patb", NULL, "1900",
 	"Super Real Basketball (E) [c][!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_srbaRomInfo, g_srbaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20646,7 +20646,7 @@ struct BurnDriverD BurnDrvMDg_srealj = {
 	"g_srealj", "g_patb", NULL, "1900",
 	"Super Real Basketball (J) [c][!]\0", NULL, "Sega", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_srealjRomInfo, g_srealjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20664,7 +20664,7 @@ struct BurnDriverD BurnDrvMDg_pele = {
 	"g_pele", NULL, NULL, "1900",
 	"Pele! (UE) [!]\0", NULL, "Accolate", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_peleRomInfo, g_peleRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20682,7 +20682,7 @@ struct BurnDriverD BurnDrvMDg_pelw = {
 	"g_pelw", NULL, NULL, "1900",
 	"Pele's World Tournament Soccer (UE) [!]\0", NULL, "Sport Accolate", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pelwRomInfo, g_pelwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20700,7 +20700,7 @@ struct BurnDriverD BurnDrvMDg_pgae = {
 	"g_pgae", NULL, NULL, "1900",
 	"PGA European Tour (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pgaeRomInfo, g_pgaeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20718,7 +20718,7 @@ struct BurnDriverD BurnDrvMDg_rb3 = {
 	"g_rb3", NULL, NULL, "1900",
 	"RBI Baseball 3 (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rb3RomInfo, g_rb3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20736,7 +20736,7 @@ struct BurnDriverD BurnDrvMDg_rb4 = {
 	"g_rb4", NULL, NULL, "1900",
 	"RBI Baseball 4 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rb4RomInfo, g_rb4RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20754,7 +20754,7 @@ struct BurnDriverD BurnDrvMDg_rbi4b = {
 	"g_rbi4b", "g_rb4", NULL, "1900",
 	"RBI Baseball 4 (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rbi4bRomInfo, g_rbi4bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20772,7 +20772,7 @@ struct BurnDriverD BurnDrvMDg_rb93 = {
 	"g_rb93", NULL, NULL, "1900",
 	"RBI Baseball 93 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rb93RomInfo, g_rb93RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20790,7 +20790,7 @@ struct BurnDriverD BurnDrvMDg_rb94 = {
 	"g_rb94", NULL, NULL, "1900",
 	"RBI Baseball 94 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rb94RomInfo, g_rb94RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20808,7 +20808,7 @@ struct BurnDriverD BurnDrvMDg_rcvm = {
 	"g_rcvm", NULL, NULL, "1900",
 	"Roger Clemens' MVP Baseball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rcvmRomInfo, g_rcvmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20826,7 +20826,7 @@ struct BurnDriverD BurnDrvMDg_rw93 = {
 	"g_rw93", NULL, NULL, "1900",
 	"Rugby World Cup 1995 (UE) (M3) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rw93RomInfo, g_rw93RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20844,7 +20844,7 @@ struct BurnDriverD BurnDrvMDg_swcr = {
 	"g_swcr", NULL, NULL, "1900",
 	"Shane Warne Cricket (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_swcrRomInfo, g_swcrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20862,7 +20862,7 @@ struct BurnDriverD BurnDrvMDg_shi = {
 	"g_shi", NULL, NULL, "1900",
 	"Super High Impact (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shiRomInfo, g_shiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20880,7 +20880,7 @@ struct BurnDriverD BurnDrvMDg_svol = {
 	"g_svol", NULL, NULL, "1900",
 	"Super Volleyball (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_svolRomInfo, g_svolRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20898,7 +20898,7 @@ struct BurnDriverD BurnDrvMDg_svolua = {
 	"g_svolua", "g_svol", NULL, "1900",
 	"Super Volleyball (U) [a1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_svoluaRomInfo, g_svoluaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20916,7 +20916,7 @@ struct BurnDriverD BurnDrvMDg_svolx = {
 	"g_svolx", "g_svol", NULL, "1900",
 	"Super Volleyball (J) [x]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_svolxRomInfo, g_svolxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20934,7 +20934,7 @@ struct BurnDriverD BurnDrvMDg_ws96 = {
 	"g_ws96", NULL, NULL, "1900",
 	"World Series Baseball '96 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ws96RomInfo, g_ws96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20952,7 +20952,7 @@ struct BurnDriverD BurnDrvMDg_ws95 = {
 	"g_ws95", NULL, NULL, "1900",
 	"World Series Baseball '95 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ws95RomInfo, g_ws95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20970,7 +20970,7 @@ struct BurnDriverD BurnDrvMDg_wsb = {
 	"g_wsb", NULL, NULL, "1900",
 	"World Series Baseball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wsbRomInfo, g_wsbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -20988,7 +20988,7 @@ struct BurnDriver BurnDrvMDg_wts = {
 	"g_wts", NULL, NULL, "1900",
 	"World Trophy Soccer (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wtsRomInfo, g_wtsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21006,7 +21006,7 @@ struct BurnDriver BurnDrvMDg_ecs = {
 	"g_ecs", "g_wts", NULL, "1900",
 	"European Club Soccer (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ecsRomInfo, g_ecsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21024,7 +21024,7 @@ struct BurnDriverD BurnDrvMDg_jlcs = {
 	"g_jlcs", "g_wts", NULL, "1900",
 	"J. League Champion Soccer (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jlcsRomInfo, g_jlcsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21042,7 +21042,7 @@ struct BurnDriverD BurnDrvMDg_wfsw = {
 	"g_wfsw", NULL, NULL, "1900",
 	"WWF Super Wrestlemania (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wfswRomInfo, g_wfswRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21060,7 +21060,7 @@ struct BurnDriverD BurnDrvMDg_ma94 = {
 	"g_ma94", NULL, NULL, "1900",
 	"John Madden NFL 94 (UE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ma94RomInfo, g_ma94RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21078,7 +21078,7 @@ struct BurnDriverD BurnDrvMDg_ma95 = {
 	"g_ma95", NULL, NULL, "1900",
 	"Madden NFL 95 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ma95RomInfo, g_ma95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21096,7 +21096,7 @@ struct BurnDriverD BurnDrvMDg_ma96 = {
 	"g_ma96", NULL, NULL, "1900",
 	"Madden NFL 96 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ma96RomInfo, g_ma96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21114,7 +21114,7 @@ struct BurnDriverD BurnDrvMDg_ma97 = {
 	"g_ma97", NULL, NULL, "1900",
 	"Madden NFL 97 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ma97RomInfo, g_ma97RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21132,7 +21132,7 @@ struct BurnDriverD BurnDrvMDg_ma98 = {
 	"g_ma98", NULL, NULL, "1900",
 	"Madden NFL 98 (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ma98RomInfo, g_ma98RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21150,7 +21150,7 @@ struct BurnDriverD BurnDrvMDg_ma93 = {
 	"g_ma93", NULL, NULL, "1900",
 	"John Madden Football '93 (UE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ma93RomInfo, g_ma93RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21168,7 +21168,7 @@ struct BurnDriver BurnDrvMDg_ma92 = {
 	"g_ma92", NULL, NULL, "1900",
 	"John Madden Football '92 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ma92RomInfo, g_ma92RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21186,7 +21186,7 @@ struct BurnDriverD BurnDrvMDg_ma3c = {
 	"g_ma3c", NULL, NULL, "1900",
 	"John Madden Football '93 - Championship Edition (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ma3cRomInfo, g_ma3cRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21204,7 +21204,7 @@ struct BurnDriver BurnDrvMDg_ma = {
 	"g_ma", NULL, NULL, "1900",
 	"John Madden Football (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_maRomInfo, g_maRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21222,7 +21222,7 @@ struct BurnDriver BurnDrvMDg_madj = {
 	"g_madj", "g_ma", NULL, "1900",
 	"John Madden Football (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_madjRomInfo, g_madjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21240,7 +21240,7 @@ struct BurnDriverD BurnDrvMDg_jmof = {
 	"g_jmof", NULL, NULL, "1900",
 	"Joe Montana Football (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jmofRomInfo, g_jmofRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21258,7 +21258,7 @@ struct BurnDriver BurnDrvMDg_jms2 = {
 	"g_jms2", NULL, NULL, "1900",
 	"Joe Montana Sports Talk Football 2 (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jms2RomInfo, g_jms2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21276,7 +21276,7 @@ struct BurnDriver BurnDrvMDg_jmons2 = {
 	"g_jmons2", "g_jms2", NULL, "1900",
 	"Joe Montana Sports Talk Football 2 (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jmons2RomInfo, g_jmons2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21294,7 +21294,7 @@ struct BurnDriverD BurnDrvMDg_jms = {
 	"g_jms", NULL, NULL, "1900",
 	"Joe Montana Sports Talk Football (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jmsRomInfo, g_jmsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21312,7 +21312,7 @@ struct BurnDriverD BurnDrvMDg_hb94 = {
 	"g_hb94", NULL, NULL, "1900",
 	"HardBall '94 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hb94RomInfo, g_hb94RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21330,7 +21330,7 @@ struct BurnDriverD BurnDrvMDg_hb3 = {
 	"g_hb3", NULL, NULL, "1900",
 	"HardBall III (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hb3RomInfo, g_hb3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21348,7 +21348,7 @@ struct BurnDriverD BurnDrvMDg_hb = {
 	"g_hb", NULL, NULL, "1900",
 	"HardBall! (U) [!]\0", NULL, "Accolate / Ballistic", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hbRomInfo, g_hbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21366,7 +21366,7 @@ struct BurnDriverD BurnDrvMDg_coak = {
 	"g_coak", NULL, NULL, "1900",
 	"Coach K College Basketball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_coakRomInfo, g_coakRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21384,7 +21384,7 @@ struct BurnDriverD BurnDrvMDg_cf96 = {
 	"g_cf96", NULL, NULL, "1900",
 	"College Football USA 96 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cf96RomInfo, g_cf96RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21402,7 +21402,7 @@ struct BurnDriverD BurnDrvMDg_cf97 = {
 	"g_cf97", NULL, NULL, "1900",
 	"College Football USA 97 - The Road to New Orleans (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cf97RomInfo, g_cf97RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21420,7 +21420,7 @@ struct BurnDriverD BurnDrvMDg_cfn = {
 	"g_cfn", NULL, NULL, "1994",
 	"College Football's National Championship (U) [!]\0", NULL, "Sega Sports", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cfnRomInfo, g_cfnRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21438,7 +21438,7 @@ struct BurnDriverD BurnDrvMDg_cfn2 = {
 	"g_cfn2", NULL, NULL, "1995",
 	"College Football's National Championship II (U) [!]\0", NULL, "Sega Sports", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cfn2RomInfo, g_cfn2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21456,7 +21456,7 @@ struct BurnDriverD BurnDrvMDg_csla = {
 	"g_csla", NULL, NULL, "1900",
 	"College Slam (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cslaRomInfo, g_cslaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21474,7 +21474,7 @@ struct BurnDriverD BurnDrvMDg_crys = {
 	"g_crys", NULL, NULL, "1900",
 	"Crystal's Pony Tale (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_crysRomInfo, g_crysRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21492,7 +21492,7 @@ struct BurnDriverD BurnDrvMDg_cybb = {
 	"g_cybb", NULL, NULL, "1900",
 	"CyberBall (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cybbRomInfo, g_cybbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21510,7 +21510,7 @@ struct BurnDriverD BurnDrvMDg_dcat = {
 	"g_dcat", NULL, NULL, "1900",
 	"David Crane's Amazing Tennis (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dcatRomInfo, g_dcatRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21528,7 +21528,7 @@ struct BurnDriverD BurnDrvMDg_drbb = {
 	"g_drbb", NULL, NULL, "1900",
 	"David Robinson Basketball (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_drbbRomInfo, g_drbbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21546,7 +21546,7 @@ struct BurnDriverD BurnDrvMDg_drsc = {
 	"g_drsc", NULL, NULL, "1900",
 	"David Robinson's Supreme Court (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_drscRomInfo, g_drscRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21564,7 +21564,7 @@ struct BurnDriverD BurnDrvMDg_dc3d = {
 	"g_dc3d", NULL, NULL, "1900",
 	"Devil's Course 3-D Golf (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dc3dRomInfo, g_dc3dRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21582,7 +21582,7 @@ struct BurnDriverD BurnDrvMDg_drib = {
 	"g_drib", NULL, NULL, "1900",
 	"Double Dribble - The Playoff Edition (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dribRomInfo, g_dribRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21600,7 +21600,7 @@ struct BurnDriverD BurnDrvMDg_dbzj = {
 	"g_dbzj", NULL, NULL, "1900",
 	"Dragon Ball Z - Buyuu Retsuden (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dbzjRomInfo, g_dbzjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21618,7 +21618,7 @@ struct BurnDriverD BurnDrvMDg_dbzf = {
 	"g_dbzf", "g_dbzj", NULL, "1900",
 	"Dragon Ball Z - L'Appel du Destin (F) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dbzfRomInfo, g_dbzfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21636,7 +21636,7 @@ struct BurnDriverD BurnDrvMDg_deye = {
 	"g_deye", NULL, NULL, "1900",
 	"Dragon's Eye - Shanghai 3 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_deyeRomInfo, g_deyeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21654,7 +21654,7 @@ struct BurnDriver BurnDrvMDg_nhlh = {
 	"g_nhlh", NULL, NULL, "1900",
 	"NHL Hockey (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nhlhRomInfo, g_nhlhRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21672,7 +21672,7 @@ struct BurnDriver BurnDrvMDg_eaho = {
 	"g_eaho", "g_nhlh", NULL, "1900",
 	"EA Hockey (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_eahoRomInfo, g_eahoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21690,7 +21690,7 @@ struct BurnDriver BurnDrvMDg_prho = {
 	"g_prho", "g_nhlh", NULL, "1900",
 	"Pro Hockey (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_prhoRomInfo, g_prhoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21708,7 +21708,7 @@ struct BurnDriverD BurnDrvMDg_f1c = {
 	"g_f1c", NULL, NULL, "1900",
 	"F1 Circus MD (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f1cRomInfo, g_f1cRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21726,7 +21726,7 @@ struct BurnDriverD BurnDrvMDg_f1gp = {
 	"g_f1gp", NULL, NULL, "1900",
 	"F1 Grand Prix - Nakajima Satoru (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f1gpRomInfo, g_f1gpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21744,7 +21744,7 @@ struct BurnDriverD BurnDrvMDg_f1h = {
 	"g_f1h", NULL, NULL, "1900",
 	"F1 Hero MD (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f1hRomInfo, g_f1hRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21762,7 +21762,7 @@ struct BurnDriverD BurnDrvMDg_f1sl = {
 	"g_f1sl", NULL, NULL, "1900",
 	"F1 Super License - Nakajima Satoru (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f1slRomInfo, g_f1slRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21780,7 +21780,7 @@ struct BurnDriverD BurnDrvMDg_fas1 = {
 	"g_fas1", NULL, NULL, "1900",
 	"Fastest 1 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fas1RomInfo, g_fas1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21798,7 +21798,7 @@ struct BurnDriverD BurnDrvMDg_fpro = {
 	"g_fpro", NULL, NULL, "1900",
 	"Fire Pro Wrestling Gaiden (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fproRomInfo, g_fproRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21816,7 +21816,7 @@ struct BurnDriverD BurnDrvMDg_fore = {
 	"g_fore", NULL, NULL, "1900",
 	"Foreman For Real (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_foreRomInfo, g_foreRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21834,7 +21834,7 @@ struct BurnDriverD BurnDrvMDg_fung = {
 	"g_fung", NULL, NULL, "1900",
 	"Fun-N-Games (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fungRomInfo, g_fungRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21852,7 +21852,7 @@ struct BurnDriverD BurnDrvMDg_funnge = {
 	"g_funnge", "g_fung", NULL, "1900",
 	"Fun-N-Games (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_funngeRomInfo, g_funngeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21870,7 +21870,7 @@ struct BurnDriverD BurnDrvMDg_gws = {
 	"g_gws", NULL, NULL, "1900",
 	"Great Waldo Search, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gwsRomInfo, g_gwsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21888,7 +21888,7 @@ struct BurnDriverD BurnDrvMDg_imgi = {
 	"g_imgi", NULL, NULL, "1900",
 	"IMG International Tour Tennis (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_imgiRomInfo, g_imgiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21906,7 +21906,7 @@ struct BurnDriverD BurnDrvMDg_intr = {
 	"g_intr", NULL, NULL, "1900",
 	"International Rugby (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_intrRomInfo, g_intrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21924,7 +21924,7 @@ struct BurnDriverD BurnDrvMDg_ishi = {
 	"g_ishi", NULL, NULL, "1900",
 	"Ishido - The Way of the Stones (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ishiRomInfo, g_ishiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21942,7 +21942,7 @@ struct BurnDriverD BurnDrvMDg_jlp2 = {
 	"g_jlp2", NULL, NULL, "1900",
 	"J. League Pro Striker 2 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jlp2RomInfo, g_jlp2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21960,7 +21960,7 @@ struct BurnDriverD BurnDrvMDg_jlpp = {
 	"g_jlpp", NULL, NULL, "1900",
 	"J. League Pro Striker - Perfect Edition (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jlppRomInfo, g_jlppRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21978,7 +21978,7 @@ struct BurnDriverD BurnDrvMDg_jlpf = {
 	"g_jlpf", NULL, NULL, "1900",
 	"J. League Pro Striker Final Stage (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jlpfRomInfo, g_jlpfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -21996,7 +21996,7 @@ struct BurnDriverD BurnDrvMDg_jbdb = {
 	"g_jbdb", NULL, NULL, "1900",
 	"James Buster Douglas Knock Out Boxing (UE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jbdbRomInfo, g_jbdbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22014,7 +22014,7 @@ struct BurnDriverD BurnDrvMDg_fblo = {
 	"g_fblo", "g_jbdb", NULL, "1900",
 	"Final Blow (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fbloRomInfo, g_fbloRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22032,7 +22032,7 @@ struct BurnDriverD BurnDrvMDg_jamm = {
 	"g_jamm", NULL, NULL, "1900",
 	"Jammit (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jammRomInfo, g_jammRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22050,7 +22050,7 @@ struct BurnDriverD BurnDrvMDg_jano = {
 	"g_jano", NULL, NULL, "1900",
 	"Janou Touryumon (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_janoRomInfo, g_janoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22068,7 +22068,7 @@ struct BurnDriverD BurnDrvMDg_janout = {
 	"g_janout", "g_jano", NULL, "1900",
 	"Janou Touryumon (J) [a1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_janoutRomInfo, g_janoutRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22086,7 +22086,7 @@ struct BurnDriverD BurnDrvMDg_jant = {
 	"g_jant", NULL, NULL, "1900",
 	"Jantei Monogatari (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jantRomInfo, g_jantRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22104,7 +22104,7 @@ struct BurnDriverD BurnDrvMDg_jeop = {
 	"g_jeop", NULL, NULL, "1900",
 	"Jeopardy! (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jeopRomInfo, g_jeopRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22122,7 +22122,7 @@ struct BurnDriverD BurnDrvMDg_jeod = {
 	"g_jeod", NULL, NULL, "1900",
 	"Jeopardy! Deluxe (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jeodRomInfo, g_jeodRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22140,7 +22140,7 @@ struct BurnDriverD BurnDrvMDg_jeos = {
 	"g_jeos", NULL, NULL, "1900",
 	"Jeopardy! Sports Edition (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jeosRomInfo, g_jeosRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22158,7 +22158,7 @@ struct BurnDriverD BurnDrvMDg_jgpf = {
 	"g_jgpf", NULL, NULL, "1900",
 	"Jerry Glanville's Pigskin Footbrawl (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jgpfRomInfo, g_jgpfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22176,7 +22176,7 @@ struct BurnDriverD BurnDrvMDg_jmac = {
 	"g_jmac", NULL, NULL, "1900",
 	"Joe & Mac Caveman Ninja (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jmacRomInfo, g_jmacRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22194,7 +22194,7 @@ struct BurnDriverD BurnDrvMDg_kbou = {
 	"g_kbou", NULL, NULL, "1900",
 	"King's Bounty (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kbouRomInfo, g_kbouRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22212,7 +22212,7 @@ struct BurnDriverD BurnDrvMDg_msbu = {
 	"g_msbu", NULL, NULL, "1900",
 	"Magic School Bus, The (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_msbuRomInfo, g_msbuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22230,7 +22230,7 @@ struct BurnDriverD BurnDrvMDg_mhy = {
 	"g_mhy", NULL, NULL, "1900",
 	"Mamono Hunter Yohko - Makai Kara no Tenkosei (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mhyRomInfo, g_mhyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22248,7 +22248,7 @@ struct BurnDriverD BurnDrvMDg_mmad = {
 	"g_mmad", NULL, NULL, "1900",
 	"Marble Madness (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmadRomInfo, g_mmadRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22266,7 +22266,7 @@ struct BurnDriverD BurnDrvMDg_mlem = {
 	"g_mlem", NULL, NULL, "1900",
 	"Mario Lemieux Hockey (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mlemRomInfo, g_mlemRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22284,7 +22284,7 @@ struct BurnDriverD BurnDrvMDg_mowe = {
 	"g_mowe", NULL, NULL, "1900",
 	"Master of Weapon (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_moweRomInfo, g_moweRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22302,7 +22302,7 @@ struct BurnDriverD BurnDrvMDg_math = {
 	"g_math", NULL, NULL, "1900",
 	"Math Blaster - Episode 1 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mathRomInfo, g_mathRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22320,7 +22320,7 @@ struct BurnDriverD BurnDrvMDg_mswive = {
 	"g_mswive", NULL, NULL, "1900",
 	"Mega SWIV (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mswiveRomInfo, g_mswiveRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22338,7 +22338,7 @@ struct BurnDriverD BurnDrvMDg_mswi = {
 	"g_mswi", "g_mswive", NULL, "1900",
 	"Mega SWIV (E) [p1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mswiRomInfo, g_mswiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22356,7 +22356,7 @@ struct BurnDriverD BurnDrvMDg_merc = {
 	"g_merc", NULL, NULL, "1900",
 	"Mercs (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mercRomInfo, g_mercRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22374,7 +22374,7 @@ struct BurnDriverD BurnDrvMDg_mult = {
 	"g_mult", NULL, NULL, "1900",
 	"Mickey's Ultimate Challenge (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_multRomInfo, g_multRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22392,7 +22392,7 @@ struct BurnDriverD BurnDrvMDg_mmg = {
 	"g_mmg", NULL, NULL, "1900",
 	"Might and Magic - Gates to Another World (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mmgRomInfo, g_mmgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22410,7 +22410,7 @@ struct BurnDriverD BurnDrvMDg_mlbb = {
 	"g_mlbb", NULL, NULL, "1900",
 	"MLBPA Baseball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mlbbRomInfo, g_mlbbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22428,7 +22428,7 @@ struct BurnDriverD BurnDrvMDg_mlbs = {
 	"g_mlbs", NULL, NULL, "1900",
 	"MLBPA Sports Talk Baseball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mlbsRomInfo, g_mlbsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22446,7 +22446,7 @@ struct BurnDriverD BurnDrvMDg_mahb = {
 	"g_mahb", NULL, NULL, "1900",
 	"Muhammad Ali Heavyweight Boxing (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mahbRomInfo, g_mahbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22464,7 +22464,7 @@ struct BurnDriverD BurnDrvMDg_mahbb = {
 	"g_mahbb", "g_mahb", NULL, "1900",
 	"Muhammad Ali Heavyweight Boxing (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mahbbRomInfo, g_mahbbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22482,7 +22482,7 @@ struct BurnDriverD BurnDrvMDg_mahbe = {
 	"g_mahbe", "g_mahb", NULL, "1900",
 	"Muhammad Ali Heavyweight Boxing (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mahbeRomInfo, g_mahbeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22500,7 +22500,7 @@ struct BurnDriverD BurnDrvMDg_nhir = {
 	"g_nhir", NULL, NULL, "1900",
 	"Newman-Haas IndyCar Racing (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nhirRomInfo, g_nhirRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22518,7 +22518,7 @@ struct BurnDriverD BurnDrvMDg_dmov = {
 	"g_dmov", NULL, NULL, "1900",
 	"Deadly Moves (U) [!]\0", NULL, "Kaneko", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dmovRomInfo, g_dmovRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22536,7 +22536,7 @@ struct BurnDriverD BurnDrvMDg_path = {
 	"g_path", "g_dmov", NULL, "1900",
 	"Power Athlete (J) [!]\0", NULL, "Kaneko", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pathRomInfo, g_pathRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22554,7 +22554,7 @@ struct BurnDriverD BurnDrvMDg_prqu = {
 	"g_prqu", NULL, NULL, "1900",
 	"Pro Quarterback (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_prquRomInfo, g_prquRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22572,7 +22572,7 @@ struct BurnDriverD BurnDrvMDg_ramp = {
 	"g_ramp", NULL, NULL, "1900",
 	"Rampart (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rampRomInfo, g_rampRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22590,7 +22590,7 @@ struct BurnDriverD BurnDrvMDg_rsbt = {
 	"g_rsbt", NULL, NULL, "1900",
 	"Richard Scarry's Busytown (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rsbtRomInfo, g_rsbtRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22608,7 +22608,7 @@ struct BurnDriverD BurnDrvMDg_rmmw = {
 	"g_rmmw", NULL, NULL, "1900",
 	"Rockman Megaworld (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rmmwRomInfo, g_rmmwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22626,7 +22626,7 @@ struct BurnDriverD BurnDrvMDg_rkmnja = {
 	"g_rkmnja", "g_rmmw", NULL, "1900",
 	"Rockman Megaworld (J) [a1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rkmnjaRomInfo, g_rkmnjaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22644,7 +22644,7 @@ struct BurnDriverD BurnDrvMDg_megme = {
 	"g_megme", "g_rmmw", NULL, "1900",
 	"Megaman - The Wily Wars (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_megmeRomInfo, g_megmeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22662,7 +22662,7 @@ struct BurnDriverD BurnDrvMDg_robw = {
 	"g_robw", NULL, NULL, "1900",
 	"Rocky and Bullwinkle, The Adventures of (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_robwRomInfo, g_robwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22680,7 +22680,7 @@ struct BurnDriverD BurnDrvMDg_sdnk = {
 	"g_sdnk", NULL, NULL, "1900",
 	"Slam Dunk - Shikyou Gekitotsu! (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sdnkRomInfo, g_sdnkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22698,7 +22698,7 @@ struct BurnDriverD BurnDrvMDg_sspo = {
 	"g_sspo", NULL, NULL, "1900",
 	"Slaughter Sport (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sspoRomInfo, g_sspoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22716,7 +22716,7 @@ struct BurnDriverD BurnDrvMDg_fatm = {
 	"g_fatm", "g_sspo", NULL, "1900",
 	"Fatman (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fatmRomInfo, g_fatmRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22734,7 +22734,7 @@ struct BurnDriverD BurnDrvMDg_scon = {
 	"g_scon", NULL, NULL, "1900",
 	"Star Control (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sconRomInfo, g_sconRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22752,7 +22752,7 @@ struct BurnDriverD BurnDrvMDg_ssma = {
 	"g_ssma", NULL, NULL, "1900",
 	"Street Smart (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ssmaRomInfo, g_ssmaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22770,7 +22770,7 @@ struct BurnDriverD BurnDrvMDg_sumc = {
 	"g_sumc", NULL, NULL, "1900",
 	"Summer Challenge (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sumcRomInfo, g_sumcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22788,7 +22788,7 @@ struct BurnDriverD BurnDrvMDg_sleage = {
 	"g_sleage", NULL, NULL, "1900",
 	"Super League (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sleageRomInfo, g_sleageRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22806,7 +22806,7 @@ struct BurnDriverD BurnDrvMDg_sl = {
 	"g_sl", "g_sleage", NULL, "1900",
 	"Super League (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_slRomInfo, g_slRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22824,7 +22824,7 @@ struct BurnDriverD BurnDrvMDg_sl91 = {
 	"g_sl91", NULL, NULL, "1900",
 	"Super League 91 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sl91RomInfo, g_sl91RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22842,7 +22842,7 @@ struct BurnDriverD BurnDrvMDg_smas = {
 	"g_smas", NULL, NULL, "1900",
 	"Super Masters Golf (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_smasRomInfo, g_smasRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22860,7 +22860,7 @@ struct BurnDriverD BurnDrvMDg_swso = {
 	"g_swso", NULL, NULL, "1900",
 	"Sword of Sodan (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_swsoRomInfo, g_swsoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22878,7 +22878,7 @@ struct BurnDriverD BurnDrvMDg_swsoj = {
 	"g_swsoj", "g_swso", NULL, "1900",
 	"Sword of Sodan (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_swsojRomInfo, g_swsojRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22896,7 +22896,7 @@ struct BurnDriverD BurnDrvMDg_swve = {
 	"g_swve", NULL, NULL, "1900",
 	"Sword of Vermilion (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_swveRomInfo, g_swveRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22914,7 +22914,7 @@ struct BurnDriverD BurnDrvMDg_swvej = {
 	"g_swvej", "g_swve", NULL, "1900",
 	"Sword of Vermilion (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_swvejRomInfo, g_swvejRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22932,7 +22932,7 @@ struct BurnDriverD BurnDrvMDg_tusa = {
 	"g_tusa", NULL, NULL, "1900",
 	"Team USA Basketball (UE) [c][!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tusaRomInfo, g_tusaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22950,7 +22950,7 @@ struct BurnDriverD BurnDrvMDg_dtusa = {
 	"g_dtusa", "g_tusa", NULL, "1900",
 	"Dream Team USA (J) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dtusaRomInfo, g_dtusaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22968,7 +22968,7 @@ struct BurnDriverD BurnDrvMDg_tcls = {
 	"g_tcls", NULL, NULL, "1900",
 	"Techno Clash (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tclsRomInfo, g_tclsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -22986,7 +22986,7 @@ struct BurnDriverD BurnDrvMDg_tcop = {
 	"g_tcop", NULL, NULL, "1900",
 	"Technocop (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tcopRomInfo, g_tcopRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23004,7 +23004,7 @@ struct BurnDriverD BurnDrvMDg_tcupx = {
 	"g_tcupx", NULL, NULL, "1900",
 	"Tecmo Cup (J) [x]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tcupxRomInfo, g_tcupxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23022,7 +23022,7 @@ struct BurnDriverD BurnDrvMDg_tc = {
 	"g_tc", "g_tcupx", NULL, "1900",
 	"Tecmo Cup (J) [p1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tcRomInfo, g_tcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23040,7 +23040,7 @@ struct BurnDriverD BurnDrvMDg_tsb = {
 	"g_tsb", NULL, NULL, "1900",
 	"Tecmo Super Baseball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tsbRomInfo, g_tsbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23058,7 +23058,7 @@ struct BurnDriverD BurnDrvMDg_tsbw = {
 	"g_tsbw", NULL, NULL, "1900",
 	"Tecmo Super Bowl (U) (Oct 1993) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tsbwRomInfo, g_tsbwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23076,7 +23076,7 @@ struct BurnDriverD BurnDrvMDg_tsbwlj = {
 	"g_tsbwlj", "g_tsbw", NULL, "1900",
 	"Tecmo Super Bowl (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tsbwljRomInfo, g_tsbwljRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23094,7 +23094,7 @@ struct BurnDriverD BurnDrvMDg_tsbwlu = {
 	"g_tsbwlu", "g_tsbw", NULL, "1900",
 	"Tecmo Super Bowl (U) (Sep 1993) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tsbwluRomInfo, g_tsbwluRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23112,7 +23112,7 @@ struct BurnDriverD BurnDrvMDg_tbw2 = {
 	"g_tbw2", NULL, NULL, "1900",
 	"Tecmo Super Bowl II SE (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tbw2RomInfo, g_tbw2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23130,7 +23130,7 @@ struct BurnDriverD BurnDrvMDg_tsbw2j = {
 	"g_tsbw2j", "g_tbw2", NULL, "1900",
 	"Tecmo Super Bowl II SE (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tsbw2jRomInfo, g_tsbw2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23148,7 +23148,7 @@ struct BurnDriverD BurnDrvMDg_tbw3 = {
 	"g_tbw3", NULL, NULL, "1900",
 	"Tecmo Super Bowl III Final Edition (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tbw3RomInfo, g_tbw3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23166,7 +23166,7 @@ struct BurnDriverD BurnDrvMDg_tsh = {
 	"g_tsh", NULL, NULL, "1900",
 	"Tecmo Super Hockey (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tshRomInfo, g_tshRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23184,7 +23184,7 @@ struct BurnDriverD BurnDrvMDg_tsnb = {
 	"g_tsnb", NULL, NULL, "1900",
 	"Tecmo Super NBA Basketball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tsnbRomInfo, g_tsnbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23202,7 +23202,7 @@ struct BurnDriverD BurnDrvMDg_tsnbaj = {
 	"g_tsnbaj", "g_tsnb", NULL, "1900",
 	"Tecmo Super NBA Basketball (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tsnbajRomInfo, g_tsnbajRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23220,7 +23220,7 @@ struct BurnDriverD BurnDrvMDg_tw93 = {
 	"g_tw93", NULL, NULL, "1900",
 	"Tecmo World Cup '93 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tw93RomInfo, g_tw93RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23238,7 +23238,7 @@ struct BurnDriverD BurnDrvMDg_tw92 = {
 	"g_tw92", "g_tw93", NULL, "1900",
 	"Tecmo World Cup '92 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tw92RomInfo, g_tw92RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23256,7 +23256,7 @@ struct BurnDriverD BurnDrvMDg_ttnk = {
 	"g_ttnk", NULL, NULL, "1900",
 	"Thomas the Tank Engine & Friends (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ttnkRomInfo, g_ttnkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23274,7 +23274,7 @@ struct BurnDriverD BurnDrvMDg_tlbb = {
 	"g_tlbb", NULL, NULL, "1900",
 	"Tommy Lasorda Baseball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tlbbRomInfo, g_tlbbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23292,7 +23292,7 @@ struct BurnDriverD BurnDrvMDg_tr95 = {
 	"g_tr95", NULL, NULL, "1900",
 	"Tony La Russa Baseball 95 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tr95RomInfo, g_tr95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23310,7 +23310,7 @@ struct BurnDriverD BurnDrvMDg_trbb = {
 	"g_trbb", NULL, NULL, "1900",
 	"Tony La Russa Baseball (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_trbbRomInfo, g_trbbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23328,7 +23328,7 @@ struct BurnDriverD BurnDrvMDg_totf = {
 	"g_totf", NULL, NULL, "1900",
 	"Total Football (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_totfRomInfo, g_totfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23346,7 +23346,7 @@ struct BurnDriverD BurnDrvMDg_toxi = {
 	"g_toxi", NULL, NULL, "1900",
 	"Toxic Crusaders (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_toxiRomInfo, g_toxiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23364,7 +23364,7 @@ struct BurnDriverD BurnDrvMDg_tanf = {
 	"g_tanf", NULL, NULL, "1900",
 	"Troy Aikman NFL Football (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tanfRomInfo, g_tanfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23382,7 +23382,7 @@ struct BurnDriverD BurnDrvMDg_uman = {
 	"g_uman", NULL, NULL, "1900",
 	"Ultraman (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_umanRomInfo, g_umanRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23400,7 +23400,7 @@ struct BurnDriverD BurnDrvMDg_ur95 = {
 	"g_ur95", NULL, NULL, "1900",
 	"Unnecessary Roughness 95 (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ur95RomInfo, g_ur95RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23418,7 +23418,7 @@ struct BurnDriverD BurnDrvMDg_vapt = {
 	"g_vapt", NULL, NULL, "1900",
 	"Vapor Trail (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vaptRomInfo, g_vaptRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23436,7 +23436,7 @@ struct BurnDriverD BurnDrvMDg_kuuga = {
 	"g_kuuga", "g_vapt", NULL, "1900",
 	"Kuuga - Operation Vapor Trail (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kuugaRomInfo, g_kuugaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23454,7 +23454,7 @@ struct BurnDriverD BurnDrvMDg_wack = {
 	"g_wack", NULL, NULL, "1900",
 	"Wacky Worlds (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wackRomInfo, g_wackRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23472,7 +23472,7 @@ struct BurnDriverD BurnDrvMDg_wgas = {
 	"g_wgas", NULL, NULL, "1900",
 	"Wayne Gretzsky NHLPA All-Stars (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wgasRomInfo, g_wgasRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23490,7 +23490,7 @@ struct BurnDriverD BurnDrvMDg_wfor = {
 	"g_wfor", NULL, NULL, "1900",
 	"Wheel of Fortune (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wforRomInfo, g_wforRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23508,7 +23508,7 @@ struct BurnDriverD BurnDrvMDg_winc = {
 	"g_winc", NULL, NULL, "1900",
 	"Winter Challenge (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wincRomInfo, g_wincRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23526,7 +23526,7 @@ struct BurnDriverD BurnDrvMDg_wchalb = {
 	"g_wchalb", "g_winc", NULL, "1900",
 	"Winter Challenge (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wchalbRomInfo, g_wchalbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23544,7 +23544,7 @@ struct BurnDriverD BurnDrvMDg_wb3 = {
 	"g_wb3", NULL, NULL, "1900",
 	"Wonder Boy III - Monster Lair (JE) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wb3RomInfo, g_wb3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23562,7 +23562,7 @@ struct BurnDriverD BurnDrvMDg_wbmw = {
 	"g_wbmw", NULL, NULL, "1900",
 	"Wonder Boy in Monster World (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wbmwRomInfo, g_wbmwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23580,7 +23580,7 @@ struct BurnDriverD BurnDrvMDg_turma = {
 	"g_turma", "g_wbmw", NULL, "1900",
 	"Turma da Monica na Terra Dos Monstros (B) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_turmaRomInfo, g_turmaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23598,7 +23598,7 @@ struct BurnDriverD BurnDrvMDg_wcl = {
 	"g_wcl", NULL, NULL, "1900",
 	"World Class Leaderboard Golf (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wclRomInfo, g_wclRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23616,7 +23616,7 @@ struct BurnDriverD BurnDrvMDg_wclbx = {
 	"g_wclbx", "g_wcl", NULL, "1900",
 	"World Class Leaderboard Golf (E) [x]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wclbxRomInfo, g_wclbxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23634,7 +23634,7 @@ struct BurnDriverD BurnDrvMDg_wc94 = {
 	"g_wc94", NULL, NULL, "1900",
 	"World Cup USA 94 (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wc94RomInfo, g_wc94RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23652,7 +23652,7 @@ struct BurnDriverD BurnDrvMDg_cwcs = {
 	"g_cwcs", NULL, NULL, "1900",
 	"Champions World Class Soccer (W) (M4) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cwcsRomInfo, g_cwcsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23670,7 +23670,7 @@ struct BurnDriverD BurnDrvMDg_cpam = {
 	"g_cpam", NULL, NULL, "1900",
 	"Championship Pro-Am (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cpamRomInfo, g_cpamRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23688,7 +23688,7 @@ struct BurnDriverD BurnDrvMDg_cdor = {
 	"g_cdor", NULL, NULL, "1900",
 	"Centurion - Defender of Rome (UE) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_cdorRomInfo, g_cdorRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23706,7 +23706,7 @@ struct BurnDriverD BurnDrvMDg_chi = {
 	"g_chi", NULL, NULL, "1900",
 	"Chi Chi's Pro Challenge (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chiRomInfo, g_chiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23724,7 +23724,7 @@ struct BurnDriverD BurnDrvMDg_bglf = {
 	"g_bglf", NULL, NULL, "1900",
 	"Battle Golfer Yui (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bglfRomInfo, g_bglfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23742,7 +23742,7 @@ struct BurnDriverD BurnDrvMDg_baha = {
 	"g_baha", NULL, NULL, "1900",
 	"Bahamut Senki (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bahaRomInfo, g_bahaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23760,7 +23760,7 @@ struct BurnDriverD BurnDrvMDg_advdai = {
 	"g_advdai", NULL, NULL, "1988",
 	"Advanced Daisenryaku (J) (REV01) [!]\0", "Sound Problems", "System Soft Corp.", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_advdaiRomInfo, g_advdaiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23778,7 +23778,7 @@ struct BurnDriverD BurnDrvMDg_blueal = {
 	"g_blueal", NULL, NULL, "1900",
 	"Blue Almanac (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bluealRomInfo, g_bluealRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23796,7 +23796,7 @@ struct BurnDriverD BurnDrvMDg_chibi = {
 	"g_chibi", NULL, NULL, "1900",
 	"Chibi Maruko-Chan - Wakuwaku Shopping (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chibiRomInfo, g_chibiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23814,7 +23814,7 @@ struct BurnDriverD BurnDrvMDg_crayon = {
 	"g_crayon", NULL, NULL, "1900",
 	"Crayon Shin-Chan - Arashi o Yobu Sono Ko (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_crayonRomInfo, g_crayonRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23832,7 +23832,7 @@ struct BurnDriverD BurnDrvMDg_eadoub = {
 	"g_eadoub", NULL, NULL, "1900",
 	"EA Sports Double Header (E) [!]\0", NULL, "Electronic Arts", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_eadoubRomInfo, g_eadoubRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23850,7 +23850,7 @@ struct BurnDriverD BurnDrvMDg_fushig = {
 	"g_fushig", NULL, NULL, "1900",
 	"Fushigi no Umi no Nadia (J) [c][!]\0", NULL, "Namco", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fushigRomInfo, g_fushigRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23868,7 +23868,7 @@ struct BurnDriverD BurnDrvMDg_ftbhb = {
 	"g_ftbhb", NULL, NULL, "1900",
 	"Frank Thomas Big Hurt Baseball (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ftbhbRomInfo, g_ftbhbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23886,7 +23886,7 @@ struct BurnDriverD BurnDrvMDg_ghwor = {
 	"g_ghwor", NULL, NULL, "1900",
 	"Greatest Heavyweights of the Ring (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ghworRomInfo, g_ghworRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23904,7 +23904,7 @@ struct BurnDriverD BurnDrvMDg_ghwj = {
 	"g_ghwj", "g_ghwor", NULL, "1900",
 	"Greatest Heavyweights of the Ring (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ghwjRomInfo, g_ghwjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23922,7 +23922,7 @@ struct BurnDriverD BurnDrvMDg_hssoc = {
 	"g_hssoc", NULL, NULL, "1900",
 	"High School Soccer - Kunio Kun (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hssocRomInfo, g_hssocRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23940,7 +23940,7 @@ struct BurnDriverD BurnDrvMDg_ichir = {
 	"g_ichir", NULL, NULL, "1900",
 	"Ichidant R (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ichirRomInfo, g_ichirRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23958,7 +23958,7 @@ struct BurnDriverD BurnDrvMDg_hyokk = {
 	"g_hyokk", NULL, NULL, "1900",
 	"Hyokkori Hyoutanjima (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hyokkRomInfo, g_hyokkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23976,7 +23976,7 @@ struct BurnDriverD BurnDrvMDg_kishi = {
 	"g_kishi", NULL, NULL, "1900",
 	"Kishi Densetsu (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kishiRomInfo, g_kishiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -23994,7 +23994,7 @@ struct BurnDriverD BurnDrvMDg_kyuuk = {
 	"g_kyuuk", NULL, NULL, "1900",
 	"Kyuukai Douchuuki (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kyuukRomInfo, g_kyuukRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24012,7 +24012,7 @@ struct BurnDriverD BurnDrvMDg_m1tank = {
 	"g_m1tank", NULL, NULL, "1900",
 	"M-1 Abrams Battle Tank (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_m1tankRomInfo, g_m1tankRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24030,7 +24030,7 @@ struct BurnDriverD BurnDrvMDg_madou = {
 	"g_madou", NULL, NULL, "1900",
 	"Madou Monogatari I (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_madouRomInfo, g_madouRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24048,7 +24048,7 @@ struct BurnDriverD BurnDrvMDg_mahcop = {
 	"g_mahcop", NULL, NULL, "1900",
 	"Mahjong Cop Ryuu - Shiro Ookami no Yabou (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mahcopRomInfo, g_mahcopRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24066,7 +24066,7 @@ struct BurnDriverD BurnDrvMDg_maten = {
 	"g_maten", NULL, NULL, "1900",
 	"Maten no Soumetsu / Maten Densetsu (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_matenRomInfo, g_matenRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24084,7 +24084,7 @@ struct BurnDriverD BurnDrvMDg_manser = {
 	"g_manser", NULL, NULL, "1900",
 	"Mega Anser (J) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_manserRomInfo, g_manserRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24102,7 +24102,7 @@ struct BurnDriverD BurnDrvMDg_megaq = {
 	"g_megaq", NULL, NULL, "1900",
 	"Mega Q - The Party Quiz Game (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_megaqRomInfo, g_megaqRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24120,7 +24120,7 @@ struct BurnDriverD BurnDrvMDg_mfang = {
 	"g_mfang", NULL, NULL, "1900",
 	"Metal Fangs (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mfangRomInfo, g_mfangRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24138,7 +24138,7 @@ struct BurnDriverD BurnDrvMDg_mpiano = {
 	"g_mpiano", NULL, NULL, "1900",
 	"Miracle Piano Teaching System (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mpianoRomInfo, g_mpianoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24156,7 +24156,7 @@ struct BurnDriverD BurnDrvMDg_monwr4 = {
 	"g_monwr4", NULL, NULL, "1900",
 	"Monster World IV (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_monwr4RomInfo, g_monwr4RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24174,7 +24174,7 @@ struct BurnDriverD BurnDrvMDg_new3dg = {
 	"g_new3dg", NULL, NULL, "1900",
 	"New 3D Golf Simulation Harukanaru Augusta (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_new3dgRomInfo, g_new3dgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24192,7 +24192,7 @@ struct BurnDriverD BurnDrvMDg_nikkan = {
 	"g_nikkan", NULL, NULL, "1900",
 	"Nikkan Sports Pro Yakyuu Van (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nikkanRomInfo, g_nikkanRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24210,7 +24210,7 @@ struct BurnDriverD BurnDrvMDg_patlab = {
 	"g_patlab", NULL, NULL, "1900",
 	"Patlabor (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_patlabRomInfo, g_patlabRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24228,7 +24228,7 @@ struct BurnDriverD BurnDrvMDg_psyobl = {
 	"g_psyobl", NULL, NULL, "1900",
 	"Psy-O-Blade Moving Adventure (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_psyoblRomInfo, g_psyoblRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24246,7 +24246,7 @@ struct BurnDriverD BurnDrvMDg_ransei = {
 	"g_ransei", NULL, NULL, "1900",
 	"Ransei no Hasha (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ranseiRomInfo, g_ranseiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24264,7 +24264,7 @@ struct BurnDriverD BurnDrvMDg_renthe = {
 	"g_renthe", NULL, NULL, "1900",
 	"Rent A Hero (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rentheRomInfo, g_rentheRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24282,7 +24282,7 @@ struct BurnDriverD BurnDrvMDg_sangor = {
 	"g_sangor", NULL, NULL, "1900",
 	"Sangokushi Retsuden - Ransei no Eiyuu Tachi (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sangorRomInfo, g_sangorRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24300,7 +24300,7 @@ struct BurnDriverD BurnDrvMDg_sanret = {
 	"g_sanret", "g_sangor", NULL, "1900",
 	"Sangokushi Retsuden (Ch)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sanretRomInfo, g_sanretRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24318,7 +24318,7 @@ struct BurnDriverD BurnDrvMDg_shikin = {
 	"g_shikin", NULL, NULL, "1900",
 	"Shi Kin Joh (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shikinRomInfo, g_shikinRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24336,7 +24336,7 @@ struct BurnDriverD BurnDrvMDg_shogi = {
 	"g_shogi", NULL, NULL, "1900",
 	"Shogi no Hoshi (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shogiRomInfo, g_shogiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24354,7 +24354,7 @@ struct BurnDriverD BurnDrvMDg_shura = {
 	"g_shura", NULL, NULL, "1900",
 	"Shura no Mon (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shuraRomInfo, g_shuraRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24372,7 +24372,7 @@ struct BurnDriverD BurnDrvMDg_slapf = {
 	"g_slapf", NULL, NULL, "1900",
 	"Slap Fight (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_slapfRomInfo, g_slapfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24390,7 +24390,7 @@ struct BurnDriverD BurnDrvMDg_supdai = {
 	"g_supdai", NULL, NULL, "1900",
 	"Super Daisenryaku (J) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_supdaiRomInfo, g_supdaiRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24408,7 +24408,7 @@ struct BurnDriverD BurnDrvMDg_surgin = {
 	"g_surgin", NULL, NULL, "1900",
 	"Surging Aura (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_surginRomInfo, g_surginRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24426,7 +24426,7 @@ struct BurnDriverD BurnDrvMDg_taiga = {
 	"g_taiga", NULL, NULL, "1900",
 	"Taiga Drama Taiheiki (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_taigaRomInfo, g_taigaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24444,7 +24444,7 @@ struct BurnDriverD BurnDrvMDg_telmj = {
 	"g_telmj", NULL, NULL, "1900",
 	"Tel Tel Mahjong (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_telmjRomInfo, g_telmjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24462,7 +24462,7 @@ struct BurnDriverD BurnDrvMDg_telstd = {
 	"g_telstd", NULL, NULL, "1900",
 	"Tel Tel Stadium (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_telstdRomInfo, g_telstdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24480,7 +24480,7 @@ struct BurnDriverD BurnDrvMDg_tpglf2 = {
 	"g_tpglf2", NULL, NULL, "1900",
 	"Top Pro Golf 2 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tpglf2RomInfo, g_tpglf2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24498,7 +24498,7 @@ struct BurnDriverD BurnDrvMDg_tpglf = {
 	"g_tpglf", NULL, NULL, "1900",
 	"Top Pro Golf (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tpglfRomInfo, g_tpglfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24516,7 +24516,7 @@ struct BurnDriverD BurnDrvMDg_twintl = {
 	"g_twintl", NULL, NULL, "1900",
 	"Twinkle Tale (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_twintlRomInfo, g_twintlRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24534,7 +24534,7 @@ struct BurnDriverD BurnDrvMDg_verytx = {
 	"g_verytx", NULL, NULL, "1900",
 	"Verytex (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_verytxRomInfo, g_verytxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24552,7 +24552,7 @@ struct BurnDriverD BurnDrvMDg_vix357 = {
 	"g_vix357", NULL, NULL, "1900",
 	"Vixen 357 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_vix357RomInfo, g_vix357RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24570,7 +24570,7 @@ struct BurnDriverD BurnDrvMDg_waiala = {
 	"g_waiala", NULL, NULL, "1900",
 	"Waialae no Kiseki (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_waialaRomInfo, g_waialaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24588,7 +24588,7 @@ struct BurnDriverD BurnDrvMDg_warps = {
 	"g_warps", NULL, NULL, "1900",
 	"Warpspeed (U) [!]\0", NULL, "Accolade", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_warpsRomInfo, g_warpsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24606,7 +24606,7 @@ struct BurnDriverD BurnDrvMDg_wboy5 = {
 	"g_wboy5", NULL, NULL, "1900",
 	"Wonder Boy V - Monster World III (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wboy5RomInfo, g_wboy5RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24624,7 +24624,7 @@ struct BurnDriverD BurnDrvMDg_wonlib = {
 	"g_wonlib", NULL, NULL, "1900",
 	"Wonder Library (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wonlibRomInfo, g_wonlibRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24642,7 +24642,7 @@ struct BurnDriverD BurnDrvMDg_xdaze = {
 	"g_xdaze", NULL, NULL, "1900",
 	"X Dazedly Ray (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_xdazeRomInfo, g_xdazeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24660,7 +24660,7 @@ struct BurnDriverD BurnDrvMDg_yuyuga = {
 	"g_yuyuga", NULL, NULL, "1900",
 	"Yuu Yuu Hakusho Gaiden (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_yuyugaRomInfo, g_yuyugaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24678,7 +24678,7 @@ struct BurnDriverD BurnDrvMDg_zanya = {
 	"g_zanya", NULL, NULL, "1991",
 	"Zan - Yasha Enbukyoku / Zan Yasha Enbuden (J) [!]\0", NULL, "Wolfteam", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zanyaRomInfo, g_zanyaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24696,7 +24696,7 @@ struct BurnDriver BurnDrvMDg_aresha = {
 	"g_aresha", NULL, NULL, "1991",
 	"A Ressha de Gyoukou MD (J) [!]\0", NULL, "Artdink", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_areshaRomInfo, g_areshaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24714,7 +24714,7 @@ struct BurnDriverD BurnDrvMDg_chouya = {
 	"g_chouya", NULL, NULL, "1900",
 	"Chou Yakyuu Miracle Nine (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chouyaRomInfo, g_chouyaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24732,7 +24732,7 @@ struct BurnDriverD BurnDrvMDg_dynab2 = {
 	"g_dynab2", NULL, NULL, "1900",
 	"Dyna Brothers 2 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dynab2RomInfo, g_dynab2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24750,7 +24750,7 @@ struct BurnDriverD BurnDrvMDg_f15s = {
 	"g_f15s", NULL, NULL, "1900",
 	"F-15 Strike Eagle II (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f15sRomInfo, g_f15sRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24768,7 +24768,7 @@ struct BurnDriverD BurnDrvMDg_f15e = {
 	"g_f15e", "g_f15s", NULL, "1900",
 	"F-15 Strike Eagle II (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f15eRomInfo, g_f15eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24786,7 +24786,7 @@ struct BurnDriverD BurnDrvMDg_f15b = {
 	"g_f15b", "g_f15s", NULL, "1900",
 	"F-15 Strike Eagle II (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f15bRomInfo, g_f15bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24804,7 +24804,7 @@ struct BurnDriverD BurnDrvMDg_gamblr = {
 	"g_gamblr", NULL, NULL, "1900",
 	"Gambler Jiko Chuushinha - Katayama Masayuki no Mahjong Doujou (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gamblrRomInfo, g_gamblrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24822,7 +24822,7 @@ struct BurnDriverD BurnDrvMDg_kingcj = {
 	"g_kingcj", NULL, NULL, "1900",
 	"King Colossus (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kingcjRomInfo, g_kingcjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24840,7 +24840,7 @@ struct BurnDriverD BurnDrvMDg_lordmo = {
 	"g_lordmo", NULL, NULL, "1900",
 	"Lord Monarch (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lordmoRomInfo, g_lordmoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24858,7 +24858,7 @@ struct BurnDriverD BurnDrvMDg_mbmb = {
 	"g_mbmb", NULL, NULL, "1900",
 	"Mega Bomberman (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mbmbRomInfo, g_mbmbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24876,7 +24876,7 @@ struct BurnDriverD BurnDrvMDg_mbmba = {
 	"g_mbmba", "g_mbmb", NULL, "1900",
 	"Mega Bomberman (UE) [a1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mbmbaRomInfo, g_mbmbaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24894,7 +24894,7 @@ struct BurnDriverD BurnDrvMDg_njam = {
 	"g_njam", NULL, NULL, "1900",
 	"NBA Jam (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_njamRomInfo, g_njamRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24912,7 +24912,7 @@ struct BurnDriverD BurnDrvMDg_nbaj00 = {
 	"g_nbaj00", "g_njam", NULL, "1900",
 	"NBA Jam (UE) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nbaj00RomInfo, g_nbaj00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24930,7 +24930,7 @@ struct BurnDriverD BurnDrvMDg_nbajj = {
 	"g_nbajj", "g_njam", NULL, "1900",
 	"NBA Jam (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nbajjRomInfo, g_nbajjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24948,7 +24948,7 @@ struct BurnDriverD BurnDrvMDg_njte = {
 	"g_njte", NULL, NULL, "1900",
 	"NBA Jam Tournament Edition (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_njteRomInfo, g_njteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24966,7 +24966,7 @@ struct BurnDriverD BurnDrvMDg_nbajt0 = {
 	"g_nbajt0", "g_njte", NULL, "1900",
 	"NBA Jam Tournament Edition (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nbajt0RomInfo, g_nbajt0RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -24984,7 +24984,7 @@ struct BurnDriverD BurnDrvMDg_nbah = {
 	"g_nbah", NULL, NULL, "1900",
 	"NBA Hang Time (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nbahRomInfo, g_nbahRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25002,7 +25002,7 @@ struct BurnDriverD BurnDrvMDg_nbahte = {
 	"g_nbahte", "g_nbah", NULL, "1900",
 	"NBA Hang Time (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nbahteRomInfo, g_nbahteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25020,7 +25020,7 @@ struct BurnDriverD BurnDrvMDg_nigel = {
 	"g_nigel", NULL, NULL, "1900",
 	"Nigel Mansell's World Championship (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nigelRomInfo, g_nigelRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25038,7 +25038,7 @@ struct BurnDriverD BurnDrvMDg_nigwce = {
 	"g_nigwce", "g_nigel", NULL, "1900",
 	"Nigel Mansell's World Championship (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_nigwceRomInfo, g_nigwceRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25056,7 +25056,7 @@ struct BurnDriverD BurnDrvMDg_orun = {
 	"g_orun", NULL, NULL, "1900",
 	"OutRun (W) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_orunRomInfo, g_orunRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25074,7 +25074,7 @@ struct BurnDriverD BurnDrvMDg_orunj = {
 	"g_orunj", "g_orun", NULL, "1900",
 	"OutRun (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_orunjRomInfo, g_orunjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25092,7 +25092,7 @@ struct BurnDriverD BurnDrvMDg_pitf = {
 	"g_pitf", NULL, NULL, "1900",
 	"Pitfall - The Mayan Adventure (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pitfRomInfo, g_pitfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25110,7 +25110,7 @@ struct BurnDriverD BurnDrvMDg_pitfe = {
 	"g_pitfe", "g_pitf", NULL, "1900",
 	"Pitfall - The Mayan Adventure (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pitfeRomInfo, g_pitfeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25128,7 +25128,7 @@ struct BurnDriverD BurnDrvMDg_pifg = {
 	"g_pifg", NULL, NULL, "1900",
 	"Pit Fighter (W) (Oct 1991) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pifgRomInfo, g_pifgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25146,7 +25146,7 @@ struct BurnDriverD BurnDrvMDg_pifia = {
 	"g_pifia", "g_pifg", NULL, "1900",
 	"Pit Fighter (UE) (Jun 1991) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pifiaRomInfo, g_pifiaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25164,7 +25164,7 @@ struct BurnDriverD BurnDrvMDg_poca = {
 	"g_poca", NULL, NULL, "1900",
 	"Pocahontas (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pocaRomInfo, g_pocaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25182,7 +25182,7 @@ struct BurnDriverD BurnDrvMDg_pocae = {
 	"g_pocae", "g_poca", NULL, "1900",
 	"Pocahontas (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pocaeRomInfo, g_pocaeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25200,7 +25200,7 @@ struct BurnDriverD BurnDrvMDg_rens = {
 	"g_rens", NULL, NULL, "1900",
 	"Ren and Stimpy Show, The - Stimpy's Invention (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rensRomInfo, g_rensRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25218,7 +25218,7 @@ struct BurnDriverD BurnDrvMDg_renstb = {
 	"g_renstb", "g_rens", NULL, "1900",
 	"Ren and Stimpy Show, The - Stimpy's Invention (Beta))\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_renstbRomInfo, g_renstbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25236,7 +25236,7 @@ struct BurnDriverD BurnDrvMDg_renste = {
 	"g_renste", "g_rens", NULL, "1900",
 	"Ren and Stimpy Show, The - Stimpy's Invention (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rensteRomInfo, g_rensteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25254,7 +25254,7 @@ struct BurnDriverD BurnDrvMDg_side = {
 	"g_side", NULL, NULL, "1900",
 	"Side Pocket (JU) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sideRomInfo, g_sideRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25272,7 +25272,7 @@ struct BurnDriverD BurnDrvMDg_sidepe = {
 	"g_sidepe", "g_side", NULL, "1900",
 	"Side Pocket (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sidepeRomInfo, g_sidepeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25290,7 +25290,7 @@ struct BurnDriverD BurnDrvMDg_mfpl = {
 	"g_mfpl", NULL, NULL, "1900",
 	"Minnesota Fats Pool Legend (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mfplRomInfo, g_mfplRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25308,7 +25308,7 @@ struct BurnDriver BurnDrvMDg_bart = {
 	"g_bart", NULL, NULL, "1900",
 	"Simpsons, The - Bart vs The Space Mutants (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bartRomInfo, g_bartRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25326,7 +25326,7 @@ struct BurnDriver BurnDrvMDg_bart00 = {
 	"g_bart00", "g_bart", NULL, "1900",
 	"Simpsons, The - Bart vs The Space Mutants (UE) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bart00RomInfo, g_bart00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25344,7 +25344,7 @@ struct BurnDriverD BurnDrvMDg_sorcer = {
 	"g_sorcer", NULL, NULL, "1900",
 	"Sorcerian (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sorcerRomInfo, g_sorcerRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25362,7 +25362,7 @@ struct BurnDriverD BurnDrvMDg_ward = {
 	"g_ward", NULL, NULL, "1900",
 	"Wardner (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wardRomInfo, g_wardRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25380,7 +25380,7 @@ struct BurnDriverD BurnDrvMDg_wardj = {
 	"g_wardj", "g_ward", NULL, "1900",
 	"Wardner no Mori Special (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wardjRomInfo, g_wardjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25398,7 +25398,7 @@ struct BurnDriverD BurnDrvMDg_wizl = {
 	"g_wizl", NULL, NULL, "1900",
 	"Wiz 'n' Liz - The Frantic Wabbit Wescue (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wizlRomInfo, g_wizlRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25416,7 +25416,7 @@ struct BurnDriverD BurnDrvMDg_wizlie = {
 	"g_wizlie", "g_wizl", NULL, "1900",
 	"Wiz 'n' Liz - The Frantic Wabbit Wescue (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wizlieRomInfo, g_wizlieRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25434,7 +25434,7 @@ struct BurnDriverD BurnDrvMDg_ztks = {
 	"g_ztks", NULL, NULL, "1900",
 	"Zero the Kamikaze Squirrel (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ztksRomInfo, g_ztksRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25452,7 +25452,7 @@ struct BurnDriverD BurnDrvMDg_ztkse = {
 	"g_ztkse", "g_ztks", NULL, "1900",
 	"Zero the Kamikaze Squirrel (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ztkseRomInfo, g_ztkseRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25470,7 +25470,7 @@ struct BurnDriverD BurnDrvMDg_bttf = {
 	"g_bttf", NULL, NULL, "1900",
 	"Back to the Future Part III (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bttfRomInfo, g_bttfRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25488,7 +25488,7 @@ struct BurnDriverD BurnDrvMDg_bttfe = {
 	"g_bttfe", "g_bttf", NULL, "1900",
 	"Back to the Future Part III (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bttfeRomInfo, g_bttfeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25506,7 +25506,7 @@ struct BurnDriverD BurnDrvMDg_bwre = {
 	"g_bwre", NULL, NULL, "1900",
 	"Beast Wrestler (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bwreRomInfo, g_bwreRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25524,7 +25524,7 @@ struct BurnDriverD BurnDrvMDg_beaswr = {
 	"g_beaswr", "g_bwre", NULL, "1900",
 	"Beast Warriors (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_beaswrRomInfo, g_beaswrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25542,7 +25542,7 @@ struct BurnDriverD BurnDrvMDg_chuk = {
 	"g_chuk", NULL, NULL, "1900",
 	"Chuck Rock (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chukRomInfo, g_chukRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25560,7 +25560,7 @@ struct BurnDriverD BurnDrvMDg_chkrke = {
 	"g_chkrke", "g_chuk", NULL, "1900",
 	"Chuck Rock (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chkrkeRomInfo, g_chkrkeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25578,7 +25578,7 @@ struct BurnDriverD BurnDrvMDg_chk2 = {
 	"g_chk2", NULL, NULL, "1900",
 	"Chuck II - Son of Chuck (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chk2RomInfo, g_chk2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25596,7 +25596,7 @@ struct BurnDriverD BurnDrvMDg_chk2b = {
 	"g_chk2b", "g_chk2", NULL, "1900",
 	"Chuck II - Son of Chuck (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chk2bRomInfo, g_chk2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25614,7 +25614,7 @@ struct BurnDriverD BurnDrvMDg_chk2e = {
 	"g_chk2e", "g_chk2", NULL, "1900",
 	"Chuck II - Son of Chuck (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chk2eRomInfo, g_chk2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25632,7 +25632,7 @@ struct BurnDriverD BurnDrvMDg_chk2j = {
 	"g_chk2j", "g_chk2", NULL, "1900",
 	"Chuck II - Son of Chuck (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chk2jRomInfo, g_chk2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25650,7 +25650,7 @@ struct BurnDriverD BurnDrvMDg_crkd = {
 	"g_crkd", NULL, NULL, "1900",
 	"Crack Down (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_crkdRomInfo, g_crkdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25668,7 +25668,7 @@ struct BurnDriverD BurnDrvMDg_crkde = {
 	"g_crkde", "g_crkd", NULL, "1900",
 	"Crack Down (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_crkdeRomInfo, g_crkdeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25686,7 +25686,7 @@ struct BurnDriverD BurnDrvMDg_crkdj = {
 	"g_crkdj", "g_crkd", NULL, "1900",
 	"Crack Down (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_crkdjRomInfo, g_crkdjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25704,7 +25704,7 @@ struct BurnDriverD BurnDrvMDg_djby = {
 	"g_djby", NULL, NULL, "1900",
 	"DJ Boy (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_djbyRomInfo, g_djbyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25722,7 +25722,7 @@ struct BurnDriverD BurnDrvMDg_djboye = {
 	"g_djboye", "g_djby", NULL, "1900",
 	"DJ Boy (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_djboyeRomInfo, g_djboyeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25740,7 +25740,7 @@ struct BurnDriverD BurnDrvMDg_djboyj = {
 	"g_djboyj", "g_djby", NULL, "1900",
 	"DJ Boy (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_djboyjRomInfo, g_djboyjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25758,7 +25758,7 @@ struct BurnDriverD BurnDrvMDg_eswa = {
 	"g_eswa", NULL, NULL, "1900",
 	"ESWAT Cyber Police - City Under Siege (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_eswaRomInfo, g_eswaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25776,7 +25776,7 @@ struct BurnDriverD BurnDrvMDg_eswatj = {
 	"g_eswatj", "g_eswa", NULL, "1900",
 	"ESWAT Cyber Police (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_eswatjRomInfo, g_eswatjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25794,7 +25794,7 @@ struct BurnDriverD BurnDrvMDg_wher = {
 	"g_wher", NULL, NULL, "1900",
 	"World Heroes (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wherRomInfo, g_wherRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25812,7 +25812,7 @@ struct BurnDriverD BurnDrvMDg_wheroj = {
 	"g_wheroj", "g_wher", NULL, "1900",
 	"World Heroes (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wherojRomInfo, g_wherojRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25830,7 +25830,7 @@ struct BurnDriverD BurnDrvMDg_uzuke = {
 	"g_uzuke", NULL, NULL, "1900",
 	"Uzu Keobukseon (K) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_uzukeRomInfo, g_uzukeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25848,7 +25848,7 @@ struct BurnDriverD BurnDrvMDg_f1wc = {
 	"g_f1wc", NULL, NULL, "1900",
 	"F1 World Championship (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f1wcRomInfo, g_f1wcRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25866,7 +25866,7 @@ struct BurnDriverD BurnDrvMDg_f1wlce = {
 	"g_f1wlce", "g_f1wc", NULL, "1900",
 	"F1 World Championship (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_f1wlceRomInfo, g_f1wlceRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25884,7 +25884,7 @@ struct BurnDriverD BurnDrvMDg_ferias = {
 	"g_ferias", NULL, NULL, "1900",
 	"Ferias Frustradas do Pica-Pau (B) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_feriasRomInfo, g_feriasRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25902,7 +25902,7 @@ struct BurnDriverD BurnDrvMDg_fmas = {
 	"g_fmas", NULL, NULL, "1900",
 	"Fighting Masters (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fmasRomInfo, g_fmasRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25920,7 +25920,7 @@ struct BurnDriverD BurnDrvMDg_fghmsj = {
 	"g_fghmsj", "g_fmas", NULL, "1900",
 	"Fighting Masters (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fghmsjRomInfo, g_fghmsjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25938,7 +25938,7 @@ struct BurnDriverD BurnDrvMDg_flin = {
 	"g_flin", NULL, NULL, "1900",
 	"Flintstones, The (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_flinRomInfo, g_flinRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25956,7 +25956,7 @@ struct BurnDriverD BurnDrvMDg_flinte = {
 	"g_flinte", "g_flin", NULL, "1900",
 	"Flintstones, The (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_flinteRomInfo, g_flinteRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25974,7 +25974,7 @@ struct BurnDriverD BurnDrvMDg_flintj = {
 	"g_flintj", "g_flin", NULL, "1900",
 	"Flintstones, The (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_flintjRomInfo, g_flintjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -25992,7 +25992,7 @@ struct BurnDriverD BurnDrvMDg_fw = {
 	"g_fw", NULL, NULL, "1900",
 	"Forgotten Worlds (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fwRomInfo, g_fwRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26010,7 +26010,7 @@ struct BurnDriverD BurnDrvMDg_fw00 = {
 	"g_fw00", "g_fw", NULL, "1900",
 	"Forgotten Worlds (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fw00RomInfo, g_fw00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26028,7 +26028,7 @@ struct BurnDriverD BurnDrvMDg_gfko = {
 	"g_gfko", NULL, NULL, "1900",
 	"George Foreman's KO Boxing (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gfkoRomInfo, g_gfkoRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26046,7 +26046,7 @@ struct BurnDriverD BurnDrvMDg_gfkobe = {
 	"g_gfkobe", "g_gfko", NULL, "1900",
 	"George Foreman's KO Boxing (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_gfkobeRomInfo, g_gfkobeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26064,7 +26064,7 @@ struct BurnDriverD BurnDrvMDg_hell = {
 	"g_hell", NULL, NULL, "1900",
 	"Hellfire (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hellRomInfo, g_hellRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26082,7 +26082,7 @@ struct BurnDriverD BurnDrvMDg_helfij = {
 	"g_helfij", "g_hell", NULL, "1900",
 	"Hellfire (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_helfijRomInfo, g_helfijRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26100,7 +26100,7 @@ struct BurnDriverD BurnDrvMDg_helfie = {
 	"g_helfie", "g_hell", NULL, "1900",
 	"Hellfire (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_helfieRomInfo, g_helfieRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26118,7 +26118,7 @@ struct BurnDriverD BurnDrvMDg_hybrid = {
 	"g_hybrid", NULL, NULL, "1900",
 	"Hybrid Front, The (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hybridRomInfo, g_hybridRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26136,7 +26136,7 @@ struct BurnDriverD BurnDrvMDg_hybrip = {
 	"g_hybrip", "g_hybrid", NULL, "1900",
 	"Hybrid Front, The (J) (Prototype) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hybripRomInfo, g_hybripRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26154,7 +26154,7 @@ struct BurnDriverD BurnDrvMDg_hydu = {
 	"g_hydu", NULL, NULL, "1900",
 	"Hyper Dunk - The Playoff Edition (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hyduRomInfo, g_hyduRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26172,7 +26172,7 @@ struct BurnDriverD BurnDrvMDg_hdunkb = {
 	"g_hdunkb", "g_hydu", NULL, "1900",
 	"Hyper Dunk - The Playoff Edition (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hdunkbRomInfo, g_hdunkbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26190,7 +26190,7 @@ struct BurnDriverD BurnDrvMDg_hdunkj = {
 	"g_hdunkj", "g_hydu", NULL, "1900",
 	"Hyper Dunk - The Playoff Edition (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_hdunkjRomInfo, g_hdunkjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26208,7 +26208,7 @@ struct BurnDriverD BurnDrvMDg_indl = {
 	"g_indl", NULL, NULL, "1900",
 	"Indiana Jones and the Last Crusade (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_indlRomInfo, g_indlRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26226,7 +26226,7 @@ struct BurnDriverD BurnDrvMDg_indlce = {
 	"g_indlce", "g_indl", NULL, "1900",
 	"Indiana Jones and the Last Crusade (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_indlceRomInfo, g_indlceRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26244,7 +26244,7 @@ struct BurnDriverD BurnDrvMDg_insx = {
 	"g_insx", NULL, NULL, "1900",
 	"Insector X (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_insxRomInfo, g_insxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26262,7 +26262,7 @@ struct BurnDriverD BurnDrvMDg_insxj = {
 	"g_insxj", "g_insx", NULL, "1900",
 	"Insector X (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_insxjRomInfo, g_insxjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26280,7 +26280,7 @@ struct BurnDriverD BurnDrvMDg_jlp = {
 	"g_jlp", NULL, NULL, "1900",
 	"J. League Pro Striker (J) (REV03) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jlpRomInfo, g_jlpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26298,7 +26298,7 @@ struct BurnDriverD BurnDrvMDg_jlps00 = {
 	"g_jlps00", "g_jlp", NULL, "1900",
 	"J. League Pro Striker (J) (REV00) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jlps00RomInfo, g_jlps00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26316,7 +26316,7 @@ struct BurnDriverD BurnDrvMDg_jewl = {
 	"g_jewl", NULL, NULL, "1900",
 	"Jewel Master (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jewlRomInfo, g_jewlRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26334,7 +26334,7 @@ struct BurnDriverD BurnDrvMDg_jewlj = {
 	"g_jewlj", "g_jewl", NULL, "1900",
 	"Jewel Master (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jewljRomInfo, g_jewljRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26352,7 +26352,7 @@ struct BurnDriverD BurnDrvMDg_jb11 = {
 	"g_jb11", NULL, NULL, "1900",
 	"Jordan vs Bird - Super One-on-One (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jb11RomInfo, g_jb11RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26370,7 +26370,7 @@ struct BurnDriverD BurnDrvMDg_jb11j = {
 	"g_jb11j", "g_jb11", NULL, "1900",
 	"Jordan vs Bird - Super One-on-One (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jb11jRomInfo, g_jb11jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26388,7 +26388,7 @@ struct BurnDriverD BurnDrvMDg_jb1100 = {
 	"g_jb1100", "g_jb11", NULL, "1900",
 	"Jordan vs Bird - Super One-on-One (UE) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_jb1100RomInfo, g_jb1100RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26406,7 +26406,7 @@ struct BurnDriverD BurnDrvMDg_ksal = {
 	"g_ksal", NULL, NULL, "1900",
 	"King Salmon - The Big Catch (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ksalRomInfo, g_ksalRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26424,7 +26424,7 @@ struct BurnDriverD BurnDrvMDg_ksalmj = {
 	"g_ksalmj", "g_ksal", NULL, "1900",
 	"King Salmon - The Big Catch (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ksalmjRomInfo, g_ksalmjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26442,7 +26442,7 @@ struct BurnDriverD BurnDrvMDg_lhx = {
 	"g_lhx", NULL, NULL, "1900",
 	"LHX Attack Chopper (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lhxRomInfo, g_lhxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26460,7 +26460,7 @@ struct BurnDriverD BurnDrvMDg_lhxj = {
 	"g_lhxj", "g_lhx", NULL, "1900",
 	"LHX Attack Chopper (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_lhxjRomInfo, g_lhxjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26478,7 +26478,7 @@ struct BurnDriverD BurnDrvMDg_midr = {
 	"g_midr", NULL, NULL, "1900",
 	"Midnight Resistance (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_midrRomInfo, g_midrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26496,7 +26496,7 @@ struct BurnDriverD BurnDrvMDg_midrej = {
 	"g_midrej", "g_midr", NULL, "1900",
 	"Midnight Resistance (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_midrejRomInfo, g_midrejRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26514,7 +26514,7 @@ struct BurnDriverD BurnDrvMDg_m29 = {
 	"g_m29", NULL, NULL, "1900",
 	"Mig-29 Fighter Pilot (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_m29RomInfo, g_m29RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26532,7 +26532,7 @@ struct BurnDriverD BurnDrvMDg_mig29e = {
 	"g_mig29e", "g_m29", NULL, "1900",
 	"Mig-29 Fighter Pilot (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mig29eRomInfo, g_mig29eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26550,7 +26550,7 @@ struct BurnDriverD BurnDrvMDg_mike = {
 	"g_mike", NULL, NULL, "1900",
 	"Mike Ditka Power Football (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mikeRomInfo, g_mikeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26568,7 +26568,7 @@ struct BurnDriverD BurnDrvMDg_mdpfua = {
 	"g_mdpfua", "g_mike", NULL, "1900",
 	"Mike Ditka Power Football (U) [a1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mdpfuaRomInfo, g_mdpfuaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26586,7 +26586,7 @@ struct BurnDriverD BurnDrvMDg_mlfoot = {
 	"g_mlfoot", NULL, NULL, "1900",
 	"Mutant League Football (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mlfootRomInfo, g_mlfootRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26604,7 +26604,7 @@ struct BurnDriverD BurnDrvMDg_mutlfj = {
 	"g_mutlfj", "g_mlfoot", NULL, "1900",
 	"Mutant League Football (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mutlfjRomInfo, g_mutlfjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26622,7 +26622,7 @@ struct BurnDriverD BurnDrvMDg_mysd = {
 	"g_mysd", NULL, NULL, "1900",
 	"Mystic Defender (W) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mysdRomInfo, g_mysdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26640,7 +26640,7 @@ struct BurnDriverD BurnDrvMDg_mysd00 = {
 	"g_mysd00", "g_mysd", NULL, "1900",
 	"Mystic Defender (W) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mysd00RomInfo, g_mysd00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26658,7 +26658,7 @@ struct BurnDriverD BurnDrvMDg_kujaku = {
 	"g_kujaku", "g_mysd", NULL, "1900",
 	"Kujaku Ou 2 (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_kujakuRomInfo, g_kujakuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26676,7 +26676,7 @@ struct BurnDriverD BurnDrvMDg_olwg = {
 	"g_olwg", NULL, NULL, "1900",
 	"Olympic Winter Games - Lillehammer 94 (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_olwgRomInfo, g_olwgRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26694,7 +26694,7 @@ struct BurnDriverD BurnDrvMDg_olwge = {
 	"g_olwge", "g_olwg", NULL, "1900",
 	"Olympic Winter Games - Lillehammer 94 (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_olwgeRomInfo, g_olwgeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26712,7 +26712,7 @@ struct BurnDriverD BurnDrvMDg_olwgj = {
 	"g_olwgj", "g_olwg", NULL, "1900",
 	"Olympic Winter Games - Lillehammer 94 (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_olwgjRomInfo, g_olwgjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26730,7 +26730,7 @@ struct BurnDriverD BurnDrvMDg_sbea = {
 	"g_sbea", NULL, NULL, "1900",
 	"Shadow of the Beast (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sbeaRomInfo, g_sbeaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26748,7 +26748,7 @@ struct BurnDriverD BurnDrvMDg_shbeaj = {
 	"g_shbeaj", "g_sbea", NULL, "1900",
 	"Shadow of the Beast (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shbeajRomInfo, g_shbeajRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26766,7 +26766,7 @@ struct BurnDriverD BurnDrvMDg_showd = {
 	"g_showd", NULL, NULL, "1900",
 	"Show do Milhao (B) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_showdRomInfo, g_showdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26784,7 +26784,7 @@ struct BurnDriverD BurnDrvMDg_showd2 = {
 	"g_showd2", NULL, NULL, "1900",
 	"Show do Milhao Volume 2 (B) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_showd2RomInfo, g_showd2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26802,7 +26802,7 @@ struct BurnDriverD BurnDrvMDg_shwd2a = {
 	"g_shwd2a", "g_showd2", NULL, "1900",
 	"Show do Milhao Volume 2 (B) [a1][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shwd2aRomInfo, g_shwd2aRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26820,7 +26820,7 @@ struct BurnDriverD BurnDrvMDg_sorckd = {
 	"g_sorckd", NULL, NULL, "1900",
 	"Sorcerer's Kingdom (U) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sorckdRomInfo, g_sorckdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26838,7 +26838,7 @@ struct BurnDriverD BurnDrvMDg_sork00 = {
 	"g_sork00", "g_sorckd", NULL, "1900",
 	"Sorcerer's Kingdom (U) (REV00)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sork00RomInfo, g_sork00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26856,7 +26856,7 @@ struct BurnDriverD BurnDrvMDg_sorkin = {
 	"g_sorkin", "g_sorckd", NULL, "1900",
 	"Sorcer Kingdom (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sorkinRomInfo, g_sorkinRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26874,7 +26874,7 @@ struct BurnDriverD BurnDrvMDg_shar = {
 	"g_shar", NULL, NULL, "1900",
 	"Space Harrier II (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sharRomInfo, g_sharRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26892,7 +26892,7 @@ struct BurnDriverD BurnDrvMDg_shar2j = {
 	"g_shar2j", "g_shar", NULL, "1900",
 	"Space Harrier II (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shar2jRomInfo, g_shar2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26910,7 +26910,7 @@ struct BurnDriverD BurnDrvMDg_sprk = {
 	"g_sprk", NULL, NULL, "1900",
 	"Sparkster (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sprkRomInfo, g_sprkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26928,7 +26928,7 @@ struct BurnDriverD BurnDrvMDg_sparke = {
 	"g_sparke", "g_sprk", NULL, "1900",
 	"Sparkster (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sparkeRomInfo, g_sparkeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26946,7 +26946,7 @@ struct BurnDriverD BurnDrvMDg_sparkj = {
 	"g_sparkj", "g_sprk", NULL, "1900",
 	"Sparkster (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sparkjRomInfo, g_sparkjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26964,7 +26964,7 @@ struct BurnDriverD BurnDrvMDg_starcj = {
 	"g_starcj", NULL, NULL, "1900",
 	"Star Cruiser (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_starcjRomInfo, g_starcjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -26982,7 +26982,7 @@ struct BurnDriverD BurnDrvMDg_spb2 = {
 	"g_spb2", NULL, NULL, "1900",
 	"Speed Ball 2 - Brutal Deluxe (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_spb2RomInfo, g_spb2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27000,7 +27000,7 @@ struct BurnDriverD BurnDrvMDg_sbal2e = {
 	"g_sbal2e", "g_spb2", NULL, "1900",
 	"Speed Ball 2 - Brutal Deluxe (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sbal2eRomInfo, g_sbal2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27018,7 +27018,7 @@ struct BurnDriverD BurnDrvMDg_stalon = {
 	"g_stalon", NULL, NULL, "1900",
 	"Steel Talons (UE) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_stalonRomInfo, g_stalonRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27036,7 +27036,7 @@ struct BurnDriverD BurnDrvMDg_stalj = {
 	"g_stalj", "g_stalon", NULL, "1900",
 	"Steel Talons (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_staljRomInfo, g_staljRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27054,7 +27054,7 @@ struct BurnDriverD BurnDrvMDg_stol = {
 	"g_stol", NULL, NULL, "1900",
 	"Stormlord (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_stolRomInfo, g_stolRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27072,7 +27072,7 @@ struct BurnDriverD BurnDrvMDg_slordj = {
 	"g_slordj", "g_stol", NULL, "1900",
 	"Stormlord (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_slordjRomInfo, g_slordjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27090,7 +27090,7 @@ struct BurnDriverD BurnDrvMDg_sfli = {
 	"g_sfli", NULL, NULL, "1900",
 	"Starflight (UE) (REV01) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_sfliRomInfo, g_sfliRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27108,7 +27108,7 @@ struct BurnDriverD BurnDrvMDg_strf00 = {
 	"g_strf00", "g_sfli", NULL, "1900",
 	"Starflight (UE) (REV00) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_strf00RomInfo, g_strf00RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27126,7 +27126,7 @@ struct BurnDriverD BurnDrvMDg_ssri = {
 	"g_ssri", NULL, NULL, "1900",
 	"Sunset Riders (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ssriRomInfo, g_ssriRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27144,7 +27144,7 @@ struct BurnDriverD BurnDrvMDg_ssride = {
 	"g_ssride", "g_ssri", NULL, "1900",
 	"Sunset Riders (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ssrideRomInfo, g_ssrideRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27162,7 +27162,7 @@ struct BurnDriverD BurnDrvMDg_pachin = {
 	"g_pachin", NULL, NULL, "1900",
 	"Pachinko Canyon (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pachinRomInfo, g_pachinRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27180,7 +27180,7 @@ struct BurnDriverD BurnDrvMDg_pst = {
 	"g_pst", NULL, NULL, "1900",
 	"Pete Sampras Tennis (UE) (REV00) (J-Cart) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pstRomInfo, g_pstRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27198,7 +27198,7 @@ struct BurnDriverD BurnDrvMDg_pste03 = {
 	"g_pste03", "g_pst", NULL, "1900",
 	"Pete Sampras Tennis (E) (REV03) (J-Cart) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pste03RomInfo, g_pste03RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27216,7 +27216,7 @@ struct BurnDriverD BurnDrvMDg_rast = {
 	"g_rast", NULL, NULL, "1900",
 	"Rastan Saga II (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rastRomInfo, g_rastRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27234,7 +27234,7 @@ struct BurnDriverD BurnDrvMDg_rastj = {
 	"g_rastj", "g_rast", NULL, "1900",
 	"Rastan Saga II (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rastjRomInfo, g_rastjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27252,7 +27252,7 @@ struct BurnDriverD BurnDrvMDg_rbls = {
 	"g_rbls", NULL, NULL, "1900",
 	"Road Blasters (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rblsRomInfo, g_rblsRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27270,7 +27270,7 @@ struct BurnDriverD BurnDrvMDg_roadbj = {
 	"g_roadbj", "g_rbls", NULL, "1900",
 	"Road Blasters (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_roadbjRomInfo, g_roadbjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27288,7 +27288,7 @@ struct BurnDriverD BurnDrvMDg_rrr = {
 	"g_rrr", NULL, NULL, "1900",
 	"Rock n' Roll Racing (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rrrRomInfo, g_rrrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27306,7 +27306,7 @@ struct BurnDriverD BurnDrvMDg_rnrre = {
 	"g_rnrre", "g_rrr", NULL, "1900",
 	"Rock n' Roll Racing (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rnrreRomInfo, g_rnrreRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27324,7 +27324,7 @@ struct BurnDriverD BurnDrvMDg_rkni = {
 	"g_rkni", NULL, NULL, "1900",
 	"Rocket Knight Adventures (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rkniRomInfo, g_rkniRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27342,7 +27342,7 @@ struct BurnDriverD BurnDrvMDg_rkadve = {
 	"g_rkadve", "g_rkni", NULL, "1900",
 	"Rocket Knight Adventures (E) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rkadveRomInfo, g_rkadveRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27360,7 +27360,7 @@ struct BurnDriverD BurnDrvMDg_rkadvj = {
 	"g_rkadvj", "g_rkni", NULL, "1900",
 	"Rocket Knight Adventures (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rkadvjRomInfo, g_rkadvjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27378,7 +27378,7 @@ struct BurnDriverD BurnDrvMDg_rth2 = {
 	"g_rth2", NULL, NULL, "1900",
 	"Rolling Thunder 2 (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rth2RomInfo, g_rth2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27396,7 +27396,7 @@ struct BurnDriverD BurnDrvMDg_rthn2e = {
 	"g_rthn2e", "g_rth2", NULL, "1900",
 	"Rolling Thunder 2 (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rthn2eRomInfo, g_rthn2eRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27414,7 +27414,7 @@ struct BurnDriverD BurnDrvMDg_rthn2j = {
 	"g_rthn2j", "g_rth2", NULL, "1900",
 	"Rolling Thunder 2 (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rthn2jRomInfo, g_rthn2jRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27432,7 +27432,7 @@ struct BurnDriverD BurnDrvMDg_rth3 = {
 	"g_rth3", NULL, NULL, "1900",
 	"Rolling Thunder 3 (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rth3RomInfo, g_rth3RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27450,7 +27450,7 @@ struct BurnDriverD BurnDrvMDg_telerb = {
 	"g_telerb", NULL, NULL, "1900",
 	"Telebradesco Residencia (B) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_telerbRomInfo, g_telerbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27468,7 +27468,7 @@ struct BurnDriverD BurnDrvMDg_tfox = {
 	"g_tfox", NULL, NULL, "1900",
 	"Thunder Fox (U) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tfoxRomInfo, g_tfoxRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27486,7 +27486,7 @@ struct BurnDriverD BurnDrvMDg_tfoxj = {
 	"g_tfoxj", "g_tfox", NULL, "1900",
 	"Thunder Fox (J) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tfoxjRomInfo, g_tfoxjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27504,7 +27504,7 @@ struct BurnDriverD BurnDrvMDg_todd = {
 	"g_todd", NULL, NULL, "1900",
 	"Todd's Adventures in Slime World (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_toddRomInfo, g_toddRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27522,7 +27522,7 @@ struct BurnDriverD BurnDrvMDg_toddj = {
 	"g_toddj", "g_todd", NULL, "1900",
 	"Todd's Adventures in Slime World (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_toddjRomInfo, g_toddjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27540,7 +27540,7 @@ struct BurnDriverD BurnDrvMDg_tomj = {
 	"g_tomj", NULL, NULL, "1900",
 	"Tom and Jerry - Frantic Antics (U) (1994) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tomjRomInfo, g_tomjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27558,7 +27558,7 @@ struct BurnDriverD BurnDrvMDg_tajua = {
 	"g_tajua", "g_tomj", NULL, "1900",
 	"Tom and Jerry - Frantic Antics (U) (1993) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_tajuaRomInfo, g_tajuaRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27576,7 +27576,7 @@ struct BurnDriver BurnDrvMDg_babyb2 = {
 	"g_babyb2", NULL, NULL, "1900",
 	"Baby's Day Out (Beta 2)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_babyb2RomInfo, g_babyb2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27594,7 +27594,7 @@ struct BurnDriverD BurnDrvMDg_babyb1 = {
 	"g_babyb1", "g_babyb2", NULL, "1900",
 	"Baby's Day Out (Beta 1)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_babyb1RomInfo, g_babyb1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27612,7 +27612,7 @@ struct BurnDriverD BurnDrvMDg_barbvb = {
 	"g_barbvb", NULL, NULL, "1900",
 	"Barbie Vacation Adventure (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_barbvbRomInfo, g_barbvbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27630,7 +27630,7 @@ struct BurnDriver BurnDrvMDg_bat = {
 	"g_bat", NULL, NULL, "1900",
 	"Batman (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_batRomInfo, g_batRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27648,7 +27648,7 @@ struct BurnDriver BurnDrvMDg_batmnj = {
 	"g_batmnj", "g_bat", NULL, "1900",
 	"Batman (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_batmnjRomInfo, g_batmnjRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27666,7 +27666,7 @@ struct BurnDriverD BurnDrvMDg_batme = {
 	"g_batme", "g_bat", NULL, "1900",
 	"Batman (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_batmeRomInfo, g_batmeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27684,7 +27684,7 @@ struct BurnDriver BurnDrvMDg_bzerot = {
 	"g_bzerot", NULL, NULL, "1900",
 	"Beyond Zero Tolerance (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_bzerotRomInfo, g_bzerotRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27702,7 +27702,7 @@ struct BurnDriverD BurnDrvMDg_blocb2 = {
 	"g_blocb2", NULL, NULL, "1900",
 	"Blockbuster World Video Game Championship II (U)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_blocb2RomInfo, g_blocb2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27720,7 +27720,7 @@ struct BurnDriverD BurnDrvMDg_chuck = {
 	"g_chuck", NULL, NULL, "1900",
 	"Chuck's Excellent Art Tool Animator (U)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_chuckRomInfo, g_chuckRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27738,7 +27738,7 @@ struct BurnDriverD BurnDrvMDg_comacb = {
 	"g_comacb", NULL, NULL, "1900",
 	"Combat Aces (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_comacbRomInfo, g_comacbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27756,7 +27756,7 @@ struct BurnDriverD BurnDrvMDg_congob = {
 	"g_congob", NULL, NULL, "1900",
 	"Congo - The Game (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_congobRomInfo, g_congobRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27774,7 +27774,7 @@ struct BurnDriverD BurnDrvMDg_dwctb1 = {
 	"g_dwctb1", NULL, NULL, "1900",
 	"Davis Cup World Tour Tennis 2 (Beta 1)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dwctb1RomInfo, g_dwctb1RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27792,7 +27792,7 @@ struct BurnDriverD BurnDrvMDg_dwctb2 = {
 	"g_dwctb2", NULL, NULL, "1900",
 	"Davis Cup World Tour Tennis 2 (Beta 2)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dwctb2RomInfo, g_dwctb2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27810,7 +27810,7 @@ struct BurnDriverD BurnDrvMDg_dwctb = {
 	"g_dwctb", NULL, NULL, "1900",
 	"Davis Cup World Tour Tennis (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dwctbRomInfo, g_dwctbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27828,7 +27828,7 @@ struct BurnDriverD BurnDrvMDg_demomb = {
 	"g_demomb", NULL, NULL, "1900",
 	"Demolition Man (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_demombRomInfo, g_demombRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27846,7 +27846,7 @@ struct BurnDriverD BurnDrvMDg_dominu = {
 	"g_dominu", NULL, NULL, "1900",
 	"Dominus (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dominuRomInfo, g_dominuRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27864,7 +27864,7 @@ struct BurnDriverD BurnDrvMDg_dune = {
 	"g_dune", NULL, NULL, "1900",
 	"Dune - The Battle for Arrakis (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_duneRomInfo, g_duneRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27882,7 +27882,7 @@ struct BurnDriverD BurnDrvMDg_duneg = {
 	"g_duneg", "g_dune", NULL, "1900",
 	"Dune - Der Kampf um den Wuestenplaneten (G)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dunegRomInfo, g_dunegRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27900,7 +27900,7 @@ struct BurnDriverD BurnDrvMDg_dunee = {
 	"g_dunee", "g_dune", NULL, "1900",
 	"Dune - The Battle for Arrakis (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_duneeRomInfo, g_duneeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27918,7 +27918,7 @@ struct BurnDriverD BurnDrvMDg_dynabr = {
 	"g_dynabr", NULL, NULL, "1900",
 	"Dyna Brothers (J) (REV01)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_dynabrRomInfo, g_dynabrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27936,7 +27936,7 @@ struct BurnDriverD BurnDrvMDg_frgp = {
 	"g_frgp", NULL, NULL, "1900",
 	"Ferrari Grand Prix Challenge (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_frgpRomInfo, g_frgpRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27954,7 +27954,7 @@ struct BurnDriverD BurnDrvMDg_fergpb = {
 	"g_fergpb", "g_frgp", NULL, "1900",
 	"Ferrari Grand Prix Challenge (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_fergpbRomInfo, g_fergpbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27972,7 +27972,7 @@ struct BurnDriverD BurnDrvMDg_icftd = {
 	"g_icftd", NULL, NULL, "1900",
 	"It Came From The Desert (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_icftdRomInfo, g_icftdRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -27990,7 +27990,7 @@ struct BurnDriverD BurnDrvMDg_mima3b = {
 	"g_mima3b", NULL, NULL, "1900",
 	"Might and Magic III - Isles of Terra (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_mima3bRomInfo, g_mima3bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28008,7 +28008,7 @@ struct BurnDriverD BurnDrvMDg_ngaidb = {
 	"g_ngaidb", NULL, NULL, "1900",
 	"Ninja Gaiden (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_ngaidbRomInfo, g_ngaidbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28026,7 +28026,7 @@ struct BurnDriverD BurnDrvMDg_pbgl = {
 	"g_pbgl", NULL, NULL, "1900",
 	"Pebble Beach Golf Links (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pbglRomInfo, g_pbglRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28044,7 +28044,7 @@ struct BurnDriverD BurnDrvMDg_pblbee = {
 	"g_pblbee", "g_pbgl", NULL, "1900",
 	"Pebble Beach Golf Links (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pblbeeRomInfo, g_pblbeeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28062,7 +28062,7 @@ struct BurnDriverD BurnDrvMDg_pblbej = {
 	"g_pblbej", "g_pbgl", NULL, "1900",
 	"Pebble Beach no Hatou (J) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pblbejRomInfo, g_pblbejRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28080,7 +28080,7 @@ struct BurnDriverD BurnDrvMDg_pink = {
 	"g_pink", NULL, NULL, "1900",
 	"Pink Goes to Hollywood (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pinkRomInfo, g_pinkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28098,7 +28098,7 @@ struct BurnDriverD BurnDrvMDg_pinkb = {
 	"g_pinkb", "g_pink", NULL, "1900",
 	"Pink Goes to Hollywood (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_pinkbRomInfo, g_pinkbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28116,7 +28116,7 @@ struct BurnDriverD BurnDrvMDg_radr = {
 	"g_radr", NULL, NULL, "1900",
 	"Radical Rex (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_radrRomInfo, g_radrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28134,7 +28134,7 @@ struct BurnDriverD BurnDrvMDg_rrexe = {
 	"g_rrexe", "g_radr", NULL, "1900",
 	"Radical Rex (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_rrexeRomInfo, g_rrexeRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28152,7 +28152,7 @@ struct BurnDriverD BurnDrvMDg_scrabb = {
 	"g_scrabb", NULL, NULL, "1900",
 	"Scrabble (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_scrabbRomInfo, g_scrabbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28170,7 +28170,7 @@ struct BurnDriverD BurnDrvMDg_s2de = {
 	"g_s2de", NULL, NULL, "1900",
 	"Shanghai 2 - Dragon's Eye (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_s2deRomInfo, g_s2deRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28188,7 +28188,7 @@ struct BurnDriverD BurnDrvMDg_shan2b = {
 	"g_shan2b", "g_s2de", NULL, "1900",
 	"Shanghai 2 - Dragon's Eye (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_shan2bRomInfo, g_shan2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28206,7 +28206,7 @@ struct BurnDriver BurnDrvMDg_soncrk = {
 	"g_soncrk", NULL, NULL, "1900",
 	"Sonic and Crackers (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_soncrkRomInfo, g_soncrkRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28224,7 +28224,7 @@ struct BurnDriverD BurnDrvMDg_wacrac = {
 	"g_wacrac", NULL, NULL, "1900",
 	"Wacky Races (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wacracRomInfo, g_wacracRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28242,7 +28242,7 @@ struct BurnDriverD BurnDrvMDg_watrb = {
 	"g_watrb", NULL, NULL, "1900",
 	"Waterworld (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_watrbRomInfo, g_watrbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28260,7 +28260,7 @@ struct BurnDriverD BurnDrvMDg_wagh = {
 	"g_wagh", NULL, NULL, "1900",
 	"Williams Arcade's Greatest Hits (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_waghRomInfo, g_waghRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28278,7 +28278,7 @@ struct BurnDriverD BurnDrvMDg_waghe = {
 	"g_waghe", "g_wagh", NULL, "1900",
 	"Williams Arcade's Greatest Hits (E)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wagheRomInfo, g_wagheRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28296,7 +28296,7 @@ struct BurnDriverD BurnDrvMDg_wcs2 = {
 	"g_wcs2", NULL, NULL, "1900",
 	"World Championship Soccer II (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wcs2RomInfo, g_wcs2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28314,7 +28314,7 @@ struct BurnDriverD BurnDrvMDg_wcs2b = {
 	"g_wcs2b", "g_wcs2", NULL, "1900",
 	"World Championship Soccer II (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_wcs2bRomInfo, g_wcs2bRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28332,7 +28332,7 @@ struct BurnDriverD BurnDrvMDg_yidy = {
 	"g_yidy", NULL, NULL, "1900",
 	"Young Indiana Jones - Instrument of Chaos (U) [!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_yidyRomInfo, g_yidyRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28350,7 +28350,7 @@ struct BurnDriverD BurnDrvMDg_yindyb = {
 	"g_yindyb", "g_yidy", NULL, "1900",
 	"Young Indiana Jones - Instrument of Chaos (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_yindybRomInfo, g_yindybRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28368,7 +28368,7 @@ struct BurnDriverD BurnDrvMDg_yindcb = {
 	"g_yindcb", NULL, NULL, "1900",
 	"Young Indiana Jones Chronicles (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_yindcbRomInfo, g_yindcbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28386,7 +28386,7 @@ struct BurnDriverD BurnDrvMDg_zombhb = {
 	"g_zombhb", NULL, NULL, "1900",
 	"Zombie High (U) (Prototype)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_zombhbRomInfo, g_zombhbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28404,7 +28404,7 @@ struct BurnDriverD BurnDrvMDg_blcr = {
 	"g_blcr", NULL, NULL, "1900",
 	"Brian Lara Cricket (E) [c][!]\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_blcrRomInfo, g_blcrRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28422,7 +28422,7 @@ struct BurnDriverD BurnDrvMDg_blcrb = {
 	"g_blcrb", "g_blcr", NULL, "1900",
 	"Brian Lara Cricket (Beta)\0", NULL, "Unsorted", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_blcrbRomInfo, g_blcrbRomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3
@@ -28440,7 +28440,7 @@ struct BurnDriverD BurnDrvMDg_princ2 = {
 	"g_princ2", NULL, NULL, "1900",
 	"Prince of Persia 2 (Prototype)\0", NULL, "Psygnosis", "Megadrive",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, GBF_MISC, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_SEGA_MEGADRIVE, //GBF_MISC, 0,
 	NULL, g_princ2RomInfo, g_princ2RomName, MegadriveInputInfo, MegadriveDIPInfo,
 	MegadriveInit, MegadriveExit, MegadriveFrame, NULL, MegadriveScan,
 	0, NULL, NULL, NULL, &bMegadriveRecalcPalette, 320, 224, 4, 3

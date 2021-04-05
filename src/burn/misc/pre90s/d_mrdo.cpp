@@ -269,6 +269,13 @@ static int DrvInit()
 	Prom = Mem + 0x28000;
 	Palette = (int*)(Mem + 0x28080);
 
+	memset(Rom, 0, 0x10000);
+	memset(Gfx0, 0, 0x8000);
+	memset(Gfx1, 0, 0x8000);
+	memset(Gfx2, 0, 0x8000);
+	memset(Prom, 0, 0x80);
+	memset(Palette, 0, 0x500);
+
 	{
 		for (int i = 0; i < 4; i++) {
 			if(BurnLoadRom(Rom  + i * 0x2000,  0 + i, 1)) return 1;
@@ -326,6 +333,12 @@ static int DrvExit()
 	return 0;
 }
 
+#ifndef BUILD_PSP
+#define Y_SIZE	240
+#else
+#define Y_SIZE	512
+#endif
+
 static void draw_sprites()
 {
 	for (int offs = 0x100 - 4; offs >= 0; offs -= 4)
@@ -359,7 +372,7 @@ static void draw_sprites()
 
 							int pxl = Palette[color | *src];
 
-							PutPix(pBurnDraw + ((y * 240) + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
+							PutPix(pBurnDraw + ((y * Y_SIZE) + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 						}
 					} else {
 						for (int x = sx; x < sx + 16; x++, src++)
@@ -369,7 +382,7 @@ static void draw_sprites()
 
 							int pxl = Palette[color | *src];
 
-							PutPix(pBurnDraw + ((y * 240) + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
+							PutPix(pBurnDraw + ((y * Y_SIZE) + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 						}
 					}
 				}
@@ -385,7 +398,7 @@ static void draw_sprites()
 
 							int pxl = Palette[color | *src];
 
-							PutPix(pBurnDraw + ((y * 240) + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
+							PutPix(pBurnDraw + ((y * Y_SIZE) + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 						}
 					} else {
 						for (int x = sx; x < sx + 16; x++, src++)
@@ -395,7 +408,7 @@ static void draw_sprites()
 
 							int pxl = Palette[color | *src];
 
-							PutPix(pBurnDraw + ((y * 240) + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
+							PutPix(pBurnDraw + ((y * Y_SIZE) + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 						}
 					}
 				}
@@ -432,8 +445,8 @@ static void draw_8x8_tiles(unsigned char *vram, unsigned char *gfx_base, int scr
 				int pxl = Palette[color | *src];
 				if (!*src && !forcelayer0) continue;
 
-				int pos = y * 240 + x;
-				if (flipscreen) pos = (192 - y) * 240 + (240 - x);
+				int pos = y * Y_SIZE + x;
+				if (flipscreen) pos = (192 - y) * Y_SIZE + (240 - x);
 
 				PutPix(pBurnDraw + pos * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 			}
@@ -441,9 +454,16 @@ static void draw_8x8_tiles(unsigned char *vram, unsigned char *gfx_base, int scr
 	}
 }
 
+#undef Y_SIZE
+
 static int DrvDraw()
 {
-	memset (pBurnDraw, 0, 240 * 191 * nBurnBpp);
+#ifdef BUILD_PSP
+	extern void clear_gui_texture(int color, int w, int h);
+	clear_gui_texture(0, 240, 192);
+#else
+	memset (pBurnDraw, 0, 240 * 192 * nBurnBpp);
+#endif
 
 	draw_8x8_tiles(Rom + 0x8000, Gfx1, scroll_x, scroll_y);
 	draw_8x8_tiles(Rom + 0x8800, Gfx0, 0, 0);
@@ -530,7 +550,7 @@ struct BurnDriver BurnDrvmrdo = {
 	"mrdo", NULL, NULL, "1982",
 	"Mr. Do!\0", NULL, "Universal", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, mrdoRomInfo, mrdoRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	192, 240, 3, 4
@@ -567,7 +587,7 @@ struct BurnDriver BurnDrvmrdot = {
 	"mrdot", "mrdo", NULL, "1982",
 	"Mr. Do! (Taito license)\0", NULL, "Universal (Taito license)", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, mrdotRomInfo, mrdotRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	192, 240, 3, 4
@@ -603,7 +623,7 @@ struct BurnDriver BurnDrvmrdofix = {
 	"mrdofix", "mrdo", NULL, "1982",
 	"Mr. Do! (bugfixed)\0", NULL, "Universal (Taito license)", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, mrdofixRomInfo, mrdofixRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	192, 240, 3, 4
@@ -640,7 +660,7 @@ struct BurnDriver BurnDrvmrlo = {
 	"mrlo", "mrdo", NULL, "1982",
 	"Mr. Lo!\0", NULL, "Bootleg", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, mrloRomInfo, mrloRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	192, 240, 3, 4
@@ -677,7 +697,7 @@ struct BurnDriver BurnDrvmrdu = {
 	"mrdu", "mrdo", NULL, "1982",
 	"Mr. Du!\0", NULL, "Bootleg", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, mrduRomInfo, mrduRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	192, 240, 3, 4
@@ -714,7 +734,7 @@ struct BurnDriver BurnDrvmrdoy = {
 	"mrdoy", "mrdo", NULL, "1982",
 	"Mr. Do! (prototype)\0", NULL, "Universal", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, mrdoyRomInfo, mrdoyRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	192, 240, 3, 4
@@ -751,7 +771,7 @@ struct BurnDriver BurnDrvyankeedo = {
 	"yankeedo", "mrdo", NULL, "1982",
 	"Yankee DO!\0", NULL, "hack", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, yankeedoRomInfo, yankeedoRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	192, 240, 3, 4

@@ -120,7 +120,7 @@ static struct BurnDIPInfo Wc90DIPList[]=
 {
 	// Default Values
 	{0x11, 0xff, 0xff, 0xff, NULL                     },
-	{0x12, 0xff, 0xff, 0x7f, NULL                     },
+	{0x12, 0xff, 0xff, 0xff, NULL                     },
 
 	// Dip 1
 	{0   , 0xfe, 0   , 16  , "Coinage"                },
@@ -240,32 +240,6 @@ static struct BurnRomInfo Wc90aRomDesc[] = {
 STD_ROM_PICK(Wc90a);
 STD_ROM_FN(Wc90a);
 
-static struct BurnRomInfo Wc90bRomDesc[] = {
-	{ "ic87-1b.bin",   0x08000, 0xd024a971, BRF_ESS | BRF_PRG }, //  0	Z80 #1 Program Code
-	{ "ic95_02.bin",   0x10000, 0x847d439c, BRF_ESS | BRF_PRG }, //  1	Z80 #1 Program Code
-
-	{ "ic67_04.bin",   0x10000, 0xdc6eaf00, BRF_ESS | BRF_PRG }, //  2	Z80 #2 Program Code
-	{ "ic56_03.bin",   0x10000, 0x1ac02b3b, BRF_ESS | BRF_PRG }, //  3	Z80 #2 Program Code
-
-	{ "ic54_05.bin",   0x10000, 0x27c348b3, BRF_ESS | BRF_PRG }, //  4	Z80 #3 Program Code
-
-	{ "ic85_07v.bin",  0x10000, 0xc5219426, BRF_GRA },			 //  5	Characters
-	{ "ic86_08v.bin",  0x20000, 0x8fa1a1ff, BRF_GRA },			 //  6	Fg Tiles
-	{ "ic90_09v.bin",  0x20000, 0x99f8841c, BRF_GRA },			 //  7	Fg Tiles
-	{ "ic87_10v.bin",  0x20000, 0x8232093d, BRF_GRA },			 //  8	Bg Tiles
-	{ "ic91_11v.bin",  0x20000, 0x188d3789, BRF_GRA },			 //  9	Bg Tiles
-	{ "ic50_12v.bin",  0x20000, 0xda1fe922, BRF_GRA },			 //  10	Sprites
-	{ "ic54_13v.bin",  0x20000, 0x9ad03c2c, BRF_GRA },			 //  11	Sprites
-	{ "ic60_14v.bin",  0x20000, 0x499dfb1b, BRF_GRA },			 //  12	Sprites
-	{ "ic65_15v.bin",  0x20000, 0xd8ea5c81, BRF_GRA },			 //  13	Sprites
-
-	{ "ic82_06.bin",   0x20000, 0x2fd692ed, BRF_SND },			 //  14	ADPCM Samples
-};
-
-
-STD_ROM_PICK(Wc90b);
-STD_ROM_FN(Wc90b);
-
 static struct BurnRomInfo Wc90tRomDesc[] = {
 	{ "wc90a-1.bin",   0x08000, 0xb6f51a68, BRF_ESS | BRF_PRG }, //  0	Z80 #1 Program Code
 	{ "wc90a-2.bin",   0x10000, 0xc50f2a98, BRF_ESS | BRF_PRG }, //  1	Z80 #1 Program Code
@@ -308,8 +282,6 @@ int Wc90DoReset()
 	}
 
 	BurnYM2608Reset();
-	
-	HiscoreReset();
 
 	return 0;
 }
@@ -1300,9 +1272,9 @@ static int Wc90Scan(int nAction,int *pnMin)
 // Driver definitions
 struct BurnDriver BurnDrvWc90 = {
 	"wc90", NULL, NULL, "1989",
-	"World Cup '90 (World)\0", NULL, "Tecmo", "Miscellaneous",
+	"World Cup '90 (set 1)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HISCORE_SUPPORTED, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, Wc90RomInfo, Wc90RomName, Wc90InputInfo, Wc90DIPInfo,
 	Wc90Init, Wc90Exit, Wc90Frame, NULL, Wc90Scan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
@@ -1310,20 +1282,10 @@ struct BurnDriver BurnDrvWc90 = {
 
 struct BurnDriver BurnDrvWc90a = {
 	"wc90a", "wc90", NULL, "1989",
-	"World Cup '90 (Euro set 1)\0", NULL, "Tecmo", "Miscellaneous",
+	"World Cup '90 (set 2)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, Wc90aRomInfo, Wc90aRomName, Wc90InputInfo, Wc90DIPInfo,
-	Wc90Init, Wc90Exit, Wc90Frame, NULL, Wc90Scan,
-	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
-};
-
-struct BurnDriver BurnDrvWc90b = {
-	"wc90b", "wc90", NULL, "1989",
-	"World Cup '90 (Euro set 2)\0", NULL, "Tecmo", "Miscellaneous",
-	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSFOOTBALL, 0,
-	NULL, Wc90bRomInfo, Wc90bRomName, Wc90InputInfo, Wc90DIPInfo,
 	Wc90Init, Wc90Exit, Wc90Frame, NULL, Wc90Scan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
 };
@@ -1332,7 +1294,7 @@ struct BurnDriver BurnDrvWc90t = {
 	"wc90t", "wc90", NULL, "1989",
 	"World Cup '90 (trackball)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, Wc90tRomInfo, Wc90tRomName, Wc90InputInfo, Wc90DIPInfo,
 	Wc90Init, Wc90Exit, Wc90Frame, NULL, Wc90Scan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3

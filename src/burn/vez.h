@@ -1,14 +1,14 @@
 // Nec V20/V30/V33 interface
 
 #include "necintrf.h"
-
+#define FASTCALL 1
 struct VezContext {
 	nec_Regs reg;
 	
-	unsigned char * ppMemRead[512];
-	unsigned char * ppMemWrite[512];
-	unsigned char * ppMemFetch[512];
-	unsigned char * ppMemFetchData[512];
+	unsigned char * ppMemRead[1024];
+	unsigned char * ppMemWrite[1024];
+	unsigned char * ppMemFetch[1024];
+	unsigned char * ppMemFetchData[1024];
 
 	// Handlers
  #ifdef FASTCALL

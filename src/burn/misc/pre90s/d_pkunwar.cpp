@@ -274,11 +274,17 @@ static int DrvInit()
 	if (pFMBuffer == NULL) {
 		return 1;
 	}
+	memset(pFMBuffer, 0, nBurnSoundLen * 6 * sizeof(short));
 
 	Rom  = Mem + 0x00000;
 	Gfx0 = Mem + 0x10000;
 	Gfx1 = Mem + 0x30000;
 	Palette = (int*)(Mem + 0x40000);
+
+	memset(Rom,  0, 0x10000);
+	memset(Gfx0, 0, 0x20000);
+	memset(Gfx1, 0, 0x20000);
+	memset(Palette, 0, 0x200 * sizeof(int));
 
 	if (LoadRoms()) return 1;
 
@@ -365,11 +371,17 @@ static int DrawChars(int priority)
 
 					pxl = Palette[color | *src];
 
+#ifdef BUILD_PSP
+					if (flipscreen)
+						pos = ((191 - y) << 9) | (~x & 0xff);
+					else
+						pos = (y << 9) | (x & 0xff);
+#else
 					if (flipscreen)
 						pos = ((191 - y) << 8) | (~x & 0xff);
 					else
 						pos = (y << 8) | (x & 0xff);
-	
+#endif
 					PutPix(pBurnDraw + pos * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 	 			}
 			}
@@ -415,11 +427,17 @@ static int DrvDraw()
 		
 						pxl = Palette[color | *src];
 		
+#ifdef BUILD_PSP
+						if (flipscreen)
+							pos = ((191 - y) << 9) | (~x & 0xff);
+						else
+							pos = (y << 9) | (x & 0xff);
+#else
 						if (flipscreen)
 							pos = ((191 - y) << 8) | (~x & 0xff);
 						else
 							pos = (y << 8) | (x & 0xff);
-
+#endif
 						PutPix(pBurnDraw + pos * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 		 			}
 				} else {
@@ -429,11 +447,17 @@ static int DrvDraw()
 		
 						pxl = Palette[color | *src];
 		
+#ifdef BUILD_PSP
+						if (flipscreen)
+							pos = ((191 - y) << 9) | (~x & 0xff);
+						else
+							pos = (y << 9) | (x & 0xff);
+#else
 						if (flipscreen)
 							pos = ((191 - y) << 8) | (~x & 0xff);
 						else
 							pos = (y << 8) | (x & 0xff);
-		
+#endif
 						PutPix(pBurnDraw + pos * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 		 			}
 				}
@@ -449,11 +473,17 @@ static int DrvDraw()
 		
 						pxl = Palette[color | *src];
 		
+#ifdef BUILD_PSP
+						if (flipscreen)
+							pos = ((191 - y) << 9) | (~x & 0xff);
+						else
+							pos = (y << 9) | (x & 0xff);
+#else
 						if (flipscreen)
 							pos = ((191 - y) << 8) | (~x & 0xff);
 						else
 							pos = (y << 8) | (x & 0xff);
-		
+#endif
 						PutPix(pBurnDraw + pos * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 		 			}
 				} else {
@@ -463,11 +493,17 @@ static int DrvDraw()
 		
 						pxl = Palette[color | *src];
 		
+#ifdef BUILD_PSP
+						if (flipscreen)
+							pos = ((191 - y) << 9) | (~x & 0xff);
+						else
+							pos = (y << 9) | (x & 0xff);
+#else
 						if (flipscreen)
 							pos = ((191 - y) << 8) | (~x & 0xff);
 						else
 							pos = (y << 8) | (x & 0xff);
-		
+#endif
 						PutPix(pBurnDraw + pos * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 		 			}
 				}
@@ -593,7 +629,7 @@ struct BurnDriver BurnDrvpkunwar = {
 	"pkunwar", NULL, NULL, "1985",
 	"Penguin-Kun Wars (US)\0", NULL, "UPL", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, pkunwarRomInfo, pkunwarRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 192, 4, 3
@@ -622,7 +658,7 @@ struct BurnDriver BurnDrvpkunwarj = {
 	"pkunwarj", "pkunwar", NULL, "1985",
 	"Penguin-Kun Wars (Japan)\0", NULL, "UPL", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, pkunwarjRomInfo, pkunwarjRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 192, 4, 3

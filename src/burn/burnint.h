@@ -9,6 +9,12 @@
 
 #include "tchar.h"
 #include "burn.h"
+#include <malloc.h>
+#define malloc(size) memalign(64, size)
+
+#ifndef MAX_PATH
+ #define MAX_PATH (260)
+#endif
 
 // ---------------------------------------------------------------------------
 // CPU emulation interfaces
@@ -43,8 +49,6 @@ struct BurnDriver {
 	int flags;			// See burn.h
 	int players;		// Max number of players a game supports (so we can remove single player games from netplay)
 	int hardware;		// Which type of hardware the game runs on
-	int genre;
-	int family;
 	int (*GetZipName)(char** pszName, unsigned int i);				// Function to get possible zip names
 	int (*GetRomInfo)(struct BurnRomInfo* pri,unsigned int i);		// Function to get the length and crc of each rom
 	int (*GetRomName)(char** pszName, unsigned int i, int nAka);	// Function to get the possible names for each rom

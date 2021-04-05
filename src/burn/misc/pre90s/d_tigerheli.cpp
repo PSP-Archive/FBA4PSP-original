@@ -1983,7 +1983,7 @@ struct BurnDriver BurnDrvTigerH = {
 	"tigerh", NULL, NULL, "1985",
 	"Tiger Heli (US)\0", "Protection MCU not emulated", "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, tigerhRomInfo, tigerhRomName, tigerhInputInfo, tigerhDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	240, 280, 3, 4
@@ -1993,7 +1993,7 @@ struct BurnDriver BurnDrvTigerHB1 = {
 	"tigerhb1", "tigerh", NULL, "1985",
 	"Tiger Heli (bootleg, set 1)\0", NULL, "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, tigerhb1RomInfo, tigerhb1RomName, tigerhInputInfo, tigerhDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	240, 280, 3, 4
@@ -2003,7 +2003,7 @@ struct BurnDriver BurnDrvTigerHB2 = {
 	"tigerhb2", "tigerh", NULL, "1985",
 	"Tiger Heli (bootleg, set 2)\0", NULL, "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, tigerhb2RomInfo, tigerhb2RomName, tigerhInputInfo, tigerhDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	240, 280, 3, 4
@@ -2013,7 +2013,7 @@ struct BurnDriver BurnDrvTigerHB3 = {
 	"tigerhb3", "tigerh", NULL, "1985",
 	"Tiger Heli (bootleg, set 3)\0", NULL, "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, tigerhb3RomInfo, tigerhb3RomName, tigerhInputInfo, tigerhDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	240, 280, 3, 4
@@ -2023,7 +2023,7 @@ struct BurnDriver BurnDrvGetStar = {
 	"getstar", NULL, NULL, "1986",
 	"Guardian\0", "Protection MCU not emulated", "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	0, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, getstarRomInfo, getstarRomName, tigerhInputInfo, getstarDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	280, 240, 4, 3
@@ -2033,7 +2033,7 @@ struct BurnDriver BurnDrvGetStarb2 = {
 	"gtstarb2", "getstar", NULL, "1986",
 	"Get Star (bootleg, set 2)\0", NULL, "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, gtstarb2RomInfo, gtstarb2RomName, tigerhInputInfo, getstarDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	280, 240, 4, 3
@@ -2043,7 +2043,7 @@ struct BurnDriver BurnDrvGetStarb1 = {
 	"gtstarb1", "getstar", NULL, "1986",
 	"Get Star (bootleg, set 1)\0", NULL, "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, gtstarb1RomInfo, gtstarb1RomName, gtstarbaInputInfo, gtstarbaDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	280, 240, 4, 3
@@ -2053,7 +2053,7 @@ struct BurnDriver BurnDrvSlapFigh = {
 	"slapfigh", NULL, NULL, "1986",
 	"Slap Fight (set 1)\0", "Protection MCU not emulated", "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, slapfighRomInfo, slapfighRomName, tigerhInputInfo, slapfighDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	240, 280, 3, 4
@@ -2063,7 +2063,7 @@ struct BurnDriver BurnDrvSlapBtJP = {
 	"slapbtjp", "slapfigh", NULL, "1986",
 	"Slap Fight (Japan bootleg)\0", NULL, "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, slapbtjpRomInfo, slapbtjpRomName, tigerhInputInfo, slapfighDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	240, 280, 3, 4
@@ -2073,7 +2073,7 @@ struct BurnDriver BurnDrvSlapBtUK = {
 	"slapbtuk", "slapfigh", NULL, "1986",
 	"Slap Fight (English bootleg)\0", NULL, "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, slapbtukRomInfo, slapbtukRomName, tigerhInputInfo, slapfighDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	240, 280, 3, 4
@@ -2083,7 +2083,7 @@ struct BurnDriver BurnDrvSlapFghtr = {
 	"slapfgtr", "slapfigh", NULL, "1986",
 	"Slap Fight (bootleg)\0", NULL, "Taito", "Early Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, slapfgtrRomInfo, slapfgtrRomName, tigerhInputInfo, slapfighDIPInfo,
 	tigerhInit, tigerhExit, tigerhFrame, NULL, tigerhScan, 0, NULL, NULL, NULL, &tigerhRecalcPalette,
 	240, 280, 3, 4

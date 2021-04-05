@@ -653,6 +653,11 @@ static int DrvExit()
 	return 0;
 }
 
+#ifndef BUILD_PSP
+#define X_SIZE	320
+#else
+#define X_SIZE	512
+#endif
 
 static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,int flipy,int sx,int sy,int scalex,int scaley)
 {
@@ -670,7 +675,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 		pal = RamCurPal + 512;
 	}
 
-	p += sy * 320 + sx;
+	p += sy * X_SIZE + sx;
 		
 	if (sx < 0 || sx >= 304 || sy < 0 || sy >= 208 ) {
 		
@@ -679,7 +684,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 			
 		if (flipy) {
 		
-			p += 320 * 15;
+			p += X_SIZE * 15;
 			
 			if (flipx) {
 			
@@ -703,7 +708,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 						if (q[14] != 15 && ((sx +  1) >= 0) && ((sx +  1)<320)) p[ 1] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx +  0) >= 0) && ((sx +  0)<320)) p[ 0] = pal[ q[15] | color];
 					}
-					p -= 320;
+					p -= X_SIZE;
 					q += 16;
 				}	
 			
@@ -729,7 +734,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 						if (q[14] != 15 && ((sx + 14) >= 0) && ((sx + 14)<320)) p[14] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx + 15) >= 0) && ((sx + 15)<320)) p[15] = pal[ q[15] | color];
 					}
-					p -= 320;
+					p -= X_SIZE;
 					q += 16;
 				}		
 			}
@@ -758,7 +763,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 						if (q[14] != 15 && ((sx +  1) >= 0) && ((sx +  1)<320)) p[ 1] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx +  0) >= 0) && ((sx +  0)<320)) p[ 0] = pal[ q[15] | color];
 					}
-					p += 320;
+					p += X_SIZE;
 					q += 16;
 				}		
 			
@@ -784,7 +789,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 						if (q[14] != 15 && ((sx + 14) >= 0) && ((sx + 14)<320)) p[14] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx + 15) >= 0) && ((sx + 15)<320)) p[15] = pal[ q[15] | color];
 					}
-					p += 320;
+					p += X_SIZE;
 					q += 16;
 				}	
 	
@@ -797,7 +802,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 
 	if (flipy) {
 		
-		p += 320 * 15;
+		p += X_SIZE * 15;
 		
 		if (flipx) {
 		
@@ -820,7 +825,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 				if (q[14] != 15) p[ 1] = pal[ q[14] | color];
 				if (q[15] != 15) p[ 0] = pal[ q[15] | color];
 	
-				p -= 320;
+				p -= X_SIZE;
 				q += 16;
 			}	
 		
@@ -845,7 +850,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 				if (q[14] != 15) p[14] = pal[ q[14] | color];
 				if (q[15] != 15) p[15] = pal[ q[15] | color];
 	
-				p -= 320;
+				p -= X_SIZE;
 				q += 16;
 			}		
 		}
@@ -873,7 +878,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 				if (q[14] != 15) p[ 1] = pal[ q[14] | color];
 				if (q[15] != 15) p[ 0] = pal[ q[15] | color];
 	
-				p += 320;
+				p += X_SIZE;
 				q += 16;
 			}		
 		
@@ -898,7 +903,7 @@ static void drawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx,
 				if (q[14] != 15) p[14] = pal[ q[14] | color];
 				if (q[15] != 15) p[15] = pal[ q[15] | color];
 	
-				p += 320;
+				p += X_SIZE;
 				q += 16;
 			}	
 
@@ -997,7 +1002,7 @@ static void TileBackground_1(unsigned short *bg, unsigned short *pal)
 			
 			unsigned char *d = DeRomBg + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11)] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
  				p[0] = pal[ d[0] | c ];
@@ -1010,13 +1015,13 @@ static void TileBackground_1(unsigned short *bg, unsigned short *pal)
  				p[7] = pal[ d[7] | c ];
  				
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		} else {
 
 			unsigned char *d = DeRomBg + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11)] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				if ( (y+k)>=0 && (y+k)<224 ) {
@@ -1030,7 +1035,7 @@ static void TileBackground_1(unsigned short *bg, unsigned short *pal)
 	 				if ((x + 7) >= 0 && (x + 7)<320) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 			
 		}
@@ -1064,7 +1069,7 @@ static void TileBackground_2(unsigned short *bg, unsigned short *pal)
 			
 			unsigned char *d = DeRomBg + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11) + 4] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				
@@ -1078,13 +1083,13 @@ static void TileBackground_2(unsigned short *bg, unsigned short *pal)
  				if (d[7] != 15) p[7] = pal[ d[7] | c ];
  				
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		} else {
 
 			unsigned char *d = DeRomBg + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11) + 4] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				if ( (y+k)>=0 && (y+k)<224 ) {
@@ -1098,7 +1103,7 @@ static void TileBackground_2(unsigned short *bg, unsigned short *pal)
 	 				if (d[7] != 15 && (x + 7) >= 0 && (x + 7)<320) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 			
 		}
@@ -1122,6 +1127,8 @@ static int DrvDraw()
 
 	return 0;
 }
+
+#undef X_SIZE
 
 static int DrvFrame()
 {
@@ -1223,7 +1230,7 @@ struct BurnDriver BurnDrvAerofgt = {
 	"aerofgt", NULL, NULL, "1992",
 	"Aero Fighters\0", NULL, "Video System Co.", "Video System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, FBF_SONICWI,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, aerofgtRomInfo, aerofgtRomName, aerofgtInputInfo, aerofgtDIPInfo,
 	aerofgtInit,DrvExit,DrvFrame,DrvDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL, 224,320,3,4
@@ -1674,6 +1681,13 @@ static int turbofrcInit()
 	return 0;
 }
 
+#ifndef BUILD_PSP
+#define X_SIZE	352
+#else
+#define X_SIZE	512
+#endif
+
+
 static void turbofrcTileBackground_1(unsigned short *bg, unsigned char *BgGfx, unsigned short *pal)
 {
 	int offs, mx, my, x, y;
@@ -1701,7 +1715,7 @@ static void turbofrcTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
 			
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11)] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
  				p[0] = pal[ d[0] | c ];
@@ -1714,13 +1728,13 @@ static void turbofrcTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
  				p[7] = pal[ d[7] | c ];
  				
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 		} else {
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11)] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				if ( (y+k)>=0 && (y+k)<240 ) {
@@ -1734,7 +1748,7 @@ static void turbofrcTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
 	 				if ((x + 7) >= 0 && (x + 7)<352) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 			
 		}
@@ -1768,7 +1782,7 @@ static void turbofrcTileBackground_2(unsigned short *bg, unsigned char *BgGfx, u
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11) + 4] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				
@@ -1782,13 +1796,13 @@ static void turbofrcTileBackground_2(unsigned short *bg, unsigned char *BgGfx, u
  				if (d[7] != 15) p[7] = pal[ d[7] | c ];
  				
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 		} else {
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11) + 4] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				if ( (y+k)>=0 && (y+k)<240 ) {
@@ -1802,7 +1816,7 @@ static void turbofrcTileBackground_2(unsigned short *bg, unsigned char *BgGfx, u
 	 				if (d[7] != 15 && (x + 7) >= 0 && (x + 7)<352) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 			
 		}
@@ -1830,7 +1844,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 		pal = RamCurPal + 512;
 	}
 
-	p += sy * 352 + sx;
+	p += sy * X_SIZE + sx;
 		
 	if (sx < 0 || sx >= (352-16) || sy < 0 || sy >= (240-16) ) {
 		
@@ -1839,7 +1853,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 			
 		if (flipy) {
 		
-			p += 352 * 15;
+			p += X_SIZE * 15;
 			
 			if (flipx) {
 			
@@ -1863,7 +1877,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 						if (q[14] != 15 && ((sx +  1) >= 0) && ((sx +  1)<352)) p[ 1] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx +  0) >= 0) && ((sx +  0)<352)) p[ 0] = pal[ q[15] | color];
 					}
-					p -= 352;
+					p -= X_SIZE;
 					q += 16;
 				}	
 			
@@ -1889,7 +1903,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 						if (q[14] != 15 && ((sx + 14) >= 0) && ((sx + 14)<352)) p[14] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx + 15) >= 0) && ((sx + 15)<352)) p[15] = pal[ q[15] | color];
 					}
-					p -= 352;
+					p -= X_SIZE;
 					q += 16;
 				}		
 			}
@@ -1918,7 +1932,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 						if (q[14] != 15 && ((sx +  1) >= 0) && ((sx +  1)<352)) p[ 1] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx +  0) >= 0) && ((sx +  0)<352)) p[ 0] = pal[ q[15] | color];
 					}
-					p += 352;
+					p += X_SIZE;
 					q += 16;
 				}		
 			
@@ -1944,7 +1958,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 						if (q[14] != 15 && ((sx + 14) >= 0) && ((sx + 14)<352)) p[14] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx + 15) >= 0) && ((sx + 15)<352)) p[15] = pal[ q[15] | color];
 					}
-					p += 352;
+					p += X_SIZE;
 					q += 16;
 				}	
 	
@@ -1957,7 +1971,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 
 	if (flipy) {
 		
-		p += 352 * 15;
+		p += X_SIZE * 15;
 		
 		if (flipx) {
 		
@@ -1980,7 +1994,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 				if (q[14] != 15) p[ 1] = pal[ q[14] | color];
 				if (q[15] != 15) p[ 0] = pal[ q[15] | color];
 	
-				p -= 352;
+				p -= X_SIZE;
 				q += 16;
 			}	
 		
@@ -2005,7 +2019,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 				if (q[14] != 15) p[14] = pal[ q[14] | color];
 				if (q[15] != 15) p[15] = pal[ q[15] | color];
 	
-				p -= 352;
+				p -= X_SIZE;
 				q += 16;
 			}		
 		}
@@ -2033,7 +2047,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 				if (q[14] != 15) p[ 1] = pal[ q[14] | color];
 				if (q[15] != 15) p[ 0] = pal[ q[15] | color];
 	
-				p += 352;
+				p += X_SIZE;
 				q += 16;
 			}		
 		
@@ -2058,7 +2072,7 @@ static void pdrawgfxzoom(int bank,unsigned int code,unsigned int color,int flipx
 				if (q[14] != 15) p[14] = pal[ q[14] | color];
 				if (q[15] != 15) p[15] = pal[ q[15] | color];
 	
-				p += 352;
+				p += X_SIZE;
 				q += 16;
 			}	
 
@@ -2200,7 +2214,7 @@ struct BurnDriver BurnDrvTurbofrc = {
 	"turbofrc", NULL, NULL, "1991",
 	"Turbo Force\0", NULL, "Video System Co.", "Video System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 3, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 3, HARDWARE_MISC_POST90S,
 	NULL, turbofrcRomInfo, turbofrcRomName, turbofrcInputInfo, turbofrcDIPInfo,
 	turbofrcInit,DrvExit,turbofrcFrame,turbofrcDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL,240,352,3,4
@@ -2662,7 +2676,7 @@ static void karatblzTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
 			
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x1FFF) + ( RamGfxBank[0] << 13 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
  				p[0] = pal[ d[0] | c ];
@@ -2675,13 +2689,13 @@ static void karatblzTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
  				p[7] = pal[ d[7] | c ];
  				
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 		} else {
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x1FFF) + ( RamGfxBank[0] << 13 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				if ( (y+k)>=0 && (y+k)<240 ) {
@@ -2695,7 +2709,7 @@ static void karatblzTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
 	 				if ((x + 7) >= 0 && (x + 7)<352) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 			
 		}
@@ -2729,7 +2743,7 @@ static void karatblzTileBackground_2(unsigned short *bg, unsigned char *BgGfx, u
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x1FFF) + ( RamGfxBank[1] << 13 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				
@@ -2743,13 +2757,13 @@ static void karatblzTileBackground_2(unsigned short *bg, unsigned char *BgGfx, u
  				if (d[7] != 15) p[7] = pal[ d[7] | c ];
  				
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 		} else {
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x1FFF) + ( RamGfxBank[1] << 13 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				if ( (y+k)>=0 && (y+k)<240 ) {
@@ -2763,7 +2777,7 @@ static void karatblzTileBackground_2(unsigned short *bg, unsigned char *BgGfx, u
 	 				if (d[7] != 15 && (x + 7) >= 0 && (x + 7)<352) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 			
 		}
@@ -2840,7 +2854,7 @@ struct BurnDriver BurnDrvKaratblz = {
 	"karatblz", NULL, NULL, "1991",
 	"Karate Blazers (World?)\0", NULL, "Video System Co.", "Video System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, karatblzRomInfo, karatblzRomName, karatblzInputInfo, karatblzDIPInfo,
 	karatblzInit,DrvExit,karatblzFrame,karatblzDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL,352,240,4,3
@@ -2850,7 +2864,7 @@ struct BurnDriver BurnDrvKaratblu = {
 	"karatblu", "karatblz", NULL, "1991",
 	"Karate Blazers (US)\0", NULL, "Video System Co.", "Video System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, karatbluRomInfo, karatbluRomName, karatblzInputInfo, karatblzDIPInfo,
 	karatblzInit,DrvExit,karatblzFrame,karatblzDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL,352,240,4,3
@@ -2860,7 +2874,7 @@ struct BurnDriver BurnDrvKaratblj = {
 	"karatblj", "karatblz", NULL, "1991",
 	"Karate Blazers (Japan)\0", NULL, "Video System Co.", "Video System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, karatbljRomInfo, karatbljRomName, karatblzInputInfo, karatblzDIPInfo,
 	karatblzInit,DrvExit,karatblzFrame,karatblzDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL,352,240,4,3
@@ -3149,18 +3163,6 @@ static struct BurnRomInfo spinlbrjRomDesc[] = {
 STD_ROM_PICK(spinlbrj);
 STD_ROM_FN(spinlbrj);
 
-/*
-unsigned char __fastcall spinlbrkReadByte(unsigned int sekAddress)
-{
-	switch (sekAddress) {
-
-		default:
-			printf("Attempt to read byte value of location %x\n", sekAddress);
-	}
-	return 0;
-}
-*/
-
 unsigned short __fastcall spinlbrkReadWord(unsigned int sekAddress)
 {
 	switch (sekAddress) {
@@ -3395,7 +3397,7 @@ static void spinlbrkTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
 			
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x0FFF) + ( RamGfxBank[0] << 12 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xF000) >> 8;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
  				p[0] = pal[ d[0] | c ];
@@ -3408,13 +3410,13 @@ static void spinlbrkTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
  				p[7] = pal[ d[7] | c ];
  				
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 		} else {
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x0FFF) + ( RamGfxBank[0] << 12 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xF000) >> 8;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 352 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				if ( (y+k)>=0 && (y+k)<240 ) {
@@ -3428,13 +3430,15 @@ static void spinlbrkTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
 	 				if ((x + 7) >= 0 && (x + 7)<352) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 352;
+ 				p += X_SIZE;
  			}
 			
 		}
 
 	}
 }
+
+#undef X_SIZE
 
 static int spinlbrkDraw()
 {
@@ -3446,18 +3450,18 @@ static int spinlbrkDraw()
  	turbofrc_drawsprites(0, 0); // avatar , post , bullet
 	turbofrc_drawsprites(0,-1); 
 
-/*
-	unsigned short *ps = RamCurPal;
-	unsigned short *pd = (unsigned short *)pBurnDraw;
-	for (int j=0;j<32;j++) {
-		for (int i=0;i<32;i++) {
-			*pd = *ps;
-			pd ++;
-			ps ++;
-		}
-		pd += 352 - 32;
-	}
-*/
+
+//	unsigned short *ps = RamCurPal;
+//	unsigned short *pd = (unsigned short *)pBurnDraw;
+//	for (int j=0;j<32;j++) {
+//		for (int i=0;i<32;i++) {
+//			*pd = *ps;
+//			pd ++;
+//			ps ++;
+//		}
+//		pd += 352 - 32;
+//	}
+
 	return 0;
 }
 
@@ -3502,7 +3506,7 @@ struct BurnDriver BurnDrvSpinlbrk = {
 	"spinlbrk", NULL, NULL, "1990",
 	"Spinal Breakers (World)\0", NULL, "V-System Co.", "V-System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, spinlbrkRomInfo, spinlbrkRomName, spinlbrkInputInfo, spinlbrkDIPInfo,
 	spinlbrkInit,DrvExit,spinlbrkFrame,spinlbrkDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL,352,240,4,3
@@ -3512,7 +3516,7 @@ struct BurnDriver BurnDrvSpinlbru = {
 	"spinlbru", "spinlbrk", NULL, "1990",
 	"Spinal Breakers (US)\0", NULL, "V-System Co.", "V-System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, spinlbruRomInfo, spinlbruRomName, spinlbrkInputInfo, spinlbruDIPInfo,
 	spinlbrkInit,DrvExit,spinlbrkFrame,spinlbrkDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL,352,240,4,3
@@ -3522,7 +3526,7 @@ struct BurnDriver BurnDrvSpinlbrj = {
 	"spinlbrj", "spinlbrk", NULL, "1990",
 	"Spinal Breakers (Japan)\0", NULL, "V-System Co.", "V-System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, spinlbrjRomInfo, spinlbrjRomName, spinlbrkInputInfo, spinlbrjDIPInfo,
 	spinlbrkInit,DrvExit,spinlbrkFrame,spinlbrkDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL,352,240,4,3
@@ -3873,6 +3877,12 @@ static int aerofgtbInit()
 	return 0;
 }
 
+#ifndef BUILD_PSP
+#define X_SIZE	320
+#else
+#define X_SIZE	512
+#endif
+
 static void aerofgtbTileBackground_1(unsigned short *bg, unsigned char *BgGfx, unsigned short *pal)
 {
 	int offs, mx, my, x, y;
@@ -3900,7 +3910,7 @@ static void aerofgtbTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
 			
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11)] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
  				p[0] = pal[ d[0] | c ];
@@ -3913,13 +3923,13 @@ static void aerofgtbTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
  				p[7] = pal[ d[7] | c ];
  				
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		} else {
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11)] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				if ( (y+k)>=0 && (y+k)<224 ) {
@@ -3933,7 +3943,7 @@ static void aerofgtbTileBackground_1(unsigned short *bg, unsigned char *BgGfx, u
 	 				if ((x + 7) >= 0 && (x + 7)<320) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 			
 		}
@@ -3967,7 +3977,7 @@ static void aerofgtbTileBackground_2(unsigned short *bg, unsigned char *BgGfx, u
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11) + 4] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				
@@ -3981,13 +3991,13 @@ static void aerofgtbTileBackground_2(unsigned short *bg, unsigned char *BgGfx, u
  				if (d[7] != 15) p[7] = pal[ d[7] | c ];
  				
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		} else {
 
 			unsigned char *d = BgGfx + ( (bg[offs] & 0x07FF) + ( RamGfxBank[((bg[offs] & 0x1800) >> 11) + 4] << 11 ) ) * 64;
  			unsigned short c = (bg[offs] & 0xE000) >> 9;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			
 			for (int k=0;k<8;k++) {
 				if ( (y+k)>=0 && (y+k)<224 ) {
@@ -4001,7 +4011,7 @@ static void aerofgtbTileBackground_2(unsigned short *bg, unsigned char *BgGfx, u
 	 				if (d[7] != 15 && (x + 7) >= 0 && (x + 7)<352) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 			
 		}
@@ -4029,7 +4039,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 		pal = RamCurPal + 512;
 	}
 
-	p += sy * 320 + sx;
+	p += sy * X_SIZE + sx;
 		
 	if (sx < 0 || sx >= (320-16) || sy < 0 || sy >= (224-16) ) {
 		
@@ -4038,7 +4048,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 			
 		if (flipy) {
 		
-			p += 320 * 15;
+			p += X_SIZE * 15;
 			
 			if (flipx) {
 			
@@ -4062,7 +4072,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 						if (q[14] != 15 && ((sx +  1) >= 0) && ((sx +  1)<320)) p[ 1] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx +  0) >= 0) && ((sx +  0)<320)) p[ 0] = pal[ q[15] | color];
 					}
-					p -= 320;
+					p -= X_SIZE;
 					q += 16;
 				}	
 			
@@ -4088,7 +4098,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 						if (q[14] != 15 && ((sx + 14) >= 0) && ((sx + 14)<320)) p[14] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx + 15) >= 0) && ((sx + 15)<320)) p[15] = pal[ q[15] | color];
 					}
-					p -= 320;
+					p -= X_SIZE;
 					q += 16;
 				}		
 			}
@@ -4117,7 +4127,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 						if (q[14] != 15 && ((sx +  1) >= 0) && ((sx +  1)<320)) p[ 1] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx +  0) >= 0) && ((sx +  0)<320)) p[ 0] = pal[ q[15] | color];
 					}
-					p += 320;
+					p += X_SIZE;
 					q += 16;
 				}		
 			
@@ -4143,7 +4153,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 						if (q[14] != 15 && ((sx + 14) >= 0) && ((sx + 14)<320)) p[14] = pal[ q[14] | color];
 						if (q[15] != 15 && ((sx + 15) >= 0) && ((sx + 15)<320)) p[15] = pal[ q[15] | color];
 					}
-					p += 320;
+					p += X_SIZE;
 					q += 16;
 				}	
 	
@@ -4156,7 +4166,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 
 	if (flipy) {
 		
-		p += 320 * 15;
+		p += X_SIZE * 15;
 		
 		if (flipx) {
 		
@@ -4179,7 +4189,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 				if (q[14] != 15) p[ 1] = pal[ q[14] | color];
 				if (q[15] != 15) p[ 0] = pal[ q[15] | color];
 	
-				p -= 320;
+				p -= X_SIZE;
 				q += 16;
 			}	
 		
@@ -4204,7 +4214,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 				if (q[14] != 15) p[14] = pal[ q[14] | color];
 				if (q[15] != 15) p[15] = pal[ q[15] | color];
 	
-				p -= 320;
+				p -= X_SIZE;
 				q += 16;
 			}		
 		}
@@ -4232,7 +4242,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 				if (q[14] != 15) p[ 1] = pal[ q[14] | color];
 				if (q[15] != 15) p[ 0] = pal[ q[15] | color];
 	
-				p += 320;
+				p += X_SIZE;
 				q += 16;
 			}		
 		
@@ -4257,7 +4267,7 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 				if (q[14] != 15) p[14] = pal[ q[14] | color];
 				if (q[15] != 15) p[15] = pal[ q[15] | color];
 	
-				p += 320;
+				p += X_SIZE;
 				q += 16;
 			}	
 
@@ -4266,6 +4276,8 @@ static void aerofgtb_pdrawgfxzoom(int bank,unsigned int code,unsigned int color,
 	}
 
 }
+
+#undef X_SIZE
 
 static void aerofgtb_drawsprites(int chip,int chip_disabled_pri)
 {
@@ -4386,7 +4398,7 @@ struct BurnDriver BurnDrvAerofgtb = {
 	"aerofgtb", "aerofgt", NULL, "1992",
 	"Aero Fighters (Turbo Force hardware set 1)\0", NULL, "Video System Co.", "Video System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, FBF_SONICWI,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, aerofgtbRomInfo, aerofgtbRomName, aerofgtInputInfo, aerofgtDIPInfo,
 	aerofgtbInit,DrvExit,aerofgtbFrame,aerofgtbDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL, 224,320,3,4
@@ -4396,7 +4408,7 @@ struct BurnDriver BurnDrvAerofgtc = {
 	"aerofgtc", "aerofgt", NULL, "1992",
 	"Aero Fighters (Turbo Force hardware set 2)\0", NULL, "Video System Co.", "Video System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, FBF_SONICWI,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, aerofgtcRomInfo, aerofgtcRomName, aerofgtInputInfo, aerofgtDIPInfo,
 	aerofgtbInit,DrvExit,aerofgtbFrame,aerofgtbDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL, 224,320,3,4
@@ -4406,9 +4418,11 @@ struct BurnDriver BurnDrvSonicwi = {
 	"sonicwi", "aerofgt", NULL, "1992",
 	"Sonic Wings (Japan)\0", NULL, "Video System Co.", "Video System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, FBF_SONICWI,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, sonicwiRomInfo, sonicwiRomName, aerofgtInputInfo, aerofgtDIPInfo,
 	aerofgtbInit,DrvExit,aerofgtbFrame,aerofgtbDraw,DrvScan,
 	0, NULL, NULL, NULL, NULL, 224,320,3,4
 };
+
+
 

@@ -268,7 +268,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+destroyUniCache();
 	return 0;
 }
 
@@ -334,6 +334,8 @@ static int DrvFrame()
 {
 	int nCyclesVBlank;
 	int nInterleave = 8;
+
+	
 
 	if (DrvReset) {														// Reset machine
 		DrvDoReset();
@@ -430,10 +432,11 @@ static int MemIndex()
 {
 	unsigned char* Next; Next = Mem;
 	Rom01			= Next; Next += 0x100000;		// 68K program
-	CaveSpriteROM	= Next; Next += 0x2000000;
+/*	CaveSpriteROM	= Next; Next += 0x2000000;
 	CaveTileROM[0]	= Next; Next += 0x800000;		// Tile layer 0
 	CaveTileROM[1]	= Next; Next += 0x400000;		// Tile layer 1
 	CaveTileROM[2]	= Next; Next += 0x400000;		// Tile layer 2
+*/
 	YMZ280BROM		= Next; Next += 0x400000;
 	RamStart		= Next;
 	Ram01			= Next; Next += 0x010000;		// CPU #0 work RAM
@@ -480,7 +483,7 @@ static int LoadRoms()
 	// Load 68000 ROM
 	BurnLoadRom(Rom01 + 0, 1, 2);
 	BurnLoadRom(Rom01 + 1, 0, 2);
-
+/*
 	BurnLoadRom(CaveSpriteROM + 0x0000000, 2, 2);
 	BurnLoadRom(CaveSpriteROM + 0x0000001, 3, 2);
 	BurnLoadRom(CaveSpriteROM + 0x1000000, 4, 2);
@@ -511,7 +514,7 @@ static int LoadRoms()
 	NibbleSwap4(CaveTileROM[1], 0x200000);
 	BurnLoadRom(CaveTileROM[2] + 0x000000, 8, 1);
 	NibbleSwap4(CaveTileROM[2], 0x200000);
-
+*/
 	// Load YMZ280B data
 	BurnLoadRom(YMZ280BROM, 9, 1);
 
@@ -559,7 +562,126 @@ static int DrvInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+cacheFileSize=0x3000000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x2000000;
+	CaveTileROMOffset[1]=CaveTileROMOffset[0]+0x800000;
+	CaveTileROMOffset[2]=CaveTileROMOffset[1]+0x400000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1200000)) == NULL) return 1;
+		memset(uniCacheHead,0,0x1200000);
+		unsigned int block1Head=0x0600000,block2Head=0x0A00000;
+		BurnLoadRom(uniCacheHead + block1Head, 2, 1);
+		BurnLoadRom(uniCacheHead + block2Head, 3, 1);
+		for(int i=0;i<0x0800000;i=i+2,block1Head++,block2Head++)
+		{
+			uniCacheHead[i]=uniCacheHead[block1Head];
+			uniCacheHead[i+1]=uniCacheHead[block2Head];
+			
+		}
+		NibbleSwap3(uniCacheHead, 0x400000);
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile,0, SEEK_SET );
+			if( 0x0800000 == sceIoWrite(cacheFile,uniCacheHead, 0x0800000 ) )
+				break;
+		}
+		block1Head=0x0600000,block2Head=0x0A00000;
+		BurnLoadRom(uniCacheHead + block2Head-0x400000, 3, 1);
+		BurnLoadRom(uniCacheHead + block1Head-0x400000, 2, 1);
+		
+		for(int i=0;i<0x0800000;i=i+2,block1Head++,block2Head++)
+		{
+			uniCacheHead[i]=uniCacheHead[block1Head];
+			uniCacheHead[i+1]=uniCacheHead[block2Head];
+			
+		}
+		NibbleSwap3(uniCacheHead, 0x400000);
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile,0x800000, SEEK_SET );
+			if( 0x0800000 == sceIoWrite(cacheFile,uniCacheHead, 0x0800000 ) )
+				break;
+		}
+		memset(uniCacheHead,0,0x1200000);
+		block1Head=0x0600000,block2Head=0x0A00000;
+		BurnLoadRom(uniCacheHead + block1Head, 4, 1);
+		BurnLoadRom(uniCacheHead + block2Head, 5, 1);
 
+		for(int i=0;i<0x0800000;i=i+2,block1Head++,block2Head++)
+		{
+			uniCacheHead[i]=uniCacheHead[block1Head];
+			uniCacheHead[i+1]=uniCacheHead[block2Head];
+			
+		}
+		
+		NibbleSwap3(uniCacheHead, 0x400000);
+		
+	
+	#if 1
+		for (int i = 0; i < 0x100000; i++) {
+			unsigned short nValue = rand() & 0x0101;
+			if (nValue & 0x0001) {
+				nValue |= 0x00FF;
+			}
+			if (nValue & 0x0100) {
+				nValue |= 0xFF00;
+			}
+			((unsigned short*)(uniCacheHead + 0x800000))[i] = nValue;
+			((unsigned short*)(uniCacheHead + 0xA00000))[i] = nValue;
+			((unsigned short*)(uniCacheHead + 0xC00000))[i] = nValue;
+			((unsigned short*)(uniCacheHead + 0xE00000))[i] = nValue;
+		}
+	#else
+		memcpy(uniCacheHead + 0x800000, uniCacheHead, 0x800000);
+	#endif
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile,0x1000000, SEEK_SET );
+			if( 0x1000000 == sceIoWrite(cacheFile,uniCacheHead, 0x1000000 ) )
+				break;
+		}
+		BurnLoadRom(uniCacheHead + 0x000000, 6, 1);
+		NibbleSwap4(uniCacheHead, 0x400000);
+		BurnLoadRom(uniCacheHead + 0x800000, 7, 1);
+		NibbleSwap4(uniCacheHead + 0x800000, 0x200000);
+		BurnLoadRom(uniCacheHead + 0xC00000, 8, 1);
+		NibbleSwap4(uniCacheHead + 0xC00000, 0x200000);
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile,0x2000000, SEEK_SET );
+			if( 0x1000000 == sceIoWrite(cacheFile,uniCacheHead, 0x1000000 ) )
+				break;
+		}
+
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+											// EEPROM has 1024 bits, uses 16-bit words
+	
 	// Find out how much memory is needed
 	Mem = NULL;
 	MemIndex();
@@ -576,7 +698,8 @@ static int DrvInit()
 		unsigned char data[] = { 0x0C, 0x00, 0x11, 0x11, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x11, 0x11 };
 		EEPROMFill(data, 0, 0x0C);
 	}
-
+	initCacheStructure(0.7);
+	
 	// Load the roms into memory
 	if (LoadRoms()) {
 		return 1;
@@ -645,11 +768,6 @@ static struct BurnRomInfo guwangeRomDesc[] = {
 	{ "u10103.bin",   0x400000, 0x0FE91B8E, BRF_GRA },			 //  8 Layer 2 Tile data
 
 	{ "u0462.bin",    0x400000, 0xB3D75691, BRF_SND },			 //  9 YMZ280B (AD)PCM data
-	
-	{ "atc05-1.bin",  0x000001, 0x00000000, BRF_NODUMP },
-	{ "u0259.bin",    0x000001, 0x00000000, BRF_NODUMP },
-	{ "u084.bin",     0x000001, 0x00000000, BRF_NODUMP },
-	{ "u108.bin",     0x000001, 0x00000000, BRF_NODUMP },
 };
 
 
@@ -661,7 +779,7 @@ struct BurnDriver BurnDrvGuwange = {
 	"guwange", NULL, NULL, "1999",
 	"Guwange (Japan, 1999 6/24 master ver.)\0", NULL, "Atlus / Cave", "Cave",
 	L"\u3050\u308F\u3093\u3052 (1999 6/24 master ver.)\0Guwange\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY,
 	NULL, guwangeRomInfo, guwangeRomName, guwangeInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,

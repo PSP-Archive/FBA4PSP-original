@@ -953,6 +953,7 @@ static int DrvInit()
 	if (pFMBuffer == NULL) {
 		return 1;
 	}
+	memset(pFMBuffer, 0, nBurnSoundLen * 3 * sizeof(short));
 
 	Rom0 = Mem + 0x00000;
 	Rom1 = Mem + 0x10000;
@@ -961,6 +962,12 @@ static int DrvInit()
 	Prom = Mem + 0xb0000;
 	Palette = (unsigned int*)(Mem + 0xc0000);
 	DrvPal  = (unsigned int*)(Mem + 0xc1000);
+
+	memset(Rom0, 0, 0x10000);
+	memset(Rom1, 0, 0x10000);
+	memset(Gfx,  0, 0x10000);
+	memset(User, 0, 0x80000);
+	memset(Prom, 0, 0x10000);
 
 	GetRoms();
 	
@@ -1354,7 +1361,7 @@ struct BurnDriver BurnDrvjack = {
 	"jack", NULL, NULL, "1982",
 	"Jack the Giantkiller (set 1)\0", NULL, "Cinematronics", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, jackRomInfo, jackRomName, JackInputInfo, JackDIPInfo,
 	jackInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1388,7 +1395,7 @@ struct BurnDriver BurnDrvjack2 = {
 	"jack2", "jack", NULL, "1982",
 	"Jack the Giantkiller (set 2)\0", NULL, "Cinematronics", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, jack2RomInfo, jack2RomName, JackInputInfo, Jack2DIPInfo,
 	jackInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1422,7 +1429,7 @@ struct BurnDriver BurnDrvjack3 = {
 	"jack3", "jack", NULL, "1982",
 	"Jack the Giantkiller (set 3)\0", NULL, "Cinematronics", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, jack3RomInfo, jack3RomName, JackInputInfo, Jack3DIPInfo,
 	jackInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1488,7 +1495,7 @@ struct BurnDriver BurnDrvtreahunt = {
 	"treahunt", "jack", NULL, "1982",
 	"Treasure Hunt (bootleg?)\0", NULL, "Hara Industries", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, treahuntRomInfo, treahuntRomName, JackInputInfo, TreahuntDIPInfo,
 	treahuntInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1521,7 +1528,7 @@ STD_ROM_FN(zzyzzyxx);
 
 static int zzyzzyxxInit()
 {
-	timer_rate = 1;
+	timer_rate = 16;
 
 	return DrvInit();
 }
@@ -1530,7 +1537,7 @@ struct BurnDriver BurnDrvzzyzzyxx = {
 	"zzyzzyxx", NULL, NULL, "1982",
 	"Zzyzzyxx (set 1)\0", NULL, "Cinematronics + Advanced Microcomputer Systems", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, zzyzzyxxRomInfo, zzyzzyxxRomName, ZzyzzyxxInputInfo, ZzyzzyxxDIPInfo,
 	zzyzzyxxInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1565,7 +1572,7 @@ struct BurnDriver BurnDrvzzyzzyx2 = {
 	"zzyzzyx2", "zzyzzyxx", NULL, "1982",
 	"Zzyzzyxx (set 2)\0", NULL, "Cinematronics + Advanced Microcomputer Systems", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, zzyzzyx2RomInfo, zzyzzyx2RomName, ZzyzzyxxInputInfo, ZzyzzyxxDIPInfo,
 	zzyzzyxxInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1600,7 +1607,7 @@ struct BurnDriver BurnDrvbrix = {
 	"brix", "zzyzzyxx", NULL, "1982",
 	"Brix\0", NULL, "Cinematronics + Advanced Microcomputer Systems", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, brixRomInfo, brixRomName, ZzyzzyxxInputInfo, ZzyzzyxxDIPInfo,
 	zzyzzyxxInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1634,7 +1641,7 @@ struct BurnDriver BurnDrvfreeze = {
 	"freeze", NULL, NULL, "1984",
 	"Freeze\0", NULL, "Cinematronics", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, freezeRomInfo, freezeRomName, FreezeInputInfo, FreezeDIPInfo,
 	jackInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1666,7 +1673,7 @@ struct BurnDriver BurnDrvsucasino = {
 	"sucasino", NULL, NULL, "1984",
 	"Super Casino\0", NULL, "Data Amusement", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_CASINO, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, sucasinoRomInfo, sucasinoRomName, SucasinoInputInfo, SucasinoDIPInfo,
 	jackInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1705,7 +1712,7 @@ struct BurnDriver BurnDrvtripool = {
 	"tripool", NULL, NULL, "1981",
 	"Tri-Pool (Casino Tech)\0", NULL, "Noma (Casino Tech license)", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, tripoolRomInfo, tripoolRomName, TripoolInputInfo, NULL,
 	tripoolInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1736,7 +1743,7 @@ struct BurnDriver BurnDrvtripoola = {
 	"tripoola", "tripool", NULL, "1981",
 	"Tri-Pool (Costal Games)\0", NULL, "Noma (Costal Games license)", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, tripoolaRomInfo, tripoolaRomName, TripoolInputInfo, NULL,
 	tripoolInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -1791,7 +1798,7 @@ static void joinem_palette_init()
 static int joinemInit()
 {
 	joinem = 1;
-	timer_rate = 1;
+	timer_rate = 16;
 
 	int nRet = DrvInit();
 
@@ -1804,7 +1811,7 @@ struct BurnDriver BurnDrvjoinem = {
 	"joinem", NULL, NULL, "1986",
 	"Joinem\0", NULL, "Global Corporation", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, joinemRomInfo, joinemRomName, JoinemInputInfo, JoinemDIPInfo,
 	joinemInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 240, 3, 4
@@ -1852,7 +1859,7 @@ struct BurnDriver BurnDrvloverboy = {
 	"loverboy", NULL, NULL, "1983",
 	"Lover Boy\0", NULL, "G.T Enterprise Inc", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, loverboyRomInfo, loverboyRomName, LoverboyInputInfo, LoverboyDIPInfo,
 	loverboyInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 240, 3, 4
@@ -1926,7 +1933,7 @@ struct BurnDriver BurnDrvstriv = {
 	"striv", NULL, NULL, "1985",
 	"Super Triv\0", "No sound", "Hara Industries", "Jack the Giantkiller",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, strivRomInfo, strivRomName, StrivInputInfo, StrivDIPInfo,
 	strivInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4

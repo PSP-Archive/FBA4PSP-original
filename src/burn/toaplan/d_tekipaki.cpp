@@ -486,7 +486,7 @@ struct BurnDriver BurnDrvTekiPaki = {
 	"tekipaki", NULL, NULL, "1991",
 	"Teki Paki\0", "No sound (sound MCU not dumped)", "Toaplan", "Toaplan GP9001 based",
 	L"Teki Paki\0\u6D17\u8133\u30B2\u30FC\u30E0\0", NULL, NULL, NULL,
-	1, 2, HARDWARE_TOAPLAN_68K_Zx80, GBF_PUZZLE, 0,
+	1, 2, HARDWARE_TOAPLAN_68K_Zx80,
 	NULL, drvRomInfo, drvRomName, tekipakiInputInfo, tekipakiDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	320, 240, 4, 3

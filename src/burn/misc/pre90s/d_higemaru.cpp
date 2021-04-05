@@ -256,6 +256,7 @@ static int DrvGfxDecode()
 	if (tmp == NULL) {
 		return 1;
 	}
+	memset(tmp, 0, 0x4000);
 
 	memcpy (tmp, Gfx0, 0x2000);
 
@@ -506,22 +507,22 @@ static int DrvScan(int nAction, int *pnMin)
 // Pirate Ship Higemaru
 
 static struct BurnRomInfo higemaruRomDesc[] = {
-	{ "hg4.p12", 	0x2000, 0xdc67a7f9, 1 | BRF_PRG | BRF_ESS }, //  0 Z80 Code
-	{ "hg5.m12", 	0x2000, 0xf65a4b68, 1 | BRF_PRG | BRF_ESS }, //  1
-	{ "hg6.p11", 	0x2000, 0x5f5296aa, 1 | BRF_PRG | BRF_ESS }, //  2
-	{ "hg7.m11", 	0x2000, 0xdc5d455d, 1 | BRF_PRG | BRF_ESS }, //  3
+	{ "hg4", 	0x2000, 0xdc67a7f9, 1 | BRF_PRG | BRF_ESS }, //  0 Z80 Code
+	{ "hg5", 	0x2000, 0xf65a4b68, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "hg6", 	0x2000, 0x5f5296aa, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "hg7", 	0x2000, 0xdc5d455d, 1 | BRF_PRG | BRF_ESS }, //  3
 
-	{ "hg3.m1", 	0x2000, 0xb37b88c8, 2 | BRF_GRA }, 	     //	 4 Characters
+	{ "hg3", 	0x2000, 0xb37b88c8, 2 | BRF_GRA }, 	     //	 4 Characters
 
-	{ "hg1.c14", 	0x2000, 0xef4c2f5d, 3 | BRF_GRA },	     //	 5 Sprites
-	{ "hg2.e14", 	0x2000, 0x9133f804, 3 | BRF_GRA },	     //  6
+	{ "hg1", 	0x2000, 0xef4c2f5d, 3 | BRF_GRA },	     //	 5 Sprites
+	{ "hg2", 	0x2000, 0x9133f804, 3 | BRF_GRA },	     //  6
 
-	{ "hgb3.l6", 	0x0020, 0x629cebd8, 4 | BRF_GRA },	     //	 7 Color Proms
-	{ "hgb5.m4", 	0x0100, 0xdbaa4443, 4 | BRF_GRA },	     //	 8
-	{ "hgb1.h7", 	0x0100, 0x07c607ce, 4 | BRF_GRA },	     //	 9
+	{ "hgb3", 	0x0020, 0x629cebd8, 4 | BRF_GRA },	     //	 7 Color Proms
+	{ "hgb5", 	0x0100, 0xdbaa4443, 4 | BRF_GRA },	     //	 8
+	{ "hgb1", 	0x0100, 0x07c607ce, 4 | BRF_GRA },	     //	 9
 
-	{ "hgb4.l9", 	0x0100, 0x712ac508, 0 | BRF_OPT },	     //	10 Misc. Proms (not used)
-	{ "hgb2.k7", 	0x0100, 0x4921635c, 0 | BRF_OPT },	     //	11
+	{ "hgb4", 	0x0100, 0x712ac508, 0 | BRF_OPT },	     //	10 Misc. Proms (not used)
+	{ "hgb2", 	0x0100, 0x4921635c, 0 | BRF_OPT },	     //	11
 };
 
 STD_ROM_PICK(higemaru);
@@ -531,7 +532,7 @@ struct BurnDriver BurnDrvhigemaru = {
 	"higemaru", NULL, NULL, "1984",
 	"Pirate Ship Higemaru\0", NULL, "Capcom", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, higemaruRomInfo, higemaruRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3

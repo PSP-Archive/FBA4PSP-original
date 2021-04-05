@@ -301,10 +301,16 @@ static int DrvInit()
 	Prom    = Mem + 0x210000;
 	Palette = (unsigned int *)(Mem + 0x210020);
 
+	memset(M68KRom, 0, 0x200000);
+	memset(Z80Rom, 0, 0x10000);
+	memset(Prom, 0, 0x20);
+	memset(Palette, 0, 0x40);
+
 	pFMBuffer = (short *)malloc (nBurnSoundLen * 3 * sizeof(short));
 	if (pFMBuffer == NULL) {
 		return 1;
 	}
+	memset(pFMBuffer, 0, nBurnSoundLen * 3 * sizeof(short));
 
 	pAY8910Buffer[0] = pFMBuffer + nBurnSoundLen * 0;
 	pAY8910Buffer[1] = pFMBuffer + nBurnSoundLen * 1;
@@ -380,7 +386,11 @@ static int DrvDraw()
 		sy = i & 0xff;
 
 		if (sy < 16 || sy > 239 || sx < 12 || sx > 240) continue;
+#ifdef BUILD_PSP
+		sx -= 12; sy = (sy - 16) * 512;
+#else
 		sx -= 12; sy = (sy - 16) * 232;
+#endif
 
 		data1 = M68KRom[0x100001 + (i << 1)];
 		data2 = M68KRom[0x100000 + (i << 1)];
@@ -564,7 +574,7 @@ struct BurnDriver BurnDrvMeijinsn = {
 	"meijinsn", NULL, NULL, "1986",
 	"Meijinsen\0", NULL, "SNK Electronics corp.", "Miscellaneous",
 	L"\u540D\u4EBA\u6226\0Meijinsen\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, meijinsnRomInfo, meijinsnRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	232, 224, 4, 3

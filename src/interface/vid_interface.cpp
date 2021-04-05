@@ -43,11 +43,7 @@ static unsigned int nVidActive = 0;
 
 bool bVidOkay = false;
 
-int nVidWidth		= 640, nVidHeight		= 480, nVidDepth = 16, nVidRefresh = 0;
-
-int nVidHorWidth	= 640, nVidHorHeight	= 480;	// Default Horizontal oritated resolution
-int nVidVerWidth	= 640, nVidVerHeight	= 480;	// Default Vertical oriented resoultion
-
+int nVidWidth = 640, nVidHeight = 480, nVidDepth = 16, nVidRefresh = 0;
 int nVidFullscreen = 0;
 int bVidFullStretch = 0;						// 1 = stretch to fill the entire window/screen
 int bVidCorrectAspect = 1;						// 1 = stretch to fill the window/screen while maintaining the correct aspect ratio
@@ -63,12 +59,8 @@ int bVidScanDelay = 0;							// Blend the previous image with the current one
 int nVidFeedbackIntensity = 0x40;				// Blend factor for previous frame (D3D blitter)
 int nVidFeedbackOverSaturation = 0x00;			// Add this to the current frame blend factor
 int bVidUseHardwareGamma = 1;					// Use the video hardware when correcting gamma
-int bVidAutoSwitchFull = 0;						// 1 = auto switch to fullscreen on loading driver
+int bVidAutoSwitchFull = 0;					// 1 = auto switch to fullscreen on loading driver
 int bVidArcaderes = 0;							// Use game resolution for fullscreen modes
-
-int bVidArcaderesHor = 0;
-int bVidArcaderesVer = 0;
-
 int nVidRotationAdjust = 0;						// & 1: do not rotate the graphics for vertical games,  & 2: Reverse flipping for vertical games
 int bVidForce16bit = 1;							// Emulate the game in 16-bit even when the screen is 32-bit (D3D blitter)
 int nVidTransferMethod = -1;					// How to transfer the game image to video memory and/or a texture --
@@ -141,26 +133,10 @@ int VidInit()
 #if defined (BUILD_WIN32) && defined (ENABLE_PREVIEW)
 	if (!bDrvOkay && bVidUsePlaceholder) {
 		if (_tcslen(szPlaceHolder)) {
-			LPTSTR p = _tcsrchr(szPlaceHolder, '.');
-			if (!_tcsicmp(p+1, _T("bmp"))) {
-				hbitmap = (HBITMAP)LoadImage(hAppInst, szPlaceHolder, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
-			} else {
-				if (!_tcsicmp(p+1, _T("png"))) {
-					FILE *fp = _tfopen(szPlaceHolder, _T("rb"));
-					if (fp) {
-						char szTemp[MAX_PATH];
-						sprintf(szTemp, _TtoA(szPlaceHolder));
-						hbitmap = PNGtoBMP_Simple(hScrnWnd, szTemp);
-						fclose(fp);
-					}
-				}
-			}
+			hbitmap = (HBITMAP)LoadImage(hAppInst, szPlaceHolder, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
 		} else {
 			hbitmap = (HBITMAP)LoadImage(hAppInst, _T("BMP_SPLASH"), IMAGE_BITMAP, 0, 0, 0);
 		}
-		
-		if (!hbitmap) hbitmap = (HBITMAP)LoadImage(hAppInst, _T("BMP_SPLASH"), IMAGE_BITMAP, 0, 0, 0);
-		
 		GetObject(hbitmap, sizeof(BITMAP), &bitmap);
 
 		nVidImageWidth = bitmap.bmWidth; nVidImageHeight = bitmap.bmHeight;
@@ -210,7 +186,8 @@ int VidInit()
 			bitmapinfo.bmiHeader.biPlanes = 1;
 			bitmapinfo.bmiHeader.biBitCount = 24;
 			bitmapinfo.bmiHeader.biCompression = BI_RGB;
-			
+
+
 			for (int y = 0; y < nVidImageHeight; y++) {
 				unsigned char* pd = pVidImage + y * nVidImagePitch;
 				unsigned char* ps = pLineBuffer;
@@ -284,7 +261,7 @@ int VidExit()
 static int VidDoFrame(bool bRedraw)
 {
 	int nRet;
-	
+
 	if (pVidTransImage) {
 		unsigned short* pSrc = (unsigned short*)pVidTransImage;
 		unsigned char* pDest = pVidImage;
@@ -341,14 +318,6 @@ static int VidDoFrame(bool bRedraw)
 	}
 
 	return nRet;
-}
-
-int VidReInitialise()
-{
-	free(pVidTransImage);
-	pVidTransImage = (unsigned char*)malloc(nVidImageWidth * nVidImageHeight * sizeof(short));
-	
-	return 0;
 }
 
 int VidFrame()

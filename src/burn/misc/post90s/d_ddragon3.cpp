@@ -1993,7 +1993,7 @@ struct BurnDriver BurnDrvDdragon3 = {
 	"ddragon3", NULL, NULL, "1990",
 	"Double Dragon 3 - The Rosetta Stone (US)\0", NULL, "Technos", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 3, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 3, HARDWARE_MISC_POST90S, //GBF_SCRFIGHT, 0,
 	NULL, DrvRomInfo, DrvRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -2003,7 +2003,7 @@ struct BurnDriver BurnDrvDdrago3j = {
 	"ddrago3j", "ddragon3", NULL, "1990",
 	"Double Dragon 3 - The Rosetta Stone (Japan)\0", NULL, "Technos", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 3, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 3, HARDWARE_MISC_POST90S, //GBF_SCRFIGHT, 0,
 	NULL, DrvjRomInfo, DrvjRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -2013,7 +2013,7 @@ struct BurnDriver BurnDrvDdrago3p = {
 	"ddrago3p", "ddragon3", NULL, "1990",
 	"Double Dragon 3 - The Rosetta Stone (prototype)\0", NULL, "Technos", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE, 3, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE, 3, HARDWARE_MISC_POST90S, //GBF_SCRFIGHT, 0,
 	NULL, DrvpRomInfo, DrvpRomName, DrvInputInfo, DrvDIPInfo,
 	DrvpInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -2023,7 +2023,7 @@ struct BurnDriver BurnDrvDdrago3b = {
 	"ddrago3b", "ddragon3", NULL, "1990",
 	"Double Dragon 3 - The Rosetta Stone (bootleg)\0", NULL, "bootleg", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 3, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 3, HARDWARE_MISC_POST90S, //GBF_SCRFIGHT, 0,
 	NULL, DrvbRomInfo, DrvbRomName, DrvInputInfo, DrvbDIPInfo,
 	DrvbInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -2033,7 +2033,7 @@ struct BurnDriver BurnDrvCtribe = {
 	"ctribe", NULL, NULL, "1990",
 	"The Combatribes (US)\0", NULL, "Technos", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 3, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 3, HARDWARE_MISC_POST90S, //GBF_SCRFIGHT, 0,
 	NULL, CtribeRomInfo, CtribeRomName, DrvInputInfo, CtribeDIPInfo,
 	CtribeInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -2043,7 +2043,7 @@ struct BurnDriver BurnDrvCtribe1 = {
 	"ctribe1", "ctribe", NULL, "1990",
 	"The Combatribes (US) - Set 1?\0", NULL, "Technos", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 3, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 3, HARDWARE_MISC_POST90S, //GBF_SCRFIGHT, 0,
 	NULL, Ctribe1RomInfo, Ctribe1RomName, DrvInputInfo, CtribeDIPInfo,
 	CtribeInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -2053,7 +2053,7 @@ struct BurnDriver BurnDrvCtribeb = {
 	"ctribeb", "ctribe", NULL, "1990",
 	"The Combatribes (bootleg set 1)\0", NULL, "bootleg", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 3, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 3, HARDWARE_MISC_POST90S, //GBF_SCRFIGHT, 0,
 	NULL, CtribebRomInfo, CtribebRomName, DrvInputInfo, CtribeDIPInfo,
 	CtribeInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -2063,7 +2063,7 @@ struct BurnDriver BurnDrvCtribb2 = {
 	"ctribb2", "ctribe", NULL, "1990",
 	"The Combatribes (bootleg set 2)\0", NULL, "bootleg", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 3, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 3, HARDWARE_MISC_POST90S, //GBF_SCRFIGHT, 0,
 	NULL, Ctribb2RomInfo, Ctribb2RomName, DrvInputInfo, CtribeDIPInfo,
 	CtribeInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3

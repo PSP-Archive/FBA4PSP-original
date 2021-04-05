@@ -3,7 +3,8 @@
 
 int CaveSpriteVisibleXOffset;
 
-unsigned char* CaveSpriteROM = NULL;
+unsigned long CaveSpriteROMOffset = 0;
+
 unsigned char* CaveSpriteRAM = NULL;
 
 int nCaveSpriteBank;
@@ -27,7 +28,8 @@ int (*CaveSpriteBuffer)();
 
 static unsigned char* pRow;
 static unsigned char* pPixel;
-static unsigned int* pSpriteData;
+//static unsigned int* pSpriteData;
+static unsigned int spriteDataOffset;
 static unsigned int* pSpritePalette;
 
 static unsigned short* pZBuffer = NULL;
@@ -105,8 +107,9 @@ int CaveSpriteRender(int nLowPriority, int nHighPriority)
 
 		nXPos = pBuffer->x;
 		nYPos = pBuffer->y;
-
-		pSpriteData = (unsigned int*)(CaveSpriteROM + ((pBuffer->address << 8) & nSpriteAddressMask));
+		
+		spriteDataOffset=CaveSpriteROMOffset + ((pBuffer->address << 8) & nSpriteAddressMask);
+		//pSpriteData = (unsigned int*)getBlock(spriteDataOffset,1);
 		pSpritePalette = CavePalette + pBuffer->palette;
 
 		nXSize = pBuffer->xsize;
@@ -117,7 +120,8 @@ int CaveSpriteRender(int nLowPriority, int nHighPriority)
 			nSpriteRowSize = pBuffer->xsize >> 2;
 
 			if (pBuffer->flip & 1) {												// Y Flip
-				pSpriteData += nSpriteRowSize * (nYSize - 1);
+				spriteDataOffset=spriteDataOffset+((nSpriteRowSize * (nYSize - 1))<<2);
+				//pSpriteData = (unsigned int*)getBlock(spriteDataOffset,1);
 				nSpriteRowSize = -nSpriteRowSize;
 			}
 
@@ -126,7 +130,8 @@ int CaveSpriteRender(int nLowPriority, int nHighPriority)
 			}
 
 			if (nYPos < 0) {
-				pSpriteData += nSpriteRowSize * -nYPos;
+				spriteDataOffset=spriteDataOffset+((nSpriteRowSize * -nYPos)<<2);
+				//pSpriteData = (unsigned int*)getBlock(spriteDataOffset,1);
 				nYSize += nYPos;
 				nYPos = 0;
 			}
@@ -141,7 +146,8 @@ int CaveSpriteRender(int nLowPriority, int nHighPriority)
 
 			if (nXPos < 0) {
 				if ((pBuffer->flip & 2) == 0) {
-					pSpriteData += (-nXPos >> 4) << 2;
+					spriteDataOffset=spriteDataOffset+((-nXPos >> 4)<<4);
+					//pSpriteData  = (unsigned int*)getBlock(spriteDataOffset,1);
 				}
 				nXSize -= -nXPos & 0xFFF0;
 				nXPos += -nXPos & 0xFFF0;
@@ -149,7 +155,8 @@ int CaveSpriteRender(int nLowPriority, int nHighPriority)
 
 			if (nXPos + nXSize >= nCaveXSize) {
 				if (pBuffer->flip & 2) {
-					pSpriteData += ((nXPos + nXSize - nCaveXSize) >> 4) << 2;
+					spriteDataOffset=spriteDataOffset+(((nXPos + nXSize - nCaveXSize) >> 4)<<4);
+					//pSpriteData  = (unsigned int*)getBlock(spriteDataOffset,1);
 				}
 				nXSize -= (nXPos + nXSize - nCaveXSize) & 0xFFF0;
 			}
@@ -684,6 +691,7 @@ int CaveSpriteInit(int nType, int nROMSize)
 		CaveSpriteExit();
 		return 1;
 	}
+	memset(pSpriteList, 0, 0x0401 * sizeof(CaveSprite));
 
 	for (int i = 0; i < 0x0400; i++) {
 		pSpriteList[i].xzoom = 0x0100;

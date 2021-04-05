@@ -1062,7 +1062,7 @@ struct BurnDriver BurnDrvRenegade = {
 	"renegade", NULL, NULL, "1986",
 	"Renegade (US)\0", NULL, "Technos (Taito America license)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, DrvRomInfo, DrvRomName, DrvInputInfo, DrvDIPInfo,
 	RenegadeInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 240, 240, 4, 3
@@ -1072,7 +1072,7 @@ struct BurnDriver BurnDrvKuniokun = {
 	"kuniokun", "renegade", NULL, "1986",
 	"Nekketsu Kouha Kunio-kun (Japan)\0", NULL, "Technos", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, DrvjRomInfo, DrvjRomName, DrvInputInfo, DrvDIPInfo,
 	KuniokunInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 240, 240, 4, 3
@@ -1082,7 +1082,7 @@ struct BurnDriver BurnDrvKuniokub = {
 	"kuniokub", "renegade", NULL, "1986",
 	"Nekketsu Kouha Kunio-kun (Japan bootleg)\0", NULL, "bootleg", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, DrvbRomInfo, DrvbRomName, DrvInputInfo, DrvDIPInfo,
 	KuniokubInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 240, 240, 4, 3

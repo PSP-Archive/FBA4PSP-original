@@ -87,8 +87,10 @@ void init_dec0_aud(int romNumPrg, int romNumSamples)
 	Rom = (unsigned char*) malloc(0x8000);
 	
 	memset(Ram,0x00, sizeof(Ram));
+	memset(Rom,0x00, sizeof(Rom));
 
 	MSM6295ROM = (unsigned char*) malloc(0x10000);
+	memset(MSM6295ROM,0x00, sizeof(MSM6295ROM));
 
 	BurnLoadRom(Rom, romNumPrg,1 );
 	BurnLoadRom(MSM6295ROM,romNumSamples,1);

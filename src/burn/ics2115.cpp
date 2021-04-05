@@ -15,13 +15,13 @@
 #include "msm6295.h"
 #include "burn_sound.h"
 #include "ics2115.h"
-
-unsigned char *ICSSNDROM;
-
+#include "UniCache.h"
+unsigned char *ICSSNDROM ;
+extern unsigned long nPGMSNDROMOffset;
 enum { V_ON = 1, V_DONE = 2 };
 
 struct ics2115 {
-	unsigned char * rom;
+	//unsigned char * rom;
 	signed short ulaw[256];
 	struct {
 		unsigned short fc, addrh, addrl, strth, endh, volacc;
@@ -285,8 +285,8 @@ void ics2115_exit()
 	free( chip );
 	chip = NULL;
 	
-	free(ICSSNDROM);
-	ICSSNDROM = NULL;
+	//free(ICSSNDROM);
+	//ICSSNDROM = NULL;
 
 	free( sndbuffer );
 	sndbuffer = NULL;
@@ -296,7 +296,7 @@ void ics2115_reset()
 {
 	memset(chip, 0, sizeof(struct ics2115));
 
-	chip->rom = ICSSNDROM;
+	//chip->rom = ICSSNDROM;
 //	chip->timer[0].timer = timer_alloc_ptr(timer_cb_0, chip);
 //	chip->timer[1].timer = timer_alloc_ptr(timer_cb_1, chip);
 //	chip->stream = stream_create(0, 2, 33075, chip, update);
@@ -311,11 +311,7 @@ void ics2115_reset()
 		chip->ulaw[i] = v;
 	}
 	
-	if (nBurnSoundLen) {
-		nSoundDelta = ICS2115_FRAME_BUFFER_SIZE * 0x10000 / nBurnSoundLen;
-	} else {
-		nSoundDelta = ICS2115_FRAME_BUFFER_SIZE * 0x10000 / 184; // 11025Hz
-	}
+	nSoundDelta = ICS2115_FRAME_BUFFER_SIZE * 0x10000 / nBurnSoundLen;
 	
 	recalc_irq();
 	
@@ -357,35 +353,39 @@ void ics2115_update(int /*length*/)
 	for(int osc=0; osc<32; osc++)
 		if(chip->voice[osc].state & V_ON) {
 			unsigned int adr = (chip->voice[osc].addrh << 16) | chip->voice[osc].addrl;
-			unsigned int end = (chip->voice[osc].endh << 16) | (chip->voice[osc].endl << 8);
-			unsigned int loop = (chip->voice[osc].strth << 16) | (chip->voice[osc].strtl << 8);
+			unsigned int end= (chip->voice[osc].endh << 16) | (chip->voice[osc].endl << 8);
+			unsigned int loop= (chip->voice[osc].strth << 16) | (chip->voice[osc].strtl << 8);
 			unsigned int badr = (chip->voice[osc].saddr << 20) & 0xffffff;
 			unsigned char conf = chip->voice[osc].conf;
-			signed int vol = chip->voice[osc].volacc;
+			signed int vol= chip->voice[osc].volacc;
 			vol = (((vol & 0xff0)|0x1000)<<(vol>>12))>>12;
 			unsigned int delta = chip->voice[osc].fc << 2;
-
+			//unsigned offset=badr|(adr >> 12);
+			//ICSSNDROM=getBlock(nPGMSNDROMOffset+offset,(ICS2115_FRAME_BUFFER_SIZE*delta)>>12);
 			for(int i=0; i<ICS2115_FRAME_BUFFER_SIZE; i++) {
-				signed int v = chip->rom[badr|(adr >> 12)];
-				
-				if(conf & 1)v = chip->ulaw[v];
-				else		v = ((signed char)v) << 6;
-
-				v = (v*vol)>>(16+5);
-				
-				sndbuffer[i] += v;
-
-				adr += delta;
-				if(adr >= end) {
-					//if (ICS2115LOGERROR) logerror("ICS2115: KEYDONE %2d\n", osc);
-					adr -= (end-loop);
-					chip->voice[osc].state &= ~V_ON;
-					chip->voice[osc].state |= V_DONE;
-					rec_irq = 1;
-					break;
-				}
+					
+					signed int v =0;
+					ICSSNDROM=getBlockSmallData(nPGMSNDROMOffset+(badr|(adr >> 12)));
+					if(ICSSNDROM) 
+						v = *ICSSNDROM;
+					
+					if(conf & 1)v = chip->ulaw[v];
+					else		v = ((signed char)v) << 6;
+	
+					v = (v*vol)>>(16+5);
+					
+					sndbuffer[i] += v;
+	
+					adr += delta;
+					if(adr >= end) {
+						//if (ICS2115LOGERROR) logerror("ICS2115: KEYDONE %2d\n", osc);
+						adr -= (end-loop);
+						chip->voice[osc].state &= ~V_ON;
+						chip->voice[osc].state |= V_DONE;
+						rec_irq = 1;
+						break;
+					}
 			}
-			
 			chip->voice[osc].addrh = adr >> 16;
 			chip->voice[osc].addrl = adr;
 		}

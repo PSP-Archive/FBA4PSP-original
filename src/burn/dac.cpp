@@ -22,6 +22,7 @@ void DACUpdate(short* Buffer, int Length)
 		Buffer[1] += Out;
 		Buffer += 2;
 	}
+	
 }
 
 void DACWrite(UINT8 Data)
@@ -35,7 +36,8 @@ static void DACBuildVolTable()
 {
 	int i;
 	
-	for (i = 0;i < 256;i++) {
+	for (i = 0;i < 256;i++)
+	{
 		chip->UnsignedVolTable[i] = i * 0x101 / 2;
 		chip->SignedVolTable[i] = i * 0x101 - 0x8000;
 	}

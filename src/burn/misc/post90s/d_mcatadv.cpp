@@ -934,7 +934,7 @@ struct BurnDriver BurnDrvMcatadv = {
 	"mcatadv", NULL, NULL, "1993",
 	"Magical Cat Adventure\0", NULL, "Wintechno", "LINDA",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PLATFORM, 0,
 	NULL, mcatadvRomInfo, mcatadvRomName, McatadvInputInfo, McatadvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 224, 4, 3
@@ -972,7 +972,7 @@ struct BurnDriver BurnDrvMcatadvj = {
 	"mcatadvj", "mcatadv", NULL, "1993",
 	"Magical Cat Adventure (Japan)\0", NULL, "Wintechno", "LINDA",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_PLATFORM, 0,
 	NULL, mcatadvjRomInfo, mcatadvjRomName, McatadvInputInfo, McatadvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 224, 4, 3
@@ -1013,7 +1013,7 @@ struct BurnDriver BurnDrvCatt = {
 	"catt", "mcatadv", NULL, "1993",
 	"Catt (Japan)\0", NULL, "Wintechno", "LINDA",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_PLATFORM, 0,
 	NULL, cattRomInfo, cattRomName, McatadvInputInfo, McatadvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 224, 4, 3
@@ -1069,7 +1069,7 @@ struct BurnDriver BurnDrvNost = {
 	"nost", NULL, NULL, "1993",
 	"Nostradamus\0", NULL, "Face", "LINDA",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S, //GBF_VERSHOOT, 0,
 	NULL, nostRomInfo, nostRomName, NostInputInfo, NostDIPInfo,
 	NostInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 320, 3, 4
@@ -1107,7 +1107,7 @@ struct BurnDriver BurnDrvNostj = {
 	"nostj", "nost", NULL, "1993",
 	"Nostradamus (Japan)\0", NULL, "Face", "LINDA",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S, //GBF_VERSHOOT, 0,
 	NULL, nostjRomInfo, nostjRomName, NostInputInfo, NostDIPInfo,
 	NostInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 320, 3, 4
@@ -1145,7 +1145,7 @@ struct BurnDriver BurnDrvNostk = {
 	"nostk", "nost", NULL, "1993",
 	"Nostradamus (Korea)\0", NULL, "Face", "LINDA",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S, //GBF_VERSHOOT, 0,
 	NULL, nostkRomInfo, nostkRomName, NostInputInfo, NostDIPInfo,
 	NostInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 320, 3, 4

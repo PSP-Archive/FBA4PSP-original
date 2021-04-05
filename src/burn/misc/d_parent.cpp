@@ -49,7 +49,7 @@ struct BurnDriver BurnDrvBagman = {
 	"bagman", NULL, NULL, "1982",
 	"Bagman\0", NULL, "Valadon Automation", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	0, 2, HARDWARE_MISC_PRE90S, //GBF_MAZE, 0,
 	NULL, BagmanRomInfo, BagmanRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
@@ -86,7 +86,7 @@ struct BurnDriver BurnDrvCkong = {
 	"ckong", NULL, NULL, "1981",
 	"Crazy Kong Part II (set 1)\0", NULL, "Falcon", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	0, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, CkongRomInfo, CkongRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
@@ -119,7 +119,7 @@ struct BurnDriver BurnDrvDkongjr = {
 	"dkongjr", NULL, NULL, "1982",
 	"Donkey Kong Junior (US)\0", NULL, "Nintendo of America", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	0, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, DkongjrRomInfo, DkongjrRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
@@ -157,7 +157,7 @@ struct BurnDriverD BurnDrvEightballact = {
 	"8ballact", NULL, NULL, "1984",
 	"Eight Ball Action (DK conversion)\0", NULL, "Seatongrove Ltd (Magic Eletronics USA licence)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSMISC, 0,
+	0, 2, HARDWARE_MISC_PRE90S, //GBF_SPORTSMISC, 0,
 	NULL, EightballactRomInfo, EightballactRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
@@ -191,7 +191,7 @@ struct BurnDriver BurnDrvHunchbak = {
 	"hunchbak", NULL, NULL, "1983",
 	"Hunchback (set 1)\0", NULL, "Century Electronics", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	0, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, HunchbakRomInfo, HunchbakRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
@@ -225,7 +225,7 @@ struct BurnDriver BurnDrvHuncholy = {
 	"huncholy", NULL, NULL, "1984",
 	"Hunchback Olympic\0", NULL, "Seatongrove Ltd", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_PRE90S, GBF_SPORTSMISC, 0,
+	0, 2, HARDWARE_MISC_PRE90S, //GBF_SPORTSMISC, 0,
 	NULL, HuncholyRomInfo, HuncholyRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
@@ -257,7 +257,7 @@ struct BurnDriver BurnDrvLadybug = {
 	"ladybug", NULL, NULL, "1981",
 	"Lady Bug\0", NULL, "Universal", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	0, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, LadybugRomInfo, LadybugRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 208, 256, 3, 4
@@ -280,7 +280,7 @@ struct BurnDriverD BurnDrvManiacsq = {
 	"maniacsq", NULL, NULL, "1996",
 	"Maniac Square (unprotected)\0", NULL, "Gaelco", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	0, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, ManiacsqRomInfo, ManiacsqRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
@@ -312,7 +312,7 @@ struct BurnDriver BurnDrvPhoenix = {
 	"phoenix", NULL, NULL, "1980",
 	"Phoenix (Amstar)\0", NULL, "Amstar", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	0, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, PhoenixRomInfo, PhoenixRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 208, 256, 3, 4
@@ -339,7 +339,7 @@ struct BurnDriver BurnDrvTumblep = {
 	"tumblep", NULL, NULL, "1991",
 	"Tumble Pop (World)\0", NULL, "Data East Corporation", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	0, 2, HARDWARE_MISC_POST90S, //GBF_PLATFORM, 0,
 	NULL, TumblepRomInfo, TumblepRomName, ParentInputInfo, NULL,
 	ParentInit, ParentExit, NULL, NULL, NULL,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3

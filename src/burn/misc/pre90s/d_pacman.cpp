@@ -2134,7 +2134,7 @@ void __fastcall pacman_write_byte(unsigned short a, unsigned char data)
 
 		case 0x5002:// nop
 		case 0x5007:// coin counter
-		case 0x50c0:// wa1tchdog_reset_w
+		case 0x50c0:// watchdog_reset_w
 		break;
 	}
 }
@@ -2255,7 +2255,7 @@ static int DrvDoReset()
 	ZetOpen(0);
 	ZetReset();
 	ZetClose();
-	
+
 	return 0;
 }
 
@@ -2886,7 +2886,7 @@ struct BurnDriver BurnDrvpuckman = {
 	"puckman", NULL, NULL, "1980",
 	"PuckMan (Japan set 1, Probably Bootleg)\0", NULL, "Namco", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, ////GBF_MAZE, 0,
 	NULL, puckmanRomInfo, puckmanRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -2918,7 +2918,7 @@ struct BurnDriver BurnDrvpuckmanf = {
 	"puckmanf", "puckman", NULL, "1980",
 	"PuckMan (Japan set 1 with speedup hack)\0", NULL, "Namco", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, puckmanfRomInfo, puckmanfRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -2950,7 +2950,7 @@ struct BurnDriver BurnDrvpuckmod = {
 	"puckmod", "puckman", NULL, "1981",
 	"PuckMan (Japan set 3)\0", NULL, "Namco", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, puckmodRomInfo, puckmodRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -2984,7 +2984,7 @@ struct BurnDriver BurnDrvpuckmana = {
 	"puckmana", "puckman", NULL, "1981",
 	"PuckMan (Japan set 2)\0", NULL, "Namco", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, puckmanaRomInfo, puckmanaRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3016,7 +3016,7 @@ struct BurnDriver BurnDrvpacman = {
 	"pacman", "puckman", NULL, "1980",
 	"Pac-Man (Midway)\0", NULL, "[Namco] (Midway license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, pacmanRomInfo, pacmanRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3048,7 +3048,7 @@ struct BurnDriver BurnDrvpacmanf = {
 	"pacmanf", "puckman", NULL, "1980",
 	"Pac-Man (Midway, with speedup hack)\0", NULL, "[Namco] (Midway license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, pacmanfRomInfo, pacmanfRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3080,7 +3080,7 @@ struct BurnDriver BurnDrvhangly = {
 	"hangly", "puckman", NULL, "1981",
 	"Hangly-Man (set 1)\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, hanglyRomInfo, hanglyRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3114,7 +3114,7 @@ struct BurnDriver BurnDrvhangly2 = {
 	"hangly2", "puckman", NULL, "1981",
 	"Hangly-Man (set 2)\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, hangly2RomInfo, hangly2RomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3152,7 +3152,7 @@ struct BurnDriver BurnDrvhangly3 = {
 	"hangly3", "puckman", NULL, "1981",
 	"Hangly-Man (set 3)\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, hangly3RomInfo, hangly3RomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3184,7 +3184,7 @@ struct BurnDriver BurnDrvpacmod = {
 	"pacmod", "puckman", NULL, "1981",
 	"Pac-Man (Midway, harder)\0", NULL, "[Namco] (Midway license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, pacmodRomInfo, pacmodRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3218,7 +3218,7 @@ struct BurnDriver BurnDrvpuckmanh = {
 	"puckmanh", "puckman", NULL, "1981",
 	"Puckman (Falcom?)\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, puckmanhRomInfo, puckmanhRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3250,7 +3250,7 @@ struct BurnDriver BurnDrvnewpuckx = {
 	"newpuckx", "puckman", NULL, "1980",
 	"New Puck-X\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, newpuckxRomInfo, newpuckxRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3288,7 +3288,7 @@ struct BurnDriver BurnDrvpacheart = {
 	"pacheart", "puckman", NULL, "1981",
 	"Pac-Man (Hearts)\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, pacheartRomInfo, pacheartRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3326,7 +3326,7 @@ struct BurnDriver BurnDrvjoyman = {
 	"joyman", "puckman", NULL, "1982",
 	"Joyman\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, joymanRomInfo, joymanRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3364,7 +3364,7 @@ struct BurnDriver BurnDrvctrpllrp = {
 	"ctrpllrp", "puckman", NULL, "1982",
 	"Caterpillar Pacman Hack\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, ctrpllrpRomInfo, ctrpllrpRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3448,7 +3448,7 @@ struct BurnDriver BurnDrvpacplus = {
 	"pacplus", NULL, NULL, "1982",
 	"Pac-Man Plus\0", NULL, "[Namco] (Midway license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, pacplusRomInfo, pacplusRomName, DrvInputInfo, DrvDIPInfo,
 	pacplusInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3487,7 +3487,7 @@ struct BurnDriver BurnDrvnewpuc2 = {
 	"newpuc2", "puckman", NULL, "1980",
 	"Newpuc2\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, newpuc2RomInfo, newpuc2RomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3525,7 +3525,7 @@ struct BurnDriver BurnDrvnewpuc2b = {
 	"newpuc2b", "puckman", NULL, "1980",
 	"Newpuc2b\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, newpuc2bRomInfo, newpuc2bRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3629,7 +3629,7 @@ struct BurnDriver BurnDrvmspacman = {
 	"mspacman", NULL, NULL, "1980",
 	"MS Pacman\0", NULL, "Namco", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, mspacmanRomInfo, mspacmanRomName, DrvInputInfo, mspacmanDIPInfo,
 	mspacmanInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3664,7 +3664,7 @@ struct BurnDriver BurnDrvmspacmnf = {
 	"mspacmnf", "mspacman", NULL, "1980",
 	"Ms. Pac-Man (with speedup hack)\0", NULL, "Midway", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, mspacmnfRomInfo, mspacmnfRomName, DrvInputInfo, mspacmanDIPInfo,
 	mspacmanInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3699,7 +3699,7 @@ struct BurnDriver BurnDrvmspacmat = {
 	"mspacmat", "mspacman", NULL, "1980",
 	"Ms. Pac Attack\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, mspacmatRomInfo, mspacmatRomName, DrvInputInfo, mspacmanDIPInfo,
 	mspacmanInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3733,7 +3733,7 @@ struct BurnDriver BurnDrvmspacmab = {
 	"mspacmab", "mspacman", NULL, "1981",
 	"MS Pacman (bootleg)\0", NULL, "Namco", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, mspacmabRomInfo, mspacmabRomName, DrvInputInfo, mspacmanDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3789,7 +3789,7 @@ struct BurnDriver BurnDrvmspacmbe = {
 	"mspacmbe", "mspacman", NULL, "1981",
 	"Ms. Pac-Man (bootleg, (encrypted))\0", NULL, "bootleg", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, mspacmbeRomInfo, mspacmbeRomName, DrvInputInfo, mspacmanDIPInfo,
 	mspacmbeInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3824,7 +3824,7 @@ struct BurnDriver BurnDrvpacgal = {
 	"pacgal", "mspacman", NULL, "1981",
 	"Pac-Gal\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, pacgalRomInfo, pacgalRomName, DrvInputInfo, mspacmanDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3858,7 +3858,7 @@ struct BurnDriver BurnDrvmspacpls = {
 	"mspacpls", "mspacman", NULL, "1981",
 	"Ms. Pac-Man Plus\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, mspacplsRomInfo, mspacplsRomName, DrvInputInfo, mspacmanDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3920,7 +3920,7 @@ struct BurnDriver BurnDrvmschamp = {
 	"mschamp", "mspacman", NULL, "1995",
 	"Ms. Pacman Champion Edition / Super Zola Pac Gal\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, mschampRomInfo, mschampRomName, mschampInputInfo, mschampDIPInfo,
 	mschampInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -3988,7 +3988,7 @@ struct BurnDriver BurnDrvcrush = {
 	"crush", NULL, NULL, "1981",
 	"Crush Roller (Kural Samno)\0", NULL, "Kural Samno Electric", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, crushRomInfo, crushRomName, DrvInputInfo, maketraxDIPInfo,
 	crushInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4021,7 +4021,7 @@ struct BurnDriver BurnDrvcrushbl = {
 	"crushbl", "crush", NULL, "1981",
 	"Crush Roller (bootleg)\0", NULL, "Kural Samno Electric", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, crushblRomInfo, crushblRomName, DrvInputInfo, maketraxDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4059,7 +4059,7 @@ struct BurnDriver BurnDrvcrush2 = {
 	"crush2", "crush", NULL, "1981",
 	"Crush Roller (Kural Esco - bootleg?)\0", NULL, "Kural Esco Electric", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, crush2RomInfo, crush2RomName, DrvInputInfo, maketraxDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4131,7 +4131,7 @@ struct BurnDriver BurnDrvcrush3 = {
 	"crush3", "crush", NULL, "1981",
 	"Crush Roller (Kural - bootleg?)\0", NULL, "Kural Electric", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, crush3RomInfo, crush3RomName, DrvInputInfo, maketraxDIPInfo,
 	crush3Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4182,7 +4182,7 @@ struct BurnDriver BurnDrvcrush4 = {
 	"crush4", "crush", NULL, "1981",
 	"Crush Roller (Kural TWT)\0", NULL, "Kural TWT", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, crush4RomInfo, crush4RomName, DrvInputInfo, maketraxDIPInfo,
 	crush4Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4220,7 +4220,7 @@ struct BurnDriverD BurnDrvpaintrlr = {
 	"paintrlr", "crush", NULL, "1981",
 	"Paint Roller\0", NULL, "bootleg", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, paintrlrRomInfo, paintrlrRomName, DrvInputInfo, mbrushDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4259,7 +4259,7 @@ struct BurnDriver BurnDrvcrushs = {
 	"crushs", "crush", NULL, "19??",
 	"Crush Roller (Sidam bootleg)\0", NULL, "[Kural] (Sidam bootleg)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, crushsRomInfo, crushsRomName, DrvInputInfo, crushsDIPInfo,
 	crushsInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4343,7 +4343,7 @@ struct BurnDriver BurnDrvmaketrax = {
 	"maketrax", "crush", NULL, "1981",
 	"Make Trax (set 1)\0", NULL, "[Kural] (Williams license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, maketraxRomInfo, maketraxRomName, DrvInputInfo, maketraxDIPInfo,
 	maketraxInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4375,7 +4375,7 @@ struct BurnDriver BurnDrvmaketrxb = {
 	"maketrxb", "crush", NULL, "1981",
 	"Make Trax (set 2)\0", NULL, "[Kural] (Williams license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, maketrxbRomInfo, maketrxbRomName, DrvInputInfo, maketraxDIPInfo,
 	maketraxInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4424,7 +4424,7 @@ struct BurnDriver BurnDrvmbrush = {
 	"mbrush", "crush", NULL, "1981",
 	"Magic Brush\0", NULL, "bootleg", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, mbrushRomInfo, mbrushRomName, DrvInputInfo, mbrushDIPInfo,
 	mbrushInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4539,7 +4539,7 @@ struct BurnDriver BurnDrvkorosuke = {
 	"korosuke", "crush", NULL, "1981",
 	"Korosuke Roller\0", NULL, "Kural Electric", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, korosukeRomInfo, korosukeRomName, korosukeInputInfo, korosukeDIPInfo,
 	korosukeInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4578,7 +4578,7 @@ struct BurnDriver BurnDrveyes = {
 	"eyes", NULL, NULL, "1982",
 	"Eyes (Digitrex Techstar)\0", NULL, "Digitrex Techstar (Rock-ola license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, eyesRomInfo, eyesRomName, eyesInputInfo, eyesDIPInfo,
 	eyesInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4610,7 +4610,7 @@ struct BurnDriver BurnDrveyes2 = {
 	"eyes2", "eyes", NULL, "1982",
 	"Eyes (Techstar)\0", NULL, "Techstar (Rock-ola license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, eyes2RomInfo, eyes2RomName, eyesInputInfo, eyesDIPInfo,
 	eyesInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4650,7 +4650,7 @@ struct BurnDriver BurnDrveyeszac = {
 	"eyeszac", "eyes", NULL, "1982",
 	"Eyes (Zaccaria)\0", NULL, "Zaccaria / bootleg", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, eyeszacRomInfo, eyeszacRomName, eyesInputInfo, eyesDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4682,7 +4682,7 @@ struct BurnDriver BurnDrvmrtnt = {
 	"mrtnt", NULL, NULL, "1982",
 	"Mr. TNT\0", NULL, "Telko", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, mrtntRomInfo, mrtntRomName, eyesInputInfo, mrtntDIPInfo,
 	eyesInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4720,7 +4720,7 @@ struct BurnDriver BurnDrvgorkans = {
 	"gorkans", "mrtnt", NULL, "1983",
 	"Gorkans\0", NULL, "Techstar", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, gorkansRomInfo, gorkansRomName, eyesInputInfo, mrtntDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4758,7 +4758,7 @@ struct BurnDriver BurnDrveggor = {
 	"eggor", NULL, NULL, "1982",
 	"Eggor\0", NULL, "Telko", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, eggorRomInfo, eggorRomName, eyesInputInfo, mrtntDIPInfo,
 	eyesInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4804,7 +4804,7 @@ struct BurnDriver BurnDrvpiranha = {
 	"piranha", "puckman", NULL, "1981",
 	"Piranha\0", NULL, "GL (US Billiards License)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, piranhaRomInfo, piranhaRomName, DrvInputInfo, mspacmanDIPInfo,
 	piranhaInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4842,7 +4842,7 @@ struct BurnDriver BurnDrvpiranhao = {
 	"piranhao", "puckman", NULL, "1981",
 	"Piranha (older)\0", NULL, "GL (US Billiards License)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, piranhaoRomInfo, piranhaoRomName, DrvInputInfo, mspacmanDIPInfo,
 	piranhaInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4876,7 +4876,7 @@ struct BurnDriver BurnDrvpiranhah = {
 	"piranhah", "puckman", NULL, "1981",
 	"Piranha (hack)\0", NULL, "hack", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, piranhahRomInfo, piranhahRomName, DrvInputInfo, mspacmanDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4914,7 +4914,7 @@ struct BurnDriver BurnDrvabscam = {
 	"abscam", "puckman", NULL, "1981",
 	"Abscam\0", NULL, "GL (US Billiards License)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, abscamRomInfo, abscamRomName, DrvInputInfo, mspacmanDIPInfo,
 	piranhaInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -4997,7 +4997,7 @@ struct BurnDriver BurnDrvjumpshot = {
 	"jumpshot", NULL, NULL, "1985",
 	"Jump Shot\0", NULL, "Bally Midway", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_SPORTSMISC, 0,
 	NULL, jumpshotRomInfo, jumpshotRomName, jumpshotInputInfo, jumpshotDIPInfo,
 	jumpshotInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5029,7 +5029,7 @@ struct BurnDriver BurnDrvjumpshtp = {
 	"jumpshtp", "jumpshot", NULL, "1985",
 	"Jump Shot Engineering Sample\0", NULL, "Bally Midway", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_SPORTSMISC, 0,
 	NULL, jumpshtpRomInfo, jumpshtpRomName, jumpshotInputInfo, jumpshtpDIPInfo,
 	jumpshotInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5068,7 +5068,7 @@ struct BurnDriver BurnDrvshootbul = {
 	"shootbul", NULL, NULL, "1985",
 	"Shoot the Bull\0", NULL, "Bally Midway", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_SPORTSMISC, 0,
 	NULL, shootbulRomInfo, shootbulRomName, shootbulInputInfo, shootbulDIPInfo,
 	shootbulInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5140,7 +5140,7 @@ struct BurnDriver BurnDrvcannonbp = {
 	"cannonbp", NULL, NULL, "198?",
 	"Cannon Ball (Pacman Hardware)\0", "wrong colors", "Novomatic", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_BREAKOUT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_BREAKOUT, 0,
 	NULL, cannonbpRomInfo, cannonbpRomName, cannonbpInputInfo, cannonbpDIPInfo,
 	cannonbpInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5193,7 +5193,7 @@ struct BurnDriver BurnDrvwoodpek = {
 	"woodpek", NULL, NULL, "1981",
 	"Woodpecker (set 1)\0", NULL, "Amenip (Palcom Queen River)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, woodpekRomInfo, woodpekRomName, woodpekInputInfo, woodpekDIPInfo,
 	woodpekInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5226,7 +5226,7 @@ struct BurnDriverD BurnDrvwoodpeka = {
 	"woodpeka", "woodpek", NULL, "1981",
 	"Woodpecker (set 2)\0", NULL, "Amenip (Palcom Queen River)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_CLONE, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, woodpekaRomInfo, woodpekaRomName, woodpekInputInfo, woodpekDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5260,7 +5260,7 @@ struct BurnDriver BurnDrvlizwiz = {
 	"lizwiz", NULL, NULL, "1985",
 	"Lizard Wizard\0", NULL, "Techstar (Sunn license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_SHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_SHOOT, 0,
 	NULL, lizwizRomInfo, lizwizRomName, DrvInputInfo, lizwizDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5333,7 +5333,7 @@ struct BurnDriver BurnDrvponpoko = {
 	"ponpoko", NULL, NULL, "1982",
 	"Ponpoko\0", NULL, "Sigma Enterprises Inc.", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, ponpokoRomInfo, ponpokoRomName, ponpokoInputInfo, ponpokoDIPInfo,
 	ponpokoInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	288, 224, 4, 3
@@ -5369,7 +5369,7 @@ struct BurnDriver BurnDrvponpokov = {
 	"ponpokov", "ponpoko", NULL, "1982",
 	"Ponpoko (Venture Line)\0", NULL, "Sigma Enterprises Inc. (Venture Line license)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, ponpokovRomInfo, ponpokovRomName, ponpokoInputInfo, ponpokoDIPInfo,
 	ponpokoInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	288, 224, 4, 3
@@ -5447,7 +5447,7 @@ struct BurnDriver BurnDrvtheglobp = {
 	"theglobp", "suprglob", NULL, "1983",
 	"The Glob (Pac-Man hardware)\0", NULL, "Epos Corporation", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, theglobpRomInfo, theglobpRomName, theglobpInputInfo, theglobpDIPInfo,
 	theglobpInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5477,7 +5477,7 @@ struct BurnDriver BurnDrvsprglobp = {
 	"sprglobp", "suprglob", NULL, "1983",
 	"Super Glob (Pac-Man hardware)\0", NULL, "Epos Corporation", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, sprglobpRomInfo, sprglobpRomName, theglobpInputInfo, theglobpDIPInfo,
 	theglobpInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5508,7 +5508,7 @@ struct BurnDriver BurnDrvsprglbpg = {
 	"sprglbpg", "suprglob", NULL, "1983",
 	"Super Glob (Pac-Man hardware) German\0", NULL, "bootleg", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, sprglbpgRomInfo, sprglbpgRomName, theglobpInputInfo, theglobpDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5538,7 +5538,7 @@ struct BurnDriver BurnDrvbeastf = {
 	"beastf", "suprglob", NULL, "1984",
 	"Beastie Feastie\0", NULL, "Epos Corporation", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, beastfRomInfo, beastfRomName, theglobpInputInfo, theglobpDIPInfo,
 	theglobpInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5587,7 +5587,7 @@ struct BurnDriver BurnDrvvanvan = {
 	"vanvan", NULL, NULL, "1983",
 	"Van-Van Car\0", NULL, "Sanritsu", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, vanvanRomInfo, vanvanRomName, vanvanInputInfo, vanvanDIPInfo,
 	vanvanInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5619,7 +5619,7 @@ struct BurnDriver BurnDrvvanvank = {
 	"vanvank", "vanvan", NULL, "1983",
 	"Van-Van Car (Karateco)\0", NULL, "Karateco", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, vanvankRomInfo, vanvankRomName, vanvankInputInfo, vanvanDIPInfo,
 	vanvanInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5651,7 +5651,7 @@ struct BurnDriver BurnDrvvanvanb = {
 	"vanvanb", "vanvan", NULL, "1983",
 	"Van-Van Car (set 3)\0", NULL, "Karateco", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, vanvanbRomInfo, vanvanbRomName, vanvankInputInfo, vanvanDIPInfo,
 	vanvanInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5696,7 +5696,7 @@ struct BurnDriver BurnDrvnmouse = {
 	"nmouse", NULL, NULL, "1981",
 	"Naughty Mouse (set 1)\0", NULL, "Amenip (Palcom Queen River)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, nmouseRomInfo, nmouseRomName, DrvInputInfo, nmouseDIPInfo,
 	nmouseInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5734,7 +5734,7 @@ struct BurnDriver BurnDrvnmouseb = {
 	"nmouseb", "nmouse", NULL, "1981",
 	"Naughty Mouse (set 2)\0", NULL, "Amenip Nova Games Ltd.", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_PLATFORM, 0,
 	NULL, nmousebRomInfo, nmousebRomName, DrvInputInfo, nmouseDIPInfo,
 	nmouseInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5776,7 +5776,7 @@ struct BurnDriver BurnDrvdremshpr = {
 	"dremshpr", NULL, NULL, "1982",
 	"Dream Shopper\0", NULL, "Sanritsu", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_PUZZLE, 0,
 	NULL, dremshprRomInfo, dremshprRomName, dremshprInputInfo, dremshprDIPInfo,
 	dremshprInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5825,7 +5825,7 @@ struct BurnDriver BurnDrvbwcasino = {
 	"bwcasino", NULL, NULL, "1983",
 	"Boardwalk Casino\0", NULL, "EPOS Corporation", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_CASINO, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_CASINO, 0,
 	NULL, bwcasinoRomInfo, bwcasinoRomName, bwcasinoInputInfo, bwcasinoDIPInfo,
 	acityaInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5854,7 +5854,7 @@ struct BurnDriver BurnDrvacitya = {
 	"acitya", "bwcasino", NULL, "1983",
 	"Atlantic City Action\0", NULL, "EPOS Corporation", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_CASINO, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_CASINO, 0,
 	NULL, acityaRomInfo, acityaRomName, acityaInputInfo, acityaDIPInfo,
 	acityaInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5918,7 +5918,7 @@ struct BurnDriver BurnDrvbigbucks = {
 	"bigbucks", NULL, NULL, "1986",
 	"Big Bucks\0", NULL, "Dynasoft Inc.", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_QUIZ, 0,
 	NULL, bigbucksRomInfo, bigbucksRomName, bigbucksInputInfo, bigbucksDIPInfo,
 	bigbucksInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -5990,7 +5990,7 @@ struct BurnDriver BurnDrvrocktrv2 = {
 	"rocktrv2", NULL, NULL, "1986",
 	"MTV Rock-N-Roll Trivia (Part 2)\0", NULL, "Triumph Software Inc.", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_PACMAN, //GBF_QUIZ, 0,
 	NULL, rocktrv2RomInfo, rocktrv2RomName, rocktrv2InputInfo, rocktrv2DIPInfo,
 	rocktrv2Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -6043,7 +6043,7 @@ struct BurnDriver BurnDrvalibaba = {
 	"alibaba", NULL, NULL, "1982",
 	"Ali Baba and 40 Thieves\0", NULL, "Sega", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_MAZE, 0,
 	NULL, alibabaRomInfo, alibabaRomName, alibabaInputInfo, alibabaDIPInfo,
 	alibabaInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -6075,11 +6075,11 @@ static int s2650Init()
 	return 1;
 }
 
-struct BurnDriver BurnDrvdrivfrcp = {
+struct BurnDriverD BurnDrvdrivfrcp = {
 	"drivfrcp", NULL, NULL, "1984",
 	"Driving Force (Pac-Man conversion)\0", NULL, "Shinkai Inc. (Magic Eletronics Inc. licence)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_PACMAN, GBF_RACING, 0,
+	0, 2, HARDWARE_PACMAN, //GBF_RACING, 0,
 	NULL, drivfrcpRomInfo, drivfrcpRomName, DrvInputInfo, NULL,
 	s2650Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -6107,7 +6107,7 @@ struct BurnDriverD BurnDrvporky = {
 	"porky", NULL, NULL, "1985",
 	"Porky\0", NULL, "Shinkai Inc. (Magic Eletronics Inc. licence)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	0, 2, HARDWARE_PACMAN, GBF_MISC, 0,
+	0, 2, HARDWARE_PACMAN, //GBF_MISC, 0,
 	NULL, porkyRomInfo, porkyRomName, DrvInputInfo, NULL,
 	s2650Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4
@@ -6134,7 +6134,7 @@ struct BurnDriverD BurnDrvbpm8 = {
 	"8bpm", "8ballact", NULL, "1985",
 	"Eight Ball Action (Pac-Man conversion)\0", NULL, "Seatongrove Ltd (Magic Eletronics USA licence)", "Pac-man",
 	NULL, NULL, NULL, NULL,
-	0 | BDF_CLONE, 2, HARDWARE_PACMAN, GBF_SPORTSMISC, 0,
+	0 | BDF_CLONE, 2, HARDWARE_PACMAN, //GBF_SPORTSMISC, 0,
 	NULL, bpm8RomInfo, bpm8RomName, DrvInputInfo, NULL,
 	s2650Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 288, 3, 4

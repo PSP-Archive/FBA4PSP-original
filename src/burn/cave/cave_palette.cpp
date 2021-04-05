@@ -29,6 +29,11 @@ int CavePalExit()
 
 inline static unsigned int CalcCol(unsigned short nColour)
 {
+#ifdef BUILD_PSP
+
+	return ((nColour & 0x03E0) >> 5) | ((nColour & 0x7C00) >> 4) | ((nColour & 0x001F) << 11);
+
+#else
 	int r, g, b;
 
 	r = (nColour & 0x03E0) >> 2;	// Red
@@ -39,6 +44,7 @@ inline static unsigned int CalcCol(unsigned short nColour)
 	b |= b >> 5;
 
 	return BurnHighCol(r, g, b, 0);
+#endif
 }
 
 int CavePalUpdate4Bit(int nOffset, int nNumPalettes)

@@ -43,6 +43,7 @@ int CpsObjInit()
 	if (ObjMem == NULL) {
 		return 1;
 	}
+	memset(ObjMem, 0, (nMax << 3) * nFrameCount);
 
 	// Set up the frame buffers
 	for (int i = 0; i < nFrameCount; i++) {
@@ -128,7 +129,7 @@ int CpsObjGet()
 			}
 		} else {
 			if (Dinopic) {
-				if (ps[1] == 0x8000) {													// end of sprite list
+				if (ps[1] == 0xff00) {													// end of sprite list
 					break;
 				}
 			} else {
@@ -317,7 +318,7 @@ int Cps2ObjDraw(int nLevelFrom, int nLevelTo)
 		if (a & 0x80) {														// marvel vs capcom ending sprite off-set
 			x += CpsSaveFrg[0][0x9];
 		}
-		
+
 		// CPS2 coords are 10 bit signed (-512 to 511)
 		x &= 0x03FF; x ^= 0x200; x -= 0x200;
 		y &= 0x03FF; y ^= 0x200; y -= 0x200;
@@ -346,7 +347,7 @@ int Cps2ObjDraw(int nLevelFrom, int nLevelTo)
 
 #endif
 		n |= (ps[1] & 0x6000) << 3;	// high bits of address
-		
+
 		// Find the palette for the tiles on this sprite
 		CpstPal = CpsObjPal + ((a & 0x1F) << 4);
 
@@ -388,7 +389,7 @@ int Cps2ObjDraw(int nLevelFrom, int nLevelTo)
 
 //				nCpstTile = n + (dy << 4) + dx;								// normal version
 				nCpstTile = (n & ~0x0F) + (dy << 4) + ((n + dx) & 0x0F);	// pgear fix
-				nCpstTile <<= 7;						// Find real tile address					
+				nCpstTile <<= 7;											// Find real tile address
 
 				pCpstOne();
 			}

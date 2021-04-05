@@ -588,7 +588,7 @@ struct BurnDriver BurnDrvGumbo = {
 	"gumbo", NULL, NULL, "1994",
 	"Gumbo\0", NULL, "Min Corp.", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, gumboRomInfo, gumboRomName, GumboInputInfo, GumboDIPInfo,
 	GumboInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 224, 4, 3
@@ -617,7 +617,7 @@ struct BurnDriver BurnDrvMspuzzlg = {
 	"mspuzzlg", "gumbo", NULL, "1994",
 	"Miss Puzzle (Clone of Gumbo)\0", NULL, "Min Corp.", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, mspuzzlgRomInfo, mspuzzlgRomName, GumboInputInfo, GumboDIPInfo,
 	GumboInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 224, 4, 3
@@ -646,7 +646,7 @@ struct BurnDriver BurnDrvMsbingo = {
 	"msbingo", NULL, NULL, "1994",
 	"Miss Bingo\0", NULL, "Min Corp.", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, msbingoRomInfo, msbingoRomName, GumboInputInfo, MsbingoDIPInfo,
 	MspuzzleInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 224, 4, 3
@@ -677,7 +677,7 @@ struct BurnDriver BurnDrvMspuzzle = {
 	"mspuzzle", NULL, NULL, "1994",
 	"Miss Puzzle\0", NULL, "Min Corp.", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, mspuzzleRomInfo, mspuzzleRomName, GumboInputInfo, MspuzzleDIPInfo,
 	MspuzzleInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 320, 3, 4
@@ -708,7 +708,7 @@ struct BurnDriver BurnDrvMspuzzlen = {
 	"mspuzzlen", "mspuzzle", NULL, "1994",
 	"Miss Puzzle (Nudes)\0", NULL, "Min Corp.", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, mspuzzlenRomInfo, mspuzzlenRomName, GumboInputInfo, MspuzzleDIPInfo,
 	MspuzzleInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 320, 3, 4
@@ -737,7 +737,7 @@ struct BurnDriver BurnDrvDblpoint = {
 	"dblpoint", NULL, NULL, "1995",
 	"Double Point\0", NULL, "Min Corp.", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, dblpointRomInfo, dblpointRomName, DblpointInputInfo, DblpointDIPInfo,
 	GumboInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 224, 4, 3
@@ -766,7 +766,7 @@ struct BurnDriver BurnDrvDblpoind = {
 	"dblpoind", "dblpoint", NULL, "1995",
 	"Double Point (Dong Bang Electron, bootleg?)\0", NULL, "Dong Bang Electron", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, dblpoindRomInfo, dblpoindRomName, DblpointInputInfo, DblpointDIPInfo,
 	GumboInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 224, 4, 3

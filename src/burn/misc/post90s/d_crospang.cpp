@@ -701,7 +701,7 @@ struct BurnDriver BurnDrvCrospang = {
 	"crospang", NULL, NULL, "1998",
 	"Cross Pang\0", NULL, "F2 System", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, crospangRomInfo, crospangRomName, CrospangInputInfo, CrospangDIPInfo,
 	crospangInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 240, 4, 3
@@ -739,7 +739,7 @@ struct BurnDriver BurnDrvHeuksun = {
 	"heuksun", NULL, NULL, "199?",
 	"Heuk Sun Baek Sa (Korea)\0", NULL, "Oksan / F2 System", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_MISC, 0,
 	NULL, heuksunRomInfo, heuksunRomName, CrospangInputInfo, HeuksunDIPInfo,
 	heuksunInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 240, 4, 3
@@ -781,7 +781,7 @@ struct BurnDriver BurnDrvBestri = {
 	"bestri", NULL, NULL, "199?",
 	"Bestri (Korea)\0", NULL, "F2 System", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_MINIGAMES, 0,
 	NULL, bestriRomInfo, bestriRomName, CrospangInputInfo, BestriDIPInfo,
 	bestriInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 240, 4, 3

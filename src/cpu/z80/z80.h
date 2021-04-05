@@ -6,6 +6,7 @@
 #define Z80_ASSERT_LINE		1
 #define Z80_INPUT_LINE_NMI	32
 
+
 typedef struct
 {
 	PAIR	prvpc,pc,sp,af,bc,de,hl,ix,iy;

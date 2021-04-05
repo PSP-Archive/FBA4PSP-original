@@ -81,22 +81,26 @@ static void UpdateIRQStatus()
 
 unsigned char __fastcall metmqstrReadByte(unsigned int sekAddress)
 {
+/*
 	switch (sekAddress) {
 		default: {
  			bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %x\n"), sekAddress);
 		}
 	}
+*/
 	return 0;
 }
 
 void __fastcall metmqstrWriteByte(unsigned int sekAddress, unsigned char byteValue)
 {
+/*
 	switch (sekAddress) {
 		default: {
 			bprintf(PRINT_NORMAL, _T("Attempt to write byte value %x to location %x\n"), byteValue, sekAddress);
 
 		}
 	}
+*/
 }
 
 unsigned short __fastcall metmqstrReadWord(unsigned int sekAddress)
@@ -138,10 +142,11 @@ unsigned short __fastcall metmqstrReadWord(unsigned int sekAddress)
 			return DrvInput[0] ^ 0xFFFF;
 		case 0xc80002:
 			return DrvInput[1] ^ 0xF7FF | (EEPROMRead() << 11);		
-		
+		/*
 		default: {
  			bprintf(PRINT_NORMAL, _T("Attempt to read word value of location %x\n"), sekAddress);
 		}
+		*/
 	}
 	return 0;
 }
@@ -209,11 +214,11 @@ void __fastcall metmqstrWriteWord(unsigned int sekAddress, unsigned short wordVa
 			wordValue >>= 8;
 			EEPROMWrite(wordValue & 0x04, wordValue & 0x02, wordValue & 0x08);
 			break;
-
+/*
 		default: {
 			bprintf(PRINT_NORMAL, _T("Attempt to write word value %x to location %x\n"), wordValue, sekAddress);
-
 		}
+*/
 	}
 }
 
@@ -236,10 +241,11 @@ unsigned char __fastcall metmqstrZIn(unsigned short nAddress)
 		
 		case 0x51:
 			return BurnYM2151ReadStatus();
-			
+		/*
 		default: {
 			bprintf(PRINT_NORMAL, _T("Z80 Port Read %x\n"), nAddress);
 		}
+		*/
 	}
 
 	return 0;
@@ -292,31 +298,35 @@ void __fastcall metmqstrZOut(unsigned short nAddress, unsigned char nValue)
 			memcpy(MSM6295ROM + 0x120000, MSM6295ROMSrc2 + 0x20000 * DrvOkiBank2_2, 0x20000);
 			return;
 		}
-
+/*
 		default: {
 			bprintf(PRINT_NORMAL, _T("Z80 Port Write %x, %x\n"), nAddress, nValue);
 		}
+*/
 	}
 }
 
 unsigned char __fastcall metmqstrZRead(unsigned short a)
 {
+/*
 	switch (a) {
 		default: {
 			bprintf(PRINT_NORMAL, _T("Z80 Read => %04X\n"), a);
 		}
 	}
-
+*/
 	return 0;
 }
 
 void __fastcall metmqstrZWrite(unsigned short a, unsigned char d)
 {
+/*
 	switch (a) {
 		default: {
 			bprintf(PRINT_NORMAL, _T("Z80 Write => %04X, %02X\n"), a, d);
 		}
 	}
+*/
 }
 
 static int DrvExit()
@@ -344,7 +354,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+destroyUniCache();
 	return 0;
 }
 
@@ -416,6 +426,8 @@ static int DrvFrame()
 	int nSoundBufferPos = 0;
 
 	int nCyclesSegment;
+
+	
 
 	if (DrvReset) {														// Reset machine
 		DrvDoReset();
@@ -529,10 +541,11 @@ static int MemIndex()
 	unsigned char* Next; Next = Mem;
 	Rom01			= Next; Next += 0x180000;		// 68K program
 	RomZ80			= Next; Next += 0x040000;
-	CaveSpriteROM	= Next; Next += 0x1000000;
+/*	CaveSpriteROM	= Next; Next += 0x1000000;
 	CaveTileROM[0]	= Next; Next += 0x400000;		// Tile layer 0
 	CaveTileROM[1]	= Next; Next += 0x400000;		// Tile layer 1
 	CaveTileROM[2]	= Next; Next += 0x400000;		// Tile layer 2
+*/
 	MSM6295ROM		= Next; Next += 0x140000;
 	MSM6295ROMSrc1		= Next; Next += 0x200000;
 	MSM6295ROMSrc2		= Next; Next += 0x200000;
@@ -583,7 +596,7 @@ static int LoadRoms()
 	BurnLoadRom(Rom01 + 0x100000, 2, 1);
 	
 	BurnLoadRom(RomZ80, 3, 1);
-
+/*
 	BurnLoadRom(CaveSpriteROM + 0x000000, 4, 1);
 	BurnLoadRom(CaveSpriteROM + 0x200000, 5, 1);
 	BurnLoadRom(CaveSpriteROM + 0x400000, 6, 1);
@@ -598,7 +611,7 @@ static int LoadRoms()
 	
 	BurnLoadRom(CaveTileROM[2], 10, 1);
 	NibbleSwap2(CaveTileROM[2], 0x200000);
-	
+*/	
 	// Load MSM6295 ADPCM data
 	BurnLoadRom(MSM6295ROMSrc1, 11, 1);
 	BurnLoadRom(MSM6295ROMSrc2, 12, 1);
@@ -708,7 +721,72 @@ static int DrvInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+	cacheFileSize=0x1C00000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x1000000;
+	CaveTileROMOffset[1]=CaveTileROMOffset[0]+0x400000;
+	CaveTileROMOffset[2]=CaveTileROMOffset[1]+0x400000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead,0,0x1000000);
 
+		BurnLoadRom(uniCacheHead + 0x000000, 4, 1);
+		BurnLoadRom(uniCacheHead + 0x200000, 5, 1);
+		BurnLoadRom(uniCacheHead + 0x400000, 6, 1);
+		BurnLoadRom(uniCacheHead + 0x600000, 7, 1);
+		NibbleSwap1(uniCacheHead, 0x800000);
+	
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0, SEEK_SET );
+			if( 0x1000000 == sceIoWrite(cacheFile,uniCacheHead, 0x1000000 ) )
+				break;
+		}
+		
+		BurnLoadRom(uniCacheHead, 8, 1);
+		NibbleSwap2(uniCacheHead, 0x200000);
+		
+		BurnLoadRom(uniCacheHead+0x400000, 9, 1);
+		NibbleSwap2(uniCacheHead+0x400000, 0x200000);
+		
+		BurnLoadRom(uniCacheHead+0x800000, 10, 1);
+		NibbleSwap2(uniCacheHead+0x800000, 0x200000);
+		
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile,0x1000000, SEEK_SET );
+			if( 0xC00000 == sceIoWrite(cacheFile,uniCacheHead, 0xC00000 ) )
+				break;
+		}
+
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+
+	
 	// Find out how much memory is needed
 	Mem = NULL;
 	MemIndex();
@@ -720,6 +798,7 @@ static int DrvInit()
 	MemIndex();													// Index the allocated memory
 
 	EEPROMInit(1024, 16);										// EEPROM has 1024 bits, uses 16-bit words
+	initCacheStructure(0.7);
 	
 	// Load the roms into memory
 	if (LoadRoms()) {
@@ -833,7 +912,7 @@ struct BurnDriver BurnDrvmetmqstr = {
 	"metmqstr", NULL, NULL, "1995",
 	"Metamoqester (International)\0", NULL, "Banpresto/Pandorabox", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, metmqstrRomInfo, metmqstrRomName, metmqstrInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,
@@ -844,7 +923,7 @@ struct BurnDriver BurnDrvnmaster = {
 	"nmaster", "metmqstr", NULL, "1995",
 	"Oni - The Ninja Master (Japan)\0", NULL, "Banpresto/Pandorabox", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_CAVE_68K_Z80, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, nmasterRomInfo, nmasterRomName, metmqstrInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,

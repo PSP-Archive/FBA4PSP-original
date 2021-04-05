@@ -35,7 +35,7 @@ int CheatApply();
 int CheatInit();
 void CheatExit();
 
-#define CHEATSEARCH_SHOWRESULTS		3
+#define CHEATSEARCH_SHOWRESULTS		10
 extern unsigned int CheatSearchShowResultAddresses[CHEATSEARCH_SHOWRESULTS];
 extern unsigned int CheatSearchShowResultValues[CHEATSEARCH_SHOWRESULTS];
 

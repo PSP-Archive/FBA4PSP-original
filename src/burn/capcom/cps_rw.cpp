@@ -260,7 +260,7 @@ static unsigned char CpsReadPort(const unsigned int ia)
 // Write output port 0x000-0x1ff
 static void CpsWritePort(const unsigned int ia, unsigned char d)
 {
-//	bprintf(PRINT_NORMAL, _T("Write Port %x, %x\n"), ia, d);
+//	if (d) bprintf(PRINT_NORMAL, _T("Write Port %x, %x\n"), ia, d);
 	
 	if ((Cps & 1) && Cps1Qs == 0) {
 		// CPS1 sound code

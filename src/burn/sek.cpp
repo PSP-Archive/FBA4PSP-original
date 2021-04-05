@@ -1,16 +1,25 @@
 // 680x0 (Sixty Eight K) Interface
 #include "burnint.h"
 #include "sekdebug.h"
+#include "me.h"
 
+#ifdef EMU_C68K
+ #include "c68k.c"
+#endif
 #ifdef EMU_M68K
 int nSekM68KContextSize[SEK_MAX];
 char* SekM68KContext[SEK_MAX];
 #endif
+ 
+#ifdef EMU_C68K
+c68k_struc * SekC68KCurrentContext = NULL;
+c68k_struc * SekC68KContext[SEK_MAX];
+#endif
 
-int nSekCount = -1;							// Number of allocated 68000s
+static int nSekCount = -1;						// Number of allocated 68000s
 struct SekExt *SekExt[SEK_MAX] = { NULL, }, *pSekExt = NULL;
 
-int nSekActive = -1;								// The cpu which is currently being emulated
+int nSekActive = -1;						// The cpu which is currently being emulated
 int nSekCyclesTotal, nSekCyclesScanline, nSekCyclesSegment, nSekCyclesDone, nSekCyclesToDo;
 
 int nSekCPUType[SEK_MAX], nSekCycles[SEK_MAX], nSekIRQPending[SEK_MAX];
@@ -34,6 +43,7 @@ static struct { unsigned int address; int id; } BreakpointFetch[9] = { { 0, 0 },
 #if defined (EMU_A68K)
 static void UpdateA68KContext()
 {
+/*	
 	if (M68000_regs.srh & 20) {		// Supervisor mode
 		M68000_regs.isp = M68000_regs.a[7];
 	} else {						// User mode
@@ -46,6 +56,7 @@ static void UpdateA68KContext()
 	M68000_regs.sr |= (M68000_regs.ccr >>  4) & 0x0004;	// Z
 	M68000_regs.sr |= (M68000_regs.ccr >> 10) & 0x0002;	// V
 	M68000_regs.sr |= (M68000_regs.ccr      ) & 0x0001;	// C
+*/
 }
 
 static unsigned int GetA68KSR()
@@ -268,7 +279,8 @@ inline static unsigned short ReadWord(unsigned int a)
 
 	pr = FIND_R(a);
 	if ((unsigned int)pr >= SEK_MAXHANDLER) {
-		return *((unsigned short*)(pr + (a & SEK_PAGEM)));
+		pr=(pr + (a & SEK_PAGEM));
+		return (*(pr+1))<<8|(*pr);
 	}
 	return pSekExt->ReadWord[(unsigned int)pr](a);
 }
@@ -283,7 +295,8 @@ inline static unsigned short FetchWord(unsigned int a)
 
 	pr = FIND_F(a);
 	if ((unsigned int)pr >= SEK_MAXHANDLER) {
-		return *((unsigned short*)(pr + (a & SEK_PAGEM)));
+		pr=(pr + (a & SEK_PAGEM));
+		return (*(pr+1))<<8|(*pr);
 	}
 	return pSekExt->ReadWord[(unsigned int)pr](a);
 }
@@ -298,7 +311,9 @@ inline static void WriteWord(unsigned int a, unsigned short d)
 
 	pr = FIND_W(a);
 	if ((unsigned int)pr >= SEK_MAXHANDLER) {
-		*((unsigned short*)(pr + (a & SEK_PAGEM))) = (unsigned short)d;
+		pr=pr + (a & SEK_PAGEM);
+		pr[0]=d;
+		pr[1]=d>>8;
 		return;
 	}
 	pSekExt->WriteWord[(unsigned int)pr](a, d);
@@ -312,7 +327,9 @@ inline static void WriteWordROM(unsigned int a, unsigned short d)
 
 	pr = FIND_R(a);
 	if ((unsigned int)pr >= SEK_MAXHANDLER) {
-		*((unsigned short*)(pr + (a & SEK_PAGEM))) = (unsigned short)d;
+		pr=pr + (a & SEK_PAGEM);
+		pr[0]=d;
+		pr[1]=d>>8;
 		return;
 	}
 	pSekExt->WriteWord[(unsigned int)pr](a, d);
@@ -328,9 +345,8 @@ inline static unsigned int ReadLong(unsigned int a)
 
 	pr = FIND_R(a);
 	if ((unsigned int)pr >= SEK_MAXHANDLER) {
-		unsigned int r = *((unsigned int*)(pr + (a & SEK_PAGEM)));
-		r = (r >> 16) | (r << 16);
-		return r;
+		pr=pr + (a & SEK_PAGEM);
+		return pr[1]<<24|pr[0]<<16|pr[3]<<8|pr[2];
 	}
 	return pSekExt->ReadLong[(unsigned int)pr](a);
 }
@@ -345,9 +361,8 @@ inline static unsigned int FetchLong(unsigned int a)
 
 	pr = FIND_F(a);
 	if ((unsigned int)pr >= SEK_MAXHANDLER) {
-		unsigned int r = *((unsigned int*)(pr + (a & SEK_PAGEM)));
-		r = (r >> 16) | (r << 16);
-		return r;
+		pr=pr + (a & SEK_PAGEM);
+		return  pr[1]<<24|pr[0]<<16|pr[3]<<8|pr[2];
 	}
 	return pSekExt->ReadLong[(unsigned int)pr](a);
 }
@@ -362,8 +377,11 @@ inline static void WriteLong(unsigned int a, unsigned int d)
 
 	pr = FIND_W(a);
 	if ((unsigned int)pr >= SEK_MAXHANDLER) {
-		d = (d >> 16) | (d << 16);
-		*((unsigned int*)(pr + (a & SEK_PAGEM))) = d;
+		pr=pr + (a & SEK_PAGEM);
+		pr[2] = (unsigned char)d;
+		pr[3] = (unsigned char)(d>>8);
+		pr[0] = (unsigned char)(d>>16);
+		pr[1] = (unsigned char)(d>>24);
 		return;
 	}
 	pSekExt->WriteLong[(unsigned int)pr](a, d);
@@ -377,8 +395,11 @@ inline static void WriteLongROM(unsigned int a, unsigned int d)
 
 	pr = FIND_R(a);
 	if ((unsigned int)pr >= SEK_MAXHANDLER) {
-		d = (d >> 16) | (d << 16);
-		*((unsigned int*)(pr + (a & SEK_PAGEM))) = d;
+		pr=pr + (a & SEK_PAGEM);
+		pr[2] = (unsigned char)d;
+		pr[3] = (unsigned char)(d>>8);
+		pr[0] = (unsigned char)(d>>16);
+		pr[1] = (unsigned char)(d>>24);
 		return;
 	}
 	pSekExt->WriteLong[(unsigned int)pr](a, d);
@@ -523,7 +544,7 @@ extern "C" {
  unsigned char* OP_RAM = NULL;
 
 #ifndef EMU_M68K
- int m68k_ICount = 0;
+ int m68k_ICount = 0; 
 #endif
 
  unsigned int mem_amask = 0xFFFFFF;			// 24-bit bus
@@ -531,8 +552,10 @@ extern "C" {
 
  unsigned int mame_debug = 0, cur_mrhard = 0, m68k_illegal_opcode = 0, illegal_op = 0, illegal_pc = 0, opcode_entry = 0;
 
- struct A68KInter a68k_memory_intf;
+ //struct A68KInter a68k_memory_intf;
 }
+
+extern "C" struct A68KInter a68k_memory_intf;
 
 unsigned char  __fastcall A68KRead8 (unsigned int a) { return ReadByte(a);}
 unsigned short __fastcall A68KRead16(unsigned int a) { return ReadWord(a);}
@@ -558,7 +581,7 @@ void __fastcall A68KChangePC(unsigned int pc)
 	OP_ROM = FIND_F(pc) - (pc & ~SEK_PAGEM);
 
 	// Set the current bank number
-	M68000_regs.nAsmBank = pc >> SEK_BITS;
+	//M68000_regs.nAsmBank = pc >> SEK_BITS;
 }
 #endif
 
@@ -599,6 +622,49 @@ void __fastcall M68KWriteLong(unsigned int a, unsigned int d) { WriteLong(a, d);
 }
 #endif
 
+#ifdef EMU_C68K
+extern "C" {
+unsigned char C68KReadByte(unsigned int a) { return ReadByte(a); }
+unsigned short C68KReadWord(unsigned int a) { return ReadWord(a); }
+unsigned char C68KFetchByte(unsigned int a) { return FetchByte(a); }
+unsigned short C68KFetchWord(unsigned int a) { return FetchWord(a); }
+void C68KWriteByte(unsigned int a, unsigned char d) { WriteByte(a, d); }
+void C68KWriteWord(unsigned int a, unsigned short d) { WriteWord(a, d); }
+
+unsigned int C68KRebasePC(unsigned int pc) {
+//	bprintf(PRINT_NORMAL, _T("C68KRebasePC 0x%08x\n"), pc);
+	pc &= 0xFFFFFF;
+	SekC68KCurrentContext->BasePC = (unsigned int)FIND_F(pc) - (pc & ~SEK_PAGEM);
+	return SekC68KCurrentContext->BasePC + pc;
+}
+
+int C68KInterruptCallBack(int irqline)
+{
+	if (nSekIRQPending[nSekActive] & SEK_IRQSTATUS_AUTO) {
+		SekC68KContext[nSekActive]->IRQState = 0;	//CLEAR_LINE
+		SekC68KContext[nSekActive]->IRQLine = 0;
+	}
+	
+	nSekIRQPending[nSekActive] = 0;
+	
+	if (pSekExt->IrqCallback) {
+		return pSekExt->IrqCallback(irqline);
+	}
+
+	return C68K_INTERRUPT_AUTOVECTOR_EX + irqline;
+}
+
+void C68KResetCallBack()
+{
+	if ( pSekExt->ResetCallback )
+		pSekExt->ResetCallback();
+}
+
+}
+#endif
+
+#ifdef EMU_A68K
+
 struct A68KInter a68k_inter_normal = {
 	NULL,
 	A68KRead8,
@@ -635,24 +701,158 @@ struct A68KInter a68k_inter_breakpoint = {
 
 #endif
 
+#endif
+
 // ----------------------------------------------------------------------------
 // Memory accesses (non-emu specific)
 
-unsigned int SekReadByte(unsigned int a) { return (unsigned int)ReadByte(a); }
-unsigned int SekReadWord(unsigned int a) { return (unsigned int)ReadWord(a); }
-unsigned int SekReadLong(unsigned int a) { return ReadLong(a); }
+unsigned int meSekReadByte(unsigned int a) { return (unsigned int)ReadByte(a); }
+unsigned int SekReadByte(unsigned int a) 
+{ 
+	if(isOnMe())
+	{
+		return meSekReadByte(a); 
+	}else
+	{
+		waitMeEnd();
+		return meSekReadByte(a);
+	}
+}
+unsigned int meSekReadWord(unsigned int a) { return (unsigned int)ReadWord(a); }
+unsigned int SekReadWord(unsigned int a)
+{
+	if(isOnMe())
+	{
+		return meSekReadWord(a); 
+	}else
+	{
+		waitMeEnd();
+		return meSekReadWord(a);
+	}
+}
+unsigned int meSekReadLong(unsigned int a) { return ReadLong(a); }
+unsigned int SekReadLong(unsigned int a)
+{
+	if(isOnMe())
+	{
+		return meSekReadLong(a); 
+	}else
+	{
+		waitMeEnd();
+		return meSekReadLong(a);
+	}
+}
 
-unsigned int SekFetchByte(unsigned int a) { return (unsigned int)FetchByte(a); }
-unsigned int SekFetchWord(unsigned int a) { return (unsigned int)FetchWord(a); }
-unsigned int SekFetchLong(unsigned int a) { return FetchLong(a); }
+unsigned int meSekFetchByte(unsigned int a) { return (unsigned int)FetchByte(a); }
+unsigned int SekFetchByte(unsigned int a)
+{
+	if(isOnMe())
+	{
+		return meSekFetchByte(a); 
+	}else
+	{
+		waitMeEnd();
+		return meSekFetchByte(a);
+	}
+}
+unsigned int meSekFetchWord(unsigned int a) { return (unsigned int)FetchWord(a); }
+unsigned int SekFetchWord(unsigned int a)
+{
+	if(isOnMe())
+	{
+		return meSekFetchWord(a); 
+	}else
+	{
+		waitMeEnd();
+		return meSekFetchWord(a);
+	}
+}
+unsigned int meSekFetchLong(unsigned int a) { return FetchLong(a); }
+unsigned int SekFetchLong(unsigned int a)
+{
+	if(isOnMe())
+	{
+		return meSekFetchLong(a); 
+	}else
+	{
+		waitMeEnd();
+		return meSekFetchLong(a);
+	}
+}
 
-void SekWriteByte(unsigned int a, unsigned char d) { WriteByte(a, d); }
-void SekWriteWord(unsigned int a, unsigned short d) { WriteWord(a, d); }
-void SekWriteLong(unsigned int a, unsigned int d) { WriteLong(a, d); }
+void meSekWriteByte(unsigned int a, unsigned char d) { WriteByte(a, d); }
+void SekWriteByte(unsigned int a, unsigned char d)
+{
+	if(isOnMe())
+	{
+		meSekWriteByte(a,d); 
+	}else
+	{
+		meSekWriteByte(a,d);
+		waitMeEnd();
+	}
+}
+void meSekWriteWord(unsigned int a, unsigned short d) { WriteWord(a, d); }
+void SekWriteWord(unsigned int a, unsigned short d)
+{
+	if(isOnMe())
+	{
+		meSekWriteWord(a,d); 
+	}else
+	{
+		meSekWriteWord(a,d);
+		waitMeEnd();
+	}
+}
+void meSekWriteLong(unsigned int a, unsigned int d) { WriteLong(a, d); }
+void SekWriteLong(unsigned int a, unsigned int d)
+{
+	if(isOnMe())
+	{
+		meSekWriteLong(a,d); 
+	}else
+	{
+		meSekWriteLong(a,d);
+		waitMeEnd();
+	}
+}
 
-void SekWriteByteROM(unsigned int a, unsigned char d) { WriteByteROM(a, d); }
-void SekWriteWordROM(unsigned int a, unsigned short d) { WriteWordROM(a, d); }
-void SekWriteLongROM(unsigned int a, unsigned int d) { WriteLongROM(a, d); }
+void meSekWriteByteROM(unsigned int a, unsigned char d) { WriteByteROM(a, d); }
+void SekWriteByteROM(unsigned int a, unsigned char d)
+{
+	if(isOnMe())
+	{
+		meSekWriteByteROM(a,d); 
+	}else
+	{
+		meSekWriteByteROM(a,d);
+		waitMeEnd();
+	}
+}
+void meSekWriteWordROM(unsigned int a, unsigned short d) { WriteWordROM(a, d); }
+void SekWriteWordROM(unsigned int a, unsigned short d)
+{
+	if(isOnMe())
+	{
+		meSekWriteWordROM(a,d); 
+	}else
+	{
+		meSekWriteWordROM(a,d);
+		waitMeEnd();
+	}
+}
+void meSekWriteLongROM(unsigned int a, unsigned int d) { WriteLongROM(a, d); }
+void SekWriteLongROM(unsigned int a, unsigned int d)
+{
+	if(isOnMe())
+	{
+		meSekWriteLongROM(a,d); 
+	}else
+	{
+		meSekWriteLongROM(a,d);
+		waitMeEnd();
+	}
+}
 
 // ----------------------------------------------------------------------------
 // Callbacks for A68K
@@ -682,6 +882,7 @@ static int A68KResetCallback()
 	return pSekExt->ResetCallback();
 }
 
+/*
 static int A68KRTECallback()
 {
 	if (pSekExt->RTECallback == NULL) {
@@ -697,13 +898,14 @@ static int A68KCmpCallback(unsigned int val, int reg)
 	}
 	return pSekExt->CmpCallback(val, reg);
 }
+*/
 
 static int SekSetup(struct A68KContext* psr)
 {
 	psr->IrqCallback = A68KIRQAcknowledge;
 	psr->ResetCallback = A68KResetCallback;
-	psr->RTECallback = A68KRTECallback;
-	psr->CmpCallback = A68KCmpCallback;
+	//psr->RTECallback = A68KRTECallback;
+	//psr->CmpCallback = A68KCmpCallback;
 
 	return 0;
 }
@@ -809,7 +1011,35 @@ static int SekInitCPUM68K(int nCount, int nCPUType)
 }
 #endif
 
-void SekNewFrame()
+#ifdef EMU_C68K
+static int SekInitCPUC68K(int nCount, int nCPUType)
+{
+	if (nCPUType != 0x68000) return 1;
+	nSekCPUType[nCount] = 0;
+
+	SekC68KContext[nCount] = (c68k_struc *)malloc( sizeof( c68k_struc ) );
+	if (SekC68KContext[nCount] == NULL)	return 1;
+
+	memset(SekC68KContext[nCount], 0, sizeof( c68k_struc ));
+	SekC68KCurrentContext = SekC68KContext[nCount];
+
+	SekC68KCurrentContext->Rebase_PC = C68KRebasePC;
+	
+	SekC68KCurrentContext->Read_Byte = C68KReadByte;
+	SekC68KCurrentContext->Read_Word = C68KReadWord;
+	SekC68KCurrentContext->Read_Byte_PC_Relative = C68KFetchByte;
+	SekC68KCurrentContext->Read_Word_PC_Relative = C68KFetchWord;
+	SekC68KCurrentContext->Write_Byte = C68KWriteByte;
+	SekC68KCurrentContext->Write_Word = C68KWriteWord;
+	
+	SekC68KCurrentContext->Interrupt_CallBack = C68KInterruptCallBack;
+	SekC68KCurrentContext->Reset_CallBack = C68KResetCallBack;
+	return 0;
+}
+#endif
+
+
+void meSekNewFrame()
 {
 	for (int i = 0; i <= nSekCount; i++) {
 		nSekCycles[i] = 0;
@@ -818,17 +1048,41 @@ void SekNewFrame()
 	nSekCyclesTotal = 0;
 }
 
-void SekSetCyclesScanline(int nCycles)
+void SekNewFrame()
+{
+	if(isOnMe())
+	{
+		meSekNewFrame();
+	}else
+	{
+		meAddCmd(SEKNEWFRAME);
+	}
+}
+
+void meSekSetCyclesScanline(int nCycles)
 {
 	nSekCyclesScanline = nCycles;
+}
+void SekSetCyclesScanline(int nCycles)
+{
+	if(isOnMe())
+	{
+		SekSetCyclesScanline(nCycles);
+	}else
+	{
+		mei->meOrders[mei->meOrderEnd].param[0]= nCycles;
+		meAddCmd(SEKSETCYCLESSCANLINE);
+	}
 }
 
 int SekInit(int nCount, int nCPUType)
 {
+	waitMeEnd();
 	struct SekExt* ps = NULL;
 
 	if (nSekActive >= 0) {
 		SekClose();
+		waitMeEnd();
 		nSekActive = -1;
 	}
 
@@ -918,6 +1172,16 @@ int SekInit(int nCount, int nCPUType)
 	// Map the normal memory handlers
 	SekDbgDisableBreakpoints();
 
+#ifdef EMU_C68K
+
+	if ( SekInitCPUC68K(nCount, nCPUType) ) {
+		SekExit();
+		return 1;
+	}
+	C68k_Init( SekC68KCurrentContext );
+
+#endif
+
 #ifdef EMU_A68K
 	if (bBurnUseASMCPUEmulation && nCPUType == 0x68000) {
 		if (SekInitCPUA68K(nCount, nCPUType)) {
@@ -944,7 +1208,7 @@ int SekInit(int nCount, int nCPUType)
 
 	nSekCyclesTotal = 0;
 	nSekCyclesScanline = 0;
-
+	waitMeEnd();
 	return 0;
 }
 
@@ -964,8 +1228,17 @@ static void SekCPUExitM68K(int i)
 }
 #endif
 
+#ifdef EMU_C68K
+static void SekCPUExitC68K(int i)
+{
+		free(SekC68KContext[i]);
+		SekC68KContext[i] = NULL;
+}
+#endif
+
 int SekExit()
 {
+	waitMeEnd();
 	// Deallocate cpu extenal data (memory map etc)
 	for (int i = 0; i <= nSekCount; i++) {
 
@@ -977,22 +1250,28 @@ int SekExit()
 		SekCPUExitM68K(i);
 #endif
 
+#ifdef EMU_C68K
+		SekCPUExitC68K(i);
+#endif
+
 		// Deallocate other context data
 		free(SekExt[i]);
 		SekExt[i] = NULL;
 	}
-
+#ifdef EMU_C68K
+		C68k_Exit();
+#endif
 	pSekExt = NULL;
 
 	nSekActive = -1;
 	nSekCount = -1;
-
+	waitMeEnd();
 	return 0;
 }
 
 void SekReset()
 {
-
+	waitMeEnd();
 #ifdef EMU_A68K
 	if (nSekCPUType[nSekActive] == 0) {
 		// A68K has no internal support for resetting the processor, so do what's needed ourselves
@@ -1011,18 +1290,27 @@ void SekReset()
 	}
 #endif
 
+#ifdef EMU_C68K
+	C68k_Reset( SekC68KCurrentContext );
+#endif
+	waitMeEnd();
+
 }
 
 // ----------------------------------------------------------------------------
 // Control the active CPU
 
 // Open a CPU
-void SekOpen(const int i)
+void meSekOpen(const int i)
 {
 	if (i != nSekActive) {
 		nSekActive = i;
 
 		pSekExt = SekExt[nSekActive];						// Point to cpu context
+
+#ifdef EMU_C68K
+		SekC68KCurrentContext = SekC68KContext[nSekActive];
+#endif		
 
 #ifdef EMU_A68K
 		if (nSekCPUType[nSekActive] == 0) {
@@ -1042,10 +1330,23 @@ void SekOpen(const int i)
 		nSekCyclesTotal = nSekCycles[nSekActive];
 	}
 }
-
-// Close the active cpu
-void SekClose()
+void SekOpen(const int i)
 {
+	if(isOnMe())
+	{
+		meSekOpen(i);
+	}else
+	{
+		mei->meOrders[mei->meOrderEnd].param[0]=i;
+		meAddCmd(SEKOPEN);
+	}
+}
+// Close the active cpu
+void meSekClose()
+{
+#ifdef EMU_C68K
+	// ....
+#endif
 
 #ifdef EMU_A68K
 	if (nSekCPUType[nSekActive] == 0) {
@@ -1063,15 +1364,18 @@ void SekClose()
 
 	nSekCycles[nSekActive] = nSekCyclesTotal;
 }
-
-// Get the current CPU
-int SekGetActive()
+void SekClose()
 {
-	return nSekActive;
+	if(isOnMe())
+	{
+		meSekClose();
+	}else
+	{
+		meAddCmd(SEKCLOSE);
+	}
 }
-
 // Set the status of an IRQ line on the active CPU
-void SekSetIRQLine(const int line, const int status)
+void meSekSetIRQLine(const int line, const int status)
 {
 //	bprintf(PRINT_NORMAL, _T("  - irq line %i -> %i\n"), line, status);
 
@@ -1092,6 +1396,14 @@ void SekSetIRQLine(const int line, const int status)
 			m68k_set_irq(line);
 #endif
 
+#ifdef EMU_C68K
+			//m68k_set_irq(line);
+			SekC68KCurrentContext->IRQState = 1;	//ASSERT_LINE
+			SekC68KCurrentContext->IRQLine = line;
+			SekC68KCurrentContext->HaltState = 0;
+#endif
+
+
 #ifdef EMU_A68K
 		}
 #endif
@@ -1111,12 +1423,29 @@ void SekSetIRQLine(const int line, const int status)
 		m68k_set_irq(0);
 #endif
 
+#ifdef EMU_C68K
+		SekC68KCurrentContext->IRQState = 0;	//CLEAR_LINE
+		SekC68KCurrentContext->IRQLine = 0;
+#endif
+
 #ifdef EMU_A68K
 	}
 #endif
 
 }
 
+void SekSetIRQLine(const int line, const int status)
+{
+	if(isOnMe())
+	{
+		meSekSetIRQLine(line, status);
+	}else
+	{
+		mei->meOrders[mei->meOrderEnd].param[0]=line;
+		mei->meOrders[mei->meOrderEnd].param[1]=status;
+		meAddCmd(SEKSETIRQLINE);
+	}
+}
 // Adjust the active CPU's timeslice
 void SekRunAdjust(const int nCycles)
 {
@@ -1138,6 +1467,12 @@ void SekRunAdjust(const int nCycles)
 		m68k_modify_timeslice(nCycles);
 #endif
 
+#ifdef EMU_C68K
+		nSekCyclesToDo += nCycles;
+		m68k_ICount += nCycles;
+		nSekCyclesSegment += nCycles;
+#endif
+
 #ifdef EMU_A68K
 	}
 #endif
@@ -1145,7 +1480,7 @@ void SekRunAdjust(const int nCycles)
 }
 
 // End the active CPU's timeslice
-void SekRunEnd()
+void meSekRunEnd()
 {
 
 #ifdef EMU_A68K
@@ -1161,14 +1496,31 @@ void SekRunEnd()
 		m68k_end_timeslice();
 #endif
 
+#ifdef EMU_C68K
+		nSekCyclesTotal += (nSekCyclesToDo - nSekCyclesDone) - m68k_ICount;
+		nSekCyclesDone += (nSekCyclesToDo - nSekCyclesDone) - m68k_ICount;
+		nSekCyclesSegment = nSekCyclesDone;
+		nSekCyclesToDo = m68k_ICount = -1;
+#endif
+
 #ifdef EMU_A68K
 	}
 #endif
 
 }
-
+void SekRunEnd()
+{
+	if(isOnMe())
+	{
+		meSekRunEnd();
+	}else
+	{
+		waitMeEnd();
+		meSekRunEnd();
+	}
+}
 // Run the active CPU
-int SekRun(const int nCycles)
+int meSekRun(const int nCycles)
 {
 
 #ifdef EMU_A68K
@@ -1206,7 +1558,19 @@ int SekRun(const int nCycles)
 
 		return nSekCyclesSegment;
 #else
+
+#ifdef EMU_C68K
+
+		nSekCyclesToDo = nCycles;
+		nSekCyclesSegment = C68k_Exec(SekC68KCurrentContext, nCycles);
+		nSekCyclesTotal += nSekCyclesSegment;
+		nSekCyclesToDo = m68k_ICount = -1;
+
+		return nSekCyclesSegment;
+#else
 		return 0;
+#endif
+
 #endif
 
 #ifdef EMU_A68K
@@ -1214,7 +1578,18 @@ int SekRun(const int nCycles)
 #endif
 
 }
-
+int SekRun(const int nCycles)
+{
+	if(isOnMe())
+	{
+		return meSekRun(nCycles);
+	}else
+	{
+		mei->meOrders[mei->meOrderEnd].param[0]=nCycles;
+		meAddCmd(SEKRUN);
+		return nCycles;
+	}
+}
 // ----------------------------------------------------------------------------
 // Breakpoint support
 
@@ -1377,6 +1752,7 @@ int SekDbgSetBreakpointFetch(unsigned int nAddress, int nIdentifier)
 // Note - each page is 1 << SEK_BITS.
 int SekMapMemory(unsigned char* pMemory, unsigned int nStart, unsigned int nEnd, int nType)
 {
+	waitMeEnd();
 	unsigned char* Ptr = pMemory - nStart;
 	unsigned char** pMemMap = pSekExt->MemMap + (nStart >> SEK_SHIFT);
 
@@ -1402,12 +1778,13 @@ int SekMapMemory(unsigned char* pMemory, unsigned int nStart, unsigned int nEnd,
 			pMemMap[SEK_WADD * 2] = Ptr + i;
 		}
 	}
-
+	waitMeEnd();
 	return 0;
 }
 
 int SekMapHandler(unsigned int nHandler, unsigned int nStart, unsigned int nEnd, int nType)
 {
+	waitMeEnd();
 	unsigned char** pMemMap = pSekExt->MemMap + (nStart >> SEK_SHIFT);
 
 	// Add to memory map
@@ -1423,36 +1800,40 @@ int SekMapHandler(unsigned int nHandler, unsigned int nStart, unsigned int nEnd,
 			pMemMap[SEK_WADD * 2] = (unsigned char*)nHandler;
 		}
 	}
-
+	waitMeEnd();
 	return 0;
 }
 
 // Set callbacks
 int SekSetResetCallback(pSekResetCallback pCallback)
 {
+	waitMeEnd();
 	pSekExt->ResetCallback = pCallback;
-
+	waitMeEnd();
 	return 0;
 }
 
 int SekSetRTECallback(pSekRTECallback pCallback)
 {
+	waitMeEnd();
 	pSekExt->RTECallback = pCallback;
-
+	waitMeEnd();
 	return 0;
 }
 
 int SekSetIrqCallback(pSekIrqCallback pCallback)
 {
+	waitMeEnd();
 	pSekExt->IrqCallback = pCallback;
-
+	waitMeEnd();
 	return 0;
 }
 
 int SekSetCmpCallback(pSekCmpCallback pCallback)
 {
+	waitMeEnd();
 	pSekExt->CmpCallback = pCallback;
-
+	waitMeEnd();
 	return 0;
 }
 
@@ -1462,9 +1843,9 @@ int SekSetReadByteHandler(int i, pSekReadByteHandler pHandler)
 	if (i >= SEK_MAXHANDLER) {
 		return 1;
 	}
-
+	waitMeEnd();
 	pSekExt->ReadByte[i] = pHandler;
-
+	waitMeEnd();
 	return 0;
 }
 
@@ -1473,9 +1854,9 @@ int SekSetWriteByteHandler(int i, pSekWriteByteHandler pHandler)
 	if (i >= SEK_MAXHANDLER) {
 		return 1;
 	}
-
+	waitMeEnd();
 	pSekExt->WriteByte[i] = pHandler;
-
+	waitMeEnd();
 	return 0;
 }
 
@@ -1484,9 +1865,9 @@ int SekSetReadWordHandler(int i, pSekReadWordHandler pHandler)
 	if (i >= SEK_MAXHANDLER) {
 		return 1;
 	}
-
+	waitMeEnd();
 	pSekExt->ReadWord[i] = pHandler;
-
+	waitMeEnd();
 	return 0;
 }
 
@@ -1495,9 +1876,9 @@ int SekSetWriteWordHandler(int i, pSekWriteWordHandler pHandler)
 	if (i >= SEK_MAXHANDLER) {
 		return 1;
 	}
-
+	waitMeEnd();
 	pSekExt->WriteWord[i] = pHandler;
-
+	waitMeEnd();
 	return 0;
 }
 
@@ -1506,9 +1887,9 @@ int SekSetReadLongHandler(int i, pSekReadLongHandler pHandler)
 	if (i >= SEK_MAXHANDLER) {
 		return 1;
 	}
-
+	waitMeEnd();
 	pSekExt->ReadLong[i] = pHandler;
-
+	waitMeEnd();
 	return 0;
 }
 
@@ -1517,17 +1898,21 @@ int SekSetWriteLongHandler(int i, pSekWriteLongHandler pHandler)
 	if (i >= SEK_MAXHANDLER) {
 		return 1;
 	}
-
+	waitMeEnd();
 	pSekExt->WriteLong[i] = pHandler;
-
+	waitMeEnd();
 	return 0;
 }
 
 // ----------------------------------------------------------------------------
 // Query register values
 
-int SekGetPC(int n)
+int meSekGetPC(int n)
 {
+	
+#ifdef EMU_C68K
+	return SekC68KCurrentContext->PC - SekC68KCurrentContext->BasePC;
+#endif
 
 #ifdef EMU_A68K
 	if (nSekCPUType[nSekActive] == 0) {
@@ -1550,9 +1935,22 @@ int SekGetPC(int n)
 #endif
 
 }
+int SekGetPC(int n)
+{
+	if(isOnMe())
+	{
+		return meSekGetPC(n);
+	}else
+	{
+		waitMeEnd();
+		return meSekGetPC(n);
+	}
+
+}
 
 int SekDbgGetCPUType()
 {
+#if 0
 	switch (nSekCPUType[nSekActive]) {
 		case 0:
 		case 0x68000:
@@ -1562,7 +1960,7 @@ int SekDbgGetCPUType()
 		case 0x68EC020:
 			return M68K_CPU_TYPE_68EC020;
 	}
-
+#endif
 	return 0;
 }
 
@@ -1573,6 +1971,7 @@ int SekDbgGetPendingIRQ()
 
 unsigned int SekDbgGetRegister(SekRegister nRegister)
 {
+#if 0
 	if (nSekCPUType[nSekActive] == 0) {
 		switch (nRegister) {
 			case SEK_REG_D0:
@@ -1693,10 +2092,14 @@ unsigned int SekDbgGetRegister(SekRegister nRegister)
 		default:
 			return 0;
 	}
+#else
+	return 0;
+#endif
 }
 
 bool SekDbgSetRegister(SekRegister nRegister, unsigned int nValue)
 {
+#if 0
 	switch (nRegister) {
 		case SEK_REG_D0:
 		case SEK_REG_D1:
@@ -1751,8 +2154,9 @@ bool SekDbgSetRegister(SekRegister nRegister, unsigned int nValue)
 		default:
 			break;
 	}
-
+#else
 	return false;
+#endif
 }
 
 // ----------------------------------------------------------------------------
@@ -1760,6 +2164,7 @@ bool SekDbgSetRegister(SekRegister nRegister, unsigned int nValue)
 
 int SekScan(int nAction)
 {
+	waitMeEnd();
 	// Scan the 68000 states
 	struct BurnArea ba;
 
@@ -1833,8 +2238,82 @@ int SekScan(int nAction)
 #ifdef EMU_A68K
 		}
 #endif
-
+#ifdef EMU_C68K
+				ba.Data = SekC68KContext[i];
+				ba.nLen = (unsigned int)&(SekC68KContext[i]->Rebase_PC) - (unsigned int)SekC68KContext[i];
+				ba.szName = szName;
+				BurnAcb(&ba);
+#endif
 	}
-
+	waitMeEnd();
 	return 0;
 }
+
+int meSekIdle(int nCycles)
+{
+	nSekCyclesTotal += nCycles;
+
+	return nCycles;
+}
+
+int SekIdle(int nCycles)
+{
+	if(isOnMe())
+	{
+		return meSekIdle(nCycles);
+	}else
+	{
+		mei->meOrders[mei->meOrderEnd].param[0]=nCycles;
+		meAddCmd(SEKIDLE);
+		return nCycles;
+	}
+}
+
+int meSekSegmentCycles()
+{
+	return nSekCyclesDone + nSekCyclesToDo - m68k_ICount;
+}
+int SekSegmentCycles()
+{
+	if(isOnMe())
+	{
+		return meSekSegmentCycles();
+	}else
+	{
+		waitMeEnd();
+		return meSekSegmentCycles();
+	}
+}
+int meSekTotalCycles()
+{
+	return nSekCyclesTotal + nSekCyclesToDo - m68k_ICount;
+}
+
+int SekTotalCycles()
+{
+	if(isOnMe())
+	{
+		return meSekTotalCycles();
+	}else
+	{
+		waitMeEnd();
+		return meSekTotalCycles();
+	}
+}
+
+int meSekCurrentScanline()
+{
+	return meSekTotalCycles() / nSekCyclesScanline;
+}
+int SekCurrentScanline()
+{
+	if(isOnMe())
+	{
+		return meSekCurrentScanline();
+	}else
+	{
+		waitMeEnd();
+		return meSekCurrentScanline();
+	}
+}
+

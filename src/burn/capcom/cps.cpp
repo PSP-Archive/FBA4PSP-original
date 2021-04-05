@@ -873,14 +873,13 @@ int CpsExit()
 	Scroll1TileMask = 0;
 	Scroll2TileMask = 0;
 	Scroll3TileMask = 0;
-
-	if (CpsCode) free(CpsCode);
 	
 	nCpsCodeLen = nCpsRomLen = nCpsGfxLen = nCpsZRomLen = nCpsQSamLen = nCpsAdLen = 0;
 	CpsCode = CpsRom = CpsZRom = CpsAd = CpsStar = NULL;
 	CpsQSam = NULL;
 
-	free(CpsGfx);
+	if(CpsGfx)
+		free(CpsGfx);
 	CpsGfx  = NULL;
 
 	nCPS68KClockspeed = 0;

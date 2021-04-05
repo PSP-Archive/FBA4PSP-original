@@ -64,9 +64,6 @@ static D3DXHANDLE hTechnique = NULL;
 static D3DXHANDLE hScanIntensity = NULL;
 static IDirect3DTexture9* pEffectTexture = NULL;
 
-static ID3DXFont* pFont = NULL;							// OSD font
-static D3DCOLOR osdColor = D3DCOLOR_ARGB(0xFF, 0xFF, 0xFF, 0xFF);
-
 static double dPrevCubicB, dPrevCubicC;
 
 static bool bUsePS14;
@@ -251,7 +248,6 @@ static int dx9Exit()
 
 	VidSFreeVidImage();
 
-	RELEASE(pFont);
 	RELEASE(pD3DDevice);
 	RELEASE(pD3D);
 
@@ -481,22 +477,13 @@ int dx9GeometryInit()
 			double dTop    = 1.0 - (((double)((nRotateGame & 1) ? (RENDER_STRIPS - y - 0) : (y + 0))) * 2.0 / RENDER_STRIPS);
 			double dBottom = 1.0 - (((double)((nRotateGame & 1) ? (RENDER_STRIPS - y - 1) : (y + 1))) * 2.0 / RENDER_STRIPS);
 
-			// ugly fix for vertical and flipped game, modified by regret
-			if ((nRotateGame & 1) && (nRotateGame & 2)) {
-				dTop    = 1.0 - (((double)(y + 0)) * 2.0 / RENDER_STRIPS);
-				dBottom = 1.0 - (((double)(y + 1)) * 2.0 / RENDER_STRIPS);
-			}
-			else if (nRotateGame & 2) {
-				dTop    = 1.0 - (((double)(RENDER_STRIPS - y - 0)) * 2.0 / RENDER_STRIPS);
-				dBottom = 1.0 - (((double)(RENDER_STRIPS - y - 1)) * 2.0 / RENDER_STRIPS);
-			}
-
 			if (pIntermediateTexture && bVidScanlines) {
 				dTexCoordXl += 0.5 / (double)nIntermediateTextureWidth;
 				dTexCoordXr += 0.5 / (double)nIntermediateTextureWidth;
 				dTexCoordYt += 1.0 / (double)nIntermediateTextureHeight;
 				dTexCoordYb += 1.0 / (double)nIntermediateTextureHeight;
 			}
+
 
 #if 0
 			if (nPreScaleEffect) {
@@ -512,17 +499,16 @@ int dx9GeometryInit()
 #endif
 
 			// Set up the vertices for the game image, including the texture coordinates for the game image only
-			// ugly fix for vertical and flipped game, modified by regret
 			if (nRotateGame & 1) {
-				vScreen[(nRotateGame & 2) ? 3 : 0] = D3DLVERTEX2(dTop,    dLeft,  0.0, 0xFFFFFFFF, 0, (nRotateGame & 2) ? dTexCoordXr : dTexCoordXl, dTexCoordYt, 0, 0);
-				vScreen[(nRotateGame & 2) ? 2 : 1] = D3DLVERTEX2(dTop,    dRight, 0.0, 0xFFFFFFFF, 0, (nRotateGame & 2) ? dTexCoordXl : dTexCoordXr, dTexCoordYt, 0, 0);
-				vScreen[(nRotateGame & 2) ? 1 : 2] = D3DLVERTEX2(dBottom, dLeft,  0.0, 0xFFFFFFFF, 0, (nRotateGame & 2) ? dTexCoordXr : dTexCoordXl, dTexCoordYb, 0, 0);
-				vScreen[(nRotateGame & 2) ? 0 : 3] = D3DLVERTEX2(dBottom, dRight, 0.0, 0xFFFFFFFF, 0, (nRotateGame & 2) ? dTexCoordXl : dTexCoordXr, dTexCoordYb, 0, 0);
+				vScreen[(nRotateGame & 2) ? 3 : 0] = D3DLVERTEX2(dTop,    dLeft,  0.0, 0xFFFFFFFF, 0, dTexCoordXl, dTexCoordYt, 0, 0);
+				vScreen[(nRotateGame & 2) ? 2 : 1] = D3DLVERTEX2(dTop,    dRight, 0.0, 0xFFFFFFFF, 0, dTexCoordXr, dTexCoordYt, 0, 0);
+				vScreen[(nRotateGame & 2) ? 1 : 2] = D3DLVERTEX2(dBottom, dLeft,  0.0, 0xFFFFFFFF, 0, dTexCoordXl, dTexCoordYb, 0, 0);
+				vScreen[(nRotateGame & 2) ? 0 : 3] = D3DLVERTEX2(dBottom, dRight, 0.0, 0xFFFFFFFF, 0, dTexCoordXr, dTexCoordYb, 0, 0);
 			} else {
-				vScreen[(nRotateGame & 2) ? 3 : 0] = D3DLVERTEX2(dLeft,  dTop,    0.0, 0xFFFFFFFF, 0, (nRotateGame & 2) ? dTexCoordXr : dTexCoordXl, dTexCoordYt, 0, 0);
-				vScreen[(nRotateGame & 2) ? 2 : 1] = D3DLVERTEX2(dRight, dTop,    0.0, 0xFFFFFFFF, 0, (nRotateGame & 2) ? dTexCoordXl : dTexCoordXr, dTexCoordYt, 0, 0);
-				vScreen[(nRotateGame & 2) ? 1 : 2] = D3DLVERTEX2(dLeft,  dBottom, 0.0, 0xFFFFFFFF, 0, (nRotateGame & 2) ? dTexCoordXr : dTexCoordXl, dTexCoordYb, 0, 0);
-				vScreen[(nRotateGame & 2) ? 0 : 3] = D3DLVERTEX2(dRight, dBottom, 0.0, 0xFFFFFFFF, 0, (nRotateGame & 2) ? dTexCoordXl : dTexCoordXr, dTexCoordYb, 0, 0);
+				vScreen[(nRotateGame & 2) ? 3 : 0] = D3DLVERTEX2(dLeft,  dTop,    0.0, 0xFFFFFFFF, 0, dTexCoordXl, dTexCoordYt, 0, 0);
+				vScreen[(nRotateGame & 2) ? 2 : 1] = D3DLVERTEX2(dRight, dTop,    0.0, 0xFFFFFFFF, 0, dTexCoordXr, dTexCoordYt, 0, 0);
+				vScreen[(nRotateGame & 2) ? 1 : 2] = D3DLVERTEX2(dLeft,  dBottom, 0.0, 0xFFFFFFFF, 0, dTexCoordXl, dTexCoordYb, 0, 0);
+				vScreen[(nRotateGame & 2) ? 0 : 3] = D3DLVERTEX2(dRight, dBottom, 0.0, 0xFFFFFFFF, 0, dTexCoordXr, dTexCoordYb, 0, 0);
 			}
 
 			{
@@ -736,53 +722,6 @@ HANDLE_ERROR:
 	return 1;
 }
 
-// ==> osd for dx9 video output (ugly), added by regret
-static int dx9CreateFont()
-{
-	if (pFont) {
-		return 0;
-	}
-
-	HRESULT hr = D3DXCreateFont(pD3DDevice, d3dpp.BackBufferHeight / 15,
-		0, FW_DEMIBOLD, 1, FALSE,
-		DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, ANTIALIASED_QUALITY,
-		DEFAULT_PITCH || FF_DONTCARE,
-		_T("Arial"), &pFont);
-
-	if (S_OK != hr) {
-		return 1;
-	}
-	return 0;
-}
-
-static void dx9DrawText()
-{
-	if (nVidSDisplayStatus == 0 || nOSDTimer == 0) {
-		return;
-	}
-
-	if (nFramesEmulated > nOSDTimer) {
-		VidSKillShortMsg();
-		VidSKillOSDMsg();
-	}
-
-	RECT osdRect;
-	if (nVidFullscreen) {
-		osdRect.left = Dest.left;
-		osdRect.top = Dest.top;
-		osdRect.right = Dest.right - 1;
-		osdRect.bottom = Dest.bottom - 1;
-	} else {
-		osdRect.left = 0;
-		osdRect.top = 0;
-		osdRect.right = Dest.right - Dest.left - 1;
-		osdRect.bottom = Dest.bottom - Dest.top - 1;
-	}
-
-	pFont->DrawText(NULL, OSDMsg, -1, &osdRect, DT_LEFT | DT_BOTTOM, osdColor);
-}
-// <== osd for dx9 video output (ugly)
-
 static int dx9Init()
 {
 	DWORD dwBehaviorFlags;
@@ -792,7 +731,7 @@ static int dx9Init()
 #endif
 
 #ifdef PRINT_DEBUG_INFO
-	dprintf(_T("*** Initialising Direct3D 9 blitter.\n"));
+	   	dprintf(_T("*** Initialising Direct3D 9 blitter.\n"));
 #endif
 
 	if (hScrnWnd == NULL) {
@@ -877,7 +816,7 @@ static int dx9Init()
 		// Get the game screen size
 		BurnDrvGetVisibleSize(&nGameWidth, &nGameHeight);
 
-		if (BurnDrvGetFlags() & BDF_ORIENTATION_VERTICAL) {
+	    if (BurnDrvGetFlags() & BDF_ORIENTATION_VERTICAL) {
 			if (nVidRotationAdjust & 1) {
 				int n = nGameWidth;
 				nGameWidth = nGameHeight;
@@ -939,9 +878,6 @@ static int dx9Init()
 		pD3DDevice->Present(&rect, &rect, NULL, NULL);
 	}
 
-	// Create osd font
-	dx9CreateFont();
-
 #ifdef PRINT_DEBUG_INFO
 	{
 	   	dprintf(_T("  * Initialisation complete: %.2lfMB texture memory free (total).\n"), (double)pD3DDevice->GetAvailableTextureMem() / (1024 * 1024));
@@ -985,11 +921,6 @@ static int dx9Reset()
 	nImageWidth = 0; nImageHeight = 0;
 
 	dPrevCubicB = dPrevCubicC = -999;
-
-	// osd font reset
-	if (pFont) {
-		pFont->OnResetDevice();
-	}
 
 	return 0;
 }
@@ -1218,9 +1149,6 @@ static int dx9MemToSurf()
 		}
 		pEffect->EndPass();
 
-		// draw osd text
-		dx9DrawText();
-
 		pD3DDevice->EndScene();
 	}
 
@@ -1265,7 +1193,6 @@ static int dx9Frame(bool bRedraw)								// bRedraw = 0
 #ifdef ENABLE_PROFILING
 //	ProfileProfileStart(0);
 #endif
-
 	if (bDrvOkay) {
 		if (bRedraw) {								// Redraw current frame
 			if (BurnDrvRedraw()) {
@@ -1275,14 +1202,11 @@ static int dx9Frame(bool bRedraw)								// bRedraw = 0
 			BurnDrvFrame();							// Run one frame and draw the screen
 		}
 	}
-
 #ifdef ENABLE_PROFILING
 //	ProfileProfileEnd(0);
 	ProfileProfileStart(1);
 #endif
-
 	dx9MemToSurf();									// Copy the memory buffer to the directdraw buffer for later blitting
-
 #ifdef ENABLE_PROFILING
 	ProfileProfileEnd(1);
 

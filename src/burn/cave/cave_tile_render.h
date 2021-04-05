@@ -13,7 +13,13 @@
  #endif
 
  #if YFLIP == 0
+ 
+ #ifndef BUILD_PSP
   #define ADVANCEROW pTileRow += ((BPP >> 3) * XSIZE)
+ #else
+  #define ADVANCEROW pTileRow += ((BPP >> 3) * 512)
+ #endif
+ 
  #else
   #error illegal YFLIP value
  #endif

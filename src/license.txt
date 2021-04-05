@@ -19,16 +19,14 @@ AY8910/YM2149 core by various authors (http://www.mamedev.org/).
 M6502 emulation core by Marat (http://fms.komkon.org/EMUL8/).
 I8039 emulation core by Mirko Buffoni (http://www.mamedev.org/).
 Z80 emulation core by Dave, modifications by Team FB Alpha (http://www.finalburn.com/).
-Alternative Z80 emulation core by Juergen Buchmueller (http://www.mamedev.org/).
-Alternative Z80 emulation core by Stéphane Dallongeville, modifications by Team FB Alpha.
-PNG functionality provided by libpng (http://www.libpng.org/) and PNGlib (http://www.madwizard.org/).
+PNG functionality provided by libpng (http://www.libpng.org/).
 Zip functionality provided by zlib (http://www.gzip.org/zlib/).
 
-Some graphics effects provided by the Scale2x, 2xPM, Eagle Graphics, 2xSaI, hq2x/hq3x/hq4x, hq2xS/hq3xS and SuperScale libraries (http://scale2x.sourceforge.net/, http://2xpm.freeservers.com, http://retrofx.com/, http://elektron.its.tudelft.nl/~dalikifa/, http://www.hiend3d.com/, http://code.google.com/p/vba-rerecording/, http://nebula.emulatronia.com/).
+Some graphics effects provided by the Scale2x, Eagle Graphics, 2xSaI, and hq2x/hq3x/hq4x libraries (http://scale2x.sourceforge.net/, http://retrofx.com/, http://elektron.its.tudelft.nl/~dalikifa/, http://www.hiend3d.com/).
 
 Miscellaneous other components from various sources. Copyright and license information are contained in the relevant parts of the source code.
 
-All material not covered above © 2004-2009 Team FB Alpha.
+All material not covered above © 2004 Team FB Alpha.
 
 DISCLAIMER: The authors of FB Alpha don't guarantee its fitness for any purpose, implied or otherwise, and do not except responsibility for any damages whatsoever that might occur when using FB Alpha. All games emulated by FB Alpha, including any images and sounds therein, are copyrighted by their respective copyright holders. FB Alpha DOES NOT INCLUDE any ROM images of emulated games.
 

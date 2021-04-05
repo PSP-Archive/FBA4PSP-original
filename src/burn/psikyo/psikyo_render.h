@@ -46,9 +46,9 @@
 
 #if ROT == 0
  #if FLIPY == 0
-  #define ADVANCEROW pTileRow += ((BPP >> 3) * 320)
+  #define ADVANCEROW pTileRow += ((BPP >> 3) * 512)
  #else
-  #define ADVANCEROW pTileRow -= ((BPP >> 3) * 320)
+  #define ADVANCEROW pTileRow -= ((BPP >> 3) * 512)
  #endif
 #else
  #error unsupported rotation angle specified
@@ -99,9 +99,9 @@
 
 #if ZBUFFER != 0
  #if FLIPY == 0
-  #define ADVANCEZROW pZTileRow += 320
+  #define ADVANCEZROW pZTileRow += 512
  #else
-  #define ADVANCEZROW pZTileRow -= 320
+  #define ADVANCEZROW pZTileRow -= 512
  #endif
 #endif
 
@@ -156,13 +156,13 @@ static void FUNCTIONNAME(BPP,TRANSMODE,DOFLIP,ROT,SCROLL,ZOOMMODE,ZBUF,CLIP)()
    #if FLIPY == 0
 	for (y = 0, pTileRow = pTile; y < nTileYSize; ADVANCEROW, pTileData += pYZoomInfo[y], y++) {
    #else
-  	for (y = nTileYSize - 1, pTileRow = pTile + ((BPP >> 3) * 320 * (nTileYSize - 1)); y >= 0; ADVANCEROW, pTileData += pYZoomInfo[nTileYSize - 1 - y], y--) {
+  	for (y = nTileYSize - 1, pTileRow = pTile + ((BPP >> 3) * 512 * (nTileYSize - 1)); y >= 0; ADVANCEROW, pTileData += pYZoomInfo[nTileYSize - 1 - y], y--) {
    #endif
   #else
    #if FLIPY == 0
   	for (y = 0, pTileRow = pTile, pZTileRow = pZTile; y < nTileYSize; ADVANCEROW, ADVANCEZROW, pTileData += pYZoomInfo[y], y++) {
    #else
-  	for (y = nTileYSize - 1, pTileRow = pTile + ((BPP >> 3) * 320 * (nTileYSize - 1)), pZTileRow = pZTile + (320 * (nTileYSize - 1)); y >= 0; ADVANCEROW, ADVANCEZROW, pTileData += pYZoomInfo[nTileYSize - 1 - y],  y--) {
+  	for (y = nTileYSize - 1, pTileRow = pTile + ((BPP >> 3) * 512 * (nTileYSize - 1)), pZTileRow = pZTile + (512 * (nTileYSize - 1)); y >= 0; ADVANCEROW, ADVANCEZROW, pTileData += pYZoomInfo[nTileYSize - 1 - y],  y--) {
    #endif
   #endif
  #else
@@ -170,13 +170,13 @@ static void FUNCTIONNAME(BPP,TRANSMODE,DOFLIP,ROT,SCROLL,ZOOMMODE,ZBUF,CLIP)()
    #if FLIPY == 0
 	for (y = 0, pTileRow = pTile; y < 16; y++, ADVANCEROW, pTileData += 16) {
    #else
-  	for (y = 15, pTileRow = pTile + ((BPP >> 3) * 320 * 15); y >= 0; y--, ADVANCEROW, pTileData += 16) {
+  	for (y = 15, pTileRow = pTile + ((BPP >> 3) * 512 * 15); y >= 0; y--, ADVANCEROW, pTileData += 16) {
    #endif
   #else
    #if FLIPY == 0
   	for (y = 0, pTileRow = pTile, pZTileRow = pZTile; y < 16; y++, ADVANCEROW, ADVANCEZROW, pTileData += 16) {
    #else
-  	for (y = 15, pTileRow = pTile + ((BPP >> 3) * 320 * 15), pZTileRow = pZTile + (320 * 15); y >= 0; y--, ADVANCEROW, ADVANCEZROW, pTileData += 16) {
+  	for (y = 15, pTileRow = pTile + ((BPP >> 3) * 512 * 15), pZTileRow = pZTile + (512 * 15); y >= 0; y--, ADVANCEROW, ADVANCEZROW, pTileData += 16) {
    #endif
   #endif
  #endif

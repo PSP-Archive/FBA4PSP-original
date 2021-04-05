@@ -557,6 +557,7 @@ static void Graphics_Decode(int *CharPlanes, int *CharXOffs, int *CharYOffs, int
 	if (tmp == NULL) {
 		return;
 	}
+	memset(tmp, 0, 0x10000);
 
 	memcpy (tmp, Gfx0, 0x4000);
 
@@ -990,7 +991,7 @@ struct BurnDriver BurnDrvGberet = {
 	"gberet", NULL, NULL, "1985",
 	"Green Beret\0", NULL, "Konami", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, gberetRomInfo, gberetRomName, DrvInputInfo, gberetDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	240, 224, 4, 3
@@ -1023,7 +1024,7 @@ struct BurnDriver BurnDrvRushatck = {
 	"rushatck", "gberet", NULL, "1985",
 	"Rush'n Attack (US)\0", NULL, "Konami", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, rushatckRomInfo, rushatckRomName, DrvInputInfo, gberetDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	240, 224, 4, 3
@@ -1062,7 +1063,7 @@ struct BurnDriver BurnDrvGberetb = {
 	"gberetb", "gberet", NULL, "1985",
 	"Green Beret (bootleg)\0", NULL, "bootleg", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S,
 	NULL, gberetbRomInfo, gberetbRomName, gberetbInputInfo, gberetbDIPInfo,
 	gberetbInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	240, 224, 4, 3
@@ -1099,7 +1100,7 @@ struct BurnDriver BurnDrvMrgoemon = {
 	"mrgoemon", NULL, NULL, "1986",
 	"Mr. Goemon (Japan)\0", NULL, "Konami", "Miscellaneous",
 	L"Mr. Goemon \u4E94\u53F3\u885B\u9580 (Japan)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, mrgoemonRomInfo, mrgoemonRomName, DrvInputInfo, mrgoemonDIPInfo,
 	mrgoemonInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	240, 224, 4, 3

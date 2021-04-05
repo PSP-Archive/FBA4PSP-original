@@ -492,8 +492,11 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 
 	unsigned char* pZoomValue = NeoZoomROM + (nBankYZoom << 8);
 
+#ifndef BUILD_PSP
 	pTileRow = pBurnDraw + (nSliceStart - 0x10) * (BPP >> 3) * nNeoScreenWidth + nBankXPos * (BPP >> 3);
-
+#else
+	pTileRow = pBurnDraw + (nSliceStart - 0x10) * (BPP >> 3) * 512 + nBankXPos * (BPP >> 3);
+#endif
 	// Draw the first 16 tiles from top to bottom, starting at the sprite position
 
 	nSize = (nBankSize << 4) - 1;
@@ -516,7 +519,11 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 	} else {
 		if (nBankYPos < nSliceEnd) {						// Sprite starts on screen
 			y = 0;
+#ifndef BUILD_PSP
 			pTileRow += (nBankYPos - nSliceStart) * (BPP >> 3) * nNeoScreenWidth;
+#else
+			pTileRow += (nBankYPos - nSliceStart) * (BPP >> 3) * 512;
+#endif
 			nMax = nSize + 1;
 			if (nMax > nSliceSize - (nBankYPos - nSliceStart)) {
 				nMax = nSliceSize - (nBankYPos - nSliceStart);
@@ -531,8 +538,11 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 						if (nMax > nSliceSize - y) {
 							nMax = nSliceSize - y;
 						}
+#ifndef BUILD_PSP
 						pTileRow += y * (BPP >> 3) * nNeoScreenWidth;
-
+#else
+						pTileRow += y * (BPP >> 3) * 512;
+#endif
 						nFullWrap = y;
 						y = 0;
 					} else {
@@ -597,7 +607,12 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 				}
 			}
 
+#ifndef BUILD_PSP
 			pTileRow = pBurnDraw + (nSliceStart - 0x10) * (BPP >> 3) * nNeoScreenWidth + nBankXPos * (BPP >> 3);
+#else
+			pTileRow = pBurnDraw + (nSliceStart - 0x10) * (BPP >> 3) * 512 + nBankXPos * (BPP >> 3);
+#endif
+
 #if 0
 			if (y < 0) {
 				pTileRow -= y * (BPP >> 3) * nNeoScreenWidth;
@@ -651,7 +666,11 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 		}
 
 		y++;
+#ifndef BUILD_PSP
 		pTileRow += ((BPP >> 3) * nNeoScreenWidth);
+#else
+		pTileRow += ((BPP >> 3) * 512);
+#endif
 
 	} while (1);
 
@@ -686,7 +705,11 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 			nMax = y;
 		} else {													// Sprite starts on the screen
 			if (nYPos <= nSliceEnd) {
+#ifndef BUILD_PSP
 				pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nYPos - 0x11) * (BPP >> 3) * nNeoScreenWidth;
+#else
+				pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nYPos - 0x11) * (BPP >> 3) * 512;
+#endif
 				y = 0;
 				nMax = nSize + 1;
 				if (nMax >= nYPos - nSliceStart) {
@@ -695,7 +718,11 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 					nPass = 1;
 				}
 			} else {
+#ifndef BUILD_PSP
 				pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceEnd - 0x11) * (BPP >> 3) * nNeoScreenWidth;
+#else
+				pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceEnd - 0x11) * (BPP >> 3) * 512;
+#endif
 				y = nYPos - nSliceEnd;
 				nMax = nSize + 1;
 				if (nMax >= y + nSliceSize) {
@@ -725,8 +752,11 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 					y -= 0xFF - nBankYZoom;
 				}
 #endif
+#ifndef BUILD_PSP
 				pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceStart + nSlice - 0x11) * (BPP >> 3) * nNeoScreenWidth;
-
+#else
+				pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceStart + nSlice - 0x11) * (BPP >> 3) * 512;
+#endif
 				if (nMax > nSlice + y) {
 					nMax = nSlice + y;
 				}
@@ -759,13 +789,21 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 
 				nMax = nBankYZoom + 1;
 				if (y < 224) {
+#ifndef BUILD_PSP
 					pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceStart - 0x11 + y) * (BPP >> 3) * nNeoScreenWidth;
+#else
+					pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceStart - 0x11 + y) * (BPP >> 3) * 512;
+#endif
 					if (nMax > y) {
 						nMax = y;
 					}
 					y = 0;
 				} else {
+#ifndef BUILD_PSP					
 					pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceEnd - 0x11) * (BPP >> 3) * nNeoScreenWidth;
+#else
+					pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceEnd - 0x11) * (BPP >> 3) * 512;
+#endif
 					if (nMax > nSliceSize) {
 						nMax = nSliceSize;
 					}
@@ -784,8 +822,11 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 				if (nMax > nSliceSize + y) {
 					nMax = nSliceSize + y;
 				}
-
+#ifndef BUILD_PSP
 				pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceEnd - 0x11) * (BPP >> 3) * nNeoScreenWidth;
+#else
+				pTileRow = pBurnDraw + nBankXPos * (BPP >> 3) + (nSliceEnd - 0x11) * (BPP >> 3) * 512;
+#endif
 			}
 		}
 
@@ -835,7 +876,11 @@ static void FUNCTIONNAME(BPP,XZOOM,CLIP,OPACITY)()
 		}
 
 		y++;
+#ifndef BUILD_PSP
 		pTileRow -= (BPP >> 3) * nNeoScreenWidth;
+#else
+		pTileRow -= (BPP >> 3) * 512;
+#endif
 
 	} while (1);
 }

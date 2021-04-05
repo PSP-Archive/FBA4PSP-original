@@ -208,12 +208,12 @@ foreach my $name ( @Driverlist ) {
 		if ( $Drivers{$name}[0] eq "D" ) {
 			unless ( $Debug == 1) {
 				$Debug = 1;
-				print OUTFILE "#if defined FBA_DEBUG\n";
+				#print OUTFILE "#if defined FBA_DEBUG\n";
 			}
 		} else {
 			if ( $Debug == 1 ) {
 				$Debug = 0;
-				print OUTFILE "#endif\n";
+				#print OUTFILE "#endif\n";
 			}
 		}
 		print OUTFILE "DRV";
@@ -240,7 +240,7 @@ foreach my $name ( @Driverlist ) {
 	}
 }
 if ( $Debug == 1 ) {
-	print OUTFILE "#endif\n";
+	#print OUTFILE "#endif\n";
 }
 
 print OUTFILE << "CPPEND";
@@ -259,12 +259,12 @@ foreach my $name ( @Driverlist ) {
 		if ( $Drivers{$name}[0] eq "D" ) {
 			unless ( $Debug == 1) {
 				$Debug = 1;
-				print OUTFILE "#if defined FBA_DEBUG\n";
+				#print OUTFILE "#if defined FBA_DEBUG\n";
 			}
 		} else {
 			if ( $Debug == 1 ) {
 				$Debug = 0;
-				print OUTFILE "#endif\n";
+				#print OUTFILE "#endif\n";
 			}
 		}
 	}
@@ -300,7 +300,7 @@ foreach my $name ( @Driverlist ) {
 	}
 }
 if ( $Debug == 1 ) {
-	print OUTFILE "#endif\n";
+	#print OUTFILE "#endif\n";
 }
 
 print OUTFILE "};\n";

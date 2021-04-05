@@ -186,6 +186,7 @@ int NeoInitText()
 
 	free(NeoTextTileAttrib);
 	NeoTextTileAttrib = (char*)malloc((nTileNum < 0x2000) ? 0x2000 : nTileNum);
+	memset(NeoTextTileAttrib, 0, (nTileNum < 0x2000) ? 0x2000 : nTileNum);
 
 	if (nNeoScreenWidth == 304) {
 		nMinX = 1;

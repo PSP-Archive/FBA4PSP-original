@@ -15,8 +15,8 @@ int nBurnVer = BURN_VERSION;		// Version number of the library
 unsigned int nBurnDrvCount = 0;		// Count of game drivers
 unsigned int nBurnDrvSelect = ~0U;	// Which game driver is selected
 
-bool bBurnUseMMX;
-bool bBurnUseASMCPUEmulation = true;
+//bool bBurnUseMMX;
+bool bBurnUseASMCPUEmulation = false;
 
 #if defined (FBA_DEBUG)
  clock_t starttime = 0;
@@ -51,11 +51,15 @@ bool bSaveCRoms = 0;
 
 bool BurnCheckMMXSupport()
 {
+#ifndef BUILD_PSP
 	unsigned int nSignatureEAX = 0, nSignatureEBX = 0, nSignatureECX = 0, nSignatureEDX = 0;
 
 	CPUID(1, nSignatureEAX, nSignatureEBX, nSignatureECX, nSignatureEDX);
 
 	return (nSignatureEDX >> 23) & 1;						// bit 23 of edx indicates MMX support
+#else
+	return false;
+#endif
 }
 
 extern "C" int BurnLibInit()
@@ -64,7 +68,7 @@ extern "C" int BurnLibInit()
 	nBurnDrvCount = sizeof(pDriver) / sizeof(pDriver[0]);	// count available drivers
 
 	cmc_4p_Precalc();
-	bBurnUseMMX = BurnCheckMMXSupport();
+	//bBurnUseMMX = BurnCheckMMXSupport();
 
 	return 0;
 }
@@ -504,13 +508,13 @@ extern "C" int BurnDrvGetMaxPlayers()
 // Return genre flags
 extern "C" int BurnDrvGetGenreFlags()
 {
-	return pDriver[nBurnDrvSelect]->genre;
+	return 0;//pDriver[nBurnDrvSelect]->genre;
 }
 
 // Return family flags
 extern "C" int BurnDrvGetFamilyFlags()
 {
-	return pDriver[nBurnDrvSelect]->family;
+	return 0;//pDriver[nBurnDrvSelect]->family;
 }
 
 // Init game emulation (loading any needed roms)
@@ -560,9 +564,10 @@ extern "C" int BurnDrvInit()
 
 	BurnSetRefreshRate(60.0);
 
+#ifndef BUILD_PSP
 	CheatInit();
-	HiscoreInit();
-	BurnStateInit();	
+#endif
+	BurnStateInit();
 
 	nReturnValue = pDriver[nBurnDrvSelect]->Init();	// Forward to drivers function
 
@@ -599,12 +604,13 @@ extern "C" int BurnDrvExit()
 	}
 #endif
 
+#ifndef BUILD_PSP
 	CheatExit();
 	CheatSearchExit();
-	HiscoreExit();
+#endif
 	BurnStateExit();
 
-	nBurnCPUSpeedAdjust = 0x0100;	
+	nBurnCPUSpeedAdjust = 0x0100;
 
 	return pDriver[nBurnDrvSelect]->Exit();			// Forward to drivers function
 }
@@ -612,8 +618,9 @@ extern "C" int BurnDrvExit()
 // Do one frame of game emulation
 extern "C" int BurnDrvFrame()
 {
+#ifndef BUILD_PSP
 	CheatApply();									// Apply cheats (if any)
-	HiscoreApply();
+#endif
 	return pDriver[nBurnDrvSelect]->Frame();		// Forward to drivers function
 }
 
@@ -841,11 +848,21 @@ int BurnClearScreen()
 {
 	struct BurnDriver* pbd = pDriver[nBurnDrvSelect];
 
+#ifdef BUILD_PSP
+	extern void clear_gui_texture(int color, int w, int h);
+	
+	if (pbd->flags & BDF_ORIENTATION_VERTICAL) {
+		clear_gui_texture(0, pbd->nHeight, pbd->nWidth);
+	} else {
+		clear_gui_texture(0, pbd->nWidth, pbd->nHeight);
+	}
+#else
 	if (pbd->flags & BDF_ORIENTATION_VERTICAL) {
 		BurnClearSize(pbd->nHeight, pbd->nWidth);
 	} else {
 		BurnClearSize(pbd->nWidth, pbd->nHeight);
 	}
+#endif
 
 	return 0;
 }

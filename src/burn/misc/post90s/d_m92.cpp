@@ -10,7 +10,13 @@
 
 #include "irem_cpu.h"
 
-
+#ifndef BUILD_PSP
+#define X_SIZE	320
+#define Y_SIZE  240
+#else
+#define X_SIZE	512
+#define Y_SIZE  272
+#endif
 static unsigned char *Mem = NULL, *MemEnd = NULL;
 static unsigned char *RamStart, *RamEnd;
 
@@ -329,6 +335,31 @@ static struct BurnRomInfo hookuRomDesc[] = {
 
 STD_ROM_PICK(hooku);
 STD_ROM_FN(hooku);
+
+static struct BurnRomInfo nbbatmanRomDesc[] = {
+	{ "a1-h0-a.34",		0x040000, 0x24a9b794, BRF_ESS | BRF_PRG },	// CPU 0, V33
+	{ "a1-l0-a.31",		0x040000, 0x846d7716, BRF_ESS | BRF_PRG },
+	{ "a1-h1-.33",		0x040000, 0x3ce2aab5, BRF_ESS | BRF_PRG },
+	{ "a1-l1-.32",		0x040000, 0x116d9bcc, BRF_ESS | BRF_PRG },
+
+	{ "a1-sh0-.14",		0x010000, 0xb7fae3e6, BRF_ESS | BRF_PRG },	// CPU 1, V30
+	{ "a1-sl0-.17",		0x010000, 0xb26d54fc, BRF_ESS | BRF_PRG },
+
+	{ "lh534k0c.9",		0x080000, 0x314a0c6d, BRF_GRA }, 			// Tiles
+	{ "lh534k0e.10",	0x080000, 0xdc31675b, BRF_GRA },
+	{ "lh534k0f.11",	0x080000, 0xe15d8bfb, BRF_GRA },
+	{ "lh534k0g.12",	0x080000, 0x888d71a3, BRF_GRA },
+
+	{ "lh538393.42",	0x100000, 0x26cdd224, BRF_GRA },        	// Sprites
+	{ "lh538394.43",	0x100000, 0x4bbe94fa, BRF_GRA },
+	{ "lh538395.44",	0x100000, 0x2a533b5e, BRF_GRA },
+	{ "lh538396.45",	0x100000, 0x863a66fa, BRF_GRA },
+
+	{ "lh534k0k.8",	0x080000, 0x735e6380, BRF_SND }, 			// Sound
+};
+
+STD_ROM_PICK(nbbatman);
+STD_ROM_FN(nbbatman);
 
 static struct BurnRomInfo hookjRomDesc[] = {
 	{ "h-h0-g.3h",		0x040000, 0x5964c886, BRF_ESS | BRF_PRG },	// CPU 0, V33
@@ -1003,6 +1034,7 @@ static int hookInit()
 	{
 		return 1;
 	}
+	memset(tmp, 0, 0x100000);
 
 	nRet = BurnLoadRom(tmp + 0x000001, 4, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(tmp + 0x000000, 5, 2); if (nRet != 0) return 1;
@@ -1011,13 +1043,8 @@ static int hookInit()
 	irem_cpu_decrypt(0,hook_decryption_table,tmp,RomV30,0x20000 );
 
 
-	free(tmp);
-	// load and decode tile
-	tmp = (unsigned char *) malloc (0x100000);
-	if ( tmp == 0 )
-	{
-		return 1;
-	}
+	memset(tmp, 0, 0x100000);
+
 	loadDecodeGfx01(tmp,  6, 0, 0x040000);
 	loadDecodeGfx01(tmp,  7, 1, 0x040000);
 	loadDecodeGfx01(tmp,  8, 2, 0x040000);
@@ -1083,6 +1110,7 @@ static int hookInit()
 	return 0;
 }
 
+
 static int hookExit()
 {
 	BurnYM2151Exit();
@@ -1099,7 +1127,7 @@ static int hookExit()
 	if (d[xx]) p[xx] = pal[ d[xx] | c ];
 
 #define	TILE_LAYER_1_E(xx)		\
-	if (d[xx] && (x + xx)>=0 && (x + xx)<320 ) p[xx] = pal[ d[xx] | c ];
+	if (d[xx] && (x + xx)>=0 && (x + xx)<X_SIZE ) p[xx] = pal[ d[xx] | c ];
 
 #define	TILE_LAYER_1_LINE		\
 	TILE_LAYER_1(0)				\
@@ -1112,7 +1140,7 @@ static int hookExit()
 	TILE_LAYER_1(7)
 
 #define	TILE_LAYER_1_LINE_E		\
-	if ( (y+k)>=0 && (y+k)<240 ) {	\
+	if ( (y+k)>=0 && (y+k)<Y_SIZE ) {	\
 		TILE_LAYER_1_E(0)		\
 		TILE_LAYER_1_E(1)		\
 		TILE_LAYER_1_E(2)		\
@@ -1144,7 +1172,7 @@ static void tileLayer_1()
 		y = my * 8 - ((136 + (short)((pf1_control[1]<<8) | pf1_control[0])) & 0x1ff);
 		if (y < -16) y += 512;
 
-		if ( x<=-8 || x>=320 || y<=-8 || y>= 240 )
+		if ( x<=-8 || x>=X_SIZE || y<=-8 || y>= Y_SIZE )
 			continue;
 
 		int tile_index = offs + pf1_vram_ptr;
@@ -1152,10 +1180,10 @@ static void tileLayer_1()
 		if (tileno == 0) continue;
 
 		unsigned int c = (RamVideo[tile_index+2] & 0x7F) << 4;
-		unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+		unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 		unsigned char * d = RomGfx01 + (tileno * 64);
 
-		if ( x >=0 && x <= (320-8) && y >= 0 && y <= (240-8)) {
+		if ( x >=0 && x <= (X_SIZE-8) && y >= 0 && y <= (Y_SIZE-8)) {
 
 			//unsigned char * pp = RamPri + y * 320 + x;
 
@@ -1164,7 +1192,7 @@ static void tileLayer_1()
  				TILE_LAYER_1_LINE
 
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 
 		} else {
@@ -1174,7 +1202,7 @@ static void tileLayer_1()
  				TILE_LAYER_1_LINE_E
 
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		}
 	}
@@ -1202,7 +1230,7 @@ static void tileLayer_2()
 		y = my * 8 - ((136 + (short)((pf2_control[1]<<8) | pf2_control[0])) & 0x1ff);
 		if (y < -16) y += 512;
 
-		if ( x<=-8 || x>=320 || y<=-8 || y>= 240 )
+		if ( x<=-8 || x>=X_SIZE || y<=-8 || y>= Y_SIZE )
 			continue;
 
 		int tile_index = offs + pf2_vram_ptr;
@@ -1212,18 +1240,18 @@ static void tileLayer_2()
 		//if ((RamVideo[tile_index+2] & 0x80) ^ pri) continue;
 
 		unsigned int c = (RamVideo[tile_index+2] & 0x7F) << 4;
-		unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+		unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 		unsigned char * d = RomGfx01 + (tileno * 64);
 		//unsigned char * pp = RamPri + y * 320 + x;
 
-		if ( x >=0 && x <= (320-8) && y >= 0 && y <= (240-8)) {
+		if ( x >=0 && x <= (X_SIZE-8) && y >= 0 && y <= (Y_SIZE-8)) {
 
 			for (int k=0;k<8;k++) {
 
  				TILE_LAYER_1_LINE
 
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 
 		} else {
@@ -1233,7 +1261,7 @@ static void tileLayer_2()
  				TILE_LAYER_1_LINE_E
 
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		}
 	}
@@ -1243,7 +1271,7 @@ static void tileLayer_2()
 	p[xx] = pal[ d[xx] | c ];
 
 #define	TILE_LAYER_3_E(xx)		\
-	if ((x + xx)>=0 && (x + xx)<320 ) p[xx] = pal[ d[xx] | c ];
+	if ((x + xx)>=0 && (x + xx)<X_SIZE ) p[xx] = pal[ d[xx] | c ];
 
 #define	TILE_LAYER_3_LINE		\
 	TILE_LAYER_3(0)				\
@@ -1256,7 +1284,7 @@ static void tileLayer_2()
 	TILE_LAYER_3(7)
 
 #define	TILE_LAYER_3_LINE_E		\
-	if ( (y+k)>=0 && (y+k)<240 ) {	\
+	if ( (y+k)>=0 && (y+k)<Y_SIZE ) {	\
 		TILE_LAYER_3_E(0)		\
 		TILE_LAYER_3_E(1)		\
 		TILE_LAYER_3_E(2)		\
@@ -1288,7 +1316,7 @@ static void tileLayer_3()
 		y = my * 8 - ((136 + (short)((pf3_control[1]<<8) | pf3_control[0])) & 0x1ff);
 		if (y < -16) y += 512;
 
-		if ( x<=-8 || x>=320 || y<=-8 || y>= 240 )
+		if ( x<=-8 || x>=X_SIZE || y<=-8 || y>= Y_SIZE )
 			continue;
 
 		int tile_index = offs + pf3_vram_ptr;
@@ -1296,18 +1324,18 @@ static void tileLayer_3()
 		//if (tileno == 0) continue;
 
 		unsigned int c = (RamVideo[tile_index+2] & 0x7F) << 4;
-		unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+		unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 		unsigned char * d = RomGfx01 + (tileno * 64);
 		//unsigned char * pp = RamPri + y * 320 + x;
 
-		if ( x >=0 && x <= (320-8) && y >= 0 && y <= (240-8)) {
+		if ( x >=0 && x <= (X_SIZE-8) && y >= 0 && y <= (Y_SIZE-8)) {
 
 			for (int k=0;k<8;k++) {
 
  				TILE_LAYER_3_LINE
 
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 
 		} else {
@@ -1317,7 +1345,7 @@ static void tileLayer_3()
  				TILE_LAYER_3_LINE_E
 
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		}
 	}
@@ -1330,10 +1358,10 @@ static void tileLayer_3()
 	if (q[x]) p[15-x]=pal[q[x]|color];
 
 #define TILE_SPR_NORMAL_E(x)			\
-	if (q[x]&&((sx+x)>=0)&&((sx+x)<320)) p[x]=pal[q[x]|color];
+	if (q[x]&&((sx+x)>=0)&&((sx+x)<X_SIZE)) p[x]=pal[q[x]|color];
 
 #define TILE_SPR_FLIP_X_E(x)			\
-	if (q[x]&&((sx+15-x)>=0)&&((sx+15-x)<320)) p[15-x]=pal[q[x]|color];
+	if (q[x]&&((sx+15-x)>=0)&&((sx+15-x)<X_SIZE)) p[15-x]=pal[q[x]|color];
 
 #define TILE_SPR_NORMAL_LINE			\
 	TILE_SPR_NORMAL( 0)					\
@@ -1417,28 +1445,28 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 	sx -= 80;
 	sy -= 136;
 
-	p += sy * 320 + sx;
+	p += sy * X_SIZE + sx;
 //	pp += sy * 320 + sx;
 
-	if (sx < 0 || sx >= (320-16) || sy < 0 || sy >= (240-16) ) {
+	if (sx < 0 || sx >= (X_SIZE-16) || sy < 0 || sy >= (Y_SIZE-16) ) {
 
-		if ((sx <= -16) || (sx >= 320) || (sy <= -16) || (sy >= 240))
+		if ((sx <= -16) || (sx >= X_SIZE) || (sy <= -16) || (sy >= Y_SIZE))
 			return;
 
 		if (flipy) {
 
-			p += 320 * 15;
+			p += X_SIZE * 15;
 			//pp += 320 * 15;
 
 			if (flipx) {
 
 				for (int i=15;i>=0;i--) {
-					if (((sy+i)>=0) && ((sy+i)<240)) {
+					if (((sy+i)>=0) && ((sy+i)<Y_SIZE)) {
 
 						TILE_SPR_FLIP_X_LINE_E
 
 					}
-					p -= 320;
+					p -= X_SIZE;
 					//pp -= 320;
 					q += 16;
 				}
@@ -1446,12 +1474,12 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 			} else {
 
 				for (int i=15;i>=0;i--) {
-					if (((sy+i)>=0) && ((sy+i)<240)) {
+					if (((sy+i)>=0) && ((sy+i)<Y_SIZE)) {
 
 						TILE_SPR_NORMAL_LINE_E
 
 					}
-					p -= 320;
+					p -= X_SIZE;
 					//pp -= 320;
 					q += 16;
 				}
@@ -1462,12 +1490,12 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 			if (flipx) {
 
 				for (int i=0;i<16;i++) {
-					if (((sy+i)>=0) && ((sy+i)<240)) {
+					if (((sy+i)>=0) && ((sy+i)<Y_SIZE)) {
 
 						TILE_SPR_FLIP_X_LINE_E
 
 					}
-					p += 320;
+					p += X_SIZE;
 					//pp += 320;
 					q += 16;
 				}
@@ -1475,12 +1503,12 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 			} else {
 
 				for (int i=0;i<16;i++) {
-					if (((sy+i)>=0) && ((sy+i)<240)) {
+					if (((sy+i)>=0) && ((sy+i)<Y_SIZE)) {
 
 						TILE_SPR_NORMAL_LINE_E
 
 					}
-					p += 320;
+					p += X_SIZE;
 					//pp += 320;
 					q += 16;
 				}
@@ -1494,7 +1522,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 
 	if (flipy) {
 
-		p += 320 * 15;
+		p += X_SIZE * 15;
 		//pp += 320 * 15;
 
 		if (flipx) {
@@ -1503,7 +1531,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 
 				TILE_SPR_FLIP_X_LINE
 
-				p -= 320;
+				p -= X_SIZE;
 				//pp -= 320;
 				q += 16;
 			}
@@ -1514,7 +1542,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 
 				TILE_SPR_NORMAL_LINE
 
-				p -= 320;
+				p -= X_SIZE;
 				//pp -= 320;
 				q += 16;
 			}
@@ -1528,7 +1556,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 
 				TILE_SPR_FLIP_X_LINE
 
-				p += 320;
+				p += X_SIZE;
 				//pp += 320;
 				q += 16;
 			}
@@ -1539,7 +1567,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 
 				TILE_SPR_NORMAL_LINE
 
-				p += 320;
+				p += X_SIZE;
 				//pp += 320;
 				q += 16;
 			}
@@ -1603,11 +1631,11 @@ static void DrvDraw()
 	if (pf3_enable)
 		tileLayer_3();
 	else
-		memset(pBurnDraw, 0, 320 * 240 * 2);
+		memset(pBurnDraw, 0, X_SIZE * Y_SIZE * 2);
 
 #ifdef FBA_DEBUG
 	} else
-		memset(pBurnDraw, 0, 320 * 240 * 2);
+		memset(pBurnDraw, 0, X_SIZE * Y_SIZE * 2);
 #endif
 
 
@@ -1691,9 +1719,9 @@ static int hookFrame()
 	}
 
 #else
-
+	VezOpen(0);
 	for (int i=0; i<32; i++ ) {
-		VezOpen(0);
+		//VezOpen(0);
 		VezRun(9000000 / 60 / 32);
 		if ( m92_sprite_buffer_busy == 0 ) {
 			m92_sprite_buffer_busy = 0x80;
@@ -1702,22 +1730,22 @@ static int hookFrame()
 			VezRun( m92_sprite_buffer_timer );
 		}
 
-		VezOpen(1);
-		VezRun(7159090 / 60 / 32);
+		//VezOpen(1);
+		//VezRun(7159090 / 60 / 32);
 	}
 
-	VezOpen(0);
+	//VezOpen(0);
 	VezSetIRQLine((m92_irq_vectorbase + 0), VEZ_IRQSTATUS_ACK);
 
-	VezOpen(1);
+	//VezOpen(1);
 
 	if (pBurnDraw) DrvDraw();
-
+/*
 	if (pBurnSoundOut) {
 		BurnYM2151Render(pBurnSoundOut, nBurnSoundLen);
 		IremGA20_update(pBurnSoundOut, nBurnSoundLen);
 	}
-
+*/
 
 #endif
 
@@ -1786,7 +1814,7 @@ struct BurnDriverD BurnDrvHook = {
 	"hook", NULL, NULL, "1992",
 	"Hook (World)\0", "Preliminary driver", "Irem", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, hookRomInfo, hookRomName, hookInputInfo, hookDIPInfo,
 	hookInit, hookExit, hookFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
@@ -1796,17 +1824,18 @@ struct BurnDriverD BurnDrvHooku = {
 	"hooku", "hook", NULL, "1992",
 	"Hook (US)\0", "Preliminary driver", "Irem America", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, hookuRomInfo, hookuRomName, hookInputInfo, hookDIPInfo,
 	hookInit, hookExit, hookFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
 };
 
+
 struct BurnDriverD BurnDrvHookj = {
 	"hookj", "hook", NULL, "1992",
 	"Hook (Japan)\0", "Preliminary driver", "Irem", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, hookjRomInfo, hookjRomName, hookInputInfo, hookDIPInfo,
 	hookInit, hookExit, hookFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
@@ -1815,7 +1844,7 @@ struct BurnDriverD BurnDrvHookj = {
 static int MemIndex2()
 {
 	unsigned char *Next; Next = Mem;
-	RomV33 		= Next; Next += 0x0C0000;			// V33
+	RomV33 		= Next; Next += 0x180000;			// V33
 	RomV30		= Next; Next += 0x100000;			// V30
 	RomGfx01	= Next; Next += 0x400000;			// char
 	RomGfx02	= Next; Next += 0x800000;			// spr
@@ -1838,7 +1867,108 @@ static int MemIndex2()
 	MemEnd		= Next;
 	return 0;
 }
+static int nbbatmanInit()
+{
+	int nRet;
 
+	Mem = NULL;
+	MemIndex2();
+	int nLen = MemEnd - (unsigned char *)0;
+	if ((Mem = (unsigned char *)malloc(nLen)) == NULL) return 1;
+	memset(Mem, 0, nLen);										// blank all memory
+	MemIndex2();
+
+	nRet = BurnLoadRom(RomV33 + 0x000001, 0, 2); if (nRet != 0) return 1;
+	nRet = BurnLoadRom(RomV33 + 0x000000, 1, 2); if (nRet != 0) return 1;
+	nRet = BurnLoadRom(RomV33 + 0x100001, 2, 2); if (nRet != 0) return 1;
+	nRet = BurnLoadRom(RomV33 + 0x100000, 3, 2); if (nRet != 0) return 1;
+
+	unsigned char *tmp = (unsigned char *) malloc (0x100000);
+	if ( tmp == 0 )
+	{
+		return 1;
+	}
+	memset(tmp, 0, 0x100000);
+
+	nRet = BurnLoadRom(tmp + 0x000001, 4, 2); if (nRet != 0) return 1;
+	nRet = BurnLoadRom(tmp + 0x000000, 5, 2); if (nRet != 0) return 1;
+
+	//irem_cpu_decrypt(RomV30, 0x20000, hook_decryption_table );
+	irem_cpu_decrypt(0,leagueman_decryption_table,tmp,RomV30,0x20000 );
+
+	memset(tmp, 0, 0x100000);
+	loadDecodeGfx01(tmp,  6, 0, 0x080000);
+	loadDecodeGfx01(tmp,  7, 1, 0x080000);
+	loadDecodeGfx01(tmp,  8, 2, 0x080000);
+	loadDecodeGfx01(tmp,  9, 3, 0x080000);
+
+	loadDecodeGfx02(tmp, 10, 0, 0x100000);
+	loadDecodeGfx02(tmp, 11, 1, 0x100000);
+	loadDecodeGfx02(tmp, 12, 2, 0x100000);
+	loadDecodeGfx02(tmp, 13, 3, 0x100000);
+
+	free(tmp);
+
+	{
+		unsigned int cpu_types[] = { 0, 8 };
+		VezInit(2, &cpu_types[0]);
+
+	    VezOpen(0);
+
+		VezMapArea(0x00000, 0x7ffff, 0, RomV33 + 0x00000);	// CPU 0 ROM
+		VezMapArea(0x00000, 0x7ffff, 2, RomV33 + 0x00000);
+		
+		VezMapArea(0x80000, 0x9ffff, 0, RomV33 + 0x100000);	// CPU 0 ROM
+		VezMapArea(0x80000, 0x9ffff, 2, RomV33 + 0x100000);
+
+
+		VezMapArea(0xa0000, 0xbffff, 0, RomV33 + 0x100000);	// rom bank
+		VezMapArea(0xa0000, 0xbffff, 2, RomV33 + 0x100000);
+
+
+		VezMapArea(0xc0000, 0xcffff, 0, RomV33 + 0x00000);	// Mirror, Used by In The Hunt as protection
+		VezMapArea(0xc0000, 0xcffff, 2, RomV33 + 0x00000);
+		
+		
+		VezMapArea(0xd0000, 0xdffff, 0, RamVideo);
+		VezMapArea(0xd0000, 0xdffff, 1, RamVideo);
+
+		VezMapArea(0xe0000, 0xeffff, 0, RamV33);			// system ram
+		VezMapArea(0xe0000, 0xeffff, 1, RamV33);
+
+		VezMapArea(0xf8000, 0xf87ff, 0, RamSpr);			// sprites ram
+		VezMapArea(0xf8000, 0xf87ff, 1, RamSpr);
+
+		VezSetReadHandler(m92ReadByte);
+		VezSetWriteHandler(m92WriteByte);
+		VezSetReadPort(m92ReadPort);
+		VezSetWritePort(m92WritePort);
+		
+		VezOpen(1);
+
+		VezMapArea(0x00000, 0x1ffff, 0, RomV30 + 0x00000);	// CPU 1 ROM
+		VezMapArea(0x00000, 0x1ffff, 2, RomV30 + 0x20000, RomV30 + 0x00000);
+
+		VezMapArea(0xa0000, 0xa3fff, 0, RamV30);			// system ram
+		VezMapArea(0xa0000, 0xa3fff, 1, RamV30);
+
+		// V30 Startup vector
+		VezMapArea(0xff800, 0xfffff, 0, RomV30 + 0x1f800);
+		VezMapArea(0xff800, 0xfffff, 2, RomV30 + 0x3f800, RomV30 + 0x1f800);
+
+		VezSetReadHandler(m92SndReadByte);
+		VezSetWriteHandler(m92SndWriteByte);
+	}
+
+	m92_irq_vectorbase = 0x80;
+	PalBank	= 0;
+
+	BurnYM2151Init(3579545, 80.0);		// 3.5795 MHz
+	YM2151SetIrqHandler(0, &m92YM2151IRQHandler);
+
+	DrvDoReset();
+	return 0;
+}
 static int inthuntInit()
 {
 	int nRet;
@@ -1861,6 +1991,7 @@ static int inthuntInit()
 	// load and decode tile
 	unsigned char *tmp = (unsigned char *) malloc (0x100000);
 	if ( tmp == 0 ) return 1;
+	memset(tmp, 0, 0x100000);
 
 	loadDecodeGfx01(tmp,  6, 0, 0x080000);
 	loadDecodeGfx01(tmp,  7, 1, 0x080000);
@@ -1965,12 +2096,60 @@ static int inthuntFrame()
 
 	return 0;
 }
+static int nbbatmanFrame()
+{
+	if (DrvReset) DrvDoReset();
 
+	if (bRecalcPalette) {
+		for (int i=0; i<0x800;i++)
+			RamCurPal[i] = CalcCol(i<<1);
+		bRecalcPalette = 0;
+	}
+
+	DrvInput[0] = 0x00;
+	DrvInput[1] = 0x00;
+	DrvInput[2] = 0x00;
+	DrvInput[3] = 0x00;
+	DrvInput[4] = 0x00;
+
+	for (int i = 0; i < 8; i++) {
+		DrvInput[0] |= (DrvJoy1[i] & 1) << i;
+		DrvInput[1] |= (DrvJoy2[i] & 1) << i;
+		DrvInput[2] |= (DrvJoy3[i] & 1) << i;
+		DrvInput[3] |= (DrvJoy4[i] & 1) << i;
+		DrvInput[4] |= (DrvButton[i] & 1) << i;
+	}
+	VezOpen(0);
+
+	for (int i=150000-1; i>=0; i--) {
+
+		VezRun(9000000 / 60 / 150000);
+
+		if ( m92_sprite_buffer_busy == 0 ) {
+			m92_sprite_buffer_busy = 0x80;
+			memcpy(RamSprCpy, RamSpr, 0x800);
+			VezSetIRQLine(m92_irq_vectorbase + 4, VEZ_IRQSTATUS_ACK);
+			VezRun( m92_sprite_buffer_timer );
+		}
+
+		if (i == m92_raster_irq_position)
+			VezSetIRQLine(m92_irq_vectorbase + 8, VEZ_IRQSTATUS_ACK); // IRQ 2
+		else
+		if (i == 145900) {
+			VezSetIRQLine(m92_irq_vectorbase + 0, VEZ_IRQSTATUS_ACK); // IRQ 0
+
+		}
+	}
+
+	if (pBurnDraw) DrvDraw();
+
+	return 0;
+}
 struct BurnDriverD BurnDrvInthunt = {
 	"inthunt", NULL, NULL, "1993",
 	"In The Hunt (World)\0", "Preliminary driver", "Irem", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, inthuntRomInfo, inthuntRomName, inthuntInputInfo, inthuntDIPInfo,
 	inthuntInit, hookExit, inthuntFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
@@ -1980,7 +2159,7 @@ struct BurnDriverD BurnDrvInthuntu = {
 	"inthuntu", "inthunt", NULL, "1993",
 	"In The Hunt (US)\0", "Preliminary driver", "Irem America", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, inthuntuRomInfo, inthuntuRomName, inthuntInputInfo, inthuntDIPInfo,
 	inthuntInit, hookExit, inthuntFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
@@ -1990,7 +2169,7 @@ struct BurnDriverD BurnDrvKaiteids = {
 	"kaiteids", "inthunt", NULL, "1993",
 	"Kaitei Daisensou (Japan)\0", "Preliminary driver", "Irem", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, kaiteidsRomInfo, kaiteidsRomName, inthuntInputInfo, inthuntDIPInfo,
 	inthuntInit, hookExit, inthuntFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
@@ -2029,6 +2208,7 @@ static int rtypeleoInit()
 	// load and decode tile
 	unsigned char *tmp = (unsigned char *) malloc (0x100000);
 	if ( tmp == 0 ) return 1;
+	memset(tmp, 0, 0x100000);
 
 	loadDecodeGfx01(tmp,  6, 0, 0x080000);
 	loadDecodeGfx01(tmp,  7, 1, 0x080000);
@@ -2159,7 +2339,7 @@ struct BurnDriverD BurnDrvRtypeleo = {
 	"rtypeleo", NULL, NULL, "1992",
 	"R-Type Leo (World)\0", "Preliminary driver", "Irem", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_HORSHOOT, 0,
+	BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, rtypeleoRomInfo, rtypeleoRomName, inthuntInputInfo, inthuntDIPInfo,
 	rtypeleoInit, rtypeleoExit, rtypeleoFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
@@ -2169,8 +2349,18 @@ struct BurnDriverD BurnDrvRtypelej = {
 	"rtypelej", "rtypeleo", NULL, "1992",
 	"R-Type Leo (Japan)\0", "Preliminary driver", "Irem", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_HORSHOOT, 0,
+	BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, rtypelejRomInfo, rtypelejRomName, inthuntInputInfo, inthuntDIPInfo,
 	rtypeleoInit, rtypeleoExit, rtypeleoFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
+	320, 240, 4, 3
+};
+
+struct BurnDriverD BurnDrvNbbatman = {
+	"nbbatman", NULL, NULL, "1993",
+	"Ninjia Baseball Batman (US)\0", "Preliminary driver", "Irem America", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
+	NULL, nbbatmanRomInfo, nbbatmanRomName, hookInputInfo, hookDIPInfo,
+	nbbatmanInit, hookExit, nbbatmanFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
 };

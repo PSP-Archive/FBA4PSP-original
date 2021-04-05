@@ -1595,7 +1595,7 @@ struct BurnDriver BurnDrvSectionz = {
 	"sectionz", NULL, NULL, "1985",
 	"Section Z (set 1)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_HORSHOOT, 0,
 	NULL, sectionzRomInfo, sectionzRomName, DrvInputInfo, SectionzDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 240, 4, 3
@@ -1637,7 +1637,7 @@ struct BurnDriver BurnDrvSctionza = {
 	"sctionza", "sectionz", NULL, "1985",
 	"Section Z (set 2)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_HORSHOOT, 0,
 	NULL, sctionzaRomInfo, sctionzaRomName, DrvInputInfo, SectionzDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 240, 4, 3
@@ -1679,7 +1679,7 @@ struct BurnDriver BurnDrvLwings = {
 	"lwings", NULL, NULL, "1986",
 	"Legendary Wings (US set 1)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, lwingsRomInfo, lwingsRomName, DrvInputInfo, LwingsDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 256, 3, 4
@@ -1721,7 +1721,7 @@ struct BurnDriver BurnDrvLwings2 = {
 	"lwings2", "lwings", NULL, "1986",
 	"Legendary Wings (US set 2)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, lwings2RomInfo, lwings2RomName, DrvInputInfo, LwingsDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 256, 3, 4
@@ -1763,7 +1763,7 @@ struct BurnDriver BurnDrvLwingsjp = {
 	"lwingsjp", "lwings", NULL, "1986",
 	"Ares no Tsubasa (Japan)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, lwingsjpRomInfo, lwingsjpRomName, DrvInputInfo, LwingsDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 256, 3, 4
@@ -1805,7 +1805,7 @@ struct BurnDriver BurnDrvLwingsb = {
 	"lwingsb", "lwings", NULL, "1986",
 	"Legendary Wings (bootleg)\0", NULL, "bootleg", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, lwingsbRomInfo, lwingsbRomName, DrvInputInfo, LwingsbDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 256, 3, 4
@@ -1859,7 +1859,7 @@ struct BurnDriver BurnDrvTrojan = {
 	"trojan", NULL, NULL, "1986",
 	"Trojan (US)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM | GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM | //GBF_SCRFIGHT, 0,
 	NULL, trojanRomInfo, trojanRomName, DrvInputInfo, TrojanlsDIPInfo,
 	TrojanInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 240, 4, 3
@@ -1913,7 +1913,7 @@ struct BurnDriver BurnDrvTrojanr = {
 	"trojanr", "trojan", NULL, "1986",
 	"Trojan (Romstar)\0", NULL, "Capcom (Romstar license)", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM | GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM | //GBF_SCRFIGHT, 0,
 	NULL, trojanrRomInfo, trojanrRomName, DrvInputInfo, TrojanDIPInfo,
 	TrojanInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 240, 4, 3
@@ -1967,7 +1967,7 @@ struct BurnDriver BurnDrvTrojanj = {
 	"trojanj", "trojan", NULL, "1986",
 	"Tatakai no Banka (Japan)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM | GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM | //GBF_SCRFIGHT, 0,
 	NULL, trojanjRomInfo, trojanjRomName, DrvInputInfo, TrojanDIPInfo,
 	TrojanInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 240, 4, 3
@@ -2028,7 +2028,7 @@ struct BurnDriver BurnDrvAvengers = {
 	"avengers", NULL, NULL, "1987",
 	"Avengers (US set 1)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, avengersRomInfo, avengersRomName, DrvInputInfo, AvengersDIPInfo,
 	AvengersInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 256, 3, 4
@@ -2082,7 +2082,7 @@ struct BurnDriver BurnDrvAvenger2 = {
 	"avenger2", "avengers", NULL, "1987",
 	"Avengers (US set 2)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, avenger2RomInfo, avenger2RomName, DrvInputInfo, AvengersDIPInfo,
 	AvengersInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 256, 3, 4
@@ -2136,7 +2136,7 @@ struct BurnDriver BurnDrvBuraiken = {
 	"buraiken", "avengers", NULL, "1987",
 	"Hissatsu Buraiken (Japan)\0", NULL, "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, buraikenRomInfo, buraikenRomName, DrvInputInfo, AvengersDIPInfo,
 	AvengersInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 256, 3, 4

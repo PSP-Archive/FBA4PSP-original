@@ -886,6 +886,26 @@ static void Darius2RenderSprites(int PriorityDraw)
 	}
 }
 
+#ifdef BUILD_PSP
+
+int Darius2TransferCopy(UINT32* pPalette)
+{
+	UINT16* pSrc = pTransDraw;
+	UINT8* pDest = pBurnDraw;
+
+	for (int y = 0; y < 224; y++, pSrc += 864, pDest += nBurnPitch) {
+		for (int x = 0; x < 864; x ++) {
+			if(x < 512) {
+				((UINT16*)pDest)[x] = pPalette[pSrc[x]];
+			} else {
+				((UINT16*)pDest)[x - 512 + (512*224)] = pPalette[pSrc[x]];
+			}
+		}
+	}
+}
+
+#endif
+
 static void Darius2Draw()
 {
 	int Disable = TC0100SCNCtrl[0][6] & 0xf7;
@@ -905,7 +925,12 @@ static void Darius2Draw()
 	Darius2RenderSprites(0);
 	
 	if (!(Disable & 0x04)) TC0100SCNRenderCharLayer();
+
+#ifdef BUILD_PSP
+	Darius2TransferCopy(TC0110PCRPalette);
+#else
 	BurnTransferCopy(TC0110PCRPalette);
+#endif
 }
 
 static int Darius2Frame()
@@ -999,7 +1024,7 @@ struct BurnDriver BurnDrvDarius2 = {
 	"darius2", NULL, NULL, "1989",
 	"Darius II (Japan)\0", NULL, "Taito Corporation", "Taito-F2",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOF2, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOF2,
 	NULL, Darius2RomInfo, Darius2RomName, Darius2InputInfo, Darius2DIPInfo,
 	Darius2Init, Darius2Exit, Darius2Frame, NULL, Darius2Scan,
 	0, NULL, NULL, NULL, NULL, 864, 224, 12, 3
@@ -1009,7 +1034,7 @@ struct BurnDriver BurnDrvNinjaw = {
 	"ninjaw", NULL, NULL, "1987",
 	"The Ninja Warriors (World)\0", NULL, "Taito Corporation Japan", "Taito-F2",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOF2, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOF2,
 	NULL, NinjawRomInfo, NinjawRomName, Darius2InputInfo, NinjawDIPInfo,
 	NinjawInit, Darius2Exit, Darius2Frame, NULL, Darius2Scan,
 	0, NULL, NULL, NULL, NULL, 864, 224, 12, 3
@@ -1019,7 +1044,7 @@ struct BurnDriver BurnDrvNinjawj = {
 	"ninjawj", "ninjaw", NULL, "1987",
 	"The Ninja Warriors (Japan)\0", NULL, "Taito Corporation", "Taito-F2",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_TAITOF2, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_TAITOF2,
 	NULL, NinjawjRomInfo, NinjawjRomName, Darius2InputInfo, NinjawjDIPInfo,
 	NinjawInit, Darius2Exit, Darius2Frame, NULL, Darius2Scan,
 	0, NULL, NULL, NULL, NULL, 864, 224, 12, 3

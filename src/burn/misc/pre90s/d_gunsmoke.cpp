@@ -27,9 +27,15 @@ static struct BurnInputInfo DrvInputList[] = {
 	{"P1 Left"      , BIT_DIGITAL  , DrvJoy2 + 1, "p1 left"  },
 	{"P1 Down"      ,	BIT_DIGITAL  , DrvJoy2 + 2, "p1 down"  },
 	{"P1 Up"        ,	BIT_DIGITAL  , DrvJoy2 + 3, "p1 up"    },
+#ifdef BUILD_PSP
+	{"P1 Button 1"  , BIT_DIGITAL  , DrvJoy2 + 4,	"p1 fire 3"},
+	{"P1 Button 2"  , BIT_DIGITAL  , DrvJoy2 + 5,	"p1 fire 1"},
+	{"P1 Button 3"  , BIT_DIGITAL  , DrvJoy2 + 6,	"p1 fire 2"},
+#else
 	{"P1 Button 1"  , BIT_DIGITAL  , DrvJoy2 + 4,	"p1 fire 1"},
 	{"P1 Button 2"  , BIT_DIGITAL  , DrvJoy2 + 5,	"p1 fire 2"},
 	{"P1 Button 3"  , BIT_DIGITAL  , DrvJoy2 + 6,	"p1 fire 3"},
+#endif
 
 	{"P2 Coin"      , BIT_DIGITAL  , DrvJoy1 + 7,	"p2 coin"  },
 	{"P2 start"     , BIT_DIGITAL  , DrvJoy1 + 1,	"p2 start" },
@@ -173,7 +179,7 @@ void __fastcall gunsmoke_cpu0_write(unsigned short address, unsigned char data)
 		break;
 
 		case 0xd802:
-		case 0xd803:
+//		case 0xd803:
 			gunsmoke_scrolly = data;
 		break;
 
@@ -330,6 +336,7 @@ static int gunsmoke_gfx_decode()
 {
 	unsigned char *tmp = (unsigned char*)malloc(0x80000);
 	if (!tmp) return 1;
+	memset(tmp, 0, 0x80000);
 
 	static int Planes[4]     = { 0x100004, 0x100000, 4, 0 };
 
@@ -824,7 +831,7 @@ struct BurnDriver BurnDrvGunsmoke = {
 	"gunsmoke", NULL, NULL, "1985",
 	"Gun. Smoke (World)\0", NULL, "Capcom", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, gunsmokeRomInfo, gunsmokeRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -882,7 +889,7 @@ struct BurnDriver BurnDrvGunsmokj = {
 	"gunsmokj", "gunsmoke", NULL, "1985",
 	"Gun. Smoke (Japan)\0", NULL, "Capcom", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, gunsmokjRomInfo, gunsmokjRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -940,7 +947,7 @@ struct BurnDriver BurnDrvGunsmoku = {
 	"gunsmoku", "gunsmoke", NULL, "1985",
 	"Gun. Smoke (US set 1)\0", NULL, "Capcom (Romstar License)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, gunsmokuRomInfo, gunsmokuRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4
@@ -998,7 +1005,7 @@ struct BurnDriver BurnDrvGunsmoka = {
 	"gunsmoka", "gunsmoke", NULL, "1986",
 	"Gun. Smoke (US set 2)\0", NULL, "Capcom (Romstar License)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, gunsmokaRomInfo, gunsmokaRomName, DrvInputInfo, gunsmokaDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvCalcPal,
 	224, 256, 3, 4

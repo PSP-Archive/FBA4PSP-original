@@ -370,6 +370,7 @@ static int dynablstInit()
 	{
 		return 1;
 	}
+	memset(sprTmp, 0, 0x100000);
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -1048,7 +1049,7 @@ struct BurnDriverD BurnDrvdynablst = {
 	"dynablst", NULL, NULL, "1992",
 	"Dynablaster / Bomber Man\0", "Preliminary driver", "Irem (licensed from Hudson Soft)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_MAZE, 0,
+	BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, dynablstRomInfo, dynablstRomName, dynablstInputInfo, dynablstDIPInfo,
 	dynablstInit, dynablstExit, dynablstFrame, NULL, dynablstScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
@@ -1058,7 +1059,7 @@ struct BurnDriverD BurnDrvbombrman = {
 	"bombrman", "dynablst", NULL, "1992",
 	"Bomber Man (Japan)\0", "Preliminary driver", "Irem (licensed from Hudson Soft)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_MAZE, 0,
+	BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, bombrmanRomInfo, bombrmanRomName, dynablstInputInfo, dynablstDIPInfo,
 	dynablstInit, dynablstExit, dynablstFrame, NULL, dynablstScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
@@ -1068,7 +1069,7 @@ struct BurnDriverD BurnDrvatompunk = {
 	"atompunk", "dynablst", NULL, "1992",
 	"Atomic Punk (US)\0", "Preliminary driver", "Irem America (licensed from Hudson Soft)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_MAZE, 0,
+	BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, atompunkRomInfo, atompunkRomName, dynablstInputInfo, dynablstDIPInfo,
 	dynablstInit, dynablstExit, dynablstFrame, NULL, dynablstScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3
@@ -1078,7 +1079,7 @@ struct BurnDriverD BurnDrvdynablsb = {
 	"dynablsb", "dynablst", NULL, "1992",
 	"Dynablaster (bootleg)\0", "Preliminary driver", "bootleg", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S, GBF_MAZE, 0,
+	BDF_CLONE | BDF_16BIT_ONLY, 4, HARDWARE_MISC_POST90S,
 	NULL, dynablsbRomInfo, dynablsbRomName, dynablstInputInfo, dynablstDIPInfo,
 	dynablstInit, dynablstExit, dynablstFrame, NULL, dynablstScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 240, 4, 3

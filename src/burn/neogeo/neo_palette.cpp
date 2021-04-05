@@ -17,6 +17,8 @@ int NeoInitPalette()
 		free(NeoPaletteCopy[i]);
 		NeoPaletteData[i] = (unsigned int*)malloc(4096 * sizeof(int));
 		NeoPaletteCopy[i] = (unsigned short*)malloc(4096 * sizeof(short));
+		memset(NeoPaletteData[i], 0, 4096 * sizeof(int));
+		memset(NeoPaletteCopy[i], 0, 4096 * sizeof(short));
 	}
 
 	NeoRecalcPalette = 1;
@@ -36,6 +38,7 @@ void NeoExitPalette()
 
 inline static unsigned int CalcCol(unsigned short nColour)
 {
+#ifndef BUILD_PSP
 	int r = (nColour & 0x0F00) >> 4;	// Red
 	r |= (nColour >> 11) & 8;
 	int g = (nColour & 0x00F0);			// Green
@@ -48,6 +51,11 @@ inline static unsigned int CalcCol(unsigned short nColour)
 	b |= b >> 5;
 
 	return BurnHighCol(r, g, b, 0);
+#else
+
+	return ((nColour & 0x0F00) >> 7) | ( (nColour & 0x00F0) << 3 ) | ( (nColour & 0x000F) << 12 );
+
+#endif
 }
 
 int NeoUpdatePalette()

@@ -1,384 +1,259 @@
-// FB Alpha Epos Tristar Hardware driver module
-// Based on MAME driver by Zsolt Vasvari
 
-#include "tiles_generic.h"
-#include "8255ppi.h"
-#include "bitswap.h"
+#include "burnint.h"
 #include "driver.h"
 extern "C" {
 #include "ay8910.h"
 }
+#include "bitswap.h"
 
-static unsigned char *AllMem;
-static unsigned char *MemEnd;
-static unsigned char *AllRam;
-static unsigned char *RamEnd;
-static unsigned char *DrvZ80ROM;
-static unsigned char *DrvColPROM;
-static unsigned char *DrvZ80RAM;
-static unsigned char *DrvVidRAM;
-static unsigned int  *Palette;
-static unsigned int  *DrvPalette;
+static unsigned int pens[0x20];
+static unsigned char *eposMem = NULL;
+static unsigned char *eposRom, *eposRam;
+static unsigned char DrvReset, DrvDips, palette;
+static unsigned char DrvJoy[11] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 static short* pAY8910Buffer[3];
+static short *pFMBuffer = NULL;
 
-static unsigned char DrvRecalc;
+//----------------------------------------------------------------------------------------------
+// Game inputs
 
-static unsigned char DrvJoy1[8];
-static unsigned char DrvJoy2[8];
-static unsigned char DrvDips[2];
-static unsigned char DrvInputs[2];
-static unsigned char DrvReset;
+static struct BurnInputInfo DrvInputList[] = {
+	{"Coin",		    BIT_DIGITAL,	DrvJoy + 0,	"p1 coin"},
+	{"Start 1",		  BIT_DIGITAL,	DrvJoy + 1,	"p1 start"},
+	{"Start 2",		  BIT_DIGITAL,	DrvJoy + 2, "p2 start"},
 
-static unsigned char *DrvPaletteBank;
-static unsigned char *DealerZ80Bank;
-static unsigned char *DealerZ80Bank2;
+	{"P1 Up",		    BIT_DIGITAL,	DrvJoy + 7, "p1 up"},
+	{"P1 Down",		  BIT_DIGITAL,	DrvJoy + 8, "p1 down"},
+	{"P1 Left",		  BIT_DIGITAL,	DrvJoy + 4, "p1 left"},
+	{"P1 Right",	  BIT_DIGITAL,	DrvJoy + 3, "p1 right"},
+	{"P1 Button 1", BIT_DIGITAL,	DrvJoy + 5,	"p1 fire 1"},
+	{"P1 Button 2",	BIT_DIGITAL,	DrvJoy + 6,	"p1 fire 2"},
 
-static struct BurnInputInfo MegadonInputList[] = {
-	{"P1 Coin",		BIT_DIGITAL,	DrvJoy1 + 0,	"p1 coin"	},
-	{"P1 Start",		BIT_DIGITAL,	DrvJoy1 + 2,	"p1 start"	},
-	{"P1 Left",		BIT_DIGITAL,	DrvJoy2 + 1,	"p1 left"	},
-	{"P1 Right",		BIT_DIGITAL,	DrvJoy2 + 0,	"p1 right"	},
-	{"P1 Button 1",		BIT_DIGITAL,	DrvJoy2 + 2,	"p1 fire 1"	},
-	{"P1 Button 2",		BIT_DIGITAL,	DrvJoy2 + 3,	"p1 fire 2"	},
-
-	{"Reset",		BIT_DIGITAL,	&DrvReset,	"reset"		},
-	{"Dip A",		BIT_DIPSWITCH,	DrvDips + 0,	"dip"		},
-	{"Dip B",		BIT_DIPSWITCH,	DrvDips + 1,	"dip"		},
+	{"Reset",		BIT_DIGITAL,	&DrvReset,	"reset"},
+	{"Service Mode",	BIT_DIGITAL,	DrvJoy + 10,	"diag"},
+	{"Dip Switches",	BIT_DIPSWITCH,	&DrvDips,	"dip"},
 };
 
-STDINPUTINFO(Megadon);
+STDINPUTINFO(Drv);
 
-static struct BurnInputInfo SuprglobInputList[] = {
-	{"P1 Coin",		BIT_DIGITAL,	DrvJoy1 + 0,	"p1 coin"	},
-	{"P1 Start",		BIT_DIGITAL,	DrvJoy1 + 2,	"p1 start"	},
-	{"P1 Up",		BIT_DIGITAL,	DrvJoy2 + 4,	"p1 up"		},
-	{"P1 Down",		BIT_DIGITAL,	DrvJoy2 + 5,	"p1 down"	},
-	{"P1 Left",		BIT_DIGITAL,	DrvJoy2 + 1,	"p1 left"	},
-	{"P1 Right",		BIT_DIGITAL,	DrvJoy2 + 0,	"p1 right"	},
-	{"P1 Button 1",		BIT_DIGITAL,	DrvJoy2 + 2,	"p1 fire 1"	},
-	{"P1 Button 2",		BIT_DIGITAL,	DrvJoy2 + 3,	"p1 fire 2"	},
-
-	{"Reset",		BIT_DIGITAL,	&DrvReset,	"reset"		},
-	{"Dip A",		BIT_DIPSWITCH,	DrvDips + 0,	"dip"		},
-	{"Dip B",		BIT_DIPSWITCH,	DrvDips + 1,	"dip"		},
-};
-
-STDINPUTINFO(Suprglob);
-
-static struct BurnInputInfo DealerInputList[] = {
-	{"P1 Coin",		BIT_DIGITAL,	DrvJoy2 + 6,	"p1 coin"	},
-	{"P1 Button 1",		BIT_DIGITAL,	DrvJoy2 + 0,	"p1 fire 1"	},
-	{"P1 Button 2",		BIT_DIGITAL,	DrvJoy2 + 1,	"p1 fire 2"	},
-	{"P1 Button 3",		BIT_DIGITAL,	DrvJoy2 + 2,	"p1 fire 3"	},
-	{"P1 Button 4",		BIT_DIGITAL,	DrvJoy2 + 3,	"p1 fire 4"	},
-	{"P1 Button 5",		BIT_DIGITAL,	DrvJoy2 + 4,	"p1 fire 5"	},
-	{"P1 Button 6",		BIT_DIGITAL,	DrvJoy2 + 5,	"p1 fire 6"	},
-
-	{"Reset",		BIT_DIGITAL,	&DrvReset,	"reset"		},
-	{"Dip A",		BIT_DIPSWITCH,	DrvDips + 0,	"dip"		},
-	{"Dip B",		BIT_DIPSWITCH,	DrvDips + 1,	"dip"		},
-};
-
-STDINPUTINFO(Dealer);
-
-
-static struct BurnDIPInfo MegadonDIPList[]=
+static struct BurnDIPInfo megadonDIPList[] =
 {
-	{0x07, 0xff, 0xff, 0x28, NULL				},
-	{0x08, 0xff, 0xff, 0xfe, NULL				},
+	// Defaults
+	{0x0B, 0xFF, 0xFF, 0x00, NULL},
 
-	{0   , 0xfe, 0   ,    2, "Coinage"			},
-	{0x07, 0x01, 0x01, 0x00, "1 Coin 1 Credits "		},
-	{0x07, 0x01, 0x01, 0x01, "1 Coin 2 Credits "		},
+	{0,		0xFE, 0,	2,	  "Coinage"},
+	{0x0B, 0x01, 0x01, 0x00, "1 Coin 1 Credit"},
+	{0x0B, 0x01, 0x01, 0x01, "1 Coin 2 Credits"},
 
-	{0   , 0xfe, 0   ,    2, "Fuel Consumption"		},
-	{0x07, 0x01, 0x02, 0x00, "Slow"				},
-	{0x07, 0x01, 0x02, 0x02, "Fast"				},
+	{0,		0xFE, 0,	2,	  "Fuel Consumption"},
+	{0x0B, 0x01, 0x02, 0x00, "Slow"},
+	{0x0B, 0x01, 0x02, 0x02, "Fast"},
 
-	{0   , 0xfe, 0   ,    2, "Rotation"			},
-	{0x07, 0x01, 0x04, 0x04, "Slow"				},
-	{0x07, 0x01, 0x04, 0x00, "Fast"				},
+	{0,		0xFE, 0,	2,	  "Rotation"},
+	{0x0B, 0x01, 0x04, 0x04, "Slow"},
+	{0x0B, 0x01, 0x04, 0x00, "Fast"},
 
-	{0   , 0xfe, 0   ,    2, "ERG"				},
-	{0x07, 0x01, 0x08, 0x08, "Easy"				},
-	{0x07, 0x01, 0x08, 0x00, "Hard"				},
+	{0,		0xFE, 0,	2,	  "ERG"},
+	{0x0B, 0x01, 0x08, 0x08, "Easy"},
+	{0x0B, 0x01, 0x08, 0x00, "Hard"},
 
-	{0   , 0xfe, 0   ,    2, "Enemy Fire Rate"		},
-	{0x07, 0x01, 0x20, 0x20, "Slow"				},
-	{0x07, 0x01, 0x20, 0x00, "Fast"				},
+	{0,		0xFE, 0,	2,	  "Enemy Fire Rate"},
+	{0x0B, 0x01, 0x20, 0x20, "Slow"},
+	{0x0B, 0x01, 0x20, 0x00, "Fast"},
 
-	{0   , 0xfe, 0   ,    4, "Lives"			},
-	{0x07, 0x01, 0x50, 0x00, "3"				},
-	{0x07, 0x01, 0x50, 0x10, "4"				},
-	{0x07, 0x01, 0x50, 0x40, "5"				},
-	{0x07, 0x01, 0x50, 0x50, "6"				},
+	{0,		0xFE, 0,	4,	  "Lives"},
+	{0x0B, 0x01, 0x50, 0x00, "3"},
+	{0x0B, 0x01, 0x50, 0x10, "4"},
+	{0x0B, 0x01, 0x50, 0x40, "5"},
+	{0x0B, 0x01, 0x50, 0x50, "6"},
 
-	{0   , 0xfe, 0   ,    2, "Game Mode"			},
-	{0x07, 0x01, 0x80, 0x00, "Arcade"			},
-	{0x07, 0x01, 0x80, 0x80, "Contest"			},
+	{0,		0xFE, 0,	2,	  "Game Mode"},
+	{0x0B, 0x01, 0x80, 0x00, "Arcade"},
+	{0x0B, 0x01, 0x80, 0x80, "Contest"},
 };
 
-STDDIPINFO(Megadon);
+STDDIPINFO(megadon);
 
-static struct BurnDIPInfo SuprglobDIPList[]=
+static struct BurnDIPInfo suprglobDIPList[] =
 {
-	// Default Values
-	{0x09, 0xff, 0xff, 0x00, NULL				},
-	{0x0A, 0xff, 0xff, 0xbe, NULL				},
+	// Defaults
+	{0x0B, 0xFF, 0xFF, 0x00, NULL},
 
-	{0   , 0xfe, 0   ,    2, "Coinage"			},
-	{0x09, 0x01, 0x01, 0x00, "1 Coin 1 Credits "		},
-	{0x09, 0x01, 0x01, 0x01, "1 Coin 2 Credits "		},
+	{0,		0xFE, 0,	2,	  "Coinage"},
+	{0x0B, 0x01, 0x01, 0x00, "1 Coin 1 Credit"},
+	{0x0B, 0x01, 0x01, 0x01, "1 Coin 2 Credits"},
 
-	{0   , 0xfe, 0   ,    2, "Bonus Life"			},
-	{0x09, 0x01, 0x08, 0x00, "10000 + Difficulty * 10000"	},
-	{0x09, 0x01, 0x08, 0x08, "90000 + Difficulty * 10000"	},
+	{0,		0xFE, 0,	8,	  "Difficulty"},
+	{0x0B, 0x01, 0x26, 0x00, "1"},
+	{0x0B, 0x01, 0x26, 0x02, "2"},
+	{0x0B, 0x01, 0x26, 0x20, "3"},
+	{0x0B, 0x01, 0x26, 0x22, "4"},
+	{0x0B, 0x01, 0x26, 0x04, "5"},
+	{0x0B, 0x01, 0x26, 0x06, "6"},
+	{0x0B, 0x01, 0x26, 0x24, "7"},
+	{0x0B, 0x01, 0x26, 0x26, "8"},
 
-	{0   , 0xfe, 0   ,    8, "Difficulty"			},
-	{0x09, 0x01, 0x26, 0x00, "1"				},
-	{0x09, 0x01, 0x26, 0x02, "2"				},
-	{0x09, 0x01, 0x26, 0x20, "3"				},
-	{0x09, 0x01, 0x26, 0x22, "4"				},
-	{0x09, 0x01, 0x26, 0x04, "5"				},
-	{0x09, 0x01, 0x26, 0x06, "6"				},
-	{0x09, 0x01, 0x26, 0x24, "7"				},
-	{0x09, 0x01, 0x26, 0x26, "8"				},
+	// Extra Glob condition
+	{0,		0xFE, 0,	2,	  "Bonus Life"},
+	{0x0B, 0x02, 0x08, 0x00, "20000 pts"},
+	{0x0B, 0x00, 0x26, 0x00, NULL},
+	{0x0B, 0x02, 0x08, 0x08, "100000 pts"},
+	{0x0B, 0x00, 0x26, 0x00, NULL},
+	{0,		0xFE, 0,	2,	  "Bonus Life"},
+	{0x0B, 0x02, 0x08, 0x00, "30000 pts"},
+	{0x0B, 0x00, 0x26, 0x02, NULL},
+	{0x0B, 0x02, 0x08, 0x08, "110000 pts"},
+	{0x0B, 0x00, 0x26, 0x02, NULL},
+	{0,		0xFE, 0,	2,	  "Bonus Life"},
+	{0x0B, 0x02, 0x08, 0x00, "40000 pts"},
+	{0x0B, 0x00, 0x26, 0x20, NULL},
+	{0x0B, 0x02, 0x08, 0x08, "120000 pts"},
+	{0x0B, 0x00, 0x26, 0x20, NULL},
+	{0,		0xFE, 0,	2,	  "Bonus Life"},
+	{0x0B, 0x02, 0x08, 0x00, "50000 pts"},
+	{0x0B, 0x00, 0x26, 0x22, NULL},
+	{0x0B, 0x02, 0x08, 0x08, "130000 pts"},
+	{0x0B, 0x00, 0x26, 0x22, NULL},
+	{0,		0xFE, 0,	2,	  "Bonus Life"},
+	{0x0B, 0x02, 0x08, 0x00, "60000 pts"},
+	{0x0B, 0x00, 0x26, 0x04, NULL},
+	{0x0B, 0x02, 0x08, 0x08, "140000 pts"},
+	{0x0B, 0x00, 0x26, 0x04, NULL},
+	{0,		0xFE, 0,	2,	  "Bonus Life"},
+	{0x0B, 0x02, 0x08, 0x00, "70000 pts"},
+	{0x0B, 0x00, 0x26, 0x06, NULL},
+	{0x0B, 0x02, 0x08, 0x08, "150000 pts"},
+	{0x0B, 0x00, 0x26, 0x06, NULL},
+	{0,		0xFE, 0,	2,	  "Bonus Life"},
+	{0x0B, 0x02, 0x08, 0x00, "80000 pts"},
+	{0x0B, 0x00, 0x26, 0x24, NULL},
+	{0x0B, 0x02, 0x08, 0x08, "160000 pts"},
+	{0x0B, 0x00, 0x26, 0x24, NULL},
+	{0,		0xFE, 0,	2,	  "Bonus Life"},
+	{0x0B, 0x02, 0x08, 0x00, "90000 pts"},
+	{0x0B, 0x00, 0x26, 0x26, NULL},
+	{0x0B, 0x02, 0x08, 0x08, "170000 pts"},
+	{0x0B, 0x00, 0x26, 0x26, NULL},
 
-	{0   , 0xfe, 0   ,    4, "Lives"			},
-	{0x09, 0x01, 0x50, 0x00, "3"				},
-	{0x09, 0x01, 0x50, 0x10, "4"				},
-	{0x09, 0x01, 0x50, 0x40, "5"				},
-	{0x09, 0x01, 0x50, 0x50, "6"				},
+	{0,		0xFE, 0,	4,	  "Lives"},
+	{0x0B, 0x01, 0x50, 0x00, "3"},
+	{0x0B, 0x01, 0x50, 0x10, "4"},
+	{0x0B, 0x01, 0x50, 0x40, "5"},
+	{0x0B, 0x01, 0x50, 0x50, "6"},
 
-	{0   , 0xfe, 0   ,    2, "Demo Sounds"			},
-	{0x09, 0x01, 0x80, 0x80, "Off"				},
-	{0x09, 0x01, 0x80, 0x00, "On"				},
+	{0,		0xFE, 0,	2,	  "Demo Sounds"},
+	{0x0B, 0x01, 0x80, 0x80, "Off"},
+	{0x0B, 0x01, 0x80, 0x00, "On"},
+
 };
 
-STDDIPINFO(Suprglob);
+STDDIPINFO(suprglob);
 
-static struct BurnDIPInfo IgmoDIPList[]=
+static struct BurnDIPInfo igmoDIPList[] =
 {
-	{0x09, 0xff, 0xff, 0x00, NULL				},
-	{0x0A, 0xff, 0xff, 0xfe, NULL				},
+	// Defaults
+	{0x0B, 0xFF, 0xFF, 0x00, NULL},
 
-	{0   , 0xfe, 0   ,    2, "Coinage"			},
-	{0x09, 0x01, 0x01, 0x00, "1 Coin 1 Credits "		},
-	{0x09, 0x01, 0x01, 0x01, "1 Coin 2 Credits "		},
+	{0,		0xFE, 0,	2,	  "Coinage"},
+	{0x0B, 0x01, 0x01, 0x00, "1 Coin 1 Credit"},
+	{0x0B, 0x01, 0x01, 0x01, "1 Coin 2 Credits"},
 
-	{0   , 0xfe, 0   ,    4, "Bonus Life"			},
-	{0x09, 0x01, 0x22, 0x00, "20000"			},
-	{0x09, 0x01, 0x22, 0x02, "40000"			},
-	{0x09, 0x01, 0x22, 0x20, "60000"			},
-	{0x09, 0x01, 0x22, 0x22, "80000"			},
+	{0,		0xFE, 0,	4,	  "Bonus Life"},
+	{0x0B, 0x01, 0x22, 0x00, "20000"},
+	{0x0B, 0x01, 0x22, 0x02, "40000"},
+	{0x0B, 0x01, 0x22, 0x20, "60000"},
+	{0x0B, 0x01, 0x22, 0x22, "80000"},
 
-	{0   , 0xfe, 0   ,    4, "Lives"			},
-	{0x09, 0x01, 0x50, 0x00, "3"				},
-	{0x09, 0x01, 0x50, 0x10, "4"				},
-	{0x09, 0x01, 0x50, 0x40, "5"				},
-	{0x09, 0x01, 0x50, 0x50, "6"				},
+	{0,		0xFE, 0,	8,	  "Difficulty"},
+	{0x0B, 0x01, 0x8c, 0x00, "1"},
+	{0x0B, 0x01, 0x8c, 0x04, "2"},
+	{0x0B, 0x01, 0x8c, 0x08, "3"},
+	{0x0B, 0x01, 0x8c, 0x0c, "4"},
+	{0x0B, 0x01, 0x8c, 0x80, "5"},
+	{0x0B, 0x01, 0x8c, 0x84, "6"},
+	{0x0B, 0x01, 0x8c, 0x88, "7"},
+	{0x0B, 0x01, 0x8c, 0x8c, "8"},
 
-	{0   , 0xfe, 0   ,    8, "Difficulty"			},
-	{0x09, 0x01, 0x8c, 0x00, "1"				},
-	{0x09, 0x01, 0x8c, 0x04, "2"				},
-	{0x09, 0x01, 0x8c, 0x08, "3"				},
-	{0x09, 0x01, 0x8c, 0x0c, "4"				},
-	{0x09, 0x01, 0x8c, 0x80, "5"				},
-	{0x09, 0x01, 0x8c, 0x84, "6"				},
-	{0x09, 0x01, 0x8c, 0x88, "7"				},
-	{0x09, 0x01, 0x8c, 0x8c, "8"				},
+	{0,		0xFE, 0,	4,	  "Lives"},
+	{0x0B, 0x01, 0x50, 0x00, "3"},
+	{0x0B, 0x01, 0x50, 0x10, "4"},
+	{0x0B, 0x01, 0x50, 0x40, "5"},
+	{0x0B, 0x01, 0x50, 0x50, "6"},
 };
 
-STDDIPINFO(Igmo);
+STDDIPINFO(igmo);
 
-static struct BurnDIPInfo CatapultDIPList[]=
+
+//----------------------------------------------------------------------------------------------
+// Hardware emulation
+
+unsigned char __fastcall epos_read_port(unsigned short a)
 {
-	{0x09, 0xff, 0xff, 0x00, NULL				},
-	{0x0A, 0xff, 0xff, 0xfe, NULL				},
+	unsigned char ret;
 
-	{0   , 0xfe, 0   ,    2, "Coinage"			},
-	{0x09, 0x01, 0x01, 0x00, "1 Coin 1 Credits "		},
-	{0x09, 0x01, 0x01, 0x01, "1 Coin 2 Credits "		},
-
-	{0   , 0xfe, 0   ,    4, "Bonus Life"			},
-	{0x09, 0x01, 0x0c, 0x00, "20000"			},
-	{0x09, 0x01, 0x0c, 0x04, "40000"			},
-	{0x09, 0x01, 0x0c, 0x08, "60000"			},
-	{0x09, 0x01, 0x0c, 0x0c, "80000"			},
-
-	{0   , 0xfe, 0   ,    4, "Difficulty"			},
-	{0x09, 0x01, 0x22, 0x00, "1"				},
-	{0x09, 0x01, 0x22, 0x02, "2"				},
-	{0x09, 0x01, 0x22, 0x20, "3"				},
-	{0x09, 0x01, 0x22, 0x22, "4"				},
-
-	{0   , 0xfe, 0   ,    4, "Lives"			},
-	{0x09, 0x01, 0x50, 0x00, "3"				},
-	{0x09, 0x01, 0x50, 0x10, "4"				},
-	{0x09, 0x01, 0x50, 0x40, "5"				},
-	{0x09, 0x01, 0x50, 0x50, "6"				},
-
-	{0   , 0xfe, 0   ,    2, "Demo Sounds"			},
-	{0x09, 0x01, 0x80, 0x80, "Off"				},
-	{0x09, 0x01, 0x80, 0x00, "On"				},
-};
-
-STDDIPINFO(Catapult);
-
-static struct BurnDIPInfo DealerDIPList[]=
-{
-	{0x08, 0xff, 0xff, 0xfe, NULL				},
-	{0x09, 0xff, 0xff, 0xff, NULL				},
-
-	{0   , 0xfe, 0   ,    2, "Demo Sounds"			},
-	{0x08, 0x01, 0x01, 0x01, "Off"				},
-	{0x08, 0x01, 0x01, 0x00, "On"				},
-
-	{0   , 0xfe, 0   ,    2, "Free Play"			},
-	{0x08, 0x01, 0x02, 0x02, "Off"				},
-	{0x08, 0x01, 0x02, 0x00, "On"				},
-
-	{0   , 0xfe, 0   ,    2, "Cabinet"			},
-	{0x08, 0x01, 0x40, 0x40, "Upright"			},
-	{0x08, 0x01, 0x40, 0x00, "Cocktail"			},
-
-	{0   , 0xfe, 0   ,    2, "Flip Screen"			},
-	{0x08, 0x01, 0x80, 0x80, "Off"				},
-	{0x08, 0x01, 0x80, 0x00, "On"				},
-};
-
-STDDIPINFO(Dealer);
-
-unsigned char __fastcall epos_read_port(unsigned short port)
-{
-	switch (port & 0xff)
+	switch (a & 0xff)
 	{
 		case 0x00:
-			return DrvDips[0];
+			return DrvDips;
 
 		case 0x01:
-			return DrvInputs[0]; 
+			ret  = DrvJoy[9];	// highest 2 bits used as protection
+			ret |= DrvJoy[10] << 4;	// service mode
+			ret |= DrvJoy[0];
+			ret |= DrvJoy[1] << 2;
+			ret |= DrvJoy[2] << 3;
+
+			return ret ^ 0x3e; 
 
 		case 0x02:
-			return DrvInputs[1];
+			ret  = DrvJoy[3];
+			ret |= DrvJoy[4] << 1;
+			ret |= DrvJoy[5] << 2;
+			ret |= DrvJoy[6] << 3;
+			ret |= DrvJoy[7] << 4;
+			ret |= DrvJoy[8] << 5;
+
+			return ret ^ 0xff;
 
 		case 0x03:
-			return 0;
+			return 0;	// input 3, not used
 	}
 
-	return 0;
+	return a;
 }
 
-void __fastcall epos_write_port(unsigned short port, unsigned char data)
+
+void __fastcall epos_write_port(unsigned short a, unsigned char d)
 {
-	switch (port & 0xff)
+	switch (a & 0xff)
 	{
-		case 0x00:
+		case 0x00: 	// watchdog
 		break;
 
-		case 0x01:
-			*DrvPaletteBank = (data << 1) & 0x10;
+		case 0x01:	// choose palette
+			palette = (d << 1) & 0x10;
 		break;
 
-		case 0x02:
-			AY8910Write(0, 1, data);
+		case 0x02: 	// AY8910 write port 0
+			AY8910Write(0, 1, d);
 		break;
 
-		case 0x06:
-			AY8910Write(0, 0, data);
-		break;
-	}
-}
-
-static void dealer_set_bank()
-{
-	ZetMapArea(0x0000, 0x5fff, 0, DrvZ80ROM + (*DealerZ80Bank << 16));
-	ZetMapArea(0x0000, 0x5fff, 2, DrvZ80ROM + (*DealerZ80Bank << 16));
-}
-
-static void dealer_bankswitch(int offset)
-{
-	int nBank = *DealerZ80Bank;
-
-	if (offset & 4) {
-		nBank = (nBank + 1) & 3;
-	} else {
-		nBank = (nBank - 1) & 3;
-	}
-
-	*DealerZ80Bank = nBank;
-
-	dealer_set_bank();
-}
-
-static void dealer_bankswitch2(int data)
-{
-	*DealerZ80Bank2 = data & 1;
-
-	int nBank = 0x6000 + ((data & 1) << 12);
-	ZetMapArea(0x6000, 0x6fff, 0, DrvZ80ROM + nBank);
-	ZetMapArea(0x6000, 0x6fff, 2, DrvZ80ROM + nBank);
-}
-
-unsigned char __fastcall dealer_read_port(unsigned short port)
-{
-	switch (port & 0xff)
-	{
-		case 0x10:
-		case 0x11:
-		case 0x12:
-		case 0x13:
-			return ppi8255_r(0, port & 3);
-
-		case 0x38:
-			return DrvDips[0];
-	}
-
-	return 0;
-}
-
-void __fastcall dealer_write_port(unsigned short port, unsigned char data)
-{
-	switch (port & 0xff)
-	{
-		case 0x10:
-		case 0x11:
-		case 0x12:
-		case 0x13:
-			ppi8255_w(0, port & 3, data);
-		break;
-
-		case 0x20:
-		case 0x21:
-		case 0x22:
-		case 0x23:
-		case 0x24:
-			dealer_bankswitch(port & 7);
+		case 0x06: 	// AY8910 control port 0
+			AY8910Write(0, 0, d);
 		break;
 	}
 }
 
-unsigned char DealerPPIReadA()
-{
-	return DrvInputs[1];
-}
-
-void DealerPPIWriteC(unsigned char data)
-{
-	dealer_bankswitch2(data);
-}
 
 static int DrvDoReset()
 {
+	memset (eposRam, 0, 0x08800);
+	palette = 0;
 	DrvReset = 0;
-
-	memset (AllRam, 0, RamEnd - AllRam);
 
 	ZetOpen(0);
 	ZetReset();
-	dealer_set_bank();
-	dealer_bankswitch2(0);
 	ZetClose();
 
 	AY8910Reset(0);
@@ -386,157 +261,72 @@ static int DrvDoReset()
 	return 0;
 }
 
-static void DrvPaletteInit(int num)
-{
-	unsigned char prom[32] = { // in case the set lacks a prom dump
-		0x00, 0xE1, 0xC3, 0xFC, 0xEC, 0xF8, 0x34, 0xFF,
-		0x17, 0xF0, 0xEE, 0xEF, 0xAC, 0xC2, 0x1C, 0x07,
-		0x00, 0xE1, 0xC3, 0xFC, 0xEC, 0xF8, 0x34, 0xFF,
-		0x17, 0xF0, 0xEE, 0xEF, 0xAC, 0xC2, 0x1C, 0x07
-	};
-
-	memcpy (DrvColPROM, prom, 32);		
-
-	BurnLoadRom(DrvColPROM, num, 1);
-	
-	for (int i = 0; i < 0x20; i++) {
-		Palette[i] = BITSWAP24(DrvColPROM[i], 7,6,5,7,6,6,7,5,4,3,2,4,3,3,4,2,1,0,1,0,1,1,0,1);
-	}
-}
-
-static void DealerDecode()
-{
-	for (int i = 0;i < 0x8000;i++)
-		DrvZ80ROM[i + 0x00000] = BITSWAP08(DrvZ80ROM[i] ^ 0xbd, 2,6,4,0,5,7,1,3);
-
-	for (int i = 0;i < 0x8000;i++)
-		DrvZ80ROM[i + 0x10000] = BITSWAP08(DrvZ80ROM[i] ^ 0x00, 7,5,4,6,3,2,1,0);
-
-	for (int i = 0;i < 0x8000;i++)
-		DrvZ80ROM[i + 0x20000] = BITSWAP08(DrvZ80ROM[i] ^ 0x01, 7,6,5,4,3,0,2,1);
-
-	for (int i = 0;i < 0x8000;i++)
-		DrvZ80ROM[i + 0x30000] = BITSWAP08(DrvZ80ROM[i] ^ 0x01, 7,5,4,6,3,0,2,1);
-}
-
-static int MemIndex()
-{
-	unsigned char *Next; Next = AllMem;
-
-	DrvZ80ROM	 = Next; Next += 0x040000;
-
-	DrvColPROM	 = Next; Next += 0x000020;
-
-	Palette	 	 = (unsigned int*)Next; Next += 0x0020 * sizeof(int);
-	DrvPalette	 = (unsigned int*)Next; Next += 0x0020 * sizeof(int);
-
-	pAY8910Buffer[0] = (short *)Next; Next += nBurnSoundLen * sizeof(short);
-	pAY8910Buffer[1] = (short *)Next; Next += nBurnSoundLen * sizeof(short);
-	pAY8910Buffer[2] = (short *)Next; Next += nBurnSoundLen * sizeof(short);
-
-	AllRam		 = Next;
-
-	DrvZ80RAM	 = Next; Next += 0x001000;
-	DrvVidRAM	 = Next; Next += 0x008000;
-
-	DrvPaletteBank	 = Next; Next += 0x000001;
-	DealerZ80Bank	 = Next; Next += 0x000001;
-	DealerZ80Bank2	 = Next; Next += 0x000001;
-
-	RamEnd		 = Next;
-
-	MemEnd		 = Next;
-
-	return 0;
-}
 
 static int DrvInit()
 {
-	AllMem = NULL;
-	MemIndex();
-	int nLen = MemEnd - (unsigned char *)0;
-	if ((AllMem = (unsigned char *)malloc(nLen)) == NULL) return 1;
-	memset(AllMem, 0, nLen);
-	MemIndex();
-
-	{
-		if (BurnLoadRom(DrvZ80ROM + 0x0000, 0, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x1000, 1, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x2000, 2, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x3000, 3, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x4000, 4, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x5000, 5, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x6000, 6, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x7000, 7, 1)) return 1;
-
-		DrvPaletteInit(8);
+	eposMem = (unsigned char *)calloc(1, 0x10000);
+	if (eposMem == NULL) {
+		return 1;
 	}
+
+	pFMBuffer = (short *)malloc (nBurnSoundLen * 3 * sizeof(short));
+	if (pFMBuffer == NULL) {
+		return 1;
+	}
+
+	eposRom = eposMem;
+	eposRam = eposMem + 0x07800;
+
+	// Load program Roms
+	for (int i = 0; i < 8; i++) {
+		if (BurnLoadRom(eposRom + i * 0x1000, i, 1)) return 1;
+	}
+
+	// Load palette Prom
+	{
+		unsigned char prom[32] = { // in case the set lacks a prom dump
+			0x00, 0xE1, 0xC3, 0xFC, 0xEC, 0xF8, 0x34, 0xFF,
+			0x17, 0xF0, 0xEE, 0xEF, 0xAC, 0xC2, 0x1C, 0x07,
+			0x00, 0xE1, 0xC3, 0xFC, 0xEC, 0xF8, 0x34, 0xFF,
+			0x17, 0xF0, 0xEE, 0xEF, 0xAC, 0xC2, 0x1C, 0x07
+		};
+
+		BurnLoadRom(prom, 8, 1);
+	
+		// Pre-calculate colors
+		for (int i = 0; i < 0x20; i++) {
+			pens[i] = BITSWAP24(prom[i], 7,6,5,7,6,6,7,5,4,3,2,4,3,3,4,2,1,0,1,0,1,1,0,1);
+		}	
+	}
+
 
 	ZetInit(1);
 	ZetOpen(0);
-	ZetMapArea(0x0000, 0x77ff, 0, DrvZ80ROM);
-	ZetMapArea(0x0000, 0x77ff, 2, DrvZ80ROM);
-	ZetMapArea(0x7800, 0x7fff, 0, DrvZ80RAM);
-	ZetMapArea(0x7800, 0x7fff, 1, DrvZ80RAM);
-	ZetMapArea(0x7800, 0x7fff, 2, DrvZ80RAM);
-	ZetMapArea(0x8000, 0xffff, 0, DrvVidRAM);
-	ZetMapArea(0x8000, 0xffff, 1, DrvVidRAM);
-	ZetMapArea(0x8000, 0xffff, 2, DrvVidRAM);
+
+	ZetMapArea(0x0000, 0xffff, 0, eposRom); // Read entire memory space
+	ZetMapArea(0x0000, 0xffff, 2, eposRom); // Fetch entire memory space
+	ZetMapArea(0x7800, 0xffff, 1, eposRam); // Allow writing in 0x7800 - 0xffff
+
+	ZetMemEnd();
+
 	ZetSetInHandler(epos_read_port);
 	ZetSetOutHandler(epos_write_port);
-	ZetMemEnd();
+
 	ZetClose();
 
-	AY8910Init(0, 2750000, nBurnSoundRate, NULL, NULL, NULL, NULL);
+	// set protected bits
+	DrvJoy[9] = 0xc0;
 
-	GenericTilesInit();
+	if (!strcmp(BurnDrvGetTextA(DRV_NAME), "suprglob") || 
+	     !strncmp(BurnDrvGetTextA(DRV_NAME), "theglob", 7))
+		DrvJoy[9] = 0x80;
 
-	DrvDoReset();
-
-	return 0;
-}
-
-static int DealerInit()
-{
-	AllMem = NULL;
-	MemIndex();
-	int nLen = MemEnd - (unsigned char *)0;
-	if ((AllMem = (unsigned char *)malloc(nLen)) == NULL) return 1;
-	memset(AllMem, 0, nLen);
-	MemIndex();
-
-	{
-		if (BurnLoadRom(DrvZ80ROM + 0x0000, 0, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x2000, 1, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x4000, 2, 1)) return 1;
-		if (BurnLoadRom(DrvZ80ROM + 0x6000, 3, 1)) return 1;
-
-		DrvPaletteInit(4);
-		DealerDecode();
-	}
-
-	ZetInit(1);
-	ZetOpen(0);
-	ZetMapArea(0x0000, 0x6fff, 0, DrvZ80ROM);
-	ZetMapArea(0x0000, 0x6fff, 2, DrvZ80ROM);
-	ZetMapArea(0x7000, 0x7fff, 0, DrvZ80RAM);
-	ZetMapArea(0x7000, 0x7fff, 1, DrvZ80RAM);
-	ZetMapArea(0x7000, 0x7fff, 2, DrvZ80RAM);
-	ZetMapArea(0x8000, 0xffff, 0, DrvVidRAM);
-	ZetMapArea(0x8000, 0xffff, 1, DrvVidRAM);
-	ZetMapArea(0x8000, 0xffff, 2, DrvVidRAM);
-	ZetSetInHandler(dealer_read_port);
-	ZetSetOutHandler(dealer_write_port);
-	ZetMemEnd();
-	ZetClose();
+	// Snd
+	pAY8910Buffer[0] = pFMBuffer + nBurnSoundLen * 0;
+	pAY8910Buffer[1] = pFMBuffer + nBurnSoundLen * 1;
+	pAY8910Buffer[2] = pFMBuffer + nBurnSoundLen * 2;
 
 	AY8910Init(0, 2750000, nBurnSoundRate, NULL, NULL, NULL, NULL);
-
-	ppi8255_init(1);
-	PPI0PortReadA = DealerPPIReadA;
-	PPI0PortWriteC = DealerPPIWriteC;
-
-	GenericTilesInit();
 
 	DrvDoReset();
 
@@ -545,132 +335,112 @@ static int DealerInit()
 
 static int DrvExit()
 {
-	GenericTilesExit();
-
 	AY8910Exit(0);
 	ZetExit();
 
-	if (PPI0PortReadA) {
-		ppi8255_exit();
-	}
+	free (pFMBuffer);
+	free (eposMem);
 
-	free (AllMem);
-	AllMem = NULL;
+	pFMBuffer = NULL;
+	eposMem = eposRom = eposRam = NULL;
 
 	return 0;
 }
 
 static int DrvDraw()
 {
-	if (DrvRecalc) {
-		unsigned char r,g,b;
-		for (int i = 0; i < 0x20; i++) {
-			int rgb = Palette[i];
-			r = (rgb >> 16) & 0xff;
-			g = (rgb >>  8) & 0xff;
-			b = (rgb >>  0) & 0xff;
-	
-			DrvPalette[i] = BurnHighCol(r, g, b, 0);
-		}
-	}
+#define color(x) BurnHighCol((pens[palette | x] >> 16), (pens[palette | x] >> 8), pens[palette | x], 0)
 
 	for (int i = 0; i < 0x8000; i++)
 	{
-		int x = (i % 136) << 1;
+		int x = (i % 136) * 2;
 		int y = (i / 136);
-		if (y > 235) break;
+		if (y > 235) continue; // screen is actually 240 pixels wide
+		    y *= 272;
 
-		pTransDraw[(y * nScreenWidth) + x + 0] = *DrvPaletteBank | ((DrvVidRAM[i] >> 0) & 0x0f);
-		pTransDraw[(y * nScreenWidth) + x + 1] = *DrvPaletteBank | ((DrvVidRAM[i] >> 4) & 0x0f);
+		PutPix(pBurnDraw + (x + y + 0) * nBurnBpp, color(eposRam[i + 0x800]  & 0x0f));
+		PutPix(pBurnDraw + (x + y + 1) * nBurnBpp, color(eposRam[i + 0x800] >> 0x04));
 	}
-
-	BurnTransferCopy(DrvPalette);
 
 	return 0;
 }
 
+
 static int DrvFrame()
 {
-	if (DrvReset) {
-		DrvDoReset();
-	}
+	if (DrvReset) DrvDoReset();
 
-	{
-		DrvInputs[0] = DrvDips[1];
-		DrvInputs[1] = 0xff;
-		for (int i = 0; i < 8; i++)
-		{
-			DrvInputs[0] ^= (DrvJoy1[i] & 1) << i;
-			DrvInputs[1] ^= (DrvJoy2[i] & 1) << i;
-		}
-	}
+	int nSoundBufferPos = 0;
 
 	ZetOpen(0);
 	ZetRun(2750000 / 60);
-	ZetRaiseIrq(0);
+	ZetRaiseIrq(0xff);
 	ZetClose();
 
 	if (pBurnSoundOut) {
 		int nSample;
-		AY8910Update(0, &pAY8910Buffer[0], nBurnSoundLen);
-		for (int n = 0; n < nBurnSoundLen; n++) {
-			nSample  = pAY8910Buffer[0][n];
-			nSample += pAY8910Buffer[1][n];
-			nSample += pAY8910Buffer[2][n];
+		int nSegmentLength = nBurnSoundLen - nSoundBufferPos;
+		short* pSoundBuf = pBurnSoundOut + (nSoundBufferPos << 1);
+		if (nSegmentLength) {
+			AY8910Update(0, &pAY8910Buffer[0], nSegmentLength);
+			for (int n = 0; n < nSegmentLength; n++) {
+				nSample  = pAY8910Buffer[0][n];
+				nSample += pAY8910Buffer[1][n];
+				nSample += pAY8910Buffer[2][n];
 
-			nSample /= 4;
+				nSample /= 4;
 
-			if (nSample < -32768) {
-				nSample = -32768;
-			} else {
-				if (nSample > 32767) {
-					nSample = 32767;
+				if (nSample < -32768) {
+					nSample = -32768;
+				} else {
+					if (nSample > 32767) {
+						nSample = 32767;
+					}
 				}
-			}
 
-			pBurnSoundOut[(n << 1) + 0] = nSample;
-			pBurnSoundOut[(n << 1) + 1] = nSample;
+				pSoundBuf[(n << 1) + 0] = nSample;
+				pSoundBuf[(n << 1) + 1] = nSample;
+			}
 		}
 	}
 
-	if (pBurnDraw) {
-		DrvDraw();
-	}
+	if (pBurnDraw) DrvDraw();
 
 	return 0;
 }
 
+
+// Savestates
 static int DrvScan(int nAction,int *pnMin)
 {
 	struct BurnArea ba;
 
-	if (pnMin) {
-		*pnMin = 0x029702;
+	if (pnMin) {						// Return minimum compatible version
+		*pnMin = 0x029521;
 	}
 
-	if (nAction & ACB_VOLATILE) {	
+	if (nAction & ACB_VOLATILE) {		// Scan volatile ram		
 		memset(&ba, 0, sizeof(ba));
-		ba.Data	  = AllRam;
-		ba.nLen	  = RamEnd - AllRam;
+		ba.Data	  = eposRam;
+		ba.nLen	  = 0x08800;
 		ba.szName = "All Ram";
 		BurnAcb(&ba);
 
-		ZetScan(nAction);
+		ZetScan(nAction);			// Scan Z80
 
-		AY8910Scan(nAction, pnMin);
+		AY8910Scan(nAction, pnMin);		// Scan AY8910
 
-		if (PPI0PortReadA) {
-			ppi8255_scan();
-
-			if (nAction & ACB_WRITE) {
-				dealer_set_bank();
-				dealer_bankswitch2(*DealerZ80Bank2);
-			}
-		}
+		// Scan critical driver variables
+		SCAN_VAR(palette);
 	}
 
 	return 0;
 }
+
+
+
+//----------------------------------------------------------------------------------------------
+// Drivers
 
 
 // Megadon
@@ -695,9 +465,9 @@ struct BurnDriver BurnDrvMegadon = {
 	"megadon", NULL, NULL, "1982",
 	"Megadon\0", NULL, "Epos Corporation (Photar Industries License)", "EPOS Tristar",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
-	NULL, megadonRomInfo, megadonRomName, MegadonInputInfo, MegadonDIPInfo,
-	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, ////GBF_SHOOT, 0,
+	NULL, megadonRomInfo, megadonRomName, DrvInputInfo, megadonDIPInfo,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	236, 272, 3, 4
 };
 
@@ -707,7 +477,7 @@ struct BurnDriver BurnDrvMegadon = {
 static struct BurnRomInfo catapultRomDesc[] = {
 	{ "co3223.u10",     0x1000, 0x50abcfd2, BRF_ESS | BRF_PRG }, //  0 Z80 code
 	{ "co3223.u09",     0x1000, 0xfd5a9a1c, BRF_ESS | BRF_PRG }, //  1
-	{ "co3223.u08",     0x1000, 0x4bfc36f3, BRF_ESS | BRF_PRG }, //  2
+	{ "co3223.u08",     0x1000, 0x4bfc36f3, BRF_ESS | BRF_PRG }, //  2  BADADDR xxxx-xxxxxxx
 	{ "co3223.u07",     0x1000, 0x4113bb99, BRF_ESS | BRF_PRG }, //  3
 	{ "co3223.u06",     0x1000, 0x966bb9f5, BRF_ESS | BRF_PRG }, //  4
 	{ "co3223.u05",     0x1000, 0x65f9fb9a, BRF_ESS | BRF_PRG }, //  5
@@ -724,10 +494,10 @@ struct BurnDriverD BurnDrvCatapult = {
 	"catapult", NULL, NULL, "1982",
 	"Catapult\0", "Bad dump", "Epos Corporation", "EPOS Tristar",
 	NULL, NULL, NULL, NULL,
-	BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
-	NULL, catapultRomInfo, catapultRomName, SuprglobInputInfo, CatapultDIPInfo,
-	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
-	236, 272, 3, 4
+	BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, ////GBF_MISC, 0,
+	NULL, catapultRomInfo, catapultRomName, DrvInputInfo, igmoDIPInfo,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
+	236, 272, 6, 9
 };
 
 
@@ -753,9 +523,9 @@ struct BurnDriver BurnDrvSuprglob = {
 	"suprglob", NULL, NULL, "1983",
 	"Super Glob\0", NULL, "Epos Corporation", "EPOS Tristar",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
-	NULL, suprglobRomInfo, suprglobRomName, SuprglobInputInfo, SuprglobDIPInfo,
-	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, ////GBF_PLATFORM, 0,
+	NULL, suprglobRomInfo, suprglobRomName, DrvInputInfo, suprglobDIPInfo,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	236, 272, 3, 4
 };
 
@@ -782,9 +552,9 @@ struct BurnDriver BurnDrvTheglob = {
 	"theglob", "suprglob", NULL, "1983",
 	"The Glob\0", NULL, "Epos Corporation", "EPOS Tristar",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
-	NULL, theglobRomInfo, theglobRomName, SuprglobInputInfo, SuprglobDIPInfo,
-	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, ////GBF_PLATFORM, 0,
+	NULL, theglobRomInfo, theglobRomName, DrvInputInfo, suprglobDIPInfo,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	236, 272, 3, 4
 };
 
@@ -811,9 +581,9 @@ struct BurnDriver BurnDrvTheglob2 = {
 	"theglob2", "suprglob", NULL, "1983",
 	"The Glob (earlier)\0", NULL, "Epos Corporation", "EPOS Tristar",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
-	NULL, theglob2RomInfo, theglob2RomName, SuprglobInputInfo, SuprglobDIPInfo,
-	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, ////GBF_PLATFORM, 0,
+	NULL, theglob2RomInfo, theglob2RomName, DrvInputInfo, suprglobDIPInfo,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	236, 272, 3, 4
 };
 
@@ -821,16 +591,16 @@ struct BurnDriver BurnDrvTheglob2 = {
 // The Glob (set 3)
 
 static struct BurnRomInfo theglob3RomDesc[] = {
-	{ "theglob3.u10",   0x1000, 0x969cfaf6, BRF_ESS | BRF_PRG },	//  0 Z80 code
-	{ "theglob3.u9",    0x1000, 0x8e6c010a, BRF_ESS | BRF_PRG },	//  1
-	{ "theglob3.u8",    0x1000, 0x1c1ca5c8, BRF_ESS | BRF_PRG },	//  2
-	{ "theglob3.u7",    0x1000, 0xa54b9d22, BRF_ESS | BRF_PRG },	//  3
-	{ "theglob3.u6",    0x1000, 0x5a6f82a9, BRF_ESS | BRF_PRG },	//  4
-	{ "theglob3.u5",    0x1000, 0x72f935db, BRF_ESS | BRF_PRG },	//  5
-	{ "theglob3.u4",    0x1000, 0x81db53ad, BRF_ESS | BRF_PRG },	//  6
-	{ "theglob3.u11",   0x0800, 0x0e2e6359, BRF_ESS | BRF_PRG },	//  7
+	{ "theglob3.u10",   0x1000, 0x969cfaf6, BRF_ESS | BRF_PRG }, //  0 Z80 code
+	{ "theglob3.u9",    0x1000, 0x8e6c010a, BRF_ESS | BRF_PRG }, //  1
+	{ "theglob3.u8",    0x1000, 0x1c1ca5c8, BRF_ESS | BRF_PRG }, //  2
+	{ "theglob3.u7",    0x1000, 0xa54b9d22, BRF_ESS | BRF_PRG }, //  3
+	{ "theglob3.u6",    0x1000, 0x5a6f82a9, BRF_ESS | BRF_PRG }, //  4
+	{ "theglob3.u5",    0x1000, 0x72f935db, BRF_ESS | BRF_PRG }, //  5
+	{ "theglob3.u4",    0x1000, 0x81db53ad, BRF_ESS | BRF_PRG }, //  6
+	{ "theglob3.u11",   0x0800, 0x0e2e6359, BRF_ESS | BRF_PRG }, //  7
 
-	{ "82s123.u66",	    0x0020, 0xf4f6ddc5, BRF_GRA },	   	//  8 Color PROM
+	{ "82s123.u66",	    0x0020, 0xf4f6ddc5, BRF_GRA },	     //  8 Color PROM
 };
 
 STD_ROM_PICK(theglob3);
@@ -840,9 +610,9 @@ struct BurnDriver BurnDrvTheglob3 = {
 	"theglob3", "suprglob", NULL, "1983",
 	"The Glob (set 3)\0", NULL, "Epos Corporation", "EPOS Tristar",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
-	NULL, theglob3RomInfo, theglob3RomName, SuprglobInputInfo, SuprglobDIPInfo,
-	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, ////GBF_PLATFORM, 0,
+	NULL, theglob3RomInfo, theglob3RomName, DrvInputInfo, suprglobDIPInfo,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	236, 272, 3, 4
 };
 
@@ -850,16 +620,16 @@ struct BurnDriver BurnDrvTheglob3 = {
 // IGMO
 
 static struct BurnRomInfo igmoRomDesc[] = {
-	{ "igmo-u10.732",	0x1000, 0xa9f691a4, BRF_ESS | BRF_PRG }, 	//  0 Z80 code
-	{ "igmo-u9.732",	0x1000, 0x3c133c97, BRF_ESS | BRF_PRG }, 	//  1
-	{ "igmo-u8.732",	0x1000, 0x5692f8d8, BRF_ESS | BRF_PRG }, 	//  2
-	{ "igmo-u7.732",	0x1000, 0x630ae2ed, BRF_ESS | BRF_PRG }, 	//  3
-	{ "igmo-u6.732",	0x1000, 0xd3f20e1d, BRF_ESS | BRF_PRG }, 	//  4
-	{ "igmo-u5.732",	0x1000, 0xe26bb391, BRF_ESS | BRF_PRG }, 	//  5
-	{ "igmo-u4.732",	0x1000, 0x762a4417, BRF_ESS | BRF_PRG }, 	//  6
-	{ "igmo-u11.716",	0x0800, 0x8c675837, BRF_ESS | BRF_PRG }, 	//  7
+	{ "igmo-u10.732",	0x1000, 0xa9f691a4, BRF_ESS | BRF_PRG }, //  0 Z80 code
+	{ "igmo-u9.732",	0x1000, 0x3c133c97, BRF_ESS | BRF_PRG }, //  1
+	{ "igmo-u8.732",	0x1000, 0x5692f8d8, BRF_ESS | BRF_PRG }, //  2
+	{ "igmo-u7.732",	0x1000, 0x630ae2ed, BRF_ESS | BRF_PRG }, //  3
+	{ "igmo-u6.732",	0x1000, 0xd3f20e1d, BRF_ESS | BRF_PRG }, //  4
+	{ "igmo-u5.732",	0x1000, 0xe26bb391, BRF_ESS | BRF_PRG }, //  5
+	{ "igmo-u4.732",	0x1000, 0x762a4417, BRF_ESS | BRF_PRG }, //  6
+	{ "igmo-u11.716",	0x0800, 0x8c675837, BRF_ESS | BRF_PRG }, //  7
 
-	{ "82s123.u66",		0x0020, 0x00000000, BRF_GRA | BRF_NODUMP },	//  8 Color Prom (missing)
+	{ "82s123.u66",		0x0020, 0x00000000, BRF_GRA | BRF_NODUMP },	//  8 missing
 };
 
 STD_ROM_PICK(igmo);
@@ -867,11 +637,11 @@ STD_ROM_FN(igmo);
 
 struct BurnDriver BurnDrvIgmo = {
 	"igmo", NULL, NULL, "1984",
-	"IGMO\0", "Incorrect Colors", "Epos Corporation", "EPOS Tristar",
+	"IGMO\0", "Missing color Prom (Incorrect Color)", "Epos Corporation", "EPOS Tristar",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
-	NULL, igmoRomInfo, igmoRomName, SuprglobInputInfo, IgmoDIPInfo,
-	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, ////GBF_MAZE, 0,
+	NULL, igmoRomInfo, igmoRomName, DrvInputInfo, igmoDIPInfo,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	236, 272, 3, 4
 };
 
@@ -879,24 +649,29 @@ struct BurnDriver BurnDrvIgmo = {
 // The Dealer
 
 static struct BurnRomInfo dealerRomDesc[] = {
-	{ "u1.bin",	0x2000, 0xe06f3563, BRF_ESS | BRF_PRG }, 	//  0 Z80 code
-	{ "u2.bin",	0x2000, 0x726bbbd6, BRF_ESS | BRF_PRG }, 	//  1
-	{ "u3.bin",	0x2000, 0xab721455, BRF_ESS | BRF_PRG }, 	//  2
-	{ "u4.bin",	0x2000, 0xddb903e4, BRF_ESS | BRF_PRG }, 	//  3
+	{ "u1.bin",	0x2000, 0xe06f3563, BRF_ESS | BRF_PRG }, //  0 Z80 code
+	{ "u2.bin",	0x2000, 0x726bbbd6, BRF_ESS | BRF_PRG }, //  1
+	{ "u3.bin",	0x2000, 0xab721455, BRF_ESS | BRF_PRG }, //  2
+	{ "u4.bin",	0x2000, 0xddb903e4, BRF_ESS | BRF_PRG }, //  3
 
-	{ "82s123.u66",	0x0020, 0x00000000, BRF_GRA | BRF_NODUMP }, 	//  4 Color Prom (missing)
+	{ "82s123.u66",	0x0020, 0x00000000, BRF_GRA | BRF_NODUMP },   //  4 missing
 };
 
 STD_ROM_PICK(dealer);
 STD_ROM_FN(dealer);
 
-struct BurnDriver BurnDrvDealer = {
+int dealerInit()
+{
+	return 1;
+}
+
+struct BurnDriverD BurnDrvDealer = {
 	"dealer", NULL, NULL, "198?",
-	"The Dealer\0", "No Sound / Incorrect Colors", "Epos Corporation", "EPOS Tristar",
+	"The Dealer\0", "Bad dump", "Epos Corporation", "EPOS Tristar",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_CASINO, 0,
-	NULL, dealerRomInfo, dealerRomName, DealerInputInfo, DealerDIPInfo,
-	DealerInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,// //GBF_CASINO, 0,
+	NULL, dealerRomInfo, dealerRomName, DrvInputInfo, igmoDIPInfo,
+	dealerInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	236, 272, 3, 4
 };
 
@@ -904,23 +679,23 @@ struct BurnDriver BurnDrvDealer = {
 // Revenger
 
 static struct BurnRomInfo revengerRomDesc[] = {
-	{ "r06124.u1",	0x2000, 0xfad1a2a5, BRF_ESS | BRF_PRG },	//  0 Z80 code
-	{ "r06124.u2",	0x2000, 0xa8e0ee7b, BRF_ESS | BRF_PRG },	//  1
-	{ "r06124.u3",	0x2000, 0xcca414a5, BRF_ESS | BRF_PRG },	//  2
-	{ "r06124.u4",	0x2000, 0x0b81c303, BRF_ESS | BRF_PRG },	//  3
+	{ "r06124.u1",	0x2000, 0xfad1a2a5, BRF_ESS | BRF_PRG }, //  0 Z80 code
+	{ "r06124.u2",	0x2000, 0xa8e0ee7b, BRF_ESS | BRF_PRG }, //  1
+	{ "r06124.u3",	0x2000, 0xcca414a5, BRF_ESS | BRF_PRG }, //  2
+	{ "r06124.u4",	0x2000, 0x0b81c303, BRF_ESS | BRF_PRG }, //  3
 
-	{ "82s123.u66",	0x0020, 0x00000000, BRF_GRA | BRF_NODUMP },	//  4 Color Prom (missing)
+	{ "82s123.u66",	0x0020, 0x00000000, BRF_GRA | BRF_NODUMP },	      //  4 missing
 };
 
 STD_ROM_PICK(revenger);
 STD_ROM_FN(revenger);
 
-struct BurnDriver BurnDrvRevenger = {
+struct BurnDriverD BurnDrvRevenger = {
 	"revenger", NULL, NULL, "1984",
 	"Revenger\0", "Bad dump", "Epos Corporation", "EPOS Tristar",
 	NULL, NULL, NULL, NULL,
-	BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
-	NULL, revengerRomInfo, revengerRomName, DealerInputInfo, DealerDIPInfo,
-	DealerInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, ////GBF_MISC, 0,
+	NULL, revengerRomInfo, revengerRomName, DrvInputInfo, igmoDIPInfo,
+	dealerInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	236, 272, 3, 4
 };

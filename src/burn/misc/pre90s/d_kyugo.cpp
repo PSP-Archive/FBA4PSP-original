@@ -1654,6 +1654,7 @@ static int KyugoInit()
 	}
 	
 	// Load and decode the chars
+	memset(KyugoTempRom, 0, 0x18000);
 	nRet = BurnLoadRom(KyugoTempRom, KyugoNumZ80Rom2 + KyugoNumZ80Rom1 + 0, 1); if (nRet != 0) return 1;
 	GfxDecode(0x100, 2, 8, 8, CharPlaneOffsets, CharXOffsets, CharYOffsets, 0x80, KyugoTempRom, KyugoChars);
 	
@@ -2291,7 +2292,7 @@ struct BurnDriver BurnDrvAirwolf = {
 	"airwolf", NULL, NULL, "1987",
 	"Airwolf\0", NULL, "Kyugo", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, AirwolfRomInfo, AirwolfRomName, KyugoInputInfo, AirwolfDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 288, 224, 4, 3
@@ -2301,7 +2302,7 @@ struct BurnDriver BurnDrvAirwolfa = {
 	"airwolfa", "airwolf", NULL, "1987",
 	"Airwolf (US)\0", NULL, "Kyugo (UA Theatre license)", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, AirwolfaRomInfo, AirwolfaRomName, KyugoInputInfo, AirwolfDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 288, 224, 4, 3
@@ -2311,7 +2312,7 @@ struct BurnDriver BurnDrvSkywolf = {
 	"skywolf", "airwolf", NULL, "1987",
 	"Sky Wolf (set 1)\0", NULL, "bootleg", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S,
 	NULL, SkywolfRomInfo, SkywolfRomName, KyugoInputInfo, SkywolfDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 288, 224, 4, 3
@@ -2321,7 +2322,7 @@ struct BurnDriver BurnDrvSkywolf2 = {
 	"skywolf2", "airwolf", NULL, "1987",
 	"Sky Wolf (set 2)\0", NULL, "bootleg", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S,
 	NULL, Skywolf2RomInfo, Skywolf2RomName, KyugoInputInfo, AirwolfDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 288, 224, 4, 3
@@ -2331,7 +2332,7 @@ struct BurnDriver BurnDrvFlashgal = {
 	"flashgal", NULL, NULL, "1985",
 	"Flashgal (set 1)\0", NULL, "Sega", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, FlashgalRomInfo, FlashgalRomName, KyugoInputInfo, FlashgalDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 288, 224, 4, 3
@@ -2341,7 +2342,7 @@ struct BurnDriver BurnDrvFlashgla = {
 	"flashgla", "flashgal", NULL, "1985",
 	"Flashgal (set 2)\0", NULL, "Sega", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, FlashglaRomInfo, FlashglaRomName, KyugoInputInfo, FlashgalDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 288, 224, 4, 3
@@ -2351,7 +2352,7 @@ struct BurnDriver BurnDrvGyrodine = {
 	"gyrodine", NULL, NULL, "1984",
 	"Gyrodine (Taito Corporation license)\0", NULL, "Crux (Taito Corporation license)", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, GyrodineRomInfo, GyrodineRomName, KyugoInputInfo, GyrodineDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -2361,7 +2362,7 @@ struct BurnDriver BurnDrvGyrodinc = {
 	"gyrodinc", "gyrodine", NULL, "1984",
 	"Gyrodine\0", NULL, "Crux", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, GyrodincRomInfo, GyrodincRomName, KyugoInputInfo, GyrodineDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -2371,7 +2372,7 @@ struct BurnDriver BurnDrvBuzzard = {
 	"buzzard", "gyrodine", NULL, "1984",
 	"Buzzard\0", NULL, "Crux", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, BuzzardRomInfo, BuzzardRomName, KyugoInputInfo, GyrodineDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -2381,7 +2382,7 @@ struct BurnDriver BurnDrvLegend = {
 	"legend", NULL, NULL, "1986",
 	"Legend\0", NULL, "Sega / Coreland", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, LegendRomInfo, LegendRomName, KyugoInputInfo, LegendDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 288, 224, 4, 3
@@ -2391,7 +2392,7 @@ struct BurnDriver BurnDrvSonofphx = {
 	"sonofphx", NULL, NULL, "1985",
 	"Son of Phoenix\0", NULL, "Associated Overseas MFR, Inc", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, SonofphxRomInfo, SonofphxRomName, KyugoInputInfo, SonofphxDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -2401,7 +2402,7 @@ struct BurnDriver BurnDrvRepulse = {
 	"repulse", "sonofphx", NULL, "1985",
 	"Repulse\0", NULL, "Sega", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, RepulseRomInfo, RepulseRomName, KyugoInputInfo, SonofphxDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -2411,7 +2412,7 @@ struct BurnDriver BurnDrv99lstwar = {
 	"99lstwar", "sonofphx", NULL, "1985",
 	"'99: The Last War\0", NULL, "Proma", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, Lstwar99RomInfo, Lstwar99RomName, KyugoInputInfo, SonofphxDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -2421,7 +2422,7 @@ struct BurnDriver BurnDrv99lstwra = {
 	"99lstwra", "sonofphx", NULL, "1985",
 	"'99: The Last War (alternate)\0", NULL, "Proma", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, Lstwra99RomInfo, Lstwra99RomName, KyugoInputInfo, SonofphxDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -2431,7 +2432,7 @@ struct BurnDriver BurnDrv99lstwrk = {
 	"99lstwrk", "sonofphx", NULL, "1985",
 	"'99: The Last War (Kyugo)\0", NULL, "Kyugo", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, Lstwrk99RomInfo, Lstwrk99RomName, KyugoInputInfo, SonofphxDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -2441,7 +2442,7 @@ struct BurnDriver BurnDrvSrdmissn = {
 	"srdmissn", NULL, NULL, "1986",
 	"S.R.D. Mission\0", NULL, "Taito Corporation", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, SrdmissnRomInfo, SrdmissnRomName, KyugoInputInfo, SrdmissnDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -2451,7 +2452,7 @@ struct BurnDriver BurnDrvFx = {
 	"fx", "srdmissn", NULL, "1986",
 	"F-X\0", NULL, "bootleg", "Kyugo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, FxRomInfo, FxRomName, KyugoInputInfo, SrdmissnDIPInfo,
 	KyugoInit, KyugoExit, KyugoFrame, NULL, KyugoScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4

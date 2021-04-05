@@ -641,7 +641,7 @@ struct BurnDriver BurnDrvSilkroad = {
 	"silkroad", NULL, NULL, "1999",
 	"The Legend of Silkroad\0", NULL, "Unico", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_SCRFIGHT, 0,
 	NULL, silkroadRomInfo, silkroadRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	380, 224, 4, 3

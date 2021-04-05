@@ -1298,7 +1298,7 @@ struct BurnDriver BurnDrvMultchmp = {
 	"multchmp", NULL, NULL, "1999",
 	"Multi Champ (World)\0", NULL, "ESD", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_MINIGAMES, 0,
 	NULL, multchmpRomInfo, multchmpRomName, MultchmpInputInfo, MultchmpDIPInfo,
 	MultchmpInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1338,7 +1338,7 @@ struct BurnDriver BurnDrvMultchmk = {
 	"multchmk", "multchmp", NULL, "1999",
 	"Multi Champ (Korea)\0", NULL, "ESD", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_MINIGAMES, 0,
 	NULL, multchmkRomInfo, multchmkRomName, MultchmpInputInfo, MultchmpDIPInfo,
 	MultchmpInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1416,7 +1416,7 @@ struct BurnDriver BurnDrvHedpanic = {
 	"hedpanic", NULL, NULL, "2000",
 	"Head Panic (ver. 0117, 17/01/2000)\0", "Story line & game instructions in English", "ESD", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PLATFORM, 0,
 	NULL, hedpanicRomInfo, hedpanicRomName, HedpanicInputInfo, NULL,
 	HedpanicInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1448,7 +1448,7 @@ struct BurnDriver BurnDrvHedpanif = {
 	"hedpanif", "hedpanic", NULL, "2000",
 	"Head Panic (ver. 0315, 15/03/2000)\0", "Story line in Japanese, game instructions in English", "ESD / Fuuki", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_PLATFORM, 0,
 	NULL, hedpanifRomInfo, hedpanifRomName, HedpanicInputInfo, NULL,
 	HedpanicInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1526,7 +1526,7 @@ struct BurnDriver BurnDrvMchampdx = {
 	"mchampdx", NULL, NULL, "2000",
 	"Multi Champ Deluxe (ver. 0106, 06/01/2000)\0", NULL, "ESD", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_MINIGAMES, 0,
 	NULL, mchampdxRomInfo, mchampdxRomName, HedpanicInputInfo, NULL,
 	MchampdxInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1558,7 +1558,7 @@ struct BurnDriver BurnDrvMchampda = {
 	"mchampda", "mchampdx", NULL, "1999",
 	"Multi Champ Deluxe (ver. 1126, 26/11/1999)\0", NULL, "ESD", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_MINIGAMES, 0,
 	NULL, mchampdaRomInfo, mchampdaRomName, HedpanicInputInfo, NULL,
 	MchampdxInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1638,7 +1638,7 @@ struct BurnDriver BurnDrvTangtang = {
 	"tangtang", NULL, NULL, "2000",
 	"Tang Tang (ver. 0526, 26/05/2000)\0", NULL, "ESD", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PLATFORM, 0,
 	NULL, tangtangRomInfo, tangtangRomName, HedpanicInputInfo, NULL,
 	TangtangInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1718,7 +1718,7 @@ struct BurnDriver BurnDrvSwatpolc = {
 	"swatpolc", NULL, NULL, "2001",
 	"SWAT Police\0", NULL, "ESD", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_SHOOT, 0,
 	NULL, swatpolcRomInfo, swatpolcRomName, SwatpolcInputInfo, NULL,
 	SwatpolcInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3

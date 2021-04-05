@@ -124,7 +124,6 @@ struct VidOut {
 int VidSelect(unsigned int nPlugin);
 int VidInit();
 int VidExit();
-int VidReInitialise();
 int VidFrame();
 int VidRedraw();
 int VidRecalcPal();
@@ -140,10 +139,6 @@ InterfaceInfo* VidGetInfo();
 extern bool bVidOkay;
 extern unsigned int nVidSelect;
 extern int nVidWidth, nVidHeight, nVidDepth, nVidRefresh;
-
-extern int nVidHorWidth, nVidHorHeight;
-extern int nVidVerWidth, nVidVerHeight;
-
 extern int nVidFullscreen;
 extern int bVidBilinear;
 extern int bVidScanlines;
@@ -156,10 +151,6 @@ extern int nVidFeedbackIntensity;
 extern int nVidFeedbackOverSaturation;
 extern int bVidCorrectAspect;
 extern int bVidArcaderes;
-
-extern int bVidArcaderesHor;
-extern int bVidArcaderesVer;
-
 extern int nVidRotationAdjust;
 extern int bVidUseHardwareGamma;
 extern int bVidAutoSwitchFull;
@@ -190,9 +181,6 @@ extern bool bVidUsePlaceholder;
 extern TCHAR szPlaceHolder[MAX_PATH];
 
 // vid_directx_support.cpp
-
-int VidSNewTinyMsg(const TCHAR* pText, int nRGB = 0, int nDuration = 0, int nPiority = 5);
-
 int VidSNewShortMsg(const TCHAR* pText, int nRGB = 0, int nDuration = 0, int nPiority = 5);
 void VidSKillShortMsg();
 
@@ -206,8 +194,3 @@ extern int nMinChatFontSize;
 extern bool bEditActive;
 extern bool bEditTextChanged;
 extern TCHAR EditText[MAX_CHAT_SIZE + 1];
-
-// osd text display for dx9
-extern TCHAR OSDMsg[MAX_PATH];
-extern unsigned int nOSDTimer;
-void VidSKillOSDMsg();

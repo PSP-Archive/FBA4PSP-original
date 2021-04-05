@@ -501,7 +501,7 @@ struct BurnDriver BurnDrvDrtomy = {
 	"drtomy", NULL, NULL, "1993",
 	"Dr. Tomy\0", NULL, "Playmark", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S,
 	NULL, drtomyRomInfo, drtomyRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 240, 4, 3

@@ -967,7 +967,7 @@ struct BurnDriver BurnDrvContra = {
 	"contra", NULL, NULL, "1987",
 	"Contra (US, Set 1)\0", NULL, "Konami", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_MISC, 0,
 	NULL, contraRomInfo, contraRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 280, 3, 4
@@ -1001,7 +1001,7 @@ struct BurnDriver BurnDrvContra1 = {
 	"contra1", "contra", NULL, "1987",
 	"Contra (US, Set 2)\0", NULL, "Konami", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_MISC, 0,
 	NULL, contra1RomInfo, contra1RomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 280, 3, 4
@@ -1048,7 +1048,7 @@ struct BurnDriver BurnDrvContrab = {
 	"contrab", "contra", NULL, "1987",
 	"Contra (bootleg)\0", NULL, "bootleg", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_MISC, 0,
 	NULL, contrabRomInfo, contrabRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 280, 3, 4
@@ -1082,7 +1082,7 @@ struct BurnDriver BurnDrvContraj = {
 	"contraj", "contra", NULL, "1987",
 	"Contra (Japan)\0", NULL, "Konami", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_MISC, 0,
 	NULL, contrajRomInfo, contrajRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 280, 3, 4
@@ -1127,7 +1127,7 @@ struct BurnDriver BurnDrvContrajb = {
 	"contrajb", "contra", NULL, "1987",
 	"Contra (Japan bootleg)\0", NULL, "bootleg", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_MISC, 0,
 	NULL, contrajbRomInfo, contrajbRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 280, 3, 4
@@ -1161,7 +1161,7 @@ struct BurnDriver BurnDrvGryzor = {
 	"gryzor", "contra", NULL, "1987",
 	"Gryzor (Set 1)\0", NULL, "Konami", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_MISC, 0,
 	NULL, gryzorRomInfo, gryzorRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 280, 3, 4
@@ -1195,7 +1195,7 @@ struct BurnDriver BurnDrvGryzora = {
 	"gryzora", "contra", NULL, "1987",
 	"Gryzor (Set 2)\0", NULL, "Konami", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_MISC, 0,
 	NULL, gryzoraRomInfo, gryzoraRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 280, 3, 4

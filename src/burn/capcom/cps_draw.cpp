@@ -407,6 +407,20 @@ static void Cps2Layers()
 
 void CpsClearScreen()
 {
+#ifdef BUILD_PSP
+
+	extern void clear_gui_texture(int color, int w, int h);
+	
+	unsigned int nColour = 0;
+	if (Cps == 1) {
+		nColour = CpsPal[0xbff ^ 15];
+		nColour = ((nColour & 0x001f ) << 3) | ((nColour & 0x07e0 ) << 5) | ((nColour & 0xf800 ) << 8);
+	}
+
+	clear_gui_texture(nColour, 384, 224);
+	
+#else
+
 	if (Cps == 1) {
 		switch (nBurnBpp) {
 			case 4: {
@@ -458,6 +472,7 @@ void CpsClearScreen()
 	} else {
 		memset(pBurnDraw, 0, 384 * 224 * nBurnBpp);
 	}
+#endif
 }
 
 static void DoDraw(int Recalc)

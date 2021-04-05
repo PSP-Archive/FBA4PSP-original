@@ -248,6 +248,7 @@ static void YM2203UpdateNormal(short* pSoundBuf, int nSegmentEnd)
 		pYM2203Buffer[10] = pBuffer + 4 + 10 * 4096;
 	}
 
+#ifndef BUILD_PSP
 	if (bBurnUseMMX) {
 		for (int n = nFractionalPosition; n < nSegmentLength; n++) {
 			pAYBuffer[n] = pYM2203Buffer[2][n] + pYM2203Buffer[3][n] + pYM2203Buffer[4][n];
@@ -256,6 +257,7 @@ static void YM2203UpdateNormal(short* pSoundBuf, int nSegmentEnd)
 		BurnSoundCopy_FM_OPN_A(pYM2203Buffer[0], pAYBuffer, pSoundBuf, nSegmentLength, 65536 * 60 / 100, 65536 * 60 / 100);
 		if (nNumChips > 1) BurnSoundCopy_FM_OPN_Add_A(pYM2203Buffer[6], pAYBuffer2, pSoundBuf, nSegmentLength, 65536 * 60 / 100, 65536 * 60 / 100);
 	} else {
+#endif
 		for (int n = nFractionalPosition; n < nSegmentLength; n++) {
 			int nAYSample, nTotalSample;
 
@@ -303,7 +305,9 @@ static void YM2203UpdateNormal(short* pSoundBuf, int nSegmentEnd)
 				pSoundBuf[(n << 1) + 1] = nTotalSample;
 			}
 		}
+#ifndef BUILD_PSP
 	}
+#endif
 
 	nFractionalPosition = nSegmentLength;
 

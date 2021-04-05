@@ -1857,7 +1857,7 @@ struct BurnDriver BurnDrvBurglarx = {
 	"burglarx", NULL, NULL, "1997",
 	"Burglar X\0", NULL, "Unico", "Unico",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_MAZE, 0,
 	NULL, BurglarxRomInfo, BurglarxRomName, BurglarxInputInfo, BurglarxDIPInfo,
 	BurglarxInit, DrvExit, DrvFrame, NULL, BurglarxScan,
 	0, NULL, NULL, NULL, NULL, 384, 224, 4, 3
@@ -1867,7 +1867,7 @@ struct BurnDriver BurnDrvZeropnt = {
 	"zeropnt", NULL, NULL, "1998",
 	"Zero Point (set 1)\0", NULL, "Unico", "Unico",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_SHOOT, 0,
 	NULL, ZeropntRomInfo, ZeropntRomName, ZeropntInputInfo, ZeropntDIPInfo,
 	ZeropntInit, DrvExit, DrvFrame, NULL, ZeropntScan,
 	0, NULL, NULL, NULL, NULL, 384, 224, 4, 3
@@ -1877,7 +1877,7 @@ struct BurnDriver BurnDrvZeropnta = {
 	"zeropnta", "zeropnt", NULL, "1998",
 	"Zero Point (set 2)\0", NULL, "Unico", "Unico",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_SHOOT, 0,
 	NULL, ZeropntaRomInfo, ZeropntaRomName, ZeropntInputInfo, ZeropntDIPInfo,
 	ZeropntInit, DrvExit, DrvFrame, NULL, ZeropntScan,
 	0, NULL, NULL, NULL, NULL, 384, 224, 4, 3
@@ -1887,7 +1887,7 @@ struct BurnDriver BurnDrvZeropnt2 = {
 	"zeropnt2", NULL, NULL, "1999",
 	"Zero Point 2\0", NULL, "Unico", "Unico",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_SHOOT, 0,
 	NULL, Zeropnt2RomInfo, Zeropnt2RomName, ZeropntInputInfo, Zeropnt2DIPInfo,
 	Zeropnt2Init, Zeropnt2Exit, Zeropnt2Frame, NULL, Zeropnt2Scan,
 	0, NULL, NULL, NULL, NULL, 384, 224, 4, 3

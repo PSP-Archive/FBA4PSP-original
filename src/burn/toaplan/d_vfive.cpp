@@ -564,7 +564,7 @@ struct BurnDriver BurnDrvVFive = {
 	"vfive", NULL, NULL, "1993",
 	"V-Five (Japan)\0", "No sound (sound MCU not dumped)", "Toaplan", "Toaplan GP9001 based",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80,
 	NULL, vfiveRomInfo, vfiveRomName, vfiveInputInfo, vfiveDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	240, 320, 3, 4
@@ -574,7 +574,7 @@ struct BurnDriver BurnDrvGrindStormer = {
 	"grindstm", "vfive", NULL, "1992",
 	"Grind Stormer\0", "No sound (sound MCU not dumped)", "Toaplan", "Toaplan GP9001 based",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80,
 	NULL, grindstmRomInfo, grindstmRomName, vfiveInputInfo, grindstmDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	240, 320, 3, 4
@@ -584,7 +584,7 @@ struct BurnDriver BurnDrvGrindStormerA = {
 	"grindsta", "vfive", NULL, "1992",
 	"Grind Stormer (older set)\0", "No sound (sound MCU not dumped)", "Toaplan GP9001 based", "Toaplan",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80,
 	NULL, grindstaRomInfo, grindstaRomName, vfiveInputInfo, grindstmDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	240, 320, 3, 4

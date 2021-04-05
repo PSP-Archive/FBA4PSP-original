@@ -138,6 +138,7 @@ int PsndZInit()
 	if (PsndZRam == NULL) {
 		return 1;
 	}
+	memset(PsndZRam, 0, 0x800);
 
 	ZetInit(1);
 

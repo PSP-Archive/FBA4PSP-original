@@ -4,7 +4,11 @@
 
 #if ROT == 0
  #define ADVANCEWORD pPixel += ((BPP >> 3) * 16)
- #define ADVANCEROW pRow += ((BPP >> 3) * XSIZE)
+ #ifndef BUILD_PSP
+  #define ADVANCEROW pRow += ((BPP >> 3) * XSIZE)
+ #else
+  #define ADVANCEROW pRow += ((BPP >> 3) * 512)
+ #endif 
 #else
  #error unsupported rotation angle specified
 #endif
@@ -28,19 +32,31 @@
 #elif ZBUFFER == 1
  #define ZBUF _RZBUFFER
  #define ADVANCEZWORD pZPixel += 16
- #define ADVANCEZROW pZRow += XSIZE
+// #ifndef BUILD_PSP
+  #define ADVANCEZROW pZRow += XSIZE
+// #else
+//  #define ADVANCEZROW pZRow += 512
+// #endif
  #define TESTZBUF(a) (pZPixel[a] <= nZPos)
  #define WRITEZBUF(a)
 #elif ZBUFFER == 2
  #define ZBUF _WZBUFFER
  #define ADVANCEZWORD pZPixel += 16
- #define ADVANCEZROW pZRow += XSIZE
+// #ifndef BUILD_PSP
+  #define ADVANCEZROW pZRow += XSIZE
+// #else
+//  #define ADVANCEZROW pZRow += 512
+// #endif
  #define TESTZBUF(a) 1
  #define WRITEZBUF(a) pZPixel[a] = nZPos
 #elif ZBUFFER == 3
  #define ZBUF _RWZBUFFER
  #define ADVANCEZWORD pZPixel += 16
- #define ADVANCEZROW pZRow += XSIZE
+// #ifndef BUILD_PSP
+  #define ADVANCEZROW pZRow += XSIZE
+// #else
+//  #define ADVANCEZROW pZRow += 512
+// #endif 
  #define TESTZBUF(a) (pZPixel[a] <= nZPos)
  #define WRITEZBUF(a) pZPixel[a] = nZPos
 #else
@@ -165,12 +181,12 @@ static void FUNCTIONNAME(BPP,XSIZE,ROT,FLIP,ZOOMMODE,ZBUF,DEPTH)()
 	int nColour;
 
  #if ZBUFFER == 0
-	for (nSpriteRow = 0; nSpriteRow < nYSize; ADVANCEROW, nSpriteRow++, pSpriteData += nSpriteRowSize) {
+	for (nSpriteRow = 0; nSpriteRow < nYSize; ADVANCEROW, nSpriteRow++, spriteDataOffset += (nSpriteRowSize<<2)) {
  #else
-		for (nSpriteRow = 0; nSpriteRow < nYSize; ADVANCEROW, ADVANCEZROW, nSpriteRow++, pSpriteData += nSpriteRowSize) {
+		for (nSpriteRow = 0; nSpriteRow < nYSize; ADVANCEROW, ADVANCEZROW, nSpriteRow++, spriteDataOffset += (nSpriteRowSize<<2)) {
  #endif
 		nColumn = nXPos;
-
+unsigned int * pSpriteData=(unsigned int*)getBlock(spriteDataOffset,(nXSize>>(1 + EIGHTBIT))<<2);
  #if ZBUFFER == 0
   #if XFLIP == 0
 		for (x = (0 << EIGHTBIT), pPixel = pRow; x < nXSize; x += (2 << EIGHTBIT), nColumn += 16, ADVANCEWORD) {

@@ -3,7 +3,7 @@
 #include "burn_ym2610.h"
 #include "burn_ymf278b.h"
 
-// #undef USE_SPEEDHACKS
+#define USE_SPEEDHACKS 1
 
 int PsikyoHardwareVersion;
 
@@ -656,7 +656,7 @@ void __fastcall samuraiaZ80Out(unsigned short nAddress, unsigned char nValue)
 		case 0x0C:									// Write reply to sound commands
 //			bprintf(PRINT_NORMAL, _T("  - Sound reply sent (0x%02X).\n"), nValue);
 
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 			if (!nSoundlatchAck && ZetTotalCycles() > nCycles68KSync) {
 				BurnTimerUpdateEnd();
 			}
@@ -709,7 +709,7 @@ void __fastcall gunbirdZ80Out(unsigned short nAddress, unsigned char nValue)
 		case 0x0C:									// Write reply to sound commands
 //			bprintf(PRINT_NORMAL, _T("  - Sound reply sent (0x%02X).\n"), nValue);
 
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 			if (!nSoundlatchAck && ZetTotalCycles() > nCycles68KSync) {
 				BurnTimerUpdateEnd();
 			}
@@ -764,7 +764,7 @@ void __fastcall tengaiZ80Out(unsigned short nAddress, unsigned char nValue)
 		case 0x18:									// Write reply to sound commands
 //			bprintf(PRINT_NORMAL, _T("  - Sound reply sent (0x%02X).\n"), nValue);
 
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 			if (!nSoundlatchAck && ZetTotalCycles() > nCycles68KSync) {
 				BurnTimerUpdateEnd();
 			}
@@ -815,7 +815,7 @@ unsigned char __fastcall samuraiaReadByte(unsigned int sekAddress)
 		case 0xC00008: {						// Inputs / Sound CPU status
 			return ~DrvInput[1] >> 8;
 		case 0xC80009:
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 //			bprintf(PRINT_NORMAL, _T("  - Sound reply read.\n"));
 			if (!nSoundlatchAck) {
 				PsikyoSynchroniseZ80(0x0100);
@@ -852,7 +852,7 @@ unsigned short __fastcall samuraiaReadWord(unsigned int sekAddress)
 		case 0xC00006:							//
 			return ~DrvInput[3];
 		case 0xC00008: {						// Inputs / Sound CPU status
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 //			bprintf(PRINT_NORMAL, _T("  - Sound reply read.\n"));
 			if (!nSoundlatchAck) {
 				PsikyoSynchroniseZ80(0x0100);
@@ -892,7 +892,7 @@ unsigned char __fastcall gunbirdReadByte(unsigned int sekAddress)
 		case 0xC00002:							// Inputs / Sound CPU status
 			return ~DrvInput[1] >> 8;
 		case 0xC00003:
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 //			bprintf(PRINT_NORMAL, _T("  - Sound reply read.\n"));
 			if (!nSoundlatchAck) {
 				PsikyoSynchroniseZ80(0x0100);
@@ -930,7 +930,7 @@ unsigned short __fastcall gunbirdReadWord(unsigned int sekAddress)
 		case 0xC00000:							// Joysticks
 			return ~DrvInput[0];
 		case 0xC00002: {						// Inputs / Sound CPU status
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 //			bprintf(PRINT_NORMAL, _T("  - Sound reply read.\n"));
 			if (!nSoundlatchAck) {
 				PsikyoSynchroniseZ80(0x0100);
@@ -1134,7 +1134,7 @@ unsigned char __fastcall tengaiReadByte(unsigned int sekAddress)
 		case 0xC00002:							// Inputs / Sound CPU status
 			return ~DrvInput[1] >> 8;
 		case 0xC00003:
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 //			bprintf(PRINT_NORMAL, _T("  - Sound reply read.\n"));
 			if (!nSoundlatchAck) {
 				PsikyoSynchroniseZ80(0x0200);
@@ -1176,7 +1176,7 @@ unsigned short __fastcall tengaiReadWord(unsigned int sekAddress)
 		case 0xC00000:							// Joysticks
 			return ~DrvInput[0];
 		case 0xC00002: {						// Inputs / Sound CPU status
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 //			bprintf(PRINT_NORMAL, _T("  - Sound reply read.\n"));
 			if (!nSoundlatchAck) {
 				PsikyoSynchroniseZ80(0x0200);
@@ -1272,6 +1272,7 @@ void __fastcall PsikyoWriteWordPalette(unsigned int sekAddress, unsigned short w
 
 static int DrvExit()
 {
+	destroyUniCache();
 	switch (PsikyoHardwareVersion) {
 		case PSIKYO_HW_SAMURAIA:
 		case PSIKYO_HW_GUNBIRD: {
@@ -1294,7 +1295,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+	
 	return 0;
 }
 
@@ -1359,7 +1360,7 @@ static int DrvDraw()
 
 static int samuraiaCheckSleep(int)
 {
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 	int nCurrentPC = SekGetPC(-1);
 
 	if (bVBlank && nCurrentPC >= 0x000462 && nCurrentPC <= 0x00046E) {
@@ -1376,7 +1377,7 @@ static int samuraiaCheckSleep(int)
 
 static int gunbirdCheckSleep(int)
 {
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 	int nCurrentPC = SekGetPC(-1);
 
 	if (bVBlank && nCurrentPC >= 0x015E68 && nCurrentPC <= 0x015E76) {
@@ -1393,7 +1394,7 @@ static int gunbirdCheckSleep(int)
 
 static int gunbirdjCheckSleep(int)
 {
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 	int nCurrentPC = SekGetPC(-1);
 
 	if (bVBlank && nCurrentPC >= 0x015EA6 && nCurrentPC <= 0x015EB4) {
@@ -1410,7 +1411,7 @@ static int gunbirdjCheckSleep(int)
 
 static int gunbirdkCheckSleep(int)
 {
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 	int nCurrentPC = SekGetPC(-1);
 
 	if (bVBlank && nCurrentPC >= 0x015E70 && nCurrentPC <= 0x015E7E) {
@@ -1427,7 +1428,7 @@ static int gunbirdkCheckSleep(int)
 
 static int s1945jnCheckSleep(int)
 {
-#if 1 && defined USE_SPEEDHACKS
+#ifdef USE_SPEEDHACKS
 	int nCurrentPC = SekGetPC(-1);
 
 	if (bVBlank && nCurrentPC >= 0x019646 && nCurrentPC <= 0x019654) {
@@ -1572,10 +1573,7 @@ static void Nibbleswap(unsigned char* pData, int nLen)
 static int samuraiaLoadRoms()
 {
 	// Load 68000 ROM
-	unsigned char* pTemp = (unsigned char*)malloc(0x080000);
-	if (pTemp == NULL) {
-		return 1;
-	}
+	unsigned char* pTemp = PsikyoTileROM;
 
 	BurnLoadRom(pTemp + 0x000000, 0, 1);
 	BurnLoadRom(pTemp + 0x040000, 1, 1);
@@ -1585,11 +1583,10 @@ static int samuraiaLoadRoms()
 		((unsigned short*)Psikyo68KROM)[2 * i + 1] = ((unsigned short*)pTemp)[0x020000 + i];
 	}
 
-	free(pTemp);
-
+/*
 	BurnLoadRom(PsikyoSpriteROM + 0x000000, 2, 1);
 	Nibbleswap(PsikyoSpriteROM, 0x200000);
-
+*/
 	BurnLoadRom(PsikyoSpriteLUT, 3, 1);
 
 	BurnLoadRom(PsikyoTileROM + 0x000000, 4, 1);
@@ -1610,10 +1607,8 @@ static int samuraiaLoadRoms()
 static int gunbirdLoadRoms()
 {
 	// Load 68000 ROM
-	unsigned char* pTemp = (unsigned char*)malloc(0x100000);
-	if (pTemp == NULL) {
-		return 1;
-	}
+	unsigned char* pTemp = PsikyoTileROM;
+	
 
 	BurnLoadRom(pTemp + 0x000000, 0, 1);
 	BurnLoadRom(pTemp + 0x080000, 1, 1);
@@ -1623,16 +1618,16 @@ static int gunbirdLoadRoms()
 		((unsigned short*)Psikyo68KROM)[2 * i + 1] = ((unsigned short*)pTemp)[0x040000 + i];
 	}
 
-	free(pTemp);
-
+/*	
 	BurnLoadRom(PsikyoSpriteROM + 0x000000, 2, 1);
 	BurnLoadRom(PsikyoSpriteROM + 0x200000, 3, 1);
 	BurnLoadRom(PsikyoSpriteROM + 0x400000, 4, 1);
-	if (PsikyoSpriteROMSize > 0x0C00000) {
+	//if (PsikyoSpriteROMSize > 0x0C00000) 
+	{
 		BurnLoadRom(PsikyoSpriteROM + 0x600000, 5, 1);
 	}
 	Nibbleswap(PsikyoSpriteROM, PsikyoSpriteROMSize >> 1);
-
+*/
 	BurnLoadRom(PsikyoSpriteLUT, 6, 1);
 
 	BurnLoadRom(PsikyoTileROM, 7, 1);
@@ -1649,11 +1644,8 @@ static int gunbirdLoadRoms()
 static int s1945LoadRoms()
 {
 	// Load 68000 ROM
-	unsigned char* pTemp = (unsigned char*)malloc(0x100000);
-	if (pTemp == NULL) {
-		return 1;
-	}
-
+	unsigned char* pTemp = PsikyoTileROM;
+	
 	BurnLoadRom(pTemp + 0x000000, 0, 1);
 	BurnLoadRom(pTemp + 0x080000, 1, 1);
 
@@ -1662,14 +1654,13 @@ static int s1945LoadRoms()
 		((unsigned short*)Psikyo68KROM)[2 * i + 1] = ((unsigned short*)pTemp)[0x040000 + i];
 	}
 
-	free(pTemp);
-
+/*
 	BurnLoadRom(PsikyoSpriteROM + 0x000000, 2, 1);
 	BurnLoadRom(PsikyoSpriteROM + 0x200000, 3, 1);
 	BurnLoadRom(PsikyoSpriteROM + 0x400000, 4, 1);
 	BurnLoadRom(PsikyoSpriteROM + 0x600000, 5, 1);
 	Nibbleswap(PsikyoSpriteROM, 0x800000);
-
+*/
 	BurnLoadRom(PsikyoSpriteLUT, 6, 1);
 
 	BurnLoadRom(PsikyoTileROM, 7, 1);
@@ -1694,11 +1685,8 @@ static void tengaiNibbleswap(unsigned char* pData, int nLen)
 static int tengaiLoadRoms()
 {
 	// Load 68000 ROM
-	unsigned char* pTemp = (unsigned char*)malloc(0x100000);
-	if (pTemp == NULL) {
-		return 1;
-	}
-
+	unsigned char* pTemp = PsikyoTileROM;
+	
 	BurnLoadRom(pTemp + 0x000000, 0, 1);
 	BurnLoadRom(pTemp + 0x080000, 1, 1);
 
@@ -1706,12 +1694,12 @@ static int tengaiLoadRoms()
 		((unsigned short*)Psikyo68KROM)[2 * i + 0] = ((unsigned short*)pTemp)[0x000000 + i];
 		((unsigned short*)Psikyo68KROM)[2 * i + 1] = ((unsigned short*)pTemp)[0x040000 + i];
 	}
-
+/*
 	BurnLoadRom(PsikyoSpriteROM + 0x000000, 2, 1);
 	BurnLoadRom(PsikyoSpriteROM + 0x200000, 3, 1);
 	BurnLoadRom(PsikyoSpriteROM + 0x400000, 4, 1);
 	tengaiNibbleswap(PsikyoSpriteROM, 0x800000);
-
+*/
 	BurnLoadRom(PsikyoSpriteLUT, 5, 1);
 
 	BurnLoadRom(PsikyoTileROM, 6, 1);
@@ -1736,7 +1724,7 @@ static int MemIndex()
 
 	Psikyo68KROM		= Next; Next += 0x100000;		// 68K program
 	PsikyoZ80ROM		= Next; Next += 0x020000;		// Z80 program
-	PsikyoSpriteROM		= Next; Next += PsikyoSpriteROMSize;
+	//PsikyoSpriteROM		= Next; Next += PsikyoSpriteROMSize;
 	PsikyoSpriteLUT		= Next; Next += 0x040000;
 	PsikyoTileROM		= Next; Next += PsikyoTileROMSize;
 	PsikyoSampleROM01	= Next; Next += PsikyoSampleROM01Size;
@@ -1763,6 +1751,7 @@ static int DrvInit()
 {
 	int nLen;
 
+	struct BurnRomInfo ri;
 	BurnSetRefreshRate(15625.0 / 263.5);
 
 	if (!strcmp(BurnDrvGetTextA(DRV_NAME), "samuraia") || !strcmp(BurnDrvGetTextA(DRV_NAME), "sngkace")) {
@@ -1799,6 +1788,9 @@ static int DrvInit()
 		PsikyoTileROMSize = 0x0400000;
 		if (!strcmp(BurnDrvGetTextA(DRV_NAME), "btlkroad")) {
 			PsikyoSpriteROMSize = 0x0C00000;
+		}else if(strstr(BurnDrvGetTextA(DRV_NAME), "gunbird"))
+		{
+			PsikyoSpriteROMSize = 0x0E00000;
 		} else {
 			PsikyoSpriteROMSize = 0x1000000;
 		}
@@ -1855,6 +1847,57 @@ static int DrvInit()
 	memset(Mem, 0, nLen);										// blank all memory
 	MemIndex();													// Index the allocated memory
 
+	cacheFileSize=PsikyoSpriteROMSize;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	if(needCreateCache)
+	{
+		
+		memset(Mem,0,0x400000);
+
+		for(int i=2,cacheFileSize=0;cacheFileSize<PsikyoSpriteROMSize;i++)
+		{
+			BurnDrvGetRomInfo(&ri, i);
+			BurnLoadRom(Mem , i, 1);
+			if(PsikyoHardwareVersion!=PSIKYO_HW_TENGAI)
+			{
+				Nibbleswap(Mem,ri.nLen);
+			}else
+			{
+				tengaiNibbleswap(Mem,ri.nLen);
+			}
+			unsigned int romLength=ri.nLen*2;
+			for(int j=0;j<5;j++)
+			{
+				sceIoLseek( cacheFile, cacheFileSize, SEEK_SET );
+				if( romLength == sceIoWrite(cacheFile,Mem, romLength ) )
+					break;
+			}
+			cacheFileSize=cacheFileSize+romLength;
+			
+		}
+		
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+	}
+	
+	
 	// Load the roms into memory
 	switch (PsikyoHardwareVersion) {
 		case PSIKYO_HW_SAMURAIA: {
@@ -1987,7 +2030,8 @@ static int DrvInit()
 	}
 
 	PsikyoPalInit();
-
+	//Init cacheIndex
+	initCacheStructure(0.3);
 	PsikyoTileInit(PsikyoTileROMSize);
 	PsikyoSpriteInit(PsikyoSpriteROMSize);
 
@@ -2013,7 +2057,7 @@ static int DrvInit()
 #endif
 
 	DrvDoReset(); // Reset machine
-
+	
 	return 0;
 }
 
@@ -2181,7 +2225,7 @@ struct BurnDriver BurnDrvSamuraiA = {
 	"samuraia", NULL, NULL, "1993",
 	"Samurai Aces (World)\0", NULL, "Psikyo / Banpresto", "Psikyo 68EC020",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, samuraiaRomInfo, samuraiaRomName, gunbirdInputInfo, samuraiaDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2191,7 +2235,7 @@ struct BurnDriver BurnDrvSngkAce = {
 	"sngkace", "samuraia", NULL, "1993",
 	"Sengoku Ace (Japan)\0", NULL, "Psikyo / Banpresto", "Psikyo 68EC020",
 	L"\u6226\u56FD\u30A8\u30FC\u30B9 (Japan)\0Sengoku Ace\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, sngkaceRomInfo, sngkaceRomName, gunbirdInputInfo, sngkaceDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2269,7 +2313,7 @@ struct BurnDriver BurnDrvGunbird = {
 	"gunbird", NULL, NULL, "1994",
 	"Gunbird (World)\0", NULL, "Psikyo", "Psikyo 68EC020",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, gunbirdRomInfo, gunbirdRomName, gunbirdInputInfo, gunbirdWorldDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2279,7 +2323,7 @@ struct BurnDriver BurnDrvGunbirdj = {
 	"gunbirdj", "gunbird", NULL, "1994",
 	"Gunbird (Japan)\0", NULL, "Psikyo", "Psikyo 68EC020",
 	L"Gunbird (Japan)\0\u30AC\u30F3\u30D0\u30FC\u30C9\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, gunbirdjRomInfo, gunbirdjRomName, gunbirdInputInfo, gunbirdDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2289,7 +2333,7 @@ struct BurnDriver BurnDrvGunbirdk = {
 	"gunbirdk", "gunbird", NULL, "1994",
 	"Gunbird (Korea)\0", NULL, "Psikyo", "Psikyo 68EC020",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, gunbirdkRomInfo, gunbirdkRomName, gunbirdInputInfo, gunbirdDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2326,7 +2370,7 @@ struct BurnDriver BurnDrvBtlKRoad = {
 	"btlkroad", NULL, NULL, "1994",
 	"Battle K-Road\0", NULL, "Psikyo", "Psikyo 68EC020",
 	L"Battle K-Road\0Battle K-Road \u30D0\u30C8\u30EB\u30AF\u30ED\u30FC\u30C9\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VSFIGHT, 0,
 	NULL, btlkroadRomInfo, btlkroadRomName, btlkroadInputInfo, btlkroadDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	320, 224, 4, 3
@@ -2360,7 +2404,7 @@ struct BurnDriver BurnDrvS1945jn = {
 	"s1945jn", "s1945", NULL, "1995",
 	"Strikers 1945 (Japan, unprotected)\0", NULL, "Psikyo", "Psikyo 68EC020",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, s1945jnRomInfo, s1945jnRomName, gunbirdInputInfo, s1945DIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2464,7 +2508,7 @@ struct BurnDriver BurnDrvS1945 = {
 	"s1945", NULL, NULL, "1995",
 	"Strikers 1945\0", NULL, "Psikyo", "Psikyo 68EC020",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, s1945RomInfo, s1945RomName, gunbirdInputInfo, s1945WorldDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2474,7 +2518,7 @@ struct BurnDriver BurnDrvS1945j = {
 	"s1945j", "s1945", NULL, "1995",
 	"Strikers 1945 (Japan)\0", NULL, "Psikyo", "Psikyo 68EC020",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, s1945jRomInfo, s1945jRomName, gunbirdInputInfo, s1945DIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2484,7 +2528,7 @@ struct BurnDriver BurnDrvS1945k = {
 	"s1945k", "s1945", NULL, "1995",
 	"Strikers 1945 (Korea)\0", NULL, "Psikyo", "Psikyo 68EC020",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, s1945kRomInfo, s1945kRomName, gunbirdInputInfo, s1945DIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2494,7 +2538,7 @@ struct BurnDriver BurnDrvS1945a = {
 	"s1945a", "s1945", NULL, "1995",
 	"Strikers 1945 (Alt)\0", NULL, "Psikyo", "Psikyo 68EC020",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_VERSHOOT, 0,
 	NULL, s1945aRomInfo, s1945aRomName, gunbirdInputInfo, s1945aDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	224, 320, 3, 4
@@ -2529,7 +2573,7 @@ struct BurnDriver BurnDrvTengai = {
 	"tengai", NULL, NULL, "1996",
 	"Tengai (world)\0", NULL, "Psikyo", "Psikyo 68EC020",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_PSIKYO, //GBF_HORSHOOT, 0,
 	NULL, tengaiRomInfo, tengaiRomName, gunbirdInputInfo, tengaiDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	320, 224, 4, 3
@@ -2562,7 +2606,7 @@ struct BurnDriver BurnDrvTengaij = {
 	"tengaij", "tengai", NULL, "1996",
 	"Tengai\0Sengoku Blade - sengoku ace episode II\0", NULL, "Psikyo", "Psikyo 68EC020",
 	L"Tengai\0\u6226\u56FD\u30D6\u30EC\u30FC\u30C9 - sengoku ace episode II\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_PSIKYO, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_PSIKYO, //GBF_HORSHOOT, 0,
 	NULL, tengaijRomInfo, tengaijRomName, gunbirdInputInfo, tengaijDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &PsikyoRecalcPalette,
 	320, 224, 4, 3

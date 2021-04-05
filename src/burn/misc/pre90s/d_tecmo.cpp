@@ -1178,7 +1178,7 @@ struct BurnDriver BurnDrvRygar = {
 	"rygar", NULL, NULL, "1986",
 	"Rygar (US set 1)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, rygarRomInfo, rygarRomName, RygarInputInfo, RygarDIPInfo,
 	RygarInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1221,7 +1221,7 @@ struct BurnDriver BurnDrvRygar2 = {
 	"rygar2", "rygar", NULL, "1986",
 	"Rygar (US set 2)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, rygar2RomInfo, rygar2RomName, RygarInputInfo, RygarDIPInfo,
 	RygarInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1264,7 +1264,7 @@ struct BurnDriver BurnDrvRygar3 = {
 	"rygar3", "rygar", NULL, "1986",
 	"Rygar (US set 3, old version)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, rygar3RomInfo, rygar3RomName, RygarInputInfo, RygarDIPInfo,
 	RygarInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1307,7 +1307,7 @@ struct BurnDriver BurnDrvRygarj = {
 	"rygarj", "rygar", NULL, "1986",
 	"Argus no Senshi (Japan)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, rygarjRomInfo, rygarjRomName, RygarInputInfo, RygarDIPInfo,
 	RygarInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1349,7 +1349,7 @@ struct BurnDriver BurnDrvSilkworm = {
 	"silkworm", NULL, NULL, "1988",
 	"Silk Worm (set 1)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_HORSHOOT, 0,
 	NULL, silkwormRomInfo, silkwormRomName, SilkwormInputInfo, SilkwormDIPInfo,
 	SilkwormInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1391,7 +1391,7 @@ struct BurnDriver BurnDrvSilkwrm2 = {
 	"silkwrm2", "silkworm", NULL, "1988",
 	"Silk Worm (set 2)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_HORSHOOT, 0,
 	NULL, silkwrm2RomInfo, silkwrm2RomName, SilkwormInputInfo, SilkwormDIPInfo,
 	SilkwormInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1433,7 +1433,7 @@ struct BurnDriver BurnDrvGemini = {
 	"gemini", NULL, NULL, "1987",
 	"Gemini Wing\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, geminiRomInfo, geminiRomName, GeminiInputInfo, GeminiDIPInfo,
 	GeminiInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 256, 3, 4

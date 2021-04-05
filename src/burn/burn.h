@@ -2,7 +2,9 @@
 //            Refer to the "license.txt" file for more info
 
 // Burner emulation library
-
+#ifndef BURN_H
+	#define BURN_H
+	
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -14,13 +16,6 @@
 #include <time.h>
 #include "cheat.h"
 #include "state.h"
-#include "hiscore.h"
-
-#ifndef MAX_PATH
- #define MAX_PATH (260)
-#endif
-
-extern TCHAR szAppHiscorePath[MAX_PATH];
 
 // Enable the MAME logerror() function in debug builds
 // #define MAME_USE_LOGERROR
@@ -371,7 +366,8 @@ extern unsigned int nNeoSlotDrvNum[MAX_NEO_SLOTS];
 
 #define HARDWARE_IGS_PGM		(HARDWARE_PREFIX_IGS_PGM)
 #define HARDWARE_IGS_USE_ARM_CPU	(0x0001)
-
+#define HARDWARE_IGS_REIGNHACKA (0x0002)
+#define HARDWARE_IGS_REIGNHACKB (0x0004)
 #define HARDWARE_CAPCOM_CPS3	(HARDWARE_PREFIX_CPS3)
 #define HARDWARE_CAPCOM_CPS3_NO_CD   (0x0001)
 
@@ -428,5 +424,7 @@ extern unsigned int nNeoSlotDrvNum[MAX_NEO_SLOTS];
 
 #ifdef __cplusplus
  } // End of extern "C"
+#endif
+
 #endif
 

@@ -1404,7 +1404,7 @@ struct BurnDriver BurnDrvOutrun = {
 	"outrun", NULL, NULL, "1986",
 	"Out Run (sitdown/upright, Rev B)\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HISCORE_SUPPORTED, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_SPRITE_LOAD32, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_HISCORE_SUPPORTED, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_SPRITE_LOAD32, //GBF_RACING, 0,
 	NULL, OutrunRomInfo, OutrunRomName, OutrunInputInfo, OutrunDIPInfo,
 	OutrunInit, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1414,7 +1414,7 @@ struct BurnDriver BurnDrvOutrun1 = {
 	"outrun1", "outrun", NULL, "1986",
 	"Out Run (deluxe sitdown)\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_SPRITE_LOAD32, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_SPRITE_LOAD32, //GBF_RACING, 0,
 	NULL, Outrun1RomInfo, Outrun1RomName, OutrunInputInfo, Outrun1DIPInfo,
 	OutrunInit, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1424,7 +1424,7 @@ struct BurnDriver BurnDrvOutrun2 = {
 	"outrun2", "outrun", NULL, "1986",
 	"Out Run (sitdown/upright, Rev A)\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_SPRITE_LOAD32, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_SPRITE_LOAD32, //GBF_RACING, 0,
 	NULL, Outrun2RomInfo, Outrun2RomName, OutrunInputInfo, OutrunDIPInfo,
 	OutrunInit, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1434,7 +1434,7 @@ struct BurnDriver BurnDrvOutrunb = {
 	"outrunb", "outrun", NULL, "1986",
 	"Out Run (bootleg)\0", NULL, "bootleg", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_SPRITE_LOAD32, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_SPRITE_LOAD32, //GBF_RACING, 0,
 	NULL, OutrunbRomInfo, OutrunbRomName, OutrunInputInfo, OutrunDIPInfo,
 	OutrunbInit, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1444,7 +1444,7 @@ struct BurnDriver BurnDrvShangon = {
 	"shangon", NULL, NULL, "1987",
 	"Super Hang-On (sitdown/upright, unprotected)\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SEGA_OUTRUN, GBF_RACING, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SEGA_OUTRUN, //GBF_RACING, 0,
 	NULL, ShangonRomInfo, ShangonRomName, ShangonInputInfo, ShangonDIPInfo,
 	ShangonInit, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1454,7 +1454,7 @@ struct BurnDriver BurnDrvShangon2 = {
 	"shangon2", "shangon", NULL, "1987",
 	"Super Hang-On (mini ride-on, Rev A, FD1089B 317-0034)\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1089B_ENC, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1089B_ENC, //GBF_RACING, 0,
 	NULL, Shangon2RomInfo, Shangon2RomName, ShangonInputInfo, ShangonDIPInfo,
 	Shangon2Init, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1464,7 +1464,7 @@ struct BurnDriver BurnDrvShangon3 = {
 	"shangon3", "shangon", NULL, "1987",
 	"Super Hang-On (sitdown/upright, FD1089B 317-0034)\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1089B_ENC, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1089B_ENC, //GBF_RACING, 0,
 	NULL, Shangon3RomInfo, Shangon3RomName, ShangonInputInfo, ShangonDIPInfo,
 	Shangon2Init, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1474,7 +1474,7 @@ struct BurnDriver BurnDrvShangnle = {
 	"shangnle", "shangon", NULL, "1991",
 	"Limited Edition Hang-On\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN, //GBF_RACING, 0,
 	NULL, ShangnleRomInfo, ShangnleRomName, ShangonInputInfo, ShangonDIPInfo,
 	ShangonInit, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1484,7 +1484,7 @@ struct BurnDriver BurnDrvToutrun = {
 	"toutrun", NULL, NULL, "1989",
 	"Turbo Out Run (cockpit, FD1094 317-0109)\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1094_ENC | HARDWARE_SEGA_SPRITE_LOAD32, GBF_RACING, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1094_ENC | HARDWARE_SEGA_SPRITE_LOAD32, //GBF_RACING, 0,
 	NULL, ToutrunRomInfo, ToutrunRomName, ToutrunInputInfo, Toutrun2DIPInfo,
 	ToutrunInit, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1494,7 +1494,7 @@ struct BurnDriver BurnDrvToutrun2 = {
 	"toutrun2", "toutrun", NULL, "1989",
 	"Turbo Out Run (upright, FD1094 317-unknown)\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1094_ENC | HARDWARE_SEGA_SPRITE_LOAD32, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1094_ENC | HARDWARE_SEGA_SPRITE_LOAD32, //GBF_RACING, 0,
 	NULL, Toutrun2RomInfo, Toutrun2RomName, ToutrunInputInfo, Toutrun2DIPInfo,
 	ToutrunInit, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -1504,7 +1504,7 @@ struct BurnDriver BurnDrvToutrunu = {
 	"toutrunu", "toutrun", NULL, "1989",
 	"Turbo Out Run (Out Run upgrade, FD1094 317-0118)\0", NULL, "Sega", "Out Run",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1094_ENC | HARDWARE_SEGA_SPRITE_LOAD32, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SEGA_OUTRUN | HARDWARE_SEGA_FD1094_ENC | HARDWARE_SEGA_SPRITE_LOAD32, //GBF_RACING, 0,
 	NULL, ToutrunuRomInfo, ToutrunuRomName, ToutrunInputInfo, ToutrunDIPInfo,
 	ToutrunInit, System16Exit, OutrunFrame, NULL, System16Scan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3

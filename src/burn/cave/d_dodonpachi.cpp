@@ -257,7 +257,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+destroyUniCache();
 	return 0;
 }
 
@@ -313,6 +313,8 @@ static int DrvFrame()
 {
 	int nCyclesVBlank;
 	int nInterleave = 8;
+
+	
 
 	if (DrvReset) {														// Reset machine
 		DrvDoReset();
@@ -411,10 +413,11 @@ static int MemIndex()
 {
 	unsigned char* Next; Next = Mem;
 	Rom01			= Next; Next += 0x100000;		// 68K program
-	CaveSpriteROM	= Next; Next += 0x1000000;
+/*	CaveSpriteROM	= Next; Next += 0x1000000;
 	CaveTileROM[0]	= Next; Next += 0x400000;		// Tile layer 0
 	CaveTileROM[1]	= Next; Next += 0x400000;		// Tile layer 1
 	CaveTileROM[2]	= Next; Next += 0x200000;		// Tile layer 2
+*/
 	YMZ280BROM		= Next; Next += 0x400000;
 	RamStart		= Next;
 	Ram01			= Next; Next += 0x010000;		// CPU #0 work RAM
@@ -447,7 +450,7 @@ static int LoadRoms()
 	// Load 68000 ROM
 	BurnLoadRom(Rom01 + 0, 1, 2);
 	BurnLoadRom(Rom01 + 1, 0, 2);
-
+/*
 	BurnLoadRom(CaveSpriteROM + 0x000000, 2, 1);
 	BurnLoadRom(CaveSpriteROM + 0x200000, 3, 1);
 	BurnLoadRom(CaveSpriteROM + 0x400000, 4, 1);
@@ -467,7 +470,7 @@ static int LoadRoms()
 		CaveTileROM[2][(i << 1) + 0] = (pTemp[(i << 1) + 0] >> 4) | (pTemp[(i << 1) + 1] & 240);
 	}
 	free(pTemp);
-
+*/
 	// Load YMZ280B data
 	BurnLoadRom(YMZ280BROM + 0x000000, 9, 1);
 	BurnLoadRom(YMZ280BROM + 0x200000, 10, 1);
@@ -516,6 +519,71 @@ static int DrvInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+	cacheFileSize=0x1A00000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x1000000;
+	CaveTileROMOffset[1]=CaveTileROMOffset[0]+0x400000;
+	CaveTileROMOffset[2]=CaveTileROMOffset[1]+0x400000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead,0,0x1000000);
+
+		BurnLoadRom(uniCacheHead + 0x000000, 2, 1);
+		BurnLoadRom(uniCacheHead + 0x200000, 3, 1);
+		BurnLoadRom(uniCacheHead + 0x400000, 4, 1);
+		BurnLoadRom(uniCacheHead + 0x600000, 5, 1);
+		BurnByteswap(uniCacheHead, 0x800000);
+		NibbleSwap2(uniCacheHead, 0x800000);
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0, SEEK_SET );
+			if( 0x1000000 == sceIoWrite(cacheFile,uniCacheHead, 0x1000000 ) )
+				break;
+		}
+		BurnLoadRom(uniCacheHead, 6, 1);
+		NibbleSwap2(uniCacheHead, 0x200000);
+		BurnLoadRom(uniCacheHead+0x400000, 7, 1);
+		NibbleSwap2(uniCacheHead+0x400000, 0x200000);
+		unsigned char* pTemp=uniCacheHead+0xA00000;
+		BurnLoadRom(pTemp, 8, 1);
+		for (int i = 0; i < 0x0100000; i++) {
+			(uniCacheHead+0x800000)[(i << 1) + 1] = (pTemp[(i << 1) + 0] & 15) | ((pTemp[(i << 1) + 1] & 15) << 4);
+			(uniCacheHead+0x800000)[(i << 1) + 0] = (pTemp[(i << 1) + 0] >> 4) | (pTemp[(i << 1) + 1] & 240);
+		}
+		
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0x800000*2, SEEK_SET );
+			if( 0xA00000 == sceIoWrite(cacheFile,uniCacheHead,0xA00000  ) )
+				break;
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+
 
 	// Find out how much memory is needed
 	Mem = NULL;
@@ -529,6 +597,8 @@ static int DrvInit()
 
 	EEPROMInit(1024, 16);										// EEPROM has 1024 bits, uses 16-bit words
 
+	initCacheStructure(0.7);
+	
 	// Load the roms into memory
 	if (LoadRoms()) {
 		return 1;
@@ -640,7 +710,7 @@ struct BurnDriver BurnDrvDoDonpachi = {
 	"ddonpach", NULL, NULL, "1997",
 	"DoDonPachi (1997 2/5 master ver, international)\0", NULL, "Atlus / Cave", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY,
 	NULL, ddonpachRomInfo, ddonpachRomName, ddonpachInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,
@@ -651,7 +721,7 @@ struct BurnDriver BurnDrvDoDonpachiJ = {
 	"ddonpchj", "ddonpach", NULL, "1997",
 	"DoDonPachi (1997 2/5 master ver, Japan)\0", NULL, "Atlus / Cave", "Cave",
 	L"DoDonPachi (1997 2/5 master ver, Japan)\0\u6012\u9996\u9818\u8702 (1997 2/5 master ver, Japan)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY,
 	NULL, ddonpchjRomInfo, ddonpchjRomName, ddonpachInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,

@@ -36,8 +36,9 @@ static int Scroll1Y;
 static int Scroll2X;
 static int Scroll2Y;
 
-static int Ginkun = 0;
-static int Riot = 0;
+static short Ginkun = 0;
+static short Riot = 0;
+//static short fstarfrc=0;
 
 static int FstarfrcSoundLatch;
 
@@ -345,7 +346,9 @@ int FstarfrcDoReset()
 	SekReset();
 	SekClose();
 
+	ZetOpen(0);
 	ZetReset();
+	ZetClose();
 
 	MSM6295Reset(0);
 	BurnYM2151Reset();
@@ -627,7 +630,7 @@ static int FstarfrcMemIndex()
 	}
 	FstarfrcSpriteRam    = Next; Next += 0x01000;
 	FstarfrcPaletteRam   = Next; Next += 0x02000;
-	FstarfrcZ80Ram       = Next; Next += 0x0c002;
+	FstarfrcZ80Ram       = Next; Next += 0x0c004;
 
 	RamEnd = Next;
 
@@ -655,6 +658,8 @@ int FstarfrcInit()
 	if (!strcmp(BurnDrvGetTextA(DRV_NAME), "ginkun")) Ginkun = 1;
 
 	if (!strcmp(BurnDrvGetTextA(DRV_NAME), "riot")) Riot = 1;
+	
+	//if (!strcmp(BurnDrvGetTextA(DRV_NAME), "fstarfrc")) fstarfrc = 1;
 
 	// Allocate and Blank all required memory
 	Mem = NULL;
@@ -744,6 +749,7 @@ int FstarfrcInit()
 	ZetMemEnd();
 	ZetSetReadHandler(FstarfrcZ80Read);
 	ZetSetWriteHandler(FstarfrcZ80Write);
+	ZetClose();
 
 	// Setup the YM2151 emulation
 	BurnYM2151Init(8000000 / 2, 50.0);
@@ -1067,13 +1073,28 @@ int FstarfrcCalcPalette()
 	return 0;
 }
 
+void FstarfrcClear()
+{
+	unsigned int nColour = 0x0300;
+	unsigned int* pClear = (unsigned int*)pTransDraw;
+	
+	nColour = nColour | (nColour << 16);
+	for (int i = nScreenHeight * nScreenWidth / 16; i > 0 ; i--) {
+		*pClear++ = nColour;
+		*pClear++ = nColour;
+		*pClear++ = nColour;
+		*pClear++ = nColour;
+		*pClear++ = nColour;
+		*pClear++ = nColour;
+		*pClear++ = nColour;
+		*pClear++ = nColour;
+	}
+}
+
 void GinkunRender()
 {
 	FstarfrcCalcPalette();
-	
-	for (int i = 0; i < nScreenHeight * nScreenWidth; i++) {
-		pTransDraw[i] = 0x300;
-	}
+	FstarfrcClear();
 	
 	draw_sprites(3);
 	GinkunRenderBgLayer();
@@ -1088,10 +1109,7 @@ void GinkunRender()
 void FstarfrcRender()
 {
 	FstarfrcCalcPalette();
-	
-	for (int i = 0; i < nScreenHeight * nScreenWidth; i++) {
-		pTransDraw[i] = 0x300;
-	}
+	FstarfrcClear();
 	
 	draw_sprites(3);
 	FstarfrcRenderBgLayer();
@@ -1130,19 +1148,22 @@ int FstarfrcFrame()
 		nCyclesDone[nCurrentCPU] += SekRun(nCyclesSegment);
 
 		// Run Z80
-		nCurrentCPU = 1;
-		nNext = (i + 1) * nCyclesTotal[nCurrentCPU] / nInterleave;
-		nCyclesSegment = nNext - nCyclesDone[nCurrentCPU];
-		nCyclesSegment = ZetRun(nCyclesSegment);
-		nCyclesDone[nCurrentCPU] += nCyclesSegment;
-
-		if (pBurnSoundOut) {
-			int nSegmentLength = nBurnSoundLen / nInterleave;
-			short* pSoundBuf = pBurnSoundOut + (nSoundBufferPos << 1);
-
-			BurnYM2151Render(pSoundBuf, nSegmentLength);
-			MSM6295Render(0, pSoundBuf, nSegmentLength);
-			nSoundBufferPos += nSegmentLength;
+		//if(!fstarfrc)
+		{
+			nCurrentCPU = 1;
+			nNext = (i + 1) * nCyclesTotal[nCurrentCPU] / nInterleave;
+			nCyclesSegment = nNext - nCyclesDone[nCurrentCPU];
+			nCyclesSegment = ZetRun(nCyclesSegment);
+			nCyclesDone[nCurrentCPU] += nCyclesSegment;
+	
+			if (pBurnSoundOut) {
+				int nSegmentLength = nBurnSoundLen / nInterleave;
+				short* pSoundBuf = pBurnSoundOut + (nSoundBufferPos << 1);
+	
+				BurnYM2151Render(pSoundBuf, nSegmentLength);
+				MSM6295Render(0, pSoundBuf, nSegmentLength);
+				nSoundBufferPos += nSegmentLength;
+			}
 		}
 	}
 
@@ -1215,7 +1236,7 @@ struct BurnDriver BurnDrvFstarfrc = {
 	"fstarfrc", NULL, NULL, "1992",
 	"Final Star Force (US)\0", NULL, "Tecmo", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S,
 	NULL, FstarfrcRomInfo, FstarfrcRomName, FstarfrcInputInfo, FstarfrcDIPInfo,
 	FstarfrcInit, FstarfrcExit, FstarfrcFrame, NULL, FstarfrcScan,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
@@ -1225,7 +1246,7 @@ struct BurnDriver BurnDrvGinkun = {
 	"ginkun", NULL, NULL, "1995",
 	"Ganbare Ginkun\0", "Imperfect GFX", "Tecmo", "Miscellaneous",
 	L"\u304C\u3093\u3070\u308C \u30AE\u30F3\u304F\u3093\0Ganbare Ginkun\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S,
 	NULL, GinkunRomInfo, GinkunRomName, FstarfrcInputInfo, GinkunDIPInfo,
 	FstarfrcInit, FstarfrcExit, FstarfrcFrame, NULL, FstarfrcScan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
@@ -1235,7 +1256,7 @@ struct BurnDriver BurnDrvRiot = {
 	"riot", NULL, NULL, "1992",
 	"Riot\0", NULL, "NMK", "Miscellaneous",
 	L"\u96F7\u8ECB\u6597 Riot\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S,
 	NULL, RiotRomInfo, RiotRomName, RiotInputInfo, RiotDIPInfo,
 	FstarfrcInit, FstarfrcExit, FstarfrcFrame, NULL, FstarfrcScan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3

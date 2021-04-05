@@ -490,7 +490,7 @@ struct BurnDriver BurnDrvDiverboy = {
 	"diverboy", NULL, NULL, "1992",
 	"Diver Boy\0", NULL, "Electronic Devices Italy", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_MISC, 0,
 	NULL, diverboyRomInfo, diverboyRomName, DiverboyInputInfo, DiverboyDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	320, 240, 4, 3

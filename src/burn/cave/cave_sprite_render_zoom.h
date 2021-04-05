@@ -4,7 +4,11 @@
 
 #if ROT == 0
  #define ADVANCECOLUMN pPixel += (BPP >> 3)
- #define ADVANCEROW pRow += ((BPP >> 3) * XSIZE)
+ #ifndef BUILD_PSP
+  #define ADVANCEROW pRow += ((BPP >> 3) * XSIZE)
+ #else
+  #define ADVANCEROW pRow += ((BPP >> 3) * 512)
+ #endif
 #else
  #error unsupported rotation angle specified
 #endif
@@ -110,7 +114,7 @@ static void FUNCTIONNAME(BPP,XSIZE,ROT,FLIP,ZOOMMODE,ZBUF,DEPTH)()
 	}
  #endif
 
-	unsigned char* pSpriteRowData = (unsigned char*)pSpriteData;
+	unsigned int spriteRowDataOffset = spriteDataOffset;
 
 	for (nSpriteRow = nYSize; nSpriteRow > 0; nSpriteRow -= 0x00010000, nSpriteYOffset += nSpriteYZoomSize) {
 
@@ -127,7 +131,7 @@ static void FUNCTIONNAME(BPP,XSIZE,ROT,FLIP,ZOOMMODE,ZBUF,DEPTH)()
 		nPrevSpriteYOffset = nSpriteYOffset;
 		nPrevSpriteXOffset = nPrevSpriteXOffsetStart;
  #endif
-		pSpriteRowData = ((unsigned char*)pSpriteData) + (nSpriteYOffset >> 16) * nSpriteRowSize;
+		spriteRowDataOffset = spriteDataOffset + (nSpriteYOffset >> 16) * nSpriteRowSize;
 
 		nSpriteXOffset2 = nSpriteXOffset;
 
@@ -142,7 +146,7 @@ static void FUNCTIONNAME(BPP,XSIZE,ROT,FLIP,ZOOMMODE,ZBUF,DEPTH)()
 
 				nPrevSpriteXOffset = nSpriteXOffset2;
  #endif
-				PLOTPIXEL(0, pSpriteRowData[nSpriteXOffset2 >> 16]);
+				PLOTPIXEL(0, *getBlock(spriteRowDataOffset+(nSpriteXOffset2 >> 16),1));
 
  #if ZOOM == 2
 			}

@@ -294,6 +294,7 @@ int ToaInitBCU2()
 	memset(pFCU2SpriteQueueData, 0, nSize);
 
 	pFCU2SpriteBuffer = (unsigned char*)malloc(0x0800);
+	memset(pFCU2SpriteBuffer, 0, 0x0800);
 
 	FCU2TileAttrib = (unsigned char*)malloc(32768);
 	memset(FCU2TileAttrib, 0, 32768);

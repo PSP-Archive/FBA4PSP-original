@@ -8,6 +8,8 @@
 #include "genesis_vid.h"
 #include "8255ppi.h"
 #include "z80.h"
+#include "malloc.h"
+#define malloc(size) memalign(4, size)
 
 #define SYS16_ROM_PROG		1
 #define SYS16_ROM_TILES		2

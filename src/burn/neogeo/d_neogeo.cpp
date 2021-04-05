@@ -882,7 +882,7 @@ struct BurnDriver BurnDrvNeoGeo = {
 	"neogeo", NULL, NULL, "1990",
 	"Neo Geo MVS System\0select cartidge media seperately\0", "BIOS only", "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_BOARDROM, 0, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_BIOS, 0,
+	BDF_GAME_WORKING | BDF_BOARDROM, 0, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_BIOS, 0,
 	NULL, neogeoRomInfo, neogeoRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	nNeoScreenWidth, 224, 4, 3
@@ -892,7 +892,7 @@ struct BurnDriver BurnDrvNeoGeo = {
 	"neogeo", NULL, NULL, "1990",
 	"Neo Geo MVS System\0", "BIOS only", "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_BOARDROM, 0, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_BIOS, 0,
+	BDF_BOARDROM, 0, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_BIOS, 0,
 	NULL, neogeoRomInfo, neogeoRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	nNeoScreenWidth, 224, 4, 3
@@ -1203,7 +1203,7 @@ struct BurnDriver BurnDrvnam1975 = {
 	"nam1975", NULL, "neogeo", "1990",
 	"NAM-1975\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_MISC, 0,
 	NULL, nam1975RomInfo, nam1975RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1240,7 +1240,7 @@ struct BurnDriver BurnDrvbstars = {
 	"bstars", NULL, "neogeo", "1990",
 	"Baseball Stars Professional\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, bstarsRomInfo, bstarsRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -1282,7 +1282,7 @@ struct BurnDriver BurnDrvtpgolf = {
 	"tpgolf", NULL, "neogeo", "1990",
 	"Top Player's Golf\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, tpgolfRomInfo, tpgolfRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1317,7 +1317,7 @@ struct BurnDriver BurnDrvmahretsu = {
 	"mahretsu", NULL, "neogeo", "1990",
 	"Mahjong Kyoretsuden\0", NULL, "SNK", "Neo Geo",
 	L"\u9EBB\u96C0\u72C2\u5217\u4F1D - real mah-jong game\0Mahjong Kyoretsuden\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_MAHJONG, GBF_MAHJONG, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_MAHJONG, //GBF_MAHJONG, 0,
 	NULL, mahretsuRomInfo, mahretsuRomName, neomahjongInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1352,7 +1352,7 @@ struct BurnDriver BurnDrvmaglord = {
 	"maglord", NULL, "neogeo", "1990",
 	"Magician Lord (set 1)\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, 0,
 	NULL, maglordRomInfo, maglordRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -1387,7 +1387,7 @@ struct BurnDriver BurnDrvmaglordh = {
 	"maglordh", "maglord", "neogeo", "1990",
 	"Magician Lord (set 2)\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, 0,
 	NULL, maglordhRomInfo, maglordhRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -1423,7 +1423,7 @@ struct BurnDriver BurnDrvridhero = {
 	"ridhero", NULL, "neogeo", "1990",
 	"Riding Hero (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_RACING, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_RACING, 0,
 	NULL, ridheroRomInfo, ridheroRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1459,7 +1459,7 @@ struct BurnDriver BurnDrvridheroh = {
 	"ridheroh", "ridhero", "neogeo", "1990",
 	"Riding Hero (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_RACING, 0,
 	NULL, ridherohRomInfo, ridherohRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1492,7 +1492,7 @@ struct BurnDriver BurnDrvalpham2 = {
 	"alpham2", NULL, "neogeo", "1991",
 	"Alpha Mission II / ASO II - Last Guardian\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VERSHOOT, 0,
 	NULL, alpham2RomInfo, alpham2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1528,7 +1528,7 @@ struct BurnDriver BurnDrvncombat = {
 	"ncombat", NULL, "neogeo", "1990",
 	"Ninja Combat (set 1)\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, ncombatRomInfo, ncombatRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1564,7 +1564,7 @@ struct BurnDriver BurnDrvncombath = {
 	"ncombath", "ncombat", "neogeo", "1990",
 	"Ninja Combat (set 2)\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, ncombathRomInfo, ncombathRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1601,7 +1601,7 @@ struct BurnDriver BurnDrvcyberlip = {
 	"cyberlip", NULL, "neogeo", "1990",
 	"Cyber-Lip\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, 0,
 	NULL, cyberlipRomInfo, cyberlipRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1635,7 +1635,7 @@ struct BurnDriver BurnDrvsuperspy = {
 	"superspy", NULL, "neogeo", "1990",
 	"The Super Spy\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_MISC, 0,
 	NULL, superspyRomInfo, superspyRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1667,7 +1667,7 @@ struct BurnDriver BurnDrvmutnat = {
 	"mutnat", NULL, "neogeo", "1992",
 	"Mutation Nation\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, mutnatRomInfo, mutnatRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1700,7 +1700,7 @@ struct BurnDriver BurnDrvkotm = {
 	"kotm", NULL, "neogeo", "1991",
 	"King of the Monsters (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, kotmRomInfo, kotmRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1733,7 +1733,7 @@ struct BurnDriver BurnDrvkotmh = {
 	"kotmh", "kotm", "neogeo", "1991",
 	"King of the Monsters (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, kotmhRomInfo, kotmhRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1766,7 +1766,7 @@ struct BurnDriver BurnDrvsengoku = {
 	"sengoku", NULL, "neogeo", "1991",
 	"Sengoku / Sengoku Denshou (set 1)\0", NULL, "SNK", "Neo Geo",
 	L"Sengoku (set 1)\0\u6226\u56FD\u4F1D\u627F (set 1)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, sengokuRomInfo, sengokuRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -1799,7 +1799,7 @@ struct BurnDriver BurnDrvsengokh = {
 	"sengokh", "sengoku", "neogeo", "1991",
 	"Sengoku / Sengoku Denshou (set 2)\0", NULL, "SNK", "Neo Geo",
 	L"Sengoku (set 2)\0\u6226\u56FD\u4F1D\u627F (set 2)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, sengokhRomInfo, sengokhRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -1831,7 +1831,7 @@ struct BurnDriver BurnDrvburningf = {
 	"burningf", NULL, "neogeo", "1991",
 	"Burning Fight (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, burningfRomInfo, burningfRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1863,7 +1863,7 @@ struct BurnDriver BurnDrvburningfh = {
 	"burningfh", "burningf", "neogeo", "1991",
 	"Burning Fight (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, burningfhRomInfo, burningfhRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1894,7 +1894,7 @@ struct BurnDriver BurnDrvlbowling = {
 	"lbowling", NULL, "neogeo", "1990",
 	"League Bowling\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, lbowlingRomInfo, lbowlingRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1928,7 +1928,7 @@ struct BurnDriver BurnDrvgpilots = {
 	"gpilots", NULL, "neogeo", "1991",
 	"Ghost Pilots (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VERSHOOT, 0,
 	NULL, gpilotsRomInfo, gpilotsRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1962,7 +1962,7 @@ struct BurnDriver BurnDrvgpilotsh = {
 	"gpilotsh", "gpilots", "neogeo", "1991",
 	"Ghost Pilots (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VERSHOOT, 0,
 	NULL, gpilotshRomInfo, gpilotshRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -1992,7 +1992,7 @@ struct BurnDriver BurnDrvjoyjoy = {
 	"joyjoy", NULL, "neogeo", "1990",
 	"Puzzled / Joy Joy Kid\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, joyjoyRomInfo, joyjoyRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2024,7 +2024,7 @@ struct BurnDriver BurnDrvbjourney = {
 	"bjourney", NULL, "neogeo", "1990",
 	"Blue's Journey / Raguy\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, 0,
 	NULL, bjourneyRomInfo, bjourneyRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -2053,7 +2053,7 @@ struct BurnDriver BurnDrvquizdais = {
 	"quizdais", NULL, "neogeo", "1991",
 	"Quiz Daisousa Sen - The Last Count Down\0", NULL, "SNK", "Neo Geo",
 	L"\u30AF\u30A4\u30BA\u5927\u635C\u67FB\u7DDA - the last count down\0Quiz Daisousa Sen\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_QUIZ, 0,
 	NULL, quizdaisRomInfo, quizdaisRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2085,7 +2085,7 @@ struct BurnDriver BurnDrvlresort = {
 	"lresort", NULL, "neogeo", "1992",
 	"Last Resort\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_HORSHOOT, 0,
 	NULL, lresortRomInfo, lresortRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2117,7 +2117,7 @@ struct BurnDriver BurnDrveightman = {
 	"eightman", NULL, "neogeo", "1991",
 	"Eight Man\0", NULL, "SNK / Pallas", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, eightmanRomInfo, eightmanRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -2149,7 +2149,7 @@ struct BurnDriver BurnDrvminasan = {
 	"minasan", NULL, "neogeo", "1990",
 	"Minnasanno Okagesamadesu\0", NULL, "Monolith Corp.", "Neo Geo",
 	L"\u307F\u306A\u3055\u3093\u306E\u304A\u304B\u3052\u3055\u307E\u3067\u3059\uFF01\0Minnasanno Okagesamadesu\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_MAHJONG, GBF_MAHJONG, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_MAHJONG, //GBF_MAHJONG, 0,
 	NULL, minasanRomInfo, minasanRomName, neomahjongInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2180,7 +2180,7 @@ struct BurnDriver BurnDrvlegendos = {
 	"legendos", NULL, "neogeo", "1991",
 	"Legend of Success Joe / Ashitano Joe Densetsu\0", NULL, "SNK", "Neo Geo",
 	L"Legend of Success Joe\0\u3042\u3057\u305F\u306E\u30B8\u30E7\u30FC\u4F1D\u8AAC\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, legendosRomInfo, legendosRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2212,7 +2212,7 @@ struct BurnDriver BurnDrvbb2020 = {
 	"2020bb", NULL, "neogeo", "1991",
 	"2020 Super Baseball (set 1)\0", NULL, "SNK / Pallas", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, bb2020RomInfo, bb2020RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2244,7 +2244,7 @@ struct BurnDriver BurnDrvbb2020a = {
 	"2020bba", "2020bb", "neogeo", "1991",
 	"2020 Super Baseball (set 2)\0", NULL, "SNK / Pallas", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, bb2020aRomInfo, bb2020aRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2276,7 +2276,7 @@ struct BurnDriver BurnDrvbb2020h = {
 	"2020bbh", "2020bb", "neogeo", "1991",
 	"2020 Super Baseball (set 3)\0", NULL, "SNK / Pallas", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, bb2020hRomInfo, bb2020hRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2308,7 +2308,7 @@ struct BurnDriver BurnDrvsocbrawl = {
 	"socbrawl", NULL, "neogeo", "1991",
 	"Soccer Brawl (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSFOOTBALL, 0,
 	NULL, socbrawlRomInfo, socbrawlRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2340,7 +2340,7 @@ struct BurnDriver BurnDrvsocbrawla = {
 	"socbrawla", "socbrawl", "neogeo", "1991",
 	"Soccer Brawl (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSFOOTBALL, 0,
 	NULL, socbrawlaRomInfo, socbrawlaRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2372,7 +2372,7 @@ struct BurnDriver BurnDrvroboarmy = {
 	"roboarmy", NULL, "neogeo", "1991",
 	"Robo Army\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, roboarmyRomInfo, roboarmyRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2405,7 +2405,7 @@ struct BurnDriver BurnDrvfatfury1 = {
 	"fatfury1", NULL, "neogeo", "1991",
 	"Fatal Fury - King of Fighters / Garou Densetsu - shukumei no tatakai\0", NULL, "SNK", "Neo Geo",
 	L"Fatal Fury - king of fighters\0\u9913\u72FC\u4F1D\u8AAC - \u5BBF\u547D\u306E\u95D8\u3044\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, fatfury1RomInfo, fatfury1RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -2437,7 +2437,7 @@ struct BurnDriver BurnDrvfbfrenzy = {
 	"fbfrenzy", NULL, "neogeo", "1992",
 	"Football Frenzy\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, fbfrenzyRomInfo, fbfrenzyRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2469,7 +2469,7 @@ struct BurnDriver BurnDrvbakatono = {
 	"bakatono", NULL, "neogeo", "1991",
 	"Bakatonosama Mahjong Manyuki\0", NULL, "Monolith Corp.", "Neo Geo",
 	L"\u30D0\u30AB\u6BBF\u69D8 \u9EBB\u96C0\u6F2B\u904A\u8A18\0Bakatonosama Mahjong Manyuki\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_MAHJONG, GBF_MAHJONG, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_MAHJONG, //GBF_MAHJONG, 0,
 	NULL, bakatonoRomInfo, bakatonoRomName, neomahjongInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2500,7 +2500,7 @@ struct BurnDriver BurnDrvcrsword = {
 	"crsword", NULL, "neogeo", "1991",
 	"Crossed Swords\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_MISC, 0,
 	NULL, crswordRomInfo, crswordRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2533,7 +2533,7 @@ struct BurnDriver BurnDrvtrally = {
 	"trally", NULL, "neogeo", "1991",
 	"Thrash Rally\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_RACING, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_RACING, 0,
 	NULL, trallyRomInfo, trallyRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -2566,7 +2566,7 @@ struct BurnDriver BurnDrvkotm2 = {
 	"kotm2", NULL, "neogeo", "1992",
 	"King of the Monsters 2 - The Next Thing\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_VSFIGHT, 0,
 	NULL, kotm2RomInfo, kotm2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2598,7 +2598,7 @@ struct BurnDriver BurnDrvsengoku2 = {
 	"sengoku2", NULL, "neogeo", "1993",
 	"Sengoku 2 / Sengoku Denshou 2\0", NULL, "SNK", "Neo Geo",
 	L"Sengoku 2\0\u6226\u56FD\u4F1D\u627F\uFF12\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_SCRFIGHT, 0,
 	NULL, sengoku2RomInfo, sengoku2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2631,7 +2631,7 @@ struct BurnDriver BurnDrvbstars2 = {
 	"bstars2", NULL, "neogeo", "1992",
 	"Baseball Stars 2\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, bstars2RomInfo, bstars2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2663,7 +2663,7 @@ struct BurnDriver BurnDrvquizdai2 = {
 	"quizdai2", NULL, "neogeo", "1992",
 	"Quiz Meitantei Neo & Geo - Quiz Daisousa Sen part 2\0", NULL, "SNK", "Neo Geo",
 	L"\u30AF\u30A4\u30BA\u8FF7\u63A2\u5075\u30CD\u30AA\uFF06\u30B8\u30AA - quiz daisousa sen part 2\0Quiz Meintantei Neo Geo\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_QUIZ, 0,
 	NULL, quizdai2RomInfo, quizdai2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -2695,7 +2695,7 @@ struct BurnDriver BurnDrvcountb3 = {
 	"3countb", NULL, "neogeo", "1993",
 	"3 Count Bout / Fire Suplex\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_VSFIGHT, 0,
 	NULL, countb3RomInfo, countb3RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -2727,7 +2727,7 @@ struct BurnDriver BurnDrvaof = {
 	"aof", NULL, "neogeo", "1992",
 	"Art of Fighting / Ryuuko no Ken\0", NULL, "SNK", "Neo Geo",
 	L"Art of Fighting\0\u9F8D\u864E\u306E\u62F3\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_VSFIGHT, 0,
 	NULL, aofRomInfo, aofRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -2762,7 +2762,7 @@ struct BurnDriver BurnDrvsamsho = {
 	"samsho", NULL, "neogeo", "1993",
 	"Samurai Shodown / Samurai Spirits (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samshoRomInfo, samshoRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -2797,7 +2797,7 @@ struct BurnDriver BurnDrvsamshoh = {
 	"samshoh", "samsho", "neogeo", "1993",
 	"Samurai Shodown / Samurai Spirits (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samshohRomInfo, samshohRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -2836,7 +2836,7 @@ struct BurnDriver BurnDrvtophuntr = {
 	"tophuntr", NULL, "neogeo", "1994",
 	"Top Hunter - Roddy & Cathy (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, tophuntrRomInfo, tophuntrRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -2875,7 +2875,7 @@ struct BurnDriver BurnDrvtophuntra = {
 	"tophuntra", "tophuntr", "neogeo", "1994",
 	"Top Hunter - Roddy & Cathy (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, tophuntraRomInfo, tophuntraRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3012,7 +3012,7 @@ struct BurnDriver BurnDrvfatfury2 = {
 	"fatfury2", NULL, "neogeo", "1992",
 	"Fatal Fury 2 / Garou Densetsu 2 - arata-naru tatakai\0", NULL, "SNK", "Neo Geo",
 	L"Fatal Fury 2\0\u9913\u72FC\u4F1D\u8AAC\uFF12 - \u65B0\u305F\u306A\u308B\u95D8\u3044\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, fatfury2RomInfo, fatfury2RomName, neogeoInputInfo, neogeoDIPInfo,
 	fatfury2Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3041,7 +3041,7 @@ struct BurnDriver BurnDrvjanshin = {
 	"janshin", NULL, "neogeo", "1994",
 	"Jyanshin Densetsu - Quest of Jongmaster\0", NULL, "Aicom", "Neo Geo",
 	L"\u96C0\u795E\u4F1D\u8AAC - quest of jongmaster\0Jyanshin Densetsu\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_MAHJONG, GBF_MAHJONG, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_MAHJONG, //GBF_MAHJONG, 0,
 	NULL, janshinRomInfo, janshinRomName, neomahjongInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3072,7 +3072,7 @@ struct BurnDriver BurnDrvandrodun = {
 	"androdun", NULL, "neogeo", "1992",
 	"Andro Dunos\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_HORSHOOT, 0,
 	NULL, androdunRomInfo, androdunRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3104,7 +3104,7 @@ struct BurnDriver BurnDrvncommand = {
 	"ncommand", NULL, "neogeo", "1992",
 	"Ninja Commando\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VERSHOOT, 0,
 	NULL, ncommandRomInfo, ncommandRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3134,7 +3134,7 @@ struct BurnDriver BurnDrvviewpoin = {
 	"viewpoin", NULL, "neogeo", "1992",
 	"Viewpoint\0", NULL, "Sammy", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_SHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_SHOOT, 0,
 	NULL, viewpoinRomInfo, viewpoinRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3163,7 +3163,7 @@ struct BurnDriver BurnDrvssideki = {
 	"ssideki", NULL, "neogeo", "1992",
 	"Super Sidekicks / Tokuten Ou\0", NULL, "SNK", "Neo Geo",
 	L"Super Sidekicks\0\u5F97\u70B9\u738B\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_SPORTSFOOTBALL, 0,
 	NULL, ssidekiRomInfo, ssidekiRomName, neogeoInputInfo, neogeoDIPInfo,
 	fatfury2Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3196,7 +3196,7 @@ struct BurnDriver BurnDrvwh1 = {
 	"wh1", NULL, "neogeo", "1992",
 	"World Heroes (set 1)\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_VSFIGHT, 0,
 	NULL, wh1RomInfo, wh1RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3229,7 +3229,7 @@ struct BurnDriver BurnDrvwh1h = {
 	"wh1h", "wh1", "neogeo", "1992",
 	"World Heroes (set 2)\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_VSFIGHT, 0,
 	NULL, wh1hRomInfo, wh1hRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3262,7 +3262,7 @@ struct BurnDriver BurnDrvwh1ha = {
 	"wh1ha", "wh1", "neogeo", "1992",
 	"World Heroes (set 3)\0", NULL, "Alpha Denshi Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPC, //GBF_VSFIGHT, 0,
 	NULL, wh1haRomInfo, wh1haRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3299,7 +3299,7 @@ struct BurnDriver BurnDrvkof94 = {
 	"kof94", NULL, "neogeo", "1994",
 	"The King of Fighters '94\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof94RomInfo, kof94RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3336,7 +3336,7 @@ struct BurnDriver BurnDrvaof2 = {
 	"aof2", NULL, "neogeo", "1994",
 	"Art of Fighting 2 / Ryuuko no Ken 2 (set 1)\0", NULL, "SNK", "Neo Geo",
 	L"Art of Fighting 2 (set 1)\0\u9F8D\u864E\u306E\u62F3\uFF12 (set 1)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, aof2RomInfo, aof2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3387,7 +3387,7 @@ struct BurnDriver BurnDrvaof2a = {
 	"aof2a", "aof2", "neogeo", "1994",
 	"Art of Fighting 2 / Ryuuko no Ken 2 (set 2)\0", NULL, "SNK", "Neo Geo",
 	L"Art of Fighting 2 (set 2)\0\u9F8D\u864E\u306E\u62F3\uFF12 (set 2)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, aof2aRomInfo, aof2aRomName, neogeoInputInfo, neogeoDIPInfo,
 	aof2aInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3421,7 +3421,7 @@ struct BurnDriver BurnDrvwh2 = {
 	"wh2", NULL, "neogeo", "1993",
 	"World Heroes 2\0", NULL, "ADK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, wh2RomInfo, wh2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3457,7 +3457,7 @@ struct BurnDriver BurnDrvfatfursp = {
 	"fatfursp", NULL, "neogeo", "1993",
 	"Fatal Fury Special / Garou Densetsu Special (set 1)\0", NULL, "SNK", "Neo Geo",
 	L"Fatal Fury Special (set 1)\0\u9913\u72FC\u4F1D\u8AAC Special (set 1)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, fatfurspRomInfo, fatfurspRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3507,7 +3507,7 @@ struct BurnDriver BurnDrvfatfursa = {
 	"fatfursa", "fatfursp", "neogeo", "1993",
 	"Fatal Fury Special / Garou Densetsu Special (set 2)\0", NULL, "SNK", "Neo Geo",
 	L"Fatal Fury Special (set 2)\0\u9913\u72FC\u4F1D\u8AAC Special (set 2)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, fatfursaRomInfo, fatfursaRomName, neogeoInputInfo, neogeoDIPInfo,
 	fatfursaInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3544,7 +3544,7 @@ struct BurnDriver BurnDrvsavagere = {
 	"savagere", NULL, "neogeo", "1995",
 	"Savage Reign / Fu'un Mokushiroku - kakutou sousei\0", NULL, "SNK", "Neo Geo",
 	L"Savage Reign\0\u98A8\u96F2\u9ED9\u793A\u9332 - \u683C\u95D8\u5275\u4E16\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, savagereRomInfo, savagereRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3577,7 +3577,7 @@ struct BurnDriver BurnDrvfightfev = {
 	"fightfev", NULL, "neogeo", "1994",
 	"Fight Fever (set 1)\0", NULL, "Viccom", "Neo Geo",
 	L"Fight Fever (set 1)\0\uC655\uC911\uC655 (set 1)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, fightfevRomInfo, fightfevRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3609,7 +3609,7 @@ struct BurnDriver BurnDrvfightfeva = {
 	"fightfeva", "fightfev", "neogeo", "1994",
 	"Fight Fever (set 2)\0", NULL, "Viccom", "Neo Geo",
 	L"Fight Fever (set 2)\0\uC655\uC911\uC655 (set 2)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SCRFIGHT, 0,
 	NULL, fightfevaRomInfo, fightfevaRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3641,7 +3641,7 @@ struct BurnDriver BurnDrvssideki2 = {
 	"ssideki2", NULL, "neogeo", "1994",
 	"Super Sidekicks 2 - The World Championship / Tokuten Ou 2 - real fight football\0", NULL, "SNK", "Neo Geo",
 	L"Super Sidekicks 2 - the world championship\0\u5F97\u70B9\u738B\uFF12 - \u30EA\u30A2\u30EB\u30D5\u30A1\u30A4\u30C8\u30D5\u30C3\u30C8\u30DC\u30FC\u30EB\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSFOOTBALL, 0,
 	NULL, ssideki2RomInfo, ssideki2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3677,7 +3677,7 @@ struct BurnDriver BurnDrvspinmast = {
 	"spinmast", NULL, "neogeo", "1993",
 	"Spin Master / Miracle Adventure\0", NULL, "Data East Corporation", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, 0,
 	NULL, spinmastRomInfo, spinmastRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3715,7 +3715,7 @@ struct BurnDriver BurnDrvsamsho2 = {
 	"samsho2", NULL, "neogeo", "1994",
 	"Samurai Shodown II / Shin Samurai Spirits - Haohmaru jigokuhen\0", NULL, "SNK", "Neo Geo",
 	L"Samurai Shodown II\0\u771F Samurai Spirits - \u8987\u738B\u4E38\u5730\u7344\u5909\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsho2RomInfo, samsho2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3747,7 +3747,7 @@ struct BurnDriver BurnDrvwh2j = {
 	"wh2j", NULL, "neogeo", "1994",
 	"World Heroes 2 Jet (set 1)\0", NULL, "ADK / SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, wh2jRomInfo, wh2jRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3783,7 +3783,7 @@ struct BurnDriver BurnDrvwh2jh = {
 	"wh2jh", "wh2j", "neogeo", "1994",
 	"World Heroes 2 Jet (set 2)\0", NULL, "ADK / SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, wh2jhRomInfo, wh2jhRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3817,7 +3817,7 @@ struct BurnDriver BurnDrvwjammers = {
 	"wjammers", NULL, "neogeo", "1994",
 	"Windjammers / Flying Power Disc\0", NULL, "Data East Corporation", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, wjammersRomInfo, wjammersRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3850,7 +3850,7 @@ struct BurnDriver BurnDrvkarnovr = {
 	"karnovr", NULL, "neogeo", "1994",
 	"Karnov's Revenge / Fighter's History Dynamite\0", NULL, "Data East Corporation", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, karnovrRomInfo, karnovrRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3879,7 +3879,7 @@ struct BurnDriver BurnDrvgururin = {
 	"gururin", NULL, "neogeo", "1994",
 	"Gururin\0", NULL, "Face", "Neo Geo",
 	L"\u3050\u308B\u308A\u3093\0Gururin\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, gururinRomInfo, gururinRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -3914,7 +3914,7 @@ struct BurnDriver BurnDrvpspikes2 = {
 	"pspikes2", NULL, "neogeo", "1994",
 	"Power Spikes II\0", NULL, "Video System Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, pspikes2RomInfo, pspikes2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3950,7 +3950,7 @@ struct BurnDriver BurnDrvfatfury3 = {
 	"fatfury3", NULL, "neogeo", "1995",
 	"Fatal Fury 3 - Road to the Final Victory / Garou Densetsu 3 - haruka-naru tatakai\0", NULL, "SNK", "Neo Geo",
 	L"Fatal Fury 3 - road to the final victory\0\u9913\u72FC\u4F1D\u8AAC\uFF13\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, fatfury3RomInfo, fatfury3RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -3980,7 +3980,7 @@ struct BurnDriver BurnDrvpanicbom = {
 	"panicbom", NULL, "neogeo", "1994",
 	"Panic Bomber\0", NULL, "Eighting / Hudson", "Neo Geo",
 	L"Panic Bomber\0\u3071\u306B\u3063\u304F\u30DC\u30F3\u30D0\u30FC \u30DC\u30F3\u30D0\u30FC\u30DE\u30F3\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, panicbomRomInfo, panicbomRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4016,7 +4016,7 @@ struct BurnDriver BurnDrvaodk = {
 	"aodk", NULL, "neogeo", "1994",
 	"Aggressors of Dark Kombat / Tsuukai GANGAN Koushinkyoku\0", NULL, "ADK / SNK", "Neo Geo",
 	L"Aggressors of Dark Kombat\0\u75DB\u5FEB\uFF27\uFF41\uFF4E\uFF47\uFF41\uFF4E\u884C\u9032\u66F2\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, aodkRomInfo, aodkRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4048,7 +4048,7 @@ struct BurnDriver BurnDrvsonicwi2 = {
 	"sonicwi2", NULL, "neogeo", "1994",
 	"Aero Fighters 2 / Sonic Wings 2\0", NULL, "Video System Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VERSHOOT, FBF_SONICWI,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VERSHOOT, FBF_SONICWI,
 	NULL, sonicwi2RomInfo, sonicwi2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4081,7 +4081,7 @@ struct BurnDriver BurnDrvzedblade = {
 	"zedblade", NULL, "neogeo", "1994",
 	"Zed Blade / Operation Ragnarok\0", NULL, "NMK", "Neo Geo",
 	L"Zed Blade\0Operation Ragnarok\0\u4F5C\u6226\u540D\uFF02\u30E9\u30B0\u30CA\u30ED\u30AF\uFF02\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_HORSHOOT, 0,
 	NULL, zedbladeRomInfo, zedbladeRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4118,7 +4118,7 @@ struct BurnDriver BurnDrvgalaxyfg = {
 	"galaxyfg", NULL, "neogeo", "1995",
 	"Galaxy Fight - Universal Warriors\0", NULL, "Sunsoft", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, galaxyfgRomInfo, galaxyfgRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4150,7 +4150,7 @@ struct BurnDriver BurnDrvstrhoop = {
 	"strhoop", NULL, "neogeo", "1994",
 	"Street Hoop / Street Slam / Dunk Dream\0", NULL, "Data East Corporation", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSMISC, 0,
 	NULL, strhoopRomInfo, strhoopRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4183,7 +4183,7 @@ struct BurnDriver BurnDrvquizkof = {
 	"quizkof", NULL, "neogeo", "1995",
 	"Quiz King of Fighters\0", NULL, "Saurus", "Neo Geo",
 	L"\u30AF\u30A4\u30BA\u30AD\u30F3\u30B0\u30AA\u30D6\u30D5\u30A1\u30A4\u30BF\u30FC\u30BA\0Quiz King of Fighters\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_QUIZ, 0,
 	NULL, quizkofRomInfo, quizkofRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4218,7 +4218,7 @@ struct BurnDriver BurnDrvssideki3 = {
 	"ssideki3", NULL, "neogeo", "1995",
 	"Super Sidekicks 3 - The Next Glory / Tokuten Ou 3 - eikoue no michi\0", NULL, "SNK", "Neo Geo",
 	L"Super Sidekicks 3 - the next glory\0\u5F97\u70B9\u738B\uFF13 - \u6804\u5149\u3078\u306E\u6311\u6226\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_SPORTSFOOTBALL, 0,
 	NULL, ssideki3RomInfo, ssideki3RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4254,7 +4254,7 @@ struct BurnDriver BurnDrvdoubledr = {
 	"doubledr", NULL, "neogeo", "1995",
 	"Double Dragon (Neo-Geo)\0", NULL, "Technos", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, doubledrRomInfo, doubledrRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4290,7 +4290,7 @@ struct BurnDriver BurnDrvpbobblen = {
 	"pbobblen", NULL, "neogeo", "1994",
 	"Puzzle Bobble / Bust-A-Move (Neo-Geo) (set 1)\0", NULL, "Taito", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, pbobblenRomInfo, pbobblenRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4320,7 +4320,7 @@ struct BurnDriver BurnDrvpbobblena = {
 	"pbobblena", "pbobblen", "neogeo", "1994",
 	"Puzzle Bobble / Bust-A-Move (Neo-Geo) (set 2)\0", NULL, "Taito", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, pbobblenaRomInfo, pbobblenaRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4357,7 +4357,7 @@ struct BurnDriver BurnDrvkof95 = {
 	"kof95", NULL, "neogeo", "1995",
 	"The King of Fighters '95 (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof95RomInfo, kof95RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4394,7 +4394,7 @@ struct BurnDriver BurnDrvkof95h = {
 	"kof95h", "kof95", "neogeo", "1995",
 	"The King of Fighters '95 (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof95hRomInfo, kof95hRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4426,7 +4426,7 @@ struct BurnDriver BurnDrvtws96 = {
 	"tws96", NULL, "neogeo", "1996",
 	"Tecmo World Soccer '96\0", NULL, "Tecmo", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_SPORTSFOOTBALL, 0,
 	NULL, tws96RomInfo, tws96RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4466,7 +4466,7 @@ struct BurnDriver BurnDrvsamsho3 = {
 	"samsho3", NULL, "neogeo", "1995",
 	"Samurai Shodown III / Samurai Spirits - Zankurou Musouken (set 1)\0", NULL, "SNK", "Neo Geo",
 	L"Samurai Shodown III (set 1)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4 - \u65AC\u7D05\u90CE\u7121\u53CC\u5263 (set 1)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsho3RomInfo, samsho3RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4503,7 +4503,7 @@ struct BurnDriver BurnDrvsamsho3h = {
 	"samsho3h", "samsho3", "neogeo", "1995",
 	"Samurai Shodown III / Samurai Spirits - Zankurou Musouken (set 2)\0", NULL, "SNK", "Neo Geo",
 	L"Samurai Shodown III (set 2)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4 - \u65AC\u7D05\u90CE\u7121\u53CC\u5263 (set 2)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsho3hRomInfo, samsho3hRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4540,7 +4540,7 @@ struct BurnDriver BurnDrvfswords = {
 	"fswords", "samsho3", "neogeo", "1995",
 	"Fighters Swords (Korean release of Samurai Shodown III)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, fswordsRomInfo, fswordsRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4571,7 +4571,7 @@ struct BurnDriver BurnDrvstakwin = {
 	"stakwin", NULL, "neogeo", "1995",
 	"Stakes Winner / Stakes Winner - GI kinzen seihae no michi\0", NULL, "Saurus", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_MISC, 0,
 	NULL, stakwinRomInfo, stakwinRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4608,7 +4608,7 @@ struct BurnDriver BurnDrvpulstar = {
 	"pulstar", NULL, "neogeo", "1995",
 	"Pulstar\0", NULL, "Aicom", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_HORSHOOT, 0,
 	NULL, pulstarRomInfo, pulstarRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4645,7 +4645,7 @@ struct BurnDriver BurnDrvwhp = {
 	"whp", NULL, "neogeo", "1995",
 	"World Heroes Perfect\0", NULL, "ADK / SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, whpRomInfo, whpRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4679,7 +4679,7 @@ struct BurnDriver BurnDrvkabukikl = {
 	"kabukikl", NULL, "neogeo", "1995",
 	"Far East of Eden - Kabuki Klash / Tengai Makyou - Shin Den\0", NULL, "Hudson", "Neo Geo",
 	L"Kabuki Klash - far east of eden\0\u5929\u5916\u9B54\u5883 - \u771F\u4F1D\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, kabukiklRomInfo, kabukiklRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4711,7 +4711,7 @@ struct BurnDriver BurnDrvneobombe = {
 	"neobombe", NULL, "neogeo", "1997",
 	"Neo Bomberman\0", NULL, "Hudson", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_MAZE, 0,
 	NULL, neobombeRomInfo, neobombeRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4748,7 +4748,7 @@ struct BurnDriver BurnDrvgowcaizr = {
 	"gowcaizr", NULL, "neogeo", "1995",
 	"Voltage Fighter - Gowcaizer / Choujin Gakuen Gowcaizer\0", NULL, "Technos", "Neo Geo",
 	L"Voltage Fighter - Gowcaizer\0\u8D85\u4EBA\u5B66\u5712\u30B4\u30A6\u30AB\u30A4\u30B6\u30FC\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, gowcaizrRomInfo, gowcaizrRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4786,7 +4786,7 @@ struct BurnDriver BurnDrvrbff1 = {
 	"rbff1", NULL, "neogeo", "1995",
 	"Real Bout Fatal Fury / Real Bout Garou Densetsu\0", NULL, "SNK", "Neo Geo",
 	L"Real Bout Fatal Fury\0Real Bout \u9913\u72FC\u4F1D\u8AAC\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, rbff1RomInfo, rbff1RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4838,7 +4838,7 @@ struct BurnDriver BurnDrvrbff1a = {
 	"rbff1a", "rbff1", "neogeo", "1995",
 	"Real Bout Fatal Fury / Real Bout Garou Densetsu (bug fix revision)\0", NULL, "SNK", "Neo Geo",
 	L"Real Bout Fatal Fury (bug fix revision)\0Real Bout \u9913\u72FC\u4F1D\u8AAC (bug fix revision)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, rbff1aRomInfo, rbff1aRomName, neogeoInputInfo, neogeoDIPInfo,
 	rbff1aInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4876,7 +4876,7 @@ struct BurnDriver BurnDrvaof3 = {
 	"aof3", NULL, "neogeo", "1996",
 	"Art of Fighting 3 - The Path of the Warrior / Art of Fighting - Ryuuko no Ken Gaiden\0", NULL, "SNK", "Neo Geo",
 	L"Art of Fighting 3 - the path of the warrior\0Art of Fighting - \u9F8D\u864E\u306E\u62F3\u5916\u4F1D\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, aof3RomInfo, aof3RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4914,7 +4914,7 @@ struct BurnDriver BurnDrvaof3k = {
 	"aof3k", "aof3", "neogeo", "1996",
 	"Art of Fighting 3 - The Path of the Warrior (Korean release)\0", NULL, "SNK", "Neo Geo",
 	L"Art of Fighting 3 - the path of the warrior (korean release)\0Art of Fighting - \u9F8D\u864E\u306E\u62F3\u5916\u4F1D (korean release)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, aof3kRomInfo, aof3kRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -4946,7 +4946,7 @@ struct BurnDriver BurnDrvsonicwi3 = {
 	"sonicwi3", NULL, "neogeo", "1995",
 	"Aero Fighters 3 / Sonic Wings 3\0", NULL, "Video System Co.", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VERSHOOT, FBF_SONICWI,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VERSHOOT, FBF_SONICWI,
 	NULL, sonicwi3RomInfo, sonicwi3RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -4978,7 +4978,7 @@ struct BurnDriver BurnDrvturfmast = {
 	"turfmast", NULL, "neogeo", "1996",
 	"Neo Turf Masters / Big Tournament Golf\0", NULL, "Nazca", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_SPORTSMISC, 0,
 	NULL, turfmastRomInfo, turfmastRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5010,7 +5010,7 @@ struct BurnDriver BurnDrvmslug = {
 	"mslug", NULL, "neogeo", "1996",
 	"Metal Slug - Super Vehicle-001\0", NULL, "Nazca", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslugRomInfo, mslugRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5039,7 +5039,7 @@ struct BurnDriver BurnDrvpuzzledp = {
 	"puzzledp", NULL, "neogeo", "1995",
 	"Puzzle De Pon!\0", NULL, "Taito (Visco license)", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, puzzledpRomInfo, puzzledpRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5068,7 +5068,7 @@ struct BurnDriver BurnDrvmosyougi = {
 	"mosyougi", NULL, "neogeo", "1995",
 	"Syougi No Tatsujin - Master of Syougi\0", NULL, "ADK / SNK", "Neo Geo",
 	L"\u5C06\u68CB\u306E\u9054\u4EBA\0Master of Syougi\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, mosyougiRomInfo, mosyougiRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5100,7 +5100,7 @@ struct BurnDriver BurnDrvmarukodq = {
 	"marukodq", NULL, "neogeo", "1995",
 	"Chibi Marukochan Deluxe Quiz\0", NULL, "Takara", "Neo Geo",
 	L"\u3061\u3073\u307E\u308B\u5B50\u3061\u3083\u3093 \u307E\u308B\u5B50\u30C7\u30E9\u30C3\u30AF\u30B9\u30AF\u30A4\u30BA\0Chibi Marukochan Deluxe Quiz\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_QUIZ, 0,
 	NULL, marukodqRomInfo, marukodqRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5129,7 +5129,7 @@ struct BurnDriver BurnDrvneomrdo = {
 	"neomrdo", NULL, "neogeo", "1996",
 	"Neo Mr. Do!\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_MAZE, 0,
 	NULL, neomrdoRomInfo, neomrdoRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5161,7 +5161,7 @@ struct BurnDriver BurnDrvsdodgeb = {
 	"sdodgeb", NULL, "neogeo", "1996",
 	"Super Dodge Ball / Kunio no Nekketsu Toukyuu Densetsu\0", NULL, "Technos", "Neo Geo",
 	L"Super Dodge Ball\0\u304F\u306B\u304A\u306E\u71B1\u8840\u95D8\u7403\u4F1D\u8AAC\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_SPORTSMISC, 0,
 	NULL, sdodgebRomInfo, sdodgebRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5192,7 +5192,7 @@ struct BurnDriver BurnDrvgoalx3 = {
 	"goalx3", NULL, "neogeo", "1995",
 	"Goal! Goal! Goal!\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_SPORTSFOOTBALL, 0,
 	NULL, goalx3RomInfo, goalx3RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5221,7 +5221,7 @@ struct BurnDriver BurnDrvzintrckb = {
 	"zintrckb", NULL, "neogeo", "1996",
 	"Zintrick / Oshidashi Zentrix (hack / bootleg)\0", NULL, "hack / bootleg", "Neo Geo",
 	L"Zintrick\0\u62BC\u3057\u51FA\u3057\u30B8\u30F3\u30C8\u30EA\u30C3\u30AF\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, zintrckbRomInfo, zintrckbRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5254,7 +5254,7 @@ struct BurnDriver BurnDrvovertop = {
 	"overtop", NULL, "neogeo", "1996",
 	"Over Top\0", NULL, "ADK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_RACING, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_RACING, 0,
 	NULL, overtopRomInfo, overtopRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5284,7 +5284,7 @@ struct BurnDriver BurnDrvneodrift = {
 	"neodrift", NULL, "neogeo", "1996",
 	"Neo Drift Out - New Technology\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_RACING, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_RACING, 0,
 	NULL, neodriftRomInfo, neodriftRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5322,7 +5322,7 @@ struct BurnDriver BurnDrvkof96 = {
 	"kof96", NULL, "neogeo", "1996",
 	"The King of Fighters '96 (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof96RomInfo, kof96RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5360,7 +5360,7 @@ struct BurnDriver BurnDrvkof96h = {
 	"kof96h", "kof96", "neogeo", "1996",
 	"The King of Fighters '96 (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof96hRomInfo, kof96hRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5394,7 +5394,7 @@ struct BurnDriver BurnDrvssideki4 = {
 	"ssideki4", NULL, "neogeo", "1996",
 	"Ultimate 11 - The SNK Football Championship / Tokuten Ou - Honoo no Libero, The\0", NULL, "SNK", "Neo Geo",
 	L"The Ultimate 11 - SNK football championship\0\u5F97\u70B9\u738B - \u708E\u306E\u30EA\u30D9\u30ED\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_SPORTSFOOTBALL, 0,
 	NULL, ssideki4RomInfo, ssideki4RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -5432,7 +5432,7 @@ struct BurnDriver BurnDrvkizuna = {
 	"kizuna", NULL, "neogeo", "1996",
 	"Kizuna Encounter - Super Tag Battle / Fu'un Super Tag Battle\0", NULL, "SNK", "Neo Geo",
 	L"Kizuna Encounter - super tag battle\0\u98A8\u96F2 Super Tag Battle\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, kizunaRomInfo, kizunaRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5469,7 +5469,7 @@ struct BurnDriver BurnDrvninjamas = {
 	"ninjamas", NULL, "neogeo", "1996",
 	"Ninja Master's - haoh-ninpo-cho\0", NULL, "ADK / SNK", "Neo Geo",
 	L"Ninja master's \u8987\u738B\u5FCD\u6CD5\u5E16\0Ninja Master's haoh ninpo cho\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, ninjamasRomInfo, ninjamasRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -5505,7 +5505,7 @@ struct BurnDriver BurnDrvragnagrd = {
 	"ragnagrd", NULL, "neogeo", "1996",
 	"Ragnagard / Shin-Oh-Ken\0", NULL, "Saurus", "Neo Geo",
 	L"Operation Ragnagard\0\u795E\u51F0\u62F3\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, ragnagrdRomInfo, ragnagrdRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -5539,7 +5539,7 @@ struct BurnDriver BurnDrvpgoal = {
 	"pgoal", NULL, "neogeo", "1996",
 	"Pleasure Goal / Futsal - 5 on 5 Mini Soccer\0", NULL, "Saurus", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_SPORTSFOOTBALL, 0,
 	NULL, pgoalRomInfo, pgoalRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5568,7 +5568,7 @@ struct BurnDriver BurnDrvmagdrop2 = {
 	"magdrop2", NULL, "neogeo", "1996",
 	"Magical Drop II\0", NULL, "Data East Corporation", "Neo Geo",
 	L"Magical Drop II\0\u30DE\u30B8\u30AB\u30EB\u30C9\u30ED\u30C3\u30D7\uFF12\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, magdrop2RomInfo, magdrop2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5606,7 +5606,7 @@ struct BurnDriver BurnDrvsamsho4 = {
 	"samsho4", NULL, "neogeo", "1996",
 	"Samurai Shodown IV - Amakusa's Revenge / Samurai Spirits - Amakusa Kourin\0", NULL, "SNK", "Neo Geo",
 	L"Samurai Shodown IV - Amakusa's revenge\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4 - \u5929\u8349\u964D\u81E8\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsho4RomInfo, samsho4RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -5644,7 +5644,7 @@ struct BurnDriver BurnDrvrbffspec = {
 	"rbffspec", NULL, "neogeo", "1996",
 	"Real Bout Fatal Fury Special / Real Bout Garou Densetsu Special\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, rbffspecRomInfo, rbffspecRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -5676,7 +5676,7 @@ struct BurnDriver BurnDrvtwinspri = {
 	"twinspri", NULL, "neogeo", "1996",
 	"Twinkle Star Sprites\0", NULL, "ADK", "Neo Geo",
 	L"TwinkleStar Sprites\0\u30C6\u30A3\u30F3\u30AF\u30EB\u30B9\u30BF\u30FC\u30B9\u30D7\u30E9\u30A4\u30C4\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VERSHOOT, 0,
 	NULL, twinspriRomInfo, twinspriRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5711,7 +5711,7 @@ struct BurnDriver BurnDrvwakuwak7 = {
 	"wakuwak7", NULL, "neogeo", "1996",
 	"Waku Waku 7\0", NULL, "Sunsoft", "Neo Geo",
 	L"Waku Waku 7\0\u308F\u304F\u308F\u304F\uFF17\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, wakuwak7RomInfo, wakuwak7RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5743,7 +5743,7 @@ struct BurnDriver BurnDrvstakwin2 = {
 	"stakwin2", NULL, "neogeo", "1996",
 	"Stakes Winner 2\0", NULL, "Saurus", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_MISC, 0,
 	NULL, stakwin2RomInfo, stakwin2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -5772,7 +5772,7 @@ struct BurnDriver BurnDrvghostlop = {
 	"ghostlop", NULL, "neogeo", "1996",
 	"Ghostlop (prototype)\0", NULL, "Data East Corporation", "Neo Geo",
 	L"Ghostlop\0Ghostlop \u30B4\u30FC\u30B9\u30C8\u30ED\u30C3\u30D7\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_PROTOTYPE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_PROTOTYPE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, ghostlopRomInfo, ghostlopRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5804,7 +5804,7 @@ struct BurnDriver BurnDrvbreakers = {
 	"breakers", NULL, "neogeo", "1996",
 	"Breakers\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, breakersRomInfo, breakersRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -5835,7 +5835,7 @@ struct BurnDriver BurnDrvmiexchng = {
 	"miexchng", NULL, "neogeo", "1997",
 	"Money Puzzle Exchanger / Money Idol Exchanger\0", NULL, "Face", "Neo Geo",
 	L"Money Puzzle Exchanger\0\u30DE\u30CD\u30FC\u30A2\u30A4\u30C9\u30EB\u30A8\u30AF\u30B9\u30C1\u30A7\u30F3\u30B8\u30E3\u30FC\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, miexchngRomInfo, miexchngRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5871,7 +5871,7 @@ struct BurnDriver BurnDrvkof97 = {
 	"kof97", NULL, "neogeo", "1997",
 	"The King of Fighters '97 (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof97RomInfo, kof97RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5907,7 +5907,7 @@ struct BurnDriver BurnDrvkof97a = {
 	"kof97a", "kof97", "neogeo", "1997",
 	"The King of Fighters '97 (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof97aRomInfo, kof97aRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5943,7 +5943,7 @@ struct BurnDriver BurnDrvkof97pls = {
 	"kof97pls", "kof97", "neogeo", "1997",
 	"The King of Fighters '97 Plus (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof97plsRomInfo, kof97plsRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -5975,7 +5975,7 @@ struct BurnDriver BurnDrvmagdrop3 = {
 	"magdrop3", NULL, "neogeo", "1997",
 	"Magical Drop III\0", NULL, "Data East Corporation", "Neo Geo",
 	L"Magical Drop III\0\u30DE\u30B8\u30AB\u30EB\u30C9\u30ED\u30C3\u30D7III\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, magdrop3RomInfo, magdrop3RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6012,7 +6012,7 @@ struct BurnDriver BurnDrvlastblad = {
 	"lastblad", NULL, "neogeo", "1997",
 	"Last Blade / Bakumatsu Roman - Gekka no Kenshi, The (set 1)\0", NULL, "SNK", "Neo Geo",
 	L"The Last Blade (set 1)\0\u5E55\u672B\u6D6A\u6F2B \u6708\u83EF\u306E\u5263\u58EB (set 1)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, lastbladRomInfo, lastbladRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6049,7 +6049,7 @@ struct BurnDriver BurnDrvlastbladh = {
 	"lastbladh", "lastblad", "neogeo", "1997",
 	"Last Blade / Bakumatsu Roman - Gekka no Kenshi, The (set 2)\0", NULL, "SNK", "Neo Geo",
 	L"The Last Blade (set 2)\0\u5E55\u672B\u6D6A\u6F2B \u6708\u83EF\u306E\u5263\u58EB (set 2)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, lastbladhRomInfo, lastbladhRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6086,7 +6086,7 @@ struct BurnDriver BurnDrvlastsold = {
 	"lastsold", "lastblad", "neogeo", "1997",
 	"The Last Soldier (Korean release of The Last Blade)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, lastsoldRomInfo, lastsoldRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6115,7 +6115,7 @@ struct BurnDriver BurnDrvpuzzldpr = {
 	"puzzldpr", "puzzledp", "neogeo", "1997",
 	"Puzzle De Pon! R!\0", NULL, "Taito (Visco license)", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, puzzldprRomInfo, puzzldprRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6147,7 +6147,7 @@ struct BurnDriver BurnDrvirrmaze = {
 	"irrmaze", NULL, "neogeo", "1997",
 	"The Irritating Maze / Ultra Denryu Iraira Bou\0", NULL, "SNK / Saurus", "Neo Geo",
 	L"The Irritating Maze\0\u30A6\u30EB\u30C8\u30E9\u96FB\u6D41\u30A4\u30E9\u30A4\u30E9\u68D2\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_TRACKBALL, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_TRACKBALL, //GBF_MISC, 0,
 	NULL, irrmazeRomInfo, irrmazeRomName, neotrackballInputInfo, neotrackballDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6176,7 +6176,7 @@ struct BurnDriver BurnDrvpopbounc = {
 	"popbounc", NULL, "neogeo", "1997",
 	"Pop 'n Bounce / Gapporin\0", NULL, "Video System Co.", "Neo Geo",
 	L"Pop 'n Bounce\0\u30AC\u30C3\u30DD\u30EA\u30F3\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_PADDLE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_PADDLE, //GBF_PUZZLE, 0,
 	NULL, popbouncRomInfo, popbouncRomName, neopaddleInputInfo, neopaddleDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6213,7 +6213,7 @@ struct BurnDriver BurnDrvshocktro = {
 	"shocktro", NULL, "neogeo", "1997",
 	"Shock Troopers (set 1)\0", NULL, "Saurus", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VERSHOOT, 0,
 	NULL, shocktroRomInfo, shocktroRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6250,7 +6250,7 @@ struct BurnDriver BurnDrvshocktra = {
 	"shocktra", "shocktro", "neogeo", "1997",
 	"Shock Troopers (set 2)\0", NULL, "Saurus", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VERSHOOT, 0,
 	NULL, shocktraRomInfo, shocktraRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6287,7 +6287,7 @@ struct BurnDriver BurnDrvblazstar = {
 	"blazstar", NULL, "neogeo", "1998",
 	"Blazing Star\0", NULL, "Yumekobo", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_HORSHOOT, 0,
 	NULL, blazstarRomInfo, blazstarRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6324,7 +6324,7 @@ struct BurnDriver BurnDrvrbff2 = {
 	"rbff2", NULL, "neogeo", "1998",
 	"Real Bout Fatal Fury 2 - The Newcomers / Real Bout Garou Densetsu 2 - the newcomers (set 1)\0", NULL, "SNK", "Neo Geo",
 	L"Real Bout Fatal Fury 2 - the newcomers (set 1)\0Real Bout \u9913\u72FC\u4F1D\u8AAC\uFF12 (set 1)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, rbff2RomInfo, rbff2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6361,7 +6361,7 @@ struct BurnDriver BurnDrvrbff2h = {
 	"rbff2h", "rbff2", "neogeo", "1998",
 	"Real Bout Fatal Fury 2 - The Newcomers / Real Bout Garou Densetsu 2 - the newcomers (set 2)\0", NULL, "SNK", "Neo Geo",
 	L"Real Bout Fatal Fury 2 - the newcomers (set 2)\0Real Bout \u9913\u72FC\u4F1D\u8AAC\uFF12 (set 2)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, rbff2hRomInfo, rbff2hRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6398,7 +6398,7 @@ struct BurnDriver BurnDrvrbff2k = {
 	"rbff2k", "rbff2", "neogeo", "1998",
 	"Real Bout Fatal Fury 2 - The Newcomers (Korean release)\0", NULL, "SNK", "Neo Geo",
 	L"Real Bout Fatal Fury 2 - the newcomers (Korean Release)\0Real Bout \u9913\u72FC\u4F1D\u8AAC\uFF12 (Korean Release)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_FATFURY,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_FATFURY,
 	NULL, rbff2kRomInfo, rbff2kRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6431,7 +6431,7 @@ struct BurnDriver BurnDrvmslug2 = {
 	"mslug2", NULL, "neogeo", "1998",
 	"Metal Slug 2 - Super Vehicle-001/II\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug2RomInfo, mslug2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6560,7 +6560,7 @@ struct BurnDriver BurnDrvkof98 = {
 	"kof98", NULL, "neogeo", "1998",
 	"The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof98RomInfo, kof98RomName, neogeoInputInfo, neogeoDIPInfo,
 	kof98Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6599,7 +6599,7 @@ struct BurnDriver BurnDrvkof98k = {
 	"kof98k", "kof98", "neogeo", "1998",
 	"The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Korean board)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof98kRomInfo, kof98kRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof98Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6638,7 +6638,7 @@ struct BurnDriver BurnDrvkof98n = {
 	"kof98n", "kof98", "neogeo", "1998",
 	"The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (not encrypted)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof98nRomInfo, kof98nRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6675,7 +6675,7 @@ struct BurnDriver BurnDrvlastbld2 = {
 	"lastbld2", NULL, "neogeo", "1998",
 	"Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi, The\0", NULL, "SNK", "Neo Geo",
 	L"The Last Blade 2\0\u5E55\u672B\u6D6A\u6F2B\u7B2C\u4E8C\u5E55 - \u6708\u83EF\u306E\u5263\u58EB - \u6708\u306B\u54B2\u304F\u83EF\u3001\u6563\u308A\u3086\u304F\u82B1\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, lastbld2RomInfo, lastbld2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6705,7 +6705,7 @@ struct BurnDriver BurnDrvneocup98 = {
 	"neocup98", NULL, "neogeo", "1998",
 	"Neo-Geo Cup '98 - The Road to the Victory\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_SPORTSFOOTBALL, 0,
 	NULL, neocup98RomInfo, neocup98RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6739,7 +6739,7 @@ struct BurnDriver BurnDrvbreakrev = {
 	"breakrev", NULL, "neogeo", "1998",
 	"Breakers Revenge\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VSFIGHT, 0,
 	NULL, breakrevRomInfo, breakrevRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6775,7 +6775,7 @@ struct BurnDriver BurnDrvshocktr2 = {
 	"shocktr2", NULL, "neogeo", "1998",
 	"Shock Troopers - 2nd Squad\0", NULL, "Saurus", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VERSHOOT, 0,
 	NULL, shocktr2RomInfo, shocktr2RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6892,7 +6892,7 @@ struct BurnDriver BurnDrvlans2004 = {
 	"lans2004", "shocktr2", "neogeo", "1998",
 	"Lansquenet 2004 (Shock Troopers - 2nd Squad bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VERSHOOT, 0,
 	NULL, lans2004RomInfo, lans2004RomName, neogeoInputInfo, neogeoDIPInfo,
 	lans2004Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6921,7 +6921,7 @@ struct BurnDriver BurnDrvflipshot = {
 	"flipshot", NULL, "neogeo", "1998",
 	"Battle Flip Shot\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_BALLPADDLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_BALLPADDLE, 0,
 	NULL, flipshotRomInfo, flipshotRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -6953,7 +6953,7 @@ struct BurnDriver BurnDrvpbobbl2n = {
 	"pbobbl2n", NULL, "neogeo", "1999",
 	"Puzzle Bobble 2 / Bust-A-Move Again (Neo-Geo)\0", NULL, "Taito (SNK license)", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, pbobbl2nRomInfo, pbobbl2nRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -6983,7 +6983,7 @@ struct BurnDriver BurnDrvctomaday = {
 	"ctomaday", NULL, "neogeo", "1999",
 	"Captain Tomaday\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_VERSHOOT, 0,
 	NULL, ctomadayRomInfo, ctomadayRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7047,7 +7047,7 @@ struct BurnDriver BurnDrvmslugx = {
 	"mslugx", NULL, "neogeo", "1999",
 	"Metal Slug X - Super Vehicle-001\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslugxRomInfo, mslugxRomName, neogeoInputInfo, neogeoDIPInfo,
 	mslugxInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7142,7 +7142,7 @@ struct BurnDriver BurnDrvkof99 = {
 	"kof99", NULL, "neogeo", "1999",
 	"The King of Fighters '99 - Millennium Battle (set 1)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof99RomInfo, kof99RomName, neogeoInputInfo, neogeoDIPInfo,
 	kof99Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7180,7 +7180,7 @@ struct BurnDriver BurnDrvkof99a = {
 	"kof99a", "kof99", "neogeo", "1999",
 	"The King of Fighters '99 - Millennium Battle (set 2)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof99aRomInfo, kof99aRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof99Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7220,7 +7220,7 @@ struct BurnDriver BurnDrvkof99e = {
 	"kof99e", "kof99", "neogeo", "1999",
 	"The King of Fighters '99 - Millennium Battle (earlier)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof99eRomInfo, kof99eRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof99Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7263,7 +7263,7 @@ struct BurnDriver BurnDrvkof99n = {
 	"kof99n", "kof99", "neogeo", "1999",
 	"The King of Fighters '99 - Millennium Battle (not encrypted)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof99nRomInfo, kof99nRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof99nInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7302,7 +7302,7 @@ struct BurnDriver BurnDrvkof99p = {
 	"kof99p", "kof99", "neogeo", "1999",
 	"The King of Fighters '99 - Millennium Battle (prototype)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof99pRomInfo, kof99pRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7335,7 +7335,7 @@ struct BurnDriver BurnDrvganryu = {
 	"ganryu", NULL, "neogeo", "1999",
 	"Ganryu / Musashi Ganryuki\0", NULL, "Visco", "Neo Geo",
 	L"Ganryu\0\u6B66\u8535\u5DCC\u6D41\u8A18\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP | HARDWARE_SNK_ENCRYPTED_A, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP | HARDWARE_SNK_ENCRYPTED_A, //GBF_PLATFORM, 0,
 	NULL, ganryuRomInfo, ganryuRomName, neogeoInputInfo, neogeoDIPInfo,
 	ganryuInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7437,7 +7437,7 @@ struct BurnDriver BurnDrvgarou = {
 	"garou", NULL, "neogeo", "1999",
 	"Garou - Mark of the Wolves (set 1)\0", NULL, "SNK", "Neo Geo",
 	L"\u9913\u72FC - mark of the wolves (set 1)\0Garou - mark of the wolves (set 1)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, //GBF_VSFIGHT, 0,
 	NULL, garouRomInfo, garouRomName, neogeoInputInfo, neogeoDIPInfo,
 	garouInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -7540,7 +7540,7 @@ struct BurnDriver BurnDrvgarouo = {
 	"garouo", "garou", "neogeo", "1999",
 	"Garou - Mark of the Wolves (set 2)\0", NULL, "SNK", "Neo Geo",
 	L"\u9913\u72FC - mark of the wolves (set 2)\0Garou - mark of the wolves (set 2)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, //GBF_VSFIGHT, 0,
 	NULL, garouoRomInfo, garouoRomName, neogeoInputInfo, neogeoDIPInfo,
 	garouoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -7579,7 +7579,7 @@ struct BurnDriver BurnDrvgaroup = {
 	"garoup", "garou", "neogeo", "1999",
 	"Garou - Mark of the Wolves (prototype)\0", NULL, "SNK", "Neo Geo",
 	L"\u9913\u72FC - mark of the wolves (prototype)\0Garou - mark of the wolves (prototype)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, garoupRomInfo, garoupRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -7634,7 +7634,7 @@ struct BurnDriver BurnDrvgaroubl = {
 	"garoubl", "garou", "neogeo", "1999",
 	"Garou - Mark of the Wolves (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	L"\u9913\u72FC - mark of the wolves (bootleg)\0Garou - mark of the wolves (bootleg)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, 0,
 	NULL, garoublRomInfo, garoublRomName, neogeoInputInfo, neogeoDIPInfo,
 	garoublInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -7677,7 +7677,7 @@ struct BurnDriver BurnDrvs1945p = {
 	"s1945p", NULL, "neogeo", "1999",
 	"Strikers 1945 Plus\0", NULL, "Psikyo", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, //GBF_VERSHOOT, 0,
 	NULL, s1945pRomInfo, s1945pRomName, neogeoInputInfo, neogeoDIPInfo,
 	s1945pInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -7716,7 +7716,7 @@ struct BurnDriver BurnDrvpreisle2 = {
 	"preisle2", NULL, "neogeo", "1999",
 	"Prehistoric Isle 2\0", NULL, "Yumekobo", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, //GBF_HORSHOOT, 0,
 	NULL, preisle2RomInfo, preisle2RomName, neogeoInputInfo, neogeoDIPInfo,
 	preisle2Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7815,7 +7815,7 @@ struct BurnDriver BurnDrvmslug3 = {
 	"mslug3", NULL, "neogeo", "2000",
 	"Metal Slug 3\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_A, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug3RomInfo, mslug3RomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug3Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7859,7 +7859,7 @@ struct BurnDriver BurnDrvmslug3h = {
 	"mslug3h", "mslug3", "neogeo", "2000",
 	"Metal Slug 3 (not encrypted)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug3hRomInfo, mslug3hRomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug3hInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7954,7 +7954,7 @@ struct BurnDriver BurnDrvkof2000 = {
 	"kof2000", NULL, "neogeo", "2000",
 	"The King of Fighters 2000\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2000RomInfo, kof2000RomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2000Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -7998,7 +7998,7 @@ struct BurnDriver BurnDrvkof2000n = {
 	"kof2000n", "kof2000", "neogeo", "2000",
 	"The King of Fighters 2000 (not encrypted)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2000nRomInfo, kof2000nRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2000nInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8032,7 +8032,7 @@ struct BurnDriver BurnDrvbangbead = {
 	"bangbead", NULL, "neogeo", "2000",
 	"Bang Bead\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP | HARDWARE_SNK_ENCRYPTED_A, GBF_BALLPADDLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP | HARDWARE_SNK_ENCRYPTED_A, //GBF_BALLPADDLE, 0,
 	NULL, bangbeadRomInfo, bangbeadRomName, neogeoInputInfo, neogeoDIPInfo,
 	bangbeadInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8065,7 +8065,7 @@ struct BurnDriver BurnDrvbangbedp = {
 	"bangbedp", "bangbead", "neogeo", "2000",
 	"Bang Bead (Prototype?)\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_BALLPADDLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_BALLPADDLE, 0,
 	NULL, bangbedpRomInfo, bangbedpRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8098,7 +8098,7 @@ struct BurnDriver BurnDrvnitd = {
 	"nitd", NULL, "neogeo", "2000",
 	"Nightmare in the Dark\0", NULL, "Eleven / Gavaking", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, //GBF_PLATFORM, 0,
 	NULL, nitdRomInfo, nitdRomName, neogeoInputInfo, neogeoDIPInfo,
 	nitdInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -8130,7 +8130,7 @@ struct BurnDriver BurnDrvnitdbl = {
 	"nitdbl", "nitd", "neogeo", "2001",
 	"Nightmare in the Dark (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, 0,
 	NULL, nitdblRomInfo, nitdblRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -8163,7 +8163,7 @@ struct BurnDriver BurnDrvzupapa = {
 	"zupapa", NULL, "neogeo", "2001",
 	"Zupapa!\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, //GBF_PLATFORM, 0,
 	NULL, zupapaRomInfo, zupapaRomName, neogeoInputInfo, neogeoDIPInfo,
 	zupapaInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8201,7 +8201,7 @@ struct BurnDriver BurnDrvsengoku3 = {
 	"sengoku3", NULL, "neogeo", "2001",
 	"Sengoku 3\0", NULL, "SNK", "Neo Geo",
 	L"Sengoku 3\0\u6226\u56FD\u4F1D\u627F\uFF12\uFF10\uFF10\uFF11\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP | HARDWARE_SNK_ENCRYPTED_A, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP | HARDWARE_SNK_ENCRYPTED_A, //GBF_SCRFIGHT, 0,
 	NULL, sengoku3RomInfo, sengoku3RomName, neogeoInputInfo, neogeoDIPInfo,
 	sengoku3Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -8244,7 +8244,7 @@ struct BurnDriver BurnDrvkof2001 = {
 	"kof2001", NULL, "neogeo", "2001",
 	"The King of Fighters 2001 (set 1)\0", NULL, "Eolith / SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2001RomInfo, kof2001RomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2001Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8281,7 +8281,7 @@ struct BurnDriver BurnDrvkof2001h = {
 	"kof2001h", "kof2001", "neogeo", "2001",
 	"The King of Fighters 2001 (set 2)\0", NULL, "Eolith / SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2001hRomInfo, kof2001hRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2001Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8336,7 +8336,7 @@ struct BurnDriver BurnDrvmslug4 = {
 	"mslug4", NULL, "neogeo", "2002",
 	"Metal Slug 4\0", NULL, "Mega", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug4RomInfo, mslug4RomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug4Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8371,7 +8371,7 @@ struct BurnDriver BurnDrvms4plus = {
 	"ms4plus", "mslug4", "neogeo", "2002",
 	"Metal Slug 4 Plus (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, ms4plusRomInfo, ms4plusRomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug4Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8426,7 +8426,7 @@ struct BurnDriver BurnDrvrotd = {
 	"rotd", NULL, "neogeo", "2002",
 	"Rage of the Dragons\0", NULL, "Evoga / Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, 0,
 	NULL, rotdRomInfo, rotdRomName, neogeoInputInfo, neogeoDIPInfo,
 	rotdInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -8495,7 +8495,7 @@ struct BurnDriver BurnDrvkof2002 = {
 	"kof2002", NULL, "neogeo", "2002",
 	"The King of Fighters 2002\0", NULL, "Eolith / Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2002RomInfo, kof2002RomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2002Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8532,7 +8532,7 @@ struct BurnDriver BurnDrvkf2k2pls = {
 	"kf2k2pls", "kof2002", "neogeo", "2002",
 	"The King of Fighters 2002 Plus (bootleg set 1)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k2plsRomInfo, kf2k2plsRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2002Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8569,7 +8569,7 @@ struct BurnDriver BurnDrvkf2k2pla = {
 	"kf2k2pla", "kof2002", "neogeo", "2002",
 	"The King of Fighters 2002 Plus (bootleg set 2)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k2plaRomInfo, kf2k2plaRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2002Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8636,7 +8636,7 @@ struct BurnDriver BurnDrvkf2k2mp = {
 	"kf2k2mp", "kof2002", "neogeo", "2002",
 	"The King of Fighters 2002 Magic Plus (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k2mpRomInfo, kf2k2mpRomName, neogeoInputInfo, neogeoDIPInfo,
 	kf2k2mpInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8700,7 +8700,7 @@ struct BurnDriver BurnDrvkf2k2mp2 = {
 	"kf2k2mp2", "kof2002", "neogeo", "2002",
 	"The King of Fighters 2002 Magic Plus II (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k2mp2RomInfo, kf2k2mp2RomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2km2Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8754,7 +8754,7 @@ struct BurnDriver BurnDrvmatrim = {
 	"matrim", NULL, "neogeo", "2002",
 	"Matrimelee / Shin Gouketsuji Ichizoku Toukon\0", NULL, "Noise Factory / Atlus", "Neo Geo",
 	L"\u65B0\u8C6A\u8840\u5BFA\u4E00\u65CF - \u95D8\u5A5A\0Matrimelee\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_PWRINST,
 	NULL, matrimRomInfo, matrimRomName, neogeoInputInfo, neogeoDIPInfo,
 	matrimInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -8802,7 +8802,7 @@ struct BurnDriver BurnDrvpnyaa = {
 	"pnyaa", NULL, "neogeo", "2003",
 	"Pochi and Nyaa\0", NULL, "Aiky / Taito", "Neo Geo",
 	L"Pochi and Nyaa\0\u30DD\u30C1\u30C3\u3068\u306B\u3083\uFF5E\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PUZZLE, 0,
 	NULL, pnyaaRomInfo, pnyaaRomName, neogeoInputInfo, neogeoDIPInfo,
 	pnyaaInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8891,7 +8891,7 @@ struct BurnDriver BurnDrvmslug5 = {
 	"mslug5", NULL, "neogeo", "2003",
 	"Metal Slug 5\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug5RomInfo, mslug5RomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug5Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8926,7 +8926,7 @@ struct BurnDriver BurnDrvmslug5h = {
 	"mslug5h", "mslug5", "neogeo", "2003",
 	"Metal Slug 5 (AES Cart)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug5hRomInfo, mslug5hRomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug5Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -8956,7 +8956,7 @@ struct BurnDriver BurnDrvms5pcb = {
 	"ms5pcb", NULL, NULL, "2003",
 	"Metal Slug 5 (JAMMA PCB)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, ms5pcbRomInfo, ms5pcbRomName, neogeoInputInfo, ms5pcbDIPInfo,
 	mslug5Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9031,7 +9031,7 @@ struct BurnDriver BurnDrvms5plus = {
 	"ms5plus", "mslug5", "neogeo", "2003",
 	"Metal Slug 5 Plus (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, ms5plusRomInfo, ms5plusRomName, neogeoInputInfo, neogeoDIPInfo,
 	ms5plusInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9116,7 +9116,7 @@ struct BurnDriver BurnDrvsvcpcb = {
 	"svcpcb", NULL, NULL, "2003",
 	"SNK vs. CAPCOM SVC CHAOS (JAMMA PCB, set 1)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcpcbRomInfo, svcpcbRomName, neogeoInputInfo, svcpcbDIPInfo,
 	svcpcbInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9146,7 +9146,7 @@ struct BurnDriver BurnDrvsvcpcba = {
 	"svcpcba", "svcpcb", NULL, "2003",
 	"SNK vs. CAPCOM SVC CHAOS (JAMMA PCB, set 2)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcpcbaRomInfo, svcpcbaRomName, neogeoInputInfo, svcpcbDIPInfo,
 	svcpcbInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9181,7 +9181,7 @@ struct BurnDriver BurnDrvsvc = {
 	"svc", NULL, "neogeo", "2003",
 	"SNK vs. CAPCOM SVC CHAOS\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcRomInfo, svcRomName, neogeoInputInfo, neogeoDIPInfo,
 	svcpcbInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9308,7 +9308,7 @@ struct BurnDriver BurnDrvsvcboot = {
 	"svcboot", "svc", "neogeo", "2003",
 	"SNK vs. CAPCOM SVC CHAOS (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcbootRomInfo, svcbootRomName, neogeoInputInfo, neogeoDIPInfo,
 	svcbootInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9395,7 +9395,7 @@ struct BurnDriver BurnDrvsvcplus = {
 	"svcplus", "svc", "neogeo", "2003",
 	"SNK vs. CAPCOM SVC CHAOS Plus (bootleg set 1)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcplusRomInfo, svcplusRomName, neogeoInputInfo, neogeoDIPInfo,
 	svcplusInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9466,7 +9466,7 @@ struct BurnDriver BurnDrvsvcplusa = {
 	"svcplusa", "svc", "neogeo", "2003",
 	"SNK vs. CAPCOM SVC CHAOS Plus (bootleg set 2)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcplusaRomInfo, svcplusaRomName, neogeoInputInfo, neogeoDIPInfo,
 	svcplusaInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9552,7 +9552,7 @@ struct BurnDriver BurnDrvsvcsplus = {
 	"svcsplus", "svc", "neogeo", "2003",
 	"SNK vs. CAPCOM SVC CHAOS Super Plus (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcsplusRomInfo, svcsplusRomName, neogeoInputInfo, neogeoDIPInfo,
 	svcsplusInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9628,7 +9628,7 @@ struct BurnDriver BurnDrvsamsho5 = {
 	"samsho5", NULL, "neogeo", "2003",
 	"Samurai Shodown V / Samurai Spirits Zero (set 1)\0", NULL, "Yuki Enterprise / SNK Playmore", "Neo Geo",
 	L"Samurai Shodown V (set 1)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4\u96F6 (set 1)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsho5RomInfo, samsho5RomName, neogeoInputInfo, neogeoDIPInfo,
 	samsho5Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9663,7 +9663,7 @@ struct BurnDriver BurnDrvsamsho5h = {
 	"samsho5h", "samsho5", "neogeo", "2003",
 	"Samurai Shodown V / Samurai Spirits Zero (set 2)\0", NULL, "Yuki Enterprise / SNK Playmore", "Neo Geo",
 	L"Samurai Shodown V (set 2)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4\u96F6 (set 2)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsho5hRomInfo, samsho5hRomName, neogeoInputInfo, neogeoDIPInfo,
 	samsho5Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9766,7 +9766,7 @@ struct BurnDriver BurnDrvsamsho5b = {
 	"samsho5b", "samsho5", "neogeo", "2003",
 	"Samurai Shodown V / Samurai Spirits Zero (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	L"Samurai Shodown V (bootleg)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4\u96F6 (bootleg)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsho5bRomInfo, samsho5bRomName, neogeoInputInfo, neogeoDIPInfo,
 	samsho5bInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9902,7 +9902,7 @@ struct BurnDriver BurnDrvkf2k3pcb = {
 	"kf2k3pcb", NULL, NULL, "2003",
 	"The King of Fighters 2003 (Japan, JAMMA PCB)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k3pcbRomInfo, kf2k3pcbRomName, neogeoInputInfo, kf2k3pcbDIPInfo,
 	kf2k3pcbInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -9998,7 +9998,7 @@ struct BurnDriver BurnDrvkof2003 = {
 	"kof2003", NULL, "neogeo", "2003",
 	"The King of Fighters 2003 (World / US, MVS)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2003RomInfo, kof2003RomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2003Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10069,7 +10069,7 @@ struct BurnDriver BurnDrvkf2k3bl = {
 	"kf2k3bl", "kof2003", "neogeo", "2003",
 	"The King of Fighters 2003 (bootleg set 1)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k3blRomInfo, kf2k3blRomName, neogeoInputInfo, neogeoDIPInfo,
 	kf2k3blInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10171,7 +10171,7 @@ struct BurnDriver BurnDrvkf2k3bla = {
 	"kf2k3bla", "kof2003", "neogeo", "2003",
 	"The King of Fighters 2003 (bootleg set 2)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k3blaRomInfo, kf2k3blaRomName, neogeoInputInfo, neogeoDIPInfo,
 	kf2k3blaInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10209,7 +10209,7 @@ struct BurnDriver BurnDrvkf2k3pl = {
 	"kf2k3pl", "kof2003", "neogeo", "2003",
 	"The King of Fighters 2004 Plus / Hero (The King of Fighters 2003 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k3plRomInfo, kf2k3plRomName, neogeoInputInfo, neogeoDIPInfo,
 	kf2k3blaInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10280,7 +10280,7 @@ struct BurnDriver BurnDrvkf2k3upl = {
 	"kf2k3upl", "kof2003", "neogeo", "2003",
 	"The King of Fighters 2004 Ultra Plus (The King of Fighters 2003 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k3uplRomInfo, kf2k3uplRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2k3uplInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10355,7 +10355,7 @@ struct BurnDriver BurnDrvsamsh5sp = {
 	"samsh5sp", NULL, "neogeo", "2003",
 	"Samurai Shodown V Special / Samurai Spirits Zero Special (set 1, uncensored)\0", NULL, "Yuki Enterprise / SNK Playmore", "Neo Geo",
 	L"Samurai Shodown V Special (set 1, uncensored)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4\u96F6 Special (set 1, uncensored)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsh5spRomInfo, samsh5spRomName, neogeoInputInfo, neogeoDIPInfo,
 	samsh5spInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10390,7 +10390,7 @@ struct BurnDriver BurnDrvsamsh5sph = {
 	"samsh5sph", "samsh5sp", "neogeo", "2003",
 	"Samurai Shodown V Special / Samurai Spirits Zero Special (set 2, censored)\0", NULL, "Yuki Enterprise / SNK Playmore", "Neo Geo",
 	L"Samurai Shodown V Special (set 2, censored)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4\u96F6 Special (set 2, censored)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsh5sphRomInfo, samsh5sphRomName, neogeoInputInfo, neogeoDIPInfo,
 	samsh5spInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10425,7 +10425,7 @@ struct BurnDriver BurnDrvsamsh5spn = {
 	"samsh5spn", "samsh5sp", "neogeo", "2003",
 	"Samurai Shodown V Special / Samurai Spirits Zero Special (set 3, less censored)\0", NULL, "Yuki Enterprise / SNK Playmore", "Neo Geo",
 	L"Samurai Shodown V Special (set 3, less censored)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4\u96F6 Special (set 3, less censored)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsh5spnRomInfo, samsh5spnRomName, neogeoInputInfo, neogeoDIPInfo,
 	samsh5spInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10458,7 +10458,7 @@ struct BurnDriver BurnDrvjockeygp = {
 	"jockeygp", NULL, "neogeo", "2001",
 	"Jockey Grand Prix\0", NULL, "Sun Amusement / BrezzaSoft", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_GAMBLING | HARDWARE_SNK_ENCRYPTED_M1, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_GAMBLING | HARDWARE_SNK_ENCRYPTED_M1, //GBF_MISC, 0,
 	NULL, jockeygpRomInfo, jockeygpRomName, neogeoInputInfo, neogeoDIPInfo,
 	jockeygpInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10485,7 +10485,7 @@ struct BurnDriver BurnDrvvliner = {
 	"vliner", NULL, "neogeo", "2001",
 	"V-Liner (set 1)\0", NULL, "Dyna / BreezaSoft", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_GAMBLING, GBF_CASINO, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_GAMBLING, //GBF_CASINO, 0,
 	NULL, vlinerRomInfo, vlinerRomName, vlinerInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10512,7 +10512,7 @@ struct BurnDriver BurnDrvvlinero = {
 	"vlinero", "vliner", "neogeo", "2001",
 	"V-Liner (set 2)\0", NULL, "Dyna / BreezaSoft", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_GAMBLING, GBF_CASINO, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_GAMBLING, //GBF_CASINO, 0,
 	NULL, vlineroRomInfo, vlineroRomName, vlinerInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10613,7 +10613,7 @@ struct BurnDriver BurnDrvkog = {
 	"kog", "kof97", "neogeo", "1997",
 	"King of Gladiator (The King of Fighters '97 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	L"King of Gladiator (bootleg)\0\u683C\u6597\u4E4B\u738B\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kogRomInfo, kogRomName, neogeoInputInfo, neogeoDIPInfo,
 	kogInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10759,7 +10759,7 @@ struct BurnDriver BurnDrvcthd2003 = {
 	"cthd2003", "kof2001", "neogeo", "2003",
 	"Crouching Tiger Hidden Dragon 2003 (The King of Fighters 2001 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	L"Crouching Tiger Hidden Dragon 2003 (The King of Fighters 2001 bootleg)\0\u81E5\u864E\u85CF\u9F8D Crouching Tiger Hidden Dragon 2003\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, cthd2003RomInfo, cthd2003RomName, neogeoInputInfo, neogeoDIPInfo,
 	cthd2003Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10844,7 +10844,7 @@ struct BurnDriver BurnDrvct2k3sp = {
 	"ct2k3sp", "kof2001", "neogeo", "2003",
 	"Crouching Tiger Hidden Dragon 2003 Super Plus (The King of Fighters 2001 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	L"Crouching Tiger Hidden Dragon 2003 Super Plus (The King of Fighters 2001 bootleg)\0\u81E5\u864E\u85CF\u9F8D Crouching Tiger Hidden Dragon 2003 Super Plus\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, ct2k3spRomInfo, ct2k3spRomName, neogeoInputInfo, neogeoDIPInfo,
 	ct2k3spInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10890,7 +10890,7 @@ struct BurnDriver BurnDrvct2k3sa = {
 	"ct2k3sa", "kof2001", "neogeo", "2003",
 	"Crouching Tiger Hidden Dragon 2003 Super Plus alternate (The King of Fighters 2001 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	L"Crouching Tiger Hidden Dragon 2003 Super Plus alternate (The King of Fighters 2001 bootleg)\0\u81E5\u864E\u85CF\u9F8D Crouching Tiger Hidden Dragon 2003 Super Plus\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, ct2k3saRomInfo, ct2k3saRomName, neogeoInputInfo, neogeoDIPInfo,
 	ct2k3saInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -10952,7 +10952,7 @@ struct BurnDriver BurnDrvkof2k4se = {
 	"kof2k4se", "kof2002", "neogeo", "2004",
 	"The King of Fighters Special Edition 2004 (The King of Fighters 2002 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2k4seRomInfo, kof2k4seRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2k4seInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11138,7 +11138,7 @@ struct BurnDriver BurnDrvkof10th = {
 	"kof10th", "kof2002", "neogeo", "2002",
 	"The King of Fighters 10th Anniversary (The King of Fighters 2002 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof10thRomInfo, kof10thRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof10thInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11214,7 +11214,7 @@ struct BurnDriver BurnDrvkf2k5uni = {
 	"kf2k5uni", "kof2002", "neogeo", "2004",
 	"The King of Fighters 10th Anniversary 2005 Unique (The King of Fighters 2002 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k5uniRomInfo, kf2k5uniRomName, neogeoInputInfo, neogeoDIPInfo,
 	kf2k5uniInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11299,7 +11299,7 @@ struct BurnDriver BurnDrvkf10thep = {
 	"kf10thep", "kof2002", "neogeo", "2005",
 	"The King of Fighters 10th Anniversary Extra Plus (The King of Fighters 2002 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kf10thepRomInfo, kf10thepRomName, neogeoInputInfo, neogeoDIPInfo,
 	kf10thepInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11353,7 +11353,7 @@ struct BurnDriver BurnDrvmslug3b6 = {
 	"mslug3b6", "mslug3", "neogeo", "2000",
 	"Metal Slug 6 (Metal Slug 3 bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_A, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug3b6RomInfo, mslug3b6RomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug3b6Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11382,7 +11382,7 @@ struct BurnDriver BurnDrvdiggerma = {
 	"diggerma", NULL, "neogeo", "2000",
 	"Digger Man\0", NULL, "Kyle Hodgetts", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_MAZE, 0,
 	NULL, diggermaRomInfo, diggermaRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11423,7 +11423,7 @@ struct BurnDriver BurnDrvkof99nd = {
 	"kof99nd", "kof99", "neogeo", "1999",
 	"The King of Fighters '99 - Millennium Battle (decrypted C)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof99ndRomInfo, kof99ndRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11450,7 +11450,7 @@ struct BurnDriver BurnDrvganryun = {
 	"ganryun", "ganryu", "neogeo", "1999",
 	"Ganryu / Musashi Ganryuki (decrypted C)\0", NULL, "Visco", "Neo Geo",
 	L"Ganryu\0\u6B66\u8535\u5DCC\u6D41\u8A18 (decrypted C)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_PLATFORM, 0,
 	NULL, ganryunRomInfo, ganryunRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11490,7 +11490,7 @@ struct BurnDriver BurnDrvgaroun = {
 	"garoun", "garou", "neogeo", "1999",
 	"Garou - Mark of the Wolves (decrypted C)\0", NULL, "SNK", "Neo Geo",
 	L"\u9913\u72FC - mark of the wolves (set 1)\0Garou - mark of the wolves (decrypted C)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SMA_PROTECTION, //GBF_VSFIGHT, 0,
 	NULL, garounRomInfo, garounRomName, neogeoInputInfo, neogeoDIPInfo,
 	garouInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -11527,7 +11527,7 @@ struct BurnDriver BurnDrvs1945pn = {
 	"s1945pn", "s1945p", "neogeo", "1999",
 	"Strikers 1945 Plus (decrypted C)\0", NULL, "Psikyo", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_VERSHOOT, 0,
 	NULL, s1945pnRomInfo, s1945pnRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -11560,7 +11560,7 @@ struct BurnDriver BurnDrvpreisl2n = {
 	"preisl2n", "preisle2", "neogeo", "1999",
 	"Prehistoric Isle 2 (decrypted C)\0", NULL, "Yumekobo", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_HORSHOOT, 0,
 	NULL, preisl2nRomInfo, preisl2nRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11596,7 +11596,7 @@ struct BurnDriver BurnDrvmslug3hd = {
 	"mslug3hd", "mslug3", "neogeo", "2000",
 	"Metal Slug 3 (not encrypted, decrpyted C)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug3hdRomInfo, mslug3hdRomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug3hInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11632,7 +11632,7 @@ struct BurnDriver BurnDrvkof2knd = {
 	"kof2knd", "kof2000", "neogeo", "2000",
 	"The King of Fighters 2000 (non encrypted P, decrypted C)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2kndRomInfo, kof2kndRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2000nInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11659,7 +11659,7 @@ struct BurnDriver BurnDrvbngbeadn = {
 	"bngbeadn", "bangbead", "neogeo", "2000",
 	"Bang Bead (decrypted C)\0", NULL, "Visco", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_BALLPADDLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_BALLPADDLE, 0,
 	NULL, bngbeadnRomInfo, bngbeadnRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11685,7 +11685,7 @@ struct BurnDriver BurnDrvnitdn = {
 	"nitdn", "nitd", "neogeo", "2000",
 	"Nightmare in the Dark (decrypted C)\0", NULL, "Eleven / Gavaking", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, 0,
 	NULL, nitdnRomInfo, nitdnRomName, neogeoInputInfo, neogeoDIPInfo,
 	nitdInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -11711,7 +11711,7 @@ struct BurnDriver BurnDrvzupapan = {
 	"zupapan", "zupapa", "neogeo", "2001",
 	"Zupapa! (decrypted C)\0", NULL, "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PLATFORM, 0,
 	NULL, zupapanRomInfo, zupapanRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11742,7 +11742,7 @@ struct BurnDriver BurnDrvsngoku3n = {
 	"sngoku3n", "sengoku3", "neogeo", "2001",
 	"Sengoku 3 (decrypted C)\0", NULL, "SNK", "Neo Geo",
 	L"Sengoku 3 (decrypted C)\0\u6226\u56FD\u4F1D\u627F\uFF12\uFF10\uFF10\uFF11 (decrypted C)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_SWAPP, //GBF_SCRFIGHT, 0,
 	NULL, sngoku3nRomInfo, sngoku3nRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -11779,7 +11779,7 @@ struct BurnDriver BurnDrvkof2k1nd = {
 	"kof2k1nd", "kof2001", "neogeo", "2001",
 	"The King of Fighters 2001 (decrypted C)\0", NULL, "Eolith / SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2k1ndRomInfo, kof2k1ndRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2001Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11811,7 +11811,7 @@ struct BurnDriver BurnDrvmslug4nd = {
 	"mslug4nd", "mslug4", "neogeo", "2002",
 	"Metal Slug 4 (decrypted C)\0", NULL, "Mega", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug4ndRomInfo, mslug4ndRomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug4Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11844,7 +11844,7 @@ struct BurnDriver BurnDrvrotdnd = {
 	"rotdnd", "rotd", "neogeo", "2002",
 	"Rage of the Dragons (decrypted C)\0", NULL, "Evoga / Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, 0,
 	NULL, rotdndRomInfo, rotdndRomName, neogeoInputInfo, neogeoDIPInfo,
 	rotdInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -11878,7 +11878,7 @@ struct BurnDriver BurnDrvkof2k2nd = {
 	"kof2k2nd", "kof2002", "neogeo", "2002",
 	"The King of Fighters 2002 (decrypted C)\0", NULL, "Eolith / Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2k2ndRomInfo, kof2k2ndRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2002Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11912,7 +11912,7 @@ struct BurnDriver BurnDrvmatrimnd = {
 	"matrimnd", "matrim", "neogeo", "2002",
 	"Matrimelee / Shin Gouketsuji Ichizoku Toukon (decrypted C)\0", NULL, "Noise Factory / Atlus", "Neo Geo",
 	L"\u65B0\u8C6A\u8840\u5BFA\u4E00\u65CF - \u95D8\u5A5A\0Matrimelee (decrypted C)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_PWRINST,
 	NULL, matrimndRomInfo, matrimndRomName, neogeoInputInfo, neogeoDIPInfo,
 	matrimInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -11957,7 +11957,7 @@ struct BurnDriver BurnDrvpnyaand = {
 	"pnyaand", "pnyaa", "neogeo", "2003",
 	"Pochi and Nyaa (decrypted C)\0", NULL, "Aiky / Taito", "Neo Geo",
 	L"Pochi and Nyaa (decrypted C)\0\u30DD\u30C1\u30C3\u3068\u306B\u3083\uFF5E\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PUZZLE, 0,
 	NULL, pnyaandRomInfo, pnyaandRomName, neogeoInputInfo, neogeoDIPInfo,
 	pnyaandInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -11991,7 +11991,7 @@ struct BurnDriver BurnDrvmslug5nd = {
 	"mslug5nd", "mslug5", "neogeo", "2003",
 	"Metal Slug 5 (decrypted C)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, mslug5ndRomInfo, mslug5ndRomName, neogeoInputInfo, neogeoDIPInfo,
 	mslug5Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12020,7 +12020,7 @@ struct BurnDriver BurnDrvms5pcbnd = {
 	"ms5pcbnd", "ms5pcb", NULL, "2003",
 	"Metal Slug 5 (JAMMA PCB, decrypted C)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, GBF_PLATFORM, FBF_MSLUG,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, //GBF_PLATFORM, FBF_MSLUG,
 	NULL, ms5pcbndRomInfo, ms5pcbndRomName, neogeoInputInfo, ms5pcbDIPInfo,
 	mslug5Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12054,7 +12054,7 @@ struct BurnDriver BurnDrvsvcnd = {
 	"svcnd", "svc", "neogeo", "2003",
 	"SNK vs. CAPCOM SVC CHAOS (decrypted C)\0", NULL, "Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcndRomInfo, svcndRomName, neogeoInputInfo, neogeoDIPInfo,
 	svcpcbInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12099,7 +12099,7 @@ struct BurnDriver BurnDrvsvcpcbnd = {
 	"svcpcbnd", "svcpcb", NULL, "2003",
 	"SNK vs. CAPCOM SVC CHAOS (JAMMA PCB, set 1, decrypted C)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF | FBF_SF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF | FBF_SF,
 	NULL, svcpcbndRomInfo, svcpcbndRomName, neogeoInputInfo, svcpcbDIPInfo,
 	svcpcbndInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12133,7 +12133,7 @@ struct BurnDriver BurnDrvsamsh5nd = {
 	"samsh5nd", "samsho5", "neogeo", "2003",
 	"Samurai Shodown V / Samurai Spirits Zero (decrypted C)\0", NULL, "Yuki Enterprise / SNK Playmore", "Neo Geo",
 	L"Samurai Shodown V (decrypted C)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4\u96F6 (decrypted C)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, samsh5ndRomInfo, samsh5ndRomName, neogeoInputInfo, neogeoDIPInfo,
 	samsho5Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12168,7 +12168,7 @@ struct BurnDriver BurnDrvkof2k3nd = {
 	"kof2k3nd", "kof2003", "neogeo", "2003",
 	"The King of Fighters 2003 (decrypted C)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2k3ndRomInfo, kof2k3ndRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2003Init, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12223,7 +12223,7 @@ struct BurnDriver BurnDrvk2k3pcbd = {
 	"k2k3pcbd", "kf2k3pcb", NULL, "2003",
 	"The King of Fighters 2003 (Japan, JAMMA PCB, decrypted C)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_PCB | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, k2k3pcbdRomInfo, k2k3pcbdRomName, neogeoInputInfo, kf2k3pcbDIPInfo,
 	k2k3pcbdInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12257,7 +12257,7 @@ struct BurnDriver BurnDrvss5shnd = {
 	"ss5shnd", "samsh5sp", "neogeo", "2003",
 	"Samurai Shodown V Special / Samurai Spirits Zero Special (decrypted C)\0", NULL, "Yuki Enterprise / SNK Playmore", "Neo Geo",
 	L"Samurai Shodown V Special (decrypted C)\0\u30B5\u30E0\u30E9\u30A4\u30B9\u30D4\u30EA\u30C3\u30C4\u96F6 Special (decrypted C)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_SAMSHO,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_SAMSHO,
 	NULL, ss5shndRomInfo, ss5shndRomName, neogeoInputInfo, neogeoDIPInfo,
 	samsh5spInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12283,7 +12283,7 @@ struct BurnDriver BurnDrvjckygpnd = {
 	"jckygpnd", "jockeygp", "neogeo", "2001",
 	"Jockey Grand Prix (decrypted C)\0", NULL, "Sun Amusement / BrezzaSoft", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_GAMBLING | HARDWARE_SNK_ENCRYPTED_M1, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_GAMBLING | HARDWARE_SNK_ENCRYPTED_M1, //GBF_MISC, 0,
 	NULL, jckygpndRomInfo, jckygpndRomName, neogeoInputInfo, neogeoDIPInfo,
 	jockeygpInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12377,7 +12377,7 @@ struct BurnDriver BurnDrvkof2002b = {
 	"kof2002b", "kof2002", "neogeo", "2002",
 	"The King of Fighters 2002 (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2002bRomInfo, kof2002bRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2002bInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12456,7 +12456,7 @@ struct BurnDriver BurnDrvmatrimbl = {
 	"matrimbl", "matrim", "neogeo", "2002",
 	"Matrimelee / Shin Gouketsuji Ichizoku Toukon (bootleg)\0", NULL, "bootleg", "Neo Geo",
 	L"\u65B0\u8C6A\u8840\u5BFA\u4E00\u65CF - \u95D8\u5A5A\0Matrimelee (bootleg)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ALTERNATE_TEXT, //GBF_VSFIGHT, FBF_PWRINST,
 	NULL, matrimblRomInfo, matrimblRomName, neogeoInputInfo, neogeoDIPInfo,
 	matrimblInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	320, 224, 4, 3
@@ -12485,7 +12485,7 @@ struct BurnDriver BurnDrvzintrkcd = {
 	"zintrkcd", "zintrckb", "neogeo", "1996",
 	"Zintrick / Oshidashi Zentrix (Neo CD conversion)\0", NULL, "hack", "Neo Geo",
 	L"Zintrick (Neo CD conversion)\0\u62BC\u3057\u51FA\u3057\u30B8\u30F3\u30C8\u30EA\u30C3\u30AF (Neo CD conversion)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE, //GBF_PUZZLE, 0,
 	NULL, zintrkcdRomInfo, zintrkcdRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12581,7 +12581,7 @@ struct BurnDriver BurnDrvkof2003h = {
 	"kof2003h", "kof2003", "neogeo", "2003",
 	"The King of Fighters 2003 (set 2)\0", NULL, "SNK Playmore", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_MVSCARTRIDGE | HARDWARE_SNK_ENCRYPTED_B | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_P32 | HARDWARE_SNK_ENCRYPTED_M1, //GBF_VSFIGHT, FBF_KOF,
 	NULL, kof2003hRomInfo, kof2003hRomName, neogeoInputInfo, neogeoDIPInfo,
 	kof2003hInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12615,7 +12615,7 @@ struct BurnDriver BurnDrvngfrog = {
 	"ngfrog", NULL, "neogeo", "2006",
 	"Frog Feast (Neo Geo)\0", NULL, "Rastersoft", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, //GBF_MISC, 0,
 	NULL, ngfrogRomInfo, ngfrogRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12643,7 +12643,7 @@ struct BurnDriver BurnDrvcolumnsn = {
 	"columnsn", NULL, "neogeo", "????",
 	"Columns (Neo Geo)\0", NULL, "homebrew", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, //GBF_PUZZLE, 0,
 	NULL, columnsnRomInfo, columnsnRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12671,7 +12671,7 @@ struct BurnDriver BurnDrvpoknight = {
 	"poknight", NULL, "neogeo", "????",
 	"Poker Night\0", NULL, "Jeff Kurtz", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, GBF_CASINO, 0,
+	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, //GBF_CASINO, 0,
 	NULL, poknightRomInfo, poknightRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12699,7 +12699,7 @@ struct BurnDriver BurnDrvneonopon = {
 	"neonopon", NULL, "neogeo", "????",
 	"Neo No Panepon (beta)\0", NULL, "blastar@gmx.net", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, //GBF_PUZZLE, 0,
 	NULL, neonoponRomInfo, neonoponRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12727,7 +12727,7 @@ struct BurnDriver BurnDrvneopong = {
 	"neopong", NULL, "neogeo", "2002",
 	"Neo Pong\0", NULL, "Neo Dev Corporation", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, GBF_BALLPADDLE, 0,
+	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, //GBF_BALLPADDLE, 0,
 	NULL, neopongRomInfo, neopongRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12755,7 +12755,7 @@ struct BurnDriver BurnDrvltorb1 = {
 	"ltorb1", NULL, "neogeo", "2005",
 	"Jonas Indiana and the Lost Temple of RA (20050717)\0", NULL, "blastar@gmx.net", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, //GBF_PLATFORM, 0,
 	NULL, ltorb1RomInfo, ltorb1RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12783,7 +12783,7 @@ struct BurnDriver BurnDrvcnbe = {
 	"cnbe", NULL, "neogeo", "2006",
 	"Codename - Blut Engel (2006-01-19)\0", NULL, "blastar@gmx.net", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, //GBF_VERSHOOT, 0,
 	NULL, cnbeRomInfo, cnbeRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12811,7 +12811,7 @@ struct BurnDriver BurnDrvngem2k = {
 	"ngem2k", NULL, "neogeo", "2006",
 	"NGEM2K (beta 2006-01-18)\0", NULL, "homebrew", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_HOMEBREW, 2, HARDWARE_SNK_NEOGEO, //GBF_PUZZLE, 0,
 	NULL, ngem2kRomInfo, ngem2kRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12895,7 +12895,7 @@ struct BurnDriver BurnDrvfr2ch = {
 	"fr2ch", NULL, "neogeo", "1995",
 	"Idol Mahjong - final romance 2 (CD to MVS Conversion)\0", NULL, "hack", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_HACK, 2, HARDWARE_SNK_NEOGEO, GBF_MAHJONG, 0,
+	BDF_GAME_WORKING | BDF_HACK, 2, HARDWARE_SNK_NEOGEO, //GBF_MAHJONG, 0,
 	NULL, fr2chRomInfo, fr2chRomName, neogeoInputInfo, neogeoDIPInfo,
 	fr2chInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12924,7 +12924,7 @@ struct BurnDriver BurnDrvbeast = {
 	"beast", NULL, "neogeo", "????",
 	"Shadow of the Beast (Neo Geo demo)\0", NULL, "Jeff Kurtz", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_DEMO, 2, HARDWARE_SNK_NEOGEO, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_DEMO, 2, HARDWARE_SNK_NEOGEO, //GBF_MISC, 0,
 	NULL, beastRomInfo, beastRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12952,7 +12952,7 @@ struct BurnDriver BurnDrvnpong10 = {
 	"npong10", "neopong", "neogeo", "2002",
 	"Neo Pong (v1.0)\0", NULL, "Neo Dev Corporation", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO, GBF_BALLPADDLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SNK_NEOGEO, //GBF_BALLPADDLE, 0,
 	NULL, npong10RomInfo, npong10RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -12980,7 +12980,7 @@ struct BurnDriver BurnDrvsyscheck = {
 	"syscheck", NULL, "neogeo", "????",
 	"Neo System Check (ver 1.0b)\0", NULL, "blastar@gmx.net", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_DEMO, 2, HARDWARE_SNK_NEOGEO, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_DEMO, 2, HARDWARE_SNK_NEOGEO, //GBF_MISC, 0,
 	NULL, syscheckRomInfo, syscheckRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -13007,7 +13007,7 @@ struct BurnDriver BurnDrvneodemo = {
 	"neodemo", NULL, "neogeo", "2002",
 	"Chaos Demo (Neo Geo)\0", NULL, "Chaos", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_DEMO, 2, HARDWARE_SNK_NEOGEO, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_DEMO, 2, HARDWARE_SNK_NEOGEO, //GBF_MISC, 0,
 	NULL, neodemoRomInfo, neodemoRomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -13035,7 +13035,7 @@ struct BurnDriver BurnDrvneo2500 = {
 	"neo2500", NULL, "neogeo", "2004",
 	"Neo 2500 Demo\0", NULL, "blastar@gmx.net", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_DEMO, 2, HARDWARE_SNK_NEOGEO, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_DEMO, 2, HARDWARE_SNK_NEOGEO, //GBF_MISC, 0,
 	NULL, neo2500RomInfo, neo2500RomName, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3
@@ -13063,7 +13063,7 @@ struct BurnDriver BurnDrv4play = {
 	"4play", NULL, "neogeo", "???",
 	"4 player input test\0", "4 player  input test cartridge", "SNK", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_DEMO, 4, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_4_JOYSTICKS, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_DEMO, 4, HARDWARE_SNK_NEOGEO | HARDWARE_SNK_4_JOYSTICKS, //GBF_MISC, 0,
 	NULL, fourplayRomInfo, fourplayRomName, neodualInputInfo, neodualDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, 0, NULL, NULL, NULL, &NeoRecalcPalette,
 	304, 224, 4, 3

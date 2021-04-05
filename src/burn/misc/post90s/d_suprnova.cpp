@@ -765,7 +765,7 @@ struct BurnDriver BurnDrvCyvern = {
 	"cyvern", NULL, NULL, "1998",
 	"Cyvern (Japan)\0", NULL, "Kaneko", "Super Kaneko Nova System",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S, //GBF_VERSHOOT, 0,
 	NULL, CyvernRomInfo, CyvernRomName, CyvernInputInfo, DrvDIPInfo,
 	CyvernInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 240, 320, 3, 4

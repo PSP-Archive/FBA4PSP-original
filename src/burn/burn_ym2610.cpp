@@ -191,12 +191,15 @@ static void YM2610UpdateNormal(short* pSoundBuf, int nSegmentEnd)
 	pYM2610Buffer[3] = pBuffer + 4 + 3 * 4096;
 	pYM2610Buffer[4] = pBuffer + 4 + 4 * 4096;
 
+
+#ifndef BUILD_PSP
 	if (bBurnUseMMX) {
 		for (int n = nFractionalPosition; n < nSegmentLength; n++) {
 			pAYBuffer[n] = pYM2610Buffer[2][n] + pYM2610Buffer[3][n] + pYM2610Buffer[4][n];
 		}
 		BurnSoundCopy_FM_OPN_A(pYM2610Buffer[0], pAYBuffer, pSoundBuf, nSegmentLength, 65536 * 60 / 100, 65536 * 60 / 100);
 	} else {
+#endif
 		for (int n = nFractionalPosition; n < nSegmentLength; n++) {
 			int nAYSample, nTotalSample;
 
@@ -237,7 +240,9 @@ static void YM2610UpdateNormal(short* pSoundBuf, int nSegmentEnd)
 				pSoundBuf[(n << 1) + 1] = nTotalSample;
 			}
 		}
+#ifndef BUILD_PSP
 	}
+#endif
 
 	nFractionalPosition = nSegmentLength;
 

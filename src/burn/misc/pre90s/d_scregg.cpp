@@ -288,6 +288,7 @@ static int DrvInit()
 	if (pFMBuffer == NULL) {
 		return 1;
 	}
+	memset(pFMBuffer, 0, nBurnSoundLen * 6 * sizeof(short));
 
 	Rom  = Mem + 0x00000;
 	Gfx0 = Mem + 0x10000;
@@ -295,6 +296,13 @@ static int DrvInit()
 	Prom = Mem + 0x30000;
 	Palette    = (unsigned int*)(Mem + 0x30020);
 	DrvPalette = (unsigned int*)(Mem + 0x30040);
+
+	memset(Rom, 0, 0x10000);
+	memset(Gfx0, 0, 0x10000);
+	memset(Gfx1, 0, 0x10000);
+	memset(Prom, 0, 0x20);
+	memset(Palette, 0, 0x20);
+	memset(DrvPalette, 0, 0x20);
 
 	if (scregg)
 	{
@@ -600,7 +608,7 @@ struct BurnDriver BurnDrvdommy = {
 	"dommy", NULL, NULL, "198?",
 	"Dommy\0", NULL, "Technos", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, dommyRomInfo, dommyRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	240, 248, 3, 4
@@ -642,7 +650,7 @@ struct BurnDriver BurnDrvscregg = {
 	"scregg", NULL, NULL, "1983",
 	"Scrambled Egg\0", NULL, "Technos", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, screggRomInfo, screggRomName, DrvInputInfo, DrvDIPInfo,
 	screggInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	240, 240, 3, 4
@@ -677,7 +685,7 @@ struct BurnDriver BurnDrveggs = {
 	"eggs", "scregg", NULL, "1983",
 	"Eggs\0", NULL, "[Technos] Universal USA", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, eggsRomInfo, eggsRomName, DrvInputInfo, DrvDIPInfo,
 	screggInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	240, 240, 3, 4
@@ -714,7 +722,7 @@ struct BurnDriver BurnDrvrockduck = {
 	"rockduck", NULL, NULL, "1983",
 	"Rock Duck (prototype?)\0", "incorrect colors", "Datel SAS", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, rockduckRomInfo, rockduckRomName, DrvInputInfo, DrvDIPInfo,
 	rockduckInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalcPal,
 	240, 240, 3, 4

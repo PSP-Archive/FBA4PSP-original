@@ -20,8 +20,13 @@ static struct BurnInputInfo bankpInputList[] = {
 	{"P1 Left"      , BIT_DIGITAL  , DrvJoy1 + 3, 	"p1 left"  },
 	{"P1 Right"     , BIT_DIGITAL  , DrvJoy1 + 1, 	"p1 right" },
 	{"P1 Button 1"  , BIT_DIGITAL  , DrvJoy1 + 7,	"p1 fire 1"},
+#ifdef BUILD_PSP
+	{"P1 Button 2"  , BIT_DIGITAL  , DrvJoy1 + 4,	"p1 fire 3"},
+	{"P1 Button 3"  , BIT_DIGITAL  , DrvJoy3 + 0,	"p1 fire 2"},
+#else
 	{"P1 Button 2"  , BIT_DIGITAL  , DrvJoy1 + 4,	"p1 fire 2"},
 	{"P1 Button 3"  , BIT_DIGITAL  , DrvJoy3 + 0,	"p1 fire 3"},
+#endif
 
 	{"P2 Left"      , BIT_DIGITAL  , DrvJoy2 + 3, 	"p2 left"  },
 	{"P2 Right"     , BIT_DIGITAL  , DrvJoy2 + 1, 	"p2 right" },
@@ -45,8 +50,13 @@ static struct BurnInputInfo combhInputList[] = {
 	{"P1 Up"        , BIT_DIGITAL  , DrvJoy1 + 0, 	"p1 up"    },
 	{"P1 Down"      , BIT_DIGITAL  , DrvJoy1 + 2, 	"p1 down"  },
 	{"P1 Button 1"  , BIT_DIGITAL  , DrvJoy1 + 7,	"p1 fire 1"},
+#ifdef BUILD_PSP
+	{"P1 Button 2"  , BIT_DIGITAL  , DrvJoy1 + 4,	"p1 fire 3"},
+	{"P1 Button 3"  , BIT_DIGITAL  , DrvJoy3 + 0,	"p1 fire 2"},
+#else
 	{"P1 Button 2"  , BIT_DIGITAL  , DrvJoy1 + 4,	"p1 fire 2"},
 	{"P1 Button 3"  , BIT_DIGITAL  , DrvJoy3 + 0,	"p1 fire 3"},
+#endif
 
 	{"P2 Up"        , BIT_DIGITAL  , DrvJoy2 + 0, 	"p2 up"    },
 	{"P2 Down"      , BIT_DIGITAL  , DrvJoy2 + 2, 	"p2 down"  },
@@ -310,7 +320,13 @@ static int DrvInit()
 	Gfx0 = Mem + 0x10000;
 	Gfx1 = Mem + 0x20000;
 	Prom = Mem + 0x40000;
-	Palette = (int*)(Mem + 0x40200);
+	Palette = (int*)(Mem + 0x40300);
+
+	memset(Rom, 0, 0x10000);
+	memset(Gfx0, 0, 0x10000);
+	memset(Gfx1, 0, 0x20000);
+	memset(Prom, 0, 0x300);
+	memset(Palette, 0, 0x800);
 
 	{
 		for (int i = 0; i < 4; i++)
@@ -370,6 +386,12 @@ static int DrvExit()
 }
 
 
+#ifndef BUILD_PSP
+#define Y_SIZE	224
+#else
+#define Y_SIZE	512
+#endif
+
 static inline void bankp_plot_pixel(int x, int y, int color, unsigned char src, int transp)
 {
 	if (x > 223 || x < 0 || y > 223 || y < 0) return;
@@ -377,9 +399,10 @@ static inline void bankp_plot_pixel(int x, int y, int color, unsigned char src, 
 	int pxl = Palette[color | src];
 	if (transp && !pxl) return;
 
-	PutPix(pBurnDraw + (y * 224 + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
+	PutPix(pBurnDraw + (y * Y_SIZE + x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 }
 
+#undef Y_SIZE
 
 static void draw_8x8_tiles(unsigned char *gfx_base, int code, int color, int sx, int sy, int flipx, int flipy, int transp)
 {
@@ -562,10 +585,10 @@ struct BurnDriver BurnDrvbankp = {
 	"bankp", NULL, NULL, "1984",
 	"Bank Panic\0", NULL, "[Sanritsu] Sega", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, bankpRomInfo, bankpRomName, bankpInputInfo, bankpDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
-	224, 224, 4, 3
+	224, 224, 3, 4
 };
 
 // Combat Hawk
@@ -601,7 +624,7 @@ struct BurnDriver BurnDrvcombh = {
 	"combh", NULL, NULL, "1987",
 	"Combat Hawk\0", NULL, "Sega / Sanritsu", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, combhRomInfo, combhRomName, combhInputInfo, combhDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	224, 224, 3, 4

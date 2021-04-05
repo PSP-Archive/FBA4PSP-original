@@ -120,7 +120,7 @@ static struct BurnDIPInfo hellfireDIPList[] = {
 	// Defaults
 	{0x12,	0xFF, 0xFF,	0x00, NULL},
 	{0x13,	0xFF, 0xFF,	0x00, NULL},
-	{0x14,	0xFF, 0xFF,	0x02, NULL},
+	{0x14,	0xFF, 0xFF,	0x00, NULL},
 
 	// DIP 1
 	{0,		0xFE, 0,	2,	  NULL},
@@ -176,7 +176,7 @@ static struct BurnDIPInfo hellfir1DIPList[] = {
 	// Defaults
 	{0x12,	0xFF, 0xFF,	0x01, NULL},
 	{0x13,	0xFF, 0xFF,	0x00, NULL},
-	{0x14,	0xFF, 0xFF,	0x02, NULL},
+	{0x14,	0xFF, 0xFF,	0x00, NULL},
 
 	// DIP 1
 	{0,		0xFE, 0,	2,	  NULL},
@@ -227,7 +227,7 @@ static struct BurnDIPInfo hellfir1DIPList[] = {
 
 	// Region
 	{0,		0xFE, 0,	3,	  "Region"},
-    	{0x14,	0x01, 0x03,	0x00, "Japan"},
+    {0x14,	0x01, 0x03,	0x00, "Japan"},
     {0x14,	0x01, 0x03,	0x01, "US"},
     {0x14,	0x01, 0x03,	0x02, "Europe"},
 };
@@ -766,7 +766,7 @@ struct BurnDriver BurnDrvHellfire = {
 	"hellfire", NULL, NULL, "1989",
 	"Hellfire (2P Ver.)\0", NULL, "Toaplan (Taito License)", "Toaplan BCU-2 / FCU-2 based",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TOAPLAN_RAIZING, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TOAPLAN_RAIZING,
 	NULL, hellfireRomInfo, hellfireRomName, hellfireInputInfo, hellfireDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	320, 240, 4, 3
@@ -776,7 +776,7 @@ struct BurnDriver BurnDrvHellfir1 = {
 	"hellfir1", "hellfire", NULL, "1989",
 	"Hellfire (1P Ver.)\0", NULL, "Toaplan (Taito License)", "Toaplan BCU-2 / FCU-2 based",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TOAPLAN_RAIZING, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TOAPLAN_RAIZING,
 	NULL, hellfir1RomInfo, hellfir1RomName, hellfireInputInfo, hellfir1DIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	320, 240, 4, 3
@@ -786,7 +786,7 @@ struct BurnDriver BurnDrvHellfir2 = {
 	"hellfir2", "hellfire", NULL, "1989",
 	"Hellfire (2P Ver., first edition)\0", NULL, "Toaplan (Taito License)", "Toaplan BCU-2 / FCU-2 based",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TOAPLAN_RAIZING, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TOAPLAN_RAIZING,
 	NULL, hellfir2RomInfo, hellfir2RomName, hellfireInputInfo, hellfireDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	320, 240, 4, 3

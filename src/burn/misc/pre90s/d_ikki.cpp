@@ -616,7 +616,7 @@ struct BurnDriver BurnDrvIkki = {
 	"ikki", NULL, NULL, "1985",
 	"Ikki (Japan)\0", NULL, "Sun Electronics", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MAZE | GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_MAZE | //GBF_SCRFIGHT, 0,
 	NULL, ikkiRomInfo, ikkiRomName, IkkiInputInfo, IkkiDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 224, 4, 3
@@ -658,7 +658,7 @@ struct BurnDriver BurnDrvFarmer = {
 	"farmer", "ikki", NULL, "1985",
 	"Farmers Rebellion\0", NULL, "Sun Electronics", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MAZE | GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_MAZE | //GBF_SCRFIGHT, 0,
 	NULL, farmerRomInfo, farmerRomName, IkkiInputInfo, IkkiDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 224, 4, 3

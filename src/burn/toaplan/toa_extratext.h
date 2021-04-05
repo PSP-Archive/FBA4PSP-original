@@ -5,7 +5,11 @@
 
 #if ROT == 0
  #define ADVANCECOLUMN pPixel += (BPP >> 3)
- #define ADVANCEROW pTileRow += ((BPP >> 3) * 320)
+ #ifndef BUILD_PSP
+  #define ADVANCEROW pTileRow += ((BPP >> 3) * 320)
+ #else
+  #define ADVANCEROW pTileRow += ((BPP >> 3) * 512)
+ #endif
 #elif ROT == 270
  #define ADVANCECOLUMN pPixel -= ((BPP >> 3) * 240)
  #define ADVANCEROW pTileRow += (BPP >> 3)

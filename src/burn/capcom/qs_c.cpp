@@ -327,10 +327,13 @@ int QscUpdate(int nEnd)
 				}
 			}
 		}
-
+		
+#ifndef BUILD_PSP
 		if (bBurnUseMMX) {
 			BurnSoundCopyClamp_A(Qs_s, pBurnSoundOut + (nPos << 1), nLen);
-		} else {
+		} else 
+#endif
+		{
 			BurnSoundCopyClamp_C(Qs_s, pBurnSoundOut + (nPos << 1), nLen);
 		}
 		nPos = nEnd;
@@ -372,7 +375,7 @@ int QscUpdate(int nEnd)
 					QChan[c].nPos = (QChan[c].nPos & 0x0FFF) + QChan[c].nPlayStart;
 				}
 			}
-
+#ifndef BUILD_PSP
 			if (bBurnUseMMX && i > 0) {
 				QChan[c].bKey = (unsigned char)ChannelMix_QS_A(pTemp, i,
 															   QChan[c].PlayBank,
@@ -383,7 +386,9 @@ int QscUpdate(int nEnd)
 															   QChan[c].nLoop,
 															   QChan[c].nAdvance,
 															   QChan[c].nEndBuffer);
-			} else {
+			} else 
+#endif
+			{
 				while (i > 0) {
 					int s, p;
 
@@ -434,9 +439,12 @@ int QscUpdate(int nEnd)
 		}
 	}
 
+#ifndef BUILD_PSP
 	if (bBurnUseMMX) {
 		BurnSoundCopyClamp_A(Qs_s, pBurnSoundOut + (nPos << 1), nLen);
-	} else {
+	} else 
+#endif
+	{
 		BurnSoundCopyClamp_C(Qs_s, pBurnSoundOut + (nPos << 1), nLen);
 	}
 	nPos = nEnd;

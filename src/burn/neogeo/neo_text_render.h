@@ -5,7 +5,11 @@
 
 #define ADVANCECOLUMN pPixel += (BPP >> 3)
 
-#define ADVANCEROW pTileRow += ((BPP >> 3) * nNeoScreenWidth)
+#ifndef BUILD_PSP
+ #define ADVANCEROW pTileRow += ((BPP >> 3) * nNeoScreenWidth)
+#else
+ #define ADVANCEROW pTileRow += ((BPP >> 3) * 512)
+#endif
 
 #if ISOPAQUE == 0
  #define OPACITY _TRANS

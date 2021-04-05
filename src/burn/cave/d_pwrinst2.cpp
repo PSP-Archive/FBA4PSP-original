@@ -5,7 +5,6 @@
 #include "bitswap.h"
 
 #define CAVE_VBLANK_LINES 12
-
 static unsigned char DrvJoy1[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 static unsigned char DrvJoy2[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 static unsigned short DrvInput[2] = {0x0000, 0x0000};
@@ -28,13 +27,7 @@ static char nIRQPending;
 static int nCyclesTotal[2];
 static int nCyclesDone[2];
 
-static int SoundLatch;
-static int SoundLatchReply[48];
-static int SoundLatchStatus;
-
-static int SoundLatchReplyIndex;
-static int SoundLatchReplyMax;
-
+static unsigned short DrvSoundLatch;
 static unsigned char DrvZ80Bank;
 static unsigned char DrvOkiBank1[4];
 static unsigned char DrvOkiBank2[4];
@@ -129,12 +122,8 @@ unsigned short __fastcall pwrinst2ReadWord(unsigned int sekAddress)
 		}
 		
 		case 0xd80000: {
-			if (SoundLatchReplyIndex > SoundLatchReplyMax) {
-				SoundLatchReplyIndex = 0;
-				SoundLatchReplyMax = -1;
-				return 0;
-			}
-			return SoundLatchReply[SoundLatchReplyIndex++];
+			//nop
+			return 0;
 		}
 		
 		case 0xe80000: {
@@ -244,12 +233,10 @@ void __fastcall pwrinst2WriteWord(unsigned int sekAddress, unsigned short wordVa
 		}
 		
 		case 0xe00000: {
-			SoundLatch = wordValue;
-			SoundLatchStatus |= 0x0C;
-
+			DrvSoundLatch = wordValue;
 			ZetOpen(0);
 			ZetNmi();
-			nCyclesDone[1] += ZetRun(0x0400);
+//			nCyclesDone[1] += ZetRun(0x400);
 			ZetClose();
 			return;
 		}
@@ -283,13 +270,11 @@ unsigned char __fastcall pwrinst2ZIn(unsigned short nAddress)
 		}
 		
 		case 0x60: {
-			SoundLatchStatus |= 0x08;
-			return SoundLatch >> 8;
+			return DrvSoundLatch >> 8;
 		}
 			
 		case 0x70: {
-			SoundLatchStatus |= 0x04;
-			return SoundLatch & 0xFF;
+			return DrvSoundLatch & 0xFF;
 		}
 			
 		default: {
@@ -355,16 +340,7 @@ void __fastcall pwrinst2ZOut(unsigned short nAddress, unsigned char nValue)
 			return;
 		}
 		
-		case 0x50: {
-			if (SoundLatchReplyIndex > SoundLatchReplyMax) {
-				SoundLatchReplyMax = -1;
-				SoundLatchReplyIndex = 0;
-			}
-			SoundLatchReplyMax++;
-			SoundLatchReply[SoundLatchReplyMax] = nValue;
-			return;
-		}
-		
+		case 0x50:
 		case 0x51: {
 			//???
 			return;
@@ -420,7 +396,7 @@ static int DrvExit()
 	
 	BurnYM2203Exit();
 	
-	SoundLatch = 0;
+	DrvSoundLatch = 0;
 	DrvZ80Bank = 0;
 	DrvOkiBank1[0] = DrvOkiBank1[1] = DrvOkiBank1[2] = DrvOkiBank1[3] = 0;
 	DrvOkiBank2[0] = DrvOkiBank2[1] = DrvOkiBank2[2] = DrvOkiBank2[3] = 0;
@@ -428,7 +404,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+	destroyUniCache();
 	return 0;
 }
 
@@ -454,13 +430,7 @@ static int DrvDoReset()
 
 	nIRQPending = 0;
 	
-	SoundLatch = 0;
-	SoundLatchStatus = 0x0C;
-
-	memset(SoundLatchReply, 0, sizeof(SoundLatchReply));
-	SoundLatchReplyIndex = 0;
-	SoundLatchReplyMax = -1;	
-	
+	DrvSoundLatch = 0;
 	DrvZ80Bank = 0;
 	DrvOkiBank1[0] = DrvOkiBank1[1] = DrvOkiBank1[2] = DrvOkiBank1[3] = 0;
 	DrvOkiBank2[0] = DrvOkiBank2[1] = DrvOkiBank2[2] = DrvOkiBank2[3] = 0;
@@ -539,6 +509,8 @@ static int DrvFrame()
 	int nSoundBufferPos = 0;
 
 	int nCyclesSegment;
+
+	
 
 	if (DrvReset) {														// Reset machine
 		DrvDoReset();
@@ -640,11 +612,12 @@ static int MemIndex()
 	unsigned char* Next; Next = Mem;
 	Rom01			= Next; Next += 0x300000;		// 68K program
 	RomZ80			= Next; Next += 0x040000;
-	CaveSpriteROM	= Next; Next += 0x1000000 * 2;
+/*	CaveSpriteROM	= Next; Next += 0x1000000 * 2;
 	CaveTileROM[0]	= Next; Next += 0x400000;		// Tile layer 0
 	CaveTileROM[1]	= Next; Next += 0x400000;		// Tile layer 1
 	CaveTileROM[2]	= Next; Next += 0x400000;		// Tile layer 2
 	CaveTileROM[3]	= Next; Next += 0x200000;		// Tile layer 3
+*/
 	MSM6295ROM		= Next; Next += 0x800000;
 	RamStart		= Next;
 	Ram01			= Next; Next += 0x028000;		// CPU #0 work RAM
@@ -661,16 +634,44 @@ static int MemIndex()
 	return 0;
 }
 
-static void NibbleSwap1(unsigned char* pData, int nLen)
-{
-	unsigned char* pOrg = pData + nLen - 1;
-	unsigned char* pDest = pData + ((nLen - 1) << 1);
+static void NibbleSwap1(unsigned char* pData, int nLen, unsigned long fileOffset)
+{	
+	unsigned char* pOrg = pData + 0x100000 - 1;
+	unsigned char* pDest = pData + (0x100000-1)+(nLen - 1);
 
-	for (int i = 0; i < nLen; i++, pOrg--, pDest -= 2) {
+	for(int k=nLen-0x100000;k>=(nLen>>1);k=k-0x100000)
+	{
+		pOrg= pData + 0x100000 - 1;
+		sceIoLseek( cacheFile, fileOffset+k, SEEK_SET );
+		sceIoRead( cacheFile,pData , 0x100000 );
+		
+		for (int i = 0; i < 0x100000; i++, pOrg--, pDest -= 2) {
+			pDest[0] = *pOrg & 15;
+			pDest[1] = *pOrg >> 4;
+		}
+	}
+	for(int j=0;j<5;j++)
+	{
+		sceIoLseek( cacheFile, fileOffset+nLen, SEEK_SET );
+		if( nLen == sceIoWrite(cacheFile,pData+0x100000, nLen ) )
+			break;
+	}
+
+	sceIoLseek( cacheFile, fileOffset, SEEK_SET );
+	sceIoRead( cacheFile,pData , nLen );
+	pOrg = pData + (nLen>>1) - 1;
+	pDest = pData + (nLen - 2);
+
+	for (int i = 0; i < (nLen>>1); i++, pOrg--, pDest -= 2) {
 		pDest[0] = *pOrg & 15;
 		pDest[1] = *pOrg >> 4;
 	}
-
+	for(int j=0;j<5;j++)
+	{
+		sceIoLseek( cacheFile, fileOffset, SEEK_SET );
+		if( nLen == sceIoWrite(cacheFile,pData, nLen ) )
+			break;
+	}
 	return;
 }
 
@@ -695,7 +696,7 @@ static int LoadRoms()
 	BurnLoadRom(Rom01 + 0x100000, 3, 2);
 	
 	BurnLoadRom(RomZ80, 4, 1);
-
+/*
 	unsigned char *pTemp = (unsigned char*)malloc(0xe00000);
 	BurnLoadRom(pTemp + 0x000000, 5, 1);
 	BurnLoadRom(pTemp + 0x200000, 6, 1);
@@ -720,7 +721,7 @@ static int LoadRoms()
 	NibbleSwap2(CaveTileROM[2], 0x100000);
 	BurnLoadRom(CaveTileROM[3], 15, 1);
 	NibbleSwap2(CaveTileROM[3], 0x080000);
-
+*/
 	// Load MSM6295 ADPCM data
 	BurnLoadRom(MSM6295ROM + 0x000000, 16, 1);
 	BurnLoadRom(MSM6295ROM + 0x200000, 17, 1);
@@ -741,6 +742,7 @@ static int PlegendsLoadRoms()
 	
 	BurnLoadRom(RomZ80, 6, 1);
 
+/*
 	unsigned char *pTemp = (unsigned char*)malloc(0x1000000);
 	BurnLoadRom(pTemp + 0x000000, 7, 1);
 	BurnLoadRom(pTemp + 0x200000, 8, 1);
@@ -750,6 +752,7 @@ static int PlegendsLoadRoms()
 	BurnLoadRom(pTemp + 0xa00000, 12, 1);
 	BurnLoadRom(pTemp + 0xc00000, 13, 1);
 	BurnLoadRom(pTemp + 0xe00000, 14, 1);
+	
 	for (int i = 0; i < 0x1000000; i++) {
 		int j = BITSWAP24(i,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7, 2,4,6,1,5,3, 0);
 		if (((j & 6) == 0) || ((j & 6) == 6)) j ^= 6;
@@ -766,7 +769,7 @@ static int PlegendsLoadRoms()
 	NibbleSwap2(CaveTileROM[2], 0x200000);
 	BurnLoadRom(CaveTileROM[3], 18, 1);
 	NibbleSwap2(CaveTileROM[3], 0x080000);
-
+*/
 	// Load MSM6295 ADPCM data
 	BurnLoadRom(MSM6295ROM + 0x000000, 19, 1);
 	BurnLoadRom(MSM6295ROM + 0x200000, 20, 1);
@@ -810,7 +813,7 @@ static int DrvScan(int nAction, int *pnMin)
 		CaveScanGraphics();
 
 		SCAN_VAR(DrvInput);
-		SCAN_VAR(SoundLatch);
+		SCAN_VAR(DrvSoundLatch);
 		SCAN_VAR(DrvZ80Bank);
 		SCAN_VAR(DrvOkiBank1);
 		SCAN_VAR(DrvOkiBank2);
@@ -884,6 +887,74 @@ static int DrvInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+	
+	cacheFileSize=0x2500000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x1C00000;
+	CaveTileROMOffset[1]=CaveTileROMOffset[0]+0x400000;
+	CaveTileROMOffset[2]=CaveTileROMOffset[1]+0x200000;
+	CaveTileROMOffset[3]=CaveTileROMOffset[2]+0x200000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead,0,0x1000000);
+		unsigned char* pTemp=uniCacheHead+0x0E00000;
+		for(int k=0;k<0xE00000;k=k+0x200000)
+		{
+			BurnLoadRom(pTemp, 5+k/0x200000, 1);
+			for (int i = k; i < k+0x200000; i++) {
+				int j = BITSWAP24(i,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7, 2,4,6,1,5,3, 0);
+				if (((j & 6) == 0) || ((j & 6) == 6)) j ^= 6;
+				uniCacheHead[j ^ 7] = (pTemp[i-k] >> 4) | (pTemp[i-k] << 4);
+			}
+		}
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0, SEEK_SET );
+			if( 0xe00000 == sceIoWrite(cacheFile,uniCacheHead, 0xe00000 ) )
+				break;
+		}
+		NibbleSwap1(uniCacheHead, 0xe00000,0);
+	
+		BurnLoadRom(uniCacheHead, 12, 1);
+		NibbleSwap2(uniCacheHead,0x200000);
+		BurnLoadRom(uniCacheHead+0x400000, 13, 1);
+		NibbleSwap2(uniCacheHead+0x400000, 0x100000);
+		BurnLoadRom(uniCacheHead+0x600000, 14, 1);
+		NibbleSwap2(uniCacheHead+0x600000, 0x100000);
+		BurnLoadRom(uniCacheHead+0x800000, 15, 1);
+		NibbleSwap2(uniCacheHead+0x800000, 0x080000);
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0xe00000*2, SEEK_SET );
+			if( 0x900000 == sceIoWrite(cacheFile,uniCacheHead,0x900000  ) )
+				break;
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
 
 	// Find out how much memory is needed
 	Mem = NULL;
@@ -896,6 +967,8 @@ static int DrvInit()
 	MemIndex();													// Index the allocated memory
 
 	EEPROMInit(1024, 16);										// EEPROM has 1024 bits, uses 16-bit words
+	
+	initCacheStructure(0.7);
 	
 	// Load the roms into memory
 	if (LoadRoms()) {
@@ -964,6 +1037,74 @@ static int PlegendsInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+cacheFileSize=0x2D00000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x2000000;
+	CaveTileROMOffset[1]=CaveTileROMOffset[0]+0x400000;
+	CaveTileROMOffset[2]=CaveTileROMOffset[1]+0x400000;
+	CaveTileROMOffset[3]=CaveTileROMOffset[2]+0x400000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1200000)) == NULL) return 1;
+		memset(uniCacheHead,0,0x1200000);
+		unsigned char* pTemp=uniCacheHead+0x1000000;
+		for(int k=0;k<0x1000000;k=k+0x200000)
+		{
+			
+			BurnLoadRom(pTemp, 7+k/0x200000, 1);
+			for (int i = k; i < k+0x200000; i++) {
+				int j = BITSWAP24(i,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7, 2,4,6,1,5,3, 0);
+				if (((j & 6) == 0) || ((j & 6) == 6)) j ^= 6;
+				uniCacheHead[j ^ 7] = (pTemp[i-k] >> 4) | (pTemp[i-k] << 4);
+			}
+		}
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0, SEEK_SET );
+			if( 0x1000000 == sceIoWrite(cacheFile,uniCacheHead, 0x1000000 ) )
+				break;
+		}
+		NibbleSwap1(uniCacheHead, 0x1000000,0);
+
+		BurnLoadRom(uniCacheHead, 15, 1);
+		NibbleSwap2(uniCacheHead, 0x200000);
+		BurnLoadRom(uniCacheHead+0x400000, 16, 1);
+		NibbleSwap2(uniCacheHead+0x400000, 0x200000);
+		BurnLoadRom(uniCacheHead+0x800000, 17, 1);
+		NibbleSwap2(uniCacheHead+0x800000, 0x200000);
+		BurnLoadRom(uniCacheHead+0xC00000, 18, 1);
+		NibbleSwap2(uniCacheHead+0xC00000, 0x080000);
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0x1000000*2, SEEK_SET );
+			if( 0xD00000 == sceIoWrite(cacheFile,uniCacheHead,0xD00000  ) )
+				break;
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
 
 	// Find out how much memory is needed
 	Mem = NULL;
@@ -976,6 +1117,8 @@ static int PlegendsInit()
 	MemIndex();													// Index the allocated memory
 
 	EEPROMInit(1024, 16);										// EEPROM has 1024 bits, uses 16-bit words
+	
+	initCacheStructure(0.6);
 	
 	// Load the roms into memory
 	if (PlegendsLoadRoms()) {
@@ -1170,7 +1313,7 @@ struct BurnDriver BurnDrvpwrinst2 = {
 	"pwrinst2", NULL, NULL, "1994",
 	"Power Instinct 2 (US, Ver. 94/04/08)\0", "Bad Music from first MSM6295", "Atlus/Cave", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, pwrinst2RomInfo, pwrinst2RomName, pwrinst2InputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,
@@ -1181,7 +1324,7 @@ struct BurnDriver BurnDrvpwrins2j = {
 	"pwrins2j", "pwrinst2", NULL, "1994",
 	"Gouketsuji Ichizoku 2 (Japan, Ver. 94/04/08)\0", NULL, "Atlus/Cave", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, pwrins2jRomInfo, pwrins2jRomName, pwrinst2InputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,
@@ -1192,7 +1335,7 @@ struct BurnDriver BurnDrvplegends = {
 	"plegends", NULL, NULL, "1995",
 	"Power Instinct Legends (US, Ver. 95/06/20)\0", NULL, "Atlus/Cave", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, plegendsRomInfo, plegendsRomName, pwrinst2InputInfo, NULL,
 	PlegendsInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,
@@ -1203,7 +1346,7 @@ struct BurnDriver BurnDrvplegendj = {
 	"plegendj", "plegends", NULL, "1995",
 	"Gouketsuji Ichizoku Saikyou Densetsu (Japan, Ver. 95/06/20)\0", NULL, "Atlus/Cave", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, plegendjRomInfo, plegendjRomName, pwrinst2InputInfo, NULL,
 	PlegendsInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,

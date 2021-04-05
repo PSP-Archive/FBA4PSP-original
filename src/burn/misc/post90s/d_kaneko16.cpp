@@ -953,7 +953,7 @@ static struct BurnRomInfo GtmreRomDesc[] = {
 	{ "gmmu2.bin",         0x080000, 0x36dc4aa9, BRF_ESS | BRF_PRG }, //  0	68000 Program Code
 	{ "gmmu1.bin",         0x080000, 0x8653c144, BRF_ESS | BRF_PRG }, //  1	68000 Program Code
 	
-	{ "gtmrusa.u12",       0x020000, 0x2e1a06ff, BRF_PRG | BRF_OPT }, //  2	MCU Code
+	{ "mcu_code.u12",      0x020000, 0x00000000, BRF_PRG | BRF_OPT | BRF_NODUMP }, //  2	MCU Code
 
 	{ "gmmu27.bin",        0x200000, 0xc0ab3efc, BRF_GRA },		  //  3	Sprites
 	{ "gmmu28.bin",        0x200000, 0xcf6b23dc, BRF_GRA },	 	  //  4	Sprites
@@ -2769,6 +2769,7 @@ static void Kaneko16VideoInit()
 	GenericTilesInit();
 	
 	spritelist.first_sprite = (struct tempsprite *)malloc(0x400 * sizeof(spritelist.first_sprite[0]));
+	memset(spritelist.first_sprite, 0, 0x400 * sizeof(spritelist.first_sprite[0]));
 	
 	Kaneko16ParseSprite = Kaneko16ParseSpriteType0;
 	
@@ -2868,6 +2869,7 @@ static int BerlwallInit()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x400000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0000000,  2, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0080000,  3, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0100000,  4, 1); if (nRet != 0) return 1;
@@ -2962,6 +2964,7 @@ static int BlazeonInit()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x200000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0000000,  2, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0100000,  3, 1); if (nRet != 0) return 1;
 	GfxDecode(Kaneko16NumSprites, 4, 16, 16, FourBppPlaneOffsets, FourBppXOffsets, FourBppYOffsets, 0x400, Kaneko16TempGfx, Kaneko16Sprites);
@@ -2971,6 +2974,7 @@ static int BlazeonInit()
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x000000, 4, 1); if (nRet != 0) return 1;
 	UnscrambleTiles(0x100000);
 	GfxDecode(Kaneko16NumTiles, 4, 16, 16, FourBppPlaneOffsets, FourBppXOffsets, FourBppYOffsets, 0x400, Kaneko16TempGfx, Kaneko16Tiles);
+	free(Kaneko16TempGfx);
 	
 	// Load Z80 Rom
 	nRet = BurnLoadRom(Kaneko16Z80Rom, 5, 1); if (nRet != 0) return 1;
@@ -3045,6 +3049,7 @@ static int BloodwarInit()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x1e00000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0000000,  3, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0200000,  4, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0400000,  5, 1); if (nRet != 0) return 1;
@@ -3123,6 +3128,7 @@ static int BonkadvInit()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x500000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0000000, 3, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0200000, 4, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0300000, 5, 1); if (nRet != 0) return 1;
@@ -3184,6 +3190,7 @@ static int ExplbrkrInit()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x240000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0000000,  2, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0080000,  3, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0100000,  2, 1); if (nRet != 0) return 1;
@@ -3295,6 +3302,7 @@ static int GtmrInit()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x840000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x000000, 3, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x200000, 4, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x400000, 5, 1); if (nRet != 0) return 1;
@@ -3354,6 +3362,7 @@ static int GtmrevoInit()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x800000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x600000, 7, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x600001, 8, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x000000, 3, 1); if (nRet != 0) return 1;
@@ -3414,6 +3423,7 @@ int Gtmr2Init()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x800000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x000000, 3, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x400000, 4, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x600000, 5, 1); if (nRet != 0) return 1;
@@ -3476,6 +3486,7 @@ int Gtmr2uInit()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x800000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x000000, 3, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x400000, 4, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x600000, 5, 1); if (nRet != 0) return 1;
@@ -3537,6 +3548,7 @@ static int MgcrystlInit()
 	nRet = BurnLoadRom(Kaneko16Rom + 0x00000, 1, 2); if (nRet != 0) return 1;
 	
 	// Load and Decode Sprite Roms
+	memset(Kaneko16TempGfx, 0, 0x280000);
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0000000,  2, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0100000,  3, 1); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Kaneko16TempGfx + 0x0180000,  3, 1); if (nRet != 0) return 1;
@@ -3610,21 +3622,18 @@ static int MgcrystlInit()
 
 int Kaneko16Exit()
 {
-	SekExit();
-	MSM6295Exit(0);
-	MSM6295Exit(1);
 	EEPROMExit();
+
+	SekExit();
 	ZetExit();
-	BurnYM2151Exit();
-	
-	for (int i = 0; i < 2; i++) {
-		AY8910Exit(i);
-	}
 
 	GenericTilesExit();
 
 	free(Mem);
 	Mem = NULL;
+	
+	if(spritelist.first_sprite != NULL) free(spritelist.first_sprite);
+	spritelist.first_sprite = NULL;
 	
 	Kaneko16NumTiles = 0;
 	Kaneko16NumTiles2 = 0;
@@ -3663,6 +3672,31 @@ int Kaneko16Exit()
 	Mgcrystl = 0;
 	
 	return 0;
+}
+
+int BerlwallExit()
+{
+	MSM6295Exit(0);
+
+	AY8910Exit(0);
+	AY8910Exit(1);
+
+	return Kaneko16Exit();
+}
+
+int BlazeonExit()
+{
+	BurnYM2151Exit();
+
+	return Kaneko16Exit();
+}
+
+int BloodwarExit()
+{
+	MSM6295Exit(0);
+	MSM6295Exit(1);
+
+	return Kaneko16Exit();
 }
 
 /*==============================================================================================
@@ -4179,10 +4213,12 @@ static void Kaneko16RenderBg15Bitmap()
 	for (y = 0; y < nScreenHeight; y++) {
 		unsigned short *pPixel = pTransDraw + (y * nScreenWidth);
 		unsigned short *data = Kaneko16Bg15Data + (Select * 256 * 256) + ((y + 16) * 256);
-		
+		/*
 		for (x = 0; x < nScreenWidth; x++) {
 			pPixel[x] = data[x];
 		}
+		*/
+		memcpy(pPixel, data, (nScreenWidth - 1) * sizeof(short));
 	}
 }
 
@@ -4873,9 +4909,9 @@ struct BurnDriver BurnDrvBerlwall = {
 	"berlwall", NULL, NULL, "1991",
 	"The Berlin Wall\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16,
 	NULL, BerlwallRomInfo, BerlwallRomName, BerlwallInputInfo, BerlwallDIPInfo,
-	BerlwallInit, Kaneko16Exit, ExplbrkrFrame, NULL, ExplbrkrScan,
+	BerlwallInit, BerlwallExit, ExplbrkrFrame, NULL, ExplbrkrScan,
 	0, NULL, NULL, NULL, &Kaneko16RecalcBg15Palette, 256, 224, 4, 3
 };
 
@@ -4883,9 +4919,9 @@ struct BurnDriver BurnDrvBerlwalt = {
 	"berlwalt", "berlwall", NULL, "1991",
 	"The Berlin Wall (bootleg ?)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_KANEKO16, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_KANEKO16,
 	NULL, BerlwaltRomInfo, BerlwaltRomName, BerlwallInputInfo, BerlwaltDIPInfo,
-	BerlwallInit, Kaneko16Exit, ExplbrkrFrame, NULL, ExplbrkrScan,
+	BerlwallInit, BerlwallExit, ExplbrkrFrame, NULL, ExplbrkrScan,
 	0, NULL, NULL, NULL, &Kaneko16RecalcBg15Palette, 256, 224, 4, 3
 };
 
@@ -4893,9 +4929,9 @@ struct BurnDriver BurnDrvBlazeon = {
 	"blazeon", NULL, NULL, "1991",
 	"Blaze On (Japan)\0", NULL, "Atlus", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16,
 	NULL, BlazeonRomInfo, BlazeonRomName, BlazeonInputInfo, BlazeonDIPInfo,
-	BlazeonInit, Kaneko16Exit, BlazeonFrame, NULL, BlazeonScan,
+	BlazeonInit, BlazeonExit, BlazeonFrame, NULL, BlazeonScan,
 	0, NULL, NULL, NULL, NULL, 320, 232, 4, 3
 };
 
@@ -4903,9 +4939,9 @@ struct BurnDriver BurnDrvBloodwar = {
 	"bloodwar", NULL, NULL, "1994",
 	"Blood Warrior\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16,
 	NULL, BloodwarRomInfo, BloodwarRomName, BloodwarInputInfo, BloodwarDIPInfo,
-	BloodwarInit, Kaneko16Exit, GtmrFrame, NULL, GtmrScan,
+	BloodwarInit, BloodwarExit, GtmrFrame, NULL, GtmrScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
 };
 
@@ -4913,9 +4949,9 @@ struct BurnDriver BurnDrvBonkadv = {
 	"bonkadv", NULL, NULL, "1994",
 	"B.C. Kid / Bonk's Adventure / Kyukyoku!! PC Genjin\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16,
 	NULL, BonkadvRomInfo, BonkadvRomName, BonkadvInputInfo, BonkadvDIPInfo,
-	BonkadvInit, Kaneko16Exit, GtmrFrame, NULL, GtmrScan,
+	BonkadvInit, BloodwarExit, GtmrFrame, NULL, GtmrScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
 };
 
@@ -4923,9 +4959,9 @@ struct BurnDriver BurnDrvExplbrkr = {
 	"explbrkr", NULL, NULL, "1992",
 	"Explosive Breaker\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_KANEKO16, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_KANEKO16,
 	NULL, ExplbrkrRomInfo, ExplbrkrRomName, ExplbrkrInputInfo, ExplbrkrDIPInfo,
-	ExplbrkrInit, Kaneko16Exit, ExplbrkrFrame, NULL, ExplbrkrScan,
+	ExplbrkrInit, BerlwallExit, ExplbrkrFrame, NULL, ExplbrkrScan,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
 };
 
@@ -4933,9 +4969,9 @@ struct BurnDriver BurnDrvBakubrkr = {
 	"bakubrkr", "explbrkr", NULL, "1992",
 	"Bakuretsu Breaker\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_KANEKO16, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_KANEKO16,
 	NULL, BakubrkrRomInfo, BakubrkrRomName, ExplbrkrInputInfo, ExplbrkrDIPInfo,
-	ExplbrkrInit, Kaneko16Exit, ExplbrkrFrame, NULL, ExplbrkrScan,
+	ExplbrkrInit, BerlwallExit, ExplbrkrFrame, NULL, ExplbrkrScan,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
 };
 
@@ -4943,9 +4979,9 @@ struct BurnDriver BurnDrvGtmr = {
 	"gtmr", NULL, NULL, "1994",
 	"1000 Miglia: Great 1000 Miles Rally (94/07/18)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16, GBF_RACING, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16,
 	NULL, GtmrRomInfo, GtmrRomName, GtmrInputInfo, GtmrDIPInfo,
-	GtmrInit, Kaneko16Exit, GtmrFrame, NULL, GtmrScan,
+	GtmrInit, BloodwarExit, GtmrFrame, NULL, GtmrScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
 };
 
@@ -4953,9 +4989,9 @@ struct BurnDriver BurnDrvGtmra = {
 	"gtmra", "gtmr", NULL, "1994",
 	"1000 Miglia: Great 1000 Miles Rally (94/06/13)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16,
 	NULL, GtmraRomInfo, GtmraRomName, GtmrInputInfo, GtmrDIPInfo,
-	GtmrInit, Kaneko16Exit, GtmrFrame, NULL, GtmrScan,
+	GtmrInit, BloodwarExit, GtmrFrame, NULL, GtmrScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
 };
 
@@ -4963,9 +4999,9 @@ struct BurnDriver BurnDrvGtmre = {
 	"gtmre", "gtmr", NULL, "1994",
 	"Great 1000 Miles Rally: Evolution Model!!! (94/09/06)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16,
 	NULL, GtmreRomInfo, GtmreRomName, GtmrInputInfo, GtmrDIPInfo,
-	GtmrevoInit, Kaneko16Exit, GtmrFrame, NULL, GtmrScan,
+	GtmrevoInit, BloodwarExit, GtmrFrame, NULL, GtmrScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
 };
 
@@ -4973,9 +5009,9 @@ struct BurnDriver BurnDrvGtmrusa = {
 	"gtmrusa", "gtmr", NULL, "1994",
 	"Great 1000 Miles Rally: U.S.A Version! (94/09/06)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16,
 	NULL, GtmrusaRomInfo, GtmrusaRomName, GtmrInputInfo, GtmrDIPInfo,
-	GtmrevoInit, Kaneko16Exit, GtmrFrame, NULL, GtmrScan,
+	GtmrevoInit, BloodwarExit, GtmrFrame, NULL, GtmrScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
 };
 
@@ -4983,9 +5019,9 @@ struct BurnDriver BurnDrvGtmr2 = {
 	"gtmr2", NULL, NULL, "1995",
 	"Mille Miglia 2: Great 1000 Miles Rally (95/05/24)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16, GBF_RACING, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16,
 	NULL, Gtmr2RomInfo, Gtmr2RomName, GtmrInputInfo, Gtmr2DIPInfo,
-	Gtmr2Init, Kaneko16Exit, GtmrFrame, NULL, GtmrScan,
+	Gtmr2Init, BloodwarExit, GtmrFrame, NULL, GtmrScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
 };
 
@@ -4993,9 +5029,9 @@ struct BurnDriver BurnDrvGtmr2a = {
 	"gtmr2a", "gtmr2", NULL, "1995",
 	"Mille Miglia 2: Great 1000 Miles Rally (95/04/04)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16,
 	NULL, Gtmr2aRomInfo, Gtmr2aRomName, GtmrInputInfo, Gtmr2DIPInfo,
-	Gtmr2Init, Kaneko16Exit, GtmrFrame, NULL, GtmrScan,
+	Gtmr2Init, BloodwarExit, GtmrFrame, NULL, GtmrScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
 };
 
@@ -5003,9 +5039,9 @@ struct BurnDriver BurnDrvGtmr2u = {
 	"gtmr2u", "gtmr2", NULL, "1995",
 	"Great 1000 Miles Rally 2 USA (95/05/18)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16,
 	NULL, Gtmr2uRomInfo, Gtmr2uRomName, GtmrInputInfo, Gtmr2DIPInfo,
-	Gtmr2uInit, Kaneko16Exit, GtmrFrame, NULL, GtmrScan,
+	Gtmr2uInit, BloodwarExit, GtmrFrame, NULL, GtmrScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
 };
 
@@ -5013,9 +5049,9 @@ struct BurnDriver BurnDrvMgcrsytl = {
 	"mgcrystl", NULL, NULL, "1991",
 	"Magical Crystals (World, 92/01/10)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_KANEKO16,
 	NULL, MgcrystlRomInfo, MgcrystlRomName, MgcrystlInputInfo, MgcrystlDIPInfo,
-	MgcrystlInit, Kaneko16Exit, ExplbrkrFrame, NULL, ExplbrkrScan,
+	MgcrystlInit, BerlwallExit, ExplbrkrFrame, NULL, ExplbrkrScan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
 };
 
@@ -5023,9 +5059,9 @@ struct BurnDriver BurnDrvMgcrsyto = {
 	"mgcrysto", "mgcrystl", NULL, "1991",
 	"Magical Crystals (World, 91/12/10)\0", NULL, "Kaneko", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16,
 	NULL, MgcrystoRomInfo, MgcrystoRomName, MgcrystlInputInfo, MgcrystlDIPInfo,
-	MgcrystlInit, Kaneko16Exit, ExplbrkrFrame, NULL, ExplbrkrScan,
+	MgcrystlInit, BerlwallExit, ExplbrkrFrame, NULL, ExplbrkrScan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
 };
 
@@ -5033,8 +5069,8 @@ struct BurnDriver BurnDrvMgcrsytj = {
 	"mgcrystj", "mgcrystl", NULL, "1991",
 	"Magical Crystals (Japan, 92/01/13)\0", NULL, "Kaneko (Atlus license)", "Kaneko 16-bit",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KANEKO16,
 	NULL, MgcrystjRomInfo, MgcrystjRomName, MgcrystlInputInfo, MgcrystlDIPInfo,
-	MgcrystlInit, Kaneko16Exit, ExplbrkrFrame, NULL, ExplbrkrScan,
+	MgcrystlInit, BerlwallExit, ExplbrkrFrame, NULL, ExplbrkrScan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
 };

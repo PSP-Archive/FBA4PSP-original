@@ -530,7 +530,7 @@ static struct BurnDIPInfo OpwolfDIPList[]=
 {
 	// Default Values
 	{0x0a, 0xff, 0xff, 0xff, NULL                             },
-	{0x0b, 0xff, 0xff, 0x7f, NULL                             },
+	{0x0b, 0xff, 0xff, 0xff, NULL                             },
 	
 	// Dip 1
 	{0   , 0xfe, 0   , 2   , "Allow Continue"                 },
@@ -581,7 +581,7 @@ static struct BurnDIPInfo OpwolfuDIPList[]=
 {
 	// Default Values
 	{0x0a, 0xff, 0xff, 0xff, NULL                             },
-	{0x0b, 0xff, 0xff, 0x7f, NULL                             },
+	{0x0b, 0xff, 0xff, 0xff, NULL                             },
 	
 	// Dip 1
 	{0   , 0xfe, 0   , 2   , "Allow Continue"                 },
@@ -679,7 +679,7 @@ static struct BurnDIPInfo RainbowDIPList[]=
 {
 	// Default Values
 	{0x0f, 0xff, 0xff, 0xfe, NULL                             },
-	{0x10, 0xff, 0xff, 0xbf, NULL                             },
+	{0x10, 0xff, 0xff, 0xff, NULL                             },
 	
 	// Dip 1
 	{0   , 0xfe, 0   , 2   , "Cabinet"                        },
@@ -1115,7 +1115,7 @@ static struct BurnRomInfo OpwolfaRomDesc[] = {
 	{ "b20-05-02.40",  0x10000, 0x3ffbfe3a, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
 	{ "b20-03-02.30",  0x10000, 0xfdabd8a5, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
 	{ "b20-04.39",     0x10000, 0x216b4838, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
-	{ "b20-17.29",     0x10000, 0x6043188e, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
+	{ "b20-17",        0x10000, 0x6043188e, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
 
 	{ "b20-07.10",     0x10000, 0x45c7ace3, BRF_ESS | BRF_PRG | TAITO_Z80ROM1 },
 
@@ -1133,7 +1133,7 @@ static struct BurnRomInfo OpwolfuRomDesc[] = {
 	{ "b20-05-02.40",  0x10000, 0x3ffbfe3a, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
 	{ "b20-03-02.30",  0x10000, 0xfdabd8a5, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
 	{ "b20-04.39",     0x10000, 0x216b4838, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
-	{ "b20-19.29",     0x10000, 0xb71bc44c, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
+	{ "opwlf.29",      0x10000, 0xb71bc44c, BRF_ESS | BRF_PRG | TAITO_68KROM1_BYTESWAP },
 
 	{ "b20-07.10",     0x10000, 0x45c7ace3, BRF_ESS | BRF_PRG | TAITO_Z80ROM1 },
 
@@ -3570,6 +3570,26 @@ static void JumpingDrawSprites()
 	}
 }
 
+#ifdef BUILD_PSP
+
+int DariusTransferCopy(UINT32* pPalette)
+{
+	UINT16* pSrc = pTransDraw;
+	UINT8* pDest = pBurnDraw;
+
+	for (int y = 0; y < 224; y++, pSrc += 864, pDest += nBurnPitch) {
+		for (int x = 0; x < 864; x ++) {
+			if(x < 512) {
+				((UINT16*)pDest)[x] = pPalette[pSrc[x]];
+			} else {
+				((UINT16*)pDest)[x - 512 + (512*224)] = pPalette[pSrc[x]];
+			}
+		}
+	}
+}
+
+#endif
+
 static void DariusDraw()
 {
 	BurnTransferClear();
@@ -3579,7 +3599,12 @@ static void DariusDraw()
 	PC080SNDrawFgLayer(TaitoChars);
 	DariusDrawSprites(1);
 	DariusDrawCharLayer();
+
+#ifdef BUILD_PSP
+	DariusTransferCopy(TaitoPalette);
+#else
 	BurnTransferCopy(TaitoPalette);
+#endif
 }
 
 static void OpwolfDraw()
@@ -3852,7 +3877,7 @@ struct BurnDriver BurnDrvDarius = {
 	"darius", NULL, NULL, "1986",
 	"Darius (World)\0", NULL, "Taito Corporation Japan", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TAITO_MISC, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TAITO_MISC,
 	NULL, DariusRomInfo, DariusRomName, DariusInputInfo, DariusDIPInfo,
 	DariusInit, TaitoMiscExit, DariusFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 864, 224, 12, 3
@@ -3862,7 +3887,7 @@ struct BurnDriver BurnDrvDariusj = {
 	"dariusj", "darius", NULL, "1986",
 	"Darius (Japan)\0", NULL, "Taito Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, DariusjRomInfo, DariusjRomName, DariusInputInfo, DariusjDIPInfo,
 	DariusInit, TaitoMiscExit, DariusFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 864, 224, 12, 3
@@ -3872,7 +3897,7 @@ struct BurnDriver BurnDrvDariuso = {
 	"dariuso", "darius", NULL, "1986",
 	"Darius (Japan old version)\0", NULL, "Taito Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, DariusoRomInfo, DariusoRomName, DariusInputInfo, DariusjDIPInfo,
 	DariusInit, TaitoMiscExit, DariusFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 864, 224, 12, 3
@@ -3882,7 +3907,7 @@ struct BurnDriver BurnDrvDariuse = {
 	"dariuse", "darius", NULL, "1986",
 	"Darius (Extra) (Japan)\0", NULL, "Taito Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, DariuseRomInfo, DariuseRomName, DariusInputInfo, DariuseDIPInfo,
 	DariusInit, TaitoMiscExit, DariusFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 864, 224, 12, 3
@@ -3892,7 +3917,7 @@ struct BurnDriver BurnDrvOpwolf = {
 	"opwolf", NULL, NULL, "1987",
 	"Operation Wolf (World, set 1)\0", NULL, "Taito Corporation Japan", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TAITO_MISC, GBF_SHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TAITO_MISC,
 	NULL, OpwolfRomInfo, OpwolfRomName, OpwolfInputInfo, OpwolfDIPInfo,
 	OpwolfInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -3902,7 +3927,7 @@ struct BurnDriver BurnDrvOpwolfa = {
 	"opwolfa", "opwolf", NULL, "1987",
 	"Operation Wolf (World, set 2)\0", NULL, "Taito Corporation Japan", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, OpwolfaRomInfo, OpwolfaRomName, OpwolfInputInfo, OpwolfDIPInfo,
 	OpwolfInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -3912,7 +3937,7 @@ struct BurnDriver BurnDrvOpwolfu = {
 	"opwolfu", "opwolf", NULL, "1987",
 	"Operation Wolf (US)\0", NULL, "Taito America Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, OpwolfuRomInfo, OpwolfuRomName, OpwolfInputInfo, OpwolfuDIPInfo,
 	OpwolfInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -3922,7 +3947,7 @@ struct BurnDriver BurnDrvOpwolfb = {
 	"opwolfb", "opwolf", NULL, "1987",
 	"Operation Bear\0", NULL, "bootleg", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_TAITO_MISC, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_TAITO_MISC,
 	NULL, OpwolfbRomInfo, OpwolfbRomName, OpwolfInputInfo, OpwolfbDIPInfo,
 	OpwolfbInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -3932,7 +3957,7 @@ struct BurnDriver BurnDrvRainbow = {
 	"rainbow", NULL, NULL, "1987",
 	"Rainbow Islands (new version)\0", NULL, "Taito Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TAITO_MISC, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TAITO_MISC,
 	NULL, RainbowRomInfo, RainbowRomName, RainbowInputInfo, RainbowDIPInfo,
 	RainbowInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -3942,7 +3967,7 @@ struct BurnDriver BurnDrvRainbowo = {
 	"rainbowo", "rainbow", NULL, "1987",
 	"Rainbow Islands (old version)\0", NULL, "Taito Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, RainbowoRomInfo, RainbowoRomName, RainbowInputInfo, RainbowDIPInfo,
 	RainbowInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -3952,7 +3977,7 @@ struct BurnDriver BurnDrvRainbowe = {
 	"rainbowe", "rainbow", NULL, "1988",
 	"Rainbow Islands (Extra)\0", NULL, "Taito Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, RainboweRomInfo, RainboweRomName, RainbowInputInfo, RainbowDIPInfo,
 	RainbowInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -3962,7 +3987,7 @@ struct BurnDriver BurnDrvJumping = {
 	"jumping", "rainbow", NULL, "1989",
 	"Jumping\0", NULL, "bootleg", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_TAITO_MISC, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_TAITO_MISC,
 	NULL, JumpingRomInfo, JumpingRomName, JumpingInputInfo, JumpingDIPInfo,
 	JumpingInit, TaitoMiscExit, JumpingFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 224, 4, 3
@@ -3972,7 +3997,7 @@ struct BurnDriver BurnDrvRastan = {
 	"rastan", NULL, NULL, "1987",
 	"Rastan (World)\0", NULL, "Taito Corporation Japan", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TAITO_MISC, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TAITO_MISC,
 	NULL, RastanRomInfo, RastanRomName, RastanInputInfo, RastanDIPInfo,
 	RastanInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -3982,7 +4007,7 @@ struct BurnDriver BurnDrvRastanu = {
 	"rastanu", "rastan", NULL, "1987",
 	"Rastan (US set 1)\0", NULL, "Taito America Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, RastanuRomInfo, RastanuRomName, RastanInputInfo, RastsagaDIPInfo,
 	RastanInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -3992,7 +4017,7 @@ struct BurnDriver BurnDrvRastanu2 = {
 	"rastanu2", "rastan", NULL, "1987",
 	"Rastan (US set 2)\0", NULL, "Taito America Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, Rastanu2RomInfo, Rastanu2RomName, RastanInputInfo, RastsagaDIPInfo,
 	RastanInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -4002,7 +4027,7 @@ struct BurnDriver BurnDrvRastsaga = {
 	"rastsaga", "rastan", NULL, "1987",
 	"Rastan Saga (Japan)\0", NULL, "Taito Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, RastsagaRomInfo, RastsagaRomName, RastanInputInfo, RastsagaDIPInfo,
 	RastanInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -4012,7 +4037,7 @@ struct BurnDriver BurnDrvRastsag1 = {
 	"rastsag1", "rastan", NULL, "1987",
 	"Rastan Saga (Japan Rev 1)\0", NULL, "Taito Corporation", "Taito Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_MISC,
 	NULL, Rastsag1RomInfo, Rastsag1RomName, RastanInputInfo, RastsagaDIPInfo,
 	RastanInit, TaitoMiscExit, TaitoMiscFrame, NULL, TaitoMiscScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3

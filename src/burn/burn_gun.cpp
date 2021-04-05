@@ -114,13 +114,19 @@ void BurnGunScan()
 	SCAN_VAR(BurnGunY);
 }
 
+#ifndef BUILD_PSP
+#define X_SIZE	nBurnGunMaxX
+#else
+#define X_SIZE	512
+#endif
+
 void BurnGunDrawTarget(int num, int x, int y)
 {
 	if (bBurnGunDrawTargets == false) return;
 	
 	if (num > MAX_GUNS - 1) return;
 	
-	unsigned char* pTile = pBurnDraw + nBurnGunMaxX * nBurnBpp * (y - 1) + nBurnBpp * x;
+	unsigned char* pTile = pBurnDraw + X_SIZE * nBurnBpp * (y - 1) + nBurnBpp * x;
 	
 	unsigned int nTargetCol = 0;
 	if (num == 0) nTargetCol = BurnHighCol(P1Colour, 0);
@@ -130,7 +136,7 @@ void BurnGunDrawTarget(int num, int x, int y)
 
 	for (int y2 = 0; y2 < 17; y2++) {
 
-		pTile += nBurnGunMaxX * nBurnBpp;
+		pTile += X_SIZE * nBurnBpp;
 
 		if ((y + y2) < 0 || (y + y2) > nBurnGunMaxY - 1) {
 			continue;
@@ -152,6 +158,8 @@ void BurnGunDrawTarget(int num, int x, int y)
 		}
 	}
 }
+
+#undef X_SIZE
 
 #undef P1Colour
 #undef P2Colour

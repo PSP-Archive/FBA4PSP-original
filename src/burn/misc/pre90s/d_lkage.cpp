@@ -866,7 +866,7 @@ struct BurnDriver BurnDrvLkage = {
 	"lkage", NULL, NULL, "1984",
 	"The Legend of Kage\0", NULL, "Taito Corporation", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, lkageRomInfo, lkageRomName, LkageInputInfo, LkageDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 224, 4, 3
@@ -905,7 +905,7 @@ struct BurnDriver BurnDrvLkageo = {
 	"lkageo", "lkage", NULL, "1984",
 	"The Legend of Kage (older)\0", NULL, "Taito Corporation", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, lkageoRomInfo, lkageoRomName, LkageInputInfo, LkageDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 224, 4, 3
@@ -927,6 +927,8 @@ static struct BurnRomInfo lkagebRomDesc[] = {
 	{ "ic96_8",	0x4000, 0x4ef5f073, 4 | BRF_GRA },           //  7
 
 	{ "a54-10.2",	0x0200, 0x17dfbd14, 5 | BRF_OPT },           //  8 Prom (unused)
+
+	{ "mcu",	0x0800, 0x00000000, 6 | BRF_NODUMP | BRF_PRG | BRF_OPT }, //  9 68705 Code (unused)
 };
 
 STD_ROM_PICK(lkageb);
@@ -936,7 +938,7 @@ struct BurnDriver BurnDrvLkageb = {
 	"lkageb", "lkage", NULL, "1984",
 	"The Legend of Kage (bootleg set 1)\0", NULL, "bootleg", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, lkagebRomInfo, lkagebRomName, LkageInputInfo, LkageDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 224, 4, 3
@@ -968,7 +970,7 @@ struct BurnDriver BurnDrvLkageb2 = {
 	"lkageb2", "lkage", NULL, "1984",
 	"The Legend of Kage (bootleg set 2)\0", NULL, "bootleg", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, lkageb2RomInfo, lkageb2RomName, LkageInputInfo, LkageDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 224, 4, 3
@@ -1000,7 +1002,7 @@ struct BurnDriver BurnDrvLkageb3 = {
 	"lkageb3", "lkage", NULL, "1984",
 	"The Legend of Kage (bootleg set 3)\0", NULL, "bootleg", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT, 0,
 	NULL, lkageb3RomInfo, lkageb3RomName, LkageInputInfo, LkageDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 224, 4, 3

@@ -1,5 +1,6 @@
 
 #include "cps3.h"
+#include "UniCache.h"
 
 #define CPS3_VOICES		16
 
@@ -28,7 +29,7 @@ static cps3snd_chip * chip;
 unsigned char __fastcall cps3SndReadByte(unsigned int addr)
 {
 	addr &= 0x000003ff;
-	bprintf(PRINT_NORMAL, _T("SND Attempt to read byte value of location %8x\n"), addr);
+//	bprintf(PRINT_NORMAL, _T("SND Attempt to read byte value of location %8x\n"), addr);
 	return 0;
 }
 
@@ -43,7 +44,7 @@ unsigned short __fastcall cps3SndReadWord(unsigned int addr)
 		return chip->key;
 	} else
 
-	bprintf(PRINT_NORMAL, _T("SND Attempt to read word value of location %8x\n"), addr);
+//	bprintf(PRINT_NORMAL, _T("SND Attempt to read word value of location %8x\n"), addr);
 	return 0;
 }
 
@@ -51,14 +52,14 @@ unsigned int __fastcall cps3SndReadLong(unsigned int addr)
 {
 	addr &= 0x000003ff;
 	
-	bprintf(PRINT_NORMAL, _T("SND Attempt to read long value of location %8x\n"), addr);
+//	bprintf(PRINT_NORMAL, _T("SND Attempt to read long value of location %8x\n"), addr);
 	return 0;
 }
 
 void __fastcall cps3SndWriteByte(unsigned int addr, unsigned char data)
 {
 	addr &= 0x000003ff;
-	bprintf(PRINT_NORMAL, _T("SND Attempt to write byte value %2x to location %8x\n"), data, addr);
+//	bprintf(PRINT_NORMAL, _T("SND Attempt to write byte value %2x to location %8x\n"), data, addr);
 }
 
 void __fastcall cps3SndWriteWord(unsigned int addr, unsigned short data)
@@ -79,15 +80,15 @@ void __fastcall cps3SndWriteWord(unsigned int addr, unsigned short data)
 			}
 		}
 		chip->key = key;
-	} else
-		bprintf(PRINT_NORMAL, _T("SND Attempt to write word value %4x to location %8x\n"), data, addr);
+	} // else
+//		bprintf(PRINT_NORMAL, _T("SND Attempt to write word value %4x to location %8x\n"), data, addr);
 	
 }
 
 void __fastcall cps3SndWriteLong(unsigned int addr, unsigned int data)
 {
 	//addr &= 0x000003ff;
-	bprintf(PRINT_NORMAL, _T("SND Attempt to write long value %8x to location %8x\n"), data, addr);
+//	bprintf(PRINT_NORMAL, _T("SND Attempt to write long value %8x to location %8x\n"), data, addr);
 }
 
 int cps3SndInit(unsigned char * sndrom)
@@ -95,7 +96,8 @@ int cps3SndInit(unsigned char * sndrom)
 	chip = (cps3snd_chip *) malloc( sizeof(cps3snd_chip) );
 	if ( chip ) {
 		memset( chip, 0, sizeof(cps3snd_chip) );
-		chip->rombase = sndrom;
+//		chip->rombase = sndrom;
+		chip->rombase = NULL;
 		
 		/* 
 		 * CPS-3 Sound chip clock: 42954500 / 3 / 384 = 37286.89
@@ -131,7 +133,7 @@ void cps3SndUpdate()
 	}
 	
 	memset(pBurnSoundOut, 0, nBurnSoundLen * 2 * 2 );
-	signed char * base = (signed char *)chip->rombase;
+//	signed char * base = (signed char *)chip->rombase;
 	cps3_voice *vptr = &chip->voice[0];
 
 	for(int i=0; i<CPS3_VOICES; i++, vptr++) {
@@ -169,18 +171,19 @@ void cps3SndUpdate()
 				}
 
 				// 8bit sample store with 16bit bigend ???
-				sample = base[(start + pos) ^ 1];
+//				sample = base[(start + pos) ^ 1];
+				sample = (signed char)*getBlock((start + pos) ^ 1, 1);
 				frac += step;
 
 #if 1
 				int sample_l;
 
-				sample_l = ((sample * vol_r) >> 8) + buffer[0];
+				sample_l = ((sample * vol_l) >> 8) + buffer[0];
 				if (sample_l > 32767)		buffer[0] = 32767;
 				else if (sample_l < -32768)	buffer[0] = -32768;
 				else 						buffer[0] = sample_l;
 				
-				sample_l = ((sample * vol_l) >> 8) + buffer[1];
+				sample_l = ((sample * vol_r) >> 8) + buffer[1];
 				if (sample_l > 32767)		buffer[1] = 32767;
 				else if (sample_l < -32768)	buffer[1] = -32768;
 				else 						buffer[1] = sample_l;

@@ -48,12 +48,12 @@ static int A68KIRQAcknowledge(int nIRQ)
 
 #include "burnint.h"
 #include "x1010.h"
-
+#include "UniCache.h"
 static unsigned char *Mem = NULL, *MemEnd = NULL;
 static unsigned char *RamStart, *RamEnd;
 
 static unsigned char *Rom68K;
-static unsigned char *RomGfx;
+//static unsigned char *RomGfx;
 
 static unsigned char *Ram68K;
 static unsigned char *RamUnknown;
@@ -77,6 +77,7 @@ static unsigned char DrvReset = 0;
 static unsigned char bRecalcPalette = 0;
 
 static unsigned int gfx_code_mask;
+static unsigned char myangel2 = 0;
 //static unsigned char bMahjong = 0;
 static unsigned char Mahjong_keyboard = 0;
 
@@ -85,9 +86,10 @@ static int sva_x;
 static int sva_y;
 static int sva_w;
 static int sva_h;
-
+static unsigned long cacheFileSizeCount=0;
 #define M68K_CYCS	50000000 / 3
-
+int AppDebugPrintf(int nStatus, char* pszFormat, ...);
+#define EACH_BLOCK_SIZE 0x40000
 inline static unsigned int CalcCol(unsigned short nColour)
 {
 	int r, g, b;
@@ -151,9 +153,9 @@ static void tmp68301_update_timer( int i )
 			tmp68301_timer[i] = (int) (M68K_CYCS / duration);
 			//tmp68301_timer_counter[i] = 0;
 			//bprintf(PRINT_NORMAL, _T("Tmp68301: update timer #%d duration to %d (%8.3f)\n"), i, tmp68301_timer[i], duration);
-		} else
+		} //else
 			//logerror("CPU #0 PC %06X: TMP68301 error, timer %d duration is 0\n",activecpu_get_pc(),i);
-			bprintf(PRINT_ERROR, _T("Tmp68301: error timer %d duration is 0\n"), i, TCR, MAX1, MAX2);
+//			bprintf(PRINT_ERROR, _T("Tmp68301: error timer %d duration is 0\n"), i, TCR, MAX1, MAX2);
 	}
 }
 
@@ -530,7 +532,7 @@ static struct BurnDIPInfo pzlbowlDIPList[] = {
 
 	// Defaults
 	{0x15,	0xFF, 0xFF,	0x00, NULL},
-	{0x16,	0xFF, 0xFF,	0x80, NULL},
+	{0x16,	0xFF, 0xFF,	0x00, NULL},
 
 	// DIP 1
 	{0,		0xFE, 0,	2,	  "Test mode"},
@@ -796,7 +798,7 @@ static int MemIndex(int CodeSize, int GfxSize, int PcmSize, int ExtRamSize)
 {
 	unsigned char *Next; Next = Mem;
 	Rom68K 		= Next; Next += CodeSize;			// 68000 ROM
-	RomGfx		= Next; Next += GfxSize;			// GFX Rom
+	//RomGfx		= Next; Next += GfxSize;			// GFX Rom
 	X1010SNDROM	= Next; Next += PcmSize;			// PCM
 
 	RamStart	= Next;
@@ -820,11 +822,13 @@ static int MemIndex(int CodeSize, int GfxSize, int PcmSize, int ExtRamSize)
 
 unsigned char __fastcall grdiansReadByte(unsigned int sekAddress)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %x\n"), sekAddress);
 	}
+*/
 	return 0;
 }
 
@@ -848,11 +852,13 @@ unsigned short __fastcall grdiansReadWord(unsigned int sekAddress)
 
 void __fastcall grdiansWriteByte(unsigned int sekAddress, unsigned char byteValue)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to write byte value %x to location %x\n"), byteValue, sekAddress);
 	}
+*/
 }
 
 void __fastcall grdiansWriteWord(unsigned int sekAddress, unsigned short wordValue)
@@ -882,13 +888,13 @@ void __fastcall grdiansWriteWord(unsigned int sekAddress, unsigned short wordVal
 
 unsigned char __fastcall setaSoundRegReadByte(unsigned int sekAddress)
 {
-	bprintf(PRINT_NORMAL, _T("x1-010 to read byte value of location %x\n"), sekAddress);
+//	bprintf(PRINT_NORMAL, _T("x1-010 to read byte value of location %x\n"), sekAddress);
 	return 0;
 }
 
 unsigned short __fastcall setaSoundRegReadWord(unsigned int sekAddress)
 {
-	bprintf(PRINT_NORMAL, _T("x1-010 to read word value of location %x\n"), sekAddress);
+//	bprintf(PRINT_NORMAL, _T("x1-010 to read word value of location %x\n"), sekAddress);
 	return 0;
 }
 
@@ -941,7 +947,7 @@ void __fastcall setaSoundRegWriteWord(unsigned int sekAddress, unsigned short wo
 
 void __fastcall grdiansPaletteWriteByte(unsigned int sekAddress, unsigned char byteValue)
 {
-	bprintf(PRINT_NORMAL, _T("Pal to write byte value %x to location %x\n"), byteValue, sekAddress);
+//	bprintf(PRINT_NORMAL, _T("Pal to write byte value %x to location %x\n"), byteValue, sekAddress);
 }
 
 void __fastcall grdiansPaletteWriteWord(unsigned int sekAddress, unsigned short wordValue)
@@ -972,28 +978,94 @@ static int DrvDoReset()
 	return 0;
 }
 
-static void loadDecodeGfx(unsigned char *p, int cnt, int offset2x)
+static void loadDecodeGfx(unsigned char *p, int cnt, int offset2x, unsigned char * cacheHead)
 {
-	unsigned char * d = RomGfx;
+	unsigned char * d = cacheHead;
 	unsigned char * q = p + 1;
+	unsigned long fileOffset=0,i2=0;
 
-	for (int i=0; i<cnt; i++, p+=2, q+=2, d+=8) {
-		*(d+0) |= (( (*p >> 7) & 1 ) << offset2x) | (( (*q >> 7) & 1 ) << (offset2x + 1));
-		*(d+1) |= (( (*p >> 6) & 1 ) << offset2x) | (( (*q >> 6) & 1 ) << (offset2x + 1));
-		*(d+2) |= (( (*p >> 5) & 1 ) << offset2x) | (( (*q >> 5) & 1 ) << (offset2x + 1));
-		*(d+3) |= (( (*p >> 4) & 1 ) << offset2x) | (( (*q >> 4) & 1 ) << (offset2x + 1));
-		*(d+4) |= (( (*p >> 3) & 1 ) << offset2x) | (( (*q >> 3) & 1 ) << (offset2x + 1));
-		*(d+5) |= (( (*p >> 2) & 1 ) << offset2x) | (( (*q >> 2) & 1 ) << (offset2x + 1));
-		*(d+6) |= (( (*p >> 1) & 1 ) << offset2x) | (( (*q >> 1) & 1 ) << (offset2x + 1));
-		*(d+7) |= (( (*p >> 0) & 1 ) << offset2x) | (( (*q >> 0) & 1 ) << (offset2x + 1));
+	for(i2=0;i2<cnt;i2=i2+EACH_BLOCK_SIZE)
+	{
+		fileOffset=i2*8;
+		//AppDebugPrintf(3,"1:%X,2:%X,3:%X,4:%X",cacheFileSizeCount,cacheFileSizeCount,fileOffset,i2);
+		d = cacheHead;
+
+
+		if(fileOffset>=cacheFileSizeCount)
+		{
+			memset( cacheHead, 0,EACH_BLOCK_SIZE*8);
+			cacheFileSizeCount=cacheFileSizeCount+EACH_BLOCK_SIZE*8;
+		}
+		else
+		{
+			sceIoLseek( cacheFile, fileOffset, SEEK_SET );
+			sceIoRead( cacheFile, cacheHead, EACH_BLOCK_SIZE*8 );
+		}
+		for (int i=i2; i<i2+EACH_BLOCK_SIZE; i++, p+=2, q+=2, d+=8) {
+			*(d+0) |= (( (*p >> 7) & 1 ) << offset2x) | (( (*q >> 7) & 1 ) << (offset2x + 1));
+			*(d+1) |= (( (*p >> 6) & 1 ) << offset2x) | (( (*q >> 6) & 1 ) << (offset2x + 1));
+			*(d+2) |= (( (*p >> 5) & 1 ) << offset2x) | (( (*q >> 5) & 1 ) << (offset2x + 1));
+			*(d+3) |= (( (*p >> 4) & 1 ) << offset2x) | (( (*q >> 4) & 1 ) << (offset2x + 1));
+			*(d+4) |= (( (*p >> 3) & 1 ) << offset2x) | (( (*q >> 3) & 1 ) << (offset2x + 1));
+			*(d+5) |= (( (*p >> 2) & 1 ) << offset2x) | (( (*q >> 2) & 1 ) << (offset2x + 1));
+			*(d+6) |= (( (*p >> 1) & 1 ) << offset2x) | (( (*q >> 1) & 1 ) << (offset2x + 1));
+			*(d+7) |= (( (*p >> 0) & 1 ) << offset2x) | (( (*q >> 0) & 1 ) << (offset2x + 1));
+			
+		}
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, fileOffset, SEEK_SET );
+			if( EACH_BLOCK_SIZE*8 == sceIoWrite(cacheFile,cacheHead, EACH_BLOCK_SIZE*8 ) )
+				break;
+		}
+		
 	}
+	
 
 }
 
 static int grdiansInit()
 {
 	int nRet;
+	cacheFileSize=0x2000000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
 
+	
+	// Load Gfx
+	
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead, 0, 0x1000000);
+		
+		for (int i=0; i<8; i+=2) {
+			BurnLoadRom(uniCacheHead + 0x0200000, i+5, 1);
+			memcpy(uniCacheHead + 0x0600000, uniCacheHead + 0x0200000, 0x0200000);
+			BurnLoadRom(uniCacheHead + 0x0000000, i+4, 1);
+			loadDecodeGfx( uniCacheHead, 0x0800000 / 2, i,uniCacheHead+0x0800000);
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
 	Mem = NULL;
 	MemIndex(0x0200000, 0x2000000, 0x0200000, 0x00C000);
 	int nLen = MemEnd - (unsigned char *)0;
@@ -1006,18 +1078,9 @@ static int grdiansInit()
 	nRet = BurnLoadRom(Rom68K + 0x000000, 1, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Rom68K + 0x100001, 2, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Rom68K + 0x100000, 3, 2); if (nRet != 0) return 1;
-
-	// Load Gfx
-	unsigned char * tmpGfx = (unsigned char *)malloc(0x0800000);
-	for (int i=0; i<8; i+=2) {
-		BurnLoadRom(tmpGfx + 0x0200000, i+5, 1);
-		memcpy(tmpGfx + 0x0600000, tmpGfx + 0x0200000, 0x0200000);
-		BurnLoadRom(tmpGfx + 0x0000000, i+4, 1);
-		loadDecodeGfx( tmpGfx, 0x0800000 / 2, i );
-	}
-
-	free(tmpGfx);
-
+	
+	initCacheStructure(0.95);
+	
 	// Leave 1MB empty (addressable by the chip)
 	BurnLoadRom(X1010SNDROM + 0x100000, 12, 1);
 
@@ -1087,11 +1150,13 @@ static int grdiansInit()
 
 unsigned char __fastcall mj4simaiReadByte(unsigned int sekAddress)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %x\n"), sekAddress);
 	}
+*/
 	return 0;
 }
 
@@ -1128,11 +1193,13 @@ unsigned short __fastcall mj4simaiReadWord(unsigned int sekAddress)
 
 void __fastcall mj4simaiWriteByte(unsigned int sekAddress, unsigned char byteValue)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to write byte value %x to location %x\n"), byteValue, sekAddress);
 	}
+*/
 }
 
 void __fastcall mj4simaiWriteWord(unsigned int sekAddress, unsigned short wordValue)
@@ -1161,7 +1228,47 @@ void __fastcall mj4simaiWriteWord(unsigned int sekAddress, unsigned short wordVa
 static int mj4simaiInit()
 {
 	int nRet;
+	
+	cacheFileSize=0x2000000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
 
+	
+	// Load Gfx
+	
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead, 0, 0x1000000);
+		
+		for (int i=0; i<6; i+=2) {
+			BurnLoadRom(uniCacheHead + 0x0000000, i+4, 1);
+			BurnLoadRom(uniCacheHead + 0x0400000, i+5, 1);
+			loadDecodeGfx( uniCacheHead, 0x0800000 / 2, i,uniCacheHead+0x0800000 );
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+	
+	
 	Mem = NULL;
 	MemIndex(0x0200000, 0x2000000, 0x0500000, 0x000000);
 	int nLen = MemEnd - (unsigned char *)0;
@@ -1175,15 +1282,8 @@ static int mj4simaiInit()
 	nRet = BurnLoadRom(Rom68K + 0x100001, 2, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Rom68K + 0x100000, 3, 2); if (nRet != 0) return 1;
 
-	// Load Gfx
-	unsigned char * tmpGfx = (unsigned char *)malloc(0x0800000);
-	for (int i=0; i<6; i+=2) {
-		BurnLoadRom(tmpGfx + 0x0000000, i+4, 1);
-		BurnLoadRom(tmpGfx + 0x0400000, i+5, 1);
-		loadDecodeGfx( tmpGfx, 0x0800000 / 2, i );
-	}
-	free(tmpGfx);
-
+	initCacheStructure(0.95);
+	
 	// Leave 1MB empty (addressable by the chip)
 	BurnLoadRom(X1010SNDROM + 0x100000, 10, 1);
 
@@ -1250,11 +1350,13 @@ static int mj4simaiInit()
 
 unsigned char __fastcall myangelReadByte(unsigned int sekAddress)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %x\n"), sekAddress);
 	}
+*/
 	return 0;
 }
 
@@ -1280,11 +1382,13 @@ unsigned short __fastcall myangelReadWord(unsigned int sekAddress)
 
 void __fastcall myangelWriteByte(unsigned int sekAddress, unsigned char byteValue)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to write byte value %x to location %x\n"), byteValue, sekAddress);
 	}
+*/
 }
 
 void __fastcall myangelWriteWord(unsigned int sekAddress, unsigned short wordValue)
@@ -1311,7 +1415,44 @@ void __fastcall myangelWriteWord(unsigned int sekAddress, unsigned short wordVal
 static int myangelInit()
 {
 	int nRet;
+	cacheFileSize=0x1000000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
 
+	
+	// Load Gfx
+	
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead, 0, 0x1000000);
+		
+		for (int i=0; i<8; i+=2) {
+			BurnLoadRom(uniCacheHead + 0x0000000, i+4, 1);
+			BurnLoadRom(uniCacheHead + 0x0200000, i+5, 1);
+			loadDecodeGfx( uniCacheHead, 0x0400000 / 2, i,uniCacheHead+0x0800000 );
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
 	Mem = NULL;
 	MemIndex(0x0200000, 0x1000000, 0x0300000, 0x000000);
 	int nLen = MemEnd - (unsigned char *)0;
@@ -1325,14 +1466,8 @@ static int myangelInit()
 	nRet = BurnLoadRom(Rom68K + 0x100001, 2, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Rom68K + 0x100000, 3, 2); if (nRet != 0) return 1;
 
-	// Load Gfx
-	unsigned char * tmpGfx = (unsigned char *)malloc(0x0400000);
-	for (int i=0; i<8; i+=2) {
-		BurnLoadRom(tmpGfx + 0x0000000, i+4, 1);
-		BurnLoadRom(tmpGfx + 0x0200000, i+5, 1);
-		loadDecodeGfx( tmpGfx, 0x0400000 / 2, i );
-	}
-	free(tmpGfx);
+	initCacheStructure(0.95);
+
 
 	// Leave 1MB empty (addressable by the chip)
 	BurnLoadRom(X1010SNDROM + 0x100000, 12, 1);
@@ -1398,11 +1533,13 @@ static int myangelInit()
 
 unsigned char __fastcall myangel2ReadByte(unsigned int sekAddress)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %x\n"), sekAddress);
 	}
+*/
 	return 0;
 }
 
@@ -1428,11 +1565,13 @@ unsigned short __fastcall myangel2ReadWord(unsigned int sekAddress)
 
 void __fastcall myangel2WriteByte(unsigned int sekAddress, unsigned char byteValue)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to write byte value %x to location %x\n"), byteValue, sekAddress);
 	}
+*/
 }
 
 void __fastcall myangel2WriteWord(unsigned int sekAddress, unsigned short wordValue)
@@ -1459,7 +1598,44 @@ void __fastcall myangel2WriteWord(unsigned int sekAddress, unsigned short wordVa
 static int myangel2Init()
 {
 	int nRet;
+cacheFileSize=0x1800000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
 
+	
+	// Load Gfx
+	
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead, 0, 0x1000000);
+		
+		for (int i=0; i<8; i+=2) {
+			BurnLoadRom(uniCacheHead + 0x0000000, i+4, 1);
+			BurnLoadRom(uniCacheHead + 0x0200000, i+5, 1);
+			loadDecodeGfx( uniCacheHead, 0x0600000 / 2, i,uniCacheHead+0x0800000 );
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
 	Mem = NULL;
 	MemIndex(0x0200000, 0x1800000, 0x0500000, 0x000000);
 	int nLen = MemEnd - (unsigned char *)0;
@@ -1473,16 +1649,8 @@ static int myangel2Init()
 	nRet = BurnLoadRom(Rom68K + 0x100001, 2, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Rom68K + 0x100000, 3, 2); if (nRet != 0) return 1;
 
-	// Load Gfx
-	unsigned char * tmpGfx = (unsigned char *)malloc(0x0600000);
-	for (int i=0; i<8; i+=2) {
-		BurnLoadRom(tmpGfx + 0x0400000, i+4, 1);
-		BurnLoadRom(tmpGfx + 0x0000000, i+5, 1);
-		memcpy(tmpGfx + 0x0400000, tmpGfx + 0x0200000, 0x0200000);
-		loadDecodeGfx( tmpGfx, 0x0600000 / 2, i );
-	}
-	free(tmpGfx);
-
+	initCacheStructure(0.95);
+	
 	// Leave 1MB empty (addressable by the chip)
 	BurnLoadRom(X1010SNDROM + 0x100000, 12, 1);
 
@@ -1534,6 +1702,7 @@ static int myangel2Init()
 	sva_w = 376;
 	sva_h = 240;
 
+	myangel2 = 1;
 	gfx_code_mask = (0x0600000 * 4 / 64) - 1;
 
 	x1010_sound_init(50000000 / 3, 0x0000);
@@ -1547,11 +1716,13 @@ static int myangel2Init()
 
 unsigned char __fastcall pzlbowlReadByte(unsigned int sekAddress)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %x\n"), sekAddress);
 	}
+*/
 	return 0;
 }
 
@@ -1576,8 +1747,8 @@ unsigned short __fastcall pzlbowlReadWord(unsigned int sekAddress)
 			/*  The game checks for a specific value read from the ROM region.
     			The offset to use is stored in RAM at address 0x20BA16 */
 			unsigned int address = (*(unsigned short *)(Ram68K + 0x00ba16) << 16) | *(unsigned short *)(Ram68K + 0x00ba18);
-			bprintf(PRINT_NORMAL, _T("pzlbowl Protection read address %08x [%02x %02x %02x %02x]\n"), address,
-			        Rom68K[ address - 2 ], Rom68K[ address - 1 ], Rom68K[ address - 0 ], Rom68K[ address + 1 ]);
+//			bprintf(PRINT_NORMAL, _T("pzlbowl Protection read address %08x [%02x %02x %02x %02x]\n"), address,
+//			        Rom68K[ address - 2 ], Rom68K[ address - 1 ], Rom68K[ address - 0 ], Rom68K[ address + 1 ]);
 			return Rom68K[ address - 2 ]; }
 //		default:
 //			bprintf(PRINT_NORMAL, _T("Attempt to read word value of location %x\n"), sekAddress);
@@ -1587,11 +1758,13 @@ unsigned short __fastcall pzlbowlReadWord(unsigned int sekAddress)
 
 void __fastcall pzlbowlWriteByte(unsigned int sekAddress, unsigned char byteValue)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to write byte value %x to location %x\n"), byteValue, sekAddress);
 	}
+*/
 }
 
 void __fastcall pzlbowlWriteWord(unsigned int sekAddress, unsigned short wordValue)
@@ -1619,7 +1792,43 @@ void __fastcall pzlbowlWriteWord(unsigned int sekAddress, unsigned short wordVal
 static int pzlbowlInit()
 {
 	int nRet;
+	cacheFileSize=0x1000000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
 
+	
+	// Load Gfx
+	
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead, 0, 0x1000000);
+		
+		for (int i=0; i<4; i++) {
+			BurnLoadRom(uniCacheHead, i+2, 1);
+			loadDecodeGfx( uniCacheHead, 0x0400000 / 2, i*2,uniCacheHead+0x0800000 );
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
 	Mem = NULL;
 	MemIndex(0x0100000, 0x1000000, 0x0500000, 0x000000);
 	int nLen = MemEnd - (unsigned char *)0;
@@ -1631,14 +1840,8 @@ static int pzlbowlInit()
 	nRet = BurnLoadRom(Rom68K + 0x000001, 0, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Rom68K + 0x000000, 1, 2); if (nRet != 0) return 1;
 
-	// Load Gfx
-	unsigned char * tmpGfx = (unsigned char *)malloc(0x0400000);
-	for (int i=0; i<4; i++) {
-		BurnLoadRom(tmpGfx, i+2, 1);
-		loadDecodeGfx( tmpGfx, 0x0400000 / 2, i*2 );
-	}
-	free(tmpGfx);
-
+	initCacheStructure(0.95);
+	
 	// Leave 1MB empty (addressable by the chip)
 	BurnLoadRom(X1010SNDROM + 0x100000, 6, 1);
 
@@ -1703,11 +1906,13 @@ static int pzlbowlInit()
 
 unsigned char __fastcall penbrosReadByte(unsigned int sekAddress)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %x\n"), sekAddress);
 	}
+*/
 	return 0;
 }
 
@@ -1731,11 +1936,13 @@ unsigned short __fastcall penbrosReadWord(unsigned int sekAddress)
 
 void __fastcall penbrosWriteByte(unsigned int sekAddress, unsigned char byteValue)
 {
+/*
 	switch (sekAddress) {
 
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to write byte value %x to location %x\n"), byteValue, sekAddress);
 	}
+*/
 }
 
 void __fastcall penbrosWriteWord(unsigned int sekAddress, unsigned short wordValue)
@@ -1763,7 +1970,43 @@ void __fastcall penbrosWriteWord(unsigned int sekAddress, unsigned short wordVal
 static int penbrosInit()
 {
 	int nRet;
+	cacheFileSize=0x1000000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
 
+	
+	// Load Gfx
+	
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead, 0, 0x1000000);
+		
+		for (int i=0; i<3; i++) {
+			BurnLoadRom(uniCacheHead, i+2, 1);
+			loadDecodeGfx( uniCacheHead, 0x0400000 / 2, i*2,uniCacheHead+0x0800000 );
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
 	Mem = NULL;
 	MemIndex(0x0100000, 0x1000000, 0x0300000, 0x040000);
 	int nLen = MemEnd - (unsigned char *)0;
@@ -1775,14 +2018,8 @@ static int penbrosInit()
 	nRet = BurnLoadRom(Rom68K + 0x000001, 0, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Rom68K + 0x000000, 1, 2); if (nRet != 0) return 1;
 
-	// Load Gfx
-	unsigned char * tmpGfx = (unsigned char *)malloc(0x0400000);
-	for (int i=0; i<3; i++) {
-		BurnLoadRom(tmpGfx, i+2, 1);
-		loadDecodeGfx( tmpGfx, 0x0400000 / 2, i*2 );
-	}
-	free(tmpGfx);
-
+	initCacheStructure(0.95);
+	
 	// Leave 1MB empty (addressable by the chip)
 	BurnLoadRom(X1010SNDROM + 0x100000, 5, 1);
 
@@ -1856,15 +2093,25 @@ static int grdiansExit()
 
 	free(Mem);
 	Mem = NULL;
-
+	destroyUniCache();
 //	bMahjong = 0;
+	myangel2 = 0;
 
 	return 0;
 }
 
 
+#ifndef BUILD_PSP
+
 #define	DRAWGFX( op )												\
-	code &= gfx_code_mask;											\
+	if(myangel2) {													\
+		code &= 0x7FFFF;											\
+		if((code & 0x60000) == 0x60000) {							\
+			code &= 0x1FFFF;										\
+		}															\
+	} else {														\
+		code &= gfx_code_mask;										\
+	}																\
 	if (!code) return;												\
 	sx -= sva_x;													\
 	sy -= sva_y;													\
@@ -1958,6 +2205,111 @@ static int grdiansExit()
 				}													\
 	}																\
 
+#else
+
+#define	DRAWGFX( op )												\
+	if(myangel2) {													\
+		code &= 0x7FFFF;											\
+		if((code & 0x60000) == 0x60000) {							\
+			code &= 0x1FFFF;										\
+		}															\
+	} else {														\
+		code &= gfx_code_mask;										\
+	}																\
+	if (!code) return;												\
+	sx -= sva_x;													\
+	sy -= sva_y;													\
+																	\
+	if (sx <= -8) return;											\
+	if (sx >= sva_w) return;										\
+	if (sy <= -8) return;											\
+	if (sy >= sva_h) return;										\
+																	\
+	unsigned short * pd = (unsigned short *)pBurnDraw;				\
+	unsigned char * ps = getBlock(code << 6,64); 		  			\
+	unsigned int * pc = CurPal + (color << 4);						\
+																	\
+	if (sx < 0 || sx > sva_w - 8 || sy < 0 || sy > sva_h - 8) {		\
+		if ( flipy ) {												\
+			pd += (sy + 7) * 512 + sx;								\
+			if ( flipx ) {											\
+				for (int i=7;i>=0;i--,pd-=512)						\
+					if ( sy+i < 0 || sy+i >= sva_h )				\
+						ps += 8;									\
+					else											\
+						for (int j=7;j>=0;j--,ps++) {				\
+							unsigned char c = op;					\
+							if ( c && sx+j >= 0 && sx+j < sva_w ) 	\
+								*(pd + j) = pc[ c ];				\
+						}											\
+			} else													\
+				for (int i=7;i>=0;i--,pd-=512)						\
+					if ( sy+i < 0 || sy+i >= sva_h )				\
+						ps += 8;									\
+					else											\
+						for (int j=0;j<8;j++,ps++) {				\
+							unsigned char c = op;					\
+							if ( c && sx+j >= 0 && sx+j < sva_w ) 	\
+								*(pd + j) = pc[ c ];				\
+						}											\
+		} else {													\
+			pd += sy * 512 + sx;									\
+			if ( flipx ) {											\
+				for (int i=0;i<8;i++,pd+=512)						\
+					if ( sy+i < 0 || sy+i >= sva_h )				\
+						ps += 8;									\
+					else											\
+						for (int j=7;j>=0;j--,ps++) {				\
+							unsigned char c = op;					\
+							if ( c && sx+j >= 0 && sx+j < sva_w ) 	\
+								*(pd + j) = pc[ c ];				\
+						}											\
+			} else													\
+				for (int i=0;i<8;i++,pd+=512)						\
+					if ( sy+i < 0 || sy+i >= sva_h )				\
+						ps += 8;									\
+					else											\
+						for (int j=0;j<8;j++,ps++) {				\
+							unsigned char c = op;					\
+							if ( c && sx+j >= 0 && sx+j < sva_w ) 	\
+								*(pd + j) = pc[ c ];				\
+						}											\
+		}															\
+		return;														\
+	}																\
+																	\
+																	\
+	if ( flipy ) {													\
+		pd += (sy + 7) * 512 + sx;									\
+		if ( flipx ) 												\
+			for (int i=0;i<8;i++,pd-=512)							\
+				for (int j=7;j>=0;j--,ps++) {						\
+					unsigned char c = op;							\
+					if ( c ) *(pd + j) = pc[ c ];					\
+				}													\
+		else														\
+			for (int i=0;i<8;i++,pd-=512)							\
+				for (int j=0;j<8;j++,ps++) {						\
+					unsigned char c = op;							\
+					if ( c ) *(pd + j) = pc[ c ];					\
+				}													\
+	} else {														\
+		pd += sy * 512 + sx;										\
+		if ( flipx ) 												\
+			for (int i=0;i<8;i++,pd+=512)							\
+				for (int j=7;j>=0;j--,ps++) {						\
+					unsigned char c = op;							\
+					if ( c ) *(pd + j) = pc[ c ];					\
+				}													\
+		else														\
+			for (int i=0;i<8;i++,pd+=512)							\
+				for (int j=0;j<8;j++,ps++) {						\
+					unsigned char c = op;							\
+					if ( c ) *(pd + j) = pc[ c ];					\
+				}													\
+	}																\
+
+#endif
 
 static void drawgfx0(unsigned int code,unsigned int color,int flipx,int flipy,int sx,int sy)
 {
@@ -2004,7 +2356,12 @@ typedef void (*pDrawgfx)(unsigned int,unsigned int,int,int,int,int);
 
 static void DrvDraw()
 {
+#ifndef BUILD_PSP
 	memset(pBurnDraw, 0, sva_w * sva_h * 2);
+#else
+	extern void clear_gui_texture(int color, int w, int h);
+	clear_gui_texture(0, sva_w, sva_h);
+#endif	
 
 	if (RamVReg[0x30/2] & 1) { // Blank Screen
 		memcpy(RamSprBak, RamSpr, 0x040000);
@@ -2181,6 +2538,8 @@ static void DrvDraw()
 
 static int grdiansFrame()
 {
+	
+
 	if (DrvReset)														// Reset machine
 		DrvDoReset();
 
@@ -2292,7 +2651,7 @@ struct BurnDriver BurnDrvGrdians = {
 	"grdians", NULL, NULL, "1995",
 	"Guardians\0Denjin Makai II\0", NULL, "Banpresto", "Newer Seta",
 	L"Guardians\0\u96FB\u795E\u9B54\u584A \uFF29\uFF29\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, grdiansRomInfo, grdiansRomName, grdiansInputInfo, grdiansDIPInfo,
 	grdiansInit, grdiansExit, grdiansFrame, NULL, grdiansScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	304, 232, 4, 3
@@ -2302,7 +2661,7 @@ struct BurnDriver BurnDrvMj4simai = {
 	"mj4simai", NULL, NULL, "1996",
 	"Wakakusamonogatari Mahjong Yonshimai (Japan)\0", NULL, "Maboroshi Ware", "Newer Seta",
 	L"\u82E5\u8349\u7269\u8A9E \u9EBB\u96C0\u56DB\u59C9\u59B9 (Japan)\0Wakakusamonogatari Mahjong Yonshimai\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 1, HARDWARE_MISC_POST90S, GBF_MAHJONG, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 1, HARDWARE_MISC_POST90S,
 	NULL, mj4simaiRomInfo, mj4simaiRomName, mj4simaiInputInfo, mj4simaiDIPInfo,
 	mj4simaiInit, grdiansExit, grdiansFrame, NULL, grdiansScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	384, 240, 4, 3	// 16, 9
@@ -2312,7 +2671,7 @@ struct BurnDriver BurnDrvMyangel = {
 	"myangel", NULL, NULL, "1996",
 	"Kosodate Quiz My Angel (Japan)\0", NULL, "Namco", "Newer Seta",
 	L"\u5B50\u80B2\u3066\u30AF\u30A4\u30BA \u30DE\u30A4 \u30A8\u30F3\u30B8\u30A7\u30EB (Japan)\0Kosodate Quiz My Angel\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_QUIZ, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, myangelRomInfo, myangelRomName, myangelInputInfo, myangelDIPInfo,
 	myangelInit, grdiansExit, grdiansFrame, NULL, grdiansScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	376, 240, 4, 3
@@ -2322,7 +2681,7 @@ struct BurnDriver BurnDrvMyangel2 = {
 	"myangel2", NULL, NULL, "1996",
 	"Kosodate Quiz My Angel 2 (Japan)\0", NULL, "Namco", "Newer Seta",
 	L"\u5B50\u80B2\u3066\u30AF\u30A4\u30BA \u30DE\u30A4 \u30A8\u30F3\u30B8\u30A7\u30EB \uFF12 (Japan)\0Kosodate Quiz My Angel 2\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_QUIZ, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, myangel2RomInfo, myangel2RomName, myangelInputInfo, myangel2DIPInfo,
 	myangel2Init, grdiansExit, grdiansFrame, NULL, grdiansScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	376, 240, 4, 3
@@ -2332,7 +2691,7 @@ struct BurnDriver BurnDrvPzlbowl = {
 	"pzlbowl", NULL, NULL, "1999",
 	"Puzzle De Bowling (Japan)\0", NULL, "Nihon System / Moss", "Newer Seta",
 	L"Puzzle De Bowling\0\u30D1\u30BA\u30EB \uFF24\uFF25 \u30DC\u30FC\u30EA\u30F3\u30B0\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, pzlbowlRomInfo, pzlbowlRomName, grdiansInputInfo, pzlbowlDIPInfo,
 	pzlbowlInit, grdiansExit, grdiansFrame, NULL, grdiansScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	384, 240, 4, 3
@@ -2342,7 +2701,7 @@ struct BurnDriver BurnDrvPenbros = {
 	"penbros", NULL, NULL, "2000",
 	"Penguin Brothers (Japan)\0", NULL, "Subsino", "Newer Seta",
 	L"\u30DA\u30F3\u30AE\u30F3 \u30D6\u30E9\u30B6\u30FC\u30BA (Japan)\0Penguin Brothers\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, penbrosRomInfo, penbrosRomName, penbrosInputInfo, penbrosDIPInfo,
 	penbrosInit, grdiansExit, grdiansFrame, NULL, grdiansScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 224, 4, 3

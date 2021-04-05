@@ -275,12 +275,13 @@ static int DrvInit()
 	if (Mem == NULL) {
 		return 1;
 	}
-	memset (Mem, 0, 0x70000 + 0x20);
+	memset (Mem, 0, 0x70000 + 0x20 + 0x38 * sizeof(int));
 
 	pFMBuffer = (short *)malloc (nBurnSoundLen * 6 * sizeof(short));
 	if (pFMBuffer == NULL) {
 		return 1;
 	}
+	memset (pFMBuffer, 0, nBurnSoundLen * 6 * sizeof(short));
 
 	Rom  = Mem + 0x00000;
 	Gfx0 = Mem + 0x10000;
@@ -350,9 +351,14 @@ static int DrvExit()
 }
 
 
+#ifndef BUILD_PSP
+#define Y_SIZE	240
+#else
+#define Y_SIZE	512
+#endif
+
 //----------------------------------------------------------------------------------------------
 // Drawing Routines
-
 
 static inline void mystston_putpix(int x, int y, unsigned char src, int color, int transp)
 {
@@ -361,9 +367,9 @@ static inline void mystston_putpix(int x, int y, unsigned char src, int color, i
 	if (y > 255 || x > 239 || x < 0 || (!src && transp)) return;
 
 	if (mystston_flipscreen)
-		pos = ((255 - y) * 240) + (239 - x);
+		pos = ((255 - y) * Y_SIZE) + (239 - x);
 	else
-		pos = (y * 240) + x;
+		pos = (y * Y_SIZE) + x;
 
 	pxl = Palette[color | src];
 
@@ -454,9 +460,9 @@ static int DrvDraw()
 
 				int pos;
 				if (mystston_flipscreen)
-					pos = ((255 - y) * 240) + (239 - x);
+					pos = ((255 - y) * Y_SIZE) + (239 - x);
 				else
-					pos = (y * 240) + x;
+					pos = (y * Y_SIZE) + x;
 
 				int pxl = Palette[color | *src];
 
@@ -467,6 +473,8 @@ static int DrvDraw()
 
 	return 0;
 }
+
+#undef Y_SIZE
 
 static void mystston_interrupt_handler(int scanline)
 {
@@ -627,7 +635,7 @@ struct BurnDriver BurnDrvmystston = {
 	"mystston", NULL, NULL, "1984",
 	"Mysterious Stones - Dr. John's Adventure\0", NULL, "Technos", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, myststonRomInfo, myststonRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	240, 256, 3, 4
@@ -668,7 +676,7 @@ struct BurnDriver BurnDrvmyststno = {
 	"myststno", "mystston", NULL, "1984",
 	"Mysterious Stones - Dr. Kick in Adventure\0", NULL, "Technos", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, myststnoRomInfo, myststnoRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	240, 256, 3, 4

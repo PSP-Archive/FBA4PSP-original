@@ -31,7 +31,7 @@ static void fd1094_setstate_and_decrypt(int state)
 	UINT32 addr;
 
 	// force a flush of the prefetch cache
-	m68k_set_reg(M68K_REG_PREF_ADDR, 0x1000);
+	//m68k_set_reg(M68K_REG_PREF_ADDR, 0x1000);
 	
 	/* set the FD1094 state ready to decrypt.. */
 	state = fd1094_set_state(fd1094_key,state);
@@ -149,6 +149,7 @@ void fd1094_driver_init()
 	for (i=0;i<S16_NUMCACHE;i++)
 	{
 		fd1094_cacheregion[i]=(UINT16*)malloc(fd1094_cpuregionsize);
+		memset(fd1094_cacheregion[i], 0, fd1094_cpuregionsize);
 	}
 
 	/* flush the cached state array */

@@ -7,7 +7,6 @@
 #include "m6809_intf.h"
 #include "hd6309_intf.h"
 #include "m6800_intf.h"
-#include "s2650_intf.h"
 
 bool bCheatsAllowed;
 CheatInfo* pCheatInfo = NULL;
@@ -60,10 +59,6 @@ static void set_cpu_type()
 	{
 		nCpuType = 8;			// M6800 & Family
 	}
-	else if (s2650Count)
-	{
-		nCpuType = 9;			// S2650
-	}
 	else
 	{
 		nCpuType = 0;			// Unknown (don't use cheats)
@@ -104,10 +99,6 @@ static void cpu_open(int nCpu)
 		
 		case 8:
 		break;
-		
-		case 9: 
-			s2650Open(nCpu);
-		break;
 	}
 }
 
@@ -144,10 +135,6 @@ static void cpu_close()
 		break;
 		
 		case 8:
-		break;
-		
-		case 9:
-			s2650Close();
 		break;
 	}
 }
@@ -186,10 +173,6 @@ static int cpu_get_active()
 		case 8: {
 			return -1;
 		}
-		
-		case 9: {
-			return nActiveS2650;
-		}
 	}
 }
 
@@ -220,9 +203,6 @@ static unsigned char cpu_read_byte(unsigned int a)
 			
 		case 8:
 			return M6800ReadByte(a);
-			
-		case 9:
-			return s2650_read(a);
 	}
 
 	return 0;
@@ -262,10 +242,6 @@ static void cpu_write_byte(unsigned int a, unsigned char d)
 		
 		case 8:
 			M6800WriteByte(a, d);
-		break;
-		
-		case 9:
-			s2650_write(a, d);
 		break;
 	}
 }

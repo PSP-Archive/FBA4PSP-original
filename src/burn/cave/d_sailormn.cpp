@@ -74,7 +74,7 @@ STDINPUTINFO(sailormn);
 
 static struct BurnDIPInfo sailormnDIPList[] = {
 	// Region
-	{0x15,	0xFF, 0xFF,	0x02, NULL},
+	{0x15,	0xFF, 0xFF,	0x00, NULL},
 	{0,		0xFD, 0,	6,	  "Region"},
 	{0x15,	0x01, 0x07, 0x00, "Japan"},
 	{0x15,	0x01, 0x07, 0x01, "U.S.A."},
@@ -235,6 +235,7 @@ static int drvZInit()
 	ZetMapArea    (0xE000, 0xFFFF, 2, RamZ80);			//
 
 	ZetMemEnd();
+	ZetClose();
 
 	return 0;
 }
@@ -482,7 +483,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+destroyUniCache();
 	return 0;
 }
 
@@ -573,6 +574,8 @@ static int DrvFrame()
 	int nCyclesTotal[2];
 
 	int nCyclesSegment;
+
+	
 
 	if (DrvReset) {														// Reset machine
 		DrvDoReset();
@@ -689,7 +692,7 @@ static int MemIndex()
 	Rom01			= Next; Next += 0x080000;		// 68K program
 	Rom02			= Next; Next += 0x200000;
 	RomZ80			= Next; Next += 0x080000;
-	CaveSpriteROM	= Next; Next += 0x800000;
+/*	CaveSpriteROM	= Next; Next += 0x800000;
 	CaveTileROM[0]	= Next; Next += 0x400000;		// Tile layer 0
 	CaveTileROM[1]	= Next; Next += 0x400000;		// Tile layer 1
 	if (nWhichGame) {
@@ -697,7 +700,7 @@ static int MemIndex()
 	} else {
 		CaveTileROM[2]	= Next; Next += 0x01400000;		// Tile layer 2 (Sailor Moon)
 	}
-	MSM6295ROM		= Next; Next += 0x400000;		// MSM6295 ADPCM data
+*/	MSM6295ROM		= Next; Next += 0x400000;		// MSM6295 ADPCM data
 	RamStart		= Next;
 	Ram01			= Next; Next += 0x010002;		// CPU #0 work RAM
 	Ram02			= Next; Next += 0x008000;		//
@@ -739,7 +742,46 @@ static void sailormnDecodeTiles(unsigned char* pData, int nLen)
 
 	return;
 }
+static void sailormnDecodeTiles2(unsigned char* pData, int nLen, unsigned long fileOffset)
+{	
+	unsigned char* pOrg = pData + 0x100000 - 1;
+	unsigned char* pDest = pData + (0x100000-1)+(nLen - 1);
 
+	for(int k=nLen-0x100000;k>=(nLen>>1);k=k-0x100000)
+	{
+		pOrg= pData + 0x100000 - 1;
+		sceIoLseek( cacheFile, fileOffset+k, SEEK_SET );
+		sceIoRead( cacheFile,pData , 0x100000 );
+		
+		for (int i = 0; i < 0x100000; i++, pOrg--, pDest -= 2) {
+			pDest[0] = *pOrg & 15;
+			pDest[1] = *pOrg >> 4;
+		}
+	}
+	for(int j=0;j<5;j++)
+	{
+		sceIoLseek( cacheFile, fileOffset+nLen, SEEK_SET );
+		if( nLen == sceIoWrite(cacheFile,pData+0x100000, nLen ) )
+			break;
+	}
+
+	sceIoLseek( cacheFile, fileOffset, SEEK_SET );
+	sceIoRead( cacheFile,pData , nLen );
+	pOrg = pData + (nLen>>1) - 1;
+	pDest = pData + (nLen - 2);
+
+	for (int i = 0; i < (nLen>>1); i++, pOrg--, pDest -= 2) {
+		pDest[0] = *pOrg & 15;
+		pDest[1] = *pOrg >> 4;
+	}
+	for(int j=0;j<5;j++)
+	{
+		sceIoLseek( cacheFile, fileOffset, SEEK_SET );
+		if( nLen == sceIoWrite(cacheFile,pData, nLen ) )
+			break;
+	}
+	return;
+}
 static int sailormnLoadRoms()
 {
 	unsigned char* pTemp;
@@ -750,7 +792,7 @@ static int sailormnLoadRoms()
 
 	// Load Z80 ROM
 	BurnLoadRom(RomZ80, 2, 1);
-
+/*
 	pTemp = (unsigned char*)malloc(0x400000);
 	BurnLoadRom(pTemp + 0x000000, 3, 1);
 	BurnLoadRom(pTemp + 0x200000, 4, 1);
@@ -782,7 +824,7 @@ static int sailormnLoadRoms()
 		CaveTileROM[2][(i << 2) + 3] |= (pTemp[i] & 0xC0) >> 2;
 	}
 	free(pTemp);
-
+*/
 	// Load OKIM6295 data
 	BurnLoadRom(MSM6295ROM + 0x0000000, 15, 1);
 	BurnLoadRom(MSM6295ROM + 0x0200000, 16, 1);
@@ -800,7 +842,7 @@ static int agalletLoadRoms()
 
 	// Load Z80 ROM
 	BurnLoadRom(RomZ80, 1, 1);
-
+/*
 	BurnLoadRom(CaveSpriteROM + 0x000000, 2, 1);
 	BurnLoadRom(CaveSpriteROM + 0x200000, 3, 1);
 	sailormnDecodeSprites(CaveSpriteROM, 0x400000);
@@ -821,7 +863,7 @@ static int agalletLoadRoms()
 		CaveTileROM[2][(i << 2) + 3] |= (pTemp[i] & 0xC0) >> 2;
 	}
 	free(pTemp);
-
+*/
 	// Load OKIM6295 data
 	BurnLoadRom(MSM6295ROM + 0x0000000, 8, 1);
 	BurnLoadRom(MSM6295ROM + 0x0200000, 9, 1);
@@ -889,6 +931,141 @@ static int gameInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+	
+	if (nWhichGame) {
+		cacheFileSize=0x1400000;
+	}else{
+		cacheFileSize=0x2400000;
+	}
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x800000;
+	CaveTileROMOffset[1]=CaveTileROMOffset[0]+0x400000;
+	CaveTileROMOffset[2]=CaveTileROMOffset[1]+0x400000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead,0,0x1000000);
+		unsigned char* pTemp;
+		if(nWhichGame)
+		{
+			BurnLoadRom(uniCacheHead + 0x000000, 2, 1);
+			BurnLoadRom(uniCacheHead + 0x200000, 3, 1);
+			sailormnDecodeSprites(uniCacheHead, 0x400000);
+			for(int j=0;j<5;j++)
+			{
+				sceIoLseek( cacheFile, 0, SEEK_SET );
+				if( 0x800000 == sceIoWrite(cacheFile,uniCacheHead, 0x800000 ) )
+					break;
+			}
+			BurnLoadRom(uniCacheHead, 4, 1);
+			sailormnDecodeTiles(uniCacheHead, 0x200000);
+			BurnLoadRom(uniCacheHead+0x400000, 5, 1);
+			sailormnDecodeTiles(uniCacheHead+0x400000, 0x200000);
+			BurnLoadRom(uniCacheHead+0x800000, 6, 1);
+			sailormnDecodeTiles(uniCacheHead+0x800000, 0x200000);
+
+			pTemp = uniCacheHead+0xC00000;
+			BurnLoadRom(pTemp, 7, 1);
+			for (int i = 0; i < 0x0100000; i++) {
+				(uniCacheHead+0x800000)[(i << 2) + 0] |= (pTemp[i] & 0x03) << 4;
+				(uniCacheHead+0x800000)[(i << 2) + 1] |= (pTemp[i] & 0x0C) << 2;
+				(uniCacheHead+0x800000)[(i << 2) + 2] |= (pTemp[i] & 0x30);
+				(uniCacheHead+0x800000)[(i << 2) + 3] |= (pTemp[i] & 0xC0) >> 2;
+			}
+		
+			for(int j=0;j<5;j++)
+			{
+				sceIoLseek( cacheFile,0x800000, SEEK_SET );
+				if( 0xC00000 == sceIoWrite(cacheFile,uniCacheHead, 0xC00000 ) )
+					break;
+			}
+		}
+		else
+		{   
+			pTemp = uniCacheHead+0x800000;
+			BurnLoadRom(pTemp + 0x000000, 3, 1);
+			BurnLoadRom(pTemp + 0x200000, 4, 1);
+			for (int i = 0; i < 0x400000; i++) {
+				uniCacheHead[i ^ 0x950C4] = pTemp[BITSWAP24(i, 23, 22, 21, 20, 15, 10, 12, 6, 11, 1, 13, 3, 16, 17, 2, 5, 14, 7, 18, 8, 4, 19, 9, 0)];
+			}
+			sailormnDecodeSprites(uniCacheHead, 0x400000);
+			for(int j=0;j<5;j++)
+			{
+				sceIoLseek( cacheFile, 0, SEEK_SET );
+				if( 0x800000 == sceIoWrite(cacheFile,uniCacheHead, 0x800000 ) )
+					break;
+			}
+			BurnLoadRom(uniCacheHead, 5, 1);
+			sailormnDecodeTiles(uniCacheHead, 0x200000);
+			BurnLoadRom(uniCacheHead+0x400000, 6, 1);
+			sailormnDecodeTiles(uniCacheHead+0x400000, 0x200000);
+			for(int j=0;j<5;j++)
+			{
+				sceIoLseek( cacheFile, 0x800000, SEEK_SET );
+				if( 0x800000 == sceIoWrite(cacheFile,uniCacheHead, 0x800000 ) )
+					break;
+			}
+			BurnLoadRom(uniCacheHead + 0x000000, 7, 1);
+			BurnLoadRom(uniCacheHead + 0x200000, 8, 1);
+			BurnLoadRom(uniCacheHead + 0x400000, 9, 1);
+			BurnLoadRom(uniCacheHead + 0x600000, 10, 1);
+			BurnLoadRom(uniCacheHead + 0x800000, 11, 1);
+			for(int j=0;j<5;j++)
+			{
+				sceIoLseek( cacheFile, 0x1000000, SEEK_SET );
+				if( 0xA00000 == sceIoWrite(cacheFile,uniCacheHead, 0xA00000 ) )
+					break;
+			}
+			sailormnDecodeTiles2(uniCacheHead, 0xA00000,0x1000000);
+		
+
+			BurnLoadRom(pTemp + 0x000000, 12, 1);
+			BurnLoadRom(pTemp + 0x200000, 13, 1);
+			BurnLoadRom(pTemp + 0x400000, 14, 1);
+			for (int k=0;k<0x500000;k=k+0x100000)
+			{	
+				sceIoLseek( cacheFile, 4*k+0x1000000, SEEK_SET );
+				sceIoRead( cacheFile,uniCacheHead , 0x400000 );
+				for (int i = k; i < k+0x100000; i++) {
+					uniCacheHead[((i-k) << 2) + 0] |= (pTemp[i] & 0x03) << 4;
+					uniCacheHead[((i-k) << 2) + 1] |= (pTemp[i] & 0x0C) << 2;
+					uniCacheHead[((i-k) << 2) + 2] |= (pTemp[i] & 0x30);
+					uniCacheHead[((i-k) << 2) + 3] |= (pTemp[i] & 0xC0) >> 2;
+				}
+				for(int j=0;j<5;j++)
+				{
+					sceIoLseek( cacheFile, 4*k+0x1000000, SEEK_SET );
+					if( 0x400000 == sceIoWrite(cacheFile,uniCacheHead, 0x400000 ) )
+						break;
+				}
+				
+			}		
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+	
 
 	// Find out how much memory is needed
 	Mem = NULL;
@@ -901,9 +1078,10 @@ static int gameInit()
 	MemIndex();													// Index the allocated memory
 
 	EEPROMInit(1024, 16);										// EEPROM has 1024 bits, uses 16-bit words
-
+	initCacheStructure(0.7);
+	
 	if (nWhichGame) {
-		unsigned char* data = (unsigned char*)malloc(48);
+		unsigned char data[48];//* data = (unsigned char*)malloc(48);
 		for (int i = 0; i < 16; i++) {
 			data[i + 0x00] = 0xFF;
 			data[i + 0x10] = 0x00;
@@ -1099,7 +1277,7 @@ struct BurnDriver BurnDrvSailorMoonB = {
 	"sailormn", NULL, NULL, "1995",
 	"Pretty Soldier Sailor Moon (version 95/03/22B)\0", NULL, "BanPresto / Gazelle", "Cave",
 	L"Pretty Soldier Sailor Moon (version 95/03/22B)\0\u7F8E\u5C11\u5973\u6226\u58EB \u30BB\u30FC\u30E9\u30FC\u30E0\u30FC\u30F3 (version 95/03/22B)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, sailormnRomInfo, sailormnRomName, sailormnInputInfo, sailormnDIPInfo,
 	sailormnInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,
@@ -1110,7 +1288,7 @@ struct BurnDriver BurnDrvSailorMoon = {
 	"sailormo", "sailormn", NULL, "1995",
 	"Pretty Soldier Sailor Moon (version 95/03/22)\0", NULL, "BanPresto / Gazelle", "Cave",
 	L"Pretty Soldier Sailor Moon (version 95/03/22)\0\u7F8E\u5C11\u5973\u6226\u58EB \u30BB\u30FC\u30E9\u30FC\u30E0\u30FC\u30F3 (version 95/03/22)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, sailormoRomInfo, sailormoRomName, sailormnInputInfo, sailormnDIPInfo,
 	sailormnInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,
@@ -1121,7 +1299,7 @@ struct BurnDriver BurnDrvAirGallet = {
 	"agallet", NULL, NULL, "1996",
 	"Air Gallet\0", NULL, "BanPresto / Gazelle", "Cave",
 	L"Air Gallet\0\u30A2\u30EF\u30A6\u30AE\u30E3\u30EC\u30C3\u30C8\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, agalletRomInfo, agalletRomName, sailormnInputInfo, sailormnDIPInfo,
 	agalletInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,

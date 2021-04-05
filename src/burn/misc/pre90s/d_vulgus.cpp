@@ -311,6 +311,7 @@ static int DrvGfxDecode()
 	if (tmp == NULL) {
 		return 1;
 	}
+	memset(tmp, 0, 0xc000);
 
 	static int SpriPlanes[4] = { 0x20004, 0x20000, 0x00004, 0x00000 };
 	static int SpriXOffs[16] = { 0x000, 0x001, 0x002, 0x003, 0x008, 0x009, 0x00a, 0x00b,
@@ -724,7 +725,7 @@ struct BurnDriver BurnDrvvulgus = {
 	"vulgus", NULL, NULL, "1984",
 	"Vulgus (set 1)\0", NULL, "Capcom", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S,
 	NULL, vulgusRomInfo, vulgusRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 256, 3, 4
@@ -774,7 +775,7 @@ struct BurnDriver BurnDrvvulgus2 = {
 	"vulgus2", "vulgus", NULL, "1984",
 	"Vulgus (set 2)\0", NULL, "Capcom", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, vulgus2RomInfo, vulgus2RomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 256, 3, 4
@@ -824,7 +825,7 @@ struct BurnDriver BurnDrvvulgusj = {
 	"vulgusj", "vulgus", NULL, "1984",
 	"Vulgus (Japan?)\0", NULL, "Capcom", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, vulgusjRomInfo, vulgusjRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 256, 3, 4

@@ -761,7 +761,7 @@ struct BurnDriver BurnDrvroute16 = {
 	"route16", NULL, NULL, "1981",
 	"Route 16\0", NULL, "Tehkan/Sun (Centuri license)", "Route 16",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_MAZE, 0,
 	NULL, route16RomInfo, route16RomName, DrvInputInfo, DrvDIPInfo,
 	route16Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 256, 3, 4
@@ -823,7 +823,7 @@ struct BurnDriver BurnDrvroute16a = {
 	"route16a", "route16", NULL, "1981",
 	"Route 16 (set 2)\0", NULL, "Tehkan/Sun (Centuri license)", "Route 16",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_MAZE, 0,
 	NULL, route16aRomInfo, route16aRomName, DrvInputInfo, DrvDIPInfo,
 	route16aInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 256, 3, 4
@@ -863,7 +863,7 @@ struct BurnDriver BurnDrvroute16b = {
 	"route16b", "route16", NULL, "1981",
 	"Route 16 (bootleg)\0", NULL, "bootleg", "Route 16",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_MAZE, 0,
 	NULL, route16bRomInfo, route16bRomName, DrvInputInfo, DrvDIPInfo,
 	route16Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 256, 3, 4
@@ -897,7 +897,7 @@ struct BurnDriver BurnDrvroutex = {
 	"routex", "route16", NULL, "1981",
 	"Route X (bootleg)\0", NULL, "bootleg", "Route 16",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_MAZE, 0,
 	NULL, routexRomInfo, routexRomName, DrvInputInfo, DrvDIPInfo,
 	route16bInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 256, 3, 4
@@ -935,7 +935,7 @@ struct BurnDriver BurnDrvspeakres = {
 	"speakres", NULL, NULL, "1980",
 	"Speak & Rescue\0", NULL, "Sun Electronics", "Route 16",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_SHOOT, 0,
 	NULL, speakresRomInfo, speakresRomName, DrvInputInfo, speakresDIPInfo,
 	speakresInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 256, 3, 4
@@ -966,7 +966,7 @@ struct BurnDriver BurnDrvstratvox = {
 	"stratvox", "speakres", NULL, "1980",
 	"Stratovox\0", NULL, "[Sun Electronics] (Taito license)", "Route 16",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_SHOOT, 0,
 	NULL, stratvoxRomInfo, stratvoxRomName, DrvInputInfo, stratvoxDIPInfo,
 	speakresInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 256, 3, 4
@@ -997,7 +997,7 @@ struct BurnDriver BurnDrvstratvob = {
 	"stratvob", "speakres", NULL, "1980",
 	"Stratovox (bootleg)\0", NULL, "bootleg", "Route 16",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_SHOOT, 0,
 	NULL, stratvobRomInfo, stratvobRomName, DrvInputInfo, stratvoxDIPInfo,
 	speakresInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 256, 3, 4
@@ -1042,7 +1042,7 @@ struct BurnDriver BurnDrvspacecho = {
 	"spacecho", "speakres", NULL, "1980",
 	"Space Echo (bootleg)\0", NULL, "bootleg", "Route 16",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_SHOOT, 0,
 	NULL, spacechoRomInfo, spacechoRomName, DrvInputInfo, stratvoxDIPInfo,
 	spacechoInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 256, 3, 4
@@ -1079,7 +1079,7 @@ struct BurnDriver BurnDrvttmahjng = {
 	"ttmahjng", NULL, NULL, "1980",
 	"Mahjong\0", NULL, "Taito", "Route 16",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_MAHJONG, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_MAHJONG, 0,
 	NULL, ttmahjngRomInfo, ttmahjngRomName, mahjongInputInfo, NULL,
 	ttmahjngInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 256, 4, 3

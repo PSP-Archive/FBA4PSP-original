@@ -61,7 +61,7 @@ STDINPUTINFO(Drv);
 static struct BurnDIPInfo DrvDIPList[]=
 {
 	// Default Values
-	{0x12, 0xff, 0xff, 0xdf, NULL                     },
+	{0x12, 0xff, 0xff, 0xff, NULL                     },
 	{0x13, 0xff, 0xff, 0xff, NULL                     },
 
 	// Dip 1
@@ -341,6 +341,7 @@ static int GraphicsDecode()
 	if (tmp == NULL) {
 		return 1;
 	}
+	memset(tmp, 0, 0x8000);
 
 	memcpy (tmp, Gfx0, 0x02000);
 
@@ -759,7 +760,7 @@ struct BurnDriver BurnDrvExedexes = {
 	"exedexes", NULL, NULL, "1985",
 	"Exed Exes\0", NULL, "Capcom", "Miscellaneous",
 	L"Exed Exes\0\u30A8\u30B0\u30BC\u30C9 \u30A8\u30B0\u30BC\u30B9\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, exedexesRomInfo, exedexesRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 256, 3, 4
@@ -810,7 +811,7 @@ struct BurnDriver BurnDrvSavgbees = {
 	"savgbees", "exedexes", NULL, "1985",
 	"Savage Bees\0", NULL, "Capcom (Memetron license)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, savgbeesRomInfo, savgbeesRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	224, 256, 3, 4

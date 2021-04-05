@@ -1,5 +1,4 @@
 #include "tiles_generic.h"
-#include "z80.h"
 
 static unsigned char DrvInputPort0[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 static unsigned char DrvInputPort1[8] = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -34,36 +33,8 @@ static unsigned char DrvCPU3FireIRQ;
 static unsigned char DrvCPU2Halt;
 static unsigned char DrvCPU3Halt;
 
-static unsigned char IOChipCustomCommand;
-static unsigned char IOChipCPU1FireIRQ;
-static unsigned char IOChipMode;
-static unsigned char IOChipCredits;
-static unsigned char IOChipCoinPerCredit;
-static unsigned char IOChipCreditPerCoin;
-static unsigned char IOChipCustom[16];
-
-static int nCyclesDone[4], nCyclesTotal[4];
+static int nCyclesDone[3], nCyclesTotal[3];
 static int nCyclesSegment;
-
-static Z80_Regs Z80_0;
-static Z80_Regs Z80_1;
-static Z80_Regs Z80_2;
-static Z80_Regs Z80_3;
-
-struct CPU_Config {
-	Z80ReadIoHandler Z80In;
-	Z80WriteIoHandler Z80Out;
-	Z80ReadProgHandler Z80Read;
-	Z80WriteProgHandler Z80Write;
-	Z80ReadOpHandler Z80ReadOp;
-	Z80ReadOpArgHandler Z80ReadOpArg;
-};
-
-static int nActiveCPU;
-static CPU_Config Z80_0_Config;
-static CPU_Config Z80_1_Config;
-static CPU_Config Z80_2_Config;
-static CPU_Config Z80_3_Config;
 
 static struct BurnInputInfo DrvInputList[] =
 {
@@ -92,8 +63,7 @@ STDINPUTINFO(Drv);
 static inline void DrvMakeInputs()
 {
 	// Reset Inputs
-	DrvInput[0] = 0x7f;
-	DrvInput[1] = 0xff;
+	DrvInput[0] = DrvInput[1] = 0xff;
 
 	// Compile Digital Inputs
 	for (int i = 0; i < 8; i++) {
@@ -239,7 +209,7 @@ static int MemIndex()
 	RamStart               = Next;
 
 	DrvVideoRam            = Next; Next += 0x00800;
-	DrvSharedRam1          = Next; Next += 0x00400;
+//	DrvSharedRam1          = Next; Next += 0x00400;
 	DrvSharedRam1          = Next; Next += 0x04000;
 	DrvSharedRam2          = Next; Next += 0x00400;
 	DrvSharedRam3          = Next; Next += 0x00400;
@@ -255,149 +225,67 @@ static int MemIndex()
 	return 0;
 }
 
-static void OpenCPU(int nCPU)
-{
-	nActiveCPU = nCPU;
-	
-	switch (nCPU) {
-		case 0: {
-			Z80SetContext(&Z80_0);
-			
-			Z80SetIOReadHandler(Z80_0_Config.Z80In);
-			Z80SetIOWriteHandler(Z80_0_Config.Z80Out);
-			Z80SetProgramReadHandler(Z80_0_Config.Z80Read);
-			Z80SetProgramWriteHandler(Z80_0_Config.Z80Write);
-			Z80SetCPUOpArgReadHandler(Z80_0_Config.Z80ReadOpArg);
-			Z80SetCPUOpReadHandler(Z80_0_Config.Z80ReadOp);
-			return;
-		}
-		
-		case 1: {
-			Z80SetContext(&Z80_1);
-			
-			Z80SetIOReadHandler(Z80_1_Config.Z80In);
-			Z80SetIOWriteHandler(Z80_1_Config.Z80Out);
-			Z80SetProgramReadHandler(Z80_1_Config.Z80Read);
-			Z80SetProgramWriteHandler(Z80_1_Config.Z80Write);
-			Z80SetCPUOpArgReadHandler(Z80_1_Config.Z80ReadOpArg);
-			Z80SetCPUOpReadHandler(Z80_1_Config.Z80ReadOp);
-			return;
-		}
-		
-		case 2: {
-			Z80SetContext(&Z80_2);
-			
-			Z80SetIOReadHandler(Z80_2_Config.Z80In);
-			Z80SetIOWriteHandler(Z80_2_Config.Z80Out);
-			Z80SetProgramReadHandler(Z80_2_Config.Z80Read);
-			Z80SetProgramWriteHandler(Z80_2_Config.Z80Write);
-			Z80SetCPUOpArgReadHandler(Z80_2_Config.Z80ReadOpArg);
-			Z80SetCPUOpReadHandler(Z80_2_Config.Z80ReadOp);
-			return;
-		}
-		
-		case 3: {
-			Z80SetContext(&Z80_3);
-			
-			Z80SetIOReadHandler(Z80_3_Config.Z80In);
-			Z80SetIOWriteHandler(Z80_3_Config.Z80Out);
-			Z80SetProgramReadHandler(Z80_3_Config.Z80Read);
-			Z80SetProgramWriteHandler(Z80_3_Config.Z80Write);
-			Z80SetCPUOpArgReadHandler(Z80_3_Config.Z80ReadOpArg);
-			Z80SetCPUOpReadHandler(Z80_3_Config.Z80ReadOp);
-			return;
-		}
-	}
-}
-
-static void CloseCPU()
-{
-	switch (nActiveCPU) {
-		case 0: {
-			Z80GetContext(&Z80_0);
-			return;
-		}
-		
-		case 1: {
-			Z80GetContext(&Z80_1);
-			return;
-		}
-		
-		case 2: {
-			Z80GetContext(&Z80_2);
-			return;
-		}
-		
-		case 3: {
-			Z80GetContext(&Z80_3);
-			return;
-		}
-	}
-	
-	nActiveCPU = -1;
-}
-
 static int DrvDoReset()
 {
 	for (int i = 0; i < 3; i++) {
-		OpenCPU(i);
-		Z80Reset();
-		CloseCPU();
+		ZetOpen(i);
+		ZetReset();
+		ZetClose();
 	}
+	
+//	ZetOpen(2);
+//	ZetNmi();
+//	nCyclesDone[2] += ZetRun(200);
+//	ZetClose();
 	
 	DrvCPU1FireIRQ = 0;
 	DrvCPU2FireIRQ = 0;
 	DrvCPU3FireIRQ = 0;
 	DrvCPU2Halt = 0;
 	DrvCPU3Halt = 0;
-	
-	IOChipCustomCommand = 0;
-	IOChipCPU1FireIRQ = 0;
-	IOChipMode = 0;
-	IOChipCredits = 0;
-	IOChipCoinPerCredit = 0;
-	IOChipCreditPerCoin = 0;
-	for (int i = 0; i < 16; i++) {
-		IOChipCustom[i] = 0;
-	}
 
 	return 0;
 }
 
-unsigned char __fastcall GalagaZ80PortRead(unsigned int a)
-{
-	a &= 0xff;
-	
-	switch (a) {
-		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #%i Port Read 02%x\n"), nActiveCPU, a);
-		}
-	}	
+static int customio_command;
+static int mode,credits;
+static int coinpercred,credpercoin;
+static unsigned char customio[16];
 
-	return 0;
+static unsigned char galaga_customio_r()
+{
+	return customio_command;
 }
 
-void __fastcall GalagaZ80PortWrite(unsigned int a, unsigned char d)
+static void galaga_customio_w(unsigned char data)
 {
-	a &= 0xff;
-	
-	switch (a) {
-		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #%i Port Write %02x, %02%x\n"), nActiveCPU, a, d);
-		}
+	customio_command = data;
+
+	switch (data)
+	{
+		case 0x10:
+//			if (nmi_timer) timer_remove (nmi_timer);
+//			nmi_timer = 0;
+			return;
+
+		case 0xa1:	/* go into switch mode */
+			mode = 1;
+			ZetNmi();
+			return;
+
+//		case 0xe1:	/* go into credit mode */
+//			credits = 0;	/* this is a good time to reset the credits counter */
+//			mode = 0;
+//			break;
 	}
+	
+	bprintf(PRINT_NORMAL, _T("IO Write %x\n"), data);
+
+//	nmi_timer = timer_pulse (TIME_IN_USEC (50), 0, galaga_nmi_generate);
 }
 
-unsigned char __fastcall GalagaZ80ProgRead(unsigned int a)
+unsigned char __fastcall DrvGalagaRead1(unsigned short a)
 {
-	if (a <= 0x3fff) {
-		switch (nActiveCPU) {
-			case 0: return DrvZ80Rom1[a];
-			case 1: return DrvZ80Rom2[a];
-			case 2: return DrvZ80Rom3[a];
-		}
-	}
-	
 	if (a >= 0x8000 && a <= 0x87ff) return DrvVideoRam[a - 0x8000];
 	if (a >= 0x8800 && a <= 0x8bff) return DrvSharedRam1[a - 0x8800];
 	if (a >= 0x9000 && a <= 0x93ff) return DrvSharedRam2[a - 0x9000];
@@ -413,300 +301,277 @@ unsigned char __fastcall GalagaZ80ProgRead(unsigned int a)
 		case 0x6806:
 		case 0x6807: {
 			int Offset = a - 0x6800;
-			int Bit0 = (DrvDip[2] >> Offset) & 0x01;
-			int Bit1 = (DrvDip[1] >> Offset) & 0x01;
+			
+			int bit0 = (DrvDip[1] >> Offset) & 1;
+			int bit1 = (DrvDip[2] >> Offset) & 1;
 
-			return Bit0 | (Bit1 << 1);
-		}
-		
-		case 0x7000:
-		case 0x7001:
-		case 0x7002:
-		case 0x7003:
-		case 0x7004:
-		case 0x7005:
-		case 0x7006:
-		case 0x7007:
-		case 0x7008:
-		case 0x7009:
-		case 0x700a:
-		case 0x700b:
-		case 0x700c:
-		case 0x700d:
-		case 0x700e:
-		case 0x700f: {
-			int Offset = a - 0x7000;
-			
-			switch (IOChipCustomCommand) {
-				case 0x71:
-				case 0xb1: {
-					if (Offset == 0) {
-						if (IOChipMode) {
-							return (DrvInput[0] | DrvDip[0]);
-						} else {
-							unsigned char In;
-							static unsigned char CoinInserted;
-							
-							In = DrvInput[0];
-							if (IOChipCoinPerCredit > 0) {
-								if ((In & 0x70) != 0x70 && IOChipCredits < 99) {
-									CoinInserted++;
-									if (CoinInserted >= IOChipCoinPerCredit) {
-										IOChipCredits += IOChipCreditPerCoin;
-										CoinInserted = 0;
-									}
-								}
-							} else {
-								IOChipCredits = 2;
-							}
-							
-							if ((In & 0x04) == 0) {
-								if (IOChipCredits >= 1) IOChipCredits--;
-							}
-							
-							if ((In & 0x08) == 0) {
-								if (IOChipCredits >= 2) IOChipCredits -= 2;
-							}
-							
-							return (IOChipCredits / 10) * 16 + IOChipCredits % 10;
-						}
-					}
-					
-					if (Offset == 1) return DrvInput[1];
-					if (Offset == 2) return 0xff;
-				}
-			}
-			
-			return 0x00;
+			return bit0 | (bit1 << 1);
 		}
 		
 		case 0x7100: {
-			return IOChipCustomCommand;
+			return galaga_customio_r();
 		}
 		
 		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #%i Read %04x\n"), nActiveCPU, a);
+			bprintf(PRINT_NORMAL, _T("Z80 #1 Read => %04X\n"), a);
 		}
 	}
-	
+
 	return 0;
 }
 
-void __fastcall GalagaZ80ProgWrite(unsigned int a, unsigned char d)
+void __fastcall DrvGalagaWrite1(unsigned short a, unsigned char d)
 {
-	if (a >= 0x8000 && a <= 0x87ff) { DrvVideoRam[a - 0x8000] = d; return; }
-	if (a >= 0x8800 && a <= 0x8bff) { DrvSharedRam1[a - 0x8800] = d; return; }
-	if (a >= 0x9000 && a <= 0x93ff) { DrvSharedRam2[a - 0x9000] = d; return; }
-	if (a >= 0x9800 && a <= 0x9bff) { DrvSharedRam3[a - 0x9800] = d; return; }
-	
-	if (a >= 0x6800 && a <= 0x681f) return;
+	if (a >= 0x8000 && a <= 0x87ff) {
+		DrvVideoRam[a - 0x8000] = d;
+		return;
+	}
+	if (a >= 0x8800 && a <= 0x8bff) {
+		DrvSharedRam1[a - 0x8800] = d;
+		return;
+	}
+	if (a >= 0x9000 && a <= 0x93ff) {
+		DrvSharedRam2[a - 0x9000] = d;
+		return;
+	}
+	if (a >= 0x9800 && a <= 0x9bff) {
+		DrvSharedRam3[a - 0x9800] = d;
+		return;
+	}
 	
 	switch (a) {
-		case 0x6820: {
-			DrvCPU1FireIRQ = d & 0x01;
-			if (!DrvCPU1FireIRQ) {
-			
-			}
-			return;
-		}
-		
-		case 0x6821: {
-			DrvCPU2FireIRQ = d & 0x01;
-			if (!DrvCPU2FireIRQ) {
-			
-			}
-			return;
-		}
-		
 		case 0x6822: {
-			DrvCPU3FireIRQ = !(d & 0x01);
+			int bit = d & 1;
+			if (!bit) {
+//				ZetClose();
+//				ZetOpen(2);
+//				ZetNmi();
+//				nCyclesDone[2] += ZetRun(200);
+//				ZetClose();
+//				ZetOpen(0);
+			}
 			return;
 		}
 		
 		case 0x6823: {
-			if (!(d & 0x01)) {
-				int nActive = nActiveCPU;
-				CloseCPU();
-				OpenCPU(1);
-				Z80Reset();
-				CloseCPU();
-				OpenCPU(2);
-				Z80Reset();
-				CloseCPU();
-				OpenCPU(nActive);
+			int bit = d & 1;
+			if (!bit) {
+				ZetClose();
+				ZetOpen(1);
+				ZetReset();
+				ZetClose();
+				ZetOpen(2);
+				ZetReset();
+				ZetClose();
+				ZetOpen(0);
 				DrvCPU2Halt = 1;
 				DrvCPU3Halt = 1;
-				return;
 			} else {
 				DrvCPU2Halt = 0;
 				DrvCPU3Halt = 0;
 			}
+			return;
 		}
-		
+	
 		case 0x6830: {
 			// watchdog write
 			return;
 		}
 		
-		case 0x7000:
-		case 0x7001:
-		case 0x7002:
-		case 0x7003:
-		case 0x7004:
-		case 0x7005:
-		case 0x7006:
-		case 0x7007:
-		case 0x7008:
-		case 0x7009:
-		case 0x700a:
-		case 0x700b:
-		case 0x700c:
-		case 0x700d:
-		case 0x700e:
-		case 0x700f: {
-			int Offset = a - 0x7000;
-			IOChipCustom[Offset] = d;
-			
-			switch (IOChipCustomCommand) {
-
-			}
-			
-			return;
-		}
-	
 		case 0x7100: {
-			IOChipCustomCommand = d;
-			IOChipCPU1FireIRQ = 1;
-			
-			switch (IOChipCustomCommand) {
-				case 0x10: {
-					IOChipCPU1FireIRQ = 0;
-					return;
-				}
-				
-				case 0xa1: {
-					IOChipMode = 1;
-					return;
-				}
-				
-				case 0xe1: {
-					IOChipCredits = 0;
-					IOChipMode = 0;
-					return;
-				}
-			}
-			
+			galaga_customio_w(d);
 			return;
 		}
 		
 		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #%i Write %04x, %02x\n"), nActiveCPU, a, d);
+			bprintf(PRINT_NORMAL, _T("Z80 #1 Write => %04X, %02X, %x\n"), a, d, customio_command);
 		}
 	}
 }
 
-unsigned char __fastcall GalagaZ80OpRead(unsigned int a)
-{
-	if (a <= 0x3fff) {
-		switch (nActiveCPU) {
-			case 0: return DrvZ80Rom1[a];
-			case 1: return DrvZ80Rom2[a];
-			case 2: return DrvZ80Rom3[a];
-		}
-	}
-	
-	switch (a) {
-		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #%i Op Read %04x\n"), nActiveCPU, a);
-		}
-	}
-	
-	return 0;
-}
-
-unsigned char __fastcall GalagaZ80OpArgRead(unsigned int a)
-{
-	if (a <= 0x3fff) {
-		switch (nActiveCPU) {
-			case 0: return DrvZ80Rom1[a];
-			case 1: return DrvZ80Rom2[a];
-			case 2: return DrvZ80Rom3[a];
-		}
-	}
-	
-	switch (a) {
-		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #%i Op Arg Read %04x\n"), nActiveCPU, a);
-		}
-	}
-	
-	return 0;
-}
-
-unsigned char __fastcall GalagaZ804PortRead(unsigned int a)
+unsigned char __fastcall DrvGalagaPortRead1(unsigned short a)
 {
 	a &= 0xff;
 	
 	switch (a) {
 		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #4 Port Read 02%x\n"), a);
+			bprintf(PRINT_NORMAL, _T("Z80 #1 Port Read => %02X\n"), a);
 		}
-	}	
+	}
 
 	return 0;
 }
 
-void __fastcall GalagaZ804PortWrite(unsigned int a, unsigned char d)
+void __fastcall DrvGalagaPortWrite1(unsigned short a, unsigned char d)
+{
+	a &= 0xff;
+	
+	switch (a) {		
+		default: {
+			bprintf(PRINT_NORMAL, _T("Z80 #1 Port Write => %02X, %02X\n"), a, d);
+		}
+	}
+}
+
+unsigned char __fastcall DrvGalagaRead2(unsigned short a)
+{
+	if (a >= 0x8000 && a <= 0x87ff) return DrvVideoRam[a - 0x8000];
+	if (a >= 0x8800 && a <= 0x8bff) return DrvSharedRam1[a - 0x8800];
+	if (a >= 0x9000 && a <= 0x93ff) return DrvSharedRam2[a - 0x9000];
+	if (a >= 0x9800 && a <= 0x9bff) return DrvSharedRam3[a - 0x9800];
+	
+	switch (a) {
+		case 0x6802:
+		case 0x6804: {
+			int Offset = a - 0x6800;
+			
+			int bit0 = (DrvDip[1] >> Offset) & 1;
+			int bit1 = (DrvDip[2] >> Offset) & 1;
+
+			return bit0 | (bit1 << 1);
+		}
+		
+		default: {
+			bprintf(PRINT_NORMAL, _T("Z80 #2 Read => %04X\n"), a);
+		}
+	}
+
+	return 0;
+}
+
+void __fastcall DrvGalagaWrite2(unsigned short a, unsigned char d)
+{
+	if (a >= 0x8000 && a <= 0x87ff) {
+		DrvVideoRam[a - 0x8000] = d;
+		return;
+	}
+	if (a >= 0x8800 && a <= 0x8bff) {
+		DrvSharedRam1[a - 0x8800] = d;
+		return;
+	}
+	if (a >= 0x9000 && a <= 0x93ff) {
+		DrvSharedRam2[a - 0x9000] = d;
+		return;
+	}
+	if (a >= 0x9800 && a <= 0x9bff) {
+		DrvSharedRam3[a - 0x9800] = d;
+		return;
+	}
+	
+	switch (a) {
+		case 0x6821: {
+			int bit = d & 1;
+			DrvCPU2FireIRQ = bit;
+			if (!DrvCPU2FireIRQ) {
+				ZetSetIRQLine(0, ZET_IRQSTATUS_NONE);
+			}
+			return;
+		}
+		
+		default: {
+			bprintf(PRINT_NORMAL, _T("Z80 #2 Write => %04X, %02X\n"), a, d);
+		}
+	}
+}
+
+unsigned char __fastcall DrvGalagaPortRead2(unsigned short a)
 {
 	a &= 0xff;
 	
 	switch (a) {
 		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #4 Port Write %02x, %02%x\n"), a, d);
+			bprintf(PRINT_NORMAL, _T("Z80 #2 Port Read => %02X\n"), a);
 		}
 	}
-}
 
-unsigned char __fastcall GalagaZ804ProgRead(unsigned int a)
-{
-	switch (a) {
-		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #4 Read %04x\n"), a);
-		}
-	}
-	
 	return 0;
 }
 
-void __fastcall GalagaZ804ProgWrite(unsigned int a, unsigned char d)
+void __fastcall DrvGalagaPortWrite2(unsigned short a, unsigned char d)
 {
+	a &= 0xff;
+	
 	switch (a) {
 		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #4 Write %04x, %02x\n"), a, d);
+			bprintf(PRINT_NORMAL, _T("Z80 #2 Port Write => %02X, %02X\n"), a, d);
 		}
 	}
 }
 
-unsigned char __fastcall GalagaZ804OpRead(unsigned int a)
+unsigned char __fastcall DrvGalagaRead3(unsigned short a)
 {
+	if (a >= 0x8000 && a <= 0x87ff) return DrvVideoRam[a - 0x8000];
+	if (a >= 0x8800 && a <= 0x8bff) return DrvSharedRam1[a - 0x8800];
+	if (a >= 0x9000 && a <= 0x93ff) return DrvSharedRam2[a - 0x9000];
+	if (a >= 0x9800 && a <= 0x9bff) return DrvSharedRam3[a - 0x9800];
+	
 	switch (a) {
 		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #4 Op Read %04x\n"), a);
+			bprintf(PRINT_NORMAL, _T("Z80 #3 Read => %04X\n"), a);
 		}
 	}
-	
+
 	return 0;
 }
 
-unsigned char __fastcall GalagaZ804OpArgRead(unsigned int a)
+void __fastcall DrvGalagaWrite3(unsigned short a, unsigned char d)
 {
-	switch (a) {
-		default: {
-			bprintf(PRINT_NORMAL, _T("Z80 #4 Op Arg Read %04x\n"), a);
-		}
+	if (a >= 0x8000 && a <= 0x87ff) {
+		DrvVideoRam[a - 0x8000] = d;
+		return;
+	}
+	if (a >= 0x8800 && a <= 0x8bff) {
+		DrvSharedRam1[a - 0x8800] = d;
+		return;
+	}
+	if (a >= 0x9000 && a <= 0x93ff) {
+		DrvSharedRam2[a - 0x9000] = d;
+		return;
+	}
+	if (a >= 0x9800 && a <= 0x9bff) {
+		DrvSharedRam3[a - 0x9800] = d;
+		return;
 	}
 	
+	switch (a) {
+		case 0x6822: {
+			int bit = d & 1;
+			if (!bit) {
+//				ZetNmi();
+//				nCyclesDone[2] += ZetRun(200);
+			}
+//			DrvCPU3FireIRQ = !bit;
+			return;
+		}
+		
+		default: {
+			bprintf(PRINT_NORMAL, _T("Z80 #3 Write => %04X, %02X\n"), a, d);
+		}
+	}
+}
+
+unsigned char __fastcall DrvGalagaPortRead3(unsigned short a)
+{
+	a &= 0xff;
+	
+	switch (a) {
+		default: {
+			bprintf(PRINT_NORMAL, _T("Z80 #3 Port Read => %02X\n"), a);
+		}
+	}
+
 	return 0;
+}
+
+void __fastcall DrvGalagaPortWrite3(unsigned short a, unsigned char d)
+{
+	a &= 0xff;
+	
+	switch (a) {
+		default: {
+			bprintf(PRINT_NORMAL, _T("Z80 #3 Port Write => %02X, %02X\n"), a, d);
+		}
+	}
 }
 
 static int CharPlaneOffsets[2]   = { 0, 4 };
@@ -760,14 +625,81 @@ static int DrvInit()
 	free(DrvTempRom);
 	
 	// Setup the Z80 emulation
-	Z80Init();
+	ZetInit(3);
+	ZetOpen(0);
+	ZetSetReadHandler(DrvGalagaRead1);
+	ZetSetWriteHandler(DrvGalagaWrite1);
+	ZetSetInHandler(DrvGalagaPortRead1);
+	ZetSetOutHandler(DrvGalagaPortWrite1);
+	ZetMapArea(0x0000, 0x3fff, 0, DrvZ80Rom1             );
+	ZetMapArea(0x0000, 0x3fff, 2, DrvZ80Rom1             );
+/*	ZetMapArea(0x8000, 0x87ff, 0, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 1, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 2, DrvVideoRam            );
+	ZetMapArea(0x8800, 0x8bff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 2, DrvSharedRam1          );
+	ZetMapArea(0x9000, 0x93ff, 0, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 1, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 2, DrvSharedRam2          );
+	ZetMapArea(0x9800, 0x9bff, 0, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 1, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 2, DrvSharedRam3          );*/
+	ZetMapArea(0x8000, 0x9fff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 2, DrvSharedRam1          );	
+	ZetMemEnd();
+	ZetClose();
 	
-	Z80_0_Config.Z80In = GalagaZ80PortRead;
-	Z80_0_Config.Z80Out = GalagaZ80PortWrite;
-	Z80_0_Config.Z80Read = GalagaZ80ProgRead;
-	Z80_0_Config.Z80Write = GalagaZ80ProgWrite;
-	Z80_0_Config.Z80ReadOpArg = GalagaZ80OpArgRead;
-	Z80_0_Config.Z80ReadOp = GalagaZ80OpRead;
+	ZetOpen(1);
+	ZetSetReadHandler(DrvGalagaRead2);
+	ZetSetWriteHandler(DrvGalagaWrite2);
+	ZetSetInHandler(DrvGalagaPortRead2);
+	ZetSetOutHandler(DrvGalagaPortWrite2);
+	ZetMapArea(0x0000, 0x3fff, 0, DrvZ80Rom2             );
+	ZetMapArea(0x0000, 0x3fff, 2, DrvZ80Rom2             );
+/*	ZetMapArea(0x8000, 0x87ff, 0, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 1, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 2, DrvVideoRam            );
+	ZetMapArea(0x8800, 0x8bff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 2, DrvSharedRam1          );
+	ZetMapArea(0x9000, 0x93ff, 0, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 1, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 2, DrvSharedRam2          );
+	ZetMapArea(0x9800, 0x9bff, 0, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 1, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 2, DrvSharedRam3          );*/
+	ZetMapArea(0x8000, 0x9fff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 2, DrvSharedRam1          );
+	ZetMemEnd();
+	ZetClose();
+	
+	ZetOpen(2);
+	ZetSetReadHandler(DrvGalagaRead3);
+	ZetSetWriteHandler(DrvGalagaWrite3);
+	ZetSetInHandler(DrvGalagaPortRead3);
+	ZetSetOutHandler(DrvGalagaPortWrite3);
+	ZetMapArea(0x0000, 0x3fff, 0, DrvZ80Rom3             );
+	ZetMapArea(0x0000, 0x3fff, 2, DrvZ80Rom3             );
+/*	ZetMapArea(0x8000, 0x87ff, 0, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 1, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 2, DrvVideoRam            );
+	ZetMapArea(0x8800, 0x8bff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 2, DrvSharedRam1          );
+	ZetMapArea(0x9000, 0x93ff, 0, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 1, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 2, DrvSharedRam2          );
+	ZetMapArea(0x9800, 0x9bff, 0, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 1, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 2, DrvSharedRam3          );*/
+	ZetMapArea(0x8000, 0x9fff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 2, DrvSharedRam1          );
+	ZetMemEnd();
+	ZetClose();
 
 	GenericTilesInit();
 
@@ -821,35 +753,81 @@ static int GallagInit()
 	free(DrvTempRom);
 	
 	// Setup the Z80 emulation
-	Z80Init();
+	ZetInit(3);
+	ZetOpen(0);
+	ZetSetReadHandler(DrvGalagaRead1);
+	ZetSetWriteHandler(DrvGalagaWrite1);
+	ZetSetInHandler(DrvGalagaPortRead1);
+	ZetSetOutHandler(DrvGalagaPortWrite1);
+	ZetMapArea(0x0000, 0x3fff, 0, DrvZ80Rom1             );
+	ZetMapArea(0x0000, 0x3fff, 2, DrvZ80Rom1             );
+/*	ZetMapArea(0x8000, 0x87ff, 0, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 1, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 2, DrvVideoRam            );
+	ZetMapArea(0x8800, 0x8bff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 2, DrvSharedRam1          );
+	ZetMapArea(0x9000, 0x93ff, 0, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 1, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 2, DrvSharedRam2          );
+	ZetMapArea(0x9800, 0x9bff, 0, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 1, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 2, DrvSharedRam3          );*/
+	ZetMapArea(0x8000, 0x9fff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 2, DrvSharedRam1          );	
+	ZetMemEnd();
+	ZetClose();
 	
-	Z80_0_Config.Z80In = GalagaZ80PortRead;
-	Z80_0_Config.Z80Out = GalagaZ80PortWrite;
-	Z80_0_Config.Z80Read = GalagaZ80ProgRead;
-	Z80_0_Config.Z80Write = GalagaZ80ProgWrite;
-	Z80_0_Config.Z80ReadOpArg = GalagaZ80OpArgRead;
-	Z80_0_Config.Z80ReadOp = GalagaZ80OpRead;
+	ZetOpen(1);
+	ZetSetReadHandler(DrvGalagaRead2);
+	ZetSetWriteHandler(DrvGalagaWrite2);
+	ZetSetInHandler(DrvGalagaPortRead2);
+	ZetSetOutHandler(DrvGalagaPortWrite2);
+	ZetMapArea(0x0000, 0x0fff, 0, DrvZ80Rom2             );
+	ZetMapArea(0x0000, 0x0fff, 2, DrvZ80Rom2             );
+/*	ZetMapArea(0x8000, 0x87ff, 0, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 1, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 2, DrvVideoRam            );
+	ZetMapArea(0x8800, 0x8bff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 2, DrvSharedRam1          );
+	ZetMapArea(0x9000, 0x93ff, 0, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 1, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 2, DrvSharedRam2          );
+	ZetMapArea(0x9800, 0x9bff, 0, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 1, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 2, DrvSharedRam3          );*/
+	ZetMapArea(0x8000, 0x9fff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 2, DrvSharedRam1          );
+	ZetMemEnd();
+	ZetClose();
 	
-	Z80_1_Config.Z80In = GalagaZ80PortRead;
-	Z80_1_Config.Z80Out = GalagaZ80PortWrite;
-	Z80_1_Config.Z80Read = GalagaZ80ProgRead;
-	Z80_1_Config.Z80Write = GalagaZ80ProgWrite;
-	Z80_1_Config.Z80ReadOpArg = GalagaZ80OpArgRead;
-	Z80_1_Config.Z80ReadOp = GalagaZ80OpRead;
-	
-	Z80_2_Config.Z80In = GalagaZ80PortRead;
-	Z80_2_Config.Z80Out = GalagaZ80PortWrite;
-	Z80_2_Config.Z80Read = GalagaZ80ProgRead;
-	Z80_2_Config.Z80Write = GalagaZ80ProgWrite;
-	Z80_2_Config.Z80ReadOpArg = GalagaZ80OpArgRead;
-	Z80_2_Config.Z80ReadOp = GalagaZ80OpRead;
-	
-	Z80_3_Config.Z80In = GalagaZ804PortRead;
-	Z80_3_Config.Z80Out = GalagaZ804PortWrite;
-	Z80_3_Config.Z80Read = GalagaZ804ProgRead;
-	Z80_3_Config.Z80Write = GalagaZ804ProgWrite;
-	Z80_3_Config.Z80ReadOpArg = GalagaZ804OpArgRead;
-	Z80_3_Config.Z80ReadOp = GalagaZ804OpRead;
+	ZetOpen(2);
+	ZetSetReadHandler(DrvGalagaRead3);
+	ZetSetWriteHandler(DrvGalagaWrite3);
+	ZetSetInHandler(DrvGalagaPortRead3);
+	ZetSetOutHandler(DrvGalagaPortWrite3);
+	ZetMapArea(0x0000, 0x0fff, 0, DrvZ80Rom3             );
+	ZetMapArea(0x0000, 0x0fff, 2, DrvZ80Rom3             );
+/*	ZetMapArea(0x8000, 0x87ff, 0, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 1, DrvVideoRam            );
+	ZetMapArea(0x8000, 0x87ff, 2, DrvVideoRam            );
+	ZetMapArea(0x8800, 0x8bff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8800, 0x8bff, 2, DrvSharedRam1          );
+	ZetMapArea(0x9000, 0x93ff, 0, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 1, DrvSharedRam2          );
+	ZetMapArea(0x9000, 0x93ff, 2, DrvSharedRam2          );
+	ZetMapArea(0x9800, 0x9bff, 0, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 1, DrvSharedRam3          );
+	ZetMapArea(0x9800, 0x9bff, 2, DrvSharedRam3          );*/
+	ZetMapArea(0x8000, 0x9fff, 0, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 1, DrvSharedRam1          );
+	ZetMapArea(0x8000, 0x9fff, 2, DrvSharedRam1          );
+	ZetMemEnd();
+	ZetClose();
 
 	GenericTilesInit();
 
@@ -861,6 +839,8 @@ static int GallagInit()
 
 static int DrvExit()
 {
+	ZetExit();
+
 	GenericTilesExit();
 	
 	free(Mem);
@@ -871,18 +851,6 @@ static int DrvExit()
 	DrvCPU3FireIRQ = 0;
 	DrvCPU2Halt = 0;
 	DrvCPU3Halt = 0;
-	
-	IOChipCustomCommand = 0;
-	IOChipCPU1FireIRQ = 0;
-	IOChipMode = 0;
-	IOChipCredits = 0;
-	IOChipCoinPerCredit = 0;
-	IOChipCreditPerCoin = 0;
-	for (int i = 0; i < 16; i++) {
-		IOChipCustom[i] = 0;
-	}
-	
-	nActiveCPU = 0;
 
 	return 0;
 }
@@ -940,10 +908,10 @@ static void DrvCalcPalette()
 
 static void DrvRenderTilemap()
 {
-	int mx, my, Code, Colour, x, y, TileIndex, Row, Col;
+	int mx, my, Code, Colour, x, y, TileIndex, xScroll, yScroll, Flip, xFlip, yFlip, Row, Col;
 
-	for (mx = 0; mx < 28; mx++) {
-		for (my = 0; my < 36; my++) {
+	for (mx = 0; mx < 36; mx++) {
+		for (my = 0; my < 28; my++) {
 			Row = mx + 2;
 			Col = my - 2;
 			if (Col & 0x20) {
@@ -960,19 +928,25 @@ static void DrvRenderTilemap()
 			flip_screen_get() ? TILE_FLIPX : 0);
 	tileinfo->group = color;*/
 			
-			Code = DrvVideoRam[TileIndex + 0x000] & 0x7f;
-			Colour = DrvVideoRam[TileIndex + 0x400] & 0x3f;
+//			Code = DrvVideoRam[TileIndex + 0x000] & 0x7f;
+//			Colour = DrvVideoRam[TileIndex + 0x400] & 0x3f;
+
+			Code = DrvSharedRam1[TileIndex + 0x000] & 0x7f;
+			Colour = DrvSharedRam1[TileIndex + 0x400] & 0x3f;
+			
+//			y = 8 * mx;
+//			x = 8 * my;
 
 			y = 8 * mx;
 			x = 8 * my;
-			
+
 //			x -= xScroll;
 //			if (x < -16) x += 512;
 			
 //			y -= yScroll;
 //			if (y < -16) y += 512;
 			
-//			y -= 16;
+			y -= 16;
 
 			if (x > 0 && x < 280 && y > 0 && y < 216) {
 				Render8x8Tile(pTransDraw, Code, x, y, Colour, 2, 0, DrvChars);
@@ -983,59 +957,16 @@ static void DrvRenderTilemap()
 	}
 }
 
-static void DrvRenderSprites()
-{
-	unsigned char *SpriteRam1 = DrvSharedRam1 + 0x380;
-	unsigned char *SpriteRam2 = DrvSharedRam2 + 0x380;
-	unsigned char *SpriteRam3 = DrvSharedRam3 + 0x380;
-	
-	for (int Offset = 0; Offset < 0x80; Offset += 2) {
-		static const int GfxOffset[2][2] = {
-			{ 0, 1 },
-			{ 2, 3 }
-		};
-		int Sprite = SpriteRam1[Offset + 0] & 0x7f;
-		int Colour = SpriteRam1[Offset + 1] & 0x3f;
-		int sx = SpriteRam2[Offset + 1] - 40 + (0x100 * (SpriteRam3[Offset + 1] & 0x03));
-		int sy = 256 - SpriteRam2[Offset + 0] + 1;
-		int xFlip = (SpriteRam3[Offset + 0] & 0x01);
-		int yFlip = (SpriteRam3[Offset + 0] & 0x02) >> 1;
-		int xSize = (SpriteRam3[Offset + 0] & 0x04) >> 2;
-		int ySize = (SpriteRam3[Offset + 0] & 0x08) >> 3;
-
-		sy -= 16 * ySize;
-		sy = (sy & 0xff) - 32;
-
-//		if (flip_screen_get(machine))
-//		{
-//			flipx ^= 1;
-//			flipy ^= 1;
-//			sy += 48;
-//		}
-
-		for (int y = 0; y <= ySize; y++) {
-			for (int x = 0; x <= xSize; x++) {
-//				drawgfx(bitmap,machine->gfx[1],
-//					sprite + gfx_offs[y ^ (sizey * flipy)][x ^ (sizex * flipx)],
-//					color,
-//					flipx,flipy,
-//					sx + 16*x, sy + 16*y,
-//					cliprect,TRANSPARENCY_PENS,
-//					colortable_get_transpen_mask(machine->colortable, machine->gfx[1], color, 0x0f));
-				int Code = Sprite + GfxOffset[y ^ (ySize * yFlip)][x ^ (xSize * xFlip)];
-				Render16x16Tile_Mask_Clip(pTransDraw, Code, sx + 16 * x, sy + 16 * y, Colour, 2, 0, 256, DrvSprites);
-			}
-		}
-	}
-}
-
 static void DrvDraw()
 {
 	BurnTransferClear();
 	DrvCalcPalette();
 	
+	//Render8x8Tile_Mask(pTransDraw, 0x0a, 100, 100, 6, 2, 0, 0, DrvChars);
+	//Render16x16Tile_Mask(pTransDraw, 0x34, 100, 100, 6, 2, 0, 0, DrvSprites);
+	
 	DrvRenderTilemap();
-	DrvRenderSprites();	
+	
 	BurnTransferCopy(DrvPalette);
 }
 
@@ -1052,60 +983,43 @@ static int DrvFrame()
 	nCyclesTotal[2] = (18432000 / 6) / 60;
 	nCyclesDone[0] = nCyclesDone[1] = nCyclesDone[2] = 0;
 	
+	ZetNewFrame();
+
 	for (int i = 0; i < nInterleave; i++) {
 		int nCurrentCPU, nNext;
-		
+
 		// Run Z80 #1
 		nCurrentCPU = 0;
-		OpenCPU(nCurrentCPU);
+		ZetOpen(nCurrentCPU);
 		nNext = (i + 1) * nCyclesTotal[nCurrentCPU] / nInterleave;
 		nCyclesSegment = nNext - nCyclesDone[nCurrentCPU];
-		nCyclesSegment = Z80Execute(nCyclesSegment);
-		nCyclesDone[nCurrentCPU] += nCyclesSegment;
-		if (i == (nInterleave - 1) && DrvCPU1FireIRQ) {
-			Z80SetIrqLine(0, 1);
-			Z80Execute(0);
-			Z80SetIrqLine(0, 0);
-			Z80Execute(0);
-		}		
-		if ((i == 50 || i == 100 || i == 150) && IOChipCPU1FireIRQ) {
-			Z80SetIrqLine(Z80_INPUT_LINE_NMI, 1);
-			Z80Execute(0);
-			Z80SetIrqLine(Z80_INPUT_LINE_NMI, 0);
-			Z80Execute(0);	
-		}
-		CloseCPU();
-		
+		nCyclesDone[nCurrentCPU] += ZetRun(nCyclesSegment);
+		if (i == (nInterleave - 1)/* && DrvCPU1FireIRQ*/) ZetSetIRQLine(0, ZET_IRQSTATUS_ACK);//{ ZetRaiseIrq(0); DrvCPU1FireIRQ = 0; }
+//		if (i == (nInterleave - 1)) ZetRaiseIrq(0);
+		ZetClose();
+
+		// Run Z80 #2
 		if (!DrvCPU2Halt) {
 			nCurrentCPU = 1;
-			OpenCPU(nCurrentCPU);
+			ZetOpen(nCurrentCPU);
 			nNext = (i + 1) * nCyclesTotal[nCurrentCPU] / nInterleave;
 			nCyclesSegment = nNext - nCyclesDone[nCurrentCPU];
-			nCyclesSegment = Z80Execute(nCyclesSegment);
+			nCyclesSegment = ZetRun(nCyclesSegment);
 			nCyclesDone[nCurrentCPU] += nCyclesSegment;
-			if (i == (nInterleave - 1) && DrvCPU2FireIRQ) {
-				Z80SetIrqLine(0, 1);
-				Z80Execute(0);
-				Z80SetIrqLine(0, 0);
-				Z80Execute(0);
-			}
-			CloseCPU();
+			if (i == (nInterleave - 1) /*&& DrvCPU2FireIRQ*/) ZetSetIRQLine(0, ZET_IRQSTATUS_ACK);//{ ZetRaiseIrq(0); DrvCPU2FireIRQ = 0; }
+			ZetClose();
 		}
 		
+		// Run Z80 #3
 		if (!DrvCPU3Halt) {
 			nCurrentCPU = 2;
-			OpenCPU(nCurrentCPU);
+			ZetOpen(nCurrentCPU);
 			nNext = (i + 1) * nCyclesTotal[nCurrentCPU] / nInterleave;
 			nCyclesSegment = nNext - nCyclesDone[nCurrentCPU];
-			nCyclesSegment = Z80Execute(nCyclesSegment);
+			nCyclesSegment = ZetRun(nCyclesSegment);
 			nCyclesDone[nCurrentCPU] += nCyclesSegment;
-			if ((i == 99 || i == 199) && DrvCPU3FireIRQ) {
-				Z80SetIrqLine(Z80_INPUT_LINE_NMI, 1);
-				Z80Execute(0);
-				Z80SetIrqLine(Z80_INPUT_LINE_NMI, 0);
-				Z80Execute(0);
-			}
-			CloseCPU();
+//			if (i == 50 || i == 150) ZetNmi();
+			ZetClose();
 		}
 	}
 
@@ -1136,7 +1050,7 @@ struct BurnDriverD BurnDrvGalaga = {
 	"galaga", NULL, NULL, "1981",
 	"Galaga (Namco rev. B)\0", NULL, "Namco", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, DrvRomInfo, DrvRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4
@@ -1146,7 +1060,7 @@ struct BurnDriverD BurnDrvGallag = {
 	"gallag", "galaga", NULL, "1981",
 	"Gallag\0", NULL, "bootleg", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_ORIENTATION_FLIPPED | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, //GBF_VERSHOOT, 0,
 	NULL, GallagRomInfo, GallagRomName, DrvInputInfo, DrvDIPInfo,
 	GallagInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 224, 288, 3, 4

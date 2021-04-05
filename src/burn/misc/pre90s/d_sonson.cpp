@@ -723,7 +723,7 @@ struct BurnDriver BurnDrvSonson = {
 	"sonson", NULL, NULL, "1984",
 	"Son Son\0", NULL, "Capcom", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, sonsonRomInfo, sonsonRomName, SonsonInputInfo, SonsonDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 240, 4, 3
@@ -774,7 +774,7 @@ struct BurnDriver BurnDrvSonsonj = {
 	"sonsonj", "sonson", NULL, "1984",
 	"Son Son (Japan)\0", NULL, "Capcom", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, sonsonjRomInfo, sonsonjRomName, SonsonInputInfo, SonsonDIPInfo,
 	SonsonjInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	240, 240, 4, 3

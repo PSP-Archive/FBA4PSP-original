@@ -85,6 +85,7 @@ static void YM2151RenderNormal(short* pSoundBuf, int nSegmentLength)
 
 	YM2151UpdateOne(0, pYM2151Buffer, nSegmentLength);
 
+#ifndef BUILD_PSP
 	if (bBurnUseMMX) {
 		BurnSoundCopy_FM_A(pYM2151Buffer[0], pYM2151Buffer[1], pSoundBuf, nSegmentLength, nYM2151Volume, nYM2151Volume);
 	} else {
@@ -93,6 +94,14 @@ static void YM2151RenderNormal(short* pSoundBuf, int nSegmentLength)
 			pSoundBuf[(n << 1) + 1] = (pYM2151Buffer[1][n] * nYM2151Volume) >> 12;
 		}
 	}
+#else
+
+	for (int n = 0; n < nSegmentLength; n++) {
+		pSoundBuf[(n << 1) + 0] = pYM2151Buffer[0][n];
+		pSoundBuf[(n << 1) + 1] = pYM2151Buffer[1][n];
+	}
+
+#endif
 }
 
 void BurnYM2151Reset()

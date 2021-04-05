@@ -291,7 +291,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+destroyUniCache();
 	return 0;
 }
 
@@ -349,6 +349,8 @@ static int DrvFrame()
 	int nInterleave = 8;
 
 	int nCyclesSegment;
+
+	
 
 	if (DrvReset) {														// Reset machine
 		DrvDoReset();
@@ -430,10 +432,11 @@ static int MemIndex()
 	unsigned char* Next; Next = Mem;
 	Rom01			= Next; Next += 0x100000;		// 68K program
 	RomZ80			= Next; Next += 0x040000;
-	CaveSpriteROM	= Next; Next += 0x800000;
+/*	CaveSpriteROM	= Next; Next += 0x800000;
 	CaveTileROM[0]	= Next; Next += 0x100000;		// Tile layer 0
 	CaveTileROM[1]	= Next; Next += 0x100000;		// Tile layer 1
 	CaveTileROM[2]	= Next; Next += 0x100000;		// Tile layer 2
+*/
 	MSM6295ROM		= Next; Next += 0x040000;
 	MSM6295ROMSrc		= Next; Next += 0x080000;
 	RamStart		= Next;
@@ -482,7 +485,7 @@ static int LoadRoms()
 	BurnLoadRom(Rom01 + 0, 1, 2);
 	
 	BurnLoadRom(RomZ80, 2, 1);
-
+/*
 	BurnLoadRom(CaveSpriteROM + 0x000000, 3, 1);
 	BurnLoadRom(CaveSpriteROM + 0x200000, 4, 1);
 	NibbleSwap1(CaveSpriteROM, 0x400000);
@@ -493,7 +496,7 @@ static int LoadRoms()
 	NibbleSwap2(CaveTileROM[1], 0x080000);
 	BurnLoadRom(CaveTileROM[2], 7, 1);
 	NibbleSwap2(CaveTileROM[2], 0x080000);
-
+*/
 	// Load MSM6295 ADPCM data
 	BurnLoadRom(MSM6295ROMSrc, 8, 1);
 
@@ -607,6 +610,60 @@ static int DrvInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+	cacheFileSize=0xB00000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x800000;
+	CaveTileROMOffset[1]=CaveTileROMOffset[0]+0x100000;
+	CaveTileROMOffset[2]=CaveTileROMOffset[1]+0x100000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead,0,0x1000000);
+
+		BurnLoadRom(uniCacheHead + 0x000000, 3, 1);
+		BurnLoadRom(uniCacheHead + 0x200000, 4, 1);
+		NibbleSwap1(uniCacheHead, 0x400000);
+	
+		BurnLoadRom(uniCacheHead+0x800000, 5, 1);
+		NibbleSwap2(uniCacheHead+0x800000, 0x080000);
+		BurnLoadRom(uniCacheHead+0x900000, 6, 1);
+		NibbleSwap2(uniCacheHead+0x900000, 0x080000);
+		BurnLoadRom(uniCacheHead+0xA00000, 7, 1);
+		NibbleSwap2(uniCacheHead+0xA00000, 0x080000);
+		
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0, SEEK_SET );
+			if( 0xB00000 == sceIoWrite(cacheFile,uniCacheHead, 0xB00000 ) )
+				break;
+		}
+
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+
 
 	// Find out how much memory is needed
 	Mem = NULL;
@@ -622,7 +679,9 @@ static int DrvInit()
 	
 	unsigned char data[] = { 0xFE,0xF3,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF };
 	EEPROMFill(data, 0, 0x10);
-
+	
+	initCacheStructure(0.7);
+	
 	// Load the roms into memory
 	if (LoadRoms()) {
 		return 1;
@@ -700,7 +759,7 @@ struct BurnDriver BurnDrvhotdogst = {
 	"hotdogst", NULL, NULL, "1996",
 	"Hotdog Storm (International)\0", NULL, "Marble", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, hotdogstRomInfo, hotdogstRomName, hotdogstInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,

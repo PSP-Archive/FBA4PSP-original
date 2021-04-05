@@ -189,7 +189,7 @@ static int MemIndex()
 	baddudesSubRom       = Next; Next += 0x10000;
 
 	RamStart = Next;
-	baddudesRam          = Next; Next += 0x1000000;
+	baddudesRam          = Next; Next += 0xB00000;
 	baddudesSubRam       = Next; Next += 0x00800;
 	RamEnd = Next;
 
@@ -201,26 +201,11 @@ int baddudesInit()
 {
 	int nRet = 0, nLen;
 
-	// Allocate and Blank all required memory
-	Mem = NULL;
-	MemIndex();
-	nLen = MemEnd - (unsigned char *)0;
-	if ((Mem = (unsigned char *)malloc(nLen)) == NULL) return 1;
-	memset(Mem, 0, nLen);
-	MemIndex();
+	
 
 	decvid_init();
 
-	// Load and byte-swap 68000 Program roms
-	nRet = BurnLoadRom(baddudesRom + 0x00001, 0, 2); 
-	if (nRet != 0) return 1;
-	nRet = BurnLoadRom(baddudesRom + 0x00000, 1, 2); 
-	if (nRet != 0) return 1;
-	nRet = BurnLoadRom(baddudesRom + 0x40001, 2, 2); 
-	if (nRet != 0) return 1;
-	nRet = BurnLoadRom(baddudesRom + 0x40000, 3, 2); 
-	if (nRet != 0) return 1;
-
+	
 	// load and decode char roms	
 	unsigned char* baddudesTemp = (unsigned char*) malloc(0xC00000);
 
@@ -282,7 +267,23 @@ int baddudesInit()
 
 
 	free(baddudesTemp);
-
+// Allocate and Blank all required memory
+	Mem = NULL;
+	MemIndex();
+	nLen = MemEnd - (unsigned char *)0;
+	if ((Mem = (unsigned char *)malloc(nLen)) == NULL) return 1;
+	memset(Mem, 0, nLen);
+	MemIndex();
+	// Load and byte-swap 68000 Program roms
+	nRet = BurnLoadRom(baddudesRom + 0x00001, 0, 2); 
+	if (nRet != 0) return 1;
+	nRet = BurnLoadRom(baddudesRom + 0x00000, 1, 2); 
+	if (nRet != 0) return 1;
+	nRet = BurnLoadRom(baddudesRom + 0x40001, 2, 2); 
+	if (nRet != 0) return 1;
+	nRet = BurnLoadRom(baddudesRom + 0x40000, 3, 2); 
+	if (nRet != 0) return 1;
+	
 	// Setup the 68000 emulation
 	SekInit(0, 0x68000);
 	SekOpen(0);
@@ -309,7 +310,7 @@ int baddudesInit()
 
 	SekMapMemory(robocopPaletteRam1, 0x310000, 0x3107ff, SM_RAM);
 	SekMapMemory(robocopPaletteRam2, 0x314000, 0x3147ff, SM_RAM);
-	SekMapMemory(baddudesRam+0xff8000, 0xff8000, 0xffbfff, SM_RAM); // dec0_ram
+	SekMapMemory(baddudesRam+0xaf8000, 0xff8000, 0xffbfff, SM_RAM); // dec0_ram
 	SekMapMemory(robocopSpriteRam, 0xffc000, 0xffc7ff, SM_RAM);
 	SekSetReadWordHandler(0, baddudesReadWord);
 	SekSetWriteWordHandler(0, baddudesWriteWord);
@@ -406,7 +407,6 @@ void baddudesRender()
 	BurnTransferCopy(robocopPalette);
 }
 
-
 int baddudesFrame()
 {
 	int nInterleave = 4;
@@ -467,11 +467,8 @@ struct BurnDriverD BurnDrvbaddudes = {
 	"baddudes", NULL, NULL, "1988",
 		"Bad Dudes vs. Dragonninja (US)\0", NULL, "Data East USA", "DEC0",
 		NULL, NULL, NULL, NULL,
-		BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT, 0,
+		BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 		NULL, baddudesRomInfo, baddudesRomName, baddudesInputInfo, NULL,
 		baddudesInit, baddudesExit, baddudesFrame, NULL, baddudesScan,
 		0, NULL, NULL, NULL, NULL, 256, 256, 4, 3
 };
-
-
-

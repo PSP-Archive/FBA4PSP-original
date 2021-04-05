@@ -1,5 +1,6 @@
 #include "burnint.h"
 #include "eeprom_93cxx.h"
+#include "UniCache.h"
 
 #define CAVE_REFRESHRATE (15625.0 / 271.5)
 
@@ -37,7 +38,7 @@ void CavePalWriteByte(unsigned int nAddress, unsigned char byteValue);
 void CavePalWriteWord(unsigned int nAddress, unsigned short wordValue);
 
 // cave_tiles.cpp
-extern unsigned char* CaveTileROM[4];
+extern unsigned long CaveTileROMOffset[4];
 extern unsigned char* CaveTileRAM[4];
 
 extern unsigned int CaveTileReg[4][3];
@@ -51,7 +52,7 @@ int CaveTileInitLayer(int nLayer, int nROMSize, int nBitdepth, int nOffset);
 // cave_sprite.cpp
 extern int CaveSpriteVisibleXOffset;
 
-extern unsigned char* CaveSpriteROM;
+extern unsigned long CaveSpriteROMOffset;
 extern unsigned char* CaveSpriteRAM;
 
 extern int nCaveSpriteBank;

@@ -1865,11 +1865,11 @@ static void DrvCalcPalette()
 		DrvPalette[Offset >> 1] = BurnHighCol(pal5bit(Data >> 0), pal5bit(Data >> 5), pal5bit(Data >> 10), 0);
 	}
 }
-
 static void TmntDraw()
 {
-	BurnTransferClear();
+	//BurnTransferClear();
 	DrvCalcPalette();
+
 	K052109UpdateScroll();
 	
 	K052109RenderLayer(2, 1, DrvTiles);
@@ -1898,46 +1898,43 @@ static void RenderTitleSample(short *pSoundBuf, int nLength)
 	
 	TitleSamplePos = Addr;
 }
-
+#define nInterleave 368
+#define nSegmentLength 1
+#define nCyclesTotalSek 8000000/60						
+#define nCyclesTotalZet 3579545/60
 static int TmntFrame()
 {
-	int nInterleave = nBurnSoundLen;
-	int nSoundBufferPos = 0;
+	//int nInterleave = 128;
+	
 
 	if (DrvReset) TmntDoReset();
 
 	DrvMakeInputs();
 
-	nCyclesTotal[0] = 8000000 / 60;
-	nCyclesTotal[1] = 3579545 / 60;
-	nCyclesDone[0] = nCyclesDone[1] = 0;
+	int nCyclesDoneSek=0;
+	int nCyclesDoneZet=0;
+	
 
+	int nSoundBufferPos = 0;
+	
 	SekNewFrame();
 	ZetNewFrame();
-	
-	for (int i = 0; i < nInterleave; i++) {
-		int nCurrentCPU, nNext;
+	SekOpen(0);
+	ZetOpen(0);
+	for (int i = 1; i <= nInterleave; i++) {
 
 		// Run 68000
-		nCurrentCPU = 0;
-		SekOpen(0);
-		nNext = (i + 1) * nCyclesTotal[nCurrentCPU] / nInterleave;
-		nCyclesSegment = nNext - nCyclesDone[nCurrentCPU];
-		nCyclesDone[nCurrentCPU] += SekRun(nCyclesSegment);
-		if (i == (nInterleave - 1) && bIrqEnable) SekSetIRQLine(5, SEK_IRQSTATUS_AUTO);
-		SekClose();
+
+		nCyclesDoneSek += SekRun(i * (nCyclesTotalSek / nInterleave) - nCyclesDoneSek);
+		
 		
 		// Run Z80
-		nCurrentCPU = 1;
-		ZetOpen(0);
-		nNext = (i + 1) * nCyclesTotal[nCurrentCPU] / nInterleave;
-		nCyclesSegment = nNext - nCyclesDone[nCurrentCPU];
-		nCyclesSegment = ZetRun(nCyclesSegment);
-		nCyclesDone[nCurrentCPU] += nCyclesSegment;
-		ZetClose();
 		
-		if (pBurnSoundOut) {
-			int nSegmentLength = nBurnSoundLen / nInterleave;
+		nCyclesDoneZet += ZetRun(i* (nCyclesTotalZet / nInterleave) - nCyclesDoneZet);
+		
+		
+		//if (pBurnSoundOut) 
+		{
 			short* pSoundBuf = pBurnSoundOut + (nSoundBufferPos << 1);
 			BurnYM2151Render(pSoundBuf, nSegmentLength);
 			K007232Update(pSoundBuf, nSegmentLength);
@@ -1946,17 +1943,20 @@ static int TmntFrame()
 			nSoundBufferPos += nSegmentLength;
 		}
 	}
-	
+	SekClose();
+	ZetClose();
+	if ( bIrqEnable) SekSetIRQLine(5, SEK_IRQSTATUS_AUTO);
+		
 	// Make sure the buffer is entirely filled.
 	if (pBurnSoundOut) {
-		int nSegmentLength = nBurnSoundLen - nSoundBufferPos;
+		int leftLength = nBurnSoundLen - nSoundBufferPos;
 		short* pSoundBuf = pBurnSoundOut + (nSoundBufferPos << 1);
 
-		if (nSegmentLength) {
-			BurnYM2151Render(pSoundBuf, nSegmentLength);
-			K007232Update(pSoundBuf, nSegmentLength);
-			UPD7759Update(pSoundBuf, nSegmentLength);
-			if (PlayTitleSample) RenderTitleSample(pSoundBuf, nSegmentLength);
+		if (leftLength>0) {
+			BurnYM2151Render(pSoundBuf, leftLength);
+			K007232Update(pSoundBuf, leftLength);
+			UPD7759Update(pSoundBuf, leftLength);
+			if (PlayTitleSample) RenderTitleSample(pSoundBuf, leftLength);
 		}
 	}
 	
@@ -1967,7 +1967,7 @@ static int TmntFrame()
 
 static int MiaFrame()
 {
-	int nInterleave = nBurnSoundLen;
+	//int nInterleave = 256;
 	int nSoundBufferPos = 0;
 
 	if (DrvReset) DrvDoReset();
@@ -2003,7 +2003,6 @@ static int MiaFrame()
 		ZetClose();
 		
 		if (pBurnSoundOut) {
-			int nSegmentLength = nBurnSoundLen / nInterleave;
 			short* pSoundBuf = pBurnSoundOut + (nSoundBufferPos << 1);
 			BurnYM2151Render(pSoundBuf, nSegmentLength);
 			K007232Update(pSoundBuf, nSegmentLength);
@@ -2013,12 +2012,12 @@ static int MiaFrame()
 	
 	// Make sure the buffer is entirely filled.
 	if (pBurnSoundOut) {
-		int nSegmentLength = nBurnSoundLen - nSoundBufferPos;
+		int leftLength = nBurnSoundLen - nSoundBufferPos;
 		short* pSoundBuf = pBurnSoundOut + (nSoundBufferPos << 1);
 
-		if (nSegmentLength) {
-			BurnYM2151Render(pSoundBuf, nSegmentLength);
-			K007232Update(pSoundBuf, nSegmentLength);
+		if (leftLength) {
+			BurnYM2151Render(pSoundBuf, leftLength);
+			K007232Update(pSoundBuf, leftLength);
 		}
 	}
 	
@@ -2029,7 +2028,7 @@ static int MiaFrame()
 
 static int CuebrickFrame()
 {
-	int nInterleave = 10;
+	//int nInterleave = 10;
 	int nSoundBufferPos = 0;
 
 	if (DrvReset) CuebrickDoReset();
@@ -2054,7 +2053,6 @@ static int CuebrickFrame()
 		if (CuebrickSndIrqFire) SekSetIRQLine(6, SEK_IRQSTATUS_AUTO);
 				
 		if (pBurnSoundOut) {
-			int nSegmentLength = nBurnSoundLen / nInterleave;
 			short* pSoundBuf = pBurnSoundOut + (nSoundBufferPos << 1);
 			BurnYM2151Render(pSoundBuf, nSegmentLength);
 			nSoundBufferPos += nSegmentLength;
@@ -2063,11 +2061,11 @@ static int CuebrickFrame()
 	
 	// Make sure the buffer is entirely filled.
 	if (pBurnSoundOut) {
-		int nSegmentLength = nBurnSoundLen - nSoundBufferPos;
+		int leftLength = nBurnSoundLen - nSoundBufferPos;
 		short* pSoundBuf = pBurnSoundOut + (nSoundBufferPos << 1);
 
-		if (nSegmentLength) {
-			BurnYM2151Render(pSoundBuf, nSegmentLength);
+		if (leftLength) {
+			BurnYM2151Render(pSoundBuf, leftLength);
 		}
 	}
 	
@@ -2157,7 +2155,7 @@ struct BurnDriver BurnDrvTmnt = {
 	"tmnt", NULL, NULL, "1989",
 	"Teenage Mutant Ninja Turtles (World 4 Players)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 4, HARDWARE_KONAMI_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 4, HARDWARE_KONAMI_68K_Z80, //GBF_SCRFIGHT, 0,
 	NULL, TmntRomInfo, TmntRomName, TmntInputInfo, TmntDIPInfo,
 	TmntInit, DrvExit, TmntFrame, NULL, TmntScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2167,7 +2165,7 @@ struct BurnDriver BurnDrvTmntu = {
 	"tmntu", "tmnt", NULL, "1989",
 	"Teenage Mutant Ninja Turtles (US 4 Players, set 1)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_KONAMI_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_KONAMI_68K_Z80, //GBF_SCRFIGHT, 0,
 	NULL, TmntuRomInfo, TmntuRomName, TmntInputInfo, TmntDIPInfo,
 	TmntInit, DrvExit, TmntFrame, NULL, TmntScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2177,7 +2175,7 @@ struct BurnDriver BurnDrvTmntua = {
 	"tmntua", "tmnt", NULL, "1989",
 	"Teenage Mutant Ninja Turtles (US 4 Players, set 2)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_KONAMI_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_KONAMI_68K_Z80, //GBF_SCRFIGHT, 0,
 	NULL, TmntuaRomInfo, TmntuaRomName, TmntInputInfo, TmntDIPInfo,
 	TmntInit, DrvExit, TmntFrame, NULL, TmntScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2187,7 +2185,7 @@ struct BurnDriver BurnDrvTmht = {
 	"tmht", "tmnt", NULL, "1989",
 	"Teenage Mutant Hero Turtles (UK 4 Players)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_KONAMI_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_KONAMI_68K_Z80, //GBF_SCRFIGHT, 0,
 	NULL, TmhtRomInfo, TmhtRomName, TmntInputInfo, TmntDIPInfo,
 	TmntInit, DrvExit, TmntFrame, NULL, TmntScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2197,7 +2195,7 @@ struct BurnDriver BurnDrvTmntj = {
 	"tmntj", "tmnt", NULL, "1990",
 	"Teenage Mutant Ninja Turtles (Japan 4 Players)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_KONAMI_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_KONAMI_68K_Z80, //GBF_SCRFIGHT, 0,
 	NULL, TmntjRomInfo, TmntjRomName, TmntInputInfo, TmntDIPInfo,
 	TmntInit, DrvExit, TmntFrame, NULL, TmntScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2207,7 +2205,7 @@ struct BurnDriver BurnDrvTmht2p = {
 	"tmht2p", "tmnt", NULL, "1989",
 	"Teenage Mutant Hero Turtles (UK 2 Players, set 1)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, //GBF_SCRFIGHT, 0,
 	NULL, Tmht2pRomInfo, Tmht2pRomName, Tmnt2pInputInfo, Tmnt2pDIPInfo,
 	TmntInit, DrvExit, TmntFrame, NULL, TmntScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2217,7 +2215,7 @@ struct BurnDriver BurnDrvTmht2pa = {
 	"tmht2pa", "tmnt", NULL, "1989",
 	"Teenage Mutant Hero Turtles (UK 2 Players, set 2)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, //GBF_SCRFIGHT, 0,
 	NULL, Tmht2paRomInfo, Tmht2paRomName, Tmnt2pInputInfo, Tmnt2pDIPInfo,
 	TmntInit, DrvExit, TmntFrame, NULL, TmntScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2227,7 +2225,7 @@ struct BurnDriver BurnDrvTmht2pj = {
 	"tmnt2pj", "tmnt", NULL, "1990",
 	"Teenage Mutant Ninja Turtles (Japan 2 Players)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, //GBF_SCRFIGHT, 0,
 	NULL, Tmnt2pjRomInfo, Tmnt2pjRomName, Tmnt2pInputInfo, Tmnt2pDIPInfo,
 	TmntInit, DrvExit, TmntFrame, NULL, TmntScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2237,7 +2235,7 @@ struct BurnDriver BurnDrvTmht2po = {
 	"tmnt2po", "tmnt", NULL, "1989",
 	"Teenage Mutant Ninja Turtles (Oceania 2 Players)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, //GBF_SCRFIGHT, 0,
 	NULL, Tmnt2poRomInfo, Tmnt2poRomName, Tmnt2pInputInfo, Tmnt2pDIPInfo,
 	TmntInit, DrvExit, TmntFrame, NULL, TmntScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2247,7 +2245,7 @@ struct BurnDriver BurnDrvMia = {
 	"mia", NULL, NULL, "1989",
 	"M.I.A. - Missing in Action (version T)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_KONAMI_68K_Z80, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_KONAMI_68K_Z80, //GBF_PLATFORM, 0,
 	NULL, MiaRomInfo, MiaRomName, MiaInputInfo, MiaDIPInfo,
 	MiaInit, DrvExit, MiaFrame, NULL, MiaScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2257,7 +2255,7 @@ struct BurnDriver BurnDrvMia2 = {
 	"mia2", "mia", NULL, "1989",
 	"M.I.A. - Missing in Action (version S)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_KONAMI_68K_Z80, //GBF_PLATFORM, 0,
 	NULL, Mia2RomInfo, Mia2RomName, MiaInputInfo, MiaDIPInfo,
 	MiaInit, DrvExit, MiaFrame, NULL, MiaScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3
@@ -2267,7 +2265,7 @@ struct BurnDriver BurnDrvCuebrick = {
 	"cuebrick", NULL, NULL, "1989",
 	"Cue Brick (World version D)\0", NULL, "Konami", "Konami",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_KONAMI_68K_Z80, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_KONAMI_68K_Z80, //GBF_PLATFORM, 0,
 	NULL, CuebrickRomInfo, CuebrickRomName, MiaInputInfo, MiaDIPInfo,
 	CuebrickInit, DrvExit, CuebrickFrame, NULL, CuebrickScan,
 	0, NULL, NULL, NULL, NULL, 304, 224, 4, 3

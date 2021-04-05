@@ -245,7 +245,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+destroyUniCache();
 	return 0;
 }
 
@@ -293,6 +293,8 @@ static int DrvFrame()
 {
 	int nCyclesVBlank;
 	int nInterleave = 8;
+
+	
 
 	if (DrvReset) {														// Reset machine
 		DrvDoReset();
@@ -389,8 +391,9 @@ static int MemIndex()
 {
 	unsigned char* Next; Next = Mem;
 	Rom01			= Next; Next += 0x100000;		// 68K program
-	CaveSpriteROM	= Next; Next += 0x800000;
+/*	CaveSpriteROM	= Next; Next += 0x800000;
 	CaveTileROM[0]	= Next; Next += 0x400000;		// Tile layer 0
+*/
 	YMZ280BROM		= Next; Next += 0x200000;
 	RamStart		= Next;
 	Ram01			= Next; Next += 0x010000;		// CPU #0 work RAM
@@ -434,13 +437,13 @@ static int LoadRoms()
 	// Load 68000 ROM
 	BurnLoadRom(Rom01 + 0, 1, 2);
 	BurnLoadRom(Rom01 + 1, 0, 2);
-
+/*
 	BurnLoadRom(CaveSpriteROM + 0x0000000, 2, 1);
 	NibbleSwap1(CaveSpriteROM, 0x400000);
 
 	BurnLoadRom(CaveTileROM[0] + 0x000000, 3, 1);
 	NibbleSwap4(CaveTileROM[0], 0x200000);
-
+*/
 	// Load YMZ280B data
 	BurnLoadRom(YMZ280BROM, 4, 1);
 
@@ -488,7 +491,52 @@ static int DrvInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+	cacheFileSize=0xC00000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x800000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead,0,0x1000000);
 
+		BurnLoadRom(uniCacheHead + 0x0000000, 2, 1);
+		NibbleSwap1(uniCacheHead, 0x400000);
+	
+		BurnLoadRom(uniCacheHead + 0x800000, 3, 1);
+		NibbleSwap4(uniCacheHead + 0x800000, 0x200000);
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile,0, SEEK_SET );
+			if( 0xC00000 == sceIoWrite(cacheFile,uniCacheHead, 0xC00000 ) )
+				break;
+		}
+
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+	
 	// Find out how much memory is needed
 	Mem = NULL;
 	MemIndex();
@@ -505,7 +553,8 @@ static int DrvInit()
 		unsigned char data[] = { 0x03, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08 };
 		EEPROMFill(data, 0, 0x0A);
 	}
-
+	initCacheStructure(0.7);
+	
 	// Load the roms into memory
 	if (LoadRoms()) {
 		return 1;
@@ -586,7 +635,7 @@ struct BurnDriver BurnDrvUoPoko = {
 	"uopoko", NULL, NULL, "1999",
 	"Puzzle Uo Poko (International)\0", NULL, "Cave / Jaleco", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY,
 	NULL, uopokoRomInfo, uopokoRomName, uopokoInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,
@@ -597,7 +646,7 @@ struct BurnDriver BurnDrvUoPokoj = {
 	"uopokoj", "uopoko", NULL, "1999",
 	"Uo Poko (Japan, ver. 1998 Feb 06)\0", NULL, "Cave / Jaleco", "Cave",
 	L"\u30D1\u30BA\u30EB - \u9B5A\u30DD\u30B3 (Japan, ver. 1998 Feb 06)\0Uo Poko (Japan, ver. 1998 Feb 06)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY,
 	NULL, uopokojRomInfo, uopokojRomName, uopokoInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,

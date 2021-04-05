@@ -270,6 +270,7 @@ int NewsInit()
 	nRet = BurnLoadRom(NewsRom, 0, 1); if (nRet != 0) return 1;
 
 	// Load, byte-swap and decode Tile Roms
+	memset(NewsTempGfx, 0, 0x80000);
 	nRet = BurnLoadRom(NewsTempGfx + 0x00000, 1, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(NewsTempGfx + 0x00001, 2, 2); if (nRet != 0) return 1;
 	GfxDecode(16384, 4, 8, 8, TilePlaneOffsets, TileXOffsets, TileYOffsets, 0x100, NewsTempGfx, NewsTiles);
@@ -434,7 +435,7 @@ struct BurnDriver BurnDrvNews = {
 	"news", NULL, NULL, "1993",
 	"News (set 1)\0", NULL, "Poby / Virus", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 1, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 1, HARDWARE_MISC_POST90S,
 	NULL, NewsRomInfo, NewsRomName, NewsInputInfo, NewsDIPInfo,
 	NewsInit, NewsExit, NewsFrame, NULL, NewsScan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3
@@ -444,7 +445,7 @@ struct BurnDriver BurnDrvNewsa = {
 	"newsa", "news", NULL, "1993",
 	"News (set 2)\0", NULL, "Poby / Jeansole", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 1, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 1, HARDWARE_MISC_POST90S,
 	NULL, NewsaRomInfo, NewsaRomName, NewsInputInfo, NewsaDIPInfo,
 	NewsInit, NewsExit, NewsFrame, NULL, NewsScan,
 	0, NULL, NULL, NULL, NULL, 256, 224, 4, 3

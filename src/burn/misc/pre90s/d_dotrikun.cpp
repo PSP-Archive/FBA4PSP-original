@@ -1,64 +1,97 @@
-// FB Alpha Dottori Kun driver module
-// Based on MAME driver by Takahiro Nogi
 
-#include "tiles_generic.h"
+/*
+Dottori Kun (Head On's mini game)
+(c)1990 SEGA
 
-static unsigned char *AllMem;
-static unsigned char *MemEnd;
-static unsigned char *AllRam;
-static unsigned char *RamEnd;
-static unsigned char *DrvZ80ROM;
-static unsigned char *DrvZ80RAM;
-static unsigned int *DrvPalette;
-static unsigned char DrvRecalc;
+CPU   : Z-80 (4MHz)
+SOUND : (none)
 
-static unsigned char DrvJoy1[8];
-static unsigned char DrvReset;
-static unsigned char DrvInputs[1];
+14479.MPR  ; PRG (FIRST VER)
+14479A.MPR ; PRG (NEW VER)
 
-static unsigned char *nColor;
+* This game is only for the test of cabinet
+* BackRaster = WHITE on the FIRST version.
+* BackRaster = BLACK on the NEW version.
+* On the NEW version, push COIN-SW as TEST MODE.
+* 0000-3FFF:ROM 8000-85FF:VRAM(128x96) 8600-87FF:WORK-RAM
+
+Based on MAME driver by Takahiro Nogi
+*/
+
+#include "burnint.h"
+
+
+static unsigned char DrvJoy[8], DrvReset, *Mem, nColor;
 
 static struct BurnInputInfo DrvInputList[] = {
-	{"P1 Up",	BIT_DIGITAL,	DrvJoy1 + 0,    "p1 up"    },
-	{"P1 Down",	BIT_DIGITAL,	DrvJoy1 + 1,    "p1 down", },
-	{"P1 Left",	BIT_DIGITAL,	DrvJoy1 + 2, 	"p1 left"  },
-	{"P1 Right",	BIT_DIGITAL,	DrvJoy1 + 3, 	"p1 right" },
-	{"P1 Button 1",	BIT_DIGITAL,	DrvJoy1 + 4,	"p1 fire 1"},
-	{"P1 Button 2",	BIT_DIGITAL,	DrvJoy1 + 5,	"p1 fire 2"},
-	{"P1 start",    BIT_DIGITAL,	DrvJoy1 + 6,	"p1 start" },
-	{"P1 Coin",	BIT_DIGITAL,	DrvJoy1 + 7,	"p1 coin"  },
+	{"P1 Up",	  BIT_DIGITAL,   DrvJoy + 0,    "p1 up"    },
+	{"P1 Down",	  BIT_DIGITAL,   DrvJoy + 1,    "p1 down", },
+	{"P1 Left"      , BIT_DIGITAL  , DrvJoy + 2, 	"p1 left"  },
+	{"P1 Right"     , BIT_DIGITAL  , DrvJoy + 3, 	"p1 right" },
+	{"P1 Button 1"  , BIT_DIGITAL  , DrvJoy + 4,	"p1 fire 1"},
+	{"P1 Button 2"  , BIT_DIGITAL  , DrvJoy + 5,	"p1 fire 2"},
+	{"P1 start"  ,    BIT_DIGITAL  , DrvJoy + 6,	"p1 start" },
+	{"P1 Coin"      , BIT_DIGITAL  , DrvJoy + 7,	"p1 coin"  },
 
-	{"Reset",	BIT_DIGITAL,	&DrvReset,	"reset"    },
+	{"Reset"        , BIT_DIGITAL  , &DrvReset  ,	"reset"    },
 };
 
 STDINPUTINFO(Drv);
 
-unsigned char __fastcall dotrikun_in_port(unsigned short port)
+
+unsigned char __fastcall dotrikun_in_port(unsigned short a)
 {
-	switch (port & 0xff)
-	{
-		case 0x00:
-			return DrvInputs[0];
+	a &= 0xff;
+
+	if (a == 0) {
+		unsigned char ret = 0;
+		for (int i = 0; i < 8; i++) ret |= DrvJoy[i] << i;
+
+		return ~ret;
 	}
 
 	return 0;
 }
 
-void __fastcall dotrikun_out_port(unsigned short port, unsigned char data)
+
+void __fastcall dotrikun_out_port(unsigned short a, unsigned char d)
 {
-	switch (port & 0xff)
-	{
-		case 0x00:
-			*nColor = data;
-		return;
+	a &= 0xff;
+
+	if (a == 0) {
+		nColor = d;
 	}
 }
+
+
+static int DrvScan(int nAction,int *pnMin)
+{
+	struct BurnArea ba;
+
+	if (pnMin) {
+		*pnMin = 0x029521;
+	}
+
+	if (nAction & ACB_VOLATILE) {	
+		memset(&ba, 0, sizeof(ba));
+		ba.Data	  = Mem + 0x4000;
+		ba.nLen	  = 0x0800;
+		ba.szName = "All Ram";
+		BurnAcb(&ba);
+
+		ZetScan(nAction);
+
+		SCAN_VAR(nColor);
+	}
+
+	return 0;
+}
+
 
 static int DrvDoReset()
 {
 	DrvReset = 0;
-
-	memset (AllRam, 0, RamEnd - AllRam);
+	memset (Mem + 0x4000, 0, 0x0800);
 
 	ZetOpen(0);
 	ZetReset();
@@ -67,113 +100,50 @@ static int DrvDoReset()
 	return 0;
 }
 
-static int MemIndex()
-{
-	unsigned char *Next; Next = AllMem;
 
-	DrvZ80ROM	= Next; Next += 0x010000;
-
-	DrvPalette	= (unsigned int*)Next; Next += 0x000002 * sizeof (int);
-
-	AllRam		= Next;
-
-	DrvZ80RAM	= Next; Next += 0x000800;
-
-	nColor		= Next; Next += 0x000001;
-
-	RamEnd		= Next;
-
-	MemEnd		= Next;
-
-	return 0;
-}
-
-static int DrvInit()
-{
-	AllMem = NULL;
-	MemIndex();
-	int nLen = MemEnd - (unsigned char *)0;
-	if ((AllMem = (unsigned char *)malloc(nLen)) == NULL) return 1;
-	memset(AllMem, 0, nLen);
-	MemIndex();
-
-	{
-		if (BurnLoadRom(DrvZ80ROM, 0, 1)) return 1;
-	}
-
-	ZetInit(1);
-	ZetOpen(0);
-	ZetMapArea (0x0000, 0x3fff, 0, DrvZ80ROM);
-	ZetMapArea (0x0000, 0x3fff, 2, DrvZ80ROM);
-	ZetMapArea (0x8000, 0x87ff, 0, DrvZ80RAM);
-	ZetMapArea (0x8000, 0x87ff, 1, DrvZ80RAM);
-	ZetMapArea (0x8000, 0x87ff, 2, DrvZ80RAM);
-	ZetSetOutHandler(dotrikun_out_port);
-	ZetSetInHandler(dotrikun_in_port);
-	ZetMemEnd();
-	ZetClose();
-
-	GenericTilesInit();
-
-	DrvDoReset();
-
-	return 0;
-}
-
-static int DrvExit()
-{
-	GenericTilesExit();
-
-	ZetExit();
-
-	free (AllMem);
-	AllMem = NULL;
-
-	return 0;
-}
+#ifndef BUILD_PSP
+#define Y_SIZE	256
+#else
+#define Y_SIZE	512
+#endif
 
 static int DrvDraw()
 {
-	if (DrvRecalc) {
-		DrvPalette[0] = BurnHighCol((*nColor & 0x08) ? 0xff : 0, (*nColor & 0x10) ? 0xff : 0, (*nColor & 0x20) ? 0xff : 0, 0);
-		DrvPalette[1] = BurnHighCol((*nColor & 0x01) ? 0xff : 0, (*nColor & 0x02) ? 0xff : 0, (*nColor & 0x04) ? 0xff : 0, 0);
-	}
+#define sw(n)	((nColor >> n) & 1 ? 0xff : 0)
+#define color()	BurnHighCol(pen >> 16, pen >> 8, pen, 0)
+
+	unsigned int back_pen = (sw(3) << 16) | (sw(4) << 8) | sw(5);
+	unsigned int fore_pen = (sw(0) << 16) | (sw(1) << 8) | sw(2);
 
 	for (int offs = 0; offs < 0x0600; offs++)
 	{
-		int sx = (offs & 0x0f) << 4;
-		int sy = (offs >> 4) << 1;
-		int px = DrvZ80RAM[offs];
+		unsigned char x = offs << 4;
+		unsigned char y = offs >> 4 << 1;
+		unsigned char data = Mem[0x4000 + offs];
 
-		for (int i = 0; i < 8; i++, sx+=2)
+		for (int i = 0; i < 8; i++)
 		{
-			int pen = (px >> (7 - i)) & 1;
+			unsigned int pen = (data & 0x80) ? fore_pen : back_pen;
 
-			if (sx > nScreenWidth || sy >= nScreenHeight) continue;
+			PutPix(pBurnDraw + (x + 0 + (y + 0) * Y_SIZE) * nBurnBpp, color());
+			PutPix(pBurnDraw + (x + 1 + (y + 0) * Y_SIZE) * nBurnBpp, color());
+			PutPix(pBurnDraw + (x + 0 + (y + 1) * Y_SIZE) * nBurnBpp, color());
+			PutPix(pBurnDraw + (x + 1 + (y + 1) * Y_SIZE) * nBurnBpp, color());
 
-			pTransDraw[((sy + 0) << 8) | (sx + 0)] = pen;
-			pTransDraw[((sy + 0) << 8) | (sx + 1)] = pen;
-			pTransDraw[((sy + 1) << 8) | (sx + 0)] = pen;
-			pTransDraw[((sy + 1) << 8) | (sx + 1)] = pen;
+			x = x + 2;
+			data = data << 1;
 		}
 	}
 
-	BurnTransferCopy(DrvPalette);
-
 	return 0;
 }
+
+#undef Y_SIZE
 
 static int DrvFrame()
 {
 	if (DrvReset) {
 		DrvDoReset();
-	}
-
-	{
-		DrvInputs[0] = 0xff;
-		for (int i = 0; i < 8; i++) {
-			DrvInputs[0] ^= (DrvJoy1[i] & 1) << i;
-		}
 	}
 
 	ZetOpen(0);
@@ -188,23 +158,40 @@ static int DrvFrame()
 	return 0;
 }
 
-static int DrvScan(int nAction,int *pnMin)
+
+static int DrvInit()
 {
-	struct BurnArea ba;
-
-	if (pnMin) {
-		*pnMin = 0x029702;
+	Mem = (unsigned char*)malloc ( 0x4800 );
+	if (Mem == NULL) {
+		return 1;
 	}
+	memset(Mem, 0, 0x4800);
 
-	if (nAction & ACB_VOLATILE) {	
-		memset(&ba, 0, sizeof(ba));
-		ba.Data	  = AllRam;
-		ba.nLen	  = RamEnd - AllRam;
-		ba.szName = "All Ram";
-		BurnAcb(&ba);
+	if (BurnLoadRom(Mem, 0, 1)) return 1;
 
-		ZetScan(nAction);
-	}
+	ZetInit(1);
+	ZetOpen(0);
+	ZetMapArea (0x0000, 0x3fff, 0, Mem + 0x0000); // Read ROM
+	ZetMapArea (0x0000, 0x3fff, 2, Mem + 0x0000); // Fetch ROM
+	ZetMapArea (0x8000, 0x87ff, 0, Mem + 0x4000); // Read RAM
+	ZetMapArea (0x8000, 0x87ff, 1, Mem + 0x4000); // Write RAM
+	ZetMemEnd();
+	ZetSetInHandler(dotrikun_in_port);
+	ZetSetOutHandler(dotrikun_out_port);
+	ZetClose();
+
+	DrvDoReset();
+	return 0;
+}
+
+
+static int DrvExit()
+{
+	ZetExit();
+
+	DrvReset = 0;
+	free (Mem);
+	Mem = NULL;
 
 	return 0;
 }
@@ -223,9 +210,9 @@ struct BurnDriver BurnDrvdotrikun = {
 	"dotrikun", NULL, NULL, "1990",
 	"Dottori Kun (new version)\0", NULL, "Sega", "Test Hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 1, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING, 1, HARDWARE_MISC_PRE90S,
 	NULL, dotrikunRomInfo, dotrikunRomName, DrvInputInfo, NULL,
-	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 192, 4, 3
 };
 
@@ -243,8 +230,10 @@ struct BurnDriver BurnDrvdotriku2 = {
 	"dotriku2", "dotrikun", NULL, "1990",
 	"Dottori Kun (old version)\0", NULL, "Sega", "Test Hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 1, HARDWARE_MISC_PRE90S, GBF_MAZE, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 1, HARDWARE_MISC_PRE90S,
 	NULL, dotriku2RomInfo, dotriku2RomName, DrvInputInfo, NULL,
-	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 192, 4, 3
 };
+
+

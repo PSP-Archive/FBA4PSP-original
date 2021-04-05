@@ -107,7 +107,7 @@ void __fastcall mrflea_write(unsigned short a, unsigned char d)
 }
 
 
-void _fastcall mrflea_out_port(unsigned short a, unsigned char data)
+void __fastcall mrflea_out_port(unsigned short a, unsigned char data)
 {
 	switch (a & 0xff)
 	{
@@ -134,7 +134,7 @@ void _fastcall mrflea_out_port(unsigned short a, unsigned char data)
 	}
 }
 
-unsigned char _fastcall mrflea_in_port(unsigned short a)
+unsigned char __fastcall mrflea_in_port(unsigned short a)
 {
 	switch (a & 0xff)
 	{
@@ -152,7 +152,7 @@ unsigned char _fastcall mrflea_in_port(unsigned short a)
 	return 0;
 }
 
-void _fastcall mrflea_cpu1_out_port(unsigned short a, unsigned char data)
+void __fastcall mrflea_cpu1_out_port(unsigned short a, unsigned char data)
 {
 	switch (a & 0xff)
 	{
@@ -308,6 +308,7 @@ static int DrvInit()
 	if (pFMBuffer == NULL) {
 		return 1;
 	}
+	memset (pFMBuffer, 0, nBurnSoundLen * 9 * sizeof(short));
 
 	memset (Mem, 0, 0x70080);
 	
@@ -414,7 +415,11 @@ static int DrvDraw()
 			{
 				int pxl = Palette[*src];
 
+#ifdef BUILD_PSP
+				PutPix(pBurnDraw + ((y << 9) | x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
+#else
 				PutPix(pBurnDraw + ((y << 8) | x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
+#endif
 			}
 		}
 	}
@@ -436,7 +441,11 @@ static int DrvDraw()
 
 				int pxl = Palette[0x10|*src];
 
+#ifdef BUILD_PSP
+				PutPix(pBurnDraw + ((y << 9) | x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
+#else
 				PutPix(pBurnDraw + ((y << 8) | x) * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
+#endif
 			}
 		}
 	}
@@ -644,7 +653,7 @@ struct BurnDriver BurnDrvmrflea = {
 	"mrflea", NULL, NULL, "1982",
 	"The Amazing Adventures of Mr. F. Lea\0", NULL, "Pacific Novelty", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 1, HARDWARE_MISC_PRE90S,
 	NULL, mrfleaRomInfo, mrfleaRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	248, 256, 3, 4

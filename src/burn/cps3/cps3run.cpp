@@ -18,8 +18,8 @@ Port to FBA by OopsWare
 **********************************************************************/
 
 #include "cps3.h"
-#include "sh2.h"
-
+#include "UniCache.h"
+#include "cps3_sh2.cpp"
 #define	BE_GFX		1
 //#define	FAST_BOOT	1
 #define SPEED_HACK	1		// Default should be 1, if not FPS would drop.
@@ -27,10 +27,10 @@ Port to FBA by OopsWare
 static unsigned char *Mem = NULL, *MemEnd = NULL;
 static unsigned char *RamStart, *RamEnd;
 
-static unsigned char *RomBios;
-static unsigned char *RomGame;
-static unsigned char *RomGame_D;
-static unsigned char *RomUser;
+unsigned char *RomBios;
+unsigned int nRomGameOffset;
+
+// static unsigned char *RomUser;
 
 static unsigned char *RamMain;
 static unsigned int *RamSpr;
@@ -116,7 +116,7 @@ static flash_chip main_flash;
 
 void cps3_flash_init(flash_chip * chip/*, void *data*/)
 {
-	memset(chip, 0, sizeof(flash_chip));
+	memset(chip, 0xFF, sizeof(flash_chip));
 	chip->status = 0x80;
 	chip->flash_mode = FM_NORMAL;
 	chip->flash_master_lock = 0;
@@ -150,7 +150,7 @@ unsigned int cps3_flash_read(flash_chip * chip, unsigned int addr)
 
 void cps3_flash_write(flash_chip * chip, unsigned int addr, unsigned int data)
 {
-	bprintf(1, _T("FLASH to write long value %8x to location %8x\n"), data, addr);
+//	// bprintf(1, _T("FLASH to write long value %8x to location %8x\n"), data, addr);
 	
 	switch( chip->flash_mode )	{
 	case FM_NORMAL:
@@ -176,7 +176,7 @@ void cps3_flash_write(flash_chip * chip, unsigned int addr, unsigned int data)
 			break;
 		default:
 			//logerror( "Unknown flash mode byte %x\n", data & 0xff );
-			//bprintf(1, _T("FLASH to write long value %8x to location %8x\n"), data, addr);
+			//// bprintf(1, _T("FLASH to write long value %8x to location %8x\n"), data, addr);
 			break;
 		}	
 		break;
@@ -255,15 +255,52 @@ static void cps3_decrypt_bios(void)
 			coderegion[i/4] ^= xormask;
 	}
 }
-
+static void be_to_le(unsigned char * p, int size)
+{
+	unsigned char c;
+	for(int i=0; i<size; i+=4, p+=4) {
+		c = *(p+0);	*(p+0) = *(p+3);	*(p+3) = c;
+		c = *(p+1);	*(p+1) = *(p+2);	*(p+2) = c;
+	}
+}
+/*
+static void reverseShort(unsigned char * p, int size)
+{
+	unsigned short c;
+	for(int i=0; i<size; i+=4, p+=4) {
+		c = *(p+0);	*(p+0) = *(p+2);	*(p+2) = c;
+	}
+}
+*/
 static void cps3_decrypt_game(void)
 {
-	unsigned int * coderegion = (unsigned int *)RomGame;
-	unsigned int * decrypt_coderegion = (unsigned int *)RomGame_D;
+	unsigned int * coderegion = (unsigned int *)uniCacheHead;
+	unsigned int * decrypt_coderegion = (unsigned int *)(uniCacheHead+0x1000000);
 	
-	for (int i=0; i<0x1000000; i+=4) {
-		unsigned int xormask = cps3_mask(i + 0x06000000, cps3_key1, cps3_key2);
-		decrypt_coderegion[i/4] = coderegion[i/4] ^ xormask;
+#ifdef BUILD_PSP
+	extern void ui_update_progress2(float size, const char * txt);
+#endif
+	for (int k=0;k<0x1000000;k+=0x200000)
+	{
+		for (int i=k,l=0; i<k+0x200000; i+=4,l+=4) 
+		{
+			unsigned int xormask = cps3_mask(i + 0x06000000, cps3_key1, cps3_key2);
+			decrypt_coderegion[l/4] = coderegion[i/4] ^ xormask;
+
+			
+	#ifdef BUILD_PSP
+			if((i & 0x000FFFFF) == 0x00000000) {
+				ui_update_progress2(1.0 / 16, i ? NULL : "decrypting sh-2 program..." );
+			}
+	#endif
+		}
+		//reverseShort( uniCacheHead+0x1000000, 0x200000 );
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, nRomGameOffset+k, SEEK_SET );
+			if( 0x200000 == sceIoWrite(cacheFile,uniCacheHead+0x1000000,0x200000  ) )
+				break;
+		}
 	}
 }
 
@@ -314,11 +351,15 @@ static unsigned int process_byte( unsigned char real_byte, unsigned int destinat
 
 static void cps3_do_char_dma( unsigned int real_source, unsigned int real_destination, unsigned int real_length )
 {
-	unsigned char * sourcedata = RomUser;
+//	unsigned char * sourcedata = RomUser;
 	int length_remaining = real_length;
 	last_normal_byte = 0;
+	
+	unsigned char *prb = getBlock(chardma_table_address, 512);
+	
 	while (length_remaining) {
-		unsigned char current_byte = sourcedata[ real_source ^ 0 ];
+//		unsigned char current_byte = sourcedata[ real_source ^ 0 ];
+		unsigned char current_byte = *getBlockSmallData(real_source);
 		real_source++;
 
 		if (current_byte & 0x80) {
@@ -326,7 +367,8 @@ static void cps3_do_char_dma( unsigned int real_source, unsigned int real_destin
 			unsigned int length_processed;
 			current_byte &= 0x7f;
 
-			real_byte = sourcedata[ (chardma_table_address+current_byte*2+0) ^ 0 ];
+//			real_byte = sourcedata[ (chardma_table_address+current_byte*2+0) ^ 0 ];
+			real_byte = prb[current_byte*2+0];
 			//if (real_byte&0x80) return;
 			length_processed = process_byte( real_byte, real_destination, length_remaining );
 			length_remaining -= length_processed; // subtract the number of bytes the operation has taken
@@ -334,7 +376,8 @@ static void cps3_do_char_dma( unsigned int real_source, unsigned int real_destin
 			if (real_destination>0x7fffff) return;
 			if (length_remaining<=0) return; // if we've expired, exit
 
-			real_byte = sourcedata[ (chardma_table_address+current_byte*2+1) ^ 0 ];
+//			real_byte = sourcedata[ (chardma_table_address+current_byte*2+1) ^ 0 ];
+			real_byte = prb[current_byte*2+1];
 			//if (real_byte&0x80) return;
 			length_processed = process_byte( real_byte, real_destination, length_remaining );
 			length_remaining -= length_processed; // subtract the number of bytes the operation has taken
@@ -393,26 +436,32 @@ static UINT32 ProcessByte8(unsigned char b, unsigned int dst_offset)
 
 static void cps3_do_alt_char_dma(unsigned int src, unsigned int real_dest, unsigned int real_length )
 {
-	unsigned char * px = RomUser;
+//	unsigned char * px = RomUser;
 	unsigned int start = real_dest;
 	unsigned int ds = real_dest;
 
 	lastb=0xfffe;
 	lastb2=0xffff;
 
+	unsigned char *prb = getBlock(chardma_table_address, 512);
+	
 	while(1) {
-		unsigned char ctrl=px[ src ^ 0 ];
+//		unsigned char ctrl=px[ src ^ 0 ];
+		unsigned char ctrl= *getBlockSmallData(src);
  		++src;
 
 		for(int i=0;i<8;++i) {
-			unsigned char p = px[ src ^ 0 ];
+//			unsigned char p = px[ src ^ 0 ];
+			unsigned char p= *getBlockSmallData(src);
 
 			if(ctrl&0x80) {
 				unsigned char real_byte;
 				p &= 0x7f;
-				real_byte = px[ (chardma_table_address+p*2+0) ^ 0 ];
+//				real_byte = px[ (chardma_table_address+p*2+0) ^ 0 ];
+				real_byte= prb[p*2+0];
 				ds += ProcessByte8(real_byte,ds);
-				real_byte = px[ (chardma_table_address+p*2+1) ^ 0 ];
+//				real_byte = px[ (chardma_table_address+p*2+1) ^ 0 ];
+				real_byte= prb[p*2+1];
 				ds += ProcessByte8(real_byte,ds);
  			} else {
  				ds += ProcessByte8(p,ds);
@@ -449,7 +498,7 @@ static void cps3_process_character_dma(unsigned int address)
 			Sh2SetIRQLine(10, SH2_IRQSTATUS_AUTO);
 			break;
 		case 0x00600000:
-			//bprintf(PRINT_NORMAL, _T("Character DMA (alt) start %08x to %08x with %d\n"), real_source, real_destination, real_length);
+			//// bprintf(PRINT_NORMAL, _T("Character DMA (alt) start %08x to %08x with %d\n"), real_source, real_destination, real_length);
 			/* 8bpp DMA decompression
 			   - this is used on SFIII NG Sean's Stage ONLY */
 			cps3_do_alt_char_dma( real_source, real_destination, real_length );
@@ -458,12 +507,13 @@ static void cps3_process_character_dma(unsigned int address)
 		case 0x00000000:
 			// Red Earth need this. 8192 byte trans to 0x00003000 (from 0x007ec000???)
 			// seems some stars(6bit alpha) without compress
-			//bprintf(PRINT_NORMAL, _T("Character DMA (redearth) start %08x to %08x with %d\n"), real_source, real_destination, real_length);
-			memcpy( (unsigned char *)RamCRam + real_destination, RomUser + real_source, real_length );
+			//// bprintf(PRINT_NORMAL, _T("Character DMA (redearth) start %08x to %08x with %d\n"), real_source, real_destination, real_length);
+//			memcpy( (unsigned char *)RamCRam + real_destination, RomUser + real_source, real_length );
+			memcpy( (unsigned char *)RamCRam + real_destination, getBlock(real_source, real_length), real_length );
 			Sh2SetIRQLine(10, SH2_IRQSTATUS_AUTO);
 			break;
-		default:
-			bprintf(PRINT_NORMAL, _T("Character DMA Unknown DMA List Command Type %08x\n"), dat1);
+//		default:
+//			// bprintf(PRINT_NORMAL, _T("Character DMA Unknown DMA List Command Type %08x\n"), dat1);
 		}
 	}
 }
@@ -473,12 +523,12 @@ static int MemIndex()
 	unsigned char *Next; Next = Mem;
 	RomBios 	= Next; Next += 0x0080000;
 
-	RomUser		= Next; Next += cps3_data_rom_size;	// 0x5000000;
+//	RomUser		= Next; Next += cps3_data_rom_size;	// 0x5000000;
 	
 	RamStart	= Next;
 	
-	RomGame 	= Next; Next += 0x1000000;
-	RomGame_D 	= Next; Next += 0x1000000;
+//	RomGame 	= Next; Next += 0x1000000;
+//	RomGame_D 	= Next; Next += 0x1000000;
 	
 	RamC000		= Next; Next += 0x0000400;
 	RamC000_D	= Next; Next += 0x0000400;
@@ -486,19 +536,19 @@ static int MemIndex()
 	RamMain		= Next; Next += 0x0080000;
 
 	RamPal		= (unsigned short *) Next; Next += 0x0040000;
-	RamSpr		= (unsigned int *) Next; Next += 0x0080000;
+	RamSpr		= (unsigned int *) Next;   Next += 0x0080000;
 
-	RamCRam		= (unsigned int *) Next; Next += 0x0800000;
-	RamSS		= (unsigned int *) Next; Next += 0x0010000;
+	RamCRam		= (unsigned int *) Next;   Next += 0x0800000;
+	RamSS		= (unsigned int *) Next;   Next += 0x0010000;
 	
-	RamVReg		= (unsigned int *) Next; Next += 0x0000100;
+	RamVReg		= (unsigned int *) Next;   Next += 0x0000100;
 	
 	EEPROM		= (unsigned short *) Next; Next += 0x0000400;
 	
 	RamEnd		= Next;
 	
-	CurPal		= (unsigned short *) Next; Next += 0x040000;
-	RamScreen	= (unsigned int *) Next; Next += (512 * 2) * (224 * 2 + 32) * sizeof(int);
+	CurPal		= (unsigned short *) Next; Next += 0x0040000;
+	RamScreen	= (unsigned int *) Next;   Next += (512 * 2) * (224 * 2 + 32) * sizeof(int);
 	
 	MemEnd		= Next;
 	return 0;
@@ -511,7 +561,7 @@ unsigned char __fastcall cps3ReadByte(unsigned int addr)
 //	switch (addr) {
 //
 //	default:
-//		bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %8x\n"), addr);
+//		// bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %8x\n"), addr);
 //	}
 	return 0;
 }
@@ -568,8 +618,8 @@ unsigned short __fastcall cps3ReadWord(unsigned int addr)
 			} else
 			if (addr == 0x202)
 				return cps3_current_eeprom_read;
-		} else
-		bprintf(PRINT_NORMAL, _T("Attempt to read word value of location %8x\n"), addr);
+		} // else
+//		// bprintf(PRINT_NORMAL, _T("Attempt to read word value of location %8x\n"), addr);
 	}
 	return 0;
 }
@@ -580,11 +630,11 @@ unsigned int __fastcall cps3ReadLong(unsigned int addr)
 		
 	switch (addr) {
 	case 0x04200000:
-		bprintf(PRINT_NORMAL, _T("GFX Read Flash ID, cram bank %04x gfx flash bank: %04x\n"), cram_bank, gfxflash_bank);
+//		// bprintf(PRINT_NORMAL, _T("GFX Read Flash ID, cram bank %04x gfx flash bank: %04x\n"), cram_bank, gfxflash_bank);
 		return 0x0404adad;
 
-	default:
-		bprintf(PRINT_NORMAL, _T("Attempt to read long value of location %8x\n"), addr);
+//	default:
+//		// bprintf(PRINT_NORMAL, _T("Attempt to read long value of location %8x\n"), addr);
 	}
 	return 0;
 }
@@ -606,13 +656,14 @@ void __fastcall cps3WriteByte(unsigned int addr, unsigned char data)
 	case 0x05050025: ss_pal_base = ( ss_pal_base & 0xff00 ) | (data << 0); break;
 	case 0x05050026: break;
 	case 0x05050027: break;
-
+/*
 	default:
 		if ((addr >= 0x05050000) && (addr < 0x05060000)) {
 			// VideoReg
 
 		} else
-			bprintf(PRINT_NORMAL, _T("Attempt to write byte value   %02x to location %8x\n"), data, addr);
+			// bprintf(PRINT_NORMAL, _T("Attempt to write byte value   %02x to location %8x\n"), data, addr);
+*/
 	}
 }
 
@@ -626,7 +677,7 @@ void __fastcall cps3WriteWord(unsigned int addr, unsigned short data)
 	case 0x040c0086:
 		if (cram_bank != data) {
 			cram_bank = data & 7;
-			//bprintf(PRINT_NORMAL, _T("CRAM bank set to %d\n"), data);
+			//// bprintf(PRINT_NORMAL, _T("CRAM bank set to %d\n"), data);
 			Sh2MapMemory(((unsigned char *)RamCRam) + (cram_bank << 20), 0x04100000, 0x041fffff, SM_RAM);
 		}
 		break;
@@ -634,7 +685,7 @@ void __fastcall cps3WriteWord(unsigned int addr, unsigned short data)
 	case 0x040c0088:
 	//case 0x040c008a:
 		gfxflash_bank = data - 2;
-		//bprintf(PRINT_NORMAL, _T("gfxflash bank set to %04x\n"), data);
+		//// bprintf(PRINT_NORMAL, _T("gfxflash bank set to %04x\n"), data);
 		break;
 	
 	// cps3_characterdma_w
@@ -657,11 +708,13 @@ void __fastcall cps3WriteWord(unsigned int addr, unsigned short data)
 	case 0x040c00aa: paldma_fade = (paldma_fade & 0xffff0000) | (data <<  0); break;
 	case 0x040c00ac: paldma_length = data; break;
 	case 0x040c00ae:
-		//bprintf(PRINT_NORMAL, _T("palettedma [%04x]  from %08x to %08x fade %08x size %d\n"), data, (paldma_source << 1), paldma_dest, paldma_fade, paldma_length);
+		//// bprintf(PRINT_NORMAL, _T("palettedma [%04x]  from %08x to %08x fade %08x size %d\n"), data, (paldma_source << 1), paldma_dest, paldma_fade, paldma_length);
 		if (data & 0x0002) {
+			unsigned short * src = (unsigned short *)getBlock((paldma_source - 0x200000) << 1, paldma_length << 1);
 			for (unsigned int i=0; i<paldma_length; i++) {
-				unsigned short * src = (unsigned short *)RomUser;
-				unsigned short coldata = src[(paldma_source - 0x200000 + i)];
+//				unsigned short * src = (unsigned short *)RomUser;
+//				unsigned short coldata = src[(paldma_source - 0x200000 + i)];
+				unsigned short coldata = src[i];
 				
 				coldata = (coldata << 8) | (coldata >> 8);
 
@@ -741,9 +794,9 @@ void __fastcall cps3WriteWord(unsigned int addr, unsigned short data)
 		if ((addr >= 0x05050000) && (addr < 0x05060000)) {
 			// unknow i/o
 
-		} else
+		} // else
 				
-		bprintf(PRINT_NORMAL, _T("Attempt to write word value %04x to location %8x\n"), data, addr);
+	//	// bprintf(PRINT_NORMAL, _T("Attempt to write word value %04x to location %8x\n"), data, addr);
 	}
 }
 
@@ -757,19 +810,19 @@ void __fastcall cps3WriteLong(unsigned int addr, unsigned int data)
 		// some unknown data write by DMA 0 while bootup
 		break;
 
-	default:
-		bprintf(PRINT_NORMAL, _T("Attempt to write long value %8x to location %8x\n"), data, addr);
+//	default:
+//		// bprintf(PRINT_NORMAL, _T("Attempt to write long value %8x to location %8x\n"), data, addr);
 	}
 }
 
 void __fastcall cps3C0WriteByte(unsigned int addr, unsigned char data)
 {
-	bprintf(PRINT_NORMAL, _T("C0 Attempt to write byte value %2x to location %8x\n"), data, addr);
+//	// bprintf(PRINT_NORMAL, _T("C0 Attempt to write byte value %2x to location %8x\n"), data, addr);
 }
 
 void __fastcall cps3C0WriteWord(unsigned int addr, unsigned short data)
 {
-	bprintf(PRINT_NORMAL, _T("C0 Attempt to write word value %4x to location %8x\n"), data, addr);
+//	// bprintf(PRINT_NORMAL, _T("C0 Attempt to write word value %4x to location %8x\n"), data, addr);
 }
 
 void __fastcall cps3C0WriteLong(unsigned int addr, unsigned int data)
@@ -779,102 +832,104 @@ void __fastcall cps3C0WriteLong(unsigned int addr, unsigned int data)
 		*(unsigned int *)(RamC000_D + (addr & 0x3ff)) = data ^ cps3_mask(addr, cps3_key1, cps3_key2);
 		return ;
 	}
-	bprintf(PRINT_NORMAL, _T("C0 Attempt to write long value %8x to location %8x\n"), data, addr);
+//	// bprintf(PRINT_NORMAL, _T("C0 Attempt to write long value %8x to location %8x\n"), data, addr);
 }
 
 // If fastboot != 1 
 
 unsigned char __fastcall cps3RomReadByte(unsigned int addr)
 {
-//	bprintf(PRINT_NORMAL, _T("Rom Attempt to read byte value of location %8x\n"), addr);
+//	// bprintf(PRINT_NORMAL, _T("Rom Attempt to read byte value of location %8x\n"), addr);
 	addr &= 0xc7ffffff;
 	addr ^= 0x03;
 /*	unsigned int pc = Sh2GetPC(0);
 	if (pc == cps3_bios_test_hack || pc == cps3_game_test_hack){
-		bprintf(PRINT_NORMAL, _T("CPS3 Hack : read byte from %08x\n"), addr);
+		// bprintf(PRINT_NORMAL, _T("CPS3 Hack : read byte from %08x\n"), addr);
 		return *(RomGame + (addr & 0x00ffffff));
 	}  */
-	return *(RomGame_D + (addr & 0x00ffffff));
+	return *getBlockSmallData(nRomGameOffset + (addr & 0x00ffffff));
 }
 
 unsigned short __fastcall cps3RomReadWord(unsigned int addr)
 {
-//	bprintf(PRINT_NORMAL, _T("Rom Attempt to read word value of location %8x\n"), addr);
+//	// bprintf(PRINT_NORMAL, _T("Rom Attempt to read word value of location %8x\n"), addr);
 	addr &= 0xc7ffffff;
 	addr ^= 0x02;
 /*	unsigned int pc = Sh2GetPC(0);
 	if (pc == cps3_bios_test_hack || pc == cps3_game_test_hack){
-		bprintf(PRINT_NORMAL, _T("CPS3 Hack : read word from %08x\n"), addr);
+		// bprintf(PRINT_NORMAL, _T("CPS3 Hack : read word from %08x\n"), addr);
 		return *(unsigned short *)(RomGame + (addr & 0x00ffffff));
 	} */
-	return *(unsigned short *)(RomGame_D + (addr & 0x00ffffff));
+	return *(unsigned short *)getBlockSmallData(nRomGameOffset + (addr & 0x00ffffff));
 }
 
 unsigned int __fastcall cps3RomReadLong(unsigned int addr)
 {
-//	bprintf(PRINT_NORMAL, _T("Rom Attempt to read long value of location %8x\n"), addr);
+//	// bprintf(PRINT_NORMAL, _T("Rom Attempt to read long value of location %8x\n"), addr);
 	addr &= 0xc7ffffff;
 	
 	unsigned int retvalue = cps3_flash_read(&main_flash, addr);
 	if ( main_flash.flash_mode == FM_NORMAL )
-		retvalue = *(unsigned int *)(RomGame_D + (addr & 0x00ffffff));
+		retvalue = *(unsigned int *)getBlock(nRomGameOffset + (addr & 0x00ffffff),4);
 	
 	unsigned int pc = Sh2GetPC(0);
 	if (pc == cps3_bios_test_hack || pc == cps3_game_test_hack){
 		if ( main_flash.flash_mode == FM_NORMAL )
-			retvalue = *(unsigned int *)(RomGame + (addr & 0x00ffffff));
-		bprintf(2, _T("CPS3 Hack : read long from %08x [%08x]\n"), addr, retvalue );
+			retvalue = *(unsigned int *)getBlock(nRomGameOffset + (addr & 0x00ffffff),4);
+//		// bprintf(2, _T("CPS3 Hack : read long from %08x [%08x]\n"), addr, retvalue );
 	}
 	return retvalue;
 }
 
 void __fastcall cps3RomWriteByte(unsigned int addr, unsigned char data)
 {
-	bprintf(PRINT_NORMAL, _T("Rom Attempt to write byte value %2x to location %8x\n"), data, addr);
+//	// bprintf(PRINT_NORMAL, _T("Rom Attempt to write byte value %2x to location %8x\n"), data, addr);
 }
 
 void __fastcall cps3RomWriteWord(unsigned int addr, unsigned short data)
 {
-	bprintf(PRINT_NORMAL, _T("Rom Attempt to write word value %4x to location %8x\n"), data, addr);
+//	// bprintf(PRINT_NORMAL, _T("Rom Attempt to write word value %4x to location %8x\n"), data, addr);
 }
 
 void __fastcall cps3RomWriteLong(unsigned int addr, unsigned int data)
 {
-//	bprintf(1, _T("Rom Attempt to write long value %8x to location %8x\n"), data, addr);
+/*
+//	// bprintf(1, _T("Rom Attempt to write long value %8x to location %8x\n"), data, addr);
 	addr &= 0x00ffffff;
 	cps3_flash_write(&main_flash, addr, data);
 	
 	if ( main_flash.flash_mode == FM_NORMAL ) {
-		bprintf(1, _T("Rom Attempt to write long value %8x to location %8x\n"), data, addr);
+//		// bprintf(1, _T("Rom Attempt to write long value %8x to location %8x\n"), data, addr);
 		*(unsigned int *)(RomGame + addr) = data;
 		*(unsigned int *)(RomGame_D + addr) = data ^ cps3_mask(addr + 0x06000000, cps3_key1, cps3_key2);
 	}
+*/
 }
 
 unsigned char __fastcall cps3RomReadByteSpe(unsigned int addr)
 {
-//	bprintf(PRINT_NORMAL, _T("Rom Attempt to read byte value of location %8x\n"), addr);
+//	// bprintf(PRINT_NORMAL, _T("Rom Attempt to read byte value of location %8x\n"), addr);
 	addr &= 0xc7ffffff;
 	addr ^= 0x03;
-	return *(RomGame + (addr & 0x00ffffff));
+	return *getBlockSmallData(nRomGameOffset + (addr & 0x00ffffff));
 }
 
 unsigned short __fastcall cps3RomReadWordSpe(unsigned int addr)
 {
-//	bprintf(PRINT_NORMAL, _T("Rom Attempt to read word value of location %8x\n"), addr);
+//	// bprintf(PRINT_NORMAL, _T("Rom Attempt to read word value of location %8x\n"), addr);
 	addr &= 0xc7ffffff;
 	addr ^= 0x02;
-	return *(unsigned short *)(RomGame + (addr & 0x00ffffff));
+	return *(unsigned short *)getBlockSmallData(nRomGameOffset + (addr & 0x00ffffff));
 }
 
 unsigned int __fastcall cps3RomReadLongSpe(unsigned int addr)
 {
-//	bprintf(PRINT_NORMAL, _T("Rom Attempt to read long value of location %8x\n"), addr);
+//	// bprintf(PRINT_NORMAL, _T("Rom Attempt to read long value of location %8x\n"), addr);
 	addr &= 0xc7ffffff;
 	
 	unsigned int retvalue = cps3_flash_read(&main_flash, addr);
 	if ( main_flash.flash_mode == FM_NORMAL )
-		retvalue = *(unsigned int *)(RomGame + (addr & 0x00ffffff));
+		retvalue = *(unsigned int *)getBlock(nRomGameOffset + (addr & 0x00ffffff),4);
 
 	return retvalue;
 }
@@ -883,28 +938,28 @@ unsigned int __fastcall cps3RomReadLongSpe(unsigned int addr)
 
 unsigned char __fastcall cps3VidReadByte(unsigned int addr)
 {
-	bprintf(PRINT_NORMAL, _T("Video Attempt to read byte value of location %8x\n"), addr);
+//	// bprintf(PRINT_NORMAL, _T("Video Attempt to read byte value of location %8x\n"), addr);
 //	addr &= 0xc7ffffff;
 	return 0;
 }
 
 unsigned short __fastcall cps3VidReadWord(unsigned int addr)
 {
-	bprintf(PRINT_NORMAL, _T("Video Attempt to read word value of location %8x\n"), addr);
+//	// bprintf(PRINT_NORMAL, _T("Video Attempt to read word value of location %8x\n"), addr);
 //	addr &= 0xc7ffffff;
 	return 0;
 }
 
 unsigned int __fastcall cps3VidReadLong(unsigned int addr)
 {
-	bprintf(PRINT_NORMAL, _T("Video Attempt to read long value of location %8x\n"), addr);
+//	// bprintf(PRINT_NORMAL, _T("Video Attempt to read long value of location %8x\n"), addr);
 //	addr &= 0xc7ffffff;
 	return 0;
 }
 
 void __fastcall cps3VidWriteByte(unsigned int addr, unsigned char data)
 {
-	bprintf(PRINT_NORMAL, _T("Video Attempt to write byte value %2x to location %8x\n"), data, addr);
+//	// bprintf(PRINT_NORMAL, _T("Video Attempt to write byte value %2x to location %8x\n"), data, addr);
 }
 
 void __fastcall cps3VidWriteWord(unsigned int addr, unsigned short data)
@@ -925,21 +980,23 @@ void __fastcall cps3VidWriteWord(unsigned int addr, unsigned short data)
 			
 		CurPal[palindex] = BurnHighCol(r, g, b, 0);
 	
-	} else
-	bprintf(PRINT_NORMAL, _T("Video Attempt to write word value %4x to location %8x\n"), data, addr);
+	} // else
+//	// bprintf(PRINT_NORMAL, _T("Video Attempt to write word value %4x to location %8x\n"), data, addr);
 }
 
 void __fastcall cps3VidWriteLong(unsigned int addr, unsigned int data)
 {
+/*
 	addr &= 0xc7ffffff;
 	if ((addr >= 0x04080000) && (addr < 0x040c0000)) {
 
 		if ( data != 0 )
-			bprintf(PRINT_NORMAL, _T("Video Attempt to write long value %8x to location %8x\n"), data, addr);
+			// bprintf(PRINT_NORMAL, _T("Video Attempt to write long value %8x to location %8x\n"), data, addr);
 		
 		
 	} else 
-	bprintf(PRINT_NORMAL, _T("Video Attempt to write long value %8x to location %8x\n"), data, addr);
+	// bprintf(PRINT_NORMAL, _T("Video Attempt to write long value %8x to location %8x\n"), data, addr);
+*/
 }
 
 
@@ -955,15 +1012,15 @@ unsigned char __fastcall cps3RamReadByte(unsigned int addr)
 
 unsigned short __fastcall cps3RamReadWord(unsigned int addr)
 {
-	//bprintf(PRINT_NORMAL, _T("Ram Attempt to read long value of location %8x\n"), addr);
-	addr &= 0x7ffff;
+	//// bprintf(PRINT_NORMAL, _T("Ram Attempt to read long value of location %8x\n"), addr);
+	
 
 	if (addr == cps3_speedup_ram_address )
 		if (Sh2GetPC(0) == cps3_speedup_code_address) {
-			bprintf(PRINT_NORMAL, _T("Ram Attempt to read long value of location %8x\n"), addr);
+//			// bprintf(PRINT_NORMAL, _T("Ram Attempt to read long value of location %8x\n"), addr);
 			Sh2BurnUntilInt(0);
 		}
-	
+	addr &= 0x7ffff;
 	return *(unsigned short *)(RamMain + (addr ^ 0x02));
 }
 
@@ -983,7 +1040,7 @@ static void Cps3PatchRegion()
 {
 	if ( cps3_region_address ) {
 
-		bprintf(0, _T("Region: %02x -> %02x\n"), RomBios[cps3_region_address], (RomBios[cps3_region_address] & 0xf0) | (cps3_dip & 0x0f));				
+//		// bprintf(0, _T("Region: %02x -> %02x\n"), RomBios[cps3_region_address], (RomBios[cps3_region_address] & 0xf0) | (cps3_dip & 0x0f));
 
 		RomBios[cps3_region_address] = (RomBios[cps3_region_address] & 0xf0) | (cps3_dip & 0x7f);
 		if ( cps3_ncd_address ) {
@@ -1004,42 +1061,30 @@ static int Cps3Reset()
 	Cps3PatchRegion();
 	
 	// [CD-ROM not emulated] All CHD drivers cause a Guru Meditation with the normal bios boot.
-	if(!BurnDrvGetHardwareCode() & HARDWARE_CAPCOM_CPS3_NO_CD){
+	if( !(BurnDrvGetHardwareCode() & HARDWARE_CAPCOM_CPS3_NO_CD) ) {
 		// normal boot
 		Sh2Reset( *(unsigned int *)(RomBios + 0), *(unsigned int *)(RomBios + 4) );
 	} else {
 		// fast boot
-		if (cps3_isSpecial) {
-			Sh2Reset( *(unsigned int *)(RomGame + 0), *(unsigned int *)(RomGame + 4) );
+			Sh2Reset( *(unsigned int *)getBlock(nRomGameOffset + 0,4), *(unsigned int *)getBlock(nRomGameOffset + 4,4) );
 			Sh2SetVBR(0x06000000);
-		} else {
-			Sh2Reset( *(unsigned int *)(RomGame_D + 0), *(unsigned int *)(RomGame_D + 4) );
-			Sh2SetVBR(0x06000000);
-		}
-	}
-	
-	if (cps3_dip & 0x80) {
-		EEPROM[0x11] = 0x100 + (EEPROM[0x11] & 0xff);
-		EEPROM[0x29] = 0x100 + (EEPROM[0x29] & 0xff);
-	} else {
-		EEPROM[0x11] = 0x000 + (EEPROM[0x11] & 0xff);
-		EEPROM[0x29] = 0x000 + (EEPROM[0x29] & 0xff);
 	}
 
-	cps3_current_eeprom_read = 0;	
+	if (cps3_dip & 0x80) {
+		EEPROM[0x11] = 0x0100 + (EEPROM[0x11] & 0xff);
+		EEPROM[0x29] = 0x0100 + (EEPROM[0x29] & 0xff);
+	} else {
+		EEPROM[0x11] = 0x0000 + (EEPROM[0x11] & 0xff);
+		EEPROM[0x29] = 0x0000 + (EEPROM[0x29] & 0xff);
+	}
+
+	cps3_current_eeprom_read = 0;
 	cps3SndReset();	
 	cps3_reset = 0;	
 	return 0;
 }
 
-static void be_to_le(unsigned char * p, int size)
-{
-	unsigned char c;
-	for(int i=0; i<size; i+=4, p+=4) {
-		c = *(p+0);	*(p+0) = *(p+3);	*(p+3) = c;
-		c = *(p+1);	*(p+1) = *(p+2);	*(p+2) = c;
-	}
-}
+
 
 int cps3Init()
 {
@@ -1057,11 +1102,73 @@ int cps3Init()
 	// CHD games 
 	if (cps3_data_rom_size == 0) cps3_data_rom_size = 0x5000000;	
 	
+	
+	
+	
+	cacheFileSize = cps3_data_rom_size+0x1000000;
+	nRomGameOffset=cps3_data_rom_size;
+	extern char szAppCachePath[];
+	
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777 );
+	
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}
+	else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)memalign(4,0x1200000)) == NULL) return 1;
+
+		memset(uniCacheHead,0,0x1200000);
+		// load graphic and sound roms
+		ii = 0;
+		while (BurnDrvGetRomInfo(&pri, ii) == 0) {
+			if (pri.nType & (BRF_GRA | BRF_SND)) {
+				BurnLoadRom(uniCacheHead, ii, 1);
+				sceIoWrite(cacheFile, uniCacheHead, pri.nLen);
+			}
+			ii++;
+		}
+
+		memset(uniCacheHead,0,0x1200000);
+		// load and decode sh-2 program roms
+		ii = 0;	offset = 0;
+		while (BurnDrvGetRomInfo(&pri, ii) == 0) {
+			if (pri.nType & BRF_PRG) {
+				nRet = BurnLoadRom(uniCacheHead + offset, ii, 1); 
+				if (nRet != 0) return 1;
+				offset += pri.nLen;
+			}
+			ii++;
+		}
+		be_to_le( uniCacheHead, 0x1000000 );
+		cps3_decrypt_game();
+		
+		sceIoClose( cacheFile );
+		
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777 );
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+	
 	Mem = NULL;
 	MemIndex();
 	int nLen = MemEnd - (unsigned char *)0;
-	if ((Mem = (unsigned char *)malloc(nLen)) == NULL) return 1;
-	memset(Mem, 0, nLen);										// blank all memory
+	if ((Mem = (unsigned char *)memalign(4,nLen)) == NULL) return 1;
+	memset(Mem, 0, nLen);	// blank all memory
 	MemIndex();	
 	
 	// load and decode bios roms
@@ -1074,23 +1181,12 @@ int cps3Init()
 		}
 		ii++;
 	}
-
 	be_to_le( RomBios, 0x080000 );
 	cps3_decrypt_bios();
 
-	// load and decode sh-2 program roms
-	ii = 0;	offset = 0;
-	while (BurnDrvGetRomInfo(&pri, ii) == 0) {
-		if (pri.nType & BRF_PRG) {
-			nRet = BurnLoadRom(RomGame + offset, ii, 1); 
-			if (nRet != 0) return 1;
-			offset += pri.nLen;
-		}
-		ii++;
-	}
-	be_to_le( RomGame, 0x1000000 );
-	cps3_decrypt_game();
 	
+	
+/*
 	// load graphic and sound roms
 	ii = 0;	offset = 0;
 	while (BurnDrvGetRomInfo(&pri, ii) == 0) {
@@ -1100,7 +1196,9 @@ int cps3Init()
 		}
 		ii++;
 	}
+*/
 
+	
 	{
 		Sh2Init(1);
 	    Sh2Open(0);
@@ -1130,33 +1228,24 @@ int cps3Init()
 		Sh2SetWriteWordHandler(1, cps3C0WriteWord);
 		Sh2SetWriteLongHandler(1, cps3C0WriteLong);
 
-		if( !BurnDrvGetHardwareCode() & HARDWARE_CAPCOM_CPS3_NO_CD ) 
-		{		
+		/*if ( !(BurnDrvGetHardwareCode() & HARDWARE_CAPCOM_CPS3_NO_CD) ) {
 			if (cps3_isSpecial) {
-				Sh2MapMemory(RomGame,	0x06000000, 0x06ffffff, SM_READ);	// Decrypted SH2 Code
-				Sh2MapMemory(RomGame_D,	0x06000000, 0x06ffffff, SM_FETCH);	// Decrypted SH2 Code
+				Sh2MapMemory((unsigned char*)nRomGameOffset,	0x06000000, 0x06ffffff, SM_READ);	// Decrypted SH2 Code
+				Sh2MapMemory((unsigned char*)nRomGameOffset,	0x06000000, 0x06ffffff, SM_FETCH);	// Decrypted SH2 Code
 			} else {
-				Sh2MapMemory(RomGame_D,	0x06000000, 0x06ffffff, SM_READ | SM_FETCH);	// Decrypted SH2 Code
+				Sh2MapMemory((unsigned char*)nRomGameOffset,	0x06000000, 0x06ffffff, SM_READ | SM_FETCH);	// Decrypted SH2 Code
 			}
-		} else {
-			Sh2MapMemory(RomGame_D,		0x06000000, 0x06ffffff, SM_FETCH);	// Decrypted SH2 Code
+		} else */ {
+			Sh2MapMemory((unsigned char*)nRomGameOffset,		0x06000000, 0x06ffffff, SM_FETCH);	// Decrypted SH2 Code
 			Sh2MapHandler(2,			0x06000000, 0x06ffffff, SM_READ | SM_WRITE);
 
-			if (cps3_isSpecial) {
-				Sh2SetReadByteHandler (2, cps3RomReadByteSpe);
-				Sh2SetReadWordHandler (2, cps3RomReadWordSpe);
-				Sh2SetReadLongHandler (2, cps3RomReadLongSpe);
-				Sh2SetWriteByteHandler(2, cps3RomWriteByte);
-				Sh2SetWriteWordHandler(2, cps3RomWriteWord);
-				Sh2SetWriteLongHandler(2, cps3RomWriteLong);
-			} else {
 				Sh2SetReadByteHandler (2, cps3RomReadByte);
 				Sh2SetReadWordHandler (2, cps3RomReadWord);
 				Sh2SetReadLongHandler (2, cps3RomReadLong);
 				Sh2SetWriteByteHandler(2, cps3RomWriteByte);
 				Sh2SetWriteWordHandler(2, cps3RomWriteWord);
 				Sh2SetWriteLongHandler(2, cps3RomWriteLong);
-			}
+	
 		}
 
 		Sh2MapHandler(3,			0x040e0000, 0x040e02ff, SM_RAM);
@@ -1191,7 +1280,9 @@ int cps3Init()
 	
 	BurnDrvGetVisibleSize(&cps3_gfx_width, &cps3_gfx_height);	
 	RamScreen	+= (512 * 2) * 16 + 16; // safe draw	
-	cps3SndInit(RomUser);	
+	//cps3SndInit(RomUser);
+	cps3SndInit(uniCacheHead);
+	initCacheStructure(0.98);
 	Cps3Reset();
 	return 0;
 }
@@ -1205,9 +1296,17 @@ int cps3Exit()
 
 	cps3SndExit();	
 	
+	destroyUniCache();
+
 	return 0;
 }
 
+
+#ifndef BUILD_PSP
+#define X_SIZE	cps3_gfx_width
+#else
+#define X_SIZE	512
+#endif
 
 static void cps3_drawgfxzoom_0(unsigned int code, unsigned int pal, int flipx, int flipy, int x, int y)
 {
@@ -1215,14 +1314,14 @@ static void cps3_drawgfxzoom_0(unsigned int code, unsigned int pal, int flipx, i
 	unsigned short * dst = (unsigned short *) pBurnDraw;
 	unsigned char * src = (unsigned char *)RamSS;
 	unsigned short * color = CurPal + (pal << 4);
-	dst += (y * cps3_gfx_width + x);
+	dst += (y * X_SIZE + x);
 	src += code * 64;
 	
 	if ( flipy ) {
 
-		dst += cps3_gfx_width * 7;
-		if ( flipx )
-			for(int i=0; i<8; i++, dst-= cps3_gfx_width, src += 8) {
+		dst += X_SIZE * 7;
+		if ( flipx ) {
+			for(int i=0; i<8; i++, dst-= X_SIZE, src += 8) {
 				if ( src[ 2] & 0xf ) dst[7] = color [ src[ 2] & 0xf ];
 				if ( src[ 2] >>  4 ) dst[6] = color [ src[ 2] >>  4 ];
 				if ( src[ 0] & 0xf ) dst[5] = color [ src[ 0] & 0xf ];
@@ -1232,8 +1331,8 @@ static void cps3_drawgfxzoom_0(unsigned int code, unsigned int pal, int flipx, i
 				if ( src[ 4] & 0xf ) dst[1] = color [ src[ 4] & 0xf ];
 				if ( src[ 4] >>  4 ) dst[0] = color [ src[ 4] >>  4 ];
 			}
-		else
-			for(int i=0; i<8; i++, dst-= cps3_gfx_width, src += 8) {
+		} else {
+			for(int i=0; i<8; i++, dst-= X_SIZE, src += 8) {
 				if ( src[ 2] & 0xf ) dst[0] = color [ src[ 2] & 0xf ];
 				if ( src[ 2] >>  4 ) dst[1] = color [ src[ 2] >>  4 ];
 				if ( src[ 0] & 0xf ) dst[2] = color [ src[ 0] & 0xf ];
@@ -1243,10 +1342,10 @@ static void cps3_drawgfxzoom_0(unsigned int code, unsigned int pal, int flipx, i
 				if ( src[ 4] & 0xf ) dst[6] = color [ src[ 4] & 0xf ];
 				if ( src[ 4] >>  4 ) dst[7] = color [ src[ 4] >>  4 ];
 			}
-		
+		}
 	} else {
-		if ( flipx )
-			for(int i=0; i<8; i++, dst+= cps3_gfx_width, src += 8) {
+		if ( flipx ) {
+			for(int i=0; i<8; i++, dst+= X_SIZE, src += 8) {
 				if ( src[ 2] & 0xf ) dst[7] = color [ src[ 2] & 0xf ];
 				if ( src[ 2] >>  4 ) dst[6] = color [ src[ 2] >>  4 ];
 				if ( src[ 0] & 0xf ) dst[5] = color [ src[ 0] & 0xf ];
@@ -1256,8 +1355,8 @@ static void cps3_drawgfxzoom_0(unsigned int code, unsigned int pal, int flipx, i
 				if ( src[ 4] & 0xf ) dst[1] = color [ src[ 4] & 0xf ];
 				if ( src[ 4] >>  4 ) dst[0] = color [ src[ 4] >>  4 ];
 			}
-		else
-			for(int i=0; i<8; i++, dst+= cps3_gfx_width, src += 8) {
+		} else {
+			for(int i=0; i<8; i++, dst+= X_SIZE, src += 8) {
 				if ( src[ 2] & 0xf ) dst[0] = color [ src[ 2] & 0xf ];
 				if ( src[ 2] >>  4 ) dst[1] = color [ src[ 2] >>  4 ];
 				if ( src[ 0] & 0xf ) dst[2] = color [ src[ 0] & 0xf ];
@@ -1267,9 +1366,12 @@ static void cps3_drawgfxzoom_0(unsigned int code, unsigned int pal, int flipx, i
 				if ( src[ 4] & 0xf ) dst[6] = color [ src[ 4] & 0xf ];
 				if ( src[ 4] >>  4 ) dst[7] = color [ src[ 4] >>  4 ];
 			}
+		}
 	}
 	
 }
+
+#undef X_SIZE
 
 static void cps3_drawgfxzoom_1(unsigned int code, unsigned int pal, int flipx, int flipy, int x, int y, int drawline)
 {
@@ -1572,7 +1674,6 @@ static void cps3_drawgfxzoom_2(unsigned int code, unsigned int pal, int flipx, i
 							// jojo intro , a alpha effect star in avatar's shadow
 							// this bit seems to disable alpha effect
 							//if (pal & 0x100) dest[x] &= 0x17fff;
-			
 							
 						}
 						x_index += dx;
@@ -1628,7 +1729,7 @@ static void cps3_draw_tilemapsprite_line(int drawline, unsigned int * regs )
 		//clip.max_y = drawline;
 
 //if (Cps3But2[9])
-//	bprintf(0, _T("TILE LINE %4d   %5d %5d  %d\n"), drawline, scrollx, scrolly, linescroll_enable>>14);
+//	// bprintf(0, _T("TILE LINE %4d   %5d %5d  %d\n"), drawline, scrollx, scrolly, linescroll_enable>>14);
 
 		for (int x=0;x<(cps3_gfx_max_x/16)+2;x++) {
 
@@ -1653,7 +1754,7 @@ static void cps3_draw_tilemapsprite_line(int drawline, unsigned int * regs )
 			//colour &= 0x1ffff;
 
 //if (Cps3But2[9] && x==0)
-//	bprintf(0, _T(" %08x %08x %5d %5d\n"),tileno, colour, (x*16)-scrollx%16,drawline-tilesubline);
+//	// bprintf(0, _T(" %08x %08x %5d %5d\n"),tileno, colour, (x*16)-scrollx%16,drawline-tilesubline);
 			
 			//if (cps3_char_ram_dirty[tileno]) {
 			//	decodechar(Machine->gfx[1], tileno, (UINT8*)cps3_char_ram, &cps3_tiles16x16_layout);
@@ -1666,8 +1767,6 @@ static void cps3_draw_tilemapsprite_line(int drawline, unsigned int * regs )
 	}
 }
 
-static int WideScreenFrameDelay = 0;
-
 static void DrvDraw()
 {
 	int bg_drawn[4] = { 0, 0, 0, 0 };
@@ -1676,37 +1775,14 @@ static void DrvDraw()
 	//      widescreen mode = 00230076 026501c6
 	// only SFIII2 uses widescreen, I don't know exactly which register controls it
 	//if (((RamVReg[ 6 * 4 + 1 ]&0xffff0000)>>16) != 0x01ef) {
-	//	bprintf(0, _T("Wide Screen Mode %08x\n"), RamVReg[ 6 * 4 + 1 ]);
+	//	// bprintf(0, _T("Wide Screen Mode %08x\n"), RamVReg[ 6 * 4 + 1 ]);
 	//}
     
     // fullscreenzoom 0x40 for normal size
     //                0x80 for double size 
     //				  0x20 for half size
 	unsigned int fullscreenzoom = RamVReg[ 6 * 4 + 3 ] & 0xff;	// cps3_fullscreenzoom[3]
-	unsigned int fullscreenzoomwidecheck = RamVReg[6 * 4 + 1];
-	
-	if (((fullscreenzoomwidecheck & 0xffff0000) >> 16) == 0x0265) {
-		int Width, Height;
-		BurnDrvGetVisibleSize(&Width, &Height);
-		
-		if (Width != 496) {
-			BurnDrvSetVisibleSize(496, 224);
-			BurnDrvSetAspect(16, 9);
-			Reinitialise();
-			WideScreenFrameDelay = GetCurrentFrame() + 1;
-		}
-	} else {
-		int Width, Height;
-		BurnDrvGetVisibleSize(&Width, &Height);
-		
-		if (Width != 384) {
-			BurnDrvSetVisibleSize(384, 224);
-			BurnDrvSetAspect(4, 3);
-			Reinitialise();
-			WideScreenFrameDelay = GetCurrentFrame() + 1;
-		}
-	}
-	
+
 	if (fullscreenzoom > 0x80) fullscreenzoom = 0x80;
 	unsigned int fsz = (fullscreenzoom << (16 - 6));
 	
@@ -1715,7 +1791,7 @@ static void DrvDraw()
 	
 #if 0
 if (Cps3But2[9]) {
-	bprintf(0, _T("New Frame -------------------\n"));
+	// bprintf(0, _T("New Frame -------------------\n"));
 	
 	FILE * f = fopen("RamSpr.dump", "wb+");
 	fwrite(RamSpr, 1, 0x0080000, f);
@@ -1827,7 +1903,7 @@ if (Cps3But2[9]) {
 
 					//printf("tilemap draw %01x %02x %02x %02x\n",tilemapnum, value2, height, regs[0]&0x000003ff );
 					//printf("tilemap draw %01x %d %d\n",tilemapnum, startline, endline );
-					//bprintf(0, _T("tilemap draw %01x %d %d\n"),tilemapnum, startline, endline );
+					//// bprintf(0, _T("tilemap draw %01x %d %d\n"),tilemapnum, startline, endline );
 
 					// Urgh, the startline / endline seem to be direct screen co-ordinates regardless of fullscreen zoom
                     // which probably means the fullscreen zoom is applied when rendering everything, not aftewards
@@ -1925,7 +2001,7 @@ if (Cps3But2[9]) {
 									int realtileno = tileno+count;
 
 //if (Cps3But2[9])
-//	bprintf(0, _T("%08x %08x %08x %d %d %5d %5d  %4x %4x %d %02x\n"), realtileno,global_pal, pal, 0^flipx, 0^flipy, current_xpos,current_ypos,xinc,yinc, color_granularity, (global_alpha << 4) | alpha );
+//	// bprintf(0, _T("%08x %08x %08x %d %d %5d %5d  %4x %4x %d %02x\n"), realtileno,global_pal, pal, 0^flipx, 0^flipy, current_xpos,current_ypos,xinc,yinc, color_granularity, (global_alpha << 4) | alpha );
 
 									if ( realtileno ) {
 										if (global_alpha || alpha) {
@@ -1966,6 +2042,9 @@ if (Cps3But2[9]) {
 				srcx += fsz;
 			}
 			srcy += fsz;
+#ifdef BUILD_PSP
+			dstbitmap += 512 - cps3_gfx_width;
+#endif
 		}
 	}
 	
@@ -1997,6 +2076,8 @@ static int cps_int10_cnt = 0;
 
 int cps3Frame()
 {
+	
+
 	if (cps3_reset)
 		Cps3Reset();
 		
@@ -2013,14 +2094,6 @@ int cps3Frame()
 		}
 		cps3_palette_change = 0;
 	}
-	
-	if (WideScreenFrameDelay == GetCurrentFrame()) {
-		BurnDrvGetVisibleSize(&cps3_gfx_width, &cps3_gfx_height);
-		WideScreenFrameDelay = 0;
-	}
-	
-//	EEPROM[0x11] = 0x100 + (EEPROM[0x11] & 0xff);
-//	EEPROM[0x29] = 0x100 + (EEPROM[0x29] & 0xff);
 
 	Cps3Input[0] = 0;
 	Cps3Input[1] = 0;
@@ -2044,13 +2117,13 @@ int cps3Frame()
 			cps_int10_cnt = 0;
 			Sh2SetIRQLine(10, SH2_IRQSTATUS_AUTO);
 		} else cps_int10_cnt++;
-
+		
 	}
 	Sh2SetIRQLine(12, SH2_IRQSTATUS_AUTO);
 
-	cps3SndUpdate();
+	//cps3SndUpdate();
 	
-//	bprintf(0, _T("PC: %08x\n"), Sh2GetPC(0));
+//	// bprintf(0, _T("PC: %08x\n"), Sh2GetPC(0));
 	
 	if (pBurnDraw) DrvDraw();
 
@@ -2169,3 +2242,5 @@ int cps3Scan(int nAction, int *pnMin)
 	
 	return 0;
 }
+
+

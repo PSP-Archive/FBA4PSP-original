@@ -420,7 +420,7 @@ int CpsAreaScan(int nAction, int *pnMin)
 	} else {											// Scan PSound chips
 		PsndScan(nAction);
 	}
-	
+
 	return 0;
 }
 

@@ -15,6 +15,7 @@
 #include "burnint.h"
 #include "burn_ym2151.h"
 #include "msm6295.h"
+#include "UniCache.h"
 
 static unsigned char *Mem = NULL, *MemEnd = NULL;
 static unsigned char *RamStart, *RamEnd;
@@ -22,7 +23,7 @@ static unsigned char *RamStart, *RamEnd;
 static unsigned char *Rom68K;
 static unsigned char *RomZ80;
 static unsigned char *RomGfx01;
-static unsigned char *RomGfx02;
+//static unsigned char *RomGfx02;
 static unsigned char *RomGfx03;
 
 static unsigned char *Ram68K;
@@ -221,7 +222,7 @@ static int MemIndex()
 	Rom68K 		= Next; Next += 0x100000;			// 68000 ROM
 	RomZ80		= Next; Next += 0x010000;			// Z80 ROM
 	RomGfx01	= Next; Next += 0x020000 / 4 * 8;	// fg 8x8x4
-	RomGfx02	= Next; Next += 0xA00000 / 5 * 8;	// spr 16x16x5 sprite
+//	RomGfx02	= Next; Next += 0xA00000 / 5 * 8;	// spr 16x16x5 sprite
 	RomGfx03	= Next; Next += 0x300000 / 6 * 8;	// bg 16x16x6 tile
 	MSM6295ROM	= Next; Next += 0x080000;
 	
@@ -272,8 +273,10 @@ unsigned char __fastcall shadfrceReadByte(unsigned int sekAddress)
 			return 0;
 		case 0x1D000D:
 			return nBrightness;
+/*
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %x\n"), sekAddress);
+*/
 	}
 	return 0;
 }
@@ -289,8 +292,10 @@ unsigned short __fastcall shadfrceReadWord(unsigned int sekAddress)
 			return ~(DrvInput[4] | (DrvInput[5] << 8)) & 0x3FFF;
 		case 0x1D0026:
 			return ~(DrvInput[6] | ( (DrvInput[7] | (bVBlink << 2))<< 8)) /*& 0x0FFF*/;
+/*
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to read word value of location %x\n"), sekAddress);
+*/
 	}
 	return 0;
 }
@@ -311,7 +316,7 @@ void __fastcall shadfrceWriteByte(unsigned int sekAddress, unsigned char byteVal
 			nBrightness = byteValue;
 			for(int i=0;i<0x4000;i++) CalcCol(i);
 			break;
-
+/*
 		case 0x1C0009:
 		case 0x1C000D:
 		case 0x1D0007:
@@ -323,7 +328,7 @@ void __fastcall shadfrceWriteByte(unsigned int sekAddress, unsigned char byteVal
 			break;
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to write byte value %x to location %x\n"), byteValue, sekAddress);
-		
+*/	
 	}
 }
 
@@ -334,7 +339,7 @@ void __fastcall shadfrceWriteWord(unsigned int sekAddress, unsigned short wordVa
 		case 0x1C0002: bg0scrolly = wordValue & 0x1FF; break;
 		case 0x1C0004: bg1scrollx = wordValue & 0x1FF; break;
 		case 0x1C0006: bg1scrolly = wordValue & 0x1FF; break;
-		
+/*		
 		case 0x1D000D:
 			bprintf(PRINT_NORMAL, _T("Brightness set to %04x\n"), wordValue);
 			//nBrightness = byteValue;
@@ -351,7 +356,7 @@ void __fastcall shadfrceWriteWord(unsigned int sekAddress, unsigned short wordVa
 			break;
 		default:
 			bprintf(PRINT_NORMAL, _T("Attempt to write word value %x to location %x\n"), wordValue, sekAddress);
-
+*/
 	}
 }
 
@@ -451,7 +456,8 @@ static int loadDecodeGfx01()
 	{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 	32*8
 */
-	unsigned char * tmp = (unsigned char *) malloc (0x20000);
+	unsigned char * ttmp = uniCacheHead;
+	unsigned char * tmp = ttmp;
 	unsigned char * pgfx = RomGfx01;
 	if (tmp == NULL) return 1;
 	BurnLoadRom(tmp,  5, 1);
@@ -473,8 +479,7 @@ static int loadDecodeGfx01()
 		}
 		tmp += 24;
 	}
-	
-	free(tmp);
+
 	return 0;
 }
 
@@ -489,13 +494,14 @@ static int loadDecodeGfx02()
 	{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8,9*8,10*8,11*8,12*8,13*8,14*8,15*8 },
 	16*16
 */
-	unsigned char * tmp1 = (unsigned char *) malloc (0xA00000);
+	unsigned char * tmpx = uniCacheHead;
+	unsigned char * tmp1 = tmpx + 0x000000;
 	unsigned char * tmp2 = tmp1 + 0x200000;
 	unsigned char * tmp3 = tmp2 + 0x200000;
 	unsigned char * tmp4 = tmp3 + 0x200000;
 	unsigned char * tmp5 = tmp4 + 0x200000;
-	unsigned char * pgfx = RomGfx02;
-	
+	unsigned char * pgfx = uniCacheHead+0x0C00000;
+	unsigned long fileOffset=0,i2=0;
 	if (tmp1 == NULL) return 1;
 	
 	BurnLoadRom(tmp1,  6, 1);
@@ -508,40 +514,51 @@ static int loadDecodeGfx02()
 
 //	BurnSetProgressRange(1.0);
 	
-	for (int i=0; i<(0x200000/32); i++) {
-		for( int y=0;y<16;y++) {
-			
-			for(int x=0;x<8;x++) {
-				pgfx[(7-x)+0] =	(((tmp1[ 0] >> x) & 0x01) << 0) | 
-								(((tmp2[ 0] >> x) & 0x01) << 1) | 
-								(((tmp3[ 0] >> x) & 0x01) << 2) | 
-								(((tmp4[ 0] >> x) & 0x01) << 3) | 
-								(((tmp5[ 0] >> x) & 0x01) << 4);
-				pgfx[(7-x)+8] =	(((tmp1[16] >> x) & 0x01) << 0) | 
-								(((tmp2[16] >> x) & 0x01) << 1) | 
-								(((tmp3[16] >> x) & 0x01) << 2) | 
-								(((tmp4[16] >> x) & 0x01) << 3) | 
-								(((tmp5[16] >> x) & 0x01) << 4);
+	for (int i=0; i<(0x200000/32); i=i+(0x200000/32/8)) {
+		pgfx = uniCacheHead+0x0C00000;			
+		fileOffset=i*32*8;
+		for(i2=i;i2<i+(0x200000/32/8);i2++)
+		{
+			for( int y=0;y<16;y++) {
+				
+				for(int x=0;x<8;x++) {
+					pgfx[(7-x)+0] =	(((tmp1[ 0] >> x) & 0x01) << 0) | 
+									(((tmp2[ 0] >> x) & 0x01) << 1) | 
+									(((tmp3[ 0] >> x) & 0x01) << 2) | 
+									(((tmp4[ 0] >> x) & 0x01) << 3) | 
+									(((tmp5[ 0] >> x) & 0x01) << 4);
+					pgfx[(7-x)+8] =	(((tmp1[16] >> x) & 0x01) << 0) | 
+									(((tmp2[16] >> x) & 0x01) << 1) | 
+									(((tmp3[16] >> x) & 0x01) << 2) | 
+									(((tmp4[16] >> x) & 0x01) << 3) | 
+									(((tmp5[16] >> x) & 0x01) << 4);
+				}
+				tmp1 += 1;
+				tmp2 += 1;
+				tmp3 += 1;
+				tmp4 += 1;
+				tmp5 += 1;
+				pgfx += 16;
 			}
-			tmp1 += 1;
-			tmp2 += 1;
-			tmp3 += 1;
-			tmp4 += 1;
-			tmp5 += 1;
-			pgfx += 16;
+			
+	//		if ((i & 0xFFF) == 0)
+	//			BurnUpdateProgress( 1.0 / 16, i ? NULL : _T("Decodeing graphics..."), 1);
+			
+			tmp1 += 16;
+			tmp2 += 16;
+			tmp3 += 16;
+			tmp4 += 16;
+			tmp5 += 16;
+		}		
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, fileOffset, SEEK_SET );
+			if( 0x0200000 == sceIoWrite(cacheFile,uniCacheHead+0x0C00000, 0x0200000 ) )
+				break;
 		}
-		
-//		if ((i & 0xFFF) == 0)
-//			BurnUpdateProgress( 1.0 / 16, i ? NULL : _T("Decodeing graphics..."), 1);
-		
-		tmp1 += 16;
-		tmp2 += 16;
-		tmp3 += 16;
-		tmp4 += 16;
-		tmp5 += 16;
+	
 	}
 
-	free(tmp1);
 	return 0;
 }
 
@@ -556,7 +573,8 @@ static int loadDecodeGfx03()
 	{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16, 8*16,9*16,10*16,11*16,12*16,13*16,14*16,15*16 },
 	64*8
 */	
-	unsigned char * tmp1 = (unsigned char *) malloc (0x300000);
+	unsigned char * tmpx = uniCacheHead;
+	unsigned char * tmp1 = tmpx + 0x000000;
 	unsigned char * tmp2 = tmp1 + 0x100000;
 	unsigned char * tmp3 = tmp2 + 0x100000;
 	unsigned char * pgfx = RomGfx03;
@@ -587,9 +605,7 @@ static int loadDecodeGfx03()
 		tmp2 += 32;
 		tmp3 += 32;
 	}
-	
-	free(tmp1);
-	
+
 	return 0;
 }
 
@@ -597,6 +613,39 @@ static int shadfrceInit()
 {
 	int nRet;
 	
+	cacheFileSize=0x1000000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Gfx
+	
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1200000)) == NULL) return 1;
+		memset(uniCacheHead, 0, 0x1200000);
+		loadDecodeGfx02();
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+		
 	Mem = NULL;
 	MemIndex();
 	int nLen = MemEnd - (unsigned char *)0;
@@ -609,14 +658,12 @@ static int shadfrceInit()
 	nRet = BurnLoadRom(Rom68K + 0x000001, 1, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Rom68K + 0x080000, 2, 2); if (nRet != 0) return 1;
 	nRet = BurnLoadRom(Rom68K + 0x080001, 3, 2); if (nRet != 0) return 1;
-	
 	nRet = BurnLoadRom(RomZ80 + 0x000000, 4, 1); if (nRet != 0) return 1;
-	
-	loadDecodeGfx01();
-	loadDecodeGfx02();
-	loadDecodeGfx03();
-
 	BurnLoadRom(MSM6295ROM, 14, 1);	
+	initCacheStructure(0.9);
+	loadDecodeGfx01();
+	loadDecodeGfx03();
+	
 
 	{
 		SekInit(0, 0x68000);										// Allocate 68000
@@ -696,9 +743,16 @@ static int shadfrceExit()
 	
 	free(Mem);
 	Mem = NULL;
-	
+	destroyUniCache();
 	return 0;
 }
+
+
+#ifndef BUILD_PSP
+ #define X_SIZE	320
+#else
+ #define X_SIZE	512
+#endif
 
 #define	TILE_BG0(x)				\
 	if (d[x]) { p[x]=pal[d[x]|c]; pp[x]=2; }
@@ -822,13 +876,13 @@ static void tileBackground_0()
  			if (c & 0x10) c ^= 0x30;	// skip hole 
  			c <<= 6;
  			
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx03 + (tileno << 8);
 			
 			unsigned char * pp = RamPri + y * 320 + x;
 			
 			if (RamBg00[offs] & 0x0080) {
-				p += 320 * 15;
+				p += X_SIZE * 15;
 				pp += 320 * 15;
 				if (RamBg00[offs] & 0x0040) {
 	 				for (int k=0;k<16;k++) {
@@ -836,7 +890,7 @@ static void tileBackground_0()
 		 				TILE_BG0_FLIPX_LINE
 		
 		 				d += 16;
-		 				p -= 320;
+		 				p -= X_SIZE;
 		 				pp -= 320;
 		 			}
 	 			} else {
@@ -845,7 +899,7 @@ static void tileBackground_0()
 		 				TILE_BG0_LINE
 		
 		 				d += 16;
-		 				p -= 320;
+		 				p -= X_SIZE;
 		 				pp -= 320;
 		 			}
 	 			}
@@ -856,7 +910,7 @@ static void tileBackground_0()
 		 				TILE_BG0_FLIPX_LINE
 		
 		 				d += 16;
-		 				p += 320;
+		 				p += X_SIZE;
 		 				pp += 320;
 		 			}
 	 			} else {
@@ -865,7 +919,7 @@ static void tileBackground_0()
 		 				TILE_BG0_LINE
 
 		 				d += 16;
-		 				p += 320;
+		 				p += X_SIZE;
 		 				pp += 320;
 		 			}
 	 			}			
@@ -880,12 +934,12 @@ static void tileBackground_0()
  			if (c & 0x10) c ^= 0x30;	// skip hole
  			c <<= 6;
  			
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx03 + (tileno << 8);
 			unsigned char * pp = RamPri + y * 320 + x;
 			
 			if (RamBg00[offs] & 0x0080) {
-				p += 320 * 15;
+				p += X_SIZE * 15;
 				pp += 320 * 15;
 				if (RamBg00[offs] & 0x0040) {
 	 				for (int k=0;k<16;k++) {
@@ -893,7 +947,7 @@ static void tileBackground_0()
 		 				TILE_BG0_FLIPX_LINE_E
 		 						
 		 				d += 16;
-		 				p -= 320;
+		 				p -= X_SIZE;
 		 				pp -= 320;
 		 			}
 	 			} else {
@@ -902,7 +956,7 @@ static void tileBackground_0()
 		 				TILE_BG0_LINE_E
 		
 		 				d += 16;
-		 				p -= 320;
+		 				p -= X_SIZE;
 		 				pp -= 320;
 		 			}
 	 			}
@@ -913,7 +967,7 @@ static void tileBackground_0()
 		 				TILE_BG0_FLIPX_LINE_E
 		
 		 				d += 16;
-		 				p += 320;
+		 				p += X_SIZE;
 		 				pp += 320;
 		 			}
 	 			} else {
@@ -922,7 +976,7 @@ static void tileBackground_0()
 		 				TILE_BG0_LINE_E
 
 		 				d += 16;
-		 				p += 320;
+		 				p += X_SIZE;
 		 				pp += 320;
 		 			}
 	 			}			
@@ -962,7 +1016,7 @@ static void tileBackground_1()
 
 			unsigned int tileno = RamBg01[offs] & 0x0FFF;
  			unsigned int c = ((RamBg01[offs] & 0xF000) >> 6) + (64 << 6);
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx03 + (tileno << 8);
 			
 			for (int k=0;k<16;k++) {
@@ -984,12 +1038,12 @@ static void tileBackground_1()
  				p[15] = pal[ d[15] | c ];
 
  				d += 16;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		} else {
 			unsigned int tileno = RamBg01[offs] & 0x0FFF;
  			unsigned int c = ((RamBg01[offs] & 0xF000) >> 6) + (64 << 6);
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx03 + (tileno << 8);
 			
 			for (int k=0;k<16;k++) {
@@ -1012,7 +1066,7 @@ static void tileBackground_1()
 	 				if ((x + 15) >= 0 && (x + 15)<320) p[15] = pal[ d[15] | c ];
 	 			}
  				d += 16;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		}
 	}
@@ -1046,7 +1100,7 @@ static void tileForeground()
 			if (tileno == 0) continue;
 			
  			unsigned int c = (RamFg[offs+1] & 0x00F0) << 2;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx01 + (tileno << 6);
 			
 			for (int k=0;k<8;k++) {
@@ -1060,7 +1114,7 @@ static void tileForeground()
  				if (d[7]) p[7] = pal[d[7]|c];
 
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		} else {
 
@@ -1068,7 +1122,7 @@ static void tileForeground()
 			if (tileno == 0) continue;
 			
  			unsigned int c = (RamFg[offs+1] & 0x00F0) << 2;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx01 + (tileno << 6);
 			
 			for (int k=0;k<8;k++) {
@@ -1083,7 +1137,7 @@ static void tileForeground()
 	 				if ((x + 7) >= 0 && (x + 7)<320) p[7] = pal[ d[7] | c ];
 	 			}
  				d += 8;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		}
 	}
@@ -1173,14 +1227,14 @@ static void tileForeground()
 	TILE_SPR_FLIP_X_E(14)				\
 	TILE_SPR_FLIP_X_E(15)
 
-static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int sx,int sy,int pri)
+inline void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int sx,int sy,int pri)
 {
 	unsigned short * p	= (unsigned short *) pBurnDraw;
 	unsigned char * pp = RamPri;
-	unsigned char * q	= RomGfx02 + (code << 8);
+	unsigned char * q	= getBlock(code << 8,256);
 	unsigned short *pal	= RamCurPal + 0x1000;
 
-	p += sy * 320 + sx;
+	p += sy * X_SIZE + sx;
 	pp += sy * 320 + sx;
 		
 	if (sx < 0 || sx >= (320-16) || sy < 0 || sy >= (256-16) ) {
@@ -1190,7 +1244,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 			
 		if (flipy) {
 		
-			p += 320 * 15;
+			p += X_SIZE * 15;
 			pp += 320 * 15;
 			
 			if (flipx) {
@@ -1201,7 +1255,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 						TILE_SPR_FLIP_X_LINE_E
 						
 					}
-					p -= 320;
+					p -= X_SIZE;
 					pp -= 320;
 					q += 16;
 				}	
@@ -1214,7 +1268,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 						TILE_SPR_NORMAL_LINE_E
 
 					}
-					p -= 320;
+					p -= X_SIZE;
 					pp -= 320;
 					q += 16;
 				}		
@@ -1230,7 +1284,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 						TILE_SPR_FLIP_X_LINE_E
 						
 					}
-					p += 320;
+					p += X_SIZE;
 					pp += 320;
 					q += 16;
 				}		
@@ -1243,7 +1297,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 						TILE_SPR_NORMAL_LINE_E
 
 					}
-					p += 320;
+					p += X_SIZE;
 					pp += 320;
 					q += 16;
 				}	
@@ -1257,7 +1311,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 
 	if (flipy) {
 		
-		p += 320 * 15;
+		p += X_SIZE * 15;
 		pp += 320 * 15;
 		
 		if (flipx) {
@@ -1266,7 +1320,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 				
 				TILE_SPR_FLIP_X_LINE
 	
-				p -= 320;
+				p -= X_SIZE;
 				pp -= 320;
 				q += 16;
 			}	
@@ -1277,7 +1331,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 				
 				TILE_SPR_NORMAL_LINE
 	
-				p -= 320;
+				p -= X_SIZE;
 				pp -= 320;
 				q += 16;
 			}		
@@ -1291,7 +1345,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 				
 				TILE_SPR_FLIP_X_LINE
 	
-				p += 320;
+				p += X_SIZE;
 				pp += 320;
 				q += 16;
 			}		
@@ -1302,7 +1356,7 @@ static void pdrawgfx(unsigned int code,unsigned int color,int flipx,int flipy,in
 				
 				TILE_SPR_NORMAL_LINE
 	
-				p += 320;
+				p += X_SIZE;
 				pp += 320;
 				q += 16;
 			}	
@@ -1333,26 +1387,25 @@ static void drawSprites()
 		int pal = ((source[4] & 0x003e));
 		int pri_mask = (source[4] & 0x0040) ? 0x02 : 0x00;
 			
-//		if ( (1 << pri_mask) & nSpriteEnable) {
-			
-			if (pal & 0x20) pal ^= 0x60;	// skip hole
-			pal <<= 5;
-			
-			height++;
-			if (enable)	{
-				for (hcount=0;hcount<height;hcount++) {
-					pdrawgfx(tile+hcount,pal,flipx,flipy,xpos,ypos-hcount*16-16,pri_mask);
-					pdrawgfx(tile+hcount,pal,flipx,flipy,xpos-0x200,ypos-hcount*16-16,pri_mask);
-					pdrawgfx(tile+hcount,pal,flipx,flipy,xpos,ypos-hcount*16-16+0x200,pri_mask);
-					pdrawgfx(tile+hcount,pal,flipx,flipy,xpos-0x200,ypos-hcount*16-16+0x200,pri_mask);
-				}
+		if (pal & 0x20) pal ^= 0x60;	// skip hole
+		pal <<= 5;
+		
+		height++;
+		if (enable)	{
+			for (hcount=0;hcount<height;hcount++) {
+				pdrawgfx(tile+hcount,pal,flipx,flipy,xpos,ypos-hcount*16-16,pri_mask);
+				pdrawgfx(tile+hcount,pal,flipx,flipy,xpos-0x200,ypos-hcount*16-16,pri_mask);
+				pdrawgfx(tile+hcount,pal,flipx,flipy,xpos,ypos-hcount*16-16+0x200,pri_mask);
+				pdrawgfx(tile+hcount,pal,flipx,flipy,xpos-0x200,ypos-hcount*16-16+0x200,pri_mask);
 			}
+		}
 			
-//		}
 		source-=8;
 	}
 
 }
+
+#undef X_SIZE
 
 static void DrvDraw()
 {
@@ -1372,6 +1425,8 @@ static void DrvDraw()
 
 static int shadfrceFrame()
 {
+	
+
 	if (DrvReset)														// Reset machine
 		DrvDoReset();
 		
@@ -1532,9 +1587,9 @@ struct BurnDriver BurnDrvShadfrce = {
 	"shadfrce", NULL, NULL, "1993",
 	"Shadow Force (US Version 2)\0", NULL, "Technos Japan", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, shadfrceRomInfo, shadfrceRomName, shadfrceInputInfo, shadfrceDIPInfo,
-	shadfrceInit, shadfrceExit, shadfrceFrame, NULL, shadfrceScan, 0, NULL, NULL, NULL, &bRecalcPalette, 
+	shadfrceInit, shadfrceExit, shadfrceFrame, NULL, shadfrceScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 256, 4, 3
 };
 
@@ -1542,8 +1597,8 @@ struct BurnDriver BurnDrvShadfrcj = {
 	"shadfrcj", "shadfrce", NULL, "1993",
 	"Shadow Force (Japan Version 2)\0", NULL, "Technos Japan", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_MISC_POST90S,
 	NULL, shadfrcjRomInfo, shadfrcjRomName, shadfrceInputInfo, shadfrceDIPInfo,
-	shadfrceInit, shadfrceExit, shadfrceFrame, NULL, shadfrceScan, 0, NULL, NULL, NULL, &bRecalcPalette, 
+	shadfrceInit, shadfrceExit, shadfrceFrame, NULL, shadfrceScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 256, 4, 3
 };

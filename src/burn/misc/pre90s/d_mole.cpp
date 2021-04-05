@@ -264,6 +264,8 @@ static int mole_gfx_convert()
 	}
 
 	free (tmp);
+
+	return 0;
 }
 
 static int DrvInit()
@@ -335,9 +337,14 @@ static int DrvExit()
 }
 
 
+#ifndef BUILD_PSP
+#define Y_SIZE	320
+#else
+#define Y_SIZE	512
+#endif
+
 //--------------------------------------------------------------------------------------
 // Drawing functions
-
 
 static int DrvDraw()
 {
@@ -359,9 +366,9 @@ static int DrvDraw()
 				int pos;
 
 				if (flipscreen)
-					pos = (199 - y) * 320 + (319 - x);
+					pos = (199 - y) * Y_SIZE + (319 - x);
 				else
-					pos = y * 320 + x;
+					pos = y * Y_SIZE + x;
 
 				PutPix(pBurnDraw + pos * nBurnBpp, BurnHighCol(pxl >> 16, pxl >> 8, pxl, 0));
 			}
@@ -371,6 +378,7 @@ static int DrvDraw()
 	return 0;
 }
 
+#undef Y_SIZE
 
 static int DrvFrame()
 {
@@ -486,7 +494,7 @@ struct BurnDriver BurnDrvMole = {
 	"mole", NULL, NULL, "1982",
 	"Mole Attack\0", NULL, "Yachiyo Electronics, Ltd.", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_MISC, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, moleRomInfo, moleRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	320, 200, 4, 3

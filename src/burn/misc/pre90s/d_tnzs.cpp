@@ -764,7 +764,7 @@ STD_ROM_FN(tnzs);
 
 // The NewZealand Story (Japan, newer)
 
-static struct BurnRomInfo tnzsjRomDesc[] = {
+static struct BurnRomInfo tnzsjnRomDesc[] = {
 	{ "b53-24.1",   0x20000, 0xd66824c6, 1 | BRF_ESS | BRF_PRG }, //  0 Z80 #0 Code
 
 	{ "b53-27.u3",  0x10000, 0xb3415fc3, 2 | BRF_ESS | BRF_PRG }, //  1 Z80 #1 Code
@@ -781,25 +781,25 @@ static struct BurnRomInfo tnzsjRomDesc[] = {
 	{ "b53-21.1",	0x20000, 0x9800c54d, 4 | BRF_GRA },	      // 10
 };
 
-STD_ROM_PICK(tnzsj);
-STD_ROM_FN(tnzsj);
+STD_ROM_PICK(tnzsjn);
+STD_ROM_FN(tnzsjn);
 
 struct BurnDriver BurnDrvtnzs = {
 	"tnzs", NULL, NULL, "1988",
 	"The NewZealand Story (World, newer)\0", NULL, "Taito Corporation Japan", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
 	NULL, tnzsRomInfo, tnzsRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 224, 4, 3
 };
 
-struct BurnDriver BurnDrvtnzsj = {
-	"tnzsj", "tnzs", NULL, "1988",
-	"The NewZealand Story (Japan, new version, newer PCB)\0", NULL, "Taito Corporation", "Misc",
+struct BurnDriver BurnDrvtnzsjn = {
+	"tnzsjn", "tnzs", NULL, "1988",
+	"The NewZealand Story (Japan, newer)\0", NULL, "Taito Corporation", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
-	NULL, tnzsjRomInfo, tnzsjRomName, DrvInputInfo, DrvDIPInfo,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_PLATFORM, 0,
+	NULL, tnzsjnRomInfo, tnzsjnRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, NULL,
 	256, 224, 4, 3
 };

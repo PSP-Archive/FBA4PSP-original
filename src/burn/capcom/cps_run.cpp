@@ -47,8 +47,6 @@ static int DrvReset()
 	if (Cps == 2 || Cps1Qs == 1) {			// Sound init (QSound)
 		QsndReset();
 	}
-	
-	HiscoreReset();
 
 	return 0;
 }

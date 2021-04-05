@@ -605,7 +605,7 @@ struct BurnDriver BurnDrvDogyuun = {
 	"dogyuun", NULL, NULL, "1992",
 	"Dogyuun\0", "No sound (sound MCU not dumped)", "Toaplan", "Dual Toaplan GP9001 based",
 	L"Dogyuun\0Dogyuun \u30C9\u30AD\u30E5\u30FC\u30F3\uFF01\uFF01\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80, //GBF_VERSHOOT, 0,
 	NULL, dogyuunRomInfo, dogyuunRomName, dogyuunInputInfo, dogyuunDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	240, 320, 3, 4
@@ -615,7 +615,7 @@ struct BurnDriver BurnDrvDogyuunk = {
 	"dogyuunk", "dogyuun", NULL, "1992",
 	"Dogyuun (Licensed to Unite Trading For Korea)\0", "No sound (sound MCU not dumped)", "Toaplan", "Dual Toaplan GP9001 based",
 	L"Dogyuun (Licensed to Unite Trading For Korea)\0Dogyuun \u30C9\u30AD\u30E5\u30FC\u30F3\uFF01\uFF01\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | TOA_ROTATE_GRAPHICS_CCW, 2, HARDWARE_TOAPLAN_68K_Zx80, //GBF_VERSHOOT, 0,
 	NULL, dogyuunkRomInfo, dogyuunkRomName, dogyuunInputInfo, dogyuunkDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	240, 320, 3, 4

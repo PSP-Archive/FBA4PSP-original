@@ -114,9 +114,19 @@ static int DrvDraw()
 	}
 	dirty = 0;
 
+#ifdef BUILD_PSP
+	int src_x;
+	for (y = 0; y < 200; y++) {
+		for (x = 0; x < 320; x++) {
+			src_x = x + (y * 320);
+			PutPix(pBurnDraw + (x + (y << 9)) * nBurnBpp, BurnHighCol(src[src_x]>>16, src[src_x]>>8, src[src_x], 0));
+		}
+	}
+#else
 	for (x = 0; x < 320 * 200; x++) {
 		PutPix(pBurnDraw + x * nBurnBpp, BurnHighCol(src[x]>>16, src[x]>>8, src[x], 0));
 	}
+#endif
 
 	return 0;
 }
@@ -218,6 +228,7 @@ static int DrvInit()
 	if (pFMBuffer == NULL) {
 		return 1;
 	}
+	memset(pFMBuffer, 0, nBurnSoundLen * 3 * sizeof(short));
 
 	Rom      = Mem + 0x00000;
 	RomBank  = Mem + 0x10000;
@@ -225,6 +236,13 @@ static int DrvInit()
 	Prom     = Mem + 0x30000;
 	Palette  = (unsigned int*)(Mem + 0x30020);
 	framebuffer = Mem + 0x30060;
+
+	memset(Rom, 0, 0x10000);
+	memset(RomBank, 0, 0x18000);
+	memset(VideoRam, 0, 0x2000);
+	memset(Prom, 0, 0x20);
+	memset(Palette, 0, 0x40);
+	memset(framebuffer, 0, 0x3e800);
 
 	if (BurnLoadRom(Rom, 0, 1)) return 1;
 	memcpy (Rom, Rom + 0x4000, 0x4000);
@@ -378,7 +396,7 @@ struct BurnDriver BurnDrvQuizo = {
 	"quizo", NULL, NULL, "1985",
 	"Quiz Olympic\0", NULL, "Seoul Coin Corp.", "Miscellaneous",
 	L"\uD034\uC988\uC62C\uB9BC\uD53D\0Quiz Olympic\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 1, HARDWARE_MISC_PRE90S, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 1, HARDWARE_MISC_PRE90S,
 	NULL, quizoRomInfo, quizoRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, NULL, 0, NULL, NULL, NULL, NULL,
 	320, 200, 4, 3

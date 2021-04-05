@@ -75,7 +75,7 @@ STDINPUTINFO(mazinger);
 
 static struct BurnDIPInfo mazingerDIPList[] = {
 	// Region
-	{0x15,	0xFF, 0xFF,	0x31, NULL},
+	{0x15,	0xFF, 0xFF,	0x30, NULL},
 	
 	{0,		0xFD, 0,	2,	  "Region"},
 	{0x15,	0x01, 0xff, 0x30, "Japan"},
@@ -92,22 +92,26 @@ static void UpdateIRQStatus()
 
 unsigned char __fastcall mazingerReadByte(unsigned int sekAddress)
 {
+/*
 	switch (sekAddress) {
 		default: {
  			bprintf(PRINT_NORMAL, _T("Attempt to read byte value of location %x\n"), sekAddress);
 		}
 	}
+*/
 	return 0;
 }
 
 void __fastcall mazingerWriteByte(unsigned int sekAddress, unsigned char byteValue)
 {
+/*
 	switch (sekAddress) {
 		default: {
 			bprintf(PRINT_NORMAL, _T("Attempt to write byte value %x to location %x\n"), byteValue, sekAddress);
 
 		}
 	}
+*/
 }
 
 unsigned short __fastcall mazingerReadWord(unsigned int sekAddress)
@@ -143,10 +147,11 @@ unsigned short __fastcall mazingerReadWord(unsigned int sekAddress)
 			return DrvInput[0] ^ 0xFFFF;
 		case 0x800002:
 			return DrvInput[1] ^ 0xF7FF | (EEPROMRead() << 11);		
-		
+		/*
 		default: {
  			bprintf(PRINT_NORMAL, _T("Attempt to read word value of location %x\n"), sekAddress);
 		}
+		*/
 	}
 	return 0;
 }
@@ -204,11 +209,12 @@ void __fastcall mazingerWriteWord(unsigned int sekAddress, unsigned short wordVa
 			wordValue >>= 8;
 			EEPROMWrite(wordValue & 0x04, wordValue & 0x02, wordValue & 0x08);
 			break;
-			
+		/*
 		default: {
 			bprintf(PRINT_NORMAL, _T("Attempt to write word value %x to location %x\n"), wordValue, sekAddress);
 
 		}
+		*/
 	}
 }
 
@@ -235,10 +241,11 @@ unsigned char __fastcall mazingerZIn(unsigned short nAddress)
 		case 0x52: {
 			return BurnYM2203Read(0, 0);
 		}
-		
+		/*
 		default: {
 			bprintf(PRINT_NORMAL, _T("Z80 Port Read %x\n"), nAddress);
 		}
+		*/
 	}
 
 	return 0;
@@ -289,31 +296,35 @@ void __fastcall mazingerZOut(unsigned short nAddress, unsigned char nValue)
 			memcpy(MSM6295ROM + 0x20000, MSM6295ROMSrc + 0x20000 * DrvOkiBank2, 0x20000);
 			return;
 		}
-		
+		/*
 		default: {
 			bprintf(PRINT_NORMAL, _T("Z80 Port Write %x, %x\n"), nAddress, nValue);
 		}
+		*/
 	}
 }
 
 unsigned char __fastcall mazingerZRead(unsigned short a)
 {
+/*
 	switch (a) {
 		default: {
 			bprintf(PRINT_NORMAL, _T("Z80 Read => %04X\n"), a);
 		}
 	}
-
+*/
 	return 0;
 }
 
 void __fastcall mazingerZWrite(unsigned short a, unsigned char d)
 {
+/*
 	switch (a) {
 		default: {
 			bprintf(PRINT_NORMAL, _T("Z80 Write => %04X, %02X\n"), a, d);
 		}
 	}
+*/
 }
 
 static int DrvExit()
@@ -339,7 +350,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+destroyUniCache();
 	return 0;
 }
 
@@ -414,6 +425,8 @@ static int DrvFrame()
 	int nInterleave = 8;
 
 	int nCyclesSegment;
+
+	
 
 	if (DrvReset) {														// Reset machine
 		DrvDoReset();
@@ -499,9 +512,10 @@ static int MemIndex()
 	unsigned char* Next; Next = Mem;
 	Rom01			= Next; Next += 0x100000;		// 68K program
 	RomZ80			= Next; Next += 0x020000;
-	CaveSpriteROM	= Next; Next += 0x800000;
+/*	CaveSpriteROM	= Next; Next += 0x800000;
 	CaveTileROM[0]	= Next; Next += 0x400000;		// Tile layer 0
 	CaveTileROM[1]	= Next; Next += 0x400000;		// Tile layer 1
+*/
 	MSM6295ROM		= Next; Next += 0x040000;
 	MSM6295ROMSrc		= Next; Next += 0x080000;
 	RamStart		= Next;
@@ -549,7 +563,7 @@ static int LoadRoms()
 	BurnLoadRom(Rom01 + 0x80000, 1, 1);
 	
 	BurnLoadRom(RomZ80, 2, 1);
-
+/*
 	unsigned char *pTemp = (unsigned char*)malloc(0x400000);
 	BurnLoadRom(pTemp + 0x000000, 3, 1);
 	BurnLoadRom(pTemp + 0x200000, 4, 1);
@@ -569,7 +583,7 @@ static int LoadRoms()
 		CaveTileROM[1][(i << 1) + 0] = (pTemp[(i << 1) + 0] >> 4) | (pTemp[(i << 1) + 1] & 240);
 	}
 	free(pTemp);
-
+*/
 	// Load MSM6295 ADPCM data
 	BurnLoadRom(MSM6295ROMSrc, 7, 1);
 
@@ -686,6 +700,70 @@ static int DrvInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+	cacheFileSize=0xE00000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x800000;
+	CaveTileROMOffset[1]=CaveTileROMOffset[0]+0x400000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0xE00000)) == NULL) return 1;
+		memset(uniCacheHead,0,0xE00000);
+
+		unsigned char* pTemp=uniCacheHead+0xA00000;
+		BurnLoadRom(pTemp + 0x000000, 3, 1);
+		BurnLoadRom(pTemp + 0x200000, 4, 1);
+		for (int i = 0; i < 0x400000; i++) {
+			uniCacheHead[i ^ 0xdf88] = pTemp[BITSWAP24(i,23,22,21,20,19,9,7,3,15,4,17,14,18,2,16,5,11,8,6,13,1,10,12,0)];
+		}
+		NibbleSwap1(uniCacheHead, 0x400000);
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0, SEEK_SET );
+			if( 0x800000 == sceIoWrite(cacheFile,uniCacheHead, 0x800000 ) )
+				break;
+		}
+		
+		BurnLoadRom(uniCacheHead, 5, 1);
+		NibbleSwap2(uniCacheHead, 0x200000);
+		
+		BurnLoadRom(pTemp, 6, 1);
+		for (int i = 0; i < 0x0100000; i++) {
+			(uniCacheHead+0x400000)[(i << 1) + 1] = (pTemp[(i << 1) + 0] & 15) | ((pTemp[(i << 1) + 1] & 15) << 4);
+			(uniCacheHead+0x400000)[(i << 1) + 0] = (pTemp[(i << 1) + 0] >> 4) | (pTemp[(i << 1) + 1] & 240);
+		}
+		
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile,0x800000, SEEK_SET );
+			if( 0x600000 == sceIoWrite(cacheFile,uniCacheHead, 0x600000 ) )
+				break;
+		}
+
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
 
 	// Find out how much memory is needed
 	Mem = NULL;
@@ -701,7 +779,9 @@ static int DrvInit()
 	
 	unsigned char data[] = { 0xFF,0xED,0x00,0x00,0x31,0x12 };
 	EEPROMFill(data, 0, 0x06);
-
+	
+	initCacheStructure(0.7);
+	
 	// Load the roms into memory
 	if (LoadRoms()) {
 		return 1;
@@ -784,7 +864,7 @@ struct BurnDriver BurnDrvmazinger = {
 	"mazinger", NULL, NULL, "1994",
 	"Mazinger Z (International/Japan)\0", NULL, "Banpresto/Dynamic Pl. Toei Animation", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL |BDF_ORIENTATION_FLIPPED | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL |BDF_ORIENTATION_FLIPPED | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_Z80,
 	NULL, mazingerRomInfo, mazingerRomName, mazingerInputInfo, mazingerDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,

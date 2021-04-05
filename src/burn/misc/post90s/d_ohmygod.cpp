@@ -467,6 +467,7 @@ int OhmygodInit()
 	unsigned char *TempGfx=(unsigned char*)malloc (0x80000);
 	
 	// Load and decode Character Rom
+	memset(TempGfx, 0, 0x80000);
 	nRet = BurnLoadRom(TempGfx, 1, 1); if (nRet != 0) return 1;
 	GfxDecode(16384, 4, 8, 8, TilePlaneOffsets, TileXOffsets, TileYOffsets, 0x100, TempGfx, OhmygodChars);
 
@@ -514,8 +515,8 @@ int OhmygodExit()
 	SekExit();
 	GenericTilesExit();
 
-	free(OhmygodChars);
-	free(OhmygodSprites);
+//	free(OhmygodChars);
+//	free(OhmygodSprites);
 	free(Mem);
 	Mem = NULL;
 
@@ -679,7 +680,7 @@ struct BurnDriver BurnDrvOhmygod = {
 	"ohmygod", NULL, NULL, "1993",
 	"Oh My God!\0", NULL, "Atlus", "Miscellaneous",
 	L"Oh my God! (Japan)\0Oh my god! \u30AA\u30FC\u30DE\u30A4\u30AC\u30A1\u30FC\uFF01\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S,
 	NULL, OhmygodRomInfo, OhmygodRomName, OhmygodInputInfo, OhmygodDIPInfo,
 	OhmygodInit, OhmygodExit, OhmygodFrame, NULL, OhmygodScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3
@@ -689,7 +690,7 @@ struct BurnDriverD BurnDrvNaname = {
 	"naname", NULL, NULL, "1994",
 	"Naname de Magic!\0", NULL, "Atlus", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S,
 	NULL, NanameRomInfo, NanameRomName, OhmygodInputInfo, NanameDIPInfo,
 	OhmygodInit, OhmygodExit, OhmygodFrame, NULL, OhmygodScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3

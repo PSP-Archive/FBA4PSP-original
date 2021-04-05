@@ -239,11 +239,12 @@ int PsikyoTileInit(unsigned int nROMSize)
 	for (PsikyoTileMask = 1; PsikyoTileMask < nNumTiles; PsikyoTileMask <<= 1) { }
 	PsikyoTileMask--;
 
-	free(PsikyoTileAttrib);
-	PsikyoTileAttrib = (char*)malloc(PsikyoTileMask + 1);
+	if(PsikyoTileAttrib==NULL)
+		PsikyoTileAttrib = (char*)malloc(PsikyoTileMask + 1);
 	if (PsikyoTileAttrib == NULL) {
 		return 1;
 	}
+	memset(PsikyoTileAttrib, 0, PsikyoTileMask + 1);
 
 	for (int i = 0; i < nNumTiles; i++) {
 		bool bTransparent0 = true;

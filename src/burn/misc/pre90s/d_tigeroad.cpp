@@ -1086,7 +1086,7 @@ struct BurnDriver BurnDrvTigeroad = {
 	"tigeroad", NULL, NULL, "1987",
 	"Tiger Road (US)\0", NULL, "Capcom (Romstar license)", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT | GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT | //GBF_PLATFORM, 0,
 	NULL, tigeroadRomInfo, tigeroadRomName, TigeroadInputInfo, TigeroadDIPInfo,
 	TigeroadInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1138,7 +1138,7 @@ struct BurnDriver BurnDrvToramich = {
 	"toramich", "tigeroad", NULL, "1987",
 	"Tora-he no Michi (Japan)\0", "Sample Z80 unemulated", "Capcom", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT | GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT | //GBF_PLATFORM, 0,
 	NULL, toramichRomInfo, toramichRomName, TigeroadInputInfo, ToramichDIPInfo,
 	TigeroadInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1215,7 +1215,7 @@ struct BurnDriver BurnDrvTigerodb = {
 	"tigerodb", "tigeroad", NULL, "1987",
 	"Tiger Road (US bootleg)\0", NULL, "bootleg", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, GBF_SCRFIGHT | GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, //GBF_SCRFIGHT | //GBF_PLATFORM, 0,
 	NULL, tigerodbRomInfo, tigerodbRomName, TigeroadInputInfo, TigeroadDIPInfo,
 	TigerodbInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1286,7 +1286,7 @@ struct BurnDriver BurnDrvF1dream = {
 	"f1dream", NULL, NULL, "1988",
 	"F-1 Dream\0", NULL, "Capcom (Romstar license)", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_RACING, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, //GBF_RACING, 0,
 	NULL, f1dreamRomInfo, f1dreamRomName, TigeroadInputInfo, F1dreamDIPInfo,
 	F1dreamInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -1359,7 +1359,7 @@ struct BurnDriver BurnDrvF1dreamb = {
 	"f1dreamb", "f1dream", NULL, "1988",
 	"F-1 Dream (bootleg)\0", NULL, "bootleg", "hardware",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, GBF_RACING, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_PRE90S, //GBF_RACING, 0,
 	NULL, f1dreambRomInfo, f1dreambRomName, TigeroadInputInfo, F1dreamDIPInfo,
 	F1dreambInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3

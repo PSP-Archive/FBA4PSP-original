@@ -733,15 +733,20 @@ static int powerinsInit()
 		nRet = BurnLoadRom(RomZ80 + 0x000000, 2, 1); if (nRet != 0) return 1;
 
 		// load background tile roms
+		memset(tmp, 0, 0x200000);
 		LoadDecodeBgRom(tmp, RomBg+0x000000, 3, 0x100000);
+		memset(tmp, 0, 0x200000);
 		LoadDecodeBgRom(tmp, RomBg+0x200000, 4, 0x100000);
+		memset(tmp, 0, 0x200000);
 		LoadDecodeBgRom(tmp, RomBg+0x400000, 5, 0x080000);
 
 		BurnLoadRom(RomFg + 0x000000,  6, 1);
 
 		// load sprite roms
-		for (int i=0;i<8;i++)
+		for (int i=0;i<8;i++) {
+			memset(tmp, 0, 0x200000);
 			LoadDecodeSprRom(tmp, RomSpr+0x200000*i, i+7, 0x100000);
+		}
 
 		BurnLoadRom(MSM6295ROM + 0x000000, 15, 1);
 		BurnLoadRom(MSM6295ROM + 0x100000, 16, 1);
@@ -755,15 +760,19 @@ static int powerinsInit()
 		nRet = BurnLoadRom(Rom68K + 0x080000, 1, 1); if (nRet != 0) return 1;
 
 		// load background tile roms
+		memset(tmp, 0, 0x200000);
 		LoadDecodeBgRom(tmp, RomBg+0x000000, 2, 0x200000);
+		memset(tmp, 0, 0x200000);
 		LoadDecodeBgRom(tmp, RomBg+0x400000, 3, 0x080000);
 
 		// load foreground tile roms
 		BurnLoadRom(RomFg + 0x000000,  4, 1);
 
 		// load sprite roms
-		for (int i=0;i<4;i++)
+		for (int i=0;i<4;i++) {
+			memset(tmp, 0, 0x200000);
 			LoadDecodeSprRom(tmp, RomSpr+0x400000*i, i+5, 0x200000);
+		}
 
 		BurnLoadRom(MSM6295ROM + 0x10000, 9, 1);
 		memcpy(MSM6295ROM, MSM6295ROM + 0x10000, 0x30000);
@@ -777,15 +786,19 @@ static int powerinsInit()
 		nRet = BurnLoadRom(RomZ80 + 0x000000, 2, 1); if (nRet != 0) return 1;
 
 		// load background tile roms
-		for (int i=0;i<5;i++)
+		for (int i=0;i<5;i++) {
+			memset(tmp, 0, 0x200000);
 			LoadDecodeBgRom(tmp, RomBg+0x100000*i, i+3, 0x80000);
+		}
 
 		// load foreground tile roms
 		BurnLoadRom(RomFg + 0x000000,  8, 1);
 
 		// load sprite roms
-		for (int i=0;i<8;i++)
+		for (int i=0;i<8;i++) {
+			memset(tmp, 0, 0x200000);
 			LoadDecodeSprRom(tmp, RomSpr+0x200000*i, i, 0x100000);
+		}
 
 		BurnLoadRom(MSM6295ROM + 0x000000, 25, 1);
 		BurnLoadRom(MSM6295ROM + 0x080000, 26, 1);
@@ -894,6 +907,12 @@ static int powerinsExit()
 	return 0;
 }
 
+#ifndef BUILD_PSP
+ #define XSIZE	320
+#else
+ #define XSIZE	512
+#endif
+
 static void TileBackground()
 {
 	// 256x256 pixel per page (32 pages)
@@ -920,7 +939,7 @@ static void TileBackground()
 
 			unsigned char *d = RomBg + ((RamBg[offs] & 0x07FF) + tile_bank) * 256;
  			unsigned short c = ((RamBg[offs] & 0xF000) >> 8) | ((RamBg[offs] & 0x0800) >> 3);
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * XSIZE + x;
 
 			if ( x >=0 && x <= (320-16) && y>=0 && y <=(224-16) ) {
 				for (int k=0;k<16;k++) {
@@ -943,7 +962,7 @@ static void TileBackground()
 					p[15] = pal[ d[15] | c ];
 
 	 				d += 16;
-	 				p += 320;
+	 				p += XSIZE;
 	 			}
 			} else {
 				for (int k=0;k<16;k++) {
@@ -967,7 +986,7 @@ static void TileBackground()
 						if ((x + 15) >= 0 && (x + 15) < 320) p[15] = pal[ d[15] | c ];
 		 			}
 	 				d += 16;
-	 				p += 320;
+	 				p += XSIZE;
 	 			}
 			}
 		}
@@ -986,7 +1005,7 @@ static void TileForeground()
 			if ((RamFg[offs] & 0x0FFF) == 0) continue;
 			unsigned char *d = RomFg + (RamFg[offs] & 0x0FFF) * 32;
  			unsigned short c = (RamFg[offs] & 0xF000) >> 8;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * XSIZE + x;
 			for (int k=0;k<8;k++) {
  				if ((d[0] >>  4) != 15) p[0] = pal[ (d[0] >>  4) | c ];
  				if ((d[0] & 0xF) != 15) p[1] = pal[ (d[0] & 0xF) | c ];
@@ -997,7 +1016,7 @@ static void TileForeground()
  				if ((d[3] >>  4) != 15) p[6] = pal[ (d[3] >>  4) | c ];
  				if ((d[3] & 0xF) != 15) p[7] = pal[ (d[3] & 0xF) | c ];
  				d += 4;
- 				p += 320;
+ 				p += XSIZE;
  			}
 		}
 	}
@@ -1005,7 +1024,7 @@ static void TileForeground()
 
 static void drawgfx(unsigned int code,unsigned int color,int flipx,/*int flipy,*/int sx,int sy)
 {
-	unsigned short * p = (unsigned short *) pBurnDraw + sy * 320 + sx;
+	unsigned short * p = (unsigned short *) pBurnDraw + sy * XSIZE + sx;
 	unsigned char * q = RomSpr + code * 256;
 	unsigned int * pal = RamCurPal + 0x400;
 
@@ -1030,7 +1049,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,/*int flipy,*
 				if (q[14] != 15) p[ 1] = pal[ q[14] | color];
 				if (q[15] != 15) p[ 0] = pal[ q[15] | color];
 
-				p += 320;
+				p += XSIZE;
 				q += 16;
 			}
 		else
@@ -1053,7 +1072,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,/*int flipy,*
 				if (q[14] != 15) p[14] = pal[ q[14] | color];
 				if (q[15] != 15) p[15] = pal[ q[15] | color];
 
-				p += 320;
+				p += XSIZE;
 				q += 16;
 			}	
 	} else {
@@ -1078,7 +1097,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,/*int flipy,*
 					if (q[14] != 15 && ((sx +  1) >= 0) && ((sx +  1)<320)) p[ 1] = pal[ q[14] | color];
 					if (q[15] != 15 && ((sx +  0) >= 0) && ((sx +  0)<320)) p[ 0] = pal[ q[15] | color];
 				}
-				p += 320;
+				p += XSIZE;
 				q += 16;
 			}
 		else
@@ -1102,7 +1121,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,/*int flipy,*
 					if (q[14] != 15 && ((sx + 14) >= 0) && ((sx + 14)<320)) p[14] = pal[ q[14] | color];
 					if (q[15] != 15 && ((sx + 15) >= 0) && ((sx + 15)<320)) p[15] = pal[ q[15] | color];
 				}
-				p += 320;
+				p += XSIZE;
 				q += 16;
 			}		
 
@@ -1140,12 +1159,19 @@ static void DrawSprites()
 
 static void DrvDraw()
 {
-	memset(pBurnDraw, 0, 320*224*2);
-	
+#ifdef BUILD_PSP
+	extern void clear_gui_texture(int color, int w, int h);
+	clear_gui_texture(0, XSIZE, 224);
+#else
+	memset(pBurnDraw, 0, XSIZE*224*2);
+#endif
+
 	TileBackground();
 	DrawSprites();
 	TileForeground();
 }
+
+#undef XSIZE
 
 static int powerinsFrame()
 {
@@ -1293,11 +1319,12 @@ static int powerinsScan(int nAction,int *pnMin)
 	return 0;
 }
 
+
 struct BurnDriver BurnDrvPowerins = {
 	"powerins", NULL, NULL, "1993",
 	"Power Instinct (USA)\0", NULL, "Atlus", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, //GBF_VSFIGHT, FBF_PWRINST,
 	NULL, powerinsRomInfo, powerinsRomName, powerinsInputInfo, powerinsDIPInfo,
 	powerinsInit, powerinsExit, powerinsFrame, NULL, powerinsScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 224, 4, 3
@@ -1307,7 +1334,7 @@ struct BurnDriver BurnDrvPowerinj = {
 	"powerinj", "powerins", NULL, "1993",
 	"Gouketsuji Ichizoku (Japan)\0", NULL, "Atlus", "Miscellaneous",
 	L"\u8C6A\u8840\u5BFA\u4E00\u65CF (Japan)\0Gouketsuji Ichizoku\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //BF_VSFIGHT, FBF_PWRINST,
 	NULL, powerinjRomInfo, powerinjRomName, powerinsInputInfo, powerinjDIPInfo,
 	powerinsInit, powerinsExit, powerinsFrame, NULL, powerinsScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 224, 4, 3
@@ -1317,7 +1344,7 @@ struct BurnDriver BurnDrvPowerina = {
 	"powerina", "powerins", NULL, "1993",
 	"Power Instinct (USA, bootleg set 1)\0", NULL, "Atlus", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_POST90S, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_POST90S,
 	NULL, powerinaRomInfo, powerinaRomName, powerinsInputInfo, powerinsDIPInfo,
 	powerinsInit, powerinsExit, powerinsFrame, NULL, powerinsScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 224, 4, 3
@@ -1327,7 +1354,7 @@ struct BurnDriver BurnDrvPowerinb = {
 	"powerinb", "powerins", NULL, "1993",
 	"Power Instinct (USA, bootleg set 2)\0", NULL, "Atlus", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_POST90S, GBF_VSFIGHT, FBF_PWRINST,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE | BDF_BOOTLEG, 2, HARDWARE_MISC_POST90S,
 	NULL, powerinbRomInfo, powerinbRomName, powerinsInputInfo, powerinsDIPInfo,
 	powerinsInit, powerinsExit, powerinsFrame, NULL, powerinsScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	320, 224, 4, 3

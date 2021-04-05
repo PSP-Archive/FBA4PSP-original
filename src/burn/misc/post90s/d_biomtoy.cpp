@@ -614,6 +614,9 @@ static int LoadRoms()
 	bmsprites=(unsigned char *)malloc(0x800000);
 	spritetemp2=(unsigned char *)malloc(0x80000);
 
+	memset(bmsprites, 0, 0x800000);
+	memset(spritetemp2, 0, 0x80000);
+
 	nRet=BurnLoadRom(spritetemp2,2,1); if (nRet!=0) return 1;
 	BiomtoyDecode(0x000000,3);
 
@@ -656,6 +659,9 @@ static int ManiacspLoadRoms()
 
 	bmsprites=(unsigned char *)malloc(0x800000);
 	spritetemp2=(unsigned char *)malloc(0x80000);
+
+	memset(bmsprites, 0, 0x800000);
+	memset(spritetemp2, 0, 0x80000);
 
 	nRet=BurnLoadRom(spritetemp2,2,1); if (nRet!=0) return 1;
 	nRet=BurnLoadRom(spritetemp2+0x40000,2,1); if (nRet!=0) return 1;
@@ -871,7 +877,7 @@ int BiomtoyFrame()
 	BiomtoyMakeInputs();
 
 	SekOpen(0);
-	nCyclesTotal[0] = (int)((long long)24000000 * nBurnCPUSpeedAdjust / (0x0100 * 60));
+	nCyclesTotal[0] = (int)((long long)(24000000 / 2) * nBurnCPUSpeedAdjust / (0x0100 * 60));
 	SekRun(nCyclesTotal[0]);
 	SekSetIRQLine(6, SEK_IRQSTATUS_AUTO);
 	SekClose();
@@ -975,7 +981,7 @@ struct BurnDriver BurnDrvBiomtoy = {
 	"biomtoy", NULL, NULL, "1995",
 	"Biomechanical Toy (unprotected)\0", NULL, "Zeus", "Gaelco '91 - '96",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING,2,HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING,2,HARDWARE_MISC_POST90S,
 	NULL,BiomtoyRomInfo,BiomtoyRomName,BiomtoyInputInfo,BiomtoyDIPInfo,
 	BiomtoyInit,BiomtoyExit,BiomtoyFrame,NULL,BiomtoyScan,
 	0, NULL, NULL, NULL, NULL,320,240,4,3
@@ -1003,7 +1009,7 @@ struct BurnDriverD BurnDrvManiacsp = {
 	"maniacsp", "maniacsq", NULL, "1996",
 	"Maniac Square (prototype)\0", "Missing GFXs", "Gaelco", "Gaelco '91 - '96",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE,2,HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE,2,HARDWARE_MISC_POST90S,
 	NULL,ManiacspRomInfo,ManiacspRomName,BiomtoyInputInfo,ManiacspDIPInfo,
 	BiomtoyInit,BiomtoyExit,BiomtoyFrame,NULL,BiomtoyScan,
 	0, NULL, NULL, NULL, NULL, 320, 240, 4, 3

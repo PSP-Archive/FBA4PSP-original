@@ -536,6 +536,7 @@ static int DrvInit()
 	nRet = BurnLoadRom(DrvZ80Rom2 + 0x00000, 5, 1); if (nRet != 0) return 1;
 	
 	// Load and decode the chars
+	memset(DrvTempRom, 0, 0x10000);
 	nRet = BurnLoadRom(DrvTempRom, 6, 1); if (nRet != 0) return 1;
 	GfxDecode(0x200, 2, 8, 8, CharPlaneOffsets, CharXOffsets, CharYOffsets, 0x80, DrvTempRom, DrvChars);
 	
@@ -955,7 +956,7 @@ struct BurnDriver BurnDrvNineteen42 = {
 	"1942", NULL, NULL, "1984",
 	"1942 (Revision B)\0", NULL, "Capcom", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, DrvRomInfo, DrvRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
@@ -965,7 +966,7 @@ struct BurnDriver BurnDrvNineteen42a = {
 	"1942a", "1942", NULL, "1984",
 	"1942 (Revision A)\0", NULL, "Capcom", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, DrvaRomInfo, DrvaRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
@@ -975,7 +976,7 @@ struct BurnDriver BurnDrvNineteen42b = {
 	"1942b", "1942", NULL, "1984",
 	"1942 (First Version)\0", NULL, "Capcom", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, DrvbRomInfo, DrvbRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4
@@ -985,7 +986,7 @@ struct BurnDriver BurnDrvNineteen42w = {
 	"1942w", "1942", NULL, "1985",
 	"1942 (Williams Electronics license)\0", NULL, "Capcom (Williams Electronics license)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_PRE90S,
 	NULL, DrvwRomInfo, DrvwRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, DrvScan,
 	0, NULL, NULL, NULL, NULL, 224, 256, 3, 4

@@ -88,6 +88,16 @@ int ToaLoadGP9001Tiles(unsigned char* pDest, int nStart, int nNumFiles, int nROM
 // This function fills the screen with the first palette entry
 void ToaClearScreen()
 {
+#ifdef BUILD_PSP
+
+	extern void clear_gui_texture(int color, int w, int h);
+	
+	unsigned int nColour = *ToaPalette;
+	nColour = ((nColour & 0x001f ) << 3) | ((nColour & 0x07e0 ) << 5) | ((nColour & 0xf800 ) << 8);
+	clear_gui_texture(nColour, 320, 240);
+	
+#else
+
 	if (*ToaPalette) {
 		switch (nBurnBpp) {
 			case 4: {
@@ -139,6 +149,7 @@ void ToaClearScreen()
 	} else {
 		memset(pBurnDraw, 0, 320 * 240 * nBurnBpp);
 	}
+#endif
 }
 
 void ToaZExit()

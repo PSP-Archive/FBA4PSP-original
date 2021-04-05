@@ -246,7 +246,7 @@ static int DrvExit()
 	// Deallocate all used memory
 	free(Mem);
 	Mem = NULL;
-
+destroyUniCache();
 	return 0;
 }
 
@@ -301,6 +301,8 @@ static int DrvFrame()
 {
 	int nCyclesVBlank;
 	int nInterleave = 8;
+
+	
 
 	if (DrvReset) {														// Reset machine
 		DrvDoReset();
@@ -397,9 +399,10 @@ static int MemIndex()
 {
 	unsigned char* Next; Next = Mem;
 	Rom01			= Next; Next += 0x100000;		// 68K program
-	CaveSpriteROM	= Next; Next += 0x1000000;
+/*	CaveSpriteROM	= Next; Next += 0x1000000;
 	CaveTileROM[0]	= Next; Next += 0x400000;		// Tile layer 0
 	CaveTileROM[1]	= Next; Next += 0x400000;		// Tile layer 1
+*/
 	YMZ280BROM		= Next; Next += 0x400000;
 	RamStart		= Next;
 	Ram01			= Next; Next += 0x010000;		// CPU #0 work RAM
@@ -446,7 +449,7 @@ static int LoadRoms()
 	// Load 68000 ROM
 	BurnLoadRom(Rom01 + 0, 1, 2);
 	BurnLoadRom(Rom01 + 1, 0, 2);
-
+/*
 	BurnLoadRom(CaveSpriteROM + 0x000000, 2, 1);
 	BurnLoadRom(CaveSpriteROM + 0x400000, 3, 1);
 	NibbleSwap1(CaveSpriteROM, 0x800000);
@@ -455,7 +458,7 @@ static int LoadRoms()
 	NibbleSwap2(CaveTileROM[0], 0x200000);
 	BurnLoadRom(CaveTileROM[1], 5, 1);
 	NibbleSwap2(CaveTileROM[1], 0x200000);
-
+*/
 	BurnLoadRom(YMZ280BROM, 6, 1);
 
 	return 0;
@@ -502,7 +505,65 @@ static int DrvInit()
 	int nLen;
 
 	BurnSetRefreshRate(CAVE_REFRESHRATE);
+	cacheFileSize=0x1800000;
+		
+	extern char szAppCachePath[];
+		
+	strcpy(filePathName, szAppCachePath);
+	strcat(filePathName, BurnDrvGetTextA(DRV_NAME));
+	strcat(filePathName, "_LB");
+	needCreateCache = false;
+	cacheFile = sceIoOpen( filePathName, PSP_O_RDONLY, 0777);
+	if (cacheFile<0)
+	{
+		needCreateCache = true;
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_CREAT, 0777 );
+	}else if(sceIoLseek(cacheFile,0,SEEK_END)!=cacheFileSize)
+	{
+		needCreateCache = true;
+		sceIoClose(cacheFile);
+		cacheFile = sceIoOpen( filePathName, PSP_O_RDWR|PSP_O_TRUNC, 0777 );
+	}
+	
+	// Load Sprite and Tile
+	CaveSpriteROMOffset=0;
+	CaveTileROMOffset[0]=CaveSpriteROMOffset+0x1000000;
+	CaveTileROMOffset[1]=CaveTileROMOffset[0]+0x400000;
+	CaveTileROMOffset[2]=CaveTileROMOffset[1]+0x400000;
+	if(needCreateCache)
+	{
+		if ((uniCacheHead = (unsigned char *)malloc(0x1000000)) == NULL) return 1;
+		memset(uniCacheHead,0,0x1000000);
 
+		BurnLoadRom(uniCacheHead + 0x000000, 2, 1);
+		BurnLoadRom(uniCacheHead + 0x400000, 3, 1);
+		NibbleSwap1(uniCacheHead, 0x800000);
+		
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0, SEEK_SET );
+			if( 0x1000000 == sceIoWrite(cacheFile,uniCacheHead, 0x1000000 ) )
+				break;
+		}
+		BurnLoadRom(uniCacheHead, 4, 1);
+		NibbleSwap2(uniCacheHead, 0x200000);
+		BurnLoadRom(uniCacheHead+0x400000, 5, 1);
+		NibbleSwap2(uniCacheHead+0x400000, 0x200000);
+		
+		for(int j=0;j<5;j++)
+		{
+			sceIoLseek( cacheFile, 0x800000*2, SEEK_SET );
+			if( 0x800000 == sceIoWrite(cacheFile,uniCacheHead,0x800000  ) )
+				break;
+		}
+		sceIoClose( cacheFile );
+		cacheFile = sceIoOpen( filePathName,PSP_O_RDONLY, 0777);
+		free(uniCacheHead);
+		uniCacheHead=NULL;
+	}
+
+	
+	
 	// Find out how much memory is needed
 	Mem = NULL;
 	MemIndex();
@@ -523,7 +584,8 @@ static int DrvInit()
 		unsigned char data[] = { 0x0C, 0x00, 0x27, 0x16, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x11, 0x11, 0xFF, 0xFF, 0xFF, 0xFF, 0x19, 0x05 };
 		EEPROMFill(data, 0, 0x12);
 	}
-
+	initCacheStructure(0.7);
+	
 	// Load the roms into memory
 	if (LoadRoms()) {
 		return 1;
@@ -616,7 +678,7 @@ struct BurnDriver BurnDrvFeverSOS = {
 	"feversos", NULL, NULL, "1998",
 	"Fever SOS (International ver. Fri Sep 25 1998)\0", NULL, "Cave / Nihon System inc.", "Cave",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY,
 	NULL, feversosRomInfo, feversosRomName, feversosInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,
@@ -627,7 +689,7 @@ struct BurnDriver BurnDrvDFeveron = {
 	"dfeveron", "feversos", NULL, "1998",
 	"Dangun Feveron (Japan ver. Thu Sep 17 1998)\0", NULL, "Cave / Nihon System inc.", "Cave",
 	L"\u5F3E\u9283 Feveron (Japan ver. Thu Sep 17 1998)\0Dangun Feveron (Japan ver. Thu Sep 17 1998)\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_CAVE_68K_ONLY,
 	NULL, dfeveronRomInfo, dfeveronRomName, feversosInputInfo, NULL,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan,
 	0, NULL, NULL, NULL,

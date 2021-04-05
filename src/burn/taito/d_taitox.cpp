@@ -80,7 +80,7 @@ static struct BurnDIPInfo BallbrosDIPList[]=
 {
 	// Default Values
 	{0x15, 0xff, 0xff, 0xdf, NULL                             },
-	{0x16, 0xff, 0xff, 0x86, NULL                             },
+	{0x16, 0xff, 0xff, 0xa6, NULL                             },
 	
 	// Dip 1
 	{0   , 0xfe, 0   , 4   , "Coin A"                         },
@@ -133,7 +133,7 @@ static struct BurnDIPInfo GigandesDIPList[]=
 {
 	// Default Values
 	{0x15, 0xff, 0xff, 0xdf, NULL                             },
-	{0x16, 0xff, 0xff, 0x98, NULL                             },
+	{0x16, 0xff, 0xff, 0xd8, NULL                             },
 	
 	// Dip 1
 	{0   , 0xfe, 0   , 4   , "Coin A"                         },
@@ -196,7 +196,7 @@ static struct BurnDIPInfo KyustrkrDIPList[]=
 {
 	// Default Values
 	{0x15, 0xff, 0xff, 0xdf, NULL                             },
-	{0x16, 0xff, 0xff, 0x80, NULL                             },
+	{0x16, 0xff, 0xff, 0xc0, NULL                             },
 		
 	// Dip 1
 	{0   , 0xfe, 0   , 4   , "Coin A"                         },
@@ -1529,7 +1529,7 @@ struct BurnDriver BurnDrvBallbros = {
 	"ballbros", NULL, NULL, "1992",
 	"Balloon Brothers\0", NULL, "East Technology", "Taito-X",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOX, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOX,
 	NULL, BallbrosRomInfo, BallbrosRomName, TwinhawkInputInfo, BallbrosDIPInfo,
 	BallbrosInit, TaitoXExit, TaitoXFrame, NULL, TaitoXScan,
 	0, NULL, NULL, NULL, NULL, 384, 240, 4, 3
@@ -1539,7 +1539,7 @@ struct BurnDriver BurnDrvGigandes = {
 	"gigandes", NULL, NULL, "1989",
 	"Gigandes\0", NULL, "East Technology", "Taito-X",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOX, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOX,
 	NULL, GigandesRomInfo, GigandesRomName, TwinhawkInputInfo, GigandesDIPInfo,
 	GigandesInit, TaitoXExit, TaitoXFrame, NULL, TaitoXScan,
 	0, NULL, NULL, NULL, NULL, 384, 240, 4, 3
@@ -1549,7 +1549,7 @@ struct BurnDriver BurnDrvGigandsj = {
 	"gigandsj", "gigandes", NULL, "1989",
 	"Gigandes (Japan)\0", NULL, "East Technology", "Taito-X",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_TAITOX, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_TAITOX,
 	NULL, GigandsjRomInfo, GigandsjRomName, TwinhawkInputInfo, GigandesDIPInfo,
 	GigandesInit, TaitoXExit, TaitoXFrame, NULL, TaitoXScan,
 	0, NULL, NULL, NULL, NULL, 384, 240, 4, 3
@@ -1559,7 +1559,7 @@ struct BurnDriver BurnDrvKyustrkr = {
 	"kyustrkr", NULL, NULL, "1989",
 	"Last Striker / Kyuukyoku no Striker\0", NULL, "East Technology", "Taito-X",
 	L"Last Striker\0Final \u7A76\u6975 \u306E Striker\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_TAITO_TAITOX, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_TAITO_TAITOX,
 	NULL, KyustrkrRomInfo, KyustrkrRomName, TwinhawkInputInfo, KyustrkrDIPInfo,
 	BallbrosInit, TaitoXExit, TaitoXFrame, NULL, TaitoXScan,
 	0, NULL, NULL, NULL, NULL, 384, 240, 4, 3
@@ -1569,7 +1569,7 @@ struct BurnDriver BurnDrvSuperman = {
 	"superman", NULL, NULL, "1988",
 	"Superman\0", NULL, "Taito Corporation", "Taito-X",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOX, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TAITO_TAITOX,
 	NULL, SupermanRomInfo, SupermanRomName, SupermanInputInfo, SupermanDIPInfo,
 	SupermanInit, TaitoXExit, TaitoXFrame, NULL, TaitoXScan,
 	0, NULL, NULL, NULL, NULL, 384, 240, 4, 3
@@ -1579,7 +1579,7 @@ struct BurnDriver BurnDrvSuprmanj = {
 	"suprmanj", "superman", NULL, "1988",
 	"Superman (Japan)\0", NULL, "Taito Corporation", "Taito-X",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_TAITOX, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TAITO_TAITOX,
 	NULL, SuprmanjRomInfo, SuprmanjRomName, SupermanInputInfo, SuprmanjDIPInfo,
 	SupermanInit, TaitoXExit, TaitoXFrame, NULL, TaitoXScan,
 	0, NULL, NULL, NULL, NULL, 384, 240, 4, 3
@@ -1589,7 +1589,7 @@ struct BurnDriver BurnDrvTwinhawk = {
 	"twinhawk", NULL, NULL, "1989",
 	"Twin Hawk (World)\0", NULL, "Taito Corporation Japan", "Taito-X",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_TAITO_TAITOX, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_TAITO_TAITOX,
 	NULL, TwinhawkRomInfo, TwinhawkRomName, TwinhawkInputInfo, TwinhawkDIPInfo,
 	TwinhawkInit, TaitoXExit, TwinhawkFrame, NULL, TaitoXScan,
 	0, NULL, NULL, NULL, NULL, 224, 384, 3, 4
@@ -1599,7 +1599,7 @@ struct BurnDriver BurnDrvTwinhwku = {
 	"twinhwku", "twinhawk", NULL, "1989",
 	"Twin Hawk (US)\0", NULL, "Taito America Corporation", "Taito-X",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_TAITO_TAITOX, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_TAITO_TAITOX,
 	NULL, TwinhwkuRomInfo, TwinhwkuRomName, TwinhawkInputInfo, TwinhwkuDIPInfo,
 	TwinhawkInit, TaitoXExit, TwinhawkFrame, NULL, TaitoXScan,
 	0, NULL, NULL, NULL, NULL, 224, 384, 3, 4
@@ -1609,7 +1609,7 @@ struct BurnDriver BurnDrvDaisenpu = {
 	"daisenpu", "twinhawk", NULL, "1989",
 	"Daisenpu (Japan)\0", NULL, "Taito Corporation", "Taito-X",
 	L"\u5927\u65CB\u98A8 (Japan)\0Daisenpu\0", NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_TAITO_TAITOX, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_TAITO_TAITOX,
 	NULL, DaisenpuRomInfo, DaisenpuRomName, TwinhawkInputInfo, DaisenpuDIPInfo,
 	TwinhawkInit, TaitoXExit, TwinhawkFrame, NULL, TaitoXScan,
 	0, NULL, NULL, NULL, NULL, 224, 384, 3, 4

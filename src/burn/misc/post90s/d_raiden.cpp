@@ -837,6 +837,7 @@ static int DrvInit()
 	unsigned char * tmp = (unsigned char *) malloc (0x80000);
 	if (tmp == 0) return 1;
 	
+	memset(tmp, 0, 0x80000);
 	BurnLoadRom(tmp + 0x00000,  7, 1);
 	BurnLoadRom(tmp + 0x08000,  8, 1);
 	decode_gfx_1(RomGfx1, tmp);
@@ -959,6 +960,12 @@ static int DrvExit()
 	return 0;
 }
 
+#ifndef BUILD_PSP
+#define X_SIZE	256
+#else
+#define X_SIZE	512
+#endif
+
 static void drawBackground()
 {
 	/* cccc tttt tttt tttt */
@@ -993,7 +1000,7 @@ static void drawBackground()
 			unsigned int tileno = RamBg[offs] & 0x0FFF;
 			//if (tileno == 0) continue;
  			unsigned int c = (RamBg[offs] & 0xF000) >> 8;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 256 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx2 + (tileno << 8);
 			
 			if (x<0 || x>(256-16) || y<0 || y>(224-16))
@@ -1017,7 +1024,7 @@ static void drawBackground()
 		 				if ((x+15)>=0 && (x+15)<256) p[15] = pal[d[15]|c];
 	 				}
 	 				d += 16;
-	 				p += 256;
+	 				p += X_SIZE;
 	 			}
 			else 
 				for (int k=0;k<16;k++) {
@@ -1039,7 +1046,7 @@ static void drawBackground()
 	 				p[15] = pal[d[15]|c];
 	 				
 	 				d += 16;
-	 				p += 256;
+	 				p += X_SIZE;
 	 			}
 		} 
 	}
@@ -1079,7 +1086,7 @@ static void drawForeground()
 			unsigned int tileno = RamFg[offs] & 0x0FFF;
 			if (tileno == 0) continue;
  			unsigned int c = (RamFg[offs] & 0xF000) >> 8;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 256 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx3 + (tileno << 8);
 			
 			if (x<0 || x>(256-16) || y<0 || y>(224-16))
@@ -1103,7 +1110,7 @@ static void drawForeground()
 		 				if (d[15]!=15 && (x+15)>=0 && (x+15)<256) p[15] = pal[d[15]|c];
 	 				}
 	 				d += 16;
-	 				p += 256;
+	 				p += X_SIZE;
 	 			}
 			else 
 				for (int k=0;k<16;k++) {
@@ -1125,7 +1132,7 @@ static void drawForeground()
 	 				if (d[15] != 15) p[15] = pal[d[15]|c];
 	 				
 	 				d += 16;
-	 				p += 256;
+	 				p += X_SIZE;
 	 			}
 		} 
 	}
@@ -1156,13 +1163,13 @@ static void drawSprites(int pri)
 			
 			unsigned char *d = RomGfx4 + (sprite << 8);
  			unsigned short * p = (unsigned short *) pBurnDraw ;
-			p += y * 256 + x;
+			p += y * X_SIZE + x;
 			
 			if (x<0 || x>(256-16) || y<0 || y>(224-16)) {
 				
 				
 				if ( fy ) {
-					p += 256 * 15;
+					p += X_SIZE * 15;
 					
 					if ( fx )
 						for (int k=15;k>=0;k--) {
@@ -1185,7 +1192,7 @@ static void drawSprites(int pri)
 				 				if (d[ 0]!=15 && (x+15)>=0 && (x+15)<256) p[15] = pal[d[ 0]|c];
 			 				}
 			 				d += 16;
-			 				p -= 256;
+			 				p -= X_SIZE;
 			 			}
 					else
 						for (int k=15;k>=0;k--) {
@@ -1208,7 +1215,7 @@ static void drawSprites(int pri)
 				 				if (d[15]!=15 && (x+15)>=0 && (x+15)<256) p[15] = pal[d[15]|c];
 			 				}
 			 				d += 16;
-			 				p -= 256;
+			 				p -= X_SIZE;
 			 			}
 					
 				} else {
@@ -1234,7 +1241,7 @@ static void drawSprites(int pri)
 				 				if (d[ 0]!=15 && (x+15)>=0 && (x+15)<256) p[15] = pal[d[ 0]|c];
 			 				}
 			 				d += 16;
-			 				p += 256;
+			 				p += X_SIZE;
 			 			}
 					else
 						for (int k=0;k<16;k++) {
@@ -1257,7 +1264,7 @@ static void drawSprites(int pri)
 				 				if (d[15]!=15 && (x+15)>=0 && (x+15)<256) p[15] = pal[d[15]|c];
 			 				}
 			 				d += 16;
-			 				p += 256;
+			 				p += X_SIZE;
 			 			}
 				}
 
@@ -1265,7 +1272,7 @@ static void drawSprites(int pri)
 				
 				if ( fy ) {
 					
-					p += 256 * 15;
+					p += X_SIZE * 15;
 					
 					if ( fx ) {
 					
@@ -1288,7 +1295,7 @@ static void drawSprites(int pri)
 			 				if (d[ 0] != 15) p[15] = pal[d[ 0]|c];
 			 				
 			 				d += 16;
-			 				p -= 256;
+			 				p -= X_SIZE;
 			 			}
 			 			
 		 			} else {
@@ -1312,7 +1319,7 @@ static void drawSprites(int pri)
 			 				if (d[15] != 15) p[15] = pal[d[15]|c];
 			 				
 			 				d += 16;
-			 				p -= 256;
+			 				p -= X_SIZE;
 			 			}
 		 				 				
 		 			}
@@ -1340,7 +1347,7 @@ static void drawSprites(int pri)
 			 				if (d[ 0] != 15) p[15] = pal[d[ 0]|c];
 			 				
 			 				d += 16;
-			 				p += 256;
+			 				p += X_SIZE;
 			 			}
 			 			
 		 			} else {
@@ -1364,7 +1371,7 @@ static void drawSprites(int pri)
 			 				if (d[15] != 15) p[15] = pal[d[15]|c];
 			 				
 			 				d += 16;
-			 				p += 256;
+			 				p += X_SIZE;
 			 			}
 		 				 				
 		 			}
@@ -1399,7 +1406,7 @@ static void drawText()
 			unsigned int tileno = (RamTxt[offs] & 0x00FF) | ((RamTxt[offs] & 0xC000) >> 6);
 			if (tileno == 0) continue;
  			unsigned int c = (RamTxt[offs] & 0x0F00) >> 4;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 256 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx1 + (tileno << 6);
 			
 			for (int k=0;k<8;k++) {
@@ -1412,7 +1419,7 @@ static void drawText()
  				if (d[6] != 15) p[6] = pal[d[6]|c];
  				if (d[7] != 15) p[7] = pal[d[7]|c];
  				d += 8;
- 				p += 256;
+ 				p += X_SIZE;
  			}
 		} 
 	}
@@ -1440,7 +1447,7 @@ static void drawTextAlt()
 			unsigned int tileno = (RamTxt[offs] & 0x00FF) | ((RamTxt[offs] & 0xC000) >> 6);
 			if (tileno == 0) continue;
  			unsigned int c = (RamTxt[offs] & 0x0F00) >> 4;
- 			unsigned short * p = (unsigned short *) pBurnDraw + y * 256 + x;
+ 			unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 			unsigned char *d = RomGfx1 + (tileno << 6);
 			
 			for (int k=0;k<8;k++) {
@@ -1453,11 +1460,13 @@ static void drawTextAlt()
  				if (d[6] != 15) p[6] = pal[d[6]|c];
  				if (d[7] != 15) p[7] = pal[d[7]|c];
  				d += 8;
- 				p += 256;
+ 				p += X_SIZE;
  			}
 		} 
 	}
 }
+
+#undef X_SIZE
 
 static void DrvDraw()
 {
@@ -1622,7 +1631,7 @@ struct BurnDriver BurnDrvRaiden = {
 	"raiden", NULL, NULL, "1990",
 	"Raiden\0", NULL, "Seibu Kaihatsu", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_VERTICAL, 2, HARDWARE_MISC_POST90S,
 	NULL, raidenRomInfo, raidenRomName, raidenInputInfo, raidenDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	224, 256, 3, 4
@@ -1632,7 +1641,7 @@ struct BurnDriver BurnDrvRaidena = {
 	"raidena", "raiden", NULL, "1990",
 	"Raiden (Alternate Hardware)\0", NULL, "Seibu Kaihatsu", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_VERTICAL | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_VERTICAL | BDF_CLONE, 2, HARDWARE_MISC_POST90S,
 	NULL, raidenaRomInfo, raidenaRomName, raidenInputInfo, raidenDIPInfo,
 	DrvInit, DrvExit, DrvFrameAlt, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	224, 256, 3, 4
@@ -1642,7 +1651,7 @@ struct BurnDriver BurnDrvRaidenk = {
 	"raidenk", "raiden", NULL, "1990",
 	"Raiden (Korea)\0", NULL, "Seibu Kaihatsu (IBL Corporation license)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_VERTICAL | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_VERTICAL | BDF_CLONE, 2, HARDWARE_MISC_POST90S,
 	NULL, raidenkRomInfo, raidenkRomName, raidenInputInfo, raidenDIPInfo,
 	DrvInit, DrvExit, DrvFrameAlt, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	224, 256, 3, 4
@@ -1652,7 +1661,7 @@ struct BurnDriver BurnDrvRaident = {
 	"raident", "raiden", NULL, "1990",
 	"Raiden (Taiwan)\0", NULL, "Seibu Kaihatsu (Liang HWA Electronics license)", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_VERTICAL | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_VERTICAL | BDF_CLONE, 2, HARDWARE_MISC_POST90S,
 	NULL, raidentRomInfo, raidentRomName, raidenInputInfo, raidenDIPInfo,
 	DrvInit, DrvExit, DrvFrameAlt, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette,
 	224, 256, 3, 4

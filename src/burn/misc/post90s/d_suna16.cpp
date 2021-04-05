@@ -2224,7 +2224,7 @@ struct BurnDriver BurnDrvBestbest = {
 	"bestbest", NULL, NULL, "1994",
 	"Best Of Best\0", NULL, "SunA", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_VSFIGHT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_VSFIGHT, 0,
 	NULL, bestbestRomInfo, bestbestRomName, BestbestInputInfo, bestbestDIPInfo,
 	BestbestInit, DrvExit, BestbestFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -2252,7 +2252,7 @@ struct BurnDriver BurnDrvSunaq = {
 	"sunaq", NULL, NULL, "1994",
 	"SunA Quiz 6000 Academy (940620-6)\0", NULL, "SunA", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_QUIZ, 0,
 	NULL, sunaqRomInfo, sunaqRomName, SunaqInputInfo, sunaqDIPInfo,
 	SunaqInit, DrvExit, SunaqFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -2282,7 +2282,7 @@ struct BurnDriver BurnDrvUballoon = {
 	"uballoon", NULL, NULL, "1996",
 	"Ultra Balloon\0", NULL, "SunA", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PLATFORM, 0,
 	NULL, uballoonRomInfo, uballoonRomName, UballoonInputInfo, uballoonDIPInfo,
 	UballoonInit, DrvExit, UballoonFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -2318,7 +2318,7 @@ struct BurnDriver BurnDrvBssoccer = {
 	"bssoccer", NULL, NULL, "1996",
 	"Back Street Soccer\0", NULL, "SunA", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 4, HARDWARE_MISC_POST90S, GBF_SPORTSFOOTBALL, 0,
+	BDF_GAME_WORKING, 4, HARDWARE_MISC_POST90S, //GBF_SPORTSFOOTBALL, 0,
 	NULL, bssoccerRomInfo, bssoccerRomName, BssoccerInputInfo, bssoccerDIPInfo,
 	BssoccerInit, DrvExit, BssoccerFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3

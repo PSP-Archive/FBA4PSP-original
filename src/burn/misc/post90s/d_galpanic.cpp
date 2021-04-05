@@ -1282,13 +1282,19 @@ static int GalpanicExit()
 	return 0;
 }
 
+#ifndef BUILD_PSP
+ #define XSIZE	256
+#else
+ #define XSIZE	512
+#endif
+
 static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int sx,int sy)
 {
 	unsigned short * p = (unsigned short *) pBurnDraw;
 	unsigned char * q = DeRomGfx + (code) * 256;
 	unsigned int * pal = RamCurPal + 256;
 
-	p += sy * 256 + sx;
+	p += sy * XSIZE + sx;
 
 	if ((sx < 0) || (sx >= 240) || (sy < 0) || (sy >= 208)) {
 
@@ -1297,7 +1303,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 
 		// clip 
 		if (!flipy) {
-			p += 256 * 15;
+			p += XSIZE * 15;
 
 			if (!flipx) {
 
@@ -1321,7 +1327,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 						if (q[14] && ((sx +  1) >= 0) && ((sx +  1)<256)) p[ 1] = pal[ q[14] | color];
 						if (q[15] && ((sx +  0) >= 0) && ((sx +  0)<256)) p[ 0] = pal[ q[15] | color];
 					}
-					p -= 256;
+					p -= XSIZE;
 					q += 16;
 				}
 
@@ -1347,7 +1353,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 						if (q[14] && ((sx + 14) >= 0) && ((sx + 14)<256)) p[14] = pal[ q[14] | color];
 						if (q[15] && ((sx + 15) >= 0) && ((sx + 15)<256)) p[15] = pal[ q[15] | color];
 					}
-					p -= 256;
+					p -= XSIZE;
 					q += 16;
 				}
 			}
@@ -1376,7 +1382,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 						if (q[14] && ((sx +  1) >= 0) && ((sx +  1)<256)) p[ 1] = pal[ q[14] | color];
 						if (q[15] && ((sx +  0) >= 0) && ((sx +  0)<256)) p[ 0] = pal[ q[15] | color];
 					}
-					p += 256;
+					p += XSIZE;
 					q += 16;
 				}
 
@@ -1402,7 +1408,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 						if (q[14] && ((sx + 14) >= 0) && ((sx + 14)<256)) p[14] = pal[ q[14] | color];
 						if (q[15] && ((sx + 15) >= 0) && ((sx + 15)<256)) p[15] = pal[ q[15] | color];
 					}
-					p += 256;
+					p += XSIZE;
 					q += 16;
 				}
 			}
@@ -1413,7 +1419,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 
 	if (!flipy) {
 
-		p += 256 * 15;
+		p += XSIZE * 15;
 
 		if (!flipx) {
 
@@ -1436,7 +1442,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 				if (q[14]) p[ 1] = pal[ q[14] | color];
 				if (q[15]) p[ 0] = pal[ q[15] | color];
 
-				p -= 256;
+				p -= XSIZE;
 				q += 16;
 			}
 
@@ -1461,7 +1467,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 				if (q[14]) p[14] = pal[ q[14] | color];
 				if (q[15]) p[15] = pal[ q[15] | color];
 
-				p -= 256;
+				p -= XSIZE;
 				q += 16;
 			}
 		}
@@ -1489,7 +1495,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 				if (q[14]) p[ 1] = pal[ q[14] | color];
 				if (q[15]) p[ 0] = pal[ q[15] | color];
 
-				p += 256;
+				p += XSIZE;
 				q += 16;
 			}
 
@@ -1514,7 +1520,7 @@ static void drawgfx(unsigned int code,unsigned int color,int flipx,int flipy,int
 				if (q[14]) p[14] = pal[ q[14] | color];
 				if (q[15]) p[15] = pal[ q[15] | color];
 
-				p += 256;
+				p += XSIZE;
 				q += 16;
 			}
 
@@ -1545,7 +1551,10 @@ static int GalpanicDraw()
  		RamCurPal[i] = BurnHighCol(r, g, b, 0);
  	} 	
 
- 	unsigned short * d = (unsigned short *)pBurnDraw + ( 224 * 256 ) - 1;
+ 	unsigned short * d = (unsigned short *)pBurnDraw + ( 224 * XSIZE ) - 1;
+#ifdef BUILD_PSP
+	d -= 256;
+#endif
  	unsigned short * s = (unsigned short *)RamBg;
  	unsigned short * f = (unsigned short *)RamFg;
 	for (int j=0;j<224;j++) {
@@ -1556,6 +1565,9 @@ static int GalpanicDraw()
 			s++;
 			f++;
 		}
+#ifdef BUILD_PSP
+	d -= 256;
+#endif
 	}
 
 	int sx, sy;
@@ -1614,7 +1626,10 @@ static int ComadDraw()
  		RamCurPal[i] = BurnHighCol(r, g, b, 0);
  	}
 
- 	unsigned short * d = (unsigned short *)pBurnDraw + ( 224 * 256 ) - 1;
+ 	unsigned short * d = (unsigned short *)pBurnDraw + ( 224 * XSIZE ) - 1;
+#ifdef BUILD_PSP
+	d -= 256;
+#endif 	
  	unsigned short * s = (unsigned short *)RamBg;
  	unsigned short * f = (unsigned short *)RamFg;
 	for (int j=0;j<224;j++) {
@@ -1625,6 +1640,9 @@ static int ComadDraw()
 			s++;
 			f++;
 		}
+#ifdef BUILD_PSP
+	d -= 256;
+#endif
 	}
 
 	int sx, sy;
@@ -1656,6 +1674,8 @@ static int ComadDraw()
 
 	return 0;
 }
+
+#undef XSIZE
 
 static int GalpanicFrame()
 {
@@ -1823,7 +1843,7 @@ struct BurnDriver BurnDrvGalpanic = {
 	"galpanic", NULL, NULL, "1990",
 	"Gals Panic (Unprotected)\0", NULL, "Kaneko", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, GalpanicRomInfo, GalpanicRomName, GalpanicInputInfo, GalpanicDIPInfo,
 	GalpanicInit, GalpanicExit, GalpanicFrame, GalpanicDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	224, 256, 3, 4
@@ -1833,7 +1853,7 @@ struct BurnDriver BurnDrvFantasia = {
 	"fantasia", NULL, NULL, "1994",
 	"Fantasia\0", NULL, "Comad / New Japan System", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, FantasiaRomInfo, FantasiaRomName, GalpanicInputInfo, FantasiaDIPInfo,
 	FantasiaInit, GalpanicExit, ComadFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	224, 256, 3, 4
@@ -1843,7 +1863,7 @@ struct BurnDriver BurnDrvSupmodel = {
 	"supmodel", NULL, NULL, "1994",
 	"Super Model\0", NULL, "Comad / New Japan System", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, SupmodelRomInfo, SupmodelRomName, GalpanicInputInfo, FantasiaDIPInfo,
 	FantasiaInit, GalpanicExit, ComadFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	224, 256, 3, 4
@@ -1853,7 +1873,7 @@ struct BurnDriver BurnDrvNewfant = {
 	"newfant", NULL, NULL, "1995",
 	"New Fantasia\0", NULL, "Comad / New Japan System", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, NewfantRomInfo, NewfantRomName, GalpanicInputInfo, FantasiaDIPInfo,
 	FantasiaInit, GalpanicExit, ComadFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	224, 256, 3, 4
@@ -1863,7 +1883,7 @@ struct BurnDriver BurnDrvFantsy95 = {
 	"fantsy95", NULL, NULL, "1995",
 	"Fantasy '95\0", NULL, "Hi-max Technology Inc.", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, Fantsy95RomInfo, Fantsy95RomName, GalpanicInputInfo, FantasiaDIPInfo,
 	FantasiaInit, GalpanicExit, ComadFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	224, 256, 3, 4
@@ -1873,7 +1893,7 @@ struct BurnDriver BurnDrvMissw96 = {
 	"missw96", NULL, NULL, "1996",
 	"Miss World '96 (Nude)\0", NULL, "Comad", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S,
 	NULL, Missw96RomInfo, Missw96RomName, GalpanicInputInfo, Missw96DIPInfo,
 	Missw96Init, GalpanicExit, ComadFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	256, 224, 4, 3
@@ -1883,7 +1903,7 @@ struct BurnDriver BurnDrvMissmw96 = {
 	"missmw96", "missw96", NULL, "1996",
 	"Miss Mister World '96 (Nude)\0", NULL, "Comad", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S,
 	NULL, Missmw96RomInfo, Missmw96RomName, GalpanicInputInfo, Missw96DIPInfo,
 	Missw96Init, GalpanicExit, ComadFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	256, 224, 4, 3
@@ -1893,7 +1913,7 @@ struct BurnDriver BurnDrvFantsia2 = {
 	"fantsia2", NULL, NULL, "1997",
 	"Fantasia II (Explicit)\0", NULL, "Comad", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S,
 	NULL, Fantsia2RomInfo, Fantsia2RomName, GalpanicInputInfo, Missw96DIPInfo,
 	Fantsia2Init, GalpanicExit, ComadFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	256, 224, 4, 3
@@ -1903,7 +1923,7 @@ struct BurnDriver BurnDrvFntsia2a = {
 	"fntsia2a", "fantsia2", NULL, "1997",
 	"Fantasia II (Less Explicit)\0", NULL, "Comad", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S,
 	NULL, Fntsia2aRomInfo, Fntsia2aRomName, GalpanicInputInfo, Missw96DIPInfo,
 	Fantsia2Init, GalpanicExit, ComadFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	256, 224, 4, 3
@@ -1913,7 +1933,7 @@ struct BurnDriver BurnDrvGalhustl = {
 	"galhustl", NULL, NULL, "1997",
 	"Gals Hustler\0", NULL, "ACE International", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S, GBF_SPORTSMISC, 0,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_ORIENTATION_FLIPPED, 2, HARDWARE_MISC_POST90S,
 	NULL, GalhustlRomInfo, GalhustlRomName, GalhustlInputInfo, GalhustlDIPInfo,
 	GalhustlInit, GalpanicExit, GalhustlFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	256, 224, 4, 3
@@ -1923,7 +1943,7 @@ struct BurnDriverD BurnDrvZipzap = {
 	"zipzap", NULL, NULL, "1995",
 	"Zip & Zap\0", "Imperfect GFXs, No Sound", "Barko Corp", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_BREAKOUT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, ZipzapRomInfo, ZipzapRomName, GalhustlInputInfo, ZipzapDIPInfo,
 	ZipzapInit, GalpanicExit, GalhustlFrame, ComadDraw, GalpanicScan, 0, NULL, NULL, NULL, &RecalcBgPalette,
 	224, 256, 3, 4

@@ -103,7 +103,7 @@ static struct BurnDIPInfo zerowingDIPList[] = {
 	// Defaults
 	{0x12,	0xFF, 0xFF,	0x01, NULL},
 	{0x13,	0xFF, 0xFF,	0x00, NULL},
-	{0x14,	0xFF, 0xFF,	0x02, NULL},
+	{0x14,	0xFF, 0xFF,	0x00, NULL},
 
 	// DIP 1
 	{0x12,	0x01, 0x01,	0x01, "Upright"},
@@ -153,7 +153,7 @@ static struct BurnDIPInfo zerowingDIPList[] = {
 
 	// Region
 	{0,		0xFE, 0,	3,	  "Region"},
-    	{0x14,	0x01, 0x03,	0x00, "Japan"},
+    {0x14,	0x01, 0x03,	0x00, "Japan"},
     {0x14,	0x01, 0x03,	0x01, "US"},
     {0x14,	0x01, 0x03,	0x02, "Europe"},
 };
@@ -737,7 +737,7 @@ struct BurnDriver BurnDrvZerowing = {
 	"zerowing", NULL, NULL, "1989",
 	"Zero Wing\0", NULL, "Toaplan", "Toaplan BCU-2 / FCU-2 based",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_TOAPLAN_RAIZING, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_TOAPLAN_RAIZING,
 	NULL, zerowingRomInfo, zerowingRomName, zerowingInputInfo, zerowingDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	320, 240, 4, 3
@@ -747,7 +747,7 @@ struct BurnDriver BurnDrvZerowng2 = {
 	"zerowng2", "zerowing", NULL, "1989",
 	"Zero Wing (2 player simultaneous ver.)\0", NULL, "[Toaplan] Williams Electronics Games, Inc", "Toaplan BCU-2 / FCU-2 based",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TOAPLAN_RAIZING, GBF_HORSHOOT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_TOAPLAN_RAIZING,
 	NULL, zerowng2RomInfo, zerowng2RomName, zerowingInputInfo, zerowng2DIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &ToaRecalcPalette,
 	320, 240, 4, 3

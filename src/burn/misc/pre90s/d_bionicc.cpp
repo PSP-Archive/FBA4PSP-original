@@ -367,10 +367,12 @@ static int DrvGfxDecode()
 	static int SpriYOffsets[16] = { 0x000, 0x008, 0x010, 0x018, 0x020, 0x028, 0x030, 0x038,
 					0x040, 0x048, 0x050, 0x058, 0x060, 0x068, 0x070, 0x078 };
 
+	memset(tmp, 0, 0x40000);
 	memcpy (tmp, DrvGfxROM0, 0x08000);
 
 	GfxDecode(0x00400, 2,  8,  8, CharPlanes,  CharXOffsets,  CharYOffsets,  0x080, tmp, DrvGfxROM0);
 
+	memset(tmp, 0, 0x40000);
 	memcpy (tmp, DrvGfxROM1, 0x10000);
 
 	GfxDecode(0x00800, 4,  8,  8, Tile0Planes,  CharXOffsets, CharYOffsets,  0x080, tmp, DrvGfxROM1);
@@ -780,7 +782,7 @@ struct BurnDriver BurnDrvbionicc = {
 	"bionicc", NULL, NULL, "1987",
 	"Bionic Commando (Euro)\0", NULL, "Capcom", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_PRE90S,
 	NULL, bioniccRomInfo, bioniccRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -830,7 +832,7 @@ struct BurnDriver BurnDrvbionicc1 = {
 	"bionicc1", "bionicc", NULL, "1987",
 	"Bionic Commando (US set 1)\0", NULL, "Capcom", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, bionicc1RomInfo, bionicc1RomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -880,7 +882,7 @@ struct BurnDriver BurnDrvbionicc2 = {
 	"bionicc2", "bionicc", NULL, "1987",
 	"Bionic Commando (US set 2)\0", NULL, "Capcom", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, bionicc2RomInfo, bionicc2RomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3
@@ -930,7 +932,7 @@ struct BurnDriver BurnDrvtopsecrt = {
 	"topsecrt", "bionicc", NULL, "1987",
 	"Top Secret (Japan)\0", NULL, "Capcom", "Misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_PRE90S,
 	NULL, topsecrtRomInfo, topsecrtRomName, DrvInputInfo, DrvDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL, &DrvRecalc,
 	256, 224, 4, 3

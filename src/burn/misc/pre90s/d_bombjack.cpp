@@ -952,7 +952,7 @@ struct BurnDriver BurnDrvBombjack = {
 	"bombjack", NULL, NULL, "1984",
 	"Bomb Jack (set 1)\0", NULL, "Tehkan", "Bomb Jack",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING,2,HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING,2,HARDWARE_MISC_PRE90S,
 	NULL,BombjackRomInfo,BombjackRomName,DrvInputInfo,BjDIPInfo,
 	BjInit,BjExit,BjFrame,NULL,BjScan,
 	0, NULL, NULL, NULL, NULL,224,256,3,4
@@ -962,7 +962,7 @@ struct BurnDriver BurnDrvBombjac2 = {
 	"bombjac2", "bombjack", NULL, "1984",
 	"Bomb Jack (set 2)\0", NULL, "Tehkan", "Bomb Jack",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE,2,HARDWARE_MISC_PRE90S, GBF_PLATFORM, 0,
+	BDF_GAME_WORKING | BDF_CLONE,2,HARDWARE_MISC_PRE90S,
 	NULL,Bombjac2RomInfo,Bombjac2RomName,DrvInputInfo,BjDIPInfo,
 	BjInit,BjExit,BjFrame,NULL,BjScan,
 	0, NULL, NULL, NULL, NULL,224,256,3,4

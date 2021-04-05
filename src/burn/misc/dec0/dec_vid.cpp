@@ -47,9 +47,9 @@ static int MemIndex()
 	robocopPaletteRam2   = Next; Next += 0x00800;
 
 	robocopSpriteRam    = Next; Next += 0x02000;
-	dec0_pf1_data 	    = Next; Next += 0x1FFF;
-	dec0_pf2_data	    = Next; Next += 0x7FF;
-	dec0_pf3_data       = Next; Next += 0x7FF;
+	dec0_pf1_data 	    = Next; Next += 0x2000;
+	dec0_pf2_data	    = Next; Next += 0x800;
+	dec0_pf3_data       = Next; Next += 0x800;
 	dec0_pf1_control_0=Next; Next +=0x10;
 	dec0_pf1_control_1=Next; Next +=0x10;
 	dec0_pf1_colscroll=Next; Next +=0x80;
@@ -374,7 +374,7 @@ void decvid_drawsprites(int pri_mask,int pri_val)
 
 void decvid_drawchars()
 {
-	int mx, my, Code = 0, /*Colour,*/ x, y/*, TileIndex = 0*/;
+	int mx, my,/* Code = 0, Colour, */x, y/*, TileIndex = 0*/;
 	unsigned short* dec0_pf1_control_ram = ((unsigned short*)dec0_pf1_control_1);
 
 
@@ -389,7 +389,7 @@ void decvid_drawchars()
 	
 	switch ((*(unsigned short*)&dec0_pf1_control_0[6]))
 	{
-		case 0:	/* 4x1 */
+		case 0:	// 4x1
 			offsetx[0] = 0;
 			offsetx[1] = 256;
 			offsetx[2] = 512;
@@ -399,7 +399,7 @@ void decvid_drawchars()
 			offsety[2] = 0;
 			offsety[3] = 0;
 			break;
-		case 1:	/* 2x2 */
+		case 1:	// 2x2
 			offsetx[0] = 0;
 			offsetx[1] = 0;
 			offsetx[2] = 256;
@@ -409,7 +409,7 @@ void decvid_drawchars()
 			offsety[2] = 0;
 			offsety[3] = 256;
 			break;
-		case 2:	/* 1x4 */
+		case 2:	// 1x4
 			offsetx[0] = 0;
 			offsetx[1] = 0;
 			offsetx[2] = 0;
@@ -445,7 +445,7 @@ void decvid_drawchars()
 
 			x += dec0_pf1_control_ram[0];
 			y += dec0_pf1_control_ram[1];
-			if (Code!=0) 
+			if (tile!=0) 
 			{
 				if (x > 16 && x < 239 && y > 16 && y < 239)
 				{
@@ -457,8 +457,8 @@ void decvid_drawchars()
 				}
 				//dec0_chartest(Code, x, y , Colour);
 			}
-
-			/*if (dec0_pf1_dirty[offs])
+/*
+			if (dec0_pf1_dirty[offs])
 			{
 				dec0_pf1_dirty[offs] = 0;
 				tile = READ_WORD(&dec0_pf1_data[offs]);
@@ -470,7 +470,8 @@ void decvid_drawchars()
 						0,0,
 						8*mx + offsetx[quarter],8*my + offsety[quarter],
 						0,TRANSPARENCY_NONE,0);
-			}*/
+			}
+*/
 		}
 	}
 

@@ -358,6 +358,12 @@ static int DrvExit()
 	return 0;
 }
 
+#ifndef BUILD_PSP
+#define X_SIZE	320
+#else
+#define X_SIZE	512
+#endif
+
 static void DrawBackground()
 {
 	int offs, mx, my, x, y;
@@ -381,7 +387,7 @@ static void DrawBackground()
 			continue;
 		
 		unsigned char *d = RomBg + ( RamBg[offs] & 0x1fff ) * 256;
-		unsigned short * p = (unsigned short *) pBurnDraw + y * 320 + x;
+		unsigned short * p = (unsigned short *) pBurnDraw + y * X_SIZE + x;
 		
 		if ( x >=0 && x <= (320-16) && y >= 0 && y <= (224-16)) {
 			
@@ -406,7 +412,7 @@ static void DrawBackground()
  				p[15] = pal[ d[15] ];
  				
  				d += 16;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		} else {
 
@@ -432,7 +438,7 @@ static void DrawBackground()
 	 			}
 	 			
  				d += 16;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 		}
 	}
@@ -447,7 +453,7 @@ static void drawgfx(unsigned int code, int sx,int sy)
 	if (sx >= (320+16)) sx -= 512;
 	if (sy >= (224+16)) sy -= 256;
 	
-	p += sy * 320 + sx;
+	p += sy * X_SIZE + sx;
 		
 	if (sx >= 0 && sx <= (320-16) && sy > 0 && sy <= (224-16) ) {
 	
@@ -472,7 +478,7 @@ static void drawgfx(unsigned int code, int sx,int sy)
  				if( d[15] ) p[15] = pal[ d[15] ];
  				
  				d += 16;
- 				p += 320;
+ 				p += X_SIZE;
  			}
 	} else 
 	if (sx >= -16 && sx < 320 && sy >= -16 && sy < 224 ) {
@@ -498,7 +504,7 @@ static void drawgfx(unsigned int code, int sx,int sy)
 	 				if( d[15] && (sx+15)>=0 && (sx+15)<320 ) p[15] = pal[ d[15] ];
  				}
  				d += 16;
- 				p += 320;
+ 				p += X_SIZE;
  			}		
 		
 	}
@@ -524,6 +530,8 @@ static void DrawSprites()
 		source++;source2++;
 	}
 }
+
+#undef X_SIZE
 
 static void DrvDraw()
 {
@@ -622,7 +630,7 @@ struct BurnDriver BurnDrv1945kiii = {
 	"1945kiii", NULL, NULL, "2000",
 	"1945k III\0", NULL, "Oriental", "misc",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S, GBF_VERSHOOT, 0,
+	BDF_GAME_WORKING | BDF_ORIENTATION_VERTICAL | BDF_16BIT_ONLY, 2, HARDWARE_MISC_POST90S,
 	NULL, _1945kiiiRomInfo, _1945kiiiRomName, _1945kiiiInputInfo, _1945kiiiDIPInfo,
 	DrvInit, DrvExit, DrvFrame, NULL, DrvScan, 0, NULL, NULL, NULL, &bRecalcPalette, 
 	224, 320, 3, 4

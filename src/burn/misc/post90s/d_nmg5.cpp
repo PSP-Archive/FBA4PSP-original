@@ -1400,7 +1400,7 @@ struct BurnDriver BurnDrvNmg5 = {
 	"nmg5", NULL, NULL, "1998",
 	"Multi 5 / New Multi Game 5\0", NULL, "Yun Sung", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_MINIGAMES, 0,
 	NULL, nmg5RomInfo, nmg5RomName, Nmg5InputInfo, Nmg5DIPInfo,
 	Nmg5Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1440,7 +1440,7 @@ struct BurnDriver BurnDrvNmg5e = {
 	"nmg5e", "nmg5", NULL, "1997",
 	"Multi 5 / New Multi Game 5 (earlier)\0", NULL, "Yun Sung", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_MINIGAMES, 0,
 	NULL, nmg5eRomInfo, nmg5eRomName, Nmg5InputInfo, Nmg5DIPInfo,
 	Nmg5Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1480,7 +1480,7 @@ struct BurnDriver BurnDrvSearchey = {
 	"searchey", NULL, NULL, "1999",
 	"Search Eye\0", NULL, "Yun Sung", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, searcheyRomInfo, searcheyRomName, SearcheyInputInfo, SearcheyDIPInfo,
 	Nmg5Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1525,7 +1525,7 @@ struct BurnDriver BurnDrvSearchp2 = {
 	"searchp2", NULL, NULL, "1999",
 	"Search Eye Plus V2.0\0", NULL, "Yun Sung", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, searchp2RomInfo, searchp2RomName, SearcheyInputInfo, Searchp2DIPInfo,
 	Searchp2Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1568,7 +1568,7 @@ struct BurnDriver BurnDrvPclubys = {
 	"pclubys", NULL, NULL, "2000",
 	"Puzzle Club (Yun Sung, set 1)\0", NULL, "Yun Sung", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_MINIGAMES, 0,
 	NULL, pclubysRomInfo, pclubysRomName, PclubysInputInfo, PclubysDIPInfo,
 	PclubysInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1604,7 +1604,7 @@ struct BurnDriver BurnDrvPclubysa = {
 	"pclubysa", "pclubys", NULL, "2000",
 	"Puzzle Club (Yun Sung, set 2)\0", NULL, "Yun Sung", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_MINIGAMES, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, //GBF_MINIGAMES, 0,
 	NULL, pclubysaRomInfo, pclubysaRomName, PclubysInputInfo, PclubysDIPInfo,
 	PclubysInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1651,7 +1651,7 @@ struct BurnDriver BurnDrvGarogun = {
 	"garogun", NULL, NULL, "2000",
 	"Garogun Seroyang (Korea)\0", NULL, "Yun Sung", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 1, HARDWARE_MISC_POST90S, GBF_QUIZ, 0,
+	BDF_GAME_WORKING, 1, HARDWARE_MISC_POST90S, //GBF_QUIZ, 0,
 	NULL, garogunRomInfo, garogunRomName, GarogunInputInfo, GarogunDIPInfo,
 	GarogunInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1708,7 +1708,7 @@ struct BurnDriver BurnDrvOrdi7 = {
 	"7ordi", NULL, NULL, "2002",
 	"7 Ordi (Korea)\0", NULL, "Yun Sung", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 1, HARDWARE_MISC_POST90S, GBF_CASINO, 0,
+	BDF_GAME_WORKING, 1, HARDWARE_MISC_POST90S, //GBF_CASINO, 0,
 	NULL, ordi7RomInfo, ordi7RomName, Ordi7InputInfo, Ordi7DIPInfo,
 	Ordi7Init, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
@@ -1755,7 +1755,7 @@ struct BurnDriver BurnDrvWondstck = {
 	"wondstck", NULL, NULL, "????",
 	"Wonder Stick\0", NULL, "Yun Sung", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, GBF_PUZZLE, 0,
+	BDF_GAME_WORKING, 2, HARDWARE_MISC_POST90S, //GBF_PUZZLE, 0,
 	NULL, wondstckRomInfo, wondstckRomName, SearcheyInputInfo, WondstckDIPInfo,
 	WondstckInit, DrvExit, DrvFrame, DrvDraw, DrvScan, 0, NULL, NULL, NULL,
 	&DrvRecalc, 320, 240, 4, 3
